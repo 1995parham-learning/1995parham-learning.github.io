@@ -3,6 +3,7 @@
   <main class="col-8">
     <div class="header">
       <h1>{{ .Page.Title | humanize }}</h1>
+      <h6>Last Update: {{ .Page.Lastmod.Format "January 2, 2006" }}</h6>
     </div>
     {{ .Content }}
   </main>
