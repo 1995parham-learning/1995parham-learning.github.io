@@ -1,5 +1,7 @@
 ---
 title: golang
+repositories:
+  "go101": https://github.com/1995parham-learning/go101
 ---
 
 ## Configuration
