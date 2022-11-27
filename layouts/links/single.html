@@ -2,4 +2,12 @@
 <div class="header">
   <h1>{{ .Page.Title | humanize }}</h1>
 </div>
-{{ .TableOfContents }} {{ .Content }} {{ end }}
+<h3>Repositories</h3>
+The following repositories are available on
+<a href="https://github.com/1995parham-learning/">1995parham-learning</a>
+for learning python-releated things: {{ for $name, $link := range
+.Params.repositories }}
+<a href="{{ $link }}" target="_blank">{{ $name }}</a>
+{{ end }}
+<h3>{{ .TableOfContents }}</h3>
+{{ .Content }} {{ end }}
