@@ -1,5 +1,8 @@
 ---
 title: python
+repositories:
+  python101: https://github.com/1995parham-learning/python101
+  django101: https://github.com/1995parham-learning/django101
 ---
 
 ## Configuration
