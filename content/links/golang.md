@@ -62,7 +62,7 @@ but when you need more:
 
 ## Redis
 
-the popular and backward-compatible redis library that has /context/:
+the popular and backward-compatible redis library that has _context_:
 
 - <https://github.com/go-redis/redis>
 
