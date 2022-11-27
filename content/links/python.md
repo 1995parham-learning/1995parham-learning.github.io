@@ -43,6 +43,10 @@ Semi-automatic documentation for the REST APIs:
 
 - <https://github.com/tfranzel/drf-spectacular>
 
+Using data-classes to define request and response:
+
+- <https://github.com/oxan/djangorestframework-dataclasses>
+
 ## Tests
 
 In python, you need a library for testing:
