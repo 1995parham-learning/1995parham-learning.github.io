@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="header">
+  <h1>Welcome to my hands-on learning repositories</h1>
+  <h6>Last Update: {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</h6>
+</div>
+<p>
+  Here I gather my learning repositories. I use these repositories to learn new
+  languages and technologies, so these repositories may not be complete, working
+  properly and idiomatic.
+
+  <a href="https://github.com/1995parham-learning"> Feel free to contribute </a>
+</p>
+<h2>Links</h2>
+Because of the sanctions many online sync services are not available in my
+country, so I am listing useful URLs here to refer them just by clicking them.
+There are libraries, tutorials, etc. which personally prefer them, and you may
+find some examples in this organization about them.
+
+<div class="list-group list-group-flush">
+  {{ range $_, $page := where (where .Site.Pages "Type" "links") "Kind" "page"
+  }}
+  <button
+    href="{{ $page.Permalink }}"
+    type="button"
+    class="list-group-item list-group-item-action"
+  >
+    {{ $page.Title }}
+  </button>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="Learn from birth to death" />
+    <meta name="author" content="{{ .Site.Author }}" />
+    <link
+      rel="shortcut icon"
+      href="https://github.com/1995parham-learning.png"
+    />
+
+    {{ $js := readFile "node_modules/bootstrap/dist/js/bootstrap.js" |
+    resources.FromString "bootstrap.js" | js.Build (dict "minify"
+    hugo.IsProduction) }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ $style := readFile "node_modules/bootstrap/dist/css/bootstrap.css" |
+    resources.FromString "bootstrap.css" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <a href="https://github.com/1995parham-teaching/ie-lecture" target="_blank">
+      <img style="position: absolute; top: 0; right: 0; border: 0" src="{{
+      "img/forkme_right_orange.png" | relURL }}" alt="Fork me on GitHub" />
+    </a>
+    <div class="container">
+      <main>{{ block "main" . }}{{ end }}</main>
+    </div>
+  </body>
+</html>
