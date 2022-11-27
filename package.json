@@ -1,0 +1,14 @@
+{
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {}
+  },
+  "dependencies": {},
+  "name": "ie-lecture",
+  "version": "0.1.0",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "bootstrap": "^5.2.2",
+    "prettier-plugin-go-template": "^0.0.13"
+  }
+}
