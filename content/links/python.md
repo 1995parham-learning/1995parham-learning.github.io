@@ -44,7 +44,7 @@ Semi-automatic documentation for the REST APIs:
 
 ## Tests
 
-In python, you need a library for testing in Python:
+In python, you need a library for testing:
 
 - <https://docs.pytest.org/en/stable/index.html>
 
@@ -65,5 +65,5 @@ The way you can work with data:
 
 - <https://pandas.pydata.org/docs/reference/index.html>
 
-Using it for reading CSV is a better way than any other console
+Using it for reading/writing CSV is a better way than any other console
 application.
