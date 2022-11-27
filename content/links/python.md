@@ -50,9 +50,9 @@ has what you need.
 
 ## Standard CLI
 
-- <https://click.palletsprojects.com/en>
+- <https://click.palletsprojects.com>
 
-#### Advanced Console UIs
+## Advanced Console UIs
 
 - <https://github.com/Textualize/rich>
 
@@ -61,3 +61,6 @@ has what you need.
 The way you can work with data:
 
 - <https://pandas.pydata.org/docs/reference/index.html>
+
+Using it for reading CSV is a better way than any other console
+application.
