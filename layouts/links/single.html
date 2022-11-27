@@ -7,6 +7,16 @@
     {{ .Content }}
   </main>
   <aside class="col-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{ .Site.Home.Permalink }}" class="">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          {{ .Page.Title | humanize }}
+        </li>
+      </ol>
+    </nav>
     <h2>Repositories</h2>
     The following repositories are available on
     <a href="https://github.com/1995parham-learning/">1995parham-learning</a>
