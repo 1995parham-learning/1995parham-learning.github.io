@@ -1,7 +1,6 @@
 {{ define "main" }}
 <div class="header">
   <h1>Welcome to my hands-on learning repositories</h1>
-  <h6>Last Update: {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</h6>
 </div>
 <p>
   Here I gather my learning repositories. I use these repositories to learn new
@@ -19,13 +18,13 @@ find some examples in this organization about them.
 <div class="list-group list-group-flush">
   {{ range $_, $page := where (where .Site.Pages "Type" "links") "Kind" "page"
   }}
-  <button
+  <a
     href="{{ $page.Permalink }}"
-    type="button"
+    target="_blank"
     class="list-group-item list-group-item-action"
   >
-    {{ $page.Title }}
-  </button>
+    {{ $page.Title | humanize }}
+  </a>
   {{ end }}
 </div>
 {{ end }}
