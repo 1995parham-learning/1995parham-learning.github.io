@@ -1,3 +1,7 @@
+---
+title: golang
+---
+
 ## Configuration
 
 Personally I love to have all configuration well-defined and structured,

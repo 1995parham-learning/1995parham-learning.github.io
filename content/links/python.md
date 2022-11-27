@@ -1,3 +1,7 @@
+---
+title: python
+---
+
 ## Configuration
 
 I love the way we can configure Golang application **WITH TYPES**, but this library
