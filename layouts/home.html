@@ -1,32 +1,36 @@
 {{ define "main" }}
-<div class="header">
-  <h1>Welcome to my hands-on learning repositories</h1>
-</div>
-<p>
-  Here I gather my learning repositories. I use these repositories to learn new
-  languages and technologies, so these repositories may not be complete, working
-  properly and idiomatic.
+<main>
+  <div class="header">
+    <h1>Welcome to my hands-on learning repositories</h1>
+  </div>
+  <p>
+    Here I gather my learning repositories. I use these repositories to learn
+    new languages and technologies, so these repositories may not be complete,
+    working properly and idiomatic.
 
-  <a href="https://github.com/1995parham-learning"> Feel free to contribute </a>
-</p>
-<h2>Links</h2>
-<p>
-  Because of the sanctions many online sync services are not available in my
-  country, so I am listing useful URLs here to refer them just by clicking them.
-  There are libraries, tutorials, etc. which personally prefer them, and you may
-  find some examples in this organization about them.
-</p>
+    <a href="https://github.com/1995parham-learning">
+      Feel free to contribute
+    </a>
+  </p>
+  <h2>Links</h2>
+  <p>
+    Because of the sanctions many online sync services are not available in my
+    country, so I am listing useful URLs here to refer them just by clicking
+    them. There are libraries, tutorials, etc. which personally prefer them, and
+    you may find some examples in this organization about them.
+  </p>
 
-<div class="list-group list-group-flush">
-  {{ range $_, $page := where (where .Site.Pages "Type" "links") "Kind" "page"
-  }}
-  <a
-    href="{{ $page.Permalink }}"
-    target="_blank"
-    class="list-group-item list-group-item-action"
-  >
-    {{ $page.Title | humanize }}
-  </a>
-  {{ end }}
-</div>
+  <div class="list-group list-group-flush">
+    {{ range $_, $page := where (where .Site.Pages "Type" "links") "Kind" "page"
+    }}
+    <a
+      href="{{ $page.Permalink }}"
+      target="_blank"
+      class="list-group-item list-group-item-action"
+    >
+      {{ $page.Title | humanize }}
+    </a>
+    {{ end }}
+  </div>
+</main>
 {{ end }}

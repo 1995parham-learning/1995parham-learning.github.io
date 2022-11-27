@@ -1,19 +1,25 @@
 {{ define "main" }}
-<div class="header">
-  <h1>{{ .Page.Title | humanize }}</h1>
+<div class="row">
+  <main class="col-8">
+    <div class="header">
+      <h1>{{ .Page.Title | humanize }}</h1>
+    </div>
+    {{ .Content }}
+  </main>
+  <aside class="col-4">
+    <h2>Repositories</h2>
+    The following repositories are available on
+    <a href="https://github.com/1995parham-learning/">1995parham-learning</a>
+    for learning {{ .Page.Title }}-releated things:
+    <ul>
+      {{ range $name, $link := .Params.repositories }}
+      <li>
+        <a href="{{ $link }}" target="_blank">{{ $name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <h2>Table of Contents</h2>
+    {{ .TableOfContents }}
+  </aside>
 </div>
-<h2>Repositories</h2>
-The following repositories are available on
-<a href="https://github.com/1995parham-learning/">1995parham-learning</a>
-for learning python-releated things:
-<ul>
-  {{ range $name, $link := .Params.repositories }}
-  <li>
-    <a href="{{ $link }}" target="_blank">{{ $name }}</a>
-  </li>
-  {{ end }}
-</ul>
-<h2>Table of Contents</h2>
-{{ .TableOfContents }}
-<hr />
-{{ .Content }} {{ end }}
+{{ end }}
