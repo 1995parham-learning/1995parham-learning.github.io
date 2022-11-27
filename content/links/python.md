@@ -37,6 +37,7 @@ Writing REST API in a Django application:
 - <https://www.django-rest-framework.org/api-guide/fields>
 - <https://www.django-rest-framework.org/api-guide/parsers/>
 - <https://www.django-rest-framework.org/api-guide/views/>
+- <https://www.django-rest-framework.org/api-guide/viewsets/>
 
 Semi-automatic documentation for the REST APIs:
 
