@@ -1,0 +1,7 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = "1995parham's Learning Material"
+staticDir = ['fonts']
+enableGitInfo = true
+
+[params]
