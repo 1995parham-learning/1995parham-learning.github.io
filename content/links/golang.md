@@ -71,3 +71,9 @@ the popular and backward-compatible redis library that has _context_:
 this new library is also fun on new versions of redis:
 
 - <https://github.com/rueian/rueidis>
+
+## MongoDB
+
+There is no good ORM for MongoDB in Go, so its official database driver is the best choice:
+
+- <https://github.com/mongodb/mongo-go-driver>
