@@ -43,7 +43,7 @@ so install them from an example.
 
 ## Advanced Console UIs
 
-/pterm/ is useful when you need colors, and you need them easy, and fast.
+_pterm_ is useful when you need colors, and you need them easy, and fast.
 
 - <https://github.com/pterm/>
 
@@ -58,17 +58,19 @@ but when you need more:
 
 ## ORM
 
-/gorm/ is easy and fun, but you also prefer to write down your queries like man.
+_gorm_ is easy and fun, but you also prefer to write down your queries like man.
 
 - <https://github.com/go-gorm/gorm> --- <https://gorm.io/>
 
 ## Redis
 
-the popular and backward-compatible redis library that has _context_:
+The popular and backward-compatible Redis library that has _context_ and awesome sub-package named `extra`
+which has things like _tracing_, _monitoring_, etc.
 
 - <https://github.com/go-redis/redis>
+- <https://github.com/go-redis/redis/tree/master/extra>
 
-this new library is also fun on new versions of redis:
+There is a new library which is fun and only works on new versions of Redis:
 
 - <https://github.com/rueian/rueidis>
 
@@ -77,3 +79,4 @@ this new library is also fun on new versions of redis:
 There is no good ORM for MongoDB in Go, so its official database driver is the best choice:
 
 - <https://github.com/mongodb/mongo-go-driver>
+- <https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo>
