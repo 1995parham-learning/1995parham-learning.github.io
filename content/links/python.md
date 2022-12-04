@@ -72,3 +72,11 @@ The way you can work with data:
 
 Using it for reading/writing CSV is a better way than any other console
 application.
+
+## Typing
+
+We love types even in python.
+
+- <https://github.com/typeddjango/djangorestframework-stubs>
+- <https://github.com/typeddjango/django-stubs>
+- <https://github.com/typeddjango/awesome-python-typing>
