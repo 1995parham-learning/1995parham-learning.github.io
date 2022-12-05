@@ -80,3 +80,4 @@ We love types even in python.
 - <https://github.com/typeddjango/djangorestframework-stubs>
 - <https://github.com/typeddjango/django-stubs>
 - <https://github.com/typeddjango/awesome-python-typing>
+- <https://numpy.org/doc/stable/reference/typing.html>
