@@ -73,6 +73,11 @@ The way you can work with data:
 Using it for reading/writing CSV is a better way than any other console
 application.
 
+## GIS
+
+- <https://shapely.readthedocs.io/en/stable/>
+- <https://geopandas.org/en/stable/>
+
 ## Typing
 
 We love types even in python.
