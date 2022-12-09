@@ -63,6 +63,7 @@ has what you need.
 ## Advanced Console UIs
 
 - <https://github.com/Textualize/rich>
+- <https://github.com/sepandhaghighi/art>
 
 ## Pandas
 
