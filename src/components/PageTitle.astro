@@ -6,9 +6,13 @@ import { Icon } from "astro-icon/components";
 ---
 
 <>
-  <h1>
-    <Icon name={Astro.props.entry.data.icon} />
-  </h1>
+  {
+    Astro.props.entry.data.icon && (
+      <h1>
+        <Icon name={Astro.props.entry.data.icon} />
+      </h1>
+    )
+  }
   <Default {...Astro.props}>
     <slot />
   </Default>
