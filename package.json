@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.4",
     "@astrojs/starlight": "^0.18.1",
-    "@iconify/json": "^2.2.183",
+    "@iconify-json/skill-icons": "^1.1.7",
     "astro": "^4.3.4",
     "astro-icon": "^1.1.0",
     "sharp": "^0.32.5",

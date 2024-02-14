@@ -1,0 +1,15 @@
+---
+// src/components/ConditionalFooter.astro
+import type { Props } from "@astrojs/starlight/props";
+import Default from "@astrojs/starlight/components/PageTitle.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<>
+  <h1>
+    <Icon name={Astro.props.entry.data.icon} />
+  </h1>
+  <Default {...Astro.props}>
+    <slot />
+  </Default>
+</>

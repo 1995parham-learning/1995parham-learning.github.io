@@ -1,6 +1,7 @@
 ---
 title: Golang
 description: Learn to use Golang and its related libraries.
+icon: skill-icons:golang
 ---
 
 - [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)

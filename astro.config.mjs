@@ -6,6 +6,9 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [
     starlight({
+      components: {
+        PageTitle: './src/components/PageTitle.astro',
+      },
       editLink: {
         baseUrl: 'https://github.com/1995parham-learning/1995parham-learning.github.io/edit/main/'
       },
@@ -25,6 +28,10 @@ export default defineConfig({
         }]
       }]
     }),
-    icon(),
+    icon({
+      include: {
+        "skill-icons": ["*"],
+      }
+    }),
   ]
 });
