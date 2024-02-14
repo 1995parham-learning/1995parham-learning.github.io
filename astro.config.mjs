@@ -25,6 +25,9 @@ export default defineConfig({
         items: [{
           label: "Golang",
           link: "/lang/go"
+        }, {
+          label: "Rust",
+          link: "/lang/rust"
         }]
       }]
     }),
