@@ -1,24 +1,34 @@
-# Golang
+---
+title: Golang
+description: Learn to use Golang and its related libraries.
+---
 
-[Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
+- [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
 
-## Context
+# Context
 
-<aside>
-⭐ *There are three main rules to observe when handling context plumbing in Go: only entrypoint functions should create new contexts, contexts are only passed down the call chain, and don’t store contexts or otherwise use them after the function returns.*
+:::note
+⭐ There are three main rules to observe when handling context plumbing in Go: only entrypoint functions
+should create new contexts, contexts are only passed down the call chain,
+and don't store contexts or otherwise use them after the function returns.
+:::
 
-</aside>
-
-Context is one of the foundational building blocks in Go. Anyone with even a cursory experience with the language is likely to have encountered it, as it’s the first argument passed to functions that accept contexts. I see the purpose of context as twofold:
+Context is one of the foundational building blocks in Go.
+Anyone with even a cursory experience with the language is likely to have encountered it,
+as it's the first argument passed to functions that accept contexts. I see the purpose of context as twofold:
 
 1. Provide a **[control-flow](https://en.wikipedia.org/wiki/Control_flow)** mechanism across API boundaries with signals.
 2. Carrying request-scoped data across API boundaries.
 
-### A couple of rules of thumb to start
+## A couple of rules of thumb to start
 
-1. Only entry-point functions (the one at the top of a call chain) should create an empty context (i.e., `context.Background()`). For example, `main()`, `TestXxx()`. The HTTP library creates a custom context for each request, which you should access and pass. Of course, mid-chain functions can create child contexts to pass along if they need to share data or have flow control over the functions they call.
+1. Only entry-point functions (the one at the top of a call chain) should create an empty context
+   (i.e., `context.Background()`). For example, `main()`, `TestXxx()`.
+   The HTTP library creates a custom context for each request,
+   which you should access and pass. Of course, mid-chain functions can create child contexts
+   to pass along if they need to share data or have flow control over the functions they call.
 
-   ```go
+   ```go {4,5}
    // Create a new context.
    parent, cancelParent := context.WithCancel(context.Background())
    // Derive child contexts from parent.
@@ -26,27 +36,36 @@ Context is one of the foundational building blocks in Go. Anyone with even a cur
    childB, _ := context.WithDeadline(parent, time.Now().Add(1 * time.Minute)
    ```
 
-2. Contexts are (only) passed down the call chain. If you’re not in an entry-point function and you need to call a function that takes a context, your function should accept a context and pass that along. But what if, for some reason, you can’t currently get access to the context at the top of the chain? In that case, use `context.TODO()`. This signals that the context is not yet available, and further work is required. Perhaps maintainers of another library you depend on will need to extend their functions to accept a context so that you, in turn, can pass it on. Of course, a function should never be returning a context.
+2. Contexts are (only) passed down the call chain.
+   If you're not in an entry-point function, and you need to call a function that takes a context,
+   your function should accept a context and pass that along.
+   But what if, for some reason, you can't currently get access to the context at the top of the chain?
+   In that case, use `context.TODO()`. This signals that the context is not yet available,
+   and further work is required. Perhaps maintainers of another library you depend on will need to extend their
+   functions to accept a context so that you, in turn, can pass it on. Of course,
+   a function should never be returning a context.
 
-## Rangefunc
+# Rangefunc
 
-[Go Wiki: Rangefunc Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
+- [Go Wiki: Rangefunc Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
 
-## Generics
+# Generics
 
-[Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
+- [Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
+- [An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
+- [Type Parameters Proposal](https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md)
 
-[An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
+The Go 1.18 release adds support for generics.
+Generics are a way of writing code that is independent of the specific types being used.
+Functions and types may now be written to use any of a set of types.
 
-[Type Parameters Proposal](https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md)
+## Type Parameters
 
-The Go 1.18 release adds support for generics. Generics are a way of writing code that is independent of the specific types being used. Functions and types may now be written to use any of a set of types.
+Functions and types are now permitted to have type parameters.
+A type parameter list looks like an ordinary parameter list,
+except that it uses square brackets instead of parentheses.
 
-### Type Parameters
-
-Functions and types are now permitted to have type parameters. A type parameter list looks like an ordinary parameter list, except that it uses square brackets instead of parentheses.
-
-To show how this works, let’s start with the basic non-generic `Min` function for floating point values:
+To show how this works, let’s start with the basic non-generic `Min` function for floating point values:
 
 ```go
 func Min(x, y float64) float64 {
@@ -57,7 +76,9 @@ func Min(x, y float64) float64 {
 }
 ```
 
-We can make this function generic–make it work for different types–by adding a type parameter list. In this example we add a type parameter list with a single type parameter `T`, and replace the uses of `float64` with `T`.
+We can make this function generic–make it work for different types–by adding a type parameter list.
+In this example we add a type parameter list with a single type parameter `T`,
+and replace the uses of `float64` with `T`.
 
 ```go
 import "constraints"
@@ -111,7 +132,7 @@ This declaration says that the `Ordered` interface is the set of all integer, 
 
 For type constraints we usually don’t care about a specific type, such as `string`; we are interested in all string types. That is what the `~` token is for. The expression `~string` means the set of all types whose underlying type is `string`. This includes the type `string` itself as well as all types declared with definitions such as `type MyString string`.
 
-## Configuration 🔧
+# Configuration 🔧
 
 Personally, I love to have all configuration well-defined and structured, the thing that I couldn’t achieve with [viper](https://github.com/spf13/viper), so I prefer the following package:
 
@@ -158,7 +179,7 @@ k.Load(env.Provider("MYVAR_", ".", func(s string) string {
 }), nil)
 ```
 
-## Standard CLI 💾
+# Standard CLI 💾
 
 Having multiple sub-command for things like migrations, insert ground data, etc.
 
@@ -168,7 +189,7 @@ There is also another options, which uses generics and more advance concepts:
 
 [https://github.com/urfave/cli](https://github.com/urfave/cli)
 
-## HTTP Frameworks
+# HTTP Frameworks
 
 There are multiple frameworks in Go. I prefer echo for general use cases, but when there are performance criteria, I will choose fiber.
 
@@ -176,7 +197,7 @@ There are multiple frameworks in Go. I prefer echo for general use cases, but wh
 
 [https://github.com/labstack/echo](https://github.com/labstack/echo)
 
-## Telemetry
+# Telemetry
 
 I want to use a single library for all the logging, metrics and tracing, but until that day we need to use different libraries for each of them.
 
@@ -194,9 +215,9 @@ For metrics:
 
 Please note that for using open-telemetry you need multiple dependencies, so install them from an example.
 
-## Advanced Console UIs 💅
+# Advanced Console UIs 💅
 
-_pterm_ is useful when you need colorful texts.
+*pterm* is useful when you need colorful texts.
 
 [https://github.com/pterm/pterm](https://github.com/pterm/pterm)
 
@@ -206,7 +227,7 @@ But when you need advance TUI features:
 
 [https://github.com/gizak/termui](https://github.com/gizak/termui)
 
-## Testing 🧨
+# Testing 🧨
 
 You can write tests using suites or using the behavior testing.
 
@@ -214,7 +235,7 @@ You can write tests using suites or using the behavior testing.
 
 [https://github.com/stretchr/testify](https://github.com/stretchr/testify)
 
-## ORM
+# ORM
 
 ORM means Object Relational Mapper, it helps you to manage your database models and queries easier. In Go, people may prefer to write down their queries like man, but we have the following ORMs in Go:
 
@@ -222,11 +243,11 @@ ORM means Object Relational Mapper, it helps you to manage your database models 
 
 [https://github.com/ent/ent](https://github.com/ent/ent)
 
-_`bun`_ is a _SQL-first Golang ORM_ provided by Uptrace.
+*`bun`* is a *SQL-first Golang ORM* provided by Uptrace.
 
 [https://github.com/uptrace/bun](https://github.com/uptrace/bun)
 
-_`gorm`_ is easy and fun, but you also prefer to write down your queries, like man 💪.
+*`gorm`* is easy and fun, but you also prefer to write down your queries, like man 💪.
 
 [https://github.com/go-gorm/gorm](https://github.com/go-gorm/gorm)
 
@@ -234,9 +255,9 @@ _`gorm`_ is easy and fun, but you also prefer to write down your queries, like m
 
 [https://github.com/volatiletech/sqlboiler](https://github.com/volatiletech/sqlboiler)
 
-## Redis
+# Redis
 
-The popular and backward-compatible Redis library that has _context_ and an awesome sub-package named `extra` which has things like _tracing_, _monitoring_, etc.
+The popular and backward-compatible Redis library that has *context* and an awesome sub-package named `extra` which has things like *tracing*, *monitoring*, etc.
 
 [https://github.com/redis/go-redis](https://github.com/redis/go-redis)
 
@@ -246,7 +267,7 @@ There is a new library which is fun and only works on new versions of Redis:
 
 [https://github.com/redis/rueidis](https://github.com/redis/rueidis)
 
-## MongoDB 🥭
+# MongoDB 🥭
 
 There is no good ORM for MongoDB in Go, so its official database driver is the best choice:
 
@@ -254,13 +275,13 @@ There is no good ORM for MongoDB in Go, so its official database driver is the b
 
 [](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo)
 
-## Task Queue 😴
+# Task Queue 😴
 
 Sometimes you want to queue tasks and process them later. `Asynq` library can do it for you with Redis, but I think using Redis on scale is a drawback of this library. I prefer to use Jetstream for these kinds of things.
 
 [https://github.com/hibiken/asynq](https://github.com/hibiken/asynq)
 
-## Dependency Injection 💉
+# Dependency Injection 💉
 
 Generating code on Golang is not my interest, but this framework is really nice and easily can generate useful binding.
 
@@ -270,7 +291,7 @@ These frameworks can do the dependency injection without code generation, and I 
 
 [https://github.com/google/wire](https://github.com/google/wire)
 
-### Fx
+## Fx
 
 [https://github.com/uber-go/fx](https://github.com/uber-go/fx)
 
@@ -352,14 +373,14 @@ During **execution**, Fx will,
 - wait for a signal to stop running
 - run all shutdown hooks appended to the application
 
-![fx-flow](go/fx-flow.png)
+![fx-flow](./go/fx-flow.png)
 
 **Lifecycle hooks**
 
 Lifecycle hooks provide the ability to schedule work to be executed by Fx, when the application starts up or shuts down. Fx provides two kinds of hooks:
 
-- _Startup hooks_, also referred to as `OnStart` hooks. These run in the order they were appended.
-- _Shutdown hooks_, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
+- *Startup hooks*, also referred to as `OnStart` hooks. These run in the order they were appended.
+- *Shutdown hooks*, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
 
 Typically, components that provide a startup hook also provide a corresponding shutdown hook to release the resources they acquired at startup.
 
@@ -401,7 +422,7 @@ func SetupGateways(conn *sql.DB) (Gateways, error) {
 }
 ```
 
-## GraphQL
+# GraphQL
 
 GraphQL is an awesome way to communicate data with the frontend team. Using GraphQL you can ask the frontend team to write queries for accessing the backend data and because of that there is no need to design different APIs for different requests. You have one API to rule them all.
 
