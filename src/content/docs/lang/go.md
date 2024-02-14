@@ -146,7 +146,7 @@ Personally, I love to have all configuration well-defined and structured, the th
 
 For using `koanf` you need to install its core package besides the required providers and parsers as follows:
 
-```bash
+```shell
 go get -u github.com/knadh/koanf/v2
 
 go get -u github.com/knadh/koanf/providers/file
