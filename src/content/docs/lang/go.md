@@ -140,10 +140,7 @@ This includes the type `string` itself as well as all types declared with defini
 ## Configuration 🔧
 
 Personally, I love to have all configuration well-defined and structured, the thing that I couldn't achieve with
-[viper](https://github.com/spf13/viper), so I prefer the following package:
-
-[https://github.com/knadh/koanf](https://github.com/knadh/koanf)
-
+[viper](https://github.com/spf13/viper), so I prefer [koanf](https://github.com/knadh/koanf).
 For using `koanf` you need to install its core package besides the required providers and parsers as follows:
 
 ```shell
