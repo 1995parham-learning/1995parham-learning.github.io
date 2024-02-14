@@ -5,6 +5,9 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   integrations: [
     starlight({
+      editLink: {
+        baseUrl: 'https://github.com/1995parham-learning/1995parham-learning.github.io/edit/main/',
+      },
       title: "Parham's Notes",
       social: {
         github:
