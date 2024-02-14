@@ -5,7 +5,7 @@ description: Learn to use Golang and its related libraries.
 
 - [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
 
-# Context
+## Context
 
 :::note
 ⭐ There are three main rules to observe when handling context plumbing in Go: only entrypoint functions
@@ -20,7 +20,7 @@ as it's the first argument passed to functions that accept contexts. I see the p
 1. Provide a **[control-flow](https://en.wikipedia.org/wiki/Control_flow)** mechanism across API boundaries with signals.
 2. Carrying request-scoped data across API boundaries.
 
-## A couple of rules of thumb to start
+### A couple of rules of thumb to start
 
 1. Only entry-point functions (the one at the top of a call chain) should create an empty context
    (i.e., `context.Background()`). For example, `main()`, `TestXxx()`.
@@ -45,11 +45,11 @@ as it's the first argument passed to functions that accept contexts. I see the p
    functions to accept a context so that you, in turn, can pass it on. Of course,
    a function should never be returning a context.
 
-# Rangefunc
+## Rangefunc
 
 - [Go Wiki: Rangefunc Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
 
-# Generics
+## Generics
 
 - [Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
 - [An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
@@ -59,7 +59,7 @@ The Go 1.18 release adds support for generics.
 Generics are a way of writing code that is independent of the specific types being used.
 Functions and types may now be written to use any of a set of types.
 
-## Type Parameters
+### Type Parameters
 
 Functions and types are now permitted to have type parameters.
 A type parameter list looks like an ordinary parameter list,
@@ -106,7 +106,7 @@ fmin := GMin[float64]
 m := fmin(2.71, 3.14)
 ```
 
-### Type Sets
+#### Type Sets
 
 In Go, type constraints must be interfaces. That is, an interface type can be used as a value type, and it can also be used as a meta-type. Interfaces define methods, so obviously we can express type constraints that require certain methods to be present. But `constraints.Ordered` is an interface type too, and the < operator is not a method.
 
@@ -137,7 +137,7 @@ For type constraints we usually don't care about a specific type, such as `strin
 That is what the `~` token is for. The expression `~string` means the set of all types whose underlying type is `string`.
 This includes the type `string` itself as well as all types declared with definitions such as `type MyString string`.
 
-# Configuration 🔧
+## Configuration 🔧
 
 Personally, I love to have all configuration well-defined and structured, the thing that I couldn't achieve with
 [viper](https://github.com/spf13/viper), so I prefer the following package:
@@ -187,7 +187,7 @@ k.Load(env.Provider("MYVAR_", ".", func(s string) string {
 }), nil)
 ```
 
-# Standard CLI 💾
+## Standard CLI 💾
 
 Having multiple sub-command for things like migrations, insert ground data, etc.
 
@@ -197,14 +197,14 @@ There is also another options, which uses generics and more advance concepts:
 
 [https://github.com/urfave/cli](https://github.com/urfave/cli)
 
-# HTTP Frameworks
+## HTTP Frameworks
 
 There are multiple frameworks in Go. I prefer echo for general use cases, but when there are performance criteria, I will choose fiber.
 
 - [fiber](https://github.com/gofiber/fiber)
 - [echo](https://github.com/labstack/echo)
 
-# Telemetry
+## Telemetry
 
 I want to use a single library for all the logging, metrics and tracing,
 but until that day we need to use different libraries for each of them.
@@ -223,7 +223,7 @@ For metrics:
 
 Please note that for using open-telemetry you need multiple dependencies, so install them from an example.
 
-# Advanced Console UIs 💅
+## Advanced Console UIs 💅
 
 [`pterm`](https://github.com/pterm/pterm) is useful when you need colorful texts.
 But when you need advance TUI features:
@@ -231,7 +231,7 @@ But when you need advance TUI features:
 - [bubbletea](https://github.com/charmbracelet/bubbletea)
 - [termui](https://github.com/gizak/termui)
 
-# Testing 🧨
+## Testing 🧨
 
 You can write tests using suites or using the behavior testing.
 
@@ -239,7 +239,7 @@ You can write tests using suites or using the behavior testing.
 
 [https://github.com/stretchr/testify](https://github.com/stretchr/testify)
 
-# ORM
+## ORM
 
 ORM means Object Relational Mapper, it helps you to manage your database models and queries easier. In Go, people may prefer to write down their queries like man, but we have the following ORMs in Go:
 
@@ -248,25 +248,25 @@ ORM means Object Relational Mapper, it helps you to manage your database models 
 - [`gorm`](https://github.com/go-gorm/gorm) is easy and fun, but you also prefer to write down your queries, like man 💪.
 - [`sqlboiler`](https://github.com/volatiletech/sqlboiler)
 
-# Redis
+## Redis
 
-## [`go-redis`](https://github.com/redis/go-redis)
+### [`go-redis`](https://github.com/redis/go-redis)
 
 The popular and backward-compatible Redis library which has *context* and an awesome sub-package named [`extra`](https://github.com/redis/go-redis/tree/master/extra)
 which has things like *tracing*, *monitoring*, etc.
 
-## [`rueidis`](https://github.com/redis/rueidis)
+### [`rueidis`](https://github.com/redis/rueidis)
 
 It is a new library which is fun and only works on new versions of Redis:
 
-# MongoDB 🥭
+## MongoDB 🥭
 
 There is no good ORM for MongoDB in Go, so its official database driver is the best choice.
 Besides that, it has [`otelmongo`](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo) telemetry package.
 
 - [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
 
-# Task Queue 😴
+## Task Queue 😴
 
 Sometimes you want to queue tasks and process them later. `Asynq` library can do it for you with Redis,
 but I think using Redis on scale is a drawback of this library.
@@ -274,7 +274,7 @@ I prefer to use Jetstream for these kinds of things.
 
 - [asynq](https://github.com/hibiken/asynq)
 
-# Dependency Injection 💉
+## Dependency Injection 💉
 
 Generating code on Golang is not my interest, but this framework is really nice and easily can generate useful binding.
 These frameworks can do the dependency injection without code generation, and I kinda like them:
@@ -282,7 +282,7 @@ These frameworks can do the dependency injection without code generation, and I 
 - [do](https://github.com/samber/do)
 - [wire](https://github.com/google/wire)
 
-## [Fx](https://github.com/uber-go/fx)
+### [Fx](https://github.com/uber-go/fx)
 
 > Dependency injection system for Go.
 
@@ -342,7 +342,7 @@ func Provide(lc fx.Lifecycle, store *urlsvc.URLSvc, logger *zap.Logger, tele tel
 }
 ```
 
-### Application lifecycle
+#### Application lifecycle
 
 The lifecycle of an Fx application has two high-level phases: *initialization* and *execution*.
 Both of these, in turn are comprised of multiple steps.
@@ -361,7 +361,7 @@ During **execution**, Fx will,
 
 ![fx-flow](./go/fx-flow.png)
 
-### Lifecycle hooks
+#### Lifecycle hooks
 
 Lifecycle hooks provide the ability to schedule work to be executed by Fx,
 when the application starts up or shuts down. Fx provides two kinds of hooks:
@@ -378,11 +378,11 @@ Therefore, hooks are expected to block only as long as they need to *schedule* w
 - hooks **should** schedule long-running tasks in background goroutines
 - shutdown hooks **should** stop the background work started by startup hooks
 
-### Modules
+#### Modules
 
 A Fx module is a shareable Go library or package that provides self-contained functionality to an Fx application.\*\*\*\*
 
-### Result Structs
+#### Result Structs
 
 Result structs are the inverse of parameter structs. These structs represent multiple outputs from a single function as fields. Fx treats all structs embedding fx.Out as result structs, so other constructors can rely on the result struct's fields directly.
 
@@ -410,7 +410,7 @@ func SetupGateways(conn *sql.DB) (Gateways, error) {
 }
 ```
 
-# GraphQL
+## GraphQL
 
 GraphQL is an awesome way to communicate data with the frontend team. Using GraphQL you can ask the frontend team to write queries for accessing the backend data and because of that there is no need to design different APIs for different requests. You have one API to rule them all.
 
