@@ -45,9 +45,9 @@ as it's the first argument passed to functions that accept contexts. I see the p
    functions to accept a context so that you, in turn, can pass it on. Of course,
    a function should never be returning a context.
 
-## Rangefunc
+## `Rangefunc`
 
-- [Go Wiki: Rangefunc Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
+- [Go Wiki: `Rangefunc` Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
 
 ## Generics
 
@@ -188,11 +188,11 @@ k.Load(env.Provider("MYVAR_", ".", func(s string) string {
 
 Having multiple sub-command for things like migrations, insert ground data, etc.
 
-[https://github.com/spf13/cobra](https://github.com/spf13/cobra)
+[cobra](https://github.com/spf13/cobra)
 
 There is also another options, which uses generics and more advance concepts:
 
-[https://github.com/urfave/cli](https://github.com/urfave/cli)
+[cli](https://github.com/urfave/cli)
 
 ## HTTP Frameworks
 
