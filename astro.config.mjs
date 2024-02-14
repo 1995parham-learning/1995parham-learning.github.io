@@ -8,6 +8,10 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/1995parham-learning/1995parham-learning.github.io/edit/main/',
       },
+      logo: {
+        src: './src/assets/logo.png',
+      },
+      favicon: '/src/assets/logo.png',
       title: "Parham's Notes",
       social: {
         github:
