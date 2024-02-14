@@ -65,7 +65,7 @@ Functions and types are now permitted to have type parameters.
 A type parameter list looks like an ordinary parameter list,
 except that it uses square brackets instead of parentheses.
 
-To show how this works, let’s start with the basic non-generic `Min` function for floating point values:
+To show how this works, let's start with the basic non-generic `Min` function for floating point values:
 
 ```go
 func Min(x, y float64) float64 {
@@ -76,7 +76,7 @@ func Min(x, y float64) float64 {
 }
 ```
 
-We can make this function generic–make it work for different types–by adding a type parameter list.
+We can make this function generic-make it work for different types-by adding a type parameter list.
 In this example we add a type parameter list with a single type parameter `T`,
 and replace the uses of `float64` with `T`.
 
@@ -97,7 +97,7 @@ It is now possible to call this function with a type argument by writing a call 
 x := GMin[int](2, 3)
 ```
 
-Providing the type argument to `GMin`, in this case `int`, is called *instantiation*. Instantiation happens in two steps. First, the compiler substitutes all type arguments for their respective type parameters throughout the generic function or type. Second, the compiler verifies that each type argument satisfies the respective constraint.
+Providing the type argument to `GMin`, in this case `int`, is called *instantiation*. Instantiation happens in two steps. First, the compiler substitutes all type arguments for their respective type parameters throughout the generic function or type. Second, the compiler verifies that each type argument satisfies the respective constraint.
 
 After successful instantiation we have a non-generic function that can be called just like any other function. For example, in code like
 
@@ -108,19 +108,19 @@ m := fmin(2.71, 3.14)
 
 ### Type Sets
 
-In Go, type constraints must be interfaces. That is, an interface type can be used as a value type, and it can also be used as a meta-type. Interfaces define methods, so obviously we can express type constraints that require certain methods to be present. But `constraints.Ordered` is an interface type too, and the < operator is not a method.
+In Go, type constraints must be interfaces. That is, an interface type can be used as a value type, and it can also be used as a meta-type. Interfaces define methods, so obviously we can express type constraints that require certain methods to be present. But `constraints.Ordered` is an interface type too, and the < operator is not a method.
 
 To make this work, we look at interfaces in a new way.
 
 Until recently, the Go spec said that an interface defines a method set, which is roughly the set of methods enumerated in the interface. Any type that implements all those methods implements that interface.
 
-But another way of looking at this is to say that the interface defines a set of types, namely the types that implement those methods. From this perspective, any type that is an element of the interface’s type set implements the interface.
+But another way of looking at this is to say that the interface defines a set of types, namely the types that implement those methods. From this perspective, any type that is an element of the interface's type set implements the interface.
 
 For our purposes, though, the type set view has an advantage over the method set view: we can explicitly add types to the set, and thus control the type set in new ways.
 
-We have extended the syntax for interface types to make this work. For instance, `interface{ int|string|bool }` defines the type set containing the types `int`, `string`, and `bool`.
+We have extended the syntax for interface types to make this work. For instance, `interface{ int|string|bool }` defines the type set containing the types `int`, `string`, and `bool`.
 
-Now let’s look at the actual definition of `constraints.Ordered`:
+Now let's look at the actual definition of `constraints.Ordered`:
 
 ```go
 type Ordered interface {
@@ -128,13 +128,19 @@ type Ordered interface {
 }
 ```
 
-This declaration says that the `Ordered` interface is the set of all integer, floating-point, and string types. The vertical bar expresses a union of types (or sets of types in this case). `Integer` and `Float` are interface types that are similarly defined in the `constraints` package. Note that there are no methods defined by the `Ordered` interface.
+This declaration says that the `Ordered` interface is the set of all integer, floating-point, and string types.
+The vertical bar expresses a union of types (or sets of types in this case). `Integer` and `Float` are interface
+types that are similarly defined in the `constraints` package.
+Note that there are no methods defined by the `Ordered` interface.
 
-For type constraints we usually don’t care about a specific type, such as `string`; we are interested in all string types. That is what the `~` token is for. The expression `~string` means the set of all types whose underlying type is `string`. This includes the type `string` itself as well as all types declared with definitions such as `type MyString string`.
+For type constraints we usually don't care about a specific type, such as `string`; we are interested in all string types.
+That is what the `~` token is for. The expression `~string` means the set of all types whose underlying type is `string`.
+This includes the type `string` itself as well as all types declared with definitions such as `type MyString string`.
 
 # Configuration 🔧
 
-Personally, I love to have all configuration well-defined and structured, the thing that I couldn’t achieve with [viper](https://github.com/spf13/viper), so I prefer the following package:
+Personally, I love to have all configuration well-defined and structured, the thing that I couldn't achieve with
+[viper](https://github.com/spf13/viper), so I prefer the following package:
 
 [https://github.com/knadh/koanf](https://github.com/knadh/koanf)
 
@@ -150,9 +156,11 @@ go get -u github.com/knadh/koanf/providers/structs
 go get -u github.com/knadh/koanf/parsers/toml
 ```
 
-`koanf.Provider` is a generic interface that provides configuration, for example, from files, environment variables, HTTP sources, or anywhere. The configuration can either be raw bytes that a parser can parse, or it can be a nested `map[string]interface{}` that can be directly loaded.
+`koanf.Provider` is a generic interface that provides configuration, for example, from files, environment variables, HTTP sources, or anywhere.
+The configuration can either be raw bytes that a parser can parse, or it can be a nested `map[string]interface{}` that can be directly loaded.
 
-`koanf.Parser` is a generic interface that takes raw bytes, parses, and returns a nested `map[string]interface{}`. For example, JSON and YAML parsers.
+`koanf.Parser` is a generic interface that takes raw bytes, parses, and returns a nested `map[string]interface{}`.
+For example, JSON and YAML parsers.
 
 ```go
 // Load JSON config.
@@ -193,13 +201,13 @@ There is also another options, which uses generics and more advance concepts:
 
 There are multiple frameworks in Go. I prefer echo for general use cases, but when there are performance criteria, I will choose fiber.
 
-[https://github.com/gofiber/fiber](https://github.com/gofiber/fiber)
-
-[https://github.com/labstack/echo](https://github.com/labstack/echo)
+- [fiber](https://github.com/gofiber/fiber)
+- [echo](https://github.com/labstack/echo)
 
 # Telemetry
 
-I want to use a single library for all the logging, metrics and tracing, but until that day we need to use different libraries for each of them.
+I want to use a single library for all the logging, metrics and tracing,
+but until that day we need to use different libraries for each of them.
 
 For tracing and metrics:
 
@@ -217,15 +225,11 @@ Please note that for using open-telemetry you need multiple dependencies, so ins
 
 # Advanced Console UIs 💅
 
-*pterm* is useful when you need colorful texts.
-
-[https://github.com/pterm/pterm](https://github.com/pterm/pterm)
-
+[`pterm`](https://github.com/pterm/pterm) is useful when you need colorful texts.
 But when you need advance TUI features:
 
-[https://github.com/charmbracelet/bubbletea](https://github.com/charmbracelet/bubbletea)
-
-[https://github.com/gizak/termui](https://github.com/gizak/termui)
+- [bubbletea](https://github.com/charmbracelet/bubbletea)
+- [termui](https://github.com/gizak/termui)
 
 # Testing 🧨
 
@@ -239,79 +243,60 @@ You can write tests using suites or using the behavior testing.
 
 ORM means Object Relational Mapper, it helps you to manage your database models and queries easier. In Go, people may prefer to write down their queries like man, but we have the following ORMs in Go:
 
-`ent`
-
-[https://github.com/ent/ent](https://github.com/ent/ent)
-
-*`bun`* is a *SQL-first Golang ORM* provided by Uptrace.
-
-[https://github.com/uptrace/bun](https://github.com/uptrace/bun)
-
-*`gorm`* is easy and fun, but you also prefer to write down your queries, like man 💪.
-
-[https://github.com/go-gorm/gorm](https://github.com/go-gorm/gorm)
-
-`sqlboiler`
-
-[https://github.com/volatiletech/sqlboiler](https://github.com/volatiletech/sqlboiler)
+- [`ent`](https://github.com/ent/ent)
+- [`bun`](https://github.com/uptrace/bun) is a *SQL-first Golang ORM* provided by Uptrace.
+- [`gorm`](https://github.com/go-gorm/gorm) is easy and fun, but you also prefer to write down your queries, like man 💪.
+- [`sqlboiler`](https://github.com/volatiletech/sqlboiler)
 
 # Redis
 
-The popular and backward-compatible Redis library that has *context* and an awesome sub-package named `extra` which has things like *tracing*, *monitoring*, etc.
+## [`go-redis`](https://github.com/redis/go-redis)
 
-[https://github.com/redis/go-redis](https://github.com/redis/go-redis)
+The popular and backward-compatible Redis library which has *context* and an awesome sub-package named [`extra`](https://github.com/redis/go-redis/tree/master/extra)
+which has things like *tracing*, *monitoring*, etc.
 
-[](https://github.com/redis/go-redis/tree/master/extra)
+## [`rueidis`](https://github.com/redis/rueidis)
 
-There is a new library which is fun and only works on new versions of Redis:
-
-[https://github.com/redis/rueidis](https://github.com/redis/rueidis)
+It is a new library which is fun and only works on new versions of Redis:
 
 # MongoDB 🥭
 
-There is no good ORM for MongoDB in Go, so its official database driver is the best choice:
+There is no good ORM for MongoDB in Go, so its official database driver is the best choice.
+Besides that, it has [`otelmongo`](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo) telemetry package.
 
-[https://github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
-
-[](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo)
+- [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
 
 # Task Queue 😴
 
-Sometimes you want to queue tasks and process them later. `Asynq` library can do it for you with Redis, but I think using Redis on scale is a drawback of this library. I prefer to use Jetstream for these kinds of things.
+Sometimes you want to queue tasks and process them later. `Asynq` library can do it for you with Redis,
+but I think using Redis on scale is a drawback of this library.
+I prefer to use Jetstream for these kinds of things.
 
-[https://github.com/hibiken/asynq](https://github.com/hibiken/asynq)
+- [asynq](https://github.com/hibiken/asynq)
 
 # Dependency Injection 💉
 
 Generating code on Golang is not my interest, but this framework is really nice and easily can generate useful binding.
-
 These frameworks can do the dependency injection without code generation, and I kinda like them:
 
-[https://github.com/samber/do](https://github.com/samber/do)
+- [do](https://github.com/samber/do)
+- [wire](https://github.com/google/wire)
 
-[https://github.com/google/wire](https://github.com/google/wire)
+## [Fx](https://github.com/uber-go/fx)
 
-## Fx
+> Dependency injection system for Go.
 
-[https://github.com/uber-go/fx](https://github.com/uber-go/fx)
+**Eliminate globals**: Fx helps you remove global state from your application. No more init() or global variables. Use Fx-managed singletons.
 
-Dependency injection system for Go.
+**Code reuse**: Fx lets teams within your organization build loosely-coupled and well-integrated shareable components.
 
-**Eliminate globals**
+**Battle-tested**: Fx is the backbone of nearly all Go services at Uber.
 
-Fx helps you remove global state from your application. No more init() or global variables. Use Fx-managed singletons.
+We built an empty Fx application by calling `fx.New` with no arguments.
+Applications will normally pass arguments to `fx.New` to set up their components.
 
-**Code reuse**
-
-Fx lets teams within your organization build loosely-coupled and well-integrated shareable components.
-
-**Battle-tested**
-
-Fx is the backbone of nearly all Go services at Uber.
-
-We built an empty Fx application by calling `fx.New` with no arguments. Applications will normally pass arguments to `fx.New` to set up their components.
-
-We then run this application with the `App.Run` method. This method blocks until it receives a signal to stop, and it then runs any cleanup operations necessary before exiting.
+We then run this application with the `App.Run` method. This method blocks until it receives a signal to stop,
+and it then runs any cleanup operations necessary before exiting.
 
 Fx is primarily intended for long-running server applications; these applications typically receive a signal from the deployment system when it's time to shut down.
 
@@ -357,17 +342,18 @@ func Provide(lc fx.Lifecycle, store *urlsvc.URLSvc, logger *zap.Logger, tele tel
 }
 ```
 
-**Application lifecycle**
+### Application lifecycle
 
-The lifecycle of an Fx application has two high-level phases: *initialization* and *execution*. Both of these, in turn are comprised of multiple steps.
+The lifecycle of an Fx application has two high-level phases: *initialization* and *execution*.
+Both of these, in turn are comprised of multiple steps.
 
-During **initialization**, Fx will,
+During **initialization**, Fx will,
 
-- register all constructors passed to `fx.Provide`
-- register all decorators passed to `fx.Decorate`
-- run all functions passed to `fx.Invoke`, calling constructors and decorators as needed
+- register all constructors passed to `fx.Provide`
+- register all decorators passed to `fx.Decorate`
+- run all functions passed to `fx.Invoke`, calling constructors and decorators as needed
 
-During **execution**, Fx will,
+During **execution**, Fx will,
 
 - run all startup hooks appended to the application by providers, decorators, and invoked functions
 - wait for a signal to stop running
@@ -375,26 +361,28 @@ During **execution**, Fx will,
 
 ![fx-flow](./go/fx-flow.png)
 
-**Lifecycle hooks**
+### Lifecycle hooks
 
-Lifecycle hooks provide the ability to schedule work to be executed by Fx, when the application starts up or shuts down. Fx provides two kinds of hooks:
+Lifecycle hooks provide the ability to schedule work to be executed by Fx,
+when the application starts up or shuts down. Fx provides two kinds of hooks:
 
-- *Startup hooks*, also referred to as `OnStart` hooks. These run in the order they were appended.
-- *Shutdown hooks*, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
+- *Startup hooks*, also referred to as `OnStart` hooks. These run in the order they were appended.
+- *Shutdown hooks*, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
 
 Typically, components that provide a startup hook also provide a corresponding shutdown hook to release the resources they acquired at startup.
 
-Fx runs both kinds of hooks with a hard timeout enforcement (by default, 15 seconds). Therefore, hooks are expected to block only as long as they need to *schedule* work. In other words,
+Fx runs both kinds of hooks with a hard timeout enforcement (by default, 15 seconds).
+Therefore, hooks are expected to block only as long as they need to *schedule* work. In other words,
 
-- hooks **must not** block to run long-running tasks synchronously
-- hooks **should** schedule long-running tasks in background goroutines
-- shutdown hooks **should** stop the background work started by startup hooks
+- hooks **must not** block to run long-running tasks synchronously
+- hooks **should** schedule long-running tasks in background goroutines
+- shutdown hooks **should** stop the background work started by startup hooks
 
-**Modules**
+### Modules
 
 A Fx module is a shareable Go library or package that provides self-contained functionality to an Fx application.\*\*\*\*
 
-**Result Structs**
+### Result Structs
 
 Result structs are the inverse of parameter structs. These structs represent multiple outputs from a single function as fields. Fx treats all structs embedding fx.Out as result structs, so other constructors can rely on the result struct's fields directly.
 
