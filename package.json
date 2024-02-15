@@ -15,7 +15,7 @@
     "@iconify-json/skill-icons": "^1.1.7",
     "astro": "^4.3.4",
     "astro-icon": "^1.1.0",
-    "sharp": "^0.32.5",
+    "sharp": "^0.33.2",
     "typescript": "^5.3.3"
   }
 }
