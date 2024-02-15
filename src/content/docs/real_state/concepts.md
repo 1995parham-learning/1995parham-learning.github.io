@@ -36,15 +36,39 @@ studies or retreats.
   - Boudoir
   - Cabinet
   - Nursery
-Spaces:
-AtriumBalconyBreezewayConversation pitCubby-holeDeckElevator dumbwaiterEntryway/GenkanFireplace hearthFoyerHallHallwayInglenookLanaiLoftLoggiaOverhangPatioPorch screenedsleepingRampSecret passageStairsTerraceVerandaVestibule
-Utility and storage:
+- Spaces:
+  - Atrium
+  - Balcony
+  - Breezeway
+  - Conversation pit
+  - Cubby-hole
+  - Deck
+  - Elevator (dumbwaiter)
+  - Entryway / Genkan
+  - Fireplace (hearth)
+  - Foyer
+  - Hall
+  - Hallway
+  - Inglenook
+  - Lanai
+  - Loft
+  - Loggia
+  - Overhang
+  - Patio
+  - Porch (screened / sleeping)
+  - Ramp
+  - Secret passage
+  - Stairs
+  - Terrace
+  - Veranda
+  - Vestibule
+- Utility and storage:
 AtticBasementCarportCloakroomClosetCrawl spaceElectrical roomEquipment roomFurnace room / Boiler roomGarageJanitorial closetLarderLaundry room / Utility roomMechanical room / floorPantryRoot cellarSemi-basementStorm cellar / Safe roomStudioWardrobeWine cellarWiring closetWorkshop
-Great house areas:
+- Great house areas:
 AntechamberBallroomKitchen-related butler's pantrybutterysaucerysculleryspicerystill roomConservatory / OrangeryCourtyardDrawing roomGreat chamberGreat hallLibraryLong galleryLumber roomParlourSaunaServants' hallServants' quartersSmoking roomSolarState roomSwimming poolTurretUndercroft
-Other:
+- Other:
 FurnitureHidden roomHouse house planstylestypesMulti-family residentialSecondary suiteDuplexTerracedDetachedSemi-detachedTownhouseStudio apartment
-Architectural elements:
+- Architectural elements:
 ArchBalusterBelt courseBressummerCeilingChimneyColonnade / PorticoColumnCornice / EavesDomeDoorEllFloorFoundationGableGateLightingOrnamentPlumbingQuoinsRoofRoof lanternSill plateStyle listSkylightThresholdTransomVaultWallWindow
-Related:
+- Related:
 BackyardDrivewayFront yardGardenHomeHome improvementHome repairShedTree house
