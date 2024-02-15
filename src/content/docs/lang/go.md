@@ -137,7 +137,38 @@ and you can also write the logs on console and syslog at the same time.
 Structure logging increase the search efficiency for when you want to search among your
 logs on your log aggregation system.
 
-## Telemetry
+## Observability
+
+Observability lets us understand a system from the outside, by letting us ask questions
+about that system without knowing its inner workings.
+
+**Telemetry** refers to data emitted from a system, about its behavior. The data can come in the
+form of *traces*, *metrics*, and *logs*.
+
+**SLI**, or Service Level Indicator, represents a measurement of a service's behavior.
+**SLO**, or Service Level Objective, is the means by which reliability is communicated to an organization/other teams.
+
+I want to use a single library for all the logging, metrics and tracing,
+but until that day we need to use different libraries for each of them.
+
+For tracing and metrics:
+
+[@open-telemetry/opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go)
+
+For logging:
+
+[@uber-go/zap](https://github.com/uber-go/zap)
+
+For metrics:
+
+[@prometheus/client_golang](https://github.com/prometheus/client_golang)
+
+### OpenTelemetry
+
+OpenTelemetry is an Observability framework and toolkit designed to create and manage
+telemetry data such as **traces**, **metrics** and **logs**.
+A major goal of OpenTelemetry is that you can easily instrument your applications or systems,
+no matter their language, infrastructure, or runtime environment.
 
 The current status of the major functional components for OpenTelemetry Go is as follows:
 
@@ -151,9 +182,11 @@ Modules at major version 1 or greater will not depend on modules with major vers
 
 [OpenTelemetry Go API and SDK](https://github.com/open-telemetry/opentelemetry-go)
 
-### Exporter
+#### Exporter
 
-The SDK requires an exporter to be created. Exporters are packages that allow telemetry data to be emitted somewhere - either to the console (which is what we’re doing here), or to a remote system or collector for further analysis and/or enrichment. OpenTelemetry supports a variety of exporters through its ecosystem including popular open source tools like Jaeger, Zipkin, and Prometheus.
+The SDK requires an exporter to be created. Exporters are **packages** that allow telemetry data to be emitted somewhere - either to the console (which is what we're doing here),
+or to a remote system or collector for further analysis and/or enrichment.
+OpenTelemetry supports a variety of exporters through its ecosystem including popular open source tools like Jaeger, Zipkin, and Prometheus.
 
 ```go
 import stdout "go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
@@ -174,7 +207,7 @@ Exporter depend on the task and the service for example the Jaeger exporter is i
 import "go.opentelemetry.io/otel/exporters/jaeger"
 ```
 
-### Tracer Provider
+#### Tracer Provider
 
 This block of code will create a new batch span processor, a type of span processor that batches up multiple spans over a period of time, that writes to the exporter we created in the previous step.
 
@@ -191,9 +224,9 @@ This block of code will create a new batch span processor, a type of span proces
 
 OpenTelemetry requires a trace provider to be initialized in order to generate traces. A trace provider can have multiple span processors, which are components that allow for span data to be modified or exported after it’s created.
 
-### Quick Start
+#### Quick Start
 
-First, we’re asking the global trace provider for an instance of a tracer, which is the object that manages spans for our service.
+First, we're asking the global trace provider for an instance of a tracer, which is the object that manages spans for our service.
 
 ```go
 tracer := otel.Tracer("ex.com/basic")
@@ -435,25 +468,6 @@ There are multiple frameworks in Go. I prefer echo for general use cases, but wh
 
 - [fiber](https://github.com/gofiber/fiber)
 - [echo](https://github.com/labstack/echo)
-
-## Telemetry
-
-I want to use a single library for all the logging, metrics and tracing,
-but until that day we need to use different libraries for each of them.
-
-For tracing and metrics:
-
-[https://github.com/open-telemetry/opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go)
-
-For logging:
-
-[https://github.com/uber-go/zap](https://github.com/uber-go/zap)
-
-For metrics:
-
-[https://github.com/prometheus/client_golang](https://github.com/prometheus/client_golang)
-
-Please note that for using open-telemetry you need multiple dependencies, so install them from an example.
 
 ## Advanced Console UIs 💅
 
