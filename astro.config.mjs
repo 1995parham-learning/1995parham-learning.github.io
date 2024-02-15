@@ -15,7 +15,7 @@ export default defineConfig({
       logo: {
         src: './src/assets/logo.png'
       },
-      favicon: '/src/assets/logo.png',
+      favicon: './src/assets/logo.png',
       title: "Parham's Notes",
       social: {
         github: "https://github.com/1995parham-learning/1995parham-learning.github.io"
