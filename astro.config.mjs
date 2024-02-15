@@ -18,6 +18,7 @@ export default defineConfig({
       },
       favicon: "/logo.png",
       title: "Parham's Notes",
+      lastUpdated: true,
       social: {
         github:
           "https://github.com/1995parham-learning/1995parham-learning.github.io",
