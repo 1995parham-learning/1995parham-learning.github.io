@@ -35,6 +35,10 @@ export default defineConfig({
               label: "Rust",
               link: "/lang/rust",
             },
+            {
+              label: "Python",
+              link: "/lang/python",
+            },
           ],
         },
       ],
