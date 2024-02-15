@@ -87,10 +87,77 @@ studies or retreats.
   - Wiring closet
   - Workshop
 - Great house areas:
-AntechamberBallroomKitchen-related butler's pantrybutterysaucerysculleryspicerystill roomConservatory / OrangeryCourtyardDrawing roomGreat chamberGreat hallLibraryLong galleryLumber roomParlourSaunaServants' hallServants' quartersSmoking roomSolarState roomSwimming poolTurretUndercroft
+  - Antechamber
+  - Ballroom
+  - Kitchen-related (butler's pantry/buttery/saucery/scullery/spicery/still room)
+  - Conservatory / Orangery
+  - Courtyard
+  - Drawing room
+  - Great chamber
+  - Great hall
+  - Library
+  - Long gallery
+  - Lumber room
+  - Parlour
+  - Sauna
+  - Servants' hall
+  - Servants' quarters
+  - Smoking room
+  - Solar
+  - State room
+  - Swimming pool
+  - Turret
+  - Undercroft
 - Other:
-FurnitureHidden roomHouse house planstylestypesMulti-family residentialSecondary suiteDuplexTerracedDetachedSemi-detachedTownhouseStudio apartment
+  - Furniture
+  - Hidden room
+  - House (house plan/style/stypes)
+  - Multi-family residential
+  - Secondary suite
+  - Duplex
+  - Terraced
+  - Detached
+  - Semi-detached
+  - Townhouse
+  - Studio apartment
 - Architectural elements:
-ArchBalusterBelt courseBressummerCeilingChimneyColonnade / PorticoColumnCornice / EavesDomeDoorEllFloorFoundationGableGateLightingOrnamentPlumbingQuoinsRoofRoof lanternSill plateStyle listSkylightThresholdTransomVaultWallWindow
+  - Arch
+  - Baluster
+  - Belt course
+  - Bressummer
+  - Ceiling
+  - Chimney
+  - Colonnade / Portico
+  - Column
+  - Cornice / Eaves
+  - Dome
+  - Door
+  - Ell
+  - Floor
+  - Foundation
+  - Gable
+  - Gate
+  - Lighting
+  - Ornament
+  - Plumbing
+  - Quoins
+  - Roof
+  - Roof lantern
+  - Sill plate
+  - Style
+  - Skylight
+  - Threshold
+  - Transom
+  - Vault
+  - Wall
+  - Window
 - Related:
-BackyardDrivewayFront yardGardenHomeHome improvementHome repairShedTree house
+  - Backyard
+  - Driveway
+  - Front yard
+  - Garden
+  - Home
+  - Home improvement
+  - Home repair
+  - Shed
+  - Tree house
