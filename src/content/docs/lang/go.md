@@ -163,6 +163,11 @@ For metrics:
 
 [@prometheus/client_golang](https://github.com/prometheus/client_golang)
 
+### Span
+
+A **span** represents a unit of work or operation. It tracks specific operation that a request
+makes, painting a picture of what happen during the time in which that operation was executed.
+
 ### OpenTelemetry
 
 OpenTelemetry is an Observability framework and toolkit designed to create and manage
