@@ -63,7 +63,29 @@ studies or retreats.
   - Veranda
   - Vestibule
 - Utility and storage:
-AtticBasementCarportCloakroomClosetCrawl spaceElectrical roomEquipment roomFurnace room / Boiler roomGarageJanitorial closetLarderLaundry room / Utility roomMechanical room / floorPantryRoot cellarSemi-basementStorm cellar / Safe roomStudioWardrobeWine cellarWiring closetWorkshop
+  - Attic
+  - Basement
+  - Carport
+  - Cloakroom
+  - Closet
+  - Crawl space
+  - Electrical room
+  - Equipment room
+  - Furnace room / Boiler room
+  - Garage
+  - Janitorial closet
+  - Larder
+  - Laundry room / Utility room
+  - Mechanical room / floor
+  - Pantry
+  - Root cellar
+  - Semi-basement
+  - Storm cellar / Safe room
+  - Studio
+  - Wardrobe
+  - Wine cellar
+  - Wiring closet
+  - Workshop
 - Great house areas:
 AntechamberBallroomKitchen-related butler's pantrybutterysaucerysculleryspicerystill roomConservatory / OrangeryCourtyardDrawing roomGreat chamberGreat hallLibraryLong galleryLumber roomParlourSaunaServants' hallServants' quartersSmoking roomSolarState roomSwimming poolTurretUndercroft
 - Other:
