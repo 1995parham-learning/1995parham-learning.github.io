@@ -5,17 +5,17 @@ title: Python
 ## Class and static methods
 
 :::note
-🧠 *Changed in version 3.9:* Class methods can now wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
+🧠 _Changed in version 3.9:_ Class methods can now wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
 such as [`property()`](https://docs.python.org/3/library/functions.html#property).
 :::
 
 :::note
-🦖 *Changed in version 3.10:* Class methods now inherit the method attributes
+🦖 _Changed in version 3.10:_ Class methods now inherit the method attributes
 (`__module__`, `__name__`, `__qualname__`,`__doc__` and `__annotations__`) and have a new `__wrapped__` attribute.
 :::
 
 :::note
-🔥 *Changed in version 3.11:* Class methods can no longer wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
+🔥 _Changed in version 3.11:_ Class methods can no longer wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
 such as [`property()`](https://docs.python.org/3/library/functions.html#property).
 :::
 
@@ -50,9 +50,9 @@ bisect.bisect(a, x, lo=0, hi=len(a), *, key=None)
 ```
 
 Similar to [`bisect_left()`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left),
-but returns an insertion point which comes after (to the right of) any existing entries of *x* in *a*.
+but returns an insertion point which comes after (to the right of) any existing entries of _x_ in _a_.
 
-The returned insertion point *ip* partitions the array *a* into two slices such that `all(elem <= x for elem in a[lo : ip])` is true for the left slice and `all(elem > x for elem in a[ip : hi])` is true for the right slice.
+The returned insertion point _ip_ partitions the array _a_ into two slices such that `all(elem <= x for elem in a[lo : ip])` is true for the left slice and `all(elem > x for elem in a[ip : hi])` is true for the right slice.
 
 ## Itertools
 
@@ -64,11 +64,11 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 
 **Infinite iterators:**
 
-| Iterator                                                            | Arguments       | Results                                        | Example                               |
-| ------------------------------------------------------------------- | --------------- | ---------------------------------------------- | ------------------------------------- |
-| <https://docs.python.org/3/library/itertools.html#itertools.count>  | [start[, step]] | start, start+step, start+2\*step, …            | count(10) --> 10 11 12 13 14 ...      |
-| <https://docs.python.org/3/library/itertools.html#itertools.cycle>  | p               | p0, p1, … plast, p0, p1, …                     | cycle('ABCD') --> A B C D A B C D ... |
-| <https://docs.python.org/3/library/itertools.html#itertools.repeat> | elem [,n]       | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10            |
+| Iterator                                                                      | Arguments       | Results                                        | Example                               |
+| ----------------------------------------------------------------------------- | --------------- | ---------------------------------------------- | ------------------------------------- |
+| [`count`](https://docs.python.org/3/library/itertools.html#itertools.count)   | [start[, step]] | start, start+step, start+2\*step, …            | count(10) --> 10 11 12 13 14 ...      |
+| [`cycle`](https://docs.python.org/3/library/itertools.html#itertools.cycle)   | p               | p0, p1, … plast, p0, p1, …                     | cycle('ABCD') --> A B C D A B C D ... |
+| [`repeat`](https://docs.python.org/3/library/itertools.html#itertools.repeat) | elem [,n]       | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10            |
 
 **Iterators terminating on the shortest input sequence:**
 
@@ -104,9 +104,9 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 itertools.**batched**(*iterable*, *n*)
 ```
 
-Batch data from the *iterable* into tuples of length *n*.
+Batch data from the _iterable_ into tuples of length _n_.
 
-The last batch may be shorter than *n*. Loops over the input iterable and accumulates data into tuples up to size *n*. The input is consumed lazily, just enough to fill a batch. The result is yielded as soon as the batch is full or when the input iterable is exhausted:
+The last batch may be shorter than _n_. Loops over the input iterable and accumulates data into tuples up to size _n_. The input is consumed lazily, just enough to fill a batch. The result is yielded as soon as the batch is full or when the input iterable is exhausted:
 
 ```python
 
@@ -128,7 +128,7 @@ Python’s **iterators** and **iterables** are two different but related tools t
 
 ## Formatted Strings
 
-A *formatted string literal* or *f-string* is a string literal that is prefixed with `'f'` or `'F'`. These strings may contain replacement fields, which are expressions delimited by curly braces `{}`. While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
+A _formatted string literal_ or _f-string_ is a string literal that is prefixed with `'f'` or `'F'`. These strings may contain replacement fields, which are expressions delimited by curly braces `{}`. While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
 
 The parts of the string outside curly braces are treated literally, except that any doubled curly braces `'{{'` or `'}}'` are replaced with the corresponding single curly brace. A single opening curly bracket `'{'` marks a replacement field, which starts with a Python expression. To display both the expression text and its value after evaluation, (useful in debugging), an equal sign `'='` may be added after the expression. A conversion field, introduced by an exclamation point `'!'` may follow. A format specifier may also be appended, introduced by a colon `':'`. A replacement field ends with a closing curly bracket `'}'`.
 
@@ -439,7 +439,7 @@ y: list[int, str] = [1, 'foo']
 z: Mapping[str, str | int] = {}
 ```
 
-Unlike most other Python containers, however, it is common in idiomatic Python code for tuples to have elements which are not all of the same type. For this reason, tuples are special-cased in Python’s typing system. `[tuple](https://docs.python.org/3/library/stdtypes.html#tuple)` accepts *any number* of type arguments:
+Unlike most other Python containers, however, it is common in idiomatic Python code for tuples to have elements which are not all of the same type. For this reason, tuples are special-cased in Python’s typing system. `[tuple](https://docs.python.org/3/library/stdtypes.html#tuple)` accepts _any number_ of type arguments:
 
 ```python
 # OK: ``x`` is assigned to a tuple of length 1 where the sole element is an int
@@ -454,11 +454,11 @@ y: tuple[int, str] = (5, "foo")
 z: tuple[int] = (1, 2, 3)
 ```
 
-To denote a tuple which could be of *any* length, and in which all elements are of the same type `T`, use `tuple[T, ...]`. To denote an empty tuple, use `tuple[()]`. Using plain `tuple` as an annotation is equivalent to using `tuple[Any, ...]` .
+To denote a tuple which could be of _any_ length, and in which all elements are of the same type `T`, use `tuple[T, ...]`. To denote an empty tuple, use `tuple[()]`. Using plain `tuple` as an annotation is equivalent to using `tuple[Any, ...]` .
 
 ### **The type of class objects**
 
-A variable annotated with `C` may accept a value of type `C`. In contrast, a variable annotated with `type[C]` (or `[typing.Type[C]](https://docs.python.org/3/library/typing.html#typing.Type)`) may accept values that are classes themselves – specifically, it will accept the *class object* of `C`.
+A variable annotated with `C` may accept a value of type `C`. In contrast, a variable annotated with `type[C]` (or `[typing.Type[C]](https://docs.python.org/3/library/typing.html#typing.Type)`) may accept values that are classes themselves – specifically, it will accept the _class object_ of `C`.
 
 ```python
 a = 3         # Has type ``int``
@@ -543,13 +543,13 @@ Runners are built on top of an [event loop](https://docs.python.org/3/library/as
 asyncio.run(coro, *, debug=None, loop_factory=None)
 ```
 
-This function runs the passed coroutine, taking care of managing the asyncio event loop, *finalizing asynchronous generators*, and closing the executor.
+This function runs the passed coroutine, taking care of managing the asyncio event loop, _finalizing asynchronous generators_, and closing the executor.
 
 This function cannot be called when another asyncio event loop is running in the same thread.
 
-If *debug* is `True`, the event loop will be run in debug mode. `False` disables debug mode explicitly. `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
+If _debug_ is `True`, the event loop will be run in debug mode. `False` disables debug mode explicitly. `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
 
-If *loop_factory* is not `None`, it is used to create a new event loop; otherwise `[asyncio.new_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)` is used. The loop is closed at the end. This function should be used as a main entry point for asyncio programs, and should ideally only be called once. It is recommended to use *loop_factory* to configure the event loop instead of policies.
+If _loop_factory_ is not `None`, it is used to create a new event loop; otherwise `[asyncio.new_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)` is used. The loop is closed at the end. This function should be used as a main entry point for asyncio programs, and should ideally only be called once. It is recommended to use _loop_factory_ to configure the event loop instead of policies.
 
 ```python
 async def main():
@@ -563,13 +563,13 @@ asyncio.run(main())
 class asyncio.Runner(*, debug=None, loop_factory=None)
 ```
 
-A context manager that simplifies *multiple* async function calls in the same context.
+A context manager that simplifies _multiple_ async function calls in the same context.
 
 Sometimes several top-level async functions should be called in the same [event loop](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop) and `[contextvars.Context](https://docs.python.org/3/library/contextvars.html#contextvars.Context)`.
 
-If *debug* is `True`, the event loop will be run in debug mode. `False` disables debug mode explicitly. `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
+If _debug_ is `True`, the event loop will be run in debug mode. `False` disables debug mode explicitly. `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
 
-*loop_factory* could be used for overriding the loop creation. It is the responsibility of the *loop_factory* to set the created loop as the current one. By default `[asyncio.new_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)` is used and set as current event loop with `[asyncio.set_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.set_event_loop)` if *loop_factory* is `None`.
+_loop_factory_ could be used for overriding the loop creation. It is the responsibility of the _loop_factory_ to set the created loop as the current one. By default `[asyncio.new_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)` is used and set as current event loop with `[asyncio.set_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.set_event_loop)` if _loop_factory_ is `None`.
 
 Basically, `[asyncio.run()](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run)` example can be rewritten with the runner usage:
 
@@ -586,7 +586,7 @@ with asyncio.Runner() as runner:
 **run**(*coro*, ***, *context=None*)
 ```
 
-Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) *coro* in the embedded loop. Return the coroutine’s result or raise its exception. An optional keyword-only *context* argument allows specifying a custom `[contextvars.Context](https://docs.python.org/3/library/contextvars.html#contextvars.Context)` for the *coro* to run in. The runner’s default context is used if `None`. This function cannot be called when another asyncio event loop is running in the same thread.
+Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) _coro_ in the embedded loop. Return the coroutine’s result or raise its exception. An optional keyword-only _context_ argument allows specifying a custom `[contextvars.Context](https://docs.python.org/3/library/contextvars.html#contextvars.Context)` for the _coro_ to run in. The runner’s default context is used if `None`. This function cannot be called when another asyncio event loop is running in the same thread.
 
 ```python
 **close**()
@@ -603,7 +603,7 @@ Return the event loop associated with the runner instance.
 [Coroutines](https://docs.python.org/3/glossary.html#term-coroutine) declared with the async/await syntax is the preferred way of writing asyncio applications. To actually run a coroutine, asyncio provides the following mechanisms:
 
 - The `[asyncio.run()](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run)` function to run the top-level entry point “main()” function.
-- Awaiting on a coroutine. The following snippet of code will print “hello” after waiting for 1 second, and then print “world” after waiting for *another* 2 seconds:
+- Awaiting on a coroutine. The following snippet of code will print “hello” after waiting for 1 second, and then print “world” after waiting for _another_ 2 seconds:
 
   ```python
   import asyncio
@@ -668,7 +668,7 @@ Return the event loop associated with the runner instance.
 
 We say that an object is an **awaitable** object if it can be used in an `[await](https://docs.python.org/3/reference/expressions.html#await)` expression. Many asyncio APIs are designed to accept awaitables.
 
-There are three main types of *awaitable* objects: **coroutines**, **Tasks**, and **Futures**.
+There are three main types of _awaitable_ objects: **coroutines**, **Tasks**, and **Futures**.
 
 <aside>
 ⚠️ A *coroutine function*: an `[async def](https://docs.python.org/3/reference/compound_stmts.html#async-def)` function.
@@ -740,7 +740,7 @@ async def main():
 asyncio.run(main())
 ```
 
-Now, we have a **`[ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession)`** called `session` and a **`[ClientResponse](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse)`** object called `resp`. We can get all the information we need from the response. The mandatory parameter of **`[ClientSession.get()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)`** coroutine is an HTTP *url* (**`[str](https://docs.python.org/3/library/stdtypes.html#str)`** or class:yarl.URL instance).
+Now, we have a **`[ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession)`** called `session` and a **`[ClientResponse](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse)`** object called `resp`. We can get all the information we need from the response. The mandatory parameter of **`[ClientSession.get()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)`** coroutine is an HTTP _url_ (**`[str](https://docs.python.org/3/library/stdtypes.html#str)`** or class:yarl.URL instance).
 
 :::note
 💡 **Don’t create a session per request**. Most likely you need a session per application which performs all requests together.
