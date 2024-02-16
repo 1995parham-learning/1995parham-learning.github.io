@@ -722,7 +722,7 @@ awaitable asyncio.gather(*aws, return_exceptions=False)
 
 **aiofiles** is an Apache2 licensed library, written in Python, for handling local disk files in asyncio applications.
 
-[https://github.com/Tinche/aiofiles](https://github.com/Tinche/aiofiles)
+[@Tinche/aiofiles](https://github.com/Tinche/aiofiles)
 
 ### HTTPX
 
@@ -732,13 +732,13 @@ HTTPX is a fully featured HTTP client for Python 3, which provides sync and asyn
 
 ### **AIOHTTP**
 
-[Welcome to AIOHTTP — aiohttp 3.9.3 documentation](https://docs.aiohttp.org/en/stable/)
+[Welcome to AIOHTTP — aiohttp documentation](https://docs.aiohttp.org/en/stable/)
 
-**Key features:**
+#### Key features
 
 - Supports both [Client](https://docs.aiohttp.org/en/stable/client.html#aiohttp-client) and [HTTP Server](https://docs.aiohttp.org/en/stable/web.html#aiohttp-web).
 - Supports both [Server WebSockets](https://docs.aiohttp.org/en/stable/web_quickstart.html#aiohttp-web-websockets) and [Client WebSockets](https://docs.aiohttp.org/en/stable/client_quickstart.html#aiohttp-client-websockets) out-of-the-box without the Callback Hell.
-- Web-server has [Middlewares](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-middlewares), [Signals](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-signals) and pluggable routing.
+- Web-server has [Middlewares](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-middlewares), [Signals](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-signals) and plug-able routing.
 
 ```python
 import aiohttp
@@ -766,14 +766,21 @@ coroutine is an HTTP _url_ ([`str`](https://docs.python.org/3/library/stdtypes.h
 
 More complex cases may require a session per site, e.g. one for Github and other one for Facebook APIs. Anyway making a session for every request is a **very bad** idea.
 
-A session contains a connection pool inside. Connection reusage and keep-alive (both are on by default) may speed up total performance.
+A session contains a connection pool inside. Connection reuse and keep-alive (both are on by default) may speed up total performance.
 :::
 
 A session context manager usage is not mandatory but `await session.close()` method should be called in this case.
 
-**Streaming Response Content**
+#### Streaming Response Content
 
-While methods **`[read()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.read)`**, **`[json()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json)`** and **`[text()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)`** are very convenient you should use them carefully. All these methods load the whole response in memory. For example if you want to download several gigabyte sized files, these methods will load all the data in memory. Instead you can use the **`[content](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content)`** attribute. It is an instance of the **`[aiohttp.StreamReader](https://docs.aiohttp.org/en/stable/streams.html#aiohttp.StreamReader)`** class. The `gzip` and `deflate` transfer-encodings are automatically decoded for you:
+While methods [`read()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.read),
+[`json()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json)
+and [`text()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)
+are very convenient you should use them carefully. All these methods load the whole response in memory.
+For example if you want to download several gigabyte sized files, these methods will load all the data in memory.
+Instead you can use the [`content`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content) attribute.
+It is an instance of the [`aiohttp.StreamReader`](https://docs.aiohttp.org/en/stable/streams.html#aiohttp.StreamReader) class.
+The `gzip` and `deflate` transfer-encodings are automatically decoded for you:
 
 ```python
 async with session.get('https://api.github.com/events') as resp:
