@@ -761,13 +761,13 @@ object called `resp`. We can get all the information we need from the response. 
 [`ClientSession.get()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)
 coroutine is an HTTP _url_ ([`str`](https://docs.python.org/3/library/stdtypes.html#str) or class:yarl.URL instance).
 
-::::note
+:::note
 💡 **Don't create a session per request**. Most likely you need a session per application which performs all requests together.
 
 More complex cases may require a session per site, e.g. one for Github and other one for Facebook APIs. Anyway making a session for every request is a **very bad** idea.
 
 A session contains a connection pool inside. Connection reusage and keep-alive (both are on by default) may speed up total performance.
-::::
+:::
 
 A session context manager usage is not mandatory but `await session.close()` method should be called in this case.
 
