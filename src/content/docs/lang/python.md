@@ -74,8 +74,8 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 
 | Iterator                                                                         | Arguments                   | Results                                    | Example                                                  |
 | -------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------ | -------------------------------------------------------- |
-| <https://docs.python.org/3/library/itertools.html#itertools.accumulate>          | p [,func]                   | p0, p0+p1, p0+p1+p2, …                     | accumulate([1,2,3,4,5]) --> 1 3 6 10 15                  |
-| <https://docs.python.org/3/library/itertools.html#itertools.batched>             | p, n                        | (p0, p1, …, p_n-1), …                      | batched('ABCDEFG', n=3) --> ABC DEF G                    |
+| [accumulate](https://docs.python.org/3/library/itertools.html#itertools.accumulate)          | p [,func]                   | p0, p0+p1, p0+p1+p2, …                     | accumulate([1,2,3,4,5]) --> 1 3 6 10 15                  |
+| [batched](https://docs.python.org/3/library/itertools.html#itertools.batched)             | p, n                        | (p0, p1, …, p_n-1), …                      | batched('ABCDEFG', n=3) --> ABC DEF G                    |
 | <https://docs.python.org/3/library/itertools.html#itertools.chain>               | p, q, …                     | p0, p1, … plast, q0, q1, …                 | chain('ABC', 'DEF') --> A B C D E F                      |
 | <https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable> | iterable                    | p0, p1, … plast, q0, q1, …                 | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F      |
 | <https://docs.python.org/3/library/itertools.html#itertools.compress>            | data, selectors             | (d[0] if s[0]), (d[1] if s[1]), …          | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F            |
