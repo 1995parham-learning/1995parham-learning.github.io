@@ -41,12 +41,12 @@ We have different implementation of C standard library.
 
 ## Testing with `testify`
 
-To test with go, [testify](https://pkg.go.dev/github.com/stretchr/testify) is an awesome library.
+To test with go, [@stretchr/testify](https://pkg.go.dev/github.com/stretchr/testify) is an awesome library.
 It has suite, require and assert.
 
 :::note
 Always use `_test` prefix on packages for writing tests but in case of internal tests
-in which you need to access private package members use `_internal_test.go` as filename.
+in which you have access to private package members use `_internal_test.go` as filename.
 :::
 
 ```go
@@ -143,13 +143,12 @@ Observability lets us understand a system from the outside, by letting us ask qu
 about that system without knowing its inner workings.
 
 **Telemetry** refers to data emitted from a system, about its behavior. The data can come in the
-form of *traces*, *metrics*, and *logs*.
+form of _traces_, _metrics_, and _logs_.
 
 **SLI**, or Service Level Indicator, represents a measurement of a service's behavior.
 **SLO**, or Service Level Objective, is the means by which reliability is communicated to an organization/other teams.
 
-I want to use a single library for all the logging, metrics and tracing,
-but until that day we need to use different libraries for each of them.
+I want to use a single library for all the telemetries, but until that day we need to use different libraries for each of them.
 
 For tracing and metrics:
 
@@ -168,6 +167,12 @@ For metrics:
 A **span** represents a unit of work or operation. It tracks specific operation that a request
 makes, painting a picture of what happen during the time in which that operation was executed.
 
+### Distributed Traces
+
+A **distributed trace**, more commonly known as a trace, records the paths taken by requests
+(made by application or end-user) as they propagate through multi-service architectures, like
+microservice and serverless applications.
+
 ### OpenTelemetry
 
 OpenTelemetry is an Observability framework and toolkit designed to create and manage
@@ -177,13 +182,9 @@ no matter their language, infrastructure, or runtime environment.
 
 The current status of the major functional components for OpenTelemetry Go is as follows:
 
-| Tracing | Metrics | Logging             |
-| ------- | ------- | ------------------- |
-| Stable  | Stable  | Not Yet Implemented |
-
-With this release we are introducing a split in module versions.
-The tracing API and SDK are entering the v1.0.0 Release Candidate phase with v1.0.0-RC1 while the experimental metrics API and SDK continue with v0.x releases at v0.21.0.
-Modules at major version 1 or greater will not depend on modules with major version 0.
+| Tracing | Metrics | Logging        |
+| ------- | ------- | -------------- |
+| Stable  | Stable  | In development |
 
 [OpenTelemetry Go API and SDK](https://github.com/open-telemetry/opentelemetry-go)
 
@@ -231,7 +232,8 @@ OpenTelemetry requires a trace provider to be initialized in order to generate t
 
 #### Quick Start
 
-First, we're asking the global trace provider for an instance of a tracer, which is the object that manages spans for our service.
+First, we're asking the global trace provider for an instance of a tracer,
+which is the object that manages spans for our service.
 
 ```go
 tracer := otel.Tracer("ex.com/basic")
@@ -370,7 +372,7 @@ It is now possible to call this function with a type argument by writing a call 
 x := GMin[int](2, 3)
 ```
 
-Providing the type argument to `GMin`, in this case `int`, is called *instantiation*. Instantiation happens in two steps. First, the compiler substitutes all type arguments for their respective type parameters throughout the generic function or type. Second, the compiler verifies that each type argument satisfies the respective constraint.
+Providing the type argument to `GMin`, in this case `int`, is called _instantiation_. Instantiation happens in two steps. First, the compiler substitutes all type arguments for their respective type parameters throughout the generic function or type. Second, the compiler verifies that each type argument satisfies the respective constraint.
 
 After successful instantiation we have a non-generic function that can be called just like any other function. For example, in code like
 
@@ -495,7 +497,7 @@ You can write tests using suites or using the behavior testing.
 ORM means Object Relational Mapper, it helps you to manage your database models and queries easier. In Go, people may prefer to write down their queries like man, but we have the following ORMs in Go:
 
 - [`ent`](https://github.com/ent/ent)
-- [`bun`](https://github.com/uptrace/bun) is a *SQL-first Golang ORM* provided by Uptrace.
+- [`bun`](https://github.com/uptrace/bun) is a _SQL-first Golang ORM_ provided by Uptrace.
 - [`gorm`](https://github.com/go-gorm/gorm) is easy and fun, but you also prefer to write down your queries, like man 💪.
 - [`sqlboiler`](https://github.com/volatiletech/sqlboiler)
 
@@ -503,8 +505,8 @@ ORM means Object Relational Mapper, it helps you to manage your database models 
 
 ### [`go-redis`](https://github.com/redis/go-redis)
 
-The popular and backward-compatible Redis library which has *context* and an awesome sub-package named [`extra`](https://github.com/redis/go-redis/tree/master/extra)
-which has things like *tracing*, *monitoring*, etc.
+The popular and backward-compatible Redis library which has _context_ and an awesome sub-package named [`extra`](https://github.com/redis/go-redis/tree/master/extra)
+which has things like _tracing_, _monitoring_, etc.
 
 ### [`rueidis`](https://github.com/redis/rueidis)
 
@@ -595,7 +597,7 @@ func Provide(lc fx.Lifecycle, store *urlsvc.URLSvc, logger *zap.Logger, tele tel
 
 #### Application lifecycle
 
-The lifecycle of an Fx application has two high-level phases: *initialization* and *execution*.
+The lifecycle of an Fx application has two high-level phases: _initialization_ and _execution_.
 Both of these, in turn are comprised of multiple steps.
 
 During **initialization**, Fx will,
@@ -617,13 +619,13 @@ During **execution**, Fx will,
 Lifecycle hooks provide the ability to schedule work to be executed by Fx,
 when the application starts up or shuts down. Fx provides two kinds of hooks:
 
-- *Startup hooks*, also referred to as `OnStart` hooks. These run in the order they were appended.
-- *Shutdown hooks*, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
+- _Startup hooks_, also referred to as `OnStart` hooks. These run in the order they were appended.
+- _Shutdown hooks_, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
 
 Typically, components that provide a startup hook also provide a corresponding shutdown hook to release the resources they acquired at startup.
 
 Fx runs both kinds of hooks with a hard timeout enforcement (by default, 15 seconds).
-Therefore, hooks are expected to block only as long as they need to *schedule* work. In other words,
+Therefore, hooks are expected to block only as long as they need to _schedule_ work. In other words,
 
 - hooks **must not** block to run long-running tasks synchronously
 - hooks **should** schedule long-running tasks in background goroutines
