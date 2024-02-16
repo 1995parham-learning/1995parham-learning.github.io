@@ -155,9 +155,9 @@ value = decimal.Decimal("12.34567")
 f"result: {value:{width}.{precision}}"  # nested fields
 ```
 
-::note
+:::note
 🔧 _Changed in version 3.12:_ Prior to Python 3.12, reuse of the same quoting type of the outer f-string inside a replacement field was not possible.
-::
+:::
 
 Backslashes are also allowed in replacement fields and are evaluated the same way as in any other context:
 
@@ -166,9 +166,9 @@ a = ["a", "b", "c"]
 print(f"List a contains:\n{"\n".join(a)}")
 ```
 
-::note
+:::note
 🔧 _Changed in version 3.12:_ Prior to Python 3.12, backslashes were not permitted inside an f-string replacement field.
-::
+:::
 
 ## Configuration 🔧
 
@@ -371,12 +371,12 @@ x: Callable[..., str]
 x = str# OKx = concat# Also OK
 ```
 
-::note
+:::note
 ⚠️ `Callable` cannot express complex signatures such as functions that take a variadic number of arguments,
 [overloaded functions](https://docs.python.org/3/library/typing.html#overload), or functions that have keyword-only parameters.
 However, these signatures can be expressed by defining a [`Protocol`](https://docs.python.org/3/library/typing.html#typing.Protocol)
 class with a [`__call__()`](https://docs.python.org/3/reference/datamodel.html#object.__call__) method.
-::
+:::
 
 ```python
 from collections.abc import Iterable
@@ -425,9 +425,9 @@ def first[T](l: Sequence[T]) -> T:  # Function is generic over the TypeVar "T"
     return l[0]
 ```
 
-::note
+:::note
 ⚠️ _Changed in version 3.12:_ Syntactic support for generics is new in Python 3.12.
-::
+:::
 
 For most containers in Python, the typing system assumes that all elements in the container will be of the same type.
 [`list`](https://docs.python.org/3/library/stdtypes.html#list) only accepts one type argument.
@@ -479,9 +479,9 @@ c = type(a)   # Also has type ``type[int]``
 
 Note that `type[C]` is covariant:
 
-::note
+:::note
 🧠 *Covariance and contravariance are terms that refer to the ability to use a more derived type (more specific) or a less derived type (less specific) than originally specified*
-::
+:::
 
 ```python
 class User: ...
@@ -689,14 +689,14 @@ We say that an object is an **awaitable** object if it can be used in an [`await
 
 There are three main types of _awaitable_ objects: **coroutines**, **Tasks**, and **Futures**.
 
-::note
+:::note
 ⚠️ A _coroutine function_: an [`async def`](https://docs.python.org/3/reference/compound_stmts.html#async-def) function.
 A _coroutine object_: an object returned by calling a _coroutine function_.
-::
+:::
 
-::note
+:::note
 🔥 _Tasks_ are used to schedule coroutines _concurrently_.
-::
+:::
 
 **[Running Tasks Concurrently](https://docs.python.org/3/library/asyncio-task.html#id8)**
 
@@ -704,9 +704,9 @@ A _coroutine object_: an object returned by calling a _coroutine function_.
 awaitable asyncio.gather(*aws, return_exceptions=False)
 ```
 
-::note
+:::note
 🚧 A new alternative to create and run tasks concurrently and wait for their completion is `[asyncio.TaskGroup](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)`. _TaskGroup_ provides stronger safety guarantees than _gather_ for scheduling a nesting of subtasks: if a task (or a subtask, a task scheduled by a task) raises an exception, _TaskGroup_ will, while _gather_ will not, cancel the remaining scheduled tasks).
-::
+:::
 
 [**Task Groups**](https://docs.python.org/3/library/asyncio-task.html#id6)
 
@@ -714,9 +714,9 @@ awaitable asyncio.gather(*aws, return_exceptions=False)
 
 **[Eager Task Factory](https://docs.python.org/3/library/asyncio-task.html#id9)**
 
-::note
+:::note
 🐼 Immediate execution of the coroutine is a semantic change. If the coroutine returns or raises, the task is never scheduled to the event loop. If the coroutine execution blocks, the task is scheduled to the event loop. This change may introduce behavior changes to existing applications. For example, the application's task execution order is likely to change.
-::
+:::
 
 ### **AIOfiles**
 
@@ -761,13 +761,13 @@ object called `resp`. We can get all the information we need from the response. 
 [`ClientSession.get()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)
 coroutine is an HTTP _url_ ([`str`](https://docs.python.org/3/library/stdtypes.html#str) or class:yarl.URL instance).
 
-:::note
+::::note
 💡 **Don't create a session per request**. Most likely you need a session per application which performs all requests together.
 
 More complex cases may require a session per site, e.g. one for Github and other one for Facebook APIs. Anyway making a session for every request is a **very bad** idea.
 
 A session contains a connection pool inside. Connection reusage and keep-alive (both are on by default) may speed up total performance.
-:::
+::::
 
 A session context manager usage is not mandatory but `await session.close()` method should be called in this case.
 
