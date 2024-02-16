@@ -247,6 +247,15 @@ to be modified or exported after it's created.
 
 To start producing metrics, you'll need to have an initialized `MetricProvider` that lets you
 create a `Meter`.
+Meters let you create instruments that you can use to create different kinds of metrics.
+OpenTelemetry Go currently supports the following instruments:
+
+- **Counter**, a synchronous instruments that supports non-negative increments.
+- **Asynchronous Counter**, an asynchronous instrument which supports non-negative increments
+- **Histogram**, a synchronous instrument that supports arbitrary values that are statistically meaningful, such as histograms summaries, or percentile
+- **Asynchronous Gauge**, an asynchronous instrument that supports increments and decrements, such as the number of active requests
+- **UpDownCounter**, a synchronous instrument that supports increments and decrements, such as the number of active requests
+- **Asynchronous UpDown Counter**, an asynchronous instrument that supports increments and decrements
 
 #### Sampler
 
