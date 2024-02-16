@@ -1,5 +1,7 @@
 ---
 title: Python
+description: Let's Learn Python
+icon: skill-icons:python-dark
 ---
 
 ## Class and static methods
