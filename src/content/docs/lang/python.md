@@ -132,11 +132,21 @@ Python's **iterators** and **iterables** are two different but related tools tha
 
 A _formatted string literal_ or _f-string_ is a string literal that is prefixed with `'f'` or `'F'`. These strings may contain replacement fields, which are expressions delimited by curly braces `{}`. While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
 
-The parts of the string outside curly braces are treated literally, except that any doubled curly braces `'{{'` or `'}}'` are replaced with the corresponding single curly brace. A single opening curly bracket `'{'` marks a replacement field, which starts with a Python expression. To display both the expression text and its value after evaluation, (useful in debugging), an equal sign `'='` may be added after the expression. A conversion field, introduced by an exclamation point `'!'` may follow. A format specifier may also be appended, introduced by a colon `':'`. A replacement field ends with a closing curly bracket `'}'`.
+The parts of the string outside curly braces are treated literally, except that any doubled curly braces `'{{'` or `'}}'` are replaced with the
+corresponding single curly brace. A single opening curly bracket `'{'` marks a replacement field, which starts with a Python expression.
+To display both the expression text and its value after evaluation, (useful in debugging), an equal sign `'='` may be added after the expression.
+A conversion field, introduced by an exclamation point `'!'` may follow.
+A format specifier may also be appended, introduced by a colon `':'`. A replacement field ends with a closing curly bracket `'}'`.
 
-If a conversion is specified, the result of evaluating the expression is converted before formatting. Conversion `'!s'` calls `[str()](https://docs.python.org/3/library/stdtypes.html#str)` on the result, `'!r'` calls `[repr()](https://docs.python.org/3/library/functions.html#repr)`, and `'!a'` calls `[ascii()](https://docs.python.org/3/library/functions.html#ascii)`.
+If a conversion is specified, the result of evaluating the expression is converted before formatting.
+Conversion `'!s'` calls [`str()`](https://docs.python.org/3/library/stdtypes.html#str) on the result,
+`'!r'` calls [`repr()`](https://docs.python.org/3/library/functions.html#repr),
+and `'!a'` calls [`ascii()`](https://docs.python.org/3/library/functions.html#ascii).
 
-The result is then formatted using the `[format()](https://docs.python.org/3/library/functions.html#format)` protocol. The format specifier is passed to the `[__format__()](https://docs.python.org/3/reference/datamodel.html#object.__format__)` method of the expression or conversion result. An empty string is passed when the format specifier is omitted. The formatted result is then included in the final value of the whole string.
+The result is then formatted using the [`format()`](https://docs.python.org/3/library/functions.html#format) protocol.
+The format specifier is passed to the [`__format__()`](https://docs.python.org/3/reference/datamodel.html#object.__format__) method of the expression or
+conversion result. An empty string is passed when the format specifier is omitted. The formatted result is then included
+in the final value of the whole string.
 
 ```python
 width = 10
@@ -145,10 +155,9 @@ value = decimal.Decimal("12.34567")
 f"result: {value:{width}.{precision}}"  # nested fields
 ```
 
-<aside>
-🔧 *Changed in version 3.12:* Prior to Python 3.12, reuse of the same quoting type of the outer f-string inside a replacement field was not possible.
-
-</aside>
+::note
+🔧 _Changed in version 3.12:_ Prior to Python 3.12, reuse of the same quoting type of the outer f-string inside a replacement field was not possible.
+::
 
 Backslashes are also allowed in replacement fields and are evaluated the same way as in any other context:
 
@@ -157,46 +166,29 @@ a = ["a", "b", "c"]
 print(f"List a contains:\n{"\n".join(a)}")
 ```
 
-<aside>
-🔧 *Changed in version 3.12:* Prior to Python 3.12, backslashes were not permitted inside an f-string replacement field.
-
-</aside>
+::note
+🔧 _Changed in version 3.12:_ Prior to Python 3.12, backslashes were not permitted inside an f-string replacement field.
+::
 
 ## Configuration 🔧
 
 I love the way we can configure Golang applications **WITH TYPES**, but this library is in Python, and seems nice to me for doing the same in Python.
 
-[https://github.com/dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
+[@dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
 
 ## HTTP Frameworks 🌐
 
-Sometimes I don’t want to set up the giant Django so, I have these options. Sanic and FastAPI both are asynchronous and says they have good performance.
+Sometimes I don't want to set up the giant Django so, I have these options.
+Sanic and FastAPI both are asynchronous and says they have good performance.
 
 ### Sanic
 
-**Simple and lightweight**
-
-Intuitive API with smart defaults and no bloat allows you to get straight to work building your app.
-
-**Unopinionated and flexible**
-
-Build the way you want to build without letting your tooling constrain you.
-
-**Performant and scalable**
-
-Built from the ground up with speed and scalability as a main concern. It is ready to power web applications big and small.
-
-**Production ready**
-
-Out of the box, it comes bundled with a web server ready to power your web applications.
-
-**Trusted by millions**
-
-Sanic is one of the overall most popular frameworks on PyPI, and the top async enabled framework
-
-**Community driven**
-
-The project is maintained and run by the community for the community.
+**Simple and lightweight**: Intuitive API with smart defaults and no bloat allows you to get straight to work building your app.
+**Unopinionated and flexible**: Build the way you want to build without letting your tooling constrain you.
+**Performant and scalable**: Built from the ground up with speed and scalability as a main concern. It is ready to power web applications big and small.
+**Production ready**: Out of the box, it comes bundled with a web server ready to power your web applications.
+**Trusted by millions**: Sanic is one of the overall most popular frameworks on PyPI, and the top async enabled framework
+**Community driven**: The project is maintained and run by the community for the community.
 
 - After installing, Sanic has all the tools you need for a scalable, production-grade server—out of the box!
 - Running Sanic with TLS enabled is as simple as passing it the file paths…
@@ -217,7 +209,8 @@ The project is maintained and run by the community for the community.
 
 [Sanic User Guide - The lightning-fast asynchronous Python web framework](https://sanic.dev/en/)
 
-Dependency injection is a method to add arguments to a route handler based upon the defined function signature. Specifically, it looks at the **type annotations** of the arguments in the handler. This can be useful in a number of cases like:
+Dependency injection is a method to add arguments to a route handler based upon the defined function signature. Specifically,
+it looks at the **type annotations** of the arguments in the handler. This can be useful in a number of cases like:
 
 [Sanic User Guide - Sanic Extensions - Dependency Injection](https://sanic.dev/en/plugins/sanic-ext/injection.html#getting-started)
 
@@ -248,29 +241,29 @@ Writing REST API in a Django application using Django REST Framework is awesome,
 
 [Home - Django REST framework](https://www.django-rest-framework.org/)
 
-- [https://www.django-rest-framework.org/api-guide/serializers/](https://www.django-rest-framework.org/api-guide/serializers/)
-- [https://www.django-rest-framework.org/api-guide/fields](https://www.django-rest-framework.org/api-guide/fields)
-- [https://www.django-rest-framework.org/api-guide/parsers/](https://www.django-rest-framework.org/api-guide/parsers/)
-- [https://www.django-rest-framework.org/api-guide/views/](https://www.django-rest-framework.org/api-guide/views/)
-- [https://www.django-rest-framework.org/api-guide/viewsets/](https://www.django-rest-framework.org/api-guide/viewsets/)
-- [https://www.django-rest-framework.org/api-guide/generic-views/](https://www.django-rest-framework.org/api-guide/generic-views/)
-- [https://www.django-rest-framework.org/api-guide/filtering/](https://www.django-rest-framework.org/api-guide/filtering/)
+- [serializers](https://www.django-rest-framework.org/api-guide/serializers/)
+- [fields](https://www.django-rest-framework.org/api-guide/fields)
+- [parsers](https://www.django-rest-framework.org/api-guide/parsers/)
+- [views](https://www.django-rest-framework.org/api-guide/views/)
+- [viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
+- [generic-views](https://www.django-rest-framework.org/api-guide/generic-views/)
+- [filtering](https://www.django-rest-framework.org/api-guide/filtering/)
 
 Sometimes it is better in DRF to read its code because its documentation is not complete:
 
-- [https://github.com/encode/django-rest-framework](https://github.com/encode/django-rest-framework)
+- [@encode/django-rest-framework](https://github.com/encode/django-rest-framework)
 
 Semi-automatic swagger documentation for the REST APIs:
 
-- [https://github.com/tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
+- [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
 
 Using data-classes to define request and response in Django REST Framework:
 
-[https://github.com/oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
+[@oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
 
 Having reusable filters for models in Django REST Framework with Django-filter. These filters help you to write viewsets easier and give client developers vast choices in getting the data.
 
-[django-filter 23.5 documentation](https://django-filter.readthedocs.io/en/main/)
+[django-filter documentation](https://django-filter.readthedocs.io/en/main/)
 
 There are cases in which you already have the database and want to describe it using Django models:
 
@@ -284,7 +277,7 @@ In python, you need a library for testing:
 
 [pytest: helps you write better programs — pytest documentation](https://docs.pytest.org/en/stable/index.html)
 
-But in Django you don’t need anything and Django already has what you need.
+But in Django you don't need anything and Django already has what you need.
 
 ## Standard CLI 💾
 
@@ -292,15 +285,15 @@ But in Django you don’t need anything and Django already has what you need.
 
 ## Console UIs 💅
 
-[https://github.com/Textualize/rich](https://github.com/Textualize/rich)
+[@Textualize/rich](https://github.com/Textualize/rich)
 
-[https://github.com/sepandhaghighi/art](https://github.com/sepandhaghighi/art)
+[@sepandhaghighi/art](https://github.com/sepandhaghighi/art)
 
 ## Pandas 🐼
 
 The best way for working with data, doing math and statistics over it, etc. is using Pandas:
 
-[API reference — pandas 2.2.0 documentation](https://pandas.pydata.org/docs/reference/index.html)
+[API reference — pandas documentation](https://pandas.pydata.org/docs/reference/index.html)
 
 Using it for reading/writing CSV is a better way than any other console application because you can actually do the query things after the reading phase.
 
@@ -318,11 +311,14 @@ def greeting(name: str) -> str:
     return 'Hello ' + name
 ```
 
-In the function `greeting`, the argument `name` is expected to be of type `[str](https://docs.python.org/3/library/stdtypes.html#str)` and the return type `[str](https://docs.python.org/3/library/stdtypes.html#str)`. Subtypes are accepted as arguments.
+In the function `greeting`, the argument `name` is expected to be of type [`str`](https://docs.python.org/3/library/stdtypes.html#str)
+and the return type [`str`](https://docs.python.org/3/library/stdtypes.html#str). Subtypes are accepted as arguments.
 
 ### Type aliases
 
-A type alias is defined using the `[type](https://docs.python.org/3/reference/simple_stmts.html#type)` statement, which creates an instance of `[TypeAliasType](https://docs.python.org/3/library/typing.html#typing.TypeAliasType)`. In this example, `Vector` and `list[float]` will be treated equivalently by static type checkers:
+A type alias is defined using the [`type`](https://docs.python.org/3/reference/simple_stmts.html#type) statement,
+which creates an instance of [`TypeAliasType`](https://docs.python.org/3/library/typing.html#typing.TypeAliasType).
+In this example, `Vector` and `list[float]` will be treated equivalently by static type checkers:
 
 ```python
 type Vector = list[float]
@@ -338,7 +334,11 @@ Type aliases are useful for simplifying complex type signatures.
 
 ### Annotating callable objects
 
-Functions – or other [callable](https://docs.python.org/3/glossary.html#term-callable) objects – can be annotated using `[collections.abc.Callable](https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable)` or `[typing.Callable](https://docs.python.org/3/library/typing.html#typing.Callable)`. `Callable[[int], str]` signifies a function that takes a single parameter of type `[int](https://docs.python.org/3/library/functions.html#int)` and returns a `[str](https://docs.python.org/3/library/stdtypes.html#str)`.
+Functions - or other [callable](https://docs.python.org/3/glossary.html#term-callable) objects - can be annotated using
+[`collections.abc.Callable`](https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable) or
+[`typing.Callable`](https://docs.python.org/3/library/typing.html#typing.Callable).
+`Callable[[int], str]` signifies a function that takes a single parameter of type [`int`](https://docs.python.org/3/library/functions.html#int)
+ and returns a [`str`](https://docs.python.org/3/library/stdtypes.html#str).
 
 ```python
 from collections.abc import Callable, Awaitable
@@ -356,7 +356,10 @@ async def on_update(value: str) -> None:
 callback: Callable[[str], Awaitable[None]] = on_update
 ```
 
-The subscription syntax must always be used with exactly two values: the argument list and the return type. The argument list must be a list of types, a `[ParamSpec](https://docs.python.org/3/library/typing.html#typing.ParamSpec)`, `[Concatenate](https://docs.python.org/3/library/typing.html#typing.Concatenate)`, or an ellipsis. The return type must be a single type.
+The subscription syntax must always be used with exactly two values: the argument list and the return type.
+The argument list must be a list of types, a [`ParamSpec`](https://docs.python.org/3/library/typing.html#typing.ParamSpec),
+[`Concatenate`](https://docs.python.org/3/library/typing.html#typing.Concatenate), or an ellipsis.
+The return type must be a single type.
 
 If a literal ellipsis `...` is given as the argument list, it indicates that a callable with any arbitrary parameter list would be acceptable:
 
@@ -368,10 +371,12 @@ x: Callable[..., str]
 x = str# OKx = concat# Also OK
 ```
 
-<aside>
-⚠️ `Callable` cannot express complex signatures such as functions that take a variadic number of arguments, [overloaded functions](https://docs.python.org/3/library/typing.html#overload), or functions that have keyword-only parameters. However, these signatures can be expressed by defining a `[Protocol](https://docs.python.org/3/library/typing.html#typing.Protocol)` class with a `[__call__()](https://docs.python.org/3/reference/datamodel.html#object.__call__)` method.
-
-</aside>
+::note
+⚠️ `Callable` cannot express complex signatures such as functions that take a variadic number of arguments,
+[overloaded functions](https://docs.python.org/3/library/typing.html#overload), or functions that have keyword-only parameters.
+However, these signatures can be expressed by defining a [`Protocol`](https://docs.python.org/3/library/typing.html#typing.Protocol)
+class with a [`__call__()`](https://docs.python.org/3/reference/datamodel.html#object.__call__) method.
+::
 
 ```python
 from collections.abc import Iterable
@@ -420,12 +425,14 @@ def first[T](l: Sequence[T]) -> T:  # Function is generic over the TypeVar "T"
     return l[0]
 ```
 
-<aside>
-⚠️ *Changed in version 3.12:* Syntactic support for generics is new in Python 3.12.
+::note
+⚠️ _Changed in version 3.12:_ Syntactic support for generics is new in Python 3.12.
+::
 
-</aside>
-
-For most containers in Python, the typing system assumes that all elements in the container will be of the same type. `[list](https://docs.python.org/3/library/stdtypes.html#list)` only accepts one type argument. `[Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping)` only accepts two type arguments: the first indicates the type of the keys, and the second indicates the type of the values.
+For most containers in Python, the typing system assumes that all elements in the container will be of the same type.
+[`list`](https://docs.python.org/3/library/stdtypes.html#list) only accepts one type argument.
+[`Mapping`](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping) only accepts two type arguments:
+the first indicates the type of the keys, and the second indicates the type of the values.
 
 ```python
 from collections.abc import Mapping
@@ -441,7 +448,9 @@ y: list[int, str] = [1, 'foo']
 z: Mapping[str, str | int] = {}
 ```
 
-Unlike most other Python containers, however, it is common in idiomatic Python code for tuples to have elements which are not all of the same type. For this reason, tuples are special-cased in Python’s typing system. `[tuple](https://docs.python.org/3/library/stdtypes.html#tuple)` accepts _any number_ of type arguments:
+Unlike most other Python containers, however, it is common in idiomatic Python code for tuples to have elements which are not all of the same type.
+For this reason, tuples are special-cased in Python's typing system. [`tuple`](https://docs.python.org/3/library/stdtypes.html#tuple)
+accepts _any number_ of type arguments:
 
 ```python
 # OK: ``x`` is assigned to a tuple of length 1 where the sole element is an int
@@ -460,7 +469,7 @@ To denote a tuple which could be of _any_ length, and in which all elements are 
 
 ### **The type of class objects**
 
-A variable annotated with `C` may accept a value of type `C`. In contrast, a variable annotated with `type[C]` (or `[typing.Type[C]](https://docs.python.org/3/library/typing.html#typing.Type)`) may accept values that are classes themselves – specifically, it will accept the _class object_ of `C`.
+A variable annotated with `C` may accept a value of type `C`. In contrast, a variable annotated with `type[C]` (or [`typing.Type[C]`](https://docs.python.org/3/library/typing.html#typing.Type)) may accept values that are classes themselves - specifically, it will accept the _class object_ of `C`.
 
 ```python
 a = 3         # Has type ``int``
@@ -470,10 +479,9 @@ c = type(a)   # Also has type ``type[int]``
 
 Note that `type[C]` is covariant:
 
-<aside>
+::note
 🧠 *Covariance and contravariance are terms that refer to the ability to use a more derived type (more specific) or a less derived type (less specific) than originally specified*
-
-</aside>
+::
 
 ```python
 class User: ...
@@ -491,7 +499,9 @@ make_new_user(User())    # Error: expected ``type[User]`` but got ``User``
 make_new_user(int)       # Error: ``type[int]`` is not a subtype of ``type[User]``
 ```
 
-The only legal parameters for `[type](https://docs.python.org/3/library/functions.html#type)` are classes, `[Any](https://docs.python.org/3/library/typing.html#typing.Any)`, [type variables](https://docs.python.org/3/library/typing.html#generics), and unions of any of these types.
+The only legal parameters for [`type`](https://docs.python.org/3/library/functions.html#type) are classes,
+[`Any`](https://docs.python.org/3/library/typing.html#typing.Any),
+[type variables](https://docs.python.org/3/library/typing.html#generics), and unions of any of these types.
 
 ### Packages
 
@@ -585,27 +595,32 @@ with asyncio.Runner() as runner:
 ```
 
 ```python
-**run**(*coro*, ***, *context=None*)
+run(coro, *, context=None)
 ```
 
-Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) _coro_ in the embedded loop. Return the coroutine’s result or raise its exception. An optional keyword-only _context_ argument allows specifying a custom `[contextvars.Context](https://docs.python.org/3/library/contextvars.html#contextvars.Context)` for the _coro_ to run in. The runner’s default context is used if `None`. This function cannot be called when another asyncio event loop is running in the same thread.
+Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) _coro_ in the embedded loop. Return the coroutine's result or raise its
+exception. An optional keyword-only _context_ argument allows specifying a custom
+[`contextvars.Context`](https://docs.python.org/3/library/contextvars.html#contextvars.Context)
+for the _coro_ to run in. The runner's default context is used if `None`.
+This function cannot be called when another asyncio event loop is running in the same thread.
 
 ```python
-**close**()
+close()
 ```
 
-Close the runner. Finalize asynchronous generators, shutdown default executor, close the event loop and release embedded `[contextvars.Context](https://docs.python.org/3/library/contextvars.html#contextvars.Context)`.
+Close the runner. Finalize asynchronous generators, shutdown default executor,
+close the event loop and release embedded [`contextvars.Context`](https://docs.python.org/3/library/contextvars.html#contextvars.Context).
 
 ```python
-**get_loop**()
+get_loop()
 ```
 
 Return the event loop associated with the runner instance.
 
 [Coroutines](https://docs.python.org/3/glossary.html#term-coroutine) declared with the async/await syntax is the preferred way of writing asyncio applications. To actually run a coroutine, asyncio provides the following mechanisms:
 
-- The `[asyncio.run()](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run)` function to run the top-level entry point “main()” function.
-- Awaiting on a coroutine. The following snippet of code will print “hello” after waiting for 1 second, and then print “world” after waiting for _another_ 2 seconds:
+- The [`asyncio.run()`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run) function to run the top-level entry point "main()" function.
+- Awaiting on a coroutine. The following snippet of code will print "hello" after waiting for 1 second, and then print "world" after waiting for _another_ 2 seconds:
 
   ```python
   import asyncio
@@ -626,7 +641,8 @@ Return the event loop associated with the runner instance.
   asyncio.run(main())
   ```
 
-- The `[asyncio.create_task()](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task)` function to run coroutines concurrently as asyncio `[Tasks](https://docs.python.org/3/library/asyncio-task.html#asyncio.Task)`.
+- The [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task)
+  function to run coroutines concurrently as asyncio [`Tasks`](https://docs.python.org/3/library/asyncio-task.html#asyncio.Task).
 
   ```python
   async def main():
@@ -648,7 +664,8 @@ Return the event loop associated with the runner instance.
       print(f"finished at {time.strftime('%X')}")
   ```
 
-  The `[asyncio.TaskGroup](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)` class provides a more modern alternative to `[create_task()](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task)`. Using this API, the last example becomes:
+  The [`asyncio.TaskGroup`](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup) class provides a more modern alternative to
+  [`create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task). Using this API, the last example becomes:
 
   ```python
   async def main():
@@ -666,22 +683,20 @@ Return the event loop associated with the runner instance.
       print(f"finished at {time.strftime('%X')}")
   ```
 
-**Awaitables**
+#### Awaitables
 
-We say that an object is an **awaitable** object if it can be used in an `[await](https://docs.python.org/3/reference/expressions.html#await)` expression. Many asyncio APIs are designed to accept awaitables.
+We say that an object is an **awaitable** object if it can be used in an [`await`](https://docs.python.org/3/reference/expressions.html#await) expression. Many asyncio APIs are designed to accept awaitables.
 
 There are three main types of _awaitable_ objects: **coroutines**, **Tasks**, and **Futures**.
 
-<aside>
-⚠️ A *coroutine function*: an `[async def](https://docs.python.org/3/reference/compound_stmts.html#async-def)` function.
-A *coroutine object*: an object returned by calling a *coroutine function*.
+::note
+⚠️ A _coroutine function_: an [`async def`](https://docs.python.org/3/reference/compound_stmts.html#async-def) function.
+A _coroutine object_: an object returned by calling a _coroutine function_.
+::
 
-</aside>
-
-<aside>
-🔥 *Tasks* are used to schedule coroutines *concurrently*.
-
-</aside>
+::note
+🔥 _Tasks_ are used to schedule coroutines _concurrently_.
+::
 
 **[Running Tasks Concurrently](https://docs.python.org/3/library/asyncio-task.html#id8)**
 
@@ -689,10 +704,9 @@ A *coroutine object*: an object returned by calling a *coroutine function*.
 awaitable asyncio.gather(*aws, return_exceptions=False)
 ```
 
-<aside>
-🚧 A new alternative to create and run tasks concurrently and wait for their completion is `[asyncio.TaskGroup](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)`. *TaskGroup* provides stronger safety guarantees than *gather* for scheduling a nesting of subtasks: if a task (or a subtask, a task scheduled by a task) raises an exception, *TaskGroup* will, while *gather* will not, cancel the remaining scheduled tasks).
-
-</aside>
+::note
+🚧 A new alternative to create and run tasks concurrently and wait for their completion is `[asyncio.TaskGroup](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)`. _TaskGroup_ provides stronger safety guarantees than _gather_ for scheduling a nesting of subtasks: if a task (or a subtask, a task scheduled by a task) raises an exception, _TaskGroup_ will, while _gather_ will not, cancel the remaining scheduled tasks).
+::
 
 [**Task Groups**](https://docs.python.org/3/library/asyncio-task.html#id6)
 
@@ -700,10 +714,9 @@ awaitable asyncio.gather(*aws, return_exceptions=False)
 
 **[Eager Task Factory](https://docs.python.org/3/library/asyncio-task.html#id9)**
 
-<aside>
-🐼 Immediate execution of the coroutine is a semantic change. If the coroutine returns or raises, the task is never scheduled to the event loop. If the coroutine execution blocks, the task is scheduled to the event loop. This change may introduce behavior changes to existing applications. For example, the application’s task execution order is likely to change.
-
-</aside>
+::note
+🐼 Immediate execution of the coroutine is a semantic change. If the coroutine returns or raises, the task is never scheduled to the event loop. If the coroutine execution blocks, the task is scheduled to the event loop. This change may introduce behavior changes to existing applications. For example, the application's task execution order is likely to change.
+::
 
 ### **AIOfiles**
 
@@ -742,10 +755,14 @@ async def main():
 asyncio.run(main())
 ```
 
-Now, we have a **`[ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession)`** called `session` and a **`[ClientResponse](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse)`** object called `resp`. We can get all the information we need from the response. The mandatory parameter of **`[ClientSession.get()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)`** coroutine is an HTTP _url_ (**`[str](https://docs.python.org/3/library/stdtypes.html#str)`** or class:yarl.URL instance).
+Now, we have a [`ClientSession`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession)
+called `session` and a [`ClientResponse`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse)
+object called `resp`. We can get all the information we need from the response. The mandatory parameter of
+[`ClientSession.get()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)
+coroutine is an HTTP _url_ ([`str`](https://docs.python.org/3/library/stdtypes.html#str) or class:yarl.URL instance).
 
 :::note
-💡 **Don’t create a session per request**. Most likely you need a session per application which performs all requests together.
+💡 **Don't create a session per request**. Most likely you need a session per application which performs all requests together.
 
 More complex cases may require a session per site, e.g. one for Github and other one for Facebook APIs. Anyway making a session for every request is a **very bad** idea.
 
@@ -759,7 +776,7 @@ A session context manager usage is not mandatory but `await session.close()` met
 While methods **`[read()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.read)`**, **`[json()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json)`** and **`[text()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)`** are very convenient you should use them carefully. All these methods load the whole response in memory. For example if you want to download several gigabyte sized files, these methods will load all the data in memory. Instead you can use the **`[content](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content)`** attribute. It is an instance of the **`[aiohttp.StreamReader](https://docs.aiohttp.org/en/stable/streams.html#aiohttp.StreamReader)`** class. The `gzip` and `deflate` transfer-encodings are automatically decoded for you:
 
 ```python
-async with session.get(*'https://api.github.com/events'*) as resp:
+async with session.get('https://api.github.com/events') as resp:
     await resp.content.read(10)
 ```
 
@@ -771,4 +788,7 @@ with open(filename, *'wb'*) as fd:
         fd.write(chunk)
 ```
 
-It is not possible to use **`[read()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.read)`**, **`[json()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json)`** and **`[text()](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)`** after explicit reading from **`[content](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content)`**.
+It is not possible to use [`read()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.read),
+[`json()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json)
+and [`text()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)
+after explicit reading from [`content`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content).
