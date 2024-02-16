@@ -62,7 +62,8 @@ The returned insertion point _ip_ partitions the array _a_ into two slices such 
 
 This module implements a number of [iterator](https://docs.python.org/3/glossary.html#term-iterator) building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
 
-The module standardizes a core set of fast, memory efficient tools that are useful by themselves or in combination. Together, they form an “iterator algebra” making it possible to construct specialized tools succinctly and efficiently in pure Python.
+The module standardizes a core set of fast, memory efficient tools that are useful by themselves or in combination. Together, they form an
+"iterator algebra" making it possible to construct specialized tools succinctly and efficiently in pure Python.
 
 **Infinite iterators:**
 
@@ -103,7 +104,7 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 ### Batched
 
 ```python
-itertools.**batched**(*iterable*, *n*)
+itertools.batched(iterable, n)
 ```
 
 Batch data from the _iterable_ into tuples of length _n_.
@@ -111,22 +112,21 @@ Batch data from the _iterable_ into tuples of length _n_.
 The last batch may be shorter than _n_. Loops over the input iterable and accumulates data into tuples up to size _n_. The input is consumed lazily, just enough to fill a batch. The result is yielded as soon as the batch is full or when the input iterable is exhausted:
 
 ```python
-
-**>>>** flattened_data = ['roses', 'red', 'violets', 'blue', 'sugar', 'sweet']
-**>>>** unflattened = list(batched(flattened_data, 2))
-**>>>** unflattened
+>>> flattened_data = ['roses', 'red', 'violets', 'blue', 'sugar', 'sweet']
+>>> unflattened = list(batched(flattened_data, 2))
+>>> unflattened
 [('roses', 'red'), ('violets', 'blue'), ('sugar', 'sweet')]
 
-**>>> for** batch **in** batched('ABCDEFG', 3):
-**...**     print(batch)
-**...**('A', 'B', 'C')
+>>> for batch in batched('ABCDEFG', 3):
+...     print(batch)
+...('A', 'B', 'C')
 ('D', 'E', 'F')
 ('G',)
 ```
 
 ## Iterables and Iterators
 
-Python’s **iterators** and **iterables** are two different but related tools that come in handy when you need to iterate over a data stream or container. Iterators power and control the iteration process, while iterables typically hold data that you want to iterate over one value at a time.
+Python's **iterators** and **iterables** are two different but related tools that come in handy when you need to iterate over a data stream or container. Iterators power and control the iteration process, while iterables typically hold data that you want to iterate over one value at a time.
 
 ## Formatted Strings
 
