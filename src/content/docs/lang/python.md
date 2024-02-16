@@ -93,10 +93,10 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 
 | Iterator                                                                                   | Arguments          | Results                                                       |
 | ------------------------------------------------------------------------------------------ | ------------------ | ------------------------------------------------------------- |
-| <https://docs.python.org/3/library/itertools.html#itertools.product>                       | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop            |
-| <https://docs.python.org/3/library/itertools.html#itertools.permutations>                  | p[, r]             | r-length tuples, all possible orderings, no repeated elements |
-| <https://docs.python.org/3/library/itertools.html#itertools.combinations>                  | p, r               | r-length tuples, in sorted order, no repeated elements        |
-| <https://docs.python.org/3/library/itertools.html#itertools.combinations_with_replacement> | p, r               | r-length tuples, in sorted order, with repeated elements      |
+| [`product`](https://docs.python.org/3/library/itertools.html#itertools.product)                       | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop            |
+| [`permutations`](https://docs.python.org/3/library/itertools.html#itertools.permutations)                  | p[, r]             | r-length tuples, all possible orderings, no repeated elements |
+| [`combinations`](https://docs.python.org/3/library/itertools.html#itertools.combinations)                  | p, r               | r-length tuples, in sorted order, no repeated elements        |
+| [`combinations_with_replacement`](https://docs.python.org/3/library/itertools.html#itertools.combinations_with_replacement) | p, r               | r-length tuples, in sorted order, with repeated elements      |
 
 ### Batched
 
