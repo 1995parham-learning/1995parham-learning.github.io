@@ -45,3 +45,8 @@ There are generally four main components of the process:
     - selection
     - training
     - debugging
+
+## Recommender systems
+
+- Content based system: recommends based on the items similarity
+- Collaborative filtering: recommends based on the users usage similarity (based on matrix factorization)
