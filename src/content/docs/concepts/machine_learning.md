@@ -34,3 +34,14 @@ There are generally four main components of the process:
     - Project constraints
 2. Data pipeline:
     - For every formulation of the problem, you should tell what kind of data and how much data you need.
+    - Data availability and collection
+    - User data
+    - Storage
+    - Data preprocessing and representation
+    - Challenges
+    - Privacy
+    - Biases
+3. Modeling
+    - selection
+    - training
+    - debugging
