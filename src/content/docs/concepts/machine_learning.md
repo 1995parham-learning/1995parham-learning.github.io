@@ -2,6 +2,14 @@
 title: Machine Learning
 ---
 
+:::note
+Machine learning is an approach to lear complex pattern from existing
+data and use these patterns to make predictions on unseen data.
+:::
+
+Inputs + Patterns => Traditional software => Outputs
+Inputs + Outputs => Machine learning => Patterns
+
 ## Interview Questions
 
 1. How do you handle missing or corrupted data in a data set?
@@ -45,6 +53,22 @@ There are generally four main components of the process:
     - selection
     - training
     - debugging
+    - hyper-parameter tuning
+    - scaling
+4. Serving
+    - Performance/Interpret-ability tradeoff
+    - With data parallelism, each worker has its own copy of the model and does all the computation necessary for the model.
+
+## The relationship between MLOps and ML Systems Design
+
+Ops in MLOps comes from DevOps, short for Developments and Operations. To
+operationalize something means to bring it into production, which includes
+deploying, monitoring, and maintaining it. MLOps is a set of tools and best
+practices for bringing ML into production.
+
+ML systems design takes a system approach to MLOps, which means that it considers
+an ML system holistically to ensure that all the components and their stakeholders
+can work together to satisfy the specified objectives and requirements.
 
 ## Recommender systems
 
