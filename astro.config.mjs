@@ -41,6 +41,24 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "Concepts",
+          items: [
+            {
+              label: "Machine Learning",
+              link: "/concepts/machine_learning",
+            }
+          ],
+        },
+        {
+          label: "Real Estate",
+          items: [
+            {
+              label: "Concepts",
+              link: "/real_state/concepts",
+            }
+          ],
+        },
       ],
     }),
     icon({
