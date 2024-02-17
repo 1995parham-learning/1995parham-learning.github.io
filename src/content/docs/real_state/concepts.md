@@ -17,9 +17,9 @@ studies or retreats.
   - Common room
   - Den
   - Dining room
-  - Family room
-  - Garret
-  - Great room
+  - Family room: a large room designed as a recreation center and informal gathering place for members of a family
+  - Garret: a room or unfinished part of a house just under the roof
+  - Great room: a large room in a residence usually serving several functions (as of a dining room, living room, and family room)
   - Home cinema
   - Kitchen (dirty kitchen - kitchenette)
   - Living room
@@ -32,9 +32,9 @@ studies or retreats.
 - Private rooms:
   - Bathroom (toilet)
   - Bedroom / Guest room (closet)
-  - Bedsit / Miniflat
+  - Bedsit / Miniflat: a one-room apartment serving as both bedroom and living room
   - Boudoir
-  - Cabinet
+  - Cabinet: a small room providing an isolated place
   - Nursery
 - Spaces:
   - Atrium
@@ -53,7 +53,7 @@ studies or retreats.
   - Lanai
   - Loft
   - Loggia
-  - Overhang
+  - Overhang: a projection of the roof or upper story of a building beyond the wall of the lower part.
   - Patio
   - Porch (screened / sleeping)
   - Ramp
