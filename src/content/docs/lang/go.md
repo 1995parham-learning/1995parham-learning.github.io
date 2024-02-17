@@ -218,11 +218,16 @@ func main() {
 }
 ```
 
-Exporter depend on the task and the service for example the Jaeger exporter is in the following package:
-
-```go
-import "go.opentelemetry.io/otel/exporters/jaeger"
-```
+|                                                                              Exporter Package                                                                              | Metrics | Traces |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----: | :----: |
+| [go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/otlp/otlpmetric/otlpmetricgrpc) |    ✓    |        |
+| [go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/otlp/otlpmetric/otlpmetrichttp) |    ✓    |        |
+|   [go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/otlp/otlptrace/otlptracegrpc)   |         |   ✓    |
+|   [go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/otlp/otlptrace/otlptracehttp)   |         |   ✓    |
+|                     [go.opentelemetry.io/otel/exporters/prometheus](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/prometheus)                     |    ✓    |        |
+|            [go.opentelemetry.io/otel/exporters/stdout/stdoutmetric](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/stdout/stdoutmetric)            |    ✓    |        |
+|             [go.opentelemetry.io/otel/exporters/stdout/stdouttrace](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/stdout/stdouttrace)             |         |   ✓    |
+|                         [go.opentelemetry.io/otel/exporters/zipkin](https://github.com/open-telemetry/opentelemetry-go/blob/main/exporters/zipkin)                         |         |   ✓    |
 
 #### Tracer Provider
 
