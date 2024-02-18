@@ -89,7 +89,7 @@ Nodes have metadata that relate them to the document they are in and to other no
 **[Connectors](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/root.html)**: A data connector (often called a `Reader`) ingests data from different data sources
 and data formats into `Documents` and `Nodes`.
 
-### **Indexing Stage**
+### Indexing Stage
 
 **[Indexes](https://docs.llamaindex.ai/en/stable/module_guides/indexing/indexing.html)**: Once you've ingested your data, LlamaIndex will help you index the data into a structure that's easy to retrieve.
 This usually involves generating `vector embeddings` which are stored in a specialized database called a `vector store`.
@@ -97,6 +97,12 @@ Indexes can also store a variety of metadata about your data.
 
 **[Embeddings](https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings.html)** LLMs generate numerical representations of data called `embeddings`.
 When filtering your data for relevance, LlamaIndex will convert queries into embeddings, and your vector store will find data that is numerically similar to the embedding of your query.
+
+In LlamaIndex terms, an **Index** is a data structure composed of **Document** objects, designed to enable querying by an LLM.
+Your Index is designed to be complementary to your querying strategy.
+
+A `VectorStoreIndex` is by far the most frequent type of Index you'll encounter. The Vector Store Index takes your Documents and splits them up into Nodes.
+It then creates `vectorembeddings` of the text of every node, ready to be queried by an LLM.
 
 ### Querying Stage
 
