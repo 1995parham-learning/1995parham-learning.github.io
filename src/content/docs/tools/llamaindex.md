@@ -1,5 +1,6 @@
 ---
 title: LlamaIndex
+icon: noto:llama
 ---
 
 LlamaIndex is a data framework for [LLM](https://en.wikipedia.org/wiki/Large_language_model)-based applications to ingest,
