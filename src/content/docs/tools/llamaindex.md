@@ -64,7 +64,7 @@ This context and your query then go to the LLM along with a prompt, and the LLM 
 
 Even if what you're building is a chatbot or an agent, you'll want to know RAG techniques for getting data into your application.
 
-![pipeline](llamaindex/pipeline.png)
+![pipeline](./llamaindex/pipeline.png)
 
 ## Stages within RAG
 

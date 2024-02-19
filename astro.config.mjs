@@ -42,6 +42,15 @@ export default defineConfig({
           ],
         },
         {
+          label: "Tools",
+          items: [
+            {
+              label: "Llama Index",
+              link: "/tools/llamaindex",
+            }
+          ],
+        },
+        {
           label: "Concepts",
           items: [
             {
