@@ -1,5 +1,6 @@
 ---
 title: Machine Learning
+icon: carbon:machine-learning
 ---
 
 :::note

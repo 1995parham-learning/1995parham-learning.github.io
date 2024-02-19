@@ -26,47 +26,27 @@ export default defineConfig({
       sidebar: [
         {
           label: "Programming Languages",
-          items: [
-            {
-              label: "Golang",
-              link: "/lang/go",
-            },
-            {
-              label: "Rust",
-              link: "/lang/rust",
-            },
-            {
-              label: "Python",
-              link: "/lang/python",
-            },
-          ],
+          autogenerate: {
+            directory: "lang",
+          },
         },
         {
           label: "Tools",
-          items: [
-            {
-              label: "Llama Index",
-              link: "/tools/llamaindex",
-            }
-          ],
+          autogenerate: {
+            directory: "tools",
+          },
         },
         {
           label: "Concepts",
-          items: [
-            {
-              label: "Machine Learning",
-              link: "/concepts/machine_learning",
-            }
-          ],
+          autogenerate: {
+            directory: "concepts",
+          },
         },
         {
           label: "Real Estate",
-          items: [
-            {
-              label: "Concepts",
-              link: "/real_state/concepts",
-            }
-          ],
+          autogenerate: {
+            directory: "real_state",
+          },
         },
       ],
     }),

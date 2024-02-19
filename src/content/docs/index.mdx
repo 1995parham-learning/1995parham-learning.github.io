@@ -6,15 +6,28 @@ hero:
   tagline: Notes that I write during reading blogs, books or codes
   image:
     file: ../../assets/panda.png
-  actions: []
+  actions:
+    - text: Let's Go
+      link: /lang/go
+      icon: right-arrow
+      variant: primary
 ---
 
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
 ## Notes
 
 <CardGrid stagger>
-  <LinkCard title="Programming Languages" description="Go, Rust, Python, etc." href="/lang"/>
-  <LinkCard title="Services" description="Public and self-hosted services like AWS, GitHub, etc." />
-  <LinkCard title="Concepts" description="Concepts like Cloud, Networking, etc." />
+  <Card title="Programming Languages" icon="star">
+    Go, Rust, Python, etc.
+  </Card>
+  <Card title="Services" icon="laptop">
+    Public and self-hosted services like AWS, GitHub, etc.
+  </Card>
+  <Card title="Tools" icon="sun">
+    LlamaIndex, etc.
+  </Card>
+  <Card title="Concepts" icon="moon">
+    Cloud, Networking, etc.
+  </Card>
 </CardGrid>
