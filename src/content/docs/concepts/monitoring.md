@@ -78,10 +78,44 @@ Finally, saturation is also concerned with predictions of impending saturation, 
 
 ### `irate` vs `rate`
 
+`rate`: Use **first** and **last** data points in the group, divide by **query interval**.
+`irate`: Use **last 2** data points in the range, divide by **scrape interval**.
+
 :::note
 `rate()` is generally used when graphing the slow moving counters.
 While `irate()` is used when graphing the high volatile counters.
 :::
+
+Look at the following picture for hypothetical `requests_total` counter:
+
+```txt
+v  20     50     100     200     201      230
+----x-+----x------x-------x-------x--+-----x-----
+t  10 |   20     30      40      50  |     60
+      |   <--     range=40s      --> |
+                                     ^
+                                     t
+```
+
+It contains values `[20,50,100,200,201,230]` with timestamps `[10,20,30,40,50,60]` which means our scraping interval is `10s`.
+Let's calculate `irate(requests_total[40s])` at the point `t`.
+It is calculated as `dv/dt` for the last two points before `t` according to [the documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate):
+
+```txt
+(201--200) / (50--40) = 0.1 rps
+```
+
+The `40s` range ending at `t` contains other per-second rates:
+
+```txt
+(100--50) / (30--20) = 5 rps
+(200--100) / (40--30) = 10 rps
+```
+
+These rates are much larger than the captured rate at `t`. `irate` captures only 0.1 rps while skipping 5 and 10 rps.
+Obviously `irate` doesn't capture spikes. [Irate documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate) says:
+
+> irate should only be used when graphing volatile, fast-moving counters.
 
 ### CPU Quota
 
