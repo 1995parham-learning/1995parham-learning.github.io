@@ -1,5 +1,6 @@
 ---
 title: SQL
+icon: skill-icons:postgresql-light
 ---
 
 ## Foreign Key

@@ -20,7 +20,10 @@ Testing externally visible behavior as a user would see it.
 
 ### Dashboard
 
-An application (usually web-based) that provides a summary view of a service’s core metrics. A dashboard may have filters, selectors, and so on, but is prebuilt to expose the metrics most important to its users. The dashboard might also display team information such as ticket queue length, a list of high-priority bugs, the current on-call engineer for a given area of responsibility, or recent pushes.
+An application (usually web-based) that provides a summary view of a service's core metrics.
+A dashboard may have filters, selectors, and so on, but is prebuilt to expose the metrics most important to its users.
+The dashboard might also display team information such as ticket queue length, a list of high-priority bugs,
+the current on-call engineer for a given area of responsibility, or recent pushes.
 
 ### Alert
 
@@ -35,9 +38,12 @@ Each of these factors might stand alone as a root cause, and each should be repa
 
 ### Node and machine
 
-Used interchangeably to indicate a single instance of a running kernel in either a physical server, virtual machine, or container. There might be multiple **_services_** worth monitoring on a single machine. The services may either be:
-• Related to each other: for example, a caching server and a web server
-• Unrelated services sharing hardware: for example, a code repository and a master for a configuration system like [Puppet](https://puppetlabs.com/puppet/puppet-open-source) or [Chef](https://www.chef.io/chef/)
+Used interchangeably to indicate a single instance of a running kernel in either a physical server, virtual machine, or container.
+There might be multiple **_services_** worth monitoring on a single machine. The services may either be:
+
+- Related to each other: for example, a caching server and a web server
+- Unrelated services sharing hardware: for example, a code repository and a master for a configuration
+  system like [Puppet](https://puppetlabs.com/puppet/puppet-open-source) or [Chef](https://www.chef.io/chef/)
 
 ### Push
 
@@ -55,7 +61,7 @@ A measure of how much demand is being placed on your system, measured in a high-
 For a web service, this measurement is usually HTTP requests per second,
 perhaps broken out by the nature of the requests (e.g., static versus dynamic content).
 For an audio streaming system, this measurement might focus on network I/O rate or concurrent sessions.
-For a key-value storage system, this measurement might be transactions and retrievals per second.
+For a key-value storage system, this measurement might be transactions and retrievals per second.
 
 ### Errors
 

@@ -1,5 +1,6 @@
 ---
 title: Node
+icon: skill-icons:nodejs-dark
 ---
 
 ## `npm upgrade`
