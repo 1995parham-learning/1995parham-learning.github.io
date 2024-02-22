@@ -18,17 +18,25 @@ A **compound key** is a composite key for which each attribute that makes up the
 A **database index** is a [data structure](https://en.wikipedia.org/wiki/Data_structure)
 that improves the speed of data retrieval operations on
 a [database table](<https://en.wikipedia.org/wiki/Table_(database)>)
-at the cost of additional writes and storage space to maintain the index data structure. Indexes are used to quickly locate data without having to search every row in a database table every time said table is accessed. Indexes can be created using one or more [columns of a database table](<https://en.wikipedia.org/wiki/Column_(database)>), providing the basis for both rapid random [lookups](https://en.wikipedia.org/wiki/Lookup) and efficient access of ordered records.
+at the cost of additional writes and storage space to maintain the index data structure.
+Indexes are used to quickly locate data without having to search every row in a database table every time said table is accessed.
+Indexes can be created using one or more [columns of a database table](<https://en.wikipedia.org/wiki/Column_(database)>),
+providing the basis for both rapid random [lookups](https://en.wikipedia.org/wiki/Lookup)
+and efficient access of ordered records.
 
 The order that the index definition defines the columns in is important. It is possible to retrieve a set of row identifiers using only the first indexed column. However, it is not possible or efficient (on most databases) to retrieve the set of row identifiers using only the second or greater indexed column.
 
-Indexes are useful for many applications but come with some limitations. Consider the following [SQL](https://en.wikipedia.org/wiki/SQL) statement:
+Indexes are useful for many applications but come with some limitations.
+Consider the following SQL statement:
 
 ```sql
-**SELECT** first_name **FROM** people **WHERE** last_name = 'Smith';
+SELECT first_name FROM people WHERE last_name = 'Smith';
 ```
 
-To process this statement without an index the database software must look at the `last_name` column on every row in the table (this is known as a [full table scan](https://en.wikipedia.org/wiki/Full_table_scan)). With an index the database simply follows the index data structure (typically a [B-tree](https://en.wikipedia.org/wiki/B-tree)) until the Smith entry has been found; this is much less computationally expensive than a full table scan.
+To process this statement without an index the database software must look at the `last_name` column on every row in the table
+(this is known as a [full table scan](https://en.wikipedia.org/wiki/Full_table_scan)).
+With an index the database simply follows the index data structure (typically a [B-tree](https://en.wikipedia.org/wiki/B-tree))
+until the Smith entry has been found; this is much less computationally expensive than a full table scan.
 
 Consider this SQL statement:
 
@@ -46,7 +54,7 @@ This problem can be solved through the addition of another index created on `rev
 and a SQL query like this:
 
 ```sql
-**SELECT** email_address **FROM** customers **WHERE** reverse(email_address) **LIKE** reverse('%@wikipedia.org');
+SELECT email_address FROM customers WHERE reverse(email_address) LIKE reverse('%@wikipedia.org');
 ```
 
 This puts the wild-card at the right-most part of the query (now `gro.aidepikiw@%`),
