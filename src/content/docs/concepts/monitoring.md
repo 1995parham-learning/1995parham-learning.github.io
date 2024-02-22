@@ -78,8 +78,8 @@ Finally, saturation is also concerned with predictions of impending saturation, 
 
 ### `irate` vs `rate`
 
-`rate`: Use **first** and **last** data points in the group, divide by **query interval**.
-`irate`: Use **last 2** data points in the range, divide by **scrape interval**.
+- `rate`: Use **first** and **last** data points in the group, divide by **query interval**.
+- `irate`: Use **last 2** data points in the range, divide by **scrape interval**.
 
 :::note
 `rate()` is generally used when graphing the slow moving counters.
