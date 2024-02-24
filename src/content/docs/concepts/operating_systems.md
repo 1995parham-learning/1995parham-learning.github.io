@@ -2,18 +2,26 @@
 title: Operating Systems
 ---
 
+Operating system is in charge of making sure the system operates correctly and efficiently in an easy-to-use manner.
+The primary way the OS does this is through a general technique that we call virtualization.
+That is, the OS takes a physical resource (such as the processor, or memory, or a disk) and transform
+it into a more general, powerful, and easy-to-use virtual form of itself.
+
+Turning a single CPU (or a small set of them) into a seemingly infinite number of CPUs and thus allowing
+many programs to seemingly run at once is what we call virtualizing the CPU.
+
 ## Process
 
 Process is the **running program**.
 The program itself is a lifeless thing: it just sits there on the disk, a bunch of instructions
 (and maybe some static data), waiting to spring into action.
 
-**Time sharing** is a basic technique used by an OS to share a resource.
+**Time-sharing** is a basic technique used by an OS to share a resource.
 By allowing the resource to be used for a little while by one entity, and
 then a little while by another, and so forth, the resource in question (e.g., the
 CPU, or a network link) can be shared by many.
-The counterpart of time sharing is **space sharing**, where a resource is divided (in space)
-amon those who whish to use it.
+The counterpart of time-sharing is **space sharing**, where a resource is divided (in space)
+among those who wish to use it.
 For example, disk space is naturally a space-shared resource; once a block is assigned to a file,
 it is normally not assigned to another file until the user deletes the original file.
 
@@ -36,7 +44,7 @@ These APIs, in some form, are available on any modern operating system.
 ### Process Creation
 
 In early (or simple) operating systems, the loading process is done **eagerly**, i.e., all at once before running the program; modern OSes perform
-the process **lazily**, i.e., by loading pieces of code or data only as the are needed during program execution.
+the process **lazily**, i.e., by loading pieces of code or data only as there are needed during program execution.
 Once the code and static data are loaded into memory, there are a few other things the OS needs to do before running the process.
 
 Some memory must be allocated for the program's **run-time stack** (or just **stack**). C programs use the stack for local variables,
@@ -51,7 +59,7 @@ programs request such space by calling `malloc()` and free it explicitly by call
 In a simplified view, a process can be in one of three states:
 
 - **Running**: In the running state, a process is running on a processor. This means it is executing instructions.
-- **Ready**: In the ready state, a process is ready to run buf for some reason the OS has chosen not to run it at this given time.
+- **Ready**: In the ready state, a process is ready to run but for some reason the OS has chosen not to run it at this given time.
 - **Blocked**: In the blocked state, a process has performed some kind of operation that makes it not ready to run until some other
   event takes place. A common example: when a process initiates an I/O request to a disk, it becomes blocked and thus some other process
   can use the processor.
