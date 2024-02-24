@@ -1,0 +1,11 @@
+strong {
+  color: #ffb733;
+}
+
+em {
+  color: #33ffb7;
+}
+
+:not(pre) > code {
+  color: #daff00;
+}

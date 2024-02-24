@@ -16,6 +16,7 @@ export default defineConfig({
       logo: {
         src: "./src/assets/logo.png",
       },
+      customCss: ["./src/styles/custom.css"],
       favicon: "/logo.png",
       title: "Parham's Notes",
       lastUpdated: true,
