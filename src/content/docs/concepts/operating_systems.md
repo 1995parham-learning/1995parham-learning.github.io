@@ -46,6 +46,16 @@ The OS may also allocate some memory for the program's **heap**. In C
 programs, the heap is used for explicitly requested dynamically-allocated data;
 programs request such space by calling `malloc()` and free it explicitly by calling `free()`.
 
+### Process States
+
+In a simplified view, a process can be in one of three states:
+
+- **Running**: In the running state, a process is running on a processor. This means it is executing instructions.
+- **Ready**: In the ready state, a process is ready to run buf for some reason the OS has chosen not to run it at this given time.
+- **Blocked**: In the blocked state, a process has performed some kind of operation that makes it not ready to run until some other
+  event takes place. A common example: when a process initiates an I/O request to a disk, it becomes blocked and thus some other process
+  can use the processor.
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
