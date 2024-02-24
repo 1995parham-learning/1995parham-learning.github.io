@@ -17,6 +17,31 @@ amon those who whish to use it.
 For example, disk space is naturally a space-shared resource; once a block is assigned to a file,
 it is normally not assigned to another file until the user deletes the original file.
 
+### Registers
+
+The **Program Counter (PC)** (sometimes called the **instruction pointer (IP)**) tells us which instruction of the program
+will execute next; similarly a **stack pointer** and associated **frame pointer** are used to manage the stack for function
+parameters, local variables, and return addresses.
+
+### APIs
+
+These APIs, in some form, are available on any modern operating system.
+
+- Create
+- Destroy
+- Wait
+- Miscellaneous Control
+- Status
+
+### Process Creation
+
+In early (or simple) operating systems, the loading process is done **eagerly**, i.e., all at once before running the program; modern OSes perform
+the process **lazily**, i.e., by loading pieces of code or data only as the are needed during program execution.
+Once the code and static data are loaded into memory, there are a few other things the OS needs to do before running the process.
+
+Some memory must be allocated for the program's **run-time stack** (or just **stack**). C programs use the stack for local variables,
+function parameters, and return addresses; the OS allocates this memory and gives it to the process.
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
