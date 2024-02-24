@@ -21,7 +21,7 @@ of attempting to fix the problem automatically. In most cases, the error message
 
 One useful tool that comes with Golang is `gotip`, which allows you to test upcoming changes and experimental features.
 
-```shell
+```bash title="installing gotip"
 go install golang.org/dl/gotip@latest
 gotip download
 ```
