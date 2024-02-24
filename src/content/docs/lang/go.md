@@ -173,7 +173,7 @@ An **event** is a human-readable message on a span that represents "something ha
 during its lifetime.
 
 A **status** can be set on a span, typically used to specify that a span has not completed successfully.
-if you have an operation that failed and you wish to capture the error it produced, you can record that error.
+If you have an operation that failed, and you wish to capture the error it produced, you can record that error.
 
 ### Distributed Traces
 
@@ -234,14 +234,14 @@ func main() {
 This block of code will create a new batch span processor, a type of span processor that batches up multiple spans over a period of time, that writes to the exporter we created in the previous step.
 
 ```go
- ctx := context.Background()
+ctx := context.Background()
 
- bsp := sdktrace.NewBatchSpanProcessor(exporter)
- s := sdktrace.AlwaysSampler()
- tp := sdktrace.NewTracerProvider(sdktrace.WithSpanProcessor(bsp), sdktrace.WithSampler(s))
+bsp := sdktrace.NewBatchSpanProcessor(exporter)
+s := sdktrace.AlwaysSampler()
+tp := sdktrace.NewTracerProvider(sdktrace.WithSpanProcessor(bsp), sdktrace.WithSampler(s))
 
- // Handle this error in a sensible manner where possible
- defer func() { _ = tp.Shutdown(ctx) }()
+// Handle this error in a sensible manner where possible
+defer func() { _ = tp.Shutdown(ctx) }()
 ```
 
 OpenTelemetry requires a trace provider to be initialized in order to generate traces.
@@ -255,7 +255,7 @@ create a `Meter`.
 Meters let you create instruments that you can use to create different kinds of metrics.
 OpenTelemetry Go currently supports the following instruments:
 
-- **Counter**, a synchronous instruments that supports non-negative increments.
+- **Counter**, a synchronous instrument that supports non-negative increments.
 - **Asynchronous Counter**, an asynchronous instrument which supports non-negative increments
 - **Histogram**, a synchronous instrument that supports arbitrary values that are statistically meaningful, such as histograms summaries, or percentile
 - **Asynchronous Gauge**, an asynchronous instrument that supports increments and decrements, such as the number of active requests
