@@ -16,3 +16,8 @@ The counterpart of time sharing is **space sharing**, where a resource is divide
 amon those who whish to use it.
 For example, disk space is naturally a space-shared resource; once a block is assigned to a file,
 it is normally not assigned to another file until the user deletes the original file.
+
+## Policy and Mechanism
+
+Separate high-level policies from low-level mechanisms.
+Policies answer **Which** questions and mechanisms answer **How** questions.
