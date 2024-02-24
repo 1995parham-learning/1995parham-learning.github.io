@@ -69,4 +69,4 @@ In a simplified view, a process can be in one of three states:
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
-Policies answer **Which** questions and mechanisms answer **How** questions.
+Policies answer _Which_ questions and mechanisms answer _How_ questions.
