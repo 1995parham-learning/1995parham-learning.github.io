@@ -51,10 +51,6 @@ export default defineConfig({
         },
       ],
     }),
-    icon({
-      include: {
-        "skill-icons": ["*"],
-      },
-    }),
+    icon(),
   ],
 });
