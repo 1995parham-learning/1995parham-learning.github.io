@@ -471,7 +471,7 @@ Personally, I love to have all configuration well-defined and structured, the th
 [viper](https://github.com/spf13/viper), so I prefer [koanf](https://github.com/knadh/koanf).
 For using `koanf` you need to install its core package besides the required providers and parsers as follows:
 
-```shell
+```bash title="installing koanf with its plugins"
 go get -u github.com/knadh/koanf/v2
 
 go get -u github.com/knadh/koanf/providers/file
@@ -524,7 +524,8 @@ There is also another options, which uses generics and more advance concepts:
 
 ## HTTP Frameworks
 
-There are multiple frameworks in Go. I prefer echo for general use cases, but when there are performance criteria, I will choose fiber.
+There are multiple frameworks in Go. I prefer echo for general use cases, but when there are performance criteria,
+I will choose fiber (seems there is no need for fiber since 1.22).
 
 - [fiber](https://github.com/gofiber/fiber)
 - [echo](https://github.com/labstack/echo)
