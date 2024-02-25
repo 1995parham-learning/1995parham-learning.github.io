@@ -66,6 +66,13 @@ In a simplified view, a process can be in one of three states:
 
 ![process-states](./operating_systems/process-states.png)
 
+### Data structures
+
+The _process list_ (also called the _task list_) to keep track of all the running programs in the system.
+_Process Control Block_(**PCB**) is the individual structure that stores information about a process,
+a fancy way of talking about a C structure that contains information about each process
+(also called a _process descriptor_).
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
