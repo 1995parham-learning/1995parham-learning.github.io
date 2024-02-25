@@ -35,3 +35,11 @@ you can
 ```bash
 npm create astro@latest
 ```
+
+## References
+
+- <https://docs.astro.build/en/getting-started/>
+
+## Showcases
+
+- <https://astro-moon-landing.netlify.app/>
