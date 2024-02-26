@@ -74,6 +74,14 @@ _Process Control Block_ (**PCB**) is the individual structure that stores inform
 a fancy way of talking about a C structure that contains information about each process
 (also called a _process descriptor_).
 
+### APIs
+
+:::note
+The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
+_after_ the call to `fork()` but _before_ the call to `exec()`; this code can alter the environment of the about-to-run
+program, and thus enables a variety of interesting features to be readily built.
+:::
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
