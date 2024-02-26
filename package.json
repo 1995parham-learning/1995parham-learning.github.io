@@ -16,7 +16,7 @@
     "@iconify-json/noto": "^1.1.18",
     "@iconify-json/skill-icons": "^1.1.7",
     "@iconify-json/solar": "^1.1.9",
-    "astro": "^4.4.0",
+    "astro": "^4.4.4",
     "astro-icon": "^1.1.0",
     "sharp": "^0.33.2",
     "typescript": "^5.3.3"
