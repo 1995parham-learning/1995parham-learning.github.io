@@ -1,5 +1,6 @@
 ---
 title: Monitoring
+icon: skill-icons:grafana-dark
 ---
 
 [Google - Site Reliability Engineering](https://sre.google/sre-book/monitoring-distributed-systems/)
