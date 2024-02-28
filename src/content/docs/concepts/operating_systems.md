@@ -76,6 +76,12 @@ a fancy way of talking about a C structure that contains information about each 
 
 ### APIs
 
+- The `fork()` system call is used to create a new process.
+- The `wait()` system call is used by a parent to wait for a child process to finish what it has been doing.
+- The `exec()` system call is useful when you want to run a program that is different from the calling program.
+- The `pipe()` system call is used to implement UNIX pipes. In this case, the output of one process is connected to an
+  in-kernel pipe, and the input of another process is connected to that same pipe.
+
 :::note
 The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
 _after_ the call to `fork()` but _before_ the call to `exec()`; this code can alter the environment of the about-to-run
