@@ -1,10 +1,13 @@
-# AWS
+---
+title: AWS
+icon: skill-icons:aws-light
+---
 
-## Cloudwatch
+## Cloud Watch
 
-[https://github.com/prometheus/cloudwatch_exporter](https://github.com/prometheus/cloudwatch_exporter)
+[@prometheus/cloudwatch_exporter](https://github.com/prometheus/cloudwatch_exporter)
 
-[https://github.com/nerdswords/yet-another-cloudwatch-exporter](https://github.com/nerdswords/yet-another-cloudwatch-exporter)
+[@nerdswords/yet-another-cloudwatch-exporter](https://github.com/nerdswords/yet-another-cloudwatch-exporter)
 
 ## Systems Manager
 
@@ -12,13 +15,15 @@ AWS Systems Manager Agent (SSM Agent) is Amazon software that runs on Amazon Ela
 
 ## Lambda
 
-https://github.com/awslabs/llrt
+<https://github.com/awslabs/llrt>
 
 ## S3 (Simple Storage Service)
 
 ### **Server access logging**
 
-Server access logging provides detailed records for the requests that are made to an Amazon S3 bucket. Server access logs are useful for many applications. For example, access log information can be useful in security and access audits.
+Server access logging provides detailed records for the requests that are made to an Amazon S3 bucket.
+Server access logs are useful for many applications.
+For example, access log information can be useful in security and access audits.
 
 By default, Amazon S3 doesn't collect server access logs. When you enable logging, Amazon S3 delivers access logs for a source bucket to a destination bucket (also known as a *target bucket*) that you choose. The destination bucket must be in the same AWS Region and AWS account as the source bucket.
 
@@ -30,7 +35,7 @@ With Amazon Virtual Private Cloud (Amazon VPC), you can launch AWS resources in 
 
 The following diagram shows an example VPC. The VPC has one subnet in each of the Availability Zones in the Region, EC2 instances in each subnet, and an internet gateway to allow communication between the resources in your VPC and the internet.
 
-![Untitled](AWS%20f1f4b189b1c14c33ac62fc60f954ae34/Untitled.png)
+![Untitled](./aws/Untitled.png)
 
 The following features help you configure a VPC to provide the connectivity that your applications need:
 
@@ -67,7 +72,7 @@ Elastic Container Service (ECS) from Amazon Web Services (AWS) provides a way to
 
 ### Cluster
 
-First, you need to create a cluster and then add your EC2 instances into it. These instances will be called *container instances*.
+First, you need to create a cluster and then add your EC2 instances into it. These instances will be called _container instances_.
 
 ```bash
 aws ecs list-clusters
