@@ -2,14 +2,13 @@
 title: Cloud
 ---
 
-[https://github.com/1995parham-learning/cloud-roadmap](https://github.com/1995parham-learning/cloud-roadmap)
+[@1995parham-learning/cloud-roadmap](https://github.com/1995parham-learning/cloud-roadmap)
 
 [Tutorials 📖 | iximiuz Labs](https://labs.iximiuz.com/tutorials)
 
 ## Terminology
 
-Concepts from cloud computing that seems interesting to me and worth
-time.
+Concepts from cloud computing that seems interesting to me and worth time.
 
 - SR-IOV
 - Data Plane Development Kit (`[dpdk](https://github.com/DPDK/dpdk)`)
@@ -41,13 +40,17 @@ CRC is delivered as a platform inside the VM. Now, let's look at how to configur
 
 ## Runbook
 
-In a computer system or network, a runbook is a compilation of routine procedures and operations that the system administrator or operator carries out. System administrators in IT departments and NOCs use runbooks as a reference. Runbooks can be in either electronic or in physical book form.
+In a computer system or network, a runbook is a compilation of routine procedures and operations
+that the system administrator or operator carries out.
+System administrators in IT departments and NOCs use runbooks as a reference.
+Runbooks can be in either electronic or in physical book form.
 
 ## Operators
 
-- EMQX: [https://github.com/emqx/emqx-operator](https://github.com/emqx/emqx-operator)
-- RabbitMQ: [https://github.com/rabbitmq/cluster-operator](https://github.com/rabbitmq/cluster-operator)
-- NATS: [https://github.com/nats-io/nats-operator](https://github.com/nats-io/nats-operator)
+- EMQX: [@emqx/emqx-operator](https://github.com/emqx/emqx-operator)
+- RabbitMQ: [@rabbitmq/cluster-operator](https://github.com/rabbitmq/cluster-operator)
+- NATS: [@nats-io/nats-operator](https://github.com/nats-io/nats-operator)
+- NATS: [@nats-io/nack](https://github.com/nats-io/nack)
 
 ## Affinity and Taints
 

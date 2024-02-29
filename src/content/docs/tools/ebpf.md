@@ -1,5 +1,6 @@
 ---
 title: eBPF
+icon: noto:honeybee
 ---
 
 > Dynamically program the kernel for efficient networking, observability, tracing, and security
