@@ -8,7 +8,7 @@ OpenStack is a cloud operating system that controls large pools of compute, stor
 
 OpenStack is broken up into services to allow you to plug and play components depending on your needs. The openstack map gives you an “at a glance” view of the openstack landscape to see where those services fit and how they can work together.
 
-![Untitled](OpenStack%2036d2480e3ba24d9dba59be911aeaeeb0/Untitled.png)
+![architecture](openstack/architecture.png)
 
 It’s important to note that OpenStack technologies are independent of the hypervisor. Support is implemented through the appropriate drivers in Nova project.
 
