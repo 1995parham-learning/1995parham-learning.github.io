@@ -40,7 +40,7 @@ CRC is delivered as a platform inside the VM. Now, let's look at how to configur
 
 ## Runbook
 
-In a computer system or network, a runbook is a compilation of routine procedures and operations
+In a computer system or network, a runbook is a _compilation of routine procedures and operations_
 that the system administrator or operator carries out.
 System administrators in IT departments and NOCs use runbooks as a reference.
 Runbooks can be in either electronic or in physical book form.
@@ -70,7 +70,7 @@ Which means, it should be forced during the scheduling, not when the pod is runn
 Kyverno (Greek for “govern”) is a policy engine designed specifically for Kubernetes. Some of its many features include:
 
 - policies as Kubernetes resources (no new language to learn!)
-- validate, mutate, generate, or cleanup (remove) any resource
+- **validate**, **mutate**, **generate**, or **cleanup** (remove) any resource
 - verify container images for software supply chain security
 - inspect image metadata
 - match resources using label selectors and wildcards
@@ -82,7 +82,9 @@ Kyverno (Greek for “govern”) is a policy engine designed specifically for Ku
 - test policies and validate resources using the Kyverno CLI, in your CI/CD pipeline, before applying to your cluster
 - manage policies as code using familiar tools like `git` and `kustomize`
 
-Kyverno runs as a [dynamic admission controller](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) in a Kubernetes cluster. Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server and applies matching policies to return results that enforce admission policies or reject requests.
+Kyverno runs as a [dynamic admission controller](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) in a Kubernetes cluster.
+Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server
+and applies matching policies to return results that enforce admission policies or reject requests.
 
 ## Kubernetes Components
 
@@ -98,13 +100,13 @@ The control plane's components make global decisions about the cluster (for exam
 
 Control plane components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all control plane components on the same machine, and do not run user containers on this machine. See [Creating Highly Available clusters with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/) for an example control plane setup that runs across multiple machines.
 
-### kube-apiserver
+#### kube-apiserver
 
 The API server is a component of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
 
 The main implementation of a Kubernetes API server is [kube-apiserver](https://kubernetes.io/docs/reference/generated/kube-apiserver/). kube-apiserver is designed to scale horizontally—that is, it scales by deploying more instances. You can run several instances of kube-apiserver and balance traffic between those instances.
 
-### etcd
+#### etcd
 
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
@@ -112,13 +114,13 @@ If your Kubernetes cluster uses etcd as its backing store, make sure you have a�
 
 You can find in-depth information about etcd in the official [documentation](https://etcd.io/docs/).
 
-### kube-scheduler
+#### kube-scheduler
 
 Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
 
 Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
 
-### kube-controller-manager
+#### kube-controller-manager
 
 Control plane component that runs [controller](https://kubernetes.io/docs/concepts/architecture/controller/) processes.
 
@@ -133,7 +135,7 @@ There are many different types of controllers. Some examples of them are:
 
 The above is not an exhaustive list.
 
-### cloud-controller-manager
+#### cloud-controller-manager
 
 A Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) component that embeds cloud-specific control logic. The [cloud controller manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/) lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster.
 
@@ -151,13 +153,13 @@ The following controllers can have cloud provider dependencies:
 
 Node components run on every node, maintaining running pods and providing the Kubernetes runtime environment.
 
-### kubelet
+#### kubelet
 
 An agent that runs on each [node](https://kubernetes.io/docs/concepts/architecture/nodes/) in the cluster. It makes sure that [containers](https://kubernetes.io/docs/concepts/containers/) are running in a [Pod](https://kubernetes.io/docs/concepts/workloads/pods/).
 
 The [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy. The kubelet doesn't manage containers which were not created by Kubernetes.
 
-### kube-proxy
+#### kube-proxy
 
 kube-proxy is a network proxy that runs on each [node](https://kubernetes.io/docs/concepts/architecture/nodes/) in your cluster, implementing part of the Kubernetes [Service](https://kubernetes.io/docs/concepts/services-networking/service/) concept.
 
@@ -165,8 +167,12 @@ kube-proxy is a network proxy that runs on each [node](https://kubernetes.io/do
 
 kube-proxy uses the operating system packet filtering layer if there is one and it's available. Otherwise, kube-proxy forwards the traffic itself.
 
-### Container runtime
+#### Container runtime
 
 A fundamental component that empowers Kubernetes to run containers effectively. It is responsible for managing the execution and lifecycle of containers within the Kubernetes environment.
 
-Kubernetes supports container runtimes such as [containerd](https://containerd.io/docs/), [CRI-O](https://cri-o.io/#what-is-cri-o), and any other implementation of the [Kubernetes CRI (Container Runtime Interface)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
+Kubernetes supports container runtimes such as
+[containerd](https://containerd.io/docs/),
+[CRI-O](https://cri-o.io/#what-is-cri-o),
+and any other implementation of the
+[Kubernetes CRI (Container Runtime Interface)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
