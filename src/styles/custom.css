@@ -6,6 +6,22 @@ em {
   color: #33ffb7;
 }
 
+h1 {
+  color: #ff9c33;
+}
+
+.sl-markdown-content :is(h2):not(:where(.not-content *)) {
+  color: #6495ed;
+}
+
+.sl-markdown-content :is(h3):not(:where(.not-content *)) {
+  color: #fa8072;
+}
+
+.sl-markdown-content :is(h4):not(:where(.not-content *)) {
+  color: #ffc0cb;
+}
+
 :not(pre) > code {
   color: #daff00;
 }
