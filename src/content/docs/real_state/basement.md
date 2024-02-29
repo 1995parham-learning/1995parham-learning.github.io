@@ -18,5 +18,10 @@ house at a later date**, instead of at the time the home was constructed.
 Of all the types of basements, a full basement is the most common.
 The ceiling is typically high enough for an average-height person to stand up straight,
 but might be lower than a typical above-ground ceiling like you would find in the rest of the house.
+These basements are built for comfort and use, and they can be turned into a _finished_, usable space very easily.
+
+:::note
+A basement is finished when the entire level is **complete** and _similar to the upstairs living areas_.
+:::
 
 ## Walkout Basement
