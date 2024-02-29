@@ -11,9 +11,9 @@ title: Cloud
 Concepts from cloud computing that seems interesting to me and worth time.
 
 - SR-IOV
-- Data Plane Development Kit (`[dpdk](https://github.com/DPDK/dpdk)`)
+- Data Plane Development Kit ([`dpdk`](https://github.com/DPDK/dpdk))
 - Dark Fiber
-- Open Virtual Network (`[ovn](https://github.com/ovn-org/ovn)`)
+- Open Virtual Network ([`ovn`](https://github.com/ovn-org/ovn))
 - CPU Pinning / Processor affinity
 - Steal time
 - Distribute Network cards between multiple CPU bus
@@ -21,7 +21,7 @@ Concepts from cloud computing that seems interesting to me and worth time.
 ## Container Networking
 
 One of the Linux namespaces used to create containers is called _netns_ or _network namespace_.
-From `[man ip-netns](https://man7.org/linux/man-pages/man8/ip-netns.8.html)`:
+From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 
 > Network namespace is logically another copy of the network stack,
 > with its own routes, firewall rules, and network devices.
@@ -54,7 +54,8 @@ Runbooks can be in either electronic or in physical book form.
 
 ## Affinity and Taints
 
-Using **taints,** you can **forbid** pods from schedule over specific nodes. Using **affinity,** you can **make sure** pods schedule over specific nodes.
+Using **taints,** you can **forbid** pods from schedule over specific nodes.
+Using **affinity,** you can **make sure** pods schedule over specific nodes.
 
 For setting affinity, there are constraints like:
 
