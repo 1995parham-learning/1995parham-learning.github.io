@@ -11,7 +11,7 @@ One of the main issues in our country is finding the best mirror for removing sa
 
 For _ArchLinux_ you can use `reflector` in your terminal as follows:
 
-```bash
+```bash title="using reflector to find 10 fastest mirror resides in Iran"
 reflector -f 10 -p http,https -c IR --threads 10 | sudo tee /etc/pacman.d/mirrorlist
 ```
 
