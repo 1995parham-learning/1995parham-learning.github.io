@@ -30,9 +30,9 @@ In most cases, data storage based on GNU/Linux servers is used together with Cin
 
 **Ceilometer**, OpenStack’s telemetry service, is a centralized information source based on cloud metrics for monitoring data.
 
-Heat, OpenStack’s orchestration service, has the main task of application life cycle provision in cloud infrastructure.
+**Heat**, OpenStack’s orchestration service, has the main task of application life cycle provision in cloud infrastructure.
 
-Horizon, OpenStack’s dashboard service, allows management of cloud resources through the web console.
+**Horizon**, OpenStack’s dashboard service, allows management of cloud resources through the web console.
 
 ## Test Environment
 
@@ -40,7 +40,9 @@ Horizon, OpenStack’s dashboard service, allows management of cloud resources t
 
 ## Deployment
 
-Kolla-Ansible deploys a containerised OpenStack control plane using Kolla containers, orchestrated via Ansible. The project aims for simplicity and reliability, while providing a flexible, intuitive configuration model.
+Kolla-Ansible deploys a containerized OpenStack control plane using Kolla containers,
+orchestrated via Ansible.
+The project aims for simplicity and reliability, while providing a flexible, intuitive configuration model.
 
 [Kolla - OpenStack](https://wiki.openstack.org/wiki/Kolla)
 
