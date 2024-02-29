@@ -1,16 +1,18 @@
-# Networking
+---
+title: Networking
+---
 
 ## Switch types
 
 Cisco switches can be divided into two types:
 
 - Fixed configuration
-    - Capable of being stacked
-    - Back-plane limitation
+  - Capable of being stacked
+  - Back-plane limitation
 - Modular configuration (chassis-based)
-    - hundred of Ethernet ports
-    - processing modules (supervisor) upgrade
-    - Catalyst (4500, 6500 and 9500)
+  - hundred of Ethernet ports
+  - processing modules (supervisor) upgrade
+  - Catalyst (4500, 6500 and 9500)
 
 ## Switch Planning
 
