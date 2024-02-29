@@ -1,8 +1,7 @@
 ---
 title: Openstack
+icon: skill-icons:openstack-light
 ---
-
-# OpenStack
 
 OpenStack is a cloud operating system that controls large pools of compute, storage, and networking resources
 throughout a datacenter, all managed and provisioned through APIs with common authentication mechanisms.
