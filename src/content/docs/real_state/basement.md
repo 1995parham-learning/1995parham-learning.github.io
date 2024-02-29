@@ -25,3 +25,8 @@ A basement is finished when the entire level is **complete** and _similar to the
 :::
 
 ## Walkout Basement
+
+This type of basement is designed, so you can walk out through a door that’s on the lower level.
+These are almost always **built on a hill** and are partially underground like a daylight basement.
+In other words, _the front of the basement may be under the ground_ and _the back of the basement may
+be exposed with a door to the backyard_, due to the placement of the house on a hillside.
