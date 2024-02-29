@@ -30,3 +30,9 @@ This type of basement is designed, so you can walk out through a door that’s o
 These are almost always **built on a hill** and are partially underground like a daylight basement.
 In other words, _the front of the basement may be under the ground_ and _the back of the basement may
 be exposed with a door to the backyard_, due to the placement of the house on a hillside.
+
+## Crawlspace
+
+A crawlspace has some of the same basic attributes as a basement, but it’s not the same.
+It’s typically much shorter, and it’s not a space where you can stand up or move around comfortably.
+The term "crawlspace" is very appropriate since _crawling is what it takes_ to get around inside of it.
