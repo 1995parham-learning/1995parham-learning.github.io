@@ -85,6 +85,12 @@ a fancy way of talking about a C structure that contains information about each 
   imperatives.
 
 :::note
+In the most UNIX shells, certain keystroke combinations are configured to deliver specific signal to the currently
+running process; for example, `control-c` sends a `SIGINT` (interrupt) to the process (normally terminating it) and
+`control-z` sends a `SIGTSTP` (stop) signal thus pausing the process in mid-execution.
+:::
+
+:::note
 The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
 _after_ the call to `fork()` but _before_ the call to `exec()`; this code can alter the environment of the about-to-run
 program, and thus enables a variety of interesting features to be readily built.
