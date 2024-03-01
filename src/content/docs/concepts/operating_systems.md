@@ -110,6 +110,9 @@ The basic idea is simple: run one process for a little while, then
 run another one, and so forth. By **time-sharing** the CPU in this manner,
 virtualization is achieved.
 
+- Performance
+- Control
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
