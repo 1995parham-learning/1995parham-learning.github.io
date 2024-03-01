@@ -96,6 +96,20 @@ _after_ the call to `fork()` but _before_ the call to `exec()`; this code can al
 program, and thus enables a variety of interesting features to be readily built.
 :::
 
+### Signals
+
+The entire signals' subsystem provides a rich infrastructure to _deliver external events_ to processes, including ways
+to receive and process those signals within individual process, and ways to send signals to individual processes
+as well as entire **process groups**.
+
+## Limited Direct Execution
+
+In order to virtualize the CPU, the operating system needs to somehow
+share the physical CPU among many jobs running seemingly at the same time.
+The basic idea is simple: run one process for a little while, then
+run another one, and so forth. By **time-sharing** the CPU in this manner,
+virtualization is achieved.
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
