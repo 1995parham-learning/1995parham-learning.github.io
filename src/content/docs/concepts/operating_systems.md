@@ -81,6 +81,8 @@ a fancy way of talking about a C structure that contains information about each 
 - The `exec()` system call is useful when you want to run a program that is different from the calling program.
 - The `pipe()` system call is used to implement UNIX pipes. In this case, the output of one process is connected to an
   in-kernel pipe, and the input of another process is connected to that same pipe.
+- The `kill()` system call is used to send **signals** to a process, including directives to _pause_, _die_, and other
+  imperatives.
 
 :::note
 The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
