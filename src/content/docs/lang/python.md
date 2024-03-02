@@ -30,6 +30,10 @@ but the function is too small to justify creating its own class.
 In these cases and more, generators and the Python yield statement are here to help.
 :::
 
+Introduced with PEP 255, generator functions are a special kind of function that return a **lazy iterator**.
+These are objects that you can loop over like a list.
+However, unlike lists, lazy iterators _do not store their contents in memory_.
+
 ## Operator
 
 The [`operator`](https://docs.python.org/3/library/operator.html#module-operator)
