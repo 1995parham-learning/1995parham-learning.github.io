@@ -587,21 +587,36 @@ class Comparable(pydantic.BaseModel):
 
 [asyncio — Asynchronous I/O](https://docs.python.org/3/library/asyncio.html)
 
-asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance network and web-servers, database connection libraries, distributed task queues, etc.
+asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance
+network and web-servers, database connection libraries, distributed task queues, etc.
 
-Runners are built on top of an [event loop](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop) with the aim to simplify async code usage for common wide-spread scenarios.
+#### Running an asyncio Program
+
+Runners are built on top of an [event loop](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop)
+with the aim to simplify async code usage for common wide-spread scenarios.
 
 ```python
 asyncio.run(coro, *, debug=None, loop_factory=None)
 ```
 
-This function runs the passed coroutine, taking care of managing the asyncio event loop, _finalizing asynchronous generators_, and closing the executor.
+This function runs the passed coroutine, taking care of _managing the asyncio event loop_,
+_finalizing asynchronous generators_, and _closing the executor_.
 
+:::note
 This function cannot be called when another asyncio event loop is running in the same thread.
+:::
 
-If _debug_ is `True`, the event loop will be run in debug mode. `False` disables debug mode explicitly. `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
+If _debug_ is `True`, the event loop will be run in debug mode.
+`False` disables debug mode explicitly.
+`None` is used to respect the global
+[Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
 
-If _loop_factory_ is not `None`, it is used to create a new event loop; otherwise `[asyncio.new_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)` is used. The loop is closed at the end. This function should be used as a main entry point for asyncio programs, and should ideally only be called once. It is recommended to use _loop_factory_ to configure the event loop instead of policies.
+If _loop_factory_ is not `None`, it is used to create a new event loop;
+otherwise [`asyncio.new_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)
+is used.
+The loop is closed at the end. This function should be used as a main entry point for asyncio programs,
+and should ideally only be called once.
+It is recommended to use _loop_factory_ to configure the event loop instead of policies.
 
 ```python
 async def main():
@@ -611,19 +626,30 @@ async def main():
 asyncio.run(main())
 ```
 
+#### Runner context manager
+
 ```python
 class asyncio.Runner(*, debug=None, loop_factory=None)
 ```
 
 A context manager that simplifies _multiple_ async function calls in the same context.
 
-Sometimes several top-level async functions should be called in the same [event loop](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop) and `[contextvars.Context](https://docs.python.org/3/library/contextvars.html#contextvars.Context)`.
+Sometimes several top-level async functions should be called in the same
+[event loop](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop)
+and [`contextvars.Context`](https://docs.python.org/3/library/contextvars.html#contextvars.Context).
 
-If _debug_ is `True`, the event loop will be run in debug mode. `False` disables debug mode explicitly. `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
+If _debug_ is `True`, the event loop will be run in debug mode.
+`False` disables debug mode explicitly.
+`None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
 
-_loop_factory_ could be used for overriding the loop creation. It is the responsibility of the _loop_factory_ to set the created loop as the current one. By default `[asyncio.new_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)` is used and set as current event loop with `[asyncio.set_event_loop()](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.set_event_loop)` if _loop_factory_ is `None`.
+_loop_factory_ could be used for overriding the loop creation.
+It is the responsibility of the _loop_factory_ to set the created loop as the current one.
+By default [`asyncio.new_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)
+is used and set as current event loop with [`asyncio.set_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.set_event_loop)
+if _loop_factory_ is `None`.
 
-Basically, `[asyncio.run()](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run)` example can be rewritten with the runner usage:
+Basically, [`asyncio.run()`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run)
+example can be rewritten with the runner usage:
 
 ```python
 async def main():
@@ -638,7 +664,8 @@ with asyncio.Runner() as runner:
 run(coro, *, context=None)
 ```
 
-Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) _coro_ in the embedded loop. Return the coroutine's result or raise its
+Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) _coro_ in the embedded loop.
+Return the coroutine's result or raise its
 exception. An optional keyword-only _context_ argument allows specifying a custom
 [`contextvars.Context`](https://docs.python.org/3/library/contextvars.html#contextvars.Context)
 for the _coro_ to run in. The runner's default context is used if `None`.
@@ -657,7 +684,11 @@ get_loop()
 
 Return the event loop associated with the runner instance.
 
-[Coroutines](https://docs.python.org/3/glossary.html#term-coroutine) declared with the async/await syntax is the preferred way of writing asyncio applications. To actually run a coroutine, asyncio provides the following mechanisms:
+#### Coroutines
+
+[Coroutines](https://docs.python.org/3/glossary.html#term-coroutine)
+declared with the async/await syntax is the preferred way of writing asyncio applications.
+To actually run a coroutine, asyncio provides the following mechanisms:
 
 - The [`asyncio.run()`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run) function to run the top-level entry point "main()" function.
 - Awaiting on a coroutine. The following snippet of code will print "hello" after waiting for 1 second, and then print "world" after waiting for _another_ 2 seconds:
@@ -725,9 +756,15 @@ Return the event loop associated with the runner instance.
 
 #### Awaitables
 
-We say that an object is an **awaitable** object if it can be used in an [`await`](https://docs.python.org/3/reference/expressions.html#await) expression. Many asyncio APIs are designed to accept awaitables.
+We say that an object is an **awaitable** object if it can be used in
+an [`await`](https://docs.python.org/3/reference/expressions.html#await) expression.
+Many asyncio APIs are designed to accept awaitables.
 
-There are three main types of _awaitable_ objects: **coroutines**, **Tasks**, and **Futures**.
+There are three main types of _awaitable_ objects:
+
+- **coroutines**
+- **Tasks**
+- **Futures**
 
 :::note
 ⚠️ A _coroutine function_: an [`async def`](https://docs.python.org/3/reference/compound_stmts.html#async-def) function.
@@ -745,22 +782,43 @@ awaitable asyncio.gather(*aws, return_exceptions=False)
 ```
 
 :::note
-🚧 A new alternative to create and run tasks concurrently and wait for their completion is `[asyncio.TaskGroup](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)`. _TaskGroup_ provides stronger safety guarantees than _gather_ for scheduling a nesting of subtasks: if a task (or a subtask, a task scheduled by a task) raises an exception, _TaskGroup_ will, while _gather_ will not, cancel the remaining scheduled tasks).
+🚧 A new alternative to create and run tasks concurrently and wait for their completion is
+[`asyncio.TaskGroup`](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)`.
+_TaskGroup_ provides stronger safety guarantees than _gather_ for scheduling a nesting of subtasks:
+if a task (or a subtask, a task scheduled by a task) raises an exception, _TaskGroup_ will,
+while _gather_ will not, cancel the remaining scheduled tasks).
 :::
 
-[**Task Groups**](https://docs.python.org/3/library/asyncio-task.html#id6)
+#### [Task Groups](https://docs.python.org/3/library/asyncio-task.html#task-groups)
 
-**Task groups** combine a task creation API with a convenient and reliable way to wait for all tasks in the group to finish.
+**Task groups** combine a task creation API with a convenient and reliable way
+to wait for all tasks in the group to finish.
 
-**[Eager Task Factory](https://docs.python.org/3/library/asyncio-task.html#id9)**
+#### [Eager Task Factory](https://docs.python.org/3/library/asyncio-task.html#eager-task-factory)
+
+A task factory for eager task execution.
+
+When using this factory (via `loop.set_task_factory(asyncio.eager_task_factory)`),
+coroutines begin execution synchronously during Task construction.
+Tasks are **only scheduled on the event loop if they block**.
+This can be a performance improvement as the overhead of
+loop scheduling is avoided for coroutines that complete synchronously.
+
+A common example where this is beneficial is coroutines which employ **caching** or **memoization**
+to _avoid actual I/O_ when possible.
 
 :::note
-🐼 Immediate execution of the coroutine is a semantic change. If the coroutine returns or raises, the task is never scheduled to the event loop. If the coroutine execution blocks, the task is scheduled to the event loop. This change may introduce behavior changes to existing applications. For example, the application's task execution order is likely to change.
+🐼 Immediate execution of the coroutine is a **semantic change**.
+If the coroutine returns or raises, the task is never scheduled to the event loop.
+If the coroutine execution blocks, the task is scheduled to the event loop.
+This change may introduce behavior changes to existing applications.
+For example, the application's task execution order is likely to change.
 :::
 
-### **AIOfiles**
+### AIOfiles
 
-**aiofiles** is an Apache2 licensed library, written in Python, for handling local disk files in asyncio applications.
+**aiofiles** is an Apache2 licensed library,
+written in Python, for handling local disk files in asyncio applications.
 
 [@Tinche/aiofiles](https://github.com/Tinche/aiofiles)
 
