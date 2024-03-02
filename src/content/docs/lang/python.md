@@ -21,6 +21,15 @@ such as [`property()`](https://docs.python.org/3/library/functions.html#property
 such as [`property()`](https://docs.python.org/3/library/functions.html#property).
 :::
 
+## Generators
+
+:::note
+Have you ever had to work with a dataset so large that it overwhelmed your machine’s memory?
+Or maybe you have a complex function that needs to maintain an internal state every time it’s called,
+but the function is too small to justify creating its own class.
+In these cases and more, generators and the Python yield statement are here to help.
+:::
+
 ## Operator
 
 The [`operator`](https://docs.python.org/3/library/operator.html#module-operator)
