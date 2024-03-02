@@ -657,15 +657,15 @@ Sometimes several top-level async functions should be called in the same
 [event loop](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop)
 and [`contextvars.Context`](https://docs.python.org/3/library/contextvars.html#contextvars.Context).
 
-If _debug_ is `True`, the event loop will be run in debug mode.
+If `debug` is `True`, the event loop will be run in debug mode.
 `False` disables debug mode explicitly.
 `None` is used to respect the global [Debug Mode](https://docs.python.org/3/library/asyncio-dev.html#asyncio-debug-mode) settings.
 
-_loop_factory_ could be used for overriding the loop creation.
-It is the responsibility of the _loop_factory_ to set the created loop as the current one.
+`loop_factory` could be used for overriding the loop creation.
+It is the responsibility of the `loop_factory` to set the created loop as the current one.
 By default, [`asyncio.new_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)
 is used and set as current event loop with [`asyncio.set_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.set_event_loop)
-if _loop_factory_ is `None`.
+if `loop_factory` is `None`.
 
 Basically, [`asyncio.run()`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run)
 example can be rewritten with the runner usage:
@@ -683,11 +683,11 @@ with asyncio.Runner() as runner:
 run(coro, *, context=None)
 ```
 
-Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) _coro_ in the embedded loop.
+Run a [coroutine](https://docs.python.org/3/glossary.html#term-coroutine) `coro` in the embedded loop.
 Return the coroutine's result or raise its
 exception. An optional keyword-only _context_ argument allows specifying a custom
 [`contextvars.Context`](https://docs.python.org/3/library/contextvars.html#contextvars.Context)
-for the _coro_ to run in. The runner's default context is used if `None`.
+for the `coro` to run in. The runner's default context is used if `None`.
 This function cannot be called when another asyncio event loop is running in the same thread.
 
 ```python
