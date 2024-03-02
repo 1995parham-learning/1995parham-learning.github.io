@@ -574,6 +574,9 @@ class Comparable(pydantic.BaseModel):
     API response.
     """
 
+    class Config:
+        use_enum_values = True
+
     @pydantic.field_validator("sold_date", mode="before")
     @classmethod
     def sold_date_from_rfc1123(cls, v: str):
@@ -603,7 +606,7 @@ class Comparable(pydantic.BaseModel):
 
 [asyncio — Asynchronous I/O](https://docs.python.org/3/library/asyncio.html)
 
-asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance
+Asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance
 network and web-servers, database connection libraries, distributed task queues, etc.
 
 #### Running an asyncio Program
@@ -660,7 +663,7 @@ If _debug_ is `True`, the event loop will be run in debug mode.
 
 _loop_factory_ could be used for overriding the loop creation.
 It is the responsibility of the _loop_factory_ to set the created loop as the current one.
-By default [`asyncio.new_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)
+By default, [`asyncio.new_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.new_event_loop)
 is used and set as current event loop with [`asyncio.set_event_loop()`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.set_event_loop)
 if _loop_factory_ is `None`.
 
