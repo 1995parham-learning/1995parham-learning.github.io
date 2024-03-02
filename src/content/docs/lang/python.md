@@ -52,9 +52,11 @@ bisect.bisect(a, x, lo=0, hi=len(a), *, key=None)
 ```
 
 Similar to [`bisect_left()`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left),
-but returns an insertion point which comes after (to the right of) any existing entries of _x_ in _a_.
+but returns an insertion point which comes after (to the right of) any existing entries of `x` in `a`.
 
-The returned insertion point _ip_ partitions the array _a_ into two slices such that `all(elem <= x for elem in a[lo : ip])` is true for the left slice and `all(elem > x for elem in a[ip : hi])` is true for the right slice.
+The returned insertion point `ip` partitions the array `a` into two slices such that
+`all(elem <= x for elem in a[lo : ip])` is true for the left slice and
+`all(elem > x for elem in a[ip : hi])` is true for the right slice.
 
 ## Itertools
 
@@ -67,21 +69,21 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 
 **Infinite iterators:**
 
-| Iterator                                                                      | Arguments       | Results                                        | Example                               |
-| ----------------------------------------------------------------------------- | --------------- | ---------------------------------------------- | ------------------------------------- |
-| [`count`](https://docs.python.org/3/library/itertools.html#itertools.count)   | [start[, step]] | start, start+step, start+2\*step, …            | count(10) --> 10 11 12 13 14 ...      |
-| [`cycle`](https://docs.python.org/3/library/itertools.html#itertools.cycle)   | p               | p0, p1, … plast, p0, p1, …                     | cycle('ABCD') --> A B C D A B C D ... |
-| [`repeat`](https://docs.python.org/3/library/itertools.html#itertools.repeat) | elem [,n]       | elem, elem, elem, … endlessly or up to n times | repeat(10, 3) --> 10 10 10            |
+| Iterator                                                                      | Arguments         | Results                                               | Example                                 |
+| ----------------------------------------------------------------------------- | ----------------- | ----------------------------------------------------- | --------------------------------------- |
+| [`count`](https://docs.python.org/3/library/itertools.html#itertools.count)   | `[start[, step]]` | `start`, `start+step`, `start+2*step`, ...            | `count(10)` ⇾ `10 11 12 13 14 ...`      |
+| [`cycle`](https://docs.python.org/3/library/itertools.html#itertools.cycle)   | `p`               | `p0`, `p1`, ... `plast`, `p0`, `p1`, ...              | `cycle('ABCD')` ⇾ `A B C D A B C D ...` |
+| [`repeat`](https://docs.python.org/3/library/itertools.html#itertools.repeat) | `elem [,n]`       | `elem`, `elem`, `elem`,... endlessly or up to n times | `repeat(10, 3)` ⇾ `10 10 10`            |
 
 **Iterators terminating on the shortest input sequence:**
 
 | Iterator                                                                                                | Arguments                   | Results                                    | Example                                                  |
 | ------------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------ | -------------------------------------------------------- |
-| [`accumulate`](https://docs.python.org/3/library/itertools.html#itertools.accumulate)                   | p [,func]                   | p0, p0+p1, p0+p1+p2, …                     | accumulate([1,2,3,4,5]) --> 1 3 6 10 15                  |
-| [`batched`](https://docs.python.org/3/library/itertools.html#itertools.batched)                         | p, n                        | (p0, p1, …, p_n-1), …                      | batched('ABCDEFG', n=3) --> ABC DEF G                    |
-| [`chain`](https://docs.python.org/3/library/itertools.html#itertools.chain)                             | p, q, …                     | p0, p1, … plast, q0, q1, …                 | chain('ABC', 'DEF') --> A B C D E F                      |
-| [`chain.from_iterable`](https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable) | iterable                    | p0, p1, … plast, q0, q1, …                 | chain.from_iterable(['ABC', 'DEF']) --> A B C D E F      |
-| [`compress`](https://docs.python.org/3/library/itertools.html#itertools.compress)                       | data, selectors             | (d[0] if s[0]), (d[1] if s[1]), …          | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F            |
+| [`accumulate`](https://docs.python.org/3/library/itertools.html#itertools.accumulate)                   | `p [,func]`                 | `p0`, `p0+p1`, `p0+p1+p2`, ...             | `accumulate([1,2,3,4,5])` → `1 3 6 10 15`                |
+| [`batched`](https://docs.python.org/3/library/itertools.html#itertools.batched)                         | `p, n`                      | `(p0, p1, ..., p_n-1)`, ...                | `batched('ABCDEFG', n=3)` → `ABC DEF G`                  |
+| [`chain`](https://docs.python.org/3/library/itertools.html#itertools.chain)                             | `p, q, ...`                 | `p0`, `p1`, ... `plast`, `q0`, `q1`, ...   | `chain('ABC', 'DEF')` → `A B C D E F`                    |
+| [`chain.from_iterable`](https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable) | `iterable`                  | `p0`, `p1`, ... `plast`, `q0`, `q1`, ...   | `chain.from_iterable(['ABC', 'DEF'])` → `A B C D E F`    |
+| [`compress`](https://docs.python.org/3/library/itertools.html#itertools.compress)                       | `data, selectors`           | `(d[0] if s[0])`, `(d[1] if s[1])`, ...    | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F            |
 | [`dropwhile`](https://docs.python.org/3/library/itertools.html#itertools.dropwhile)                     | pred, seq                   | seq[n], seq[n+1], starting when pred fails | dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1          |
 | [`filterfalse`](https://docs.python.org/3/library/itertools.html#itertools.filterfalse)                 | pred, seq                   | elements of seq where pred(elem) is false  | filterfalse(lambda x: x%2, range(10)) --> 0 2 4 6 8      |
 | [`groupby`](https://docs.python.org/3/library/itertools.html#itertools.groupby)                         | iterable[, key]             | sub-iterators grouped by value of key(v)   |                                                          |
@@ -775,7 +777,7 @@ A _coroutine object_: an object returned by calling a _coroutine function_.
 🔥 _Tasks_ are used to schedule coroutines _concurrently_.
 :::
 
-**[Running Tasks Concurrently](https://docs.python.org/3/library/asyncio-task.html#id8)**
+#### [Running Tasks Concurrently](https://docs.python.org/3/library/asyncio-task.html#id8)
 
 ```python
 awaitable asyncio.gather(*aws, return_exceptions=False)
@@ -785,8 +787,8 @@ awaitable asyncio.gather(*aws, return_exceptions=False)
 🚧 A new alternative to create and run tasks concurrently and wait for their completion is
 [`asyncio.TaskGroup`](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup)`.
 _TaskGroup_ provides stronger safety guarantees than _gather_ for scheduling a nesting of subtasks:
-if a task (or a subtask, a task scheduled by a task) raises an exception, _TaskGroup_ will,
-while _gather_ will not, cancel the remaining scheduled tasks).
+if a task (or a subtask, a task scheduled by a task) raises an exception,
+_TaskGroup_ will, while _gather_ will not, cancel the remaining scheduled tasks.
 :::
 
 #### [Task Groups](https://docs.python.org/3/library/asyncio-task.html#task-groups)
