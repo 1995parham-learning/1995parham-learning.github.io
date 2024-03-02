@@ -62,7 +62,9 @@ The returned insertion point `ip` partitions the array `a` into two slices such 
 
 [itertools — Functions creating iterators for efficient looping](https://docs.python.org/3/library/itertools.html)
 
-This module implements a number of [iterator](https://docs.python.org/3/glossary.html#term-iterator) building blocks inspired by constructs from APL, Haskell, and SML. Each has been recast in a form suitable for Python.
+This module implements a number of [iterator](https://docs.python.org/3/glossary.html#term-iterator)
+building blocks inspired by constructs from APL, Haskell, and SML.
+Each has been recast in a form suitable for Python.
 
 The module standardizes a core set of fast, memory efficient tools that are useful by themselves or in combination. Together, they form an
 "iterator algebra" making it possible to construct specialized tools succinctly and efficiently in pure Python.
@@ -77,31 +79,31 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 
 **Iterators terminating on the shortest input sequence:**
 
-| Iterator                                                                                                | Arguments                   | Results                                    | Example                                                  |
-| ------------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------ | -------------------------------------------------------- |
-| [`accumulate`](https://docs.python.org/3/library/itertools.html#itertools.accumulate)                   | `p [,func]`                 | `p0`, `p0+p1`, `p0+p1+p2`, ...             | `accumulate([1,2,3,4,5])` → `1 3 6 10 15`                |
-| [`batched`](https://docs.python.org/3/library/itertools.html#itertools.batched)                         | `p, n`                      | `(p0, p1, ..., p_n-1)`, ...                | `batched('ABCDEFG', n=3)` → `ABC DEF G`                  |
-| [`chain`](https://docs.python.org/3/library/itertools.html#itertools.chain)                             | `p, q, ...`                 | `p0`, `p1`, ... `plast`, `q0`, `q1`, ...   | `chain('ABC', 'DEF')` → `A B C D E F`                    |
-| [`chain.from_iterable`](https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable) | `iterable`                  | `p0`, `p1`, ... `plast`, `q0`, `q1`, ...   | `chain.from_iterable(['ABC', 'DEF'])` → `A B C D E F`    |
-| [`compress`](https://docs.python.org/3/library/itertools.html#itertools.compress)                       | `data, selectors`           | `(d[0] if s[0])`, `(d[1] if s[1])`, ...    | compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F            |
-| [`dropwhile`](https://docs.python.org/3/library/itertools.html#itertools.dropwhile)                     | pred, seq                   | seq[n], seq[n+1], starting when pred fails | dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1          |
-| [`filterfalse`](https://docs.python.org/3/library/itertools.html#itertools.filterfalse)                 | pred, seq                   | elements of seq where pred(elem) is false  | filterfalse(lambda x: x%2, range(10)) --> 0 2 4 6 8      |
-| [`groupby`](https://docs.python.org/3/library/itertools.html#itertools.groupby)                         | iterable[, key]             | sub-iterators grouped by value of key(v)   |                                                          |
-| [`islice`](https://docs.python.org/3/library/itertools.html#itertools.islice)                           | seq, [start,] stop [, step] | elements from seq[start:stop:step]         | islice('ABCDEFG', 2, None) --> C D E F G                 |
-| [`pairwise`](https://docs.python.org/3/library/itertools.html#itertools.pairwise)                       | iterable                    | (p[0], p[1]), (p[1], p[2])                 | pairwise('ABCDEFG') --> AB BC CD DE EF FG                |
-| [`starmap`](https://docs.python.org/3/library/itertools.html#itertools.starmap)                         | func, seq                   | func(*seq[0]), func(*seq[1]), …            | starmap(pow, [(2,5), (3,2), (10,3)]) --> 32 9 1000       |
-| [`takewhile`](https://docs.python.org/3/library/itertools.html#itertools.takewhile)                     | pred, seq                   | seq[0], seq[1], until pred fails           | takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4            |
-| [`tee`](https://docs.python.org/3/library/itertools.html#itertools.tee)                                 | it, n                       | it1, it2, … itn splits one iterator into n |                                                          |
-| [`zip_longest`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest)                 | p, q, …                     | (p[0], q[0]), (p[1], q[1]), …              | zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D- |
+| Iterator                                                                                                | Arguments                     | Results                                              | Example                                                    |
+| ------------------------------------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
+| [`accumulate`](https://docs.python.org/3/library/itertools.html#itertools.accumulate)                   | `p [,func]`                   | `p0`, `p0+p1`, `p0+p1+p2`, ...                       | `accumulate([1,2,3,4,5])` → `1 3 6 10 15`                  |
+| [`batched`](https://docs.python.org/3/library/itertools.html#itertools.batched)                         | `p, n`                        | `(p0, p1, ..., p_n-1)`, ...                          | `batched('ABCDEFG', n=3)` → `ABC DEF G`                    |
+| [`chain`](https://docs.python.org/3/library/itertools.html#itertools.chain)                             | `p, q, ...`                   | `p0`, `p1`, ... `plast`, `q0`, `q1`, ...             | `chain('ABC', 'DEF')` → `A B C D E F`                      |
+| [`chain.from_iterable`](https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable) | `iterable`                    | `p0`, `p1`, ... `plast`, `q0`, `q1`, ...             | `chain.from_iterable(['ABC', 'DEF'])` → `A B C D E F`      |
+| [`compress`](https://docs.python.org/3/library/itertools.html#itertools.compress)                       | `data, selectors`             | `(d[0] if s[0])`, `(d[1] if s[1])`, ...              | `compress('ABCDEF', [1,0,1,0,1,1])` → `A C E F`            |
+| [`dropwhile`](https://docs.python.org/3/library/itertools.html#itertools.dropwhile)                     | `pred, seq`                   | `seq[n]`, `seq[n+1]`, starting when `pred` fails     | `dropwhile(lambda x: x<5, [1,4,6,4,1])` → `6 4 1`          |
+| [`filterfalse`](https://docs.python.org/3/library/itertools.html#itertools.filterfalse)                 | `pred, seq`                   | elements of `seq` where `pred(elem)` is false        | `filterfalse(lambda x: x%2, range(10))` → `0 2 4 6 8`      |
+| [`groupby`](https://docs.python.org/3/library/itertools.html#itertools.groupby)                         | `iterable[, key]`             | sub-iterators grouped by value of `key(v)`           |                                                            |
+| [`islice`](https://docs.python.org/3/library/itertools.html#itertools.islice)                           | `seq, [start,] stop [, step]` | elements from `seq[start:stop:step]`                 | `islice('ABCDEFG', 2, None)` → `C D E F G`                 |
+| [`pairwise`](https://docs.python.org/3/library/itertools.html#itertools.pairwise)                       | `iterable`                    | `(p[0], p[1])`, `(p[1], p[2])`, ...                  | `pairwise('ABCDEFG')` → `AB BC CD DE EF FG`                |
+| [`starmap`](https://docs.python.org/3/library/itertools.html#itertools.starmap)                         | `func, seq`                   | `func(*seq[0])`, `func(*seq[1])`, ...                | `starmap(pow, [(2,5), (3,2), (10,3)])` → `32 9 1000`       |
+| [`takewhile`](https://docs.python.org/3/library/itertools.html#itertools.takewhile)                     | `pred, seq`                   | `seq[0]`, `seq[1]`, until `pred` fails               | `takewhile(lambda x: x<5, [1,4,6,4,1])` → `1 4`            |
+| [`tee`](https://docs.python.org/3/library/itertools.html#itertools.tee)                                 | `it, n`                       | `it1`, `it2`, ... `itn` splits one iterator into `n` |                                                            |
+| [`zip_longest`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest)                 | `p, q, ...`                   | `(p[0], q[0])`, `(p[1], q[1])`, ...                  | `zip_longest('ABCD', 'xy', fillvalue='-')` → `Ax By C- D-` |
 
 **Combinatoric iterators:**
 
-| Iterator                                                                                                                    | Arguments          | Results                                                       |
-| --------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------- |
-| [`product`](https://docs.python.org/3/library/itertools.html#itertools.product)                                             | p, q, … [repeat=1] | cartesian product, equivalent to a nested for-loop            |
-| [`permutations`](https://docs.python.org/3/library/itertools.html#itertools.permutations)                                   | p[, r]             | r-length tuples, all possible orderings, no repeated elements |
-| [`combinations`](https://docs.python.org/3/library/itertools.html#itertools.combinations)                                   | p, r               | r-length tuples, in sorted order, no repeated elements        |
-| [`combinations_with_replacement`](https://docs.python.org/3/library/itertools.html#itertools.combinations_with_replacement) | p, r               | r-length tuples, in sorted order, with repeated elements      |
+| Iterator                                                                                                                    | Arguments              | Results                                                       |
+| --------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------- |
+| [`product`](https://docs.python.org/3/library/itertools.html#itertools.product)                                             | `p, q, ... [repeat=1]` | Cartesian product, equivalent to a nested for-loop            |
+| [`permutations`](https://docs.python.org/3/library/itertools.html#itertools.permutations)                                   | `p[, r]`               | r-length tuples, all possible orderings, no repeated elements |
+| [`combinations`](https://docs.python.org/3/library/itertools.html#itertools.combinations)                                   | `p, r`                 | r-length tuples, in sorted order, no repeated elements        |
+| [`combinations_with_replacement`](https://docs.python.org/3/library/itertools.html#itertools.combinations_with_replacement) | `p, r`                 | r-length tuples, in sorted order, with repeated elements      |
 
 ### Batched
 
@@ -111,7 +113,10 @@ itertools.batched(iterable, n)
 
 Batch data from the _iterable_ into tuples of length _n_.
 
-The last batch may be shorter than _n_. Loops over the input iterable and accumulates data into tuples up to size _n_. The input is consumed lazily, just enough to fill a batch. The result is yielded as soon as the batch is full or when the input iterable is exhausted:
+The last batch may be shorter than _n_.
+Loops over the input iterable and accumulates data into tuples up to size _n_.
+The input is consumed **lazily**, _just enough to fill a batch_.
+The result is yielded as soon as the batch is full or when the input iterable is exhausted:
 
 ```python
 >>> flattened_data = ['roses', 'red', 'violets', 'blue', 'sugar', 'sweet']
@@ -128,22 +133,31 @@ The last batch may be shorter than _n_. Loops over the input iterable and accumu
 
 ## Iterables and Iterators
 
-Python's **iterators** and **iterables** are two different but related tools that come in handy when you need to iterate over a data stream or container. Iterators power and control the iteration process, while iterables typically hold data that you want to iterate over one value at a time.
+Python's **iterators** and **iterables** are two different but related tools that come in handy when
+you need to iterate over a data stream or container.
+Iterators power and control the iteration process,
+while iterables typically hold data that you want to iterate over one value at a time.
 
 ## Formatted Strings
 
-A _formatted string literal_ or _f-string_ is a string literal that is prefixed with `'f'` or `'F'`. These strings may contain replacement fields, which are expressions delimited by curly braces `{}`. While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
+A _formatted string literal_ or _f-string_ is a string literal that is prefixed with
+`f` or `F`. These strings may contain replacement fields,
+which are expressions delimited by curly braces `{}`.
+While other string literals always have a constant value, formatted strings are really expressions evaluated at run time.
 
-The parts of the string outside curly braces are treated literally, except that any doubled curly braces `'{{'` or `'}}'` are replaced with the
-corresponding single curly brace. A single opening curly bracket `'{'` marks a replacement field, which starts with a Python expression.
-To display both the expression text and its value after evaluation, (useful in debugging), an equal sign `'='` may be added after the expression.
-A conversion field, introduced by an exclamation point `'!'` may follow.
-A format specifier may also be appended, introduced by a colon `':'`. A replacement field ends with a closing curly bracket `'}'`.
+The parts of the string outside curly braces are treated literally, except that any doubled curly braces `{{` or `}}`
+are replaced with the corresponding single curly brace. A single opening curly bracket `{` marks a replacement field,
+which starts with a Python expression.
+To **display both the expression text and its value after evaluation**, (useful in debugging), an equal sign `=`
+may be added after the expression.
+A **conversion field**, introduced by an exclamation point `!` may follow.
+A **format specifier** may also be appended, introduced by a colon `:`.
+A replacement field ends with a closing curly bracket `}`.
 
 If a conversion is specified, the result of evaluating the expression is converted before formatting.
-Conversion `'!s'` calls [`str()`](https://docs.python.org/3/library/stdtypes.html#str) on the result,
-`'!r'` calls [`repr()`](https://docs.python.org/3/library/functions.html#repr),
-and `'!a'` calls [`ascii()`](https://docs.python.org/3/library/functions.html#ascii).
+Conversion `!s` calls [`str()`](https://docs.python.org/3/library/stdtypes.html#str) on the result,
+`!r` calls [`repr()`](https://docs.python.org/3/library/functions.html#repr),
+and `!a` calls [`ascii()`](https://docs.python.org/3/library/functions.html#ascii).
 
 The result is then formatted using the [`format()`](https://docs.python.org/3/library/functions.html#format) protocol.
 The format specifier is passed to the [`__format__()`](https://docs.python.org/3/reference/datamodel.html#object.__format__) method of the expression or
