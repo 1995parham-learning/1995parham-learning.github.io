@@ -1,5 +1,6 @@
 ---
 title: Astro
+icon: skill-icons:astro
 ---
 
 > The web framework for content-driven websites
@@ -26,7 +27,7 @@ Some highlights include:
 
 ## Installation
 
-create astro is the fastest way to start a new Astro project from scratch.
+`create astro` is the fastest way to start a new Astro project from scratch.
 It will walk you through every step of setting up your new Astro project.
 It allows you to choose from a few different official starter templates, or
 you can

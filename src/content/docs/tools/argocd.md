@@ -1,5 +1,6 @@
 ---
 title: ArgoCD
+icon: devicon:argocd
 ---
 
 ## Argo Workflows
