@@ -26,3 +26,7 @@ The Event Bus acts as the transport layer of Argo-Events by connecting the Event
 
 Sensor defines a set of event dependencies (inputs) and triggers (outputs).
 It listens to events on the event bus and acts as an event dependency manager to resolve and execute the triggers.
+
+### Trigger
+
+A Trigger is the resource/workload executed by the sensor once the event dependencies are resolved.
