@@ -21,3 +21,8 @@ the [cloudevents](https://github.com/cloudevents/spec) and dispatches them over 
 ### Event Bus
 
 The Event Bus acts as the transport layer of Argo-Events by connecting the Event Sources and Sensors.
+
+### Sensor
+
+Sensor defines a set of event dependencies (inputs) and triggers (outputs).
+It listens to events on the event bus and acts as an event dependency manager to resolve and execute the triggers.
