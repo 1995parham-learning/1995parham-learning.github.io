@@ -1,5 +1,6 @@
 ---
 title: Cloud
+icon: skill-icons:kubernetes
 ---
 
 [@1995parham-learning/cloud-roadmap](https://github.com/1995parham-learning/cloud-roadmap)
@@ -20,7 +21,7 @@ Concepts from cloud computing that seems interesting to me and worth time.
 
 ## Container Networking
 
-One of the Linux namespaces used to create containers is called _netns_ or _network namespace_.
+One of the Linux namespaces used to create containers is called `netns` or _network namespace_.
 From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 
 > Network namespace is logically another copy of the network stack,

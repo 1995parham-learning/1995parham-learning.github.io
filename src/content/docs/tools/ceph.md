@@ -1,5 +1,6 @@
 ---
 title: Ceph
+icon: simple-icons:ceph
 ---
 
 Ceph delivers object, block, and file storage in one unified system.

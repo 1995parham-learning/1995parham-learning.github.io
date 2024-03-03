@@ -16,6 +16,7 @@
     "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/devicon": "^1.1.35",
     "@iconify-json/noto": "^1.1.18",
+    "@iconify-json/simple-icons": "^1.1.93",
     "@iconify-json/skill-icons": "^1.1.8",
     "@iconify-json/solar": "^1.1.9",
     "astro": "^4.4.4",
