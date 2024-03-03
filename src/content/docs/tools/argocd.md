@@ -13,6 +13,35 @@ Argo Workflows is implemented as a Kubernetes CRD.
   using Argo Workflows on Kubernetes.
 - Run CI/CD pipelines natively on Kubernetes without configuring complex software development products.
 
+### Hello World
+
+Below, we run a container on a Kubernetes cluster using an Argo workflow template.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow # new type of k8s spec
+metadata:
+  generateName: hello-world- # name of the workflow spec
+spec:
+  entrypoint: whalesay # invoke the whalesay template
+  templates:
+    - name: whalesay # name of the template
+      container:
+        image: docker/whalesay
+        command: [cowsay]
+        args: ["hello world"]
+        resources: # limit the resources
+          limits:
+            memory: 32Mi
+            cpu: 100m
+```
+
+Argo adds a new kind of Kubernetes spec called a `Workflow`.
+The above spec contains a single template called `whalesay` which runs the `docker/whalesay` container and
+invokes `cowsay "hello world"`. The `whalesay` template is the `entrypoint` for the spec.
+The `entrypoint` specifies **the initial template** that should be invoked when the workflow spec is executed by Kubernetes.
+Being able to specify the `entrypoint` is more useful when there is more than one template defined in the Kubernetes workflow spec.
+
 ## Argo Events
 
 Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects,
