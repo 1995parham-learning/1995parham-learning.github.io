@@ -1,5 +1,6 @@
 ---
 title: Latex
+icon: skill-icons:latex-dark
 ---
 
 After trying to write proposal and thesis in work, I know Latex is Awesome!
