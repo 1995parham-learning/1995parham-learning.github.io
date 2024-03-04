@@ -49,6 +49,12 @@ export default defineConfig({
             directory: "real_state",
           },
         },
+        {
+          label: "Investment",
+          autogenerate: {
+            directory: "investment",
+          },
+        },
       ],
     }),
     icon(),
