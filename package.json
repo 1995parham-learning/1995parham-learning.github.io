@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.5",
-    "@astrojs/starlight": "^0.20.1",
+    "@astrojs/starlight": "^0.21.0",
     "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/devicon": "^1.1.35",
     "@iconify-json/logos": "^1.1.42",
