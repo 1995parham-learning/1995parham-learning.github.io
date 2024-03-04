@@ -61,3 +61,5 @@ competing buyers and this would probably cause the market prices for that asset 
 ## Security
 
 Property or goods that you promise to give to someone if you cannot pay what you owe them.
+
+## Market Order
