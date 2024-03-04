@@ -26,6 +26,7 @@ Then you need to use pre-defined actions to install the required tools:
 - [@actions/setup-go](https://github.com/actions/setup-go)
 - [@actions/setup-python](https://github.com/actions/setup-python)
 - [@azure/setup-helm](https://github.com/azure/setup-helm)
+- [@extractions/setup-just](https://github.com/extractions/setup-just)
 
 :::note
 To reduce the build time, use caching mechanisms. Usually official setup tools supports caching
