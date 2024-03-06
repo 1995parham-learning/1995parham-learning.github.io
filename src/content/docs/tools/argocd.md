@@ -14,6 +14,14 @@ Argo Workflows is implemented as a Kubernetes CRD.
   using Argo Workflows on Kubernetes.
 - Run CI/CD pipelines natively on Kubernetes without configuring complex software development products.
 
+### The `Workflow`
+
+The Workflow is the most important resource in Argo and serves two important functions:
+
+It defines the workflow to be executed.
+It stores the state of the workflow.
+Because of these dual responsibilities, a Workflow should be treated as a "live" object. It is not only a static definition, but is also an "instance" of said definition. (If it isn't clear what this means, it will be explained below).
+
 ### Hello World
 
 Below, we run a container on a Kubernetes cluster using an Argo workflow template.
