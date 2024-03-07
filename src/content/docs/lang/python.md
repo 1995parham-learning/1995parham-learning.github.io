@@ -317,7 +317,70 @@ But in Django you don't need anything and Django already has what you need.
 
 [Welcome to Click — Click Documentation (8.1.x)](https://click.palletsprojects.com/)
 
-[Typer, build great CLIs. Easy to code. Based on Python type hints.](https://typer.tiangolo.com/)
+### [Typer](https://typer.tiangolo.com/)
+
+> Typer, build great CLIs. Easy to code. Based on Python type hints.
+
+Create a `typer.Typer()` app, and create two sub commands with their parameters
+
+```python
+import typer
+
+app = typer.Typer()
+
+
+@app.command()
+def hello(name: str):
+    print(f"Hello {name}")
+
+
+@app.command()
+def goodbye(name: str, formal: bool = False):
+    if formal:
+        print(f"Goodbye Ms. {name}. Have a good day.")
+    else:
+        print(f"Bye {name}!")
+
+
+if __name__ == "__main__":
+    app()
+```
+
+```console
+python main.py --help
+
+ Usage: main.py [OPTIONS] COMMAND [ARGS]...
+
+╭─ Options ─────────────────────────────────────────╮
+│ --install-completion          Install completion  │
+│                               for the current     │
+│                               shell.              │
+│ --show-completion             Show completion for │
+│                               the current shell,  │
+│                               to copy it or       │
+│                               customize the       │
+│                               installation.       │
+│ --help                        Show this message   │
+│                               and exit.           │
+╰───────────────────────────────────────────────────╯
+╭─ Commands ────────────────────────────────────────╮
+│ goodbye                                           │
+│ hello                                             │
+╰───────────────────────────────────────────────────╯
+```
+
+```console
+python main.py hello --help
+
+ Usage: main.py hello [OPTIONS] NAME
+
+╭─ Arguments ───────────────────────────────────────╮
+│ *    name      TEXT  [default: None] [required]   │
+╰───────────────────────────────────────────────────╯
+╭─ Options ─────────────────────────────────────────╮
+│ --help          Show this message and exit.       │
+╰───────────────────────────────────────────────────╯
+```
 
 ## Console UIs 💅
 
