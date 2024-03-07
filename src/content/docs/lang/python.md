@@ -289,13 +289,15 @@ Semi-automatic swagger documentation for the REST APIs:
 
 - [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
 
-Using data-classes to define request and response in Django REST Framework:
+Using data-classes to define request and response in Django REST Framework. There are cases in which your request or
+response is not a model, in those cases you can define them as a dataclass using the following library.
 
 [@oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
 
-Having reusable filters for models in Django REST Framework with Django-filter. These filters help you to write viewsets easier and give client developers vast choices in getting the data.
+Having reusable filters for models in Django REST Framework with Django-filter. These filters help you to write
+viewsets easier and give client developers vast choices in getting the data.
 
-[django-filter documentation](https://django-filter.readthedocs.io/en/main/)
+[Django filter documentation](https://django-filter.readthedocs.io/en/main/)
 
 There are cases in which you already have the database and want to describe it using Django models:
 
@@ -314,6 +316,8 @@ But in Django you don't need anything and Django already has what you need.
 ## Standard CLI 💾
 
 [Welcome to Click — Click Documentation (8.1.x)](https://click.palletsprojects.com/)
+
+[Typer, build great CLIs. Easy to code. Based on Python type hints.](https://typer.tiangolo.com/)
 
 ## Console UIs 💅
 
