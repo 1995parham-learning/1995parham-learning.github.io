@@ -289,15 +289,54 @@ Semi-automatic swagger documentation for the REST APIs:
 
 - [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
 
+### Datalcasses
+
 Using data-classes to define request and response in Django REST Framework. There are cases in which your request or
 response is not a model, in those cases you can define them as a dataclass using the following library.
 
-[@oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
+- [@oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
+
+Using the library instead of 😔:
+
+```python
+class Comment:
+    def __init__(self, email, content, created=None):
+        self.email = email
+        self.content = content
+        self.created = created or datetime.now()
+
+class CommentSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    content = serializers.CharField(max_length=200)
+    created = serializers.DateTimeField()
+```
+
+you can write 😍:
+
+```python
+@dataclass
+class Person:
+    name: str
+    email: str
+    alive: bool
+    gender: typing.Literal['male', 'female']
+    birth_date: typing.Optional[datetime.date]
+    phone: typing.List[str]
+    movie_ratings: typing.Dict[str, int]
+
+class PersonSerializer(DataclassSerializer):
+    class Meta:
+        dataclass = Person
+```
+
+### Django Filters
 
 Having reusable filters for models in Django REST Framework with Django-filter. These filters help you to write
 viewsets easier and give client developers vast choices in getting the data.
 
-[Django filter documentation](https://django-filter.readthedocs.io/en/main/)
+- [Django filter documentation](https://django-filter.readthedocs.io/en/main/)
+
+### `inspectdb`
 
 There are cases in which you already have the database and want to describe it using Django models:
 
