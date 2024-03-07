@@ -63,3 +63,7 @@ competing buyers and this would probably cause the market prices for that asset 
 Property or goods that you promise to give to someone if you cannot pay what you owe them.
 
 ## Market Order
+
+A market order is an order to instantly buy or sell at the best available price.
+It is executed based on the limit orders that are already located in the order book,
+meaning that market orders depend on market liquidity to be completed.
