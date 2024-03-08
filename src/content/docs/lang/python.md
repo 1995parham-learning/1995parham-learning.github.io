@@ -206,7 +206,8 @@ print(f"List a contains:\n{"\n".join(a)}")
 
 I love the way we can configure Golang applications **WITH TYPES**, but this library is in Python, and seems nice to me for doing the same in Python.
 
-[@dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
+- [@dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
+- [@pydantic/pydantic-settings](https://github.com/pydantic/pydantic-settings)
 
 ## HTTP Frameworks 🌐
 
