@@ -422,6 +422,12 @@ python main.py hello --help
 ╰───────────────────────────────────────────────────╯
 ```
 
+You can also display beautiful and more complex information using [Rich](https://rich.readthedocs.io/).
+
+## Coverage and Testing
+
+I prefer to write tests using [`pytest`](https://docs.pytest.org/) and [`coverage`](https://coverage.readthedocs.io/).
+
 ## Console UIs 💅
 
 [@Textualize/rich](https://github.com/Textualize/rich)
