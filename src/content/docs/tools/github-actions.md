@@ -33,6 +33,23 @@ To reduce the build time, use caching mechanisms. Usually official setup tools s
 based on the dependency management tools (e.g. `go.sum`, `packages-lock.json`, etc.)
 :::
 
+```yaml
+- uses: actions/setup-python@v5
+  with:
+    python-version: "3.12"
+    cache: "pipenv"
+
+- uses: actions/setup-go@v5
+  with:
+    go-version-file: "go.mod"
+
+- uses: actions/setup-node@v4
+  with:
+    node-version: 21
+    cache: "npm"
+    cache-dependency-path: "package-lock.json"
+```
+
 For some programming languages, there is no official action:
 
 - [GitHub Action to compile LaTeX documents](https://github.com/xu-cheng/latex-action)
