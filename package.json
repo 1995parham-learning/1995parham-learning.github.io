@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.astro src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
+    "@astrojs/check": "^0.5.9",
     "@astrojs/starlight": "^0.21.1",
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/devicon": "^1.1.36",
@@ -20,13 +20,13 @@
     "@iconify-json/simple-icons": "^1.1.95",
     "@iconify-json/skill-icons": "^1.1.8",
     "@iconify-json/solar": "^1.1.9",
-    "astro": "^4.4.15",
+    "astro": "^4.5.2",
     "astro-icon": "^1.1.0",
     "sharp": "^0.33.2",
     "typescript": "^5.4.2"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^7.1.1",
+    "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4"
   }
