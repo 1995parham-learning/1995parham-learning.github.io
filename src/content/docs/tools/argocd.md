@@ -84,11 +84,33 @@ spec:
     chart: sealed-secrets
     repoURL: https://bitnami-labs.github.io/sealed-secrets
     targetRevision: 1.16.1
+    # targetRevision: HEAD
     helm:
       releaseName: sealed-secrets
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kubeseal
+```
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sealed-secrets
+  namespace: argocd
+spec:
+  destination:
+    namespace: dispatching-production
+    server: https://kubernetes.default.svc
+    project: dispatching
+    source:
+      helm:
+        valueFiles:
+          - values.yaml
+          - ./production-teh2-okd4.yaml
+      path: daghigh
+      repoURL: git@github.com:snapp-incubator/daghigh-sulfur.git
+      targetRevision: HEAD
 ```
 
 ## Argo Workflows
