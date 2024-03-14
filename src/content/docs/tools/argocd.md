@@ -7,6 +7,23 @@ icon: devicon:argocd
 
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
+Argo CD is implemented as a Kubernetes controller which continuously monitors running applications
+and compares the current, live state against the desired target state (as specified in the Git repo).
+A deployed application whose live state deviates from the target state is considered `OutOfSync`.
+
+- **Application** A group of Kubernetes resources as defined by a manifest. This is a Custom Resource Definition (CRD).
+- **Application source type** Which Tool is used to build the application.
+- **Target state** The desired state of an application, as represented by files in a Git repository.
+- **Live state** The live state of that application. What pods etc. are deployed.
+- **Sync status** Whether the live state matches the target state. Is the deployed application the same as Git says it should be?
+- **Sync** The process of making an application move to its target state. E.g. by applying changes to a Kubernetes cluster.
+- **Sync operation status** Whether a sync succeeded.
+- **Refresh** Compare the latest code in Git with the live state. Figure out what is different.
+- **Health** The health of the application, is it running correctly? Can it serve requests?
+- **Tool** A tool to create manifests from a directory of files. E.g. `Kustomize`. See **Application Source Type**.
+- **Configuration management tool** See Tool.
+- **Configuration management plugin** A custom tool.
+
 ## Argo Workflows
 
 Argo Workflows is an open source **container-native** workflow engine for orchestrating parallel jobs on Kubernetes.
