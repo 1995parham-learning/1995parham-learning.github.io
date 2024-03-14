@@ -5,7 +5,7 @@ icon: devicon:argocd
 
 ## Argo Workflows
 
-Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
+Argo Workflows is an open source **container-native** workflow engine for orchestrating parallel jobs on Kubernetes.
 Argo Workflows is implemented as a Kubernetes CRD.
 
 - Define workflows where each step in the workflow is a container.
@@ -13,14 +13,6 @@ Argo Workflows is implemented as a Kubernetes CRD.
 - Easily run compute intensive jobs for machine learning or data processing in a fraction of the time
   using Argo Workflows on Kubernetes.
 - Run CI/CD pipelines natively on Kubernetes without configuring complex software development products.
-
-### The `Workflow`
-
-The Workflow is the most important resource in Argo and serves two important functions:
-
-It defines the workflow to be executed.
-It stores the state of the workflow.
-Because of these dual responsibilities, a Workflow should be treated as a "live" object. It is not only a static definition, but is also an "instance" of said definition. (If it isn't clear what this means, it will be explained below).
 
 ### Hello World
 
@@ -50,6 +42,17 @@ The above spec contains a single template called `whalesay` which runs the `dock
 invokes `cowsay "hello world"`. The `whalesay` template is the `entrypoint` for the spec.
 The `entrypoint` specifies **the initial template** that should be invoked when the workflow spec is executed by Kubernetes.
 Being able to specify the `entrypoint` is more useful when there is more than one template defined in the Kubernetes workflow spec.
+
+### The `Workflow`
+
+The Workflow is the most important resource in Argo and serves two important functions:
+
+- It defines the workflow to be executed.
+- It stores the state of the workflow.
+
+Because of these dual responsibilities, a Workflow should be treated as a _live object_.
+It is not only a static definition, but is also an "instance" of said definition.
+(If it isn't clear what this means, it will be explained below).
 
 ## Argo Events
 
