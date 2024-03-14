@@ -24,6 +24,73 @@ A deployed application whose live state deviates from the target state is consid
 - **Configuration management tool** See Tool.
 - **Configuration management plugin** A custom tool.
 
+### Tools
+
+Argo CD supports several different ways in which Kubernetes manifests can be defined:
+
+- `Kustomize` applications
+- Helm charts
+- A directory of YAML/JSON/Jsonnet manifests, including Jsonnet.
+- Any custom config management tool configured as a config management plugin
+
+### `kustomize`
+
+Patches are a way to `kustomize` resources using inline configurations in Argo CD applications.
+Patches follow the same logic as the corresponding `Kustomization`.
+Any patches that target existing `Kustomization` file will be merged.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-inline-guestbook
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: test1
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kustomize-guestbook
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: master
+    kustomize:
+      patches:
+        - target:
+            kind: Deployment
+            name: guestbook-ui
+          patch: |-
+            - op: replace
+              path: /spec/template/spec/containers/0/ports/0/containerPort
+              value: 443
+```
+
+### `helm`
+
+Helm is _only used to inflate charts_ with `helm template`.
+The lifecycle of the application is handled by Argo CD instead of Helm.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sealed-secrets
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: sealed-secrets
+    repoURL: https://bitnami-labs.github.io/sealed-secrets
+    targetRevision: 1.16.1
+    helm:
+      releaseName: sealed-secrets
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kubeseal
+```
+
 ## Argo Workflows
 
 Argo Workflows is an open source **container-native** workflow engine for orchestrating parallel jobs on Kubernetes.
