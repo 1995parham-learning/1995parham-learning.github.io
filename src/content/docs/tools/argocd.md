@@ -33,7 +33,7 @@ Argo CD supports several different ways in which Kubernetes manifests can be def
 - A directory of YAML/JSON/Jsonnet manifests, including Jsonnet.
 - Any custom config management tool configured as a config management plugin
 
-### `kustomize`
+#### `kustomize`
 
 Patches are a way to `kustomize` resources using inline configurations in Argo CD applications.
 Patches follow the same logic as the corresponding `Kustomization`.
@@ -67,7 +67,7 @@ spec:
               value: 443
 ```
 
-### `helm`
+#### `helm`
 
 Helm is _only used to inflate charts_ with `helm template`.
 The lifecycle of the application is handled by Argo CD instead of Helm.
@@ -112,6 +112,15 @@ spec:
       repoURL: git@github.com:snapp-incubator/daghigh-sulfur.git
       targetRevision: HEAD
 ```
+
+### Project
+
+Projects provide a logical grouping of applications, which is useful when Argo CD is used by multiple teams.
+Projects provides the following features:
+
+- restrict what may be deployed (trusted Git source repositories)
+- restrict where apps may be deployed to (destination clusters and namespaces)
+- restrict what kinds of objects may or may not be deployed (e.g. RBAC, CRDs, DaemonSets, NetworkPolicy etc.)
 
 ## Argo Workflows
 
