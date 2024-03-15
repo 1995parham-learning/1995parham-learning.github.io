@@ -121,6 +121,9 @@ Projects provides the following features:
 - restrict what may be deployed (trusted Git source repositories)
 - restrict where apps may be deployed to (destination clusters and namespaces)
 - restrict what kinds of objects may or may not be deployed (e.g. RBAC, CRDs, DaemonSets, NetworkPolicy etc.)
+- defining project roles to provide application RBAC
+
+Every application belongs to a **single project**.
 
 ## Argo Workflows
 
