@@ -15,3 +15,9 @@ real-time cost monitoring, showback, and chargeback.
 - On-Premises
 - Alibaba
 - Scaleway
+
+## Installing On-Premises
+
+OpenCost may be installed on-perm and provides default pricing that may be overridden.
+You will need to install **Prometheus**, create your OpenCost namespace, configure you
+cluster pricing and cloud costs, and then install OpenCost.
