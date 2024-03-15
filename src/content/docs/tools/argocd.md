@@ -123,7 +123,9 @@ Projects provides the following features:
 - restrict what kinds of objects may or may not be deployed (e.g. RBAC, CRDs, DaemonSets, NetworkPolicy etc.)
 - defining project roles to provide application RBAC
 
-Every application belongs to a **single project**.
+Every application belongs to a **single project**. If unspecified, an application belongs to the `default` project,
+which is created automatically and by default, permits deployments from any source repo, to any cluster, and all
+resource kinds.
 
 ## Argo Workflows
 
