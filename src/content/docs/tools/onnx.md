@@ -1,5 +1,6 @@
 ---
 title: ONNX
+icon: simple-icons:onnx
 ---
 
 ONNX can be compared to a **programming language** specialized in mathematical functions.
