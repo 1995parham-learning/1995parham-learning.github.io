@@ -159,3 +159,25 @@ check_model(onnx_model)
 # the work is done, let's display it...
 print(onnx_model)
 ```
+
+An empty shape (`None`) means any shape, a shape defined as `[None, None]` tells this object is a tensor
+with two dimensions without any further precision.
+
+## Serialization
+
+The model needs to be saved to be deployed.
+ONNX is based on `protobuf`. It minimizes the space needed to save the graph on disk.
+_Every object_ in ONNX can be serialized with method `SerializeToString`.
+
+```python
+# The serialization
+with open("linear_regression.onnx", "wb") as f:
+    f.write(onnx_model.SerializeToString())
+```
+
+```python
+from onnx import load
+
+with open("linear_regression.onnx", "rb") as f:
+    onnx_model = load(f)
+```
