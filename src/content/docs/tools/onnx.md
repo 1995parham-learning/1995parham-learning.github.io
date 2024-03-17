@@ -181,3 +181,8 @@ from onnx import load
 with open("linear_regression.onnx", "rb") as f:
     onnx_model = load(f)
 ```
+
+## ONNX Runtime Execution Providers
+
+ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP)
+framework to optimally execute the ONNX models on the hardware platform.
