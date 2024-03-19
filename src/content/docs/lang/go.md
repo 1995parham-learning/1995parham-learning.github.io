@@ -536,12 +536,15 @@ There is also another options, which uses generics and more advance concepts:
 
 ## HTTP Frameworks
 
-There are multiple frameworks in Go. I prefer echo for general use cases, but when there are performance criteria,
+There are multiple frameworks in Go. I prefer echo for general use cases,
+but when there are performance criteria,
 I will choose fiber (seems there is no need for fiber since 1.22).
+Huma is something new which wraps currently implemented routers and provides general
+add-ons like OpenAPI specification, CLI, etc.
 
-- [fiber](https://github.com/gofiber/fiber)
-- [echo](https://github.com/labstack/echo)
-- [huma](https://huma.rocks/)
+- [`fiber`](https://github.com/gofiber/fiber)
+- [`echo`](https://github.com/labstack/echo)
+- [`huma`](https://huma.rocks/)
 
 ## Advanced Console UIs 💅
 
