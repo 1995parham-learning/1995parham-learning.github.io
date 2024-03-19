@@ -436,17 +436,29 @@ m := fmin(2.71, 3.14)
 
 #### Type Sets
 
-In Go, type constraints must be interfaces. That is, an interface type can be used as a value type, and it can also be used as a meta-type. Interfaces define methods, so obviously we can express type constraints that require certain methods to be present. But `constraints.Ordered` is an interface type too, and the < operator is not a method.
+In Go, type constraints must be interfaces. That is, an interface type can be used as a value type,
+and it can also be used as a meta-type. Interfaces define methods, so obviously we can express type constraints that
+require certain methods to be present. But `constraints.Ordered` is an interface type too, and the `<`
+operator is not a method.
 
 To make this work, we look at interfaces in a new way.
 
-Until recently, the Go spec said that an interface defines a method set, which is roughly the set of methods enumerated in the interface. Any type that implements all those methods implements that interface.
+Until recently, the Go spec said that an interface defines a **method set**,
+which is roughly the set of methods enumerated in the interface.
+Any type that implements all those methods implements that interface.
 
-But another way of looking at this is to say that the interface defines a set of types, namely the types that implement those methods. From this perspective, any type that is an element of the interface's type set implements the interface.
+But another way of looking at this is to say that the interface defines a **set of types**,
+namely the types that implement those methods.
+From this perspective, any type that is an element of the interface's type set implements the interface.
 
-For our purposes, though, the type set view has an advantage over the method set view: we can explicitly add types to the set, and thus control the type set in new ways.
+For our purposes, though, the type set view has an advantage over the method set view:
 
-We have extended the syntax for interface types to make this work. For instance, `interface{ int|string|bool }` defines the type set containing the types `int`, `string`, and `bool`.
+:::note
+we can explicitly add types to the set, and thus control the type set in new ways.
+:::
+
+We have extended the syntax for interface types to make this work.
+For instance, `interface{ int|string|bool }` defines the type set containing the types `int`, `string`, and `bool`.
 
 Now let's look at the actual definition of `constraints.Ordered`:
 
@@ -529,6 +541,7 @@ I will choose fiber (seems there is no need for fiber since 1.22).
 
 - [fiber](https://github.com/gofiber/fiber)
 - [echo](https://github.com/labstack/echo)
+- [huma](https://huma.rocks/)
 
 ## Advanced Console UIs 💅
 
