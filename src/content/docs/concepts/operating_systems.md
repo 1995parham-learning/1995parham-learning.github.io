@@ -113,6 +113,13 @@ virtualization is achieved.
 - Performance
 - Control
 
+The hardware assists the OS by providing different modes of execution.
+In **user mode**, applications do not have full access to the full resources of the machine.
+In _kernel mode_, the OS has access to the full resources of the machine.
+Special instructions to **trap** into the kernel and _return-from-trap_ back to user-mode programs
+are also provided, as well as instructions that allow the OS to tell the hardware where the **trap table**
+resides in memory.
+
 ## Policy and Mechanism
 
 Separate high-level policies from low-level mechanisms.
