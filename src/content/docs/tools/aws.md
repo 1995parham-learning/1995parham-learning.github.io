@@ -35,6 +35,96 @@ The various components of IAM follow:
 | Can belong to a group                                                  |          No           |   Yes    |    No    |
 | Can be associated with an EC2 instance, ECS container, Lambda function |          No           |    No    |   Yes    |
 
+### Defining permissions with an IAM identity policy
+
+By attaching one or multiple IAM identity policies to an IAM user or role,
+you are granting permissions to manage AWS resources.
+Identity policies are defined in JSON and contain one or more statements.
+A statement can either allow or deny specific actions on specific resources.
+You can use the wildcard character `*` to create more generic statements.
+
+:::note
+IAM policies come in two types. Identity policies are attached to users,
+groups, or roles.
+Resource policies are attached to resources. Very few resource types support
+resource policies. One common example is the **S3 bucket policy** attached
+to **S3 buckets**.
+
+If the policy contains the property _Principal_, it is a resource policy.
+The _Principal_ defines who is allowed to perform the action. Keep in mind
+that the principal can be set to public.
+:::
+
+## ARN (Amazon Resource Names)
+
+Amazon Resource Names (ARNs) uniquely identify AWS resources.
+We require an ARN when you need to specify a resource unambiguously across
+all of AWS, such as in IAM policies,
+Amazon Relational Database Service (Amazon RDS) tags, and API calls.
+
+The following are the general formats for ARNs.
+The specific formats depend on the resource.
+Be aware that the ARNs for some resources omit the Region,
+the account ID, or both the Region and the account ID.
+
+```
+arn:partition:service:region:account-id:resource-id
+arn:partition:service:region:account-id:resource-type/resource-id
+arn:partition:service:region:account-id:resource-type:resource-id
+```
+
+### `partition`
+
+The partition in which the resource is located.
+A partition is a group of AWS Regions.
+Each AWS account is scoped to one partition.
+
+The following are the supported partitions:
+
+```
+aws - AWS Regions
+aws-cn - China Regions
+aws-us-gov - AWS GovCloud (US) Regions
+```
+
+### `service`
+
+The service namespace that identifies the AWS product.
+
+### `region`
+
+The Region code.
+For example, `us-east-2` for US East (Ohio).
+For the list of Region codes,
+see [Regional endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints)
+in the AWS General Reference.
+
+### `account-id`
+
+The ID of the AWS account that owns the resource,
+without the hyphens.
+For example, `123456789012`.
+Account ID always has 12 digits.
+
+### `resource-type`
+
+The resource type. For example, `vpc` for a virtual private cloud (VPC).
+
+### `resource-id`
+
+The resource identifier.
+This is the name of the resource, the ID of the resource, or a resource path.
+Some resource identifiers include a parent resource
+(`sub-resource-type/parent-resource/sub-resource`)
+or a qualifier such as a version (`resource-type:resource-name:qualifier`).
+
+### Examples
+
+- IAM user: `arn:aws:iam::123456789012:user/johndoe`
+- SNS topic `arn:aws:sns:us-east-1:123456789012:example-sns-topic-name`
+- VPC `arn:aws:ec2:us-east-1:123456789012:vpc/vpc-0e9801d129EXAMPLE`
+- EC2 `arn:aws:ec2:us-east-1:878533158213:instance/i-3dd4f812`
+
 ## S3 (Simple Storage Service)
 
 ### Server access logging
