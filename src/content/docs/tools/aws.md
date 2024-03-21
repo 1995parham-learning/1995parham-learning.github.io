@@ -17,12 +17,30 @@ AWS Systems Manager Agent (SSM Agent) is Amazon software that runs on Amazon Ela
 
 <https://github.com/awslabs/llrt>
 
+## Identity and Access Management (IAM)
+
+This service provides authentication and authorization for the AWS API.
+IAM controls who (authentication) can do what (authorization) in your AWS account.
+The various components of IAM follow:
+
+- An IAM user is used to authenticate people or workloads running outside of AWS.
+- An IAM group is a collection of IAM users with the same permissions.
+- An IAM role is used to authenticate AWS resources, for example, an EC2 instance.
+- An IAM identity policy is used to define the permissions for a user, group, or role.
+
+|                                                                        | AWS account root user | IAM user | IAM role |
+| :--------------------------------------------------------------------- | :-------------------: | :------: | :------: |
+| Can have a password (needed to log in to the AWS Management Console)   |        Always         |   Yes    |    No    |
+| Can have access keys (needed to send requests to the AWS API)          | Yes (not recommended) |   Yes    |    No    |
+| Can belong to a group                                                  |          No           |   Yes    |    No    |
+| Can be associated with an EC2 instance, ECS container, Lambda function |          No           |    No    |   Yes    |
+
 ## S3 (Simple Storage Service)
 
-### **Server access logging**
+### Server access logging
 
-Server access logging provides detailed records for the requests that are made to an Amazon S3 bucket.
-Server access logs are useful for many applications.
+Server access logging provides detailed records for the requests that are made to an Amazon S3 bucket which
+are useful for many applications.
 For example, access log information can be useful in security and access audits.
 
 By default, Amazon S3 doesn't collect server access logs. When you enable logging, Amazon S3 delivers access logs for a source bucket to a destination bucket (also known as a *target bucket*) that you choose. The destination bucket must be in the same AWS Region and AWS account as the source bucket.
