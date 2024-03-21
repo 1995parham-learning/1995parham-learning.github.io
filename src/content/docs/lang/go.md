@@ -10,7 +10,28 @@ The Go programming language, also known as Golang, has gained popularity among s
 This language offers various features and advantages that make it a preferred choice for many developers.
 Golang is an awesome language, but it has sanctioned our country. It is similar to C programming language.
 
-We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API and GraphQL servers.
+We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API
+and GraphQL servers.
+
+## `intrange`
+
+From Go 1.22 (expected release February 2024), you will be able to write:
+
+```go
+for i := range 10 {
+    fmt.Println(i+1)
+}
+```
+
+(ranging over an integer in Go iterates from 0 to one less than that integer).
+
+For versions of Go before 1.22, the idiomatic approach is to write a for loop like this.
+
+```go
+for i := 1; i <= 10; i++ {
+    fmt.Println(i)
+}
+```
 
 ## Modules
 
