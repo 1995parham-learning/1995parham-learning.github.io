@@ -1,7 +1,8 @@
 ---
 title: Concepts
-description: Concepts which are good to know in the real state market
+description: Concepts which are good to know in the real estate market
 ---
+
 ## Den
 
 A den is a small room in a house where people can pursue activities in private.
