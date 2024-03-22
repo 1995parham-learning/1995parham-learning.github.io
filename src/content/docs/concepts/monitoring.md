@@ -83,6 +83,11 @@ Finally, saturation is also concerned with predictions of impending saturation, 
 
 ## Metrics 🌡️
 
+Working with real metrics is hard. Metrics are needed to give you an understanding of how your service behaves.
+That is, by definition, you have some uncertainty about the said behavior.
+Therefore, you have to be _hell certain about your observability part_.
+Otherwise, all sorts of metric misinterpretations and false conclusions will follow.
+
 ### `irate` vs `rate`
 
 - `rate`: Use **first** and **last** data points in the group, divide by **query interval**.
