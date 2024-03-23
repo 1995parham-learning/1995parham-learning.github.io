@@ -61,8 +61,8 @@ The time it takes to service a request. It's important to distinguish between th
 A measure of how much demand is being placed on your system, measured in a high-level system-specific metric.
 For a web service, this measurement is usually HTTP requests per second,
 perhaps broken out by the nature of the requests (e.g., static versus dynamic content).
-For an audio streaming system, this measurement might focus on network I/O rate or concurrent sessions.
-For a key-value storage system, this measurement might be transactions and retrievals per second.
+For an audio streaming system, this measurement might focus on network I/O rate or concurrent sessions and
+for a key-value storage system, this measurement might be transactions and retrievals per second.
 
 ### Errors
 
@@ -114,20 +114,20 @@ Let's calculate `irate(requests_total[40s])` at the point `t`.
 It is calculated as `dv/dt` for the last two points before `t` according to [the documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate):
 
 ```txt
-(201--200) / (50--40) = 0.1 rps
+(201 - 200) / (50 - 40) = 0.1 rps
 ```
 
 The `40s` range ending at `t` contains other per-second rates:
 
 ```txt
-(100--50) / (30--20) = 5 rps
-(200--100) / (40--30) = 10 rps
+(100 - 50) / (30 - 20) = 5 rps
+(200 - 100) / (40 - 30) = 10 rps
 ```
 
 These rates are much larger than the captured rate at `t`. `irate` captures only 0.1 rps while skipping 5 and 10 rps.
 Obviously `irate` doesn't capture spikes. [Irate documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate) says:
 
-> irate should only be used when graphing volatile, fast-moving counters.
+> `irate` should only be used when graphing volatile, fast-moving counters.
 
 ### CPU Quota
 
