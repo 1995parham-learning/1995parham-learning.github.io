@@ -46,7 +46,13 @@ export default defineConfig({
         {
           label: "Real Estate",
           autogenerate: {
-            directory: "real_state",
+            directory: "real_estate",
+          },
+        },
+        {
+          label: "Algorithm",
+          autogenerate: {
+            directory: "algorithm",
           },
         },
         {
