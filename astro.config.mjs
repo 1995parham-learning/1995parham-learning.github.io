@@ -61,6 +61,12 @@ export default defineConfig({
             directory: "investment",
           },
         },
+        {
+          label: "Contracts",
+          autogenerate: {
+            directory: "contracts",
+          },
+        },
       ],
     }),
     icon(),
