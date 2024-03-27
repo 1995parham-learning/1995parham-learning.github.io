@@ -111,7 +111,8 @@ t  10 |   20     30      40      50  |     60
 
 It contains values `[20,50,100,200,201,230]` with timestamps `[10,20,30,40,50,60]` which means our scraping interval is `10s`.
 Let's calculate `irate(requests_total[40s])` at the point `t`.
-It is calculated as `dv/dt` for the last two points before `t` according to [the documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate):
+It is calculated as `dv/dt` for the last two points before `t` according to
+[the documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate):
 
 ```txt
 (201 - 200) / (50 - 40) = 0.1 rps
@@ -125,10 +126,14 @@ The `40s` range ending at `t` contains other per-second rates:
 ```
 
 These rates are much larger than the captured rate at `t`. `irate` captures only 0.1 rps while skipping 5 and 10 rps.
-Obviously `irate` doesn't capture spikes. [Irate documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate) says:
+Obviously `irate` doesn't capture spikes.
+[Irate documentation](https://prometheus.io/docs/prometheus/latest/querying/functions/#irate) says:
 
 > `irate` should only be used when graphing volatile, fast-moving counters.
 
 ### CPU Quota
 
-The **`container_spec_cpu_quota`** is a configuration parameter used in container technologies, such as Docker. This parameter represents the total CPU time that the container can use every **`cpu.cfs_period_us`** period. The value is specified in microseconds. For example, if **`cpu.cfs_period_us`** is set to 100,000 microseconds (the default) and **`container_spec_cpu_quota`** is set to 50,000, the container is allowed to use 50% of one CPU core.
+The **`container_spec_cpu_quota`** is a configuration parameter used in container technologies, such as Docker.
+This parameter represents the total CPU time that the container can use every **`cpu.cfs_period_us`** period.
+The value is specified in microseconds. For example, if **`cpu.cfs_period_us`** is set to 100,000 microseconds (the default)
+and **`container_spec_cpu_quota`** is set to 50,000, the container is allowed to use 50% of one CPU core.
