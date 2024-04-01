@@ -56,3 +56,11 @@ Recently many trendy bars, restaurants and clubs have opened here.
 
 Located north of River IJ with 96,000 inhabitants (2018), an emerging, unpolished post-industrial area,
 a unique green landscape and historic Amsterdam Waterland villages.
+
+## Amsterdam Nieuw-West
+
+> the westernmost neighborhoods of the city
+
+The residential neighborhoods of Amsterdam Nieuw-West, with almost 156,000 inhabitants (2018),
+were built after the Second World War. It consists of the city districts:
+De Aker, Geuzenveld, Nieuw Sloten, Osdorp, Slotermeer, and Slotervaart.
