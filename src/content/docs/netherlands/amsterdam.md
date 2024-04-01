@@ -64,3 +64,12 @@ a unique green landscape and historic Amsterdam Waterland villages.
 The residential neighborhoods of Amsterdam Nieuw-West, with almost 156,000 inhabitants (2018),
 were built after the Second World War. It consists of the city districts:
 De Aker, Geuzenveld, Nieuw Sloten, Osdorp, Slotermeer, and Slotervaart.
+
+## Amsterdam Zuidoost
+
+> cultural melting pot with large-scale entertainment
+
+Amsterdam Zuidoost (Amsterdam South East) - also referred to as Bijlmermeer or De Bijlmer -
+is one of the 8 boroughs (stadsdelen) of Amsterdam. It is an exclave,
+separated from the rest of the city with no shared borders with Amsterdam,
+but with good metro lines (50, 53, 54), connecting Zuidoost to the city center and Central Station.
