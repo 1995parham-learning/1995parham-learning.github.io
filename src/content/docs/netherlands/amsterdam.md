@@ -80,3 +80,7 @@ but with good metro lines (50, 53, 54), connecting Zuidoost to the city center a
 
 Westpoort (Western Gateway) is located in the north-western part of Amsterdam and covers the main harbor and
 industrial area of the city. It is one of the 8 boroughs (stadsdelen) of Amsterdam.
+
+## References
+
+- https://www.amsterdamsights.com/index.html
