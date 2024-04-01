@@ -73,3 +73,10 @@ Amsterdam Zuidoost (Amsterdam South East) - also referred to as Bijlmermeer or D
 is one of the 8 boroughs (stadsdelen) of Amsterdam. It is an exclave,
 separated from the rest of the city with no shared borders with Amsterdam,
 but with good metro lines (50, 53, 54), connecting Zuidoost to the city center and Central Station.
+
+## Amsterdam Westpoort
+
+> Harbor and business area
+
+Westpoort (Western Gateway) is located in the north-western part of Amsterdam and covers the main harbor and
+industrial area of the city. It is one of the 8 boroughs (stadsdelen) of Amsterdam.
