@@ -23,7 +23,7 @@
     "astro": "^4.5.12",
     "astro-icon": "^1.1.0",
     "sharp": "^0.33.3",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^7.4.0",
