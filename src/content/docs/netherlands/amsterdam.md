@@ -1,5 +1,5 @@
 ---
-title: Districts
+title: Amsterdam
 ---
 
 Amsterdam is broken up into **8 districts** or boroughs (stadsdelen),

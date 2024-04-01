@@ -67,6 +67,12 @@ export default defineConfig({
             directory: "contracts",
           },
         },
+        {
+          label: "Netherlands",
+          autogenerate: {
+            directory: "netherlands",
+          },
+        },
       ],
     }),
     icon(),
