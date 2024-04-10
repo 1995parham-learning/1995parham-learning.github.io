@@ -18,7 +18,7 @@ which are further divided into _neighborhoods_.
 
 > the city center of Amsterdam
 
-The neighborhoods of De Wallen (Red Light District), Nieuwmarkt, Grachtengordel (Canal Belt) and
+The neighborhoods of De Wallen (Red-Light District), Nieuwmarkt, Grachtengordel (Canal Belt) and
 Jordaan are the historical center of Amsterdam.
 
 The Centrum district with 86,851 inhabitants (2018) is divided into smaller neighborhoods,
@@ -81,7 +81,14 @@ but with good metro lines (50, 53, 54), connecting Zuidoost to the city center a
 Westpoort (Western Gateway) is located in the north-western part of Amsterdam and covers the main harbor and
 industrial area of the city. It is one of the 8 boroughs (stadsdelen) of Amsterdam.
 
+## Persian Cuisine
+
+- https://shirazrestaurant.nl/
+- http://www.zaferuw.nl/
+
 ## References
 
 - https://www.amsterdamsights.com/index.html
 - https://www.chasse-dancestudios.nl
+- https://www.weather2travel.com/netherlands/amsterdam/climate/
+- https://www.weather2travel.com/sweden/malmo/climate/
