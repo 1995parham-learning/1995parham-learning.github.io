@@ -20,3 +20,7 @@ The granularity of the ports and their number is not constrained:
   database (in order to interface the component with any suitable DBMS),
   and administration (for controlling the component);
 - In an extreme case, there could be a different port for every use case, if needed.
+
+**Adapters** are the glue between components and the outside world.
+They tailor the exchanges between the external world and the ports that represent
+the requirements of the inside of the application component.
