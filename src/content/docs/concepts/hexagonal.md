@@ -7,6 +7,11 @@ It aims at creating _loosely coupled application components_ that can be easily 
 environment by means of **ports** and **adapters**.
 This makes components exchangeable at any level and facilitates test automation.
 
+Each component is connected to the others through a number of exposed **"ports"**.
+Communication through these ports follow a given protocol depending on their purpose.
+Ports and protocols define an abstract API that can be implemented by any suitable technical means
+(e.g. method invocation in an object-oriented language, remote procedure calls, or Web services).
+
 The granularity of the ports and their number is not constrained:
 
 - A single port could in some case be sufficient (e.g. in the case of a simple service consumer);
