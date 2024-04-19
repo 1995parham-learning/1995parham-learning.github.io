@@ -29,14 +29,14 @@ You may choose to **fine-tune** a LLM with your data, but:
 LlamaIndex takes a different approach called [Retrieval-Augmented Generation (RAG)](https://docs.llamaindex.ai/en/stable/getting_started/concepts.html).
 Instead of asking LLM to generate an answer immediately, LlamaIndex:
 
-1. retrieves information from your data sources first,
-2. adds it to your question as context, and
-3. asks the LLM to answer based on the enriched prompt.
+1. Retrieves information from your data sources first,
+2. Adds it to your question as context, and
+3. Asks the LLM to answer based on the enriched prompt.
 
 RAG overcomes all three weaknesses of the fine-tuning approach:
 
 - There's no training involved, so it's **cheap**.
-- Data is fetched only when you ask for them, so it's **always up to date**.
+- Data is fetched only when you ask for them, so it's **always up-to-date**.
 - LlamaIndex can show you the retrieved documents, so it's **more trustworthy**.
 
 LlamaIndex imposes no restriction on how you use LLMs. You can still use LLMs as auto-complete, chatbots, semi-autonomous agents, and more (see Use Cases on the left).
