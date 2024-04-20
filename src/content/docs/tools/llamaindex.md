@@ -56,11 +56,11 @@ LlamaIndex provides the following tools:
 
 ## Retrieval Augmented Generation (RAG)
 
-LLMs are trained on enormous bodies of data but they aren't trained on **your** data.
+LLMs are trained on enormous bodies of data, but they aren't trained on **your** data.
 Retrieval-Augmented Generation (RAG) solves this problem by adding your data to the data LLMs already have access to.
-You will see references to RAG frequently in this documentation.
 
-In RAG, your data is loaded and prepared for queries or "indexed". User queries act on the index, which filters your data down to the most relevant context.
+In RAG, your data is loaded and prepared for queries or "indexed". User queries act on the index, which filters your
+data down to the most relevant context.
 This context and your query then go to the LLM along with a prompt, and the LLM provides a response.
 
 Even if what you're building is a chatbot or an agent, you'll want to know RAG techniques for getting data into your application.
@@ -82,17 +82,19 @@ There are five key stages within RAG, which in turn will be a part of any larger
 
 ### Loading stage
 
-**[Nodes and Documents](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/root.html)**: A `Document` is a container around any data source -
-for instance, a PDF, an API output, or retrieve data from a database.
+**[Nodes and Documents](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/root.html)**:
+A `Document` is a container around any data source - for instance, a PDF, an API output, or retrieve data from a database.
 A `Node` is the atomic unit of data in LlamaIndex and represents a "chunk" of a source `Document`.
 Nodes have metadata that relate them to the document they are in and to other nodes.
 
-**[Connectors](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/root.html)**: A data connector (often called a `Reader`) ingests data from different data sources
+**[Connectors](https://docs.llamaindex.ai/en/stable/module_guides/loading/connector/root.html)**:
+A data connector (often called a `Reader`) ingests data from different data sources
 and data formats into `Documents` and `Nodes`.
 
 ### Indexing Stage
 
-**[Indexes](https://docs.llamaindex.ai/en/stable/module_guides/indexing/indexing.html)**: Once you've ingested your data, LlamaIndex will help you index the data into a structure that's easy to retrieve.
+**[Indexes](https://docs.llamaindex.ai/en/stable/module_guides/indexing/indexing.html)**: Once you've ingested your data,
+LlamaIndex will help you index the data into a structure that's easy to retrieve.
 This usually involves generating `vector embeddings` which are stored in a specialized database called a `vector store`.
 Indexes can also store a variety of metadata about your data.
 
