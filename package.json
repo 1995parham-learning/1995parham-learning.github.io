@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint -c .js,.astro src"
+    "lint": "eslint src --ext .js,.astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
