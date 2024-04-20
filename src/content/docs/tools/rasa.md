@@ -57,7 +57,42 @@ Remember that if you use a script to generate training data, the only thing your
 learn is how to reverse-engineer the script.
 :::
 
+### Avoiding Intent Confusion#
+
+Intents are classified using character and word-level features extracted from your training examples,
+depending on what _featurizers_ you've added to your NLU pipeline. When different intents contain
+the same words ordered similarly, this can create confusion for the intent classifier.
+
 ## Entity
 
 Keywords that can be extracted from a user message.
 For example: a telephone number, a person's name, a location, the name of a product
+
+```yaml
+stories:
+  - story: migrate from IBM Watson
+    steps:
+      - intent: migration
+        entities:
+          - product
+      - slot_was_set:
+          - product: Watson
+      - action: utter_watson_migration
+
+  - story: migrate from Dialogflow
+    steps:
+      - intent: migration
+        entities:
+          - product
+      - slot_was_set:
+          - product: Dialogflow
+      - action: utter_dialogflow_migration
+
+  - story: migrate from unspecified
+    steps:
+      - intent: migration
+      - action: utter_ask_migration_product
+```
+
+To avoid intent confusion, group these training examples into single migration intent and make the
+response depend on the value of a categorical product slot that comes from an entity.
