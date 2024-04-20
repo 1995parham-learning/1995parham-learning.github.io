@@ -1,5 +1,6 @@
 ---
 title: Prompt Engineering
+icon: tabler:prompt
 ---
 
 Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use
@@ -62,6 +63,13 @@ appears 10 times are penalized the same.
 :::note
 Similar to temperature and Top P, the general recommendation is to alter the frequency or presence penalty but not both.
 :::
+
+## Prompting an LLM
+
+You can achieve a lot with simple prompts, but the quality of results depends on **how much information
+you provide it** and how well-crafted the prompt is. A prompt can contain information like the instruction
+or question you are passing to the model and include other details such as context, inputs, or examples.
+You can use these elements to instruct the model more effectively to improve the quality of results.
 
 ## RAG
 
