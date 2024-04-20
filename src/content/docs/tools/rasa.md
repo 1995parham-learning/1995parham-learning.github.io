@@ -52,6 +52,11 @@ rules:
 When it comes to building out NLU training data, developers are sometimes tempted to use text
 generation tools or templates to quickly increase the number of training examples. This is a **bad idea**.
 
+:::note
+Remember that if you use a script to generate training data, the only thing your model can
+learn is how to reverse-engineer the script.
+:::
+
 ## Entity
 
 Keywords that can be extracted from a user message.
