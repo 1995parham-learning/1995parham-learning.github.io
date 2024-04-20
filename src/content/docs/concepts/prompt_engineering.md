@@ -68,8 +68,14 @@ Similar to temperature and Top P, the general recommendation is to alter the fre
 
 You can achieve a lot with simple prompts, but the quality of results depends on **how much information
 you provide it** and how well-crafted the prompt is. A prompt can contain information like the instruction
-or question you are passing to the model and include other details such as context, inputs, or examples.
+or question you are passing to the model and _include other details such as context, inputs, or examples_.
 You can use these elements to instruct the model more effectively to improve the quality of results.
+
+Something to note is that when using the OpenAI chat models like gpt-3.5-turbo or gpt-4,
+you can structure your prompt using three different roles: **system**, **user**, and **assistant**.
+
+The **system** message is not required but helps to set the overall behavior of the assistant.
+You can also define an **assistant message** to pass examples of the desired behavior you want.
 
 ## RAG
 
