@@ -59,6 +59,10 @@ The presence penalty also applies a penalty on repeated tokens but, unlike the f
 the penalty is the same for all repeated tokens. A token that appears twice and a token that
 appears 10 times are penalized the same.
 
+:::note
+Similar to temperature and Top P, the general recommendation is to alter the frequency or presence penalty but not both.
+:::
+
 ## RAG
 
 RAG takes input and retrieves a set of **relevant/supporting documents given a source** (e.g., Wikipedia).
