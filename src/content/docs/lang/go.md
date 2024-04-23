@@ -50,6 +50,10 @@ fmt.Println(cmp.Or(userInput1, userInput2, "default"))
 Ordered is a constraint that permits any ordered type: any type that supports the operators `< <= >= >`.
 If future releases of Go add new ordered types, this constraint will be modified to include them.
 
+## `slices` package
+
+Package `slices` defines various functions useful with slices of any type.
+
 ## `intrange`
 
 From Go 1.22 (expected release February 2024), you will be able to write:
