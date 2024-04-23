@@ -54,6 +54,14 @@ If future releases of Go add new ordered types, this constraint will be modified
 
 Package `slices` defines various functions useful with slices of any type.
 
+### `slices.Contains`
+
+Contains reports whether `v` is present in `s`.
+
+```go
+func Contains[S ~[]E, E comparable](s S, v E) bool
+```
+
 ## `intrange`
 
 From Go 1.22 (expected release February 2024), you will be able to write:
