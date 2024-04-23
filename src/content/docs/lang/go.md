@@ -13,6 +13,16 @@ Golang is an awesome language, but it has sanctioned our country. It is similar 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API
 and GraphQL servers.
 
+## `comparable`
+
+```go
+type comparable interface{}
+```
+
+`comparable` is an interface that is implemented by all comparable types (booleans, numbers, strings,
+pointers, channels, arrays of comparable types, structs whose fields are all comparable types).
+The comparable interface may only be used as a _type parameter constraint_, not as the type of variable.
+
 ## `intrange`
 
 From Go 1.22 (expected release February 2024), you will be able to write:
@@ -199,7 +209,7 @@ If you have an operation that failed, and you wish to capture the error it produ
 ### Distributed Traces
 
 A **distributed trace**, more commonly known as a trace, records the paths taken by requests
-(made by application or end-user) as they propagate through multi-service architectures, like
+(made by application or end-user) as they propagate through multiservice architectures, like
 microservice and serverless applications.
 
 Traces can extend beyond a single process. This requires context propagation, a mechanism
