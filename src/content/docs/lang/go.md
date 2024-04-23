@@ -23,6 +23,33 @@ type comparable interface{}
 pointers, channels, arrays of comparable types, structs whose fields are all comparable types).
 The comparable interface may only be used as a _type parameter constraint_, not as the type of variable.
 
+## `cmp` package
+
+### `cmp.Or`
+
+`Or` returns the first of its arguments that is not equal to the zero value.
+If no argument is non-zero, it returns the zero value.
+
+```go
+func Or[T comparable](vals ...T) T
+```
+
+```go
+// Suppose we have some user input
+// that may or may not be an empty string
+userInput1 := ""
+userInput2 := "some text"
+
+fmt.Println(cmp.Or(userInput1, "default"))
+fmt.Println(cmp.Or(userInput2, "default"))
+fmt.Println(cmp.Or(userInput1, userInput2, "default"))
+```
+
+### `cmp.Ordered`
+
+Ordered is a constraint that permits any ordered type: any type that supports the operators `< <= >= >`.
+If future releases of Go add new ordered types, this constraint will be modified to include them.
+
 ## `intrange`
 
 From Go 1.22 (expected release February 2024), you will be able to write:
