@@ -13,6 +13,15 @@ Golang is an awesome language, but it has sanctioned our country. It is similar 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API
 and GraphQL servers.
 
+## Nil Away
+
+NilAway is a static analysis tool that seeks to help developers avoid nil panics in production by catching them
+at compile time rather than runtime. NilAway is similar to the standard nilness analyzer,
+however, it employs much more sophisticated and powerful static analysis techniques to track nil flows within
+a package as well across packages, and report errors providing users with the nilness flows for easier debugging.
+
+<https://github.com/uber-go/nilaway>
+
 ## `comparable`
 
 ```go
