@@ -10,6 +10,12 @@ The term **ask** refers to the lowest price at which a seller will sell the stoc
 The bid price will almost _always be lower_ than the ask or offer, price.
 The difference between the bid price and the ask price is called the **spread**.
 
+## Market Making
+
+## Order Book
+
+## Liquidity pool
+
 ## Ask Price
 
 :::note
