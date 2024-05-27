@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@astrojs/starlight": "^0.23.1",
-    "@iconify-json/carbon": "^1.1.33",
+    "@iconify-json/carbon": "^1.1.34",
     "@iconify-json/devicon": "^1.1.41",
     "@iconify-json/logos": "^1.1.42",
     "@iconify-json/noto": "^1.1.18",
