@@ -208,6 +208,7 @@ I love the way we can configure Golang applications **WITH TYPES**, but this lib
 
 - [@dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
 - [@pydantic/pydantic-settings](https://github.com/pydantic/pydantic-settings)
+- [@omry/omegaconf](https://github.com/omry/omegaconf)
 
 ## HTTP Frameworks 🌐
 
