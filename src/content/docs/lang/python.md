@@ -1006,13 +1006,12 @@ Now, we have a [`ClientSession`](https://docs.aiohttp.org/en/stable/client_refer
 called `session` and a [`ClientResponse`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse)
 object called `resp`. We can get all the information we need from the response. The mandatory parameter of
 [`ClientSession.get()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientSession.get)
-coroutine is an HTTP _url_ ([`str`](https://docs.python.org/3/library/stdtypes.html#str) or class:yarl.URL instance).
+coroutine is an HTTP _URL_ ([`str`](https://docs.python.org/3/library/stdtypes.html#str) or
+[`class:yarl.URL`](https://yarl.aio-libs.org/en/latest/api/#yarl.URL) instance).
 
 :::note
-💡 **Don't create a session per request**. Most likely you need a session per application which performs all requests together.
-
-More complex cases may require a session per site, e.g. one for Github and other one for Facebook APIs. Anyway making a session for every request is a **very bad** idea.
-
+**Don't create a session per request**. Most likely you need a session per application which performs all requests together.
+More complex cases may require a session per site, e.g. one for GitHub and other one for Facebook APIs. Anyway making a session for every request is a **very bad** idea.
 A session contains a connection pool inside. Connection reuse and keep-alive (both are on by default) may speed up total performance.
 :::
 
@@ -1025,7 +1024,7 @@ While methods [`read()`](https://docs.aiohttp.org/en/stable/client_reference.htm
 and [`text()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)
 are very convenient you should use them carefully. All these methods load the whole response in memory.
 For example if you want to download several gigabyte sized files, these methods will load all the data in memory.
-Instead you can use the [`content`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content) attribute.
+Instead, you can use the [`content`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content) attribute.
 It is an instance of the [`aiohttp.StreamReader`](https://docs.aiohttp.org/en/stable/streams.html#aiohttp.StreamReader) class.
 The `gzip` and `deflate` transfer-encodings are automatically decoded for you:
 
@@ -1046,3 +1045,22 @@ It is not possible to use [`read()`](https://docs.aiohttp.org/en/stable/client_r
 [`json()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json)
 and [`text()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)
 after explicit reading from [`content`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content).
+
+## Copy-on-write in Python
+
+```c
+/* GC information is stored BEFORE the object structure. */
+typedef union _gc_head
+{
+    struct {
+        union _gc_head *gc_next;
+        union _gc_head *gc_prev;
+        Py_ssize_t gc_refs;
+    } gc;
+    long double dummy; /* force worst-case alignment */
+} PyGC_Head;
+```
+
+The theory was that every time we did a collection, it would update the `gc_refs` with `ob_refcnt` for all tracked objects
+— but unfortunately this write operation, caused memory pages to be COW-ed. A next obvious solution was to move all the
+head to another chunk of memory and store densely.
