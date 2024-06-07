@@ -176,9 +176,9 @@ Conversion `!s` calls [`str()`](https://docs.python.org/3/library/stdtypes.html#
 and `!a` calls [`ascii()`](https://docs.python.org/3/library/functions.html#ascii).
 
 The result is then formatted using the [`format()`](https://docs.python.org/3/library/functions.html#format) protocol.
-The format specifier is passed to the [`__format__()`](https://docs.python.org/3/reference/datamodel.html#object.__format__) method of the expression or
-conversion result. An empty string is passed when the format specifier is omitted. The formatted result is then included
-in the final value of the whole string.
+The format specifier is passed to the [`__format__()`](https://docs.python.org/3/reference/datamodel.html#object.__format__)
+method of the expression or conversion result. An empty string is passed when the format specifier is omitted.
+The formatted result is then included in the final value of the whole string.
 
 ```python
 width = 10
@@ -291,7 +291,7 @@ Semi-automatic swagger documentation for the REST APIs:
 
 - [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
 
-### Datalcasses
+### Dataclasses
 
 Using data-classes to define request and response in Django REST Framework. There are cases in which your request or
 response is not a model, in those cases you can define them as a dataclass using the following library.
@@ -594,7 +594,7 @@ y: list[int, str] = [1, 'foo']
 z: Mapping[str, str | int] = {}
 ```
 
-Unlike most other Python containers, however, it is common in idiomatic Python code for tuples to have elements which are not all of the same type.
+Unlike most other Python containers, however, it is common in idiomatic Python code for tuples to have elements which are not all the same type.
 For this reason, tuples are special-cased in Python's typing system. [`tuple`](https://docs.python.org/3/library/stdtypes.html#tuple)
 accepts _any number_ of type arguments:
 
@@ -611,11 +611,14 @@ y: tuple[int, str] = (5, "foo")
 z: tuple[int] = (1, 2, 3)
 ```
 
-To denote a tuple which could be of _any_ length, and in which all elements are of the same type `T`, use `tuple[T, ...]`. To denote an empty tuple, use `tuple[()]`. Using plain `tuple` as an annotation is equivalent to using `tuple[Any, ...]` .
+To denote a tuple which could be of _any_ length, and in which all elements are of the same type `T`, use `tuple[T, ...]`.
+To denote an empty tuple, use `tuple[()]`. Using plain `tuple` as an annotation is equivalent to using `tuple[Any, ...]`.
 
-### **The type of class objects**
+### The type of class objects
 
-A variable annotated with `C` may accept a value of type `C`. In contrast, a variable annotated with `type[C]` (or [`typing.Type[C]`](https://docs.python.org/3/library/typing.html#typing.Type)) may accept values that are classes themselves - specifically, it will accept the _class object_ of `C`.
+A variable annotated with `C` may accept a value of type `C`.
+In contrast, a variable annotated with `type[C]` (or [`typing.Type[C]`](https://docs.python.org/3/library/typing.html#typing.Type))
+may accept values that are classes themselves - specifically, it will accept the _class object_ of `C`.
 
 ```python
 a = 3         # Has type ``int``
@@ -626,7 +629,8 @@ c = type(a)   # Also has type ``type[int]``
 Note that `type[C]` is covariant:
 
 :::note
-🧠 _Covariance and contravariance are terms that refer to the ability to use a more derived type (more specific) or a less derived type (less specific) than originally specified_
+🧠 Covariance and contravariance are terms that refer to the ability to use a more derived type (more specific) or
+a less derived type (less specific) than originally specified
 :::
 
 ```python
@@ -1046,7 +1050,7 @@ It is not possible to use [`read()`](https://docs.aiohttp.org/en/stable/client_r
 and [`text()`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.text)
 after explicit reading from [`content`](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.content).
 
-## Copy-on-write in Python
+## Copy-on-write and GC
 
 ```c
 /* GC information is stored BEFORE the object structure. */
@@ -1062,5 +1066,5 @@ typedef union _gc_head
 ```
 
 The theory was that every time we did a collection, it would update the `gc_refs` with `ob_refcnt` for all tracked objects
-— but unfortunately this write operation, caused memory pages to be COW-ed. A next obvious solution was to move all the
+— but unfortunately this write-operation, caused memory pages to be COW-ed. A next obvious solution was to move all the
 head to another chunk of memory and store densely.
