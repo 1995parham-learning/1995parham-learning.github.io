@@ -226,7 +226,7 @@ Sanic and FastAPI both are asynchronous and says they have good performance.
 
 - After installing, Sanic has all the tools you need for a scalable, production-grade server—out of the box!
 - Running Sanic with TLS enabled is as simple as passing it the file paths…
-- Up and running with websockets in no time using the [websockets](https://websockets.readthedocs.io/) package.
+- Up and running with web sockets in no time using the [websockets](https://websockets.readthedocs.io/) package.
 - Serving static files is of course intuitive and easy. Just name an endpoint and either a file or directory that should be served.
 - Beginning or ending a route with functionality is as simple as adding a decorator.
 - Raising errors will intuitively result in proper HTTP errors:
@@ -258,7 +258,14 @@ it looks at the **type annotations** of the arguments in the handler. This can b
 
 ## HTTP Client 🌐
 
-- <https://github.com/psf/requests>
+Within the Python programming language, a diverse set of HTTP client libraries exists to facilitate communication
+with web servers. These libraries enable the programmatic construction and transmission of HTTP requests.
+
+- The `urllib` module, a built-in library, offers a foundational approach to HTTP communication.
+- The [`requests`](https://github.com/psf/requests) library, known for its ease of use and rich feature set,
+  is a widely adopted choice.
+- The `aiohttp` library caters to projects requiring asynchronous operations,
+  ideal for non-blocking communication patterns.
 - <https://github.com/encode/httpx>
 
 ## Django 🦖
