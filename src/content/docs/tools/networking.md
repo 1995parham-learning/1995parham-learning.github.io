@@ -2,6 +2,16 @@
 title: Networking
 ---
 
+## DNS Record Types
+
+This list of DNS record types is an overview of resource records (RRs) permissible in zone files of the
+Domain Name System (DNS). It also contains pseudo-RRs.
+
+| Type | Description         | Function                                                                                                                                                                |
+| :--: | :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  A   | Address record      | Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but it is also used for DNSBLs, storing subnet masks in RFC 1101, etc. |
+| AAAA | IPv6 address record | Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host.                                                                       |
+
 ## Switch types
 
 Cisco switches can be divided into two types:
