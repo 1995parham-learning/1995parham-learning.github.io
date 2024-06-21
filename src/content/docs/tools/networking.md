@@ -4,13 +4,17 @@ title: Networking
 
 ## DNS Record Types
 
-This list of DNS record types is an overview of resource records (RRs) permissible in zone files of the
+This list of DNS record types is an overview of resource records permissible in zone files of the
 Domain Name System (DNS). It also contains pseudo-RRs.
 
-| Type | Description         | Function                                                                                                                                                                |
-| :--: | :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  A   | Address record      | Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but it is also used for DNSBLs, storing subnet masks in RFC 1101, etc. |
-| AAAA | IPv6 address record | Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host.                                                                       |
+| Type  | Description            | Function                                                                                                                                                                                                    |
+| :---: | :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   A   | Address record         | Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but it is also used for DNSBLs, storing subnet masks in RFC 1101, etc.                                     |
+| AAAA  | IPv6 address record    | Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host.                                                                                                           |
+| CNAME | Canonical name record  | Alias of one name to another: the DNS lookup will continue by retrying the lookup with the new name.                                                                                                        |
+| DNAME | Delegation name record | Alias for a name and all its sub-names, unlike CNAME, which is an alias for only the exact name. Like a CNAME record, the DNS lookup will continue by retrying the lookup with the new name.                |
+|  MX   | Mail exchange record   | List of mail exchange servers that accept email for a domain                                                                                                                                                |
+|  PTR  | PTR Resource Record    | Pointer to a canonical name. Unlike a CNAME, DNS processing stops and just the name is returned. The most common use is for implementing reverse DNS lookups, but other uses include such things as DNS-SD. |
 
 ## Switch types
 
