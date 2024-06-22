@@ -4,6 +4,31 @@ description: Let's Learn Python
 icon: skill-icons:python-dark
 ---
 
+## Package Management
+
+### [Rye: a Hassle-Free Python Experience](https://rye.astral.sh/)
+
+Rye is a comprehensive project and package management solution for Python.
+Born from its creator's desire to establish a one-stop-shop for all Python users,
+Rye provides a **unified experience** to install and manage Python installations, `pyproject.toml` based projects,
+dependencies and `virtualenvs` seamlessly. It's designed to accommodate complex projects,
+mono-repos and to facilitate global tool installations. Curious? Watch an introduction.
+
+### [PDM](https://github.com/pdm-project/pdm)
+
+PDM is meant to be a next generation Python package management tool.
+It was originally built for personal use. If you feel you are going well with `Pipenv` or `Poetry` and don't want
+to introduce another package manager, just stick to it.
+But if you are missing something that is not present in those tools, you can probably find some goodness in `pdm`.
+
+- Simple and fast dependency resolver, mainly for large binary distributions.
+- A [PEP 517](https://www.python.org/dev/peps/pep-0517) build backend.
+- [PEP 621](https://www.python.org/dev/peps/pep-0621) project metadata.
+- Flexible and powerful plug-in system.
+- Versatile user scripts.
+- Install Pythons using `indygreg`'s python-build-standalone.
+- Opt-in centralized installation cache like `pnpm`.
+
 ## Class and static methods
 
 :::note
