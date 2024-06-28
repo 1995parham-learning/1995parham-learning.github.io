@@ -329,6 +329,12 @@ Django’s database layer provides various ways to help developers get the most 
 As general programming practice, this goes without saying. Find out what queries you are doing and what they are
 costing you. Use `QuerySet.explain()` to understand how specific `QuerySet`s are executed by your database.
 
+To avoid performance problems, it is important to understand:
+
+- That `QuerySet`s are lazy.
+- When they are evaluated.
+- How the data is held in memory.
+
 ### Dataclasses
 
 Using data-classes to define request and response in Django REST Framework. There are cases in which your request or
