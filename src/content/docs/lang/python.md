@@ -307,13 +307,13 @@ Writing REST API in a Django application using Django REST Framework is awesome,
 
 [Home - Django REST framework](https://www.django-rest-framework.org/)
 
-- [serializers](https://www.django-rest-framework.org/api-guide/serializers/)
-- [fields](https://www.django-rest-framework.org/api-guide/fields)
-- [parsers](https://www.django-rest-framework.org/api-guide/parsers/)
-- [views](https://www.django-rest-framework.org/api-guide/views/)
-- [viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
-- [generic-views](https://www.django-rest-framework.org/api-guide/generic-views/)
-- [filtering](https://www.django-rest-framework.org/api-guide/filtering/)
+- [Serializes](https://www.django-rest-framework.org/api-guide/serializers/)
+- [Fields](https://www.django-rest-framework.org/api-guide/fields)
+- [Parsers](https://www.django-rest-framework.org/api-guide/parsers/)
+- [Views](https://www.django-rest-framework.org/api-guide/views/)
+- [Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
+- [Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)
+- [Filtering](https://www.django-rest-framework.org/api-guide/filtering/)
 
 Sometimes it is better in DRF to read its code because its documentation is not complete:
 
@@ -322,6 +322,12 @@ Sometimes it is better in DRF to read its code because its documentation is not 
 Semi-automatic swagger documentation for the REST APIs:
 
 - [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
+
+### Database Optimization
+
+Django’s database layer provides various ways to help developers get the most out of their databases.
+As general programming practice, this goes without saying. Find out what queries you are doing and what they are
+costing you. Use `QuerySet.explain()` to understand how specific `QuerySet`s are executed by your database.
 
 ### Dataclasses
 
