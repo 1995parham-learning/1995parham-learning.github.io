@@ -335,6 +335,10 @@ To avoid performance problems, it is important to understand:
 - When they are evaluated.
 - How the data is held in memory.
 
+Use `iterator()`,
+When you have a lot of objects, the caching behavior of the `QuerySet` can cause a large amount
+of memory to be used. In this case, `iterator()` may help.
+
 ### Dataclasses
 
 Using data-classes to define request and response in Django REST Framework. There are cases in which your request or
