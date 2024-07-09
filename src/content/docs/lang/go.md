@@ -13,6 +13,38 @@ Golang is an awesome language, but it has sanctioned our country. It is similar 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API
 and GraphQL servers.
 
+## Enum
+
+```go
+type Weekday int {
+    Sunday Weekday = iota
+    Monday
+    Tuesday
+    Wednesday
+    Thursday
+    Friday
+    Saturday
+}
+```
+
+In this example, we're defining a new type named Weekday which is based on the int type.
+We then define constants for each day of the week. The `iota` keyword is a special constant that is used in
+conjunction with the `const` keyword. It starts at zero and increments by one for each constant defined,
+so Sunday will be 0, Monday will be 1, and so on.
+
+You can then use these values like so:
+
+```go
+var today Weekday = Monday
+fmt.Println(today)  // prints "1"
+```
+
+This approach provides some of the benefits of enums, such as type safety and readable code,
+but it's not a perfect replacement. For example, Go doesn't prevent you from assigning
+any int value to a Weekday variable, whereas true enums in other languages often restrict you to a specific set of values.
+
+- [`go-enum`](https://github.com/abice/go-enum)
+
 ## Nil Away
 
 NilAway is a static analysis tool that seeks to help developers avoid nil panics in production by catching them
