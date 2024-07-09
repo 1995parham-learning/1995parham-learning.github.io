@@ -46,6 +46,42 @@ you to a specific set of values.
 
 - [`go-enum`](https://github.com/abice/go-enum)
 
+`go-enum` will take a commented type declaration like this:
+
+```go
+// ENUM(jpeg, jpg, png, tiff, gif)
+type ImageType int
+```
+
+and generate a file with the iota definition along various optional niceties that you may need:
+
+```go
+const (
+ // ImageTypeJpeg is a ImageType of type Jpeg.
+ ImageTypeJpeg ImageType = iota
+ // ImageTypeJpg is a ImageType of type Jpg.
+ ImageTypeJpg
+ // ImageTypePng is a ImageType of type Png.
+ ImageTypePng
+ // ImageTypeTiff is a ImageType of type Tiff.
+ ImageTypeTiff
+ // ImageTypeGif is a ImageType of type Gif.
+ ImageTypeGif
+)
+
+// String implements the Stringer interface.
+func (x ImageType) String() string
+
+// ParseImageType attempts to convert a string to a ImageType.
+func ParseImageType(name string) (ImageType, error)
+
+// MarshalText implements the text marshaller method.
+func (x ImageType) MarshalText() ([]byte, error)
+
+// UnmarshalText implements the text unmarshaller method.
+func (x *ImageType) UnmarshalText(text []byte) error
+```
+
 ## Nil Away
 
 NilAway is a static analysis tool that seeks to help developers avoid nil panics in production by catching them
