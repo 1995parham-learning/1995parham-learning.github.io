@@ -41,7 +41,8 @@ fmt.Println(today)  // prints "1"
 
 This approach provides some of the benefits of enums, such as type safety and readable code,
 but it's not a perfect replacement. For example, Go doesn't prevent you from assigning
-any int value to a Weekday variable, whereas true enums in other languages often restrict you to a specific set of values.
+any int value to a Weekday variable, whereas true enums in other languages often restrict
+you to a specific set of values.
 
 - [`go-enum`](https://github.com/abice/go-enum)
 
