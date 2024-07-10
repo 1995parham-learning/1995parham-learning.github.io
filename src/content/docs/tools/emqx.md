@@ -18,3 +18,7 @@ The basic function of a distributed EMQX cluster is to forward and publish messa
 In previous versions, EMQX utilizes Erlang/OTP's built-in database, _Mnesia_, to store MQTT session states.
 The database replication channel is powered by the **Erlang distribution** protocol, enabling each node to function
 as both a client and server. The default listening port number for this protocol is _4370_.
+
+However, the full mesh topology imposes a practical limit on the cluster size. For EMQX versions prior to 5,
+it is recommended to keep the cluster size under 5 nodes. Beyond this, vertical scaling, which involves using
+more powerful machines, is a preferable option to maintain the cluster's performance and stability.
