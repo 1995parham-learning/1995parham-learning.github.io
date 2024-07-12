@@ -33,3 +33,12 @@ data based on the ranges of these tokens across the cluster. The partition key i
 data among nodes and is important for determining data locality. When data is inserted into the cluster,
 the first step is to apply a hash function to the partition key.
 The output is used to determine what node (based on the token range) will get the data.
+
+## Replication ensures reliability and fault tolerance
+
+One piece of data can be replicated to multiple (replica) nodes, ensuring reliability and fault tolerance.
+Cassandra supports the notion of a replication factor (RF), which describes **how many copies of your data should exist in the database**.
+So far, our data has only been replicated to one replica (RF = 1). If we up this to a replication factor of two (RF = 2), the data
+needs to be stored on a second replica as well -- and hence each node becomes responsible for a _secondary range of tokens_,
+in addition to its primary range. A replication factor of three ensures that there are three nodes (replicas) covering
+that particular token range, and the data is stored on yet another one.
