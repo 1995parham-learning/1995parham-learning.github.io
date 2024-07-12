@@ -1,5 +1,5 @@
 ---
-title: Operating Systems
+title: Cassandra
 icon: skill-icons:cassandra-dark
 ---
 
@@ -18,4 +18,18 @@ for example, a developer can tweak the throughput of read queries or write queri
 There is little point in running Cassandsra as a single node, although it is very helpful to do so to help
 you get up to speed on how it works. But to get the maximum benefit out of Cassandra, you would run it on multiple machines.
 
-Since it is a distributed database, Cassandra can (and usually does) have multiple nodes. A node represents a single instance of Cassandra. These nodes communicate with one another through a protocol called gossip, which is a process of computer peer-to-peer communication. Cassandra also has a masterless architecture – any node in the database can provide the exact same functionality as any other node – contributing to Cassandra’s robustness and resilience. Multiple nodes can be organized logically into a cluster, or "ring". You can also have multiple datacenters.
+Since it is a distributed database, Cassandra can (and usually does) have multiple nodes. A node represents a single instance of Cassandra.
+These nodes communicate with one another through a protocol called **gossip**, which is a process of computer peer-to-peer communication.
+Cassandra also has a **masterless** architecture -- any node in the database can provide the exact same functionality as any other node --
+contributing to Cassandra's robustness and resilience.
+Multiple nodes can be organized logically into a _cluster_, or _ring_.
+You can also have multiple **datacenters**.
+
+## Introducing partitions
+
+In Cassandra, the data itself is **automatically distributed**, with (positive) performance consequences.
+It accomplishes this using partitions. Each node owns a particular set of tokens, and Cassandra distributes
+data based on the ranges of these tokens across the cluster. The partition key is responsible for distributing
+data among nodes and is important for determining data locality. When data is inserted into the cluster,
+the first step is to apply a hash function to the partition key.
+The output is used to determine what node (based on the token range) will get the data.
