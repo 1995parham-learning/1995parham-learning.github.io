@@ -77,6 +77,15 @@ you can structure your prompt using three different roles: **system**, **user**,
 The **system** message is not required but helps to set the overall behavior of the assistant.
 You can also define an **assistant message** to pass examples of the desired behavior you want.
 
+### Zero shot prompting
+
+- Q. Explain the different types of banks
+  A. Banks along a river can take various forms depending on whether they are natural or artificial
+
+### Few shots prompting
+
+### Chain of thought (CoT)
+
 ## RAG
 
 RAG takes input and retrieves a set of **relevant/supporting documents given a source** (e.g., Wikipedia).
