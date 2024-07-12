@@ -84,7 +84,14 @@ You can also define an **assistant message** to pass examples of the desired beh
 
 ### Few shots prompting
 
+- Q. What is the primary function of a bank?
+  A. A bank's primary function is to accept deposits, provide loans and offer other financial services
+  to individuals and businesses.
+- Q. Explain the different types of banks
+
 ### Chain of thought (CoT)
+
+Asking LLM to think step by step and document its chain of thoughts.
 
 ## RAG
 
