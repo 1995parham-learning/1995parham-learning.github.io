@@ -1,5 +1,6 @@
 ---
 title: EMQX
+icon: simple-icons:mqtt
 ---
 
 ## Introduction
@@ -19,6 +20,13 @@ In previous versions, EMQX utilizes Erlang/OTP's built-in database, _Mnesia_, to
 The database replication channel is powered by the **Erlang distribution** protocol, enabling each node to function
 as both a client and server. The default listening port number for this protocol is _4370_.
 
+![mnesia](emqx/mnesia.png)
+
 However, the full mesh topology imposes a practical limit on the cluster size. For EMQX versions prior to 5,
 it is recommended to keep the cluster size under 5 nodes. Beyond this, vertical scaling, which involves using
 more powerful machines, is a preferable option to maintain the cluster's performance and stability.
+
+To provide our customers with a better cluster salability performance, EMQX 5.0 adopts a new **Mria** cluster architecture.
+With this Mria architecture, one EMQX cluster can support up to 100 million concurrent MQTT connections.
+
+![mria](emqx/mria.png)
