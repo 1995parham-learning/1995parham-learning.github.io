@@ -32,16 +32,6 @@ The **Program Counter (PC)** (sometimes called the **instruction pointer (IP)**)
 will execute next; similarly a **stack pointer** and associated **frame pointer** are used to manage the stack for function
 parameters, local variables, and return addresses.
 
-### APIs
-
-These APIs, in some form, are available on any modern operating system.
-
-- Create
-- Destroy
-- Wait
-- Miscellaneous Control
-- Status
-
 ### Process Creation
 
 In early (or simple) operating systems, the loading process is done **eagerly**, i.e., all at once before running the program; modern OSes perform
@@ -75,6 +65,14 @@ a fancy way of talking about a C structure that contains information about each 
 (also called a _process descriptor_).
 
 ### APIs
+
+These APIs, in some form, are available on any modern operating system.
+
+- Create
+- Destroy
+- Wait
+- Miscellaneous Control
+- Status
 
 - The `fork()` system call is used to create a new process.
 - The `wait()` system call is used by a parent to wait for a child process to finish what it has been doing.
