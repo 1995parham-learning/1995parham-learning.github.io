@@ -16,3 +16,12 @@ important benefits.
 However, the way life cycle of Spark applications are managed, e.g. how applications get submitted to run on Kubernetes
 and how application status is tracked, are vastly different from other types of workloads on Kubernetes, e.g.,
 deployments, daemonsets, and statefulsets.
+
+## Installation
+
+```bash
+helm repo add spark-operator https://kubeflow.github.io/spark-operator
+helm repo update
+
+helm install spark-operator spark-operator/spark-operator --namespace spark-operator --set webhook.enable=true
+```
