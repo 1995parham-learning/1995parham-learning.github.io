@@ -20,8 +20,16 @@ deployments, daemonsets, and statefulsets.
 ## Installation
 
 ```bash
+oc project spark-operator
+
 helm repo add spark-operator https://kubeflow.github.io/spark-operator
 helm repo update
 
 helm install spark-operator spark-operator/spark-operator --namespace spark-operator --set webhook.enable=true
+```
+
+After the installation, to make sure everything work as expected you can try out the `spark-pi` example:
+
+```bash
+wget https://raw.githubusercontent.com/kubeflow/spark-operator/master/examples/spark-pi.yaml
 ```
