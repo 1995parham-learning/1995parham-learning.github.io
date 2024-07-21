@@ -32,4 +32,5 @@ After the installation, to make sure everything work as expected you can try out
 
 ```bash
 wget https://raw.githubusercontent.com/kubeflow/spark-operator/master/examples/spark-pi.yaml
+oc apply -f spark-pi.yaml
 ```
