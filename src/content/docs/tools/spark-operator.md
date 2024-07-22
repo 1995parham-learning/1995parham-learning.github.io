@@ -34,3 +34,62 @@ After the installation, to make sure everything work as expected you can try out
 wget https://raw.githubusercontent.com/kubeflow/spark-operator/master/examples/spark-pi.yaml
 oc apply -f spark-pi.yaml
 ```
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: spark-role
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+      - pods/log
+      - services
+      - configmaps
+      - persistentvolumeclaims
+    verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - sparkoperator.k8s.io
+    resources:
+      - sparkapplications
+    verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - sparkoperator.k8s.io
+    resources:
+      - sparkapplications/status
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - sparkoperator.k8s.io
+    resources:
+      - scheduledsparkapplications
+    verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+```
