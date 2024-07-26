@@ -4,6 +4,45 @@ description: Let's Learn Python
 icon: skill-icons:python-dark
 ---
 
+## `contextlib`
+
+This module provides utilities for common tasks involving the `with` statement.
+
+### `contextlib.closing(thing)`
+
+Return a context manager that closes thing upon completion of the block. This is basically equivalent to:
+
+```python
+from contextlib import contextmanager
+
+@contextmanager
+def closing(thing):
+    try:
+        yield thing
+    finally:
+        thing.close()
+```
+
+```python
+from contextlib import closing
+from urllib.request import urlopen
+
+with closing(urlopen('https://www.python.org')) as page:
+    for line in page:
+        print(line)
+```
+
+:::note
+Most types managing resources support the context manager protocol, which closes thing on leaving the with statement.
+As such, `closing()` is **most useful for third party types** that don’t support context managers.
+This example is purely for illustration purposes, as `urlopen()` would normally be used in a context manager.
+:::
+
+### `contextlib.suppress(*exceptions)`
+
+Return a context manager that suppresses any of the specified exceptions if they occur in the body of a with statement
+and then resumes execution with the first statement following the end of the with statement.
+
 ## Package Management
 
 ### [Rye: a Hassle-Free Python Experience](https://rye.astral.sh/)
