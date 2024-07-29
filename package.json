@@ -11,7 +11,7 @@
     "lint": "eslint src --ext .js,.astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.1",
+    "@astrojs/check": "^0.8.3",
     "@astrojs/starlight": "^0.25.1",
     "@iconify-json/carbon": "^1.1.36",
     "@iconify-json/devicon": "^1.1.49",
