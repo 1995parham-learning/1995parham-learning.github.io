@@ -17,10 +17,10 @@
     "@iconify-json/devicon": "^1.1.50",
     "@iconify-json/logos": "^1.1.44",
     "@iconify-json/noto": "^1.1.20",
-    "@iconify-json/simple-icons": "^1.1.112",
+    "@iconify-json/simple-icons": "^1.1.113",
     "@iconify-json/skill-icons": "^1.1.10",
     "@iconify-json/solar": "^1.1.10",
-    "@iconify-json/tabler": "^1.1.119",
+    "@iconify-json/tabler": "^1.1.120",
     "@iconify/icons-tabler": "^1.2.95",
     "astro": "^4.13.3",
     "astro-icon": "^1.1.0",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.0.1",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
     "eslint-plugin-astro": "^1.2.3"
   }
 }
