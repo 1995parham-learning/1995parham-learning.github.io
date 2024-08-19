@@ -24,7 +24,7 @@
     "@iconify/icons-tabler": "^1.2.95",
     "astro": "^4.14.2",
     "astro-icon": "^1.1.0",
-    "sharp": "^0.33.4",
+    "sharp": "^0.33.5",
     "typescript": "^5.5.4"
   },
   "devDependencies": {
