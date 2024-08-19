@@ -155,11 +155,14 @@ and do not run user containers on this machine.
 See [Creating Highly Available clusters with `kubeadm`](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/)
 for an example control plane setup that runs across multiple machines.
 
-#### kube-apiserver
+#### `kube-apiserver`
 
-The API server is a component of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
+The API server is a component of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane)
+that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
 
-The main implementation of a Kubernetes API server is [kube-apiserver](https://kubernetes.io/docs/reference/generated/kube-apiserver/). kube-apiserver is designed to scale horizontally—that is, it scales by deploying more instances. You can run several instances of kube-apiserver and balance traffic between those instances.
+The main implementation of a Kubernetes API server is [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/).
+`kube-apiserver` is designed to scale horizontally—that is, it scales by deploying more instances. You can run
+several instances of `kube-apiserver` and balance traffic between those instances.
 
 #### etcd
 
