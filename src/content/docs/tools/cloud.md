@@ -174,9 +174,10 @@ plan for the data.
 
 You can find in-depth information about `etcd` in the official [documentation](https://etcd.io/docs/).
 
-#### kube-scheduler
+#### `kube-scheduler`
 
-Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
+Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
+with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
 
 Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
 
