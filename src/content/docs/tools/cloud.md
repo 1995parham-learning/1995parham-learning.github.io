@@ -52,6 +52,7 @@ Runbooks can be in either electronic or in physical book form.
 - RabbitMQ: [@rabbitmq/cluster-operator](https://github.com/rabbitmq/cluster-operator)
 - NATS: [@nats-io/nats-operator](https://github.com/nats-io/nats-operator)
 - NATS: [@nats-io/nack](https://github.com/nats-io/nack)
+- Kafka: [@strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)
 
 ## Affinity and Taints
 
@@ -77,7 +78,7 @@ Kyverno (Greek for “govern”) is a policy engine designed specifically for Ku
 - match resources using label selectors and wildcards
 - validate and mutate using overlays (like Kustomize!)
 - synchronize configurations across Namespaces
-- block non-conformant resources using admission controls, or report policy violations
+- block nonconforming resources using admission controls, or report policy violations
 - self-service reports (no proprietary audit log!)
 - self-service policy exceptions
 - test policies and validate resources using the Kyverno CLI, in your CI/CD pipeline, before applying to your cluster
@@ -134,7 +135,11 @@ The control plane automatically creates `EndpointSlice`s for any Kubernetes `Ser
 
 A Kubernetes cluster consists of a set of worker machines, called [nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), that run containerized applications. Every cluster has at least one worker node.
 
-The worker node(s) host the [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) that are the components of the application workload. The [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) manages the worker nodes and the Pods in the cluster. In production environments, the control plane usually runs across multiple computers and a cluster usually runs multiple nodes, providing fault-tolerance and high availability.
+The worker node(s) host the [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) that are the components of
+the application workload.
+The [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) manages the worker
+nodes and the Pods in the cluster. In production environments, the control plane usually runs across multiple computers
+and a cluster usually runs multiple nodes, providing fault-tolerance and high availability.
 
 ### Control Plane Components
 
