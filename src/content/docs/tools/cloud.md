@@ -164,13 +164,15 @@ The main implementation of a Kubernetes API server is [`kube-apiserver`](https:/
 `kube-apiserver` is designed to scale horizontally—that is, it scales by deploying more instances. You can run
 several instances of `kube-apiserver` and balance traffic between those instances.
 
-#### etcd
+#### `etcd`
 
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
-If your Kubernetes cluster uses etcd as its backing store, make sure you have a [back up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster) plan for the data.
+If your Kubernetes cluster uses `etcd` as its backing store, make sure you have a
+[back up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
+plan for the data.
 
-You can find in-depth information about etcd in the official [documentation](https://etcd.io/docs/).
+You can find in-depth information about `etcd` in the official [documentation](https://etcd.io/docs/).
 
 #### kube-scheduler
 
