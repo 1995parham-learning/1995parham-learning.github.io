@@ -169,7 +169,7 @@ several instances of `kube-apiserver` and balance traffic between those instance
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
 If your Kubernetes cluster uses `etcd` as its backing store, make sure you have a
-[back up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
+[back-up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
 plan for the data.
 
 You can find in-depth information about `etcd` in the official [documentation](https://etcd.io/docs/).
@@ -179,13 +179,17 @@ You can find in-depth information about `etcd` in the official [documentation](h
 Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
 
-Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
+Factors taken into account for scheduling decisions include:
 
-#### kube-controller-manager
+- Individual and collective resource requirements
+- Hardware/Software/Policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
 
-Control plane component that runs [controller](https://kubernetes.io/docs/concepts/architecture/controller/) processes.
+#### `kube-controller-manager`
 
-Logically, each [controller](https://kubernetes.io/docs/concepts/architecture/controller/) is a separate process, but to reduce complexity, they are all compiled into a single binary and run in a single process.
+Control plane component that runs [controller](https://kubernetes.io/docs/concepts/architecture/controller/) processes.
+
+Logically, each [controller](https://kubernetes.io/docs/concepts/architecture/controller/) is a separate process,
+but to _reduce complexity, they are all compiled into a single binary and run in a single process_.
 
 There are many different types of controllers. Some examples of them are:
 
