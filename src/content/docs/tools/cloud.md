@@ -56,8 +56,8 @@ Runbooks can be in either electronic or in physical book form.
 
 ## Affinity and Taints
 
-Using **taints,** you can **forbid** pods from schedule over specific nodes.
-Using **affinity,** you can **make sure** pods schedule over specific nodes.
+Using **taints**, you can **forbid** pods from schedule over specific nodes.
+Using **affinity**, you can **make sure** pods schedule over specific nodes.
 
 For setting affinity, there are constraints like:
 
@@ -107,8 +107,8 @@ You can expose the Service to the public internet using an Ingress or a Gateway.
 
 #### `NodePort`
 
-Exposes the Service on each Node's IP at a static port (the NodePort). To make the node port available,
-Kubernetes sets up a cluster IP address, the same as if you had requested a Service of type: ClusterIP.
+Exposes the Service on each Node's IP at a static port (the `NodePort`). To make the node port available,
+Kubernetes sets up a cluster IP address, the same as if you had requested a Service of type: `ClusterIP`.
 
 #### `LoadBalancer`
 
@@ -117,7 +117,7 @@ a load balancing component; you must provide one, or you can integrate your Kube
 
 #### `ExternalName`
 
-Maps the Service to the contents of the externalName field (for example, to the hostname `api.foo.bar.example`).
+Maps the Service to the contents of the `externalName` field (for example, to the hostname `api.foo.bar.example`).
 The mapping configures your cluster's DNS server to return a CNAME record with that external hostname value.
 No proxying of any kind is set up.
 
@@ -133,7 +133,9 @@ The control plane automatically creates `EndpointSlice`s for any Kubernetes `Ser
 
 [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/)
 
-A Kubernetes cluster consists of a set of worker machines, called [nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), that run containerized applications. Every cluster has at least one worker node.
+A Kubernetes cluster consists of a set of worker machines, called
+[nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), that run containerized applications.
+Every cluster has at least one worker node.
 
 The worker node(s) host the [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) that are the components of
 the application workload.
@@ -143,9 +145,15 @@ and a cluster usually runs multiple nodes, providing fault-tolerance and high av
 
 ### Control Plane Components
 
-The control plane's components make global decisions about the cluster (for example, scheduling), as well as detecting and responding to cluster events (for example, starting up a new [pod](https://kubernetes.io/docs/concepts/workloads/pods/) when a Deployment's `[replicas](https://kubernetes.io/docs/reference/glossary/?all=true#term-replica)` field is unsatisfied).
+The control plane's components make global decisions about the cluster (for example, scheduling), as well as detecting
+and responding to cluster events (for example, starting up a new [pod](https://kubernetes.io/docs/concepts/workloads/pods/)
+when a Deployment's [`replicas`](https://kubernetes.io/docs/reference/glossary/?all=true#term-replica) field is unsatisfied).
 
-Control plane components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all control plane components on the same machine, and do not run user containers on this machine. See [Creating Highly Available clusters with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/) for an example control plane setup that runs across multiple machines.
+Control plane components can be run on any machine in the cluster.
+However, for simplicity, set up scripts typically start all control plane components on the same machine,
+and do not run user containers on this machine.
+See [Creating Highly Available clusters with `kubeadm`](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/)
+for an example control plane setup that runs across multiple machines.
 
 #### kube-apiserver
 
