@@ -110,6 +110,17 @@ kubectl cordon <node-id>
 Existing Pods already running on the Node won't be affected by the cordon.
 They'll remain accessible and will still be hosted by the cordoned Node.
 
+You can check which of your Nodes are currently cordoned with the `get nodes` command:
+
+```bash
+kubectl get nodes
+```
+
+```output
+NAME STATUS ROLES AGE VERSION
+node-1  Ready,SchedulingDisabled    control-plane,master    26m v1.23.3
+```
+
 ## Kubernetes Services
 
 [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/)
