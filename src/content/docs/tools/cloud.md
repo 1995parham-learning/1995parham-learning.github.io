@@ -121,6 +121,12 @@ NAME STATUS ROLES AGE VERSION
 node-1  Ready,SchedulingDisabled    control-plane,master    26m v1.23.3
 ```
 
+### Draining a node
+
+The next step is to drain remaining Pods out of the Node.
+This procedure will evict the Pods, so they're rescheduled onto other Nodes in your cluster.
+Pods are allowed to gracefully terminate before they're forcefully removed from the target Node.
+
 ## Kubernetes Services
 
 [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/)
