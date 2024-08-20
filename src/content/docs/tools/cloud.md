@@ -155,7 +155,7 @@ and do not run user containers on this machine.
 See [Creating Highly Available clusters with `kubeadm`](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/)
 for an example control plane setup that runs across multiple machines.
 
-#### `kube-apiserver`
+#### 1. `kube-apiserver`
 
 The API server is a component of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane)
 that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
@@ -164,7 +164,7 @@ The main implementation of a Kubernetes API server is [`kube-apiserver`](https:/
 `kube-apiserver` is designed to scale horizontally—that is, it scales by deploying more instances. You can run
 several instances of `kube-apiserver` and balance traffic between those instances.
 
-#### `etcd`
+#### 2. `etcd`
 
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
@@ -174,7 +174,7 @@ plan for the data.
 
 You can find in-depth information about `etcd` in the official [documentation](https://etcd.io/docs/).
 
-#### `kube-scheduler`
+#### 3. `kube-scheduler`
 
 Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
@@ -184,7 +184,7 @@ Factors taken into account for scheduling decisions include:
 - Individual and collective resource requirements
 - Hardware/Software/Policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
 
-#### `kube-controller-manager`
+#### 4. `kube-controller-manager`
 
 Control plane component that runs [controller](https://kubernetes.io/docs/concepts/architecture/controller/) processes.
 
@@ -200,7 +200,7 @@ There are many different types of controllers. Some examples of them are:
 
 The above is not an exhaustive list.
 
-#### `cloud-controller-manager`
+#### 5. `cloud-controller-manager`
 
 A Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) component that
 embeds cloud-specific control logic. The [cloud controller manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
@@ -225,7 +225,7 @@ The following controllers can have cloud provider dependencies:
 
 Node components run on every node, maintaining running pods and providing the Kubernetes runtime environment.
 
-#### `kubelet`
+#### 1. `kubelet`
 
 An agent that runs on each [node](https://kubernetes.io/docs/concepts/architecture/nodes/) in the cluster.
 It makes sure that [containers](https://kubernetes.io/docs/concepts/containers/) are running
@@ -235,7 +235,7 @@ The [`kubelet`](https://kubernetes.io/docs/reference/command-line-tools-referenc
 that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running
 and healthy. The `kubelet` doesn't manage containers which were not created by Kubernetes.
 
-#### `kube-proxy`
+#### 2. `kube-proxy`
 
 `kube-proxy` is a network proxy that runs on each
 [node](https://kubernetes.io/docs/concepts/architecture/nodes/) in your cluster,
@@ -249,7 +249,7 @@ These network rules allow network communication to your Pods from network sessio
 Otherwise, `kube-proxy` forwards the traffic itself.
 :::
 
-#### Container runtime
+#### 3. Container runtime
 
 A fundamental component that empowers Kubernetes to run containers effectively. It is responsible for managing the execution and lifecycle of containers within the Kubernetes environment.
 
