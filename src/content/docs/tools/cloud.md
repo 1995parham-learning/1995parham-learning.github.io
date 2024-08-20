@@ -88,6 +88,28 @@ Kyverno runs as a [dynamic admission controller](https://kubernetes.io/docs/refe
 Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server
 and applies matching policies to return results that enforce admission policies or reject requests.
 
+## Cordon and Drain
+
+Kubernetes Nodes need occasional maintenance.
+You could be updating the Node's kernel, resizing its compute resource in your cloud account,
+or replacing physical hardware components in a self-hosted installation.
+
+Cordons and Drains are two mechanisms you can use to safely prepare for Node downtime.
+They allow workloads running on a target Node to be rescheduled onto other ones.
+You can then shut down the Node or remove it from your cluster without impacting service availability.
+
+### Applying a Node Cordon
+
+Cordoning a Node marks it as unavailable to the Kubernetes scheduler.
+The Node will be ineligible to host any new Pods subsequently added to your cluster.
+
+```bash
+kubectl cordon <node-id>
+```
+
+Existing Pods already running on the Node won't be affected by the cordon.
+They'll remain accessible and will still be hosted by the cordoned Node.
+
 ## Kubernetes Services
 
 [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/)
