@@ -127,6 +127,15 @@ The next step is to drain remaining Pods out of the Node.
 This procedure will evict the Pods, so they're rescheduled onto other Nodes in your cluster.
 Pods are allowed to gracefully terminate before they're forcefully removed from the target Node.
 
+Run `kubectl drain` to initiate a drain procedure.
+
+Drains can sometimes take a while to complete if your Pods have long grace periods.
+This might not be ideal when you need to urgently take a Node offline.
+Use the `--grace-period` flag to override Pod termination grace periods and force an immediate eviction.
+
+You can proceed with the eviction by adding the `--ignore-daemonsets` flag.
+This will evict everything else while overlooking any DaemonSets that exist.
+
 ## Kubernetes Services
 
 [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/)
