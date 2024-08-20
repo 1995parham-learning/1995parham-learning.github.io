@@ -136,6 +136,17 @@ Use the `--grace-period` flag to override Pod termination grace periods and forc
 You can proceed with the eviction by adding the `--ignore-daemonsets` flag.
 This will evict everything else while overlooking any DaemonSets that exist.
 
+### Minimizing Downtime With Pod Disruption Budgets
+
+Draining a Node doesn't guarantee your workloads will remain accessible throughout.
+Your other Nodes will need time to honor scheduling requests and create new containers.
+
+This can be particularly impactful if you're draining multiple Nodes in a short space of time.
+Draining the first Node could reschedule its Pods onto the second Node, which is itself then deleted.
+
+Pod disruption budgets are a mechanism for avoiding this situation.
+You can use them with `Deployments`, `ReplicationControllers`, `ReplicaSets`, and `StatefulSets`.
+
 ## Kubernetes Services
 
 [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/)
