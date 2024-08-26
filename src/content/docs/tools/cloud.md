@@ -101,6 +101,11 @@ As such, if your container attempts to exceed the limit, Kubernetes throttles it
 This may result in degraded performance, but does not terminate or evict the pod. However,
 if a pod attempts to use more memory than the limit, Kubernetes _immediately terminates it_.
 
+:::note
+The Container has no upper bound on the CPU resources it can use.
+The Container could use all the CPU resources available on the Node where it is running.
+:::
+
 ## Cordon and Drain
 
 Kubernetes Nodes need occasional maintenance.
