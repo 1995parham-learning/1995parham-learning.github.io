@@ -106,6 +106,23 @@ The Container has no upper bound on the CPU resources it can use.
 The Container could use all the CPU resources available on the Node where it is running.
 :::
 
+With a virtual machine (VM), you assign a certain whole number of vCPU cores.
+These are then available to the VM all the time.
+However, Kubernetes allows you to specify fractional CPUs, down to 1/1000 of a CPU.
+Unlike in the case with virtual machines, you cannot assign only part of a CPU core.
+It is instead a timeshare of the CPUs available on a node.
+This is true even if the limit is set to a whole number. This can be important as we explore how this works.
+
+Kubernetes uses the Completely Fair Scheduler (CFS) groups, specifically the CFS cgroup Bandwidth control.
+The way this works for a CPU limit is that every CPU is scheduled in _100ms_ periods with _5ms_ time slices.
+Each pod is given a budget within that time slice. For example, a pod with a **limit** of _200 m_,
+the pod would be given a quota of four 5ms slices for a total of _20ms_ of every _100ms_ period.
+
+The CFS continues to supply these 5ms slices to the pod until the quota has been exhausted.
+Once the quota has been used up for the _100ms_ period, the CFS stops scheduling the pod for CPU time.
+This is referred to as **throttling**. Once the new _100ms_ period begins, the quota is reset to the limit.
+In our example, this is four slices.
+
 ## Cordon and Drain
 
 Kubernetes Nodes need occasional maintenance.
