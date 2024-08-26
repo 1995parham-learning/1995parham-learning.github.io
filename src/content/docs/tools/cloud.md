@@ -88,6 +88,12 @@ Kyverno runs as a [dynamic admission controller](https://kubernetes.io/docs/refe
 Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server
 and applies matching policies to return results that enforce admission policies or reject requests.
 
+## Requests and Limits
+
+A request is what the container is **guaranteed to receive**. One of the most common discussions of requests is around
+pod scheduling. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources.
+For example, if a pod requests a total of 2 CPUs, but each node only has 1.9 available, Kubernetes will not schedule the pod.
+
 ## Cordon and Drain
 
 Kubernetes Nodes need occasional maintenance.
