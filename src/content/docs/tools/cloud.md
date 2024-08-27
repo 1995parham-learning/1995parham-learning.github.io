@@ -91,7 +91,7 @@ and applies matching policies to return results that enforce admission policies 
 ## Requests and Limits
 
 A request is what the container is **guaranteed to receive**. One of the most common discussions of requests is around
-pod scheduling. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources.
+_pod scheduling_. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources.
 For example, if a pod requests a total of 2 CPUs, but each node only has 1.9 available, Kubernetes will not schedule the pod.
 
 A limit is a cap on the resources that a pod can use. Although small exceptions may exist,
