@@ -172,7 +172,7 @@ You can check which of your Nodes are currently cordoned with the `get nodes` co
 kubectl get nodes
 ```
 
-```output
+```text
 NAME STATUS ROLES AGE VERSION
 node-1  Ready,SchedulingDisabled    control-plane,master    26m v1.23.3
 ```
