@@ -129,10 +129,19 @@ Many people, set up alerts to see when a server is throttling as a warning of a 
 (or a misconfiguration). However, if you do this you may find **high throttling** with _very low CPU utilization_.
 :::
 
-:::tip[Example of a pod with a limit of 200m running on a single core machine]
+:::tip[Example of a pod with a limit of `200m` running on a single core machine]
+
 Let us pretend we expect the pod to process 1 request every second and each request should take _70ms_ to complete.
 Given that, over a 1-second period the pod will be using only about 35 percent of the limit set.
-However, for each _100ms_ period the pod is only allowed to use 20ms before being throttled, as we saw above.
+However, for each _100ms_ period the pod is only allowed to use _20ms_ before being throttled, as we saw above.
+
+So for the first slice the pod uses _20ms_ and is throttled.
+In the second slice and third slice, we see the same.
+Finally, in the fourth slice, the pod uses _10ms_ of CPU and completes the request.
+For the remaining six slices, the pod does not request any CPU time.
+So for three of the four periods where the pod requested CPU, it was throttled.
+The latency of _70ms_ has grown to more than _300ms_. So despite the pod _only using 35 percent of our limit on a
+large timescale_, this pod is getting **heavily throttled**, and the **response time is degraded**.
 :::
 
 ## Cordon and Drain
