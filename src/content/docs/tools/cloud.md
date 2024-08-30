@@ -131,6 +131,8 @@ Many people, set up alerts to see when a server is throttling as a warning of a 
 
 :::tip[Example of a pod with a limit of 200m running on a single core machine]
 Let us pretend we expect the pod to process 1 request every second and each request should take _70ms_ to complete.
+Given that, over a 1-second period the pod will be using only about 35 percent of the limit set.
+However, for each _100ms_ period the pod is only allowed to use 20ms before being throttled, as we saw above.
 :::
 
 ## Cordon and Drain
