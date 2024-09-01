@@ -56,8 +56,13 @@ Runbooks can be in either electronic or in physical book form.
 
 ## Affinity and Taints
 
-Using **taints**, you can **forbid** pods from schedule over specific nodes.
-Using **affinity**, you can **make sure** pods schedule over specific nodes.
+:::note
+Node affinity is a property of Pods that attracts them to a set of nodes (either as a preference or a hard requirement).
+Taints are the opposite -- they allow a node to repel a set of pods.
+:::
+
+- Using **taints**, you can **forbid** pods from schedule over specific nodes.
+- Using **affinity**, you can **make sure** pods schedule over specific nodes.
 
 For setting affinity, there are constraints like:
 
@@ -66,6 +71,15 @@ requiredDuringSchedulingIgnoredDuringExecution
 ```
 
 Which means, it should be forced during the scheduling, not when the pod is running.
+
+You add a taint to a node using `kubectl taint`. For example,
+
+```bash
+kubectl taint nodes node1 key1=value1:NoSchedule
+```
+
+places a taint on node `node1`. The taint has key `key1`, value `value1`, and taint effect `NoSchedule`.
+This means that no pod will be able to schedule onto `node1` unless it has a matching toleration.
 
 ## Static Pods
 
