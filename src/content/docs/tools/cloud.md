@@ -67,6 +67,20 @@ requiredDuringSchedulingIgnoredDuringExecution
 
 Which means, it should be forced during the scheduling, not when the pod is running.
 
+## Static Pods
+
+Static Pods are **managed directly by the `kubelet` daemon** on a specific node, without the API server observing them.
+Unlike Pods that are managed by the control plane (for example, a Deployment); instead, the `kubelet` watches each
+static Pod (and restarts it if it fails).
+
+:::note
+Static Pods are always bound to one `kubelet` on a specific node.
+:::
+
+The `kubelet` automatically tries to create a mirror Pod on the Kubernetes API server for each static Pod.
+This means that the Pods running on a node are _visible on the API server_, but _cannot be controlled from there_.
+The Pod names will be suffixed with the node hostname with a leading hyphen.
+
 ## Kyverno
 
 Kyverno (Greek for “govern”) is a policy engine designed specifically for Kubernetes. Some of its many features include:
