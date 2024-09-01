@@ -81,6 +81,18 @@ The `kubelet` automatically tries to create a mirror Pod on the Kubernetes API s
 This means that the Pods running on a node are _visible on the API server_, but _cannot be controlled from there_.
 The Pod names will be suffixed with the node hostname with a leading hyphen.
 
+:::note
+If you are running clustered Kubernetes and are using static Pods to run a Pod on every node, you should probably be using a DaemonSet instead.
+:::
+
+:::note
+The spec of a static Pod cannot refer to other API objects (e.g., ServiceAccount, ConfigMap, Secret, etc).
+:::
+
+:::note
+Static pods do not support ephemeral containers.
+:::
+
 ## Kyverno
 
 Kyverno (Greek for “govern”) is a policy engine designed specifically for Kubernetes. Some of its many features include:
