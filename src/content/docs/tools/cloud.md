@@ -54,7 +54,18 @@ Runbooks can be in either electronic or in physical book form.
 - NATS: [@nats-io/nack](https://github.com/nats-io/nack)
 - Kafka: [@strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)
 
+## Readiness Gate
+
+Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**.
+By default, a pod is considered ready if all its containers are ready. However, in complex scenarios,
+you might need more sophisticated checks. Readiness Gates allow you to define these additional checks,
+which can be based on various criteria such as external dependencies, configuration availability, or custom logic.
+
 ## Affinity and Taints
+
+Affinity and tolerations are two key concepts in Kubernetes that help manage the placement of pods on worker nodes.
+They allow for fine-grained control over where pods are scheduled,
+ensuring optimal resource utilization and application performance.
 
 :::note
 Node _affinity is a property of Pods_ that attracts them to a set of nodes (either as a preference or a hard requirement).
