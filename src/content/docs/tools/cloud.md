@@ -57,20 +57,12 @@ Runbooks can be in either electronic or in physical book form.
 ## Affinity and Taints
 
 :::note
-Node affinity is a property of Pods that attracts them to a set of nodes (either as a preference or a hard requirement).
+Node _affinity is a property of Pods_ that attracts them to a set of nodes (either as a preference or a hard requirement).
 Taints are the opposite -- they allow a node to repel a set of pods.
 :::
 
-- Using **taints**, you can **forbid** pods from schedule over specific nodes.
-- Using **affinity**, you can **make sure** pods schedule over specific nodes.
-
-For setting affinity, there are constraints like:
-
-```
-requiredDuringSchedulingIgnoredDuringExecution
-```
-
-Which means, it should be forced during the scheduling, not when the pod is running.
+- Affinity rules attract pods to certain nodes but don't guarantee it (soft requirement).
+- Toleration allow pods to be scheduled on nodes with matching taints (hard requirement).
 
 You add a taint to a node using `kubectl taint`. For example,
 
@@ -80,6 +72,58 @@ kubectl taint nodes node1 key1=value1:NoSchedule
 
 places a taint on node `node1`. The taint has key `key1`, value `value1`, and taint effect `NoSchedule`.
 This means that no pod will be able to schedule onto `node1` unless it has a matching toleration.
+
+To remove the taint added by the command above, you can run:
+
+```bash
+kubectl taint nodes node1 key1=value1:NoSchedule-
+```
+
+You specify a toleration for a pod in the `PodSpec`. Both of the following toleration "match" the taint created by
+the `kubectl` taint line above, and thus a pod with either toleration would be able to schedule onto `node1`:
+
+```yaml
+tolerations:
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoSchedule"
+```
+
+```yaml
+tolerations:
+  - key: "key1"
+    operator: "Exists"
+    effect: "NoSchedule"
+```
+
+The default Kubernetes scheduler takes taint and toleration into account when selecting a node to run a particular Pod.
+
+The allowed values for the `effect` field are:
+
+- `NoExecute`
+  This affects pods that are already running on the node as follows:
+
+  - Pods that do not tolerate the taint are evicted immediately
+  - Pods that tolerate the taint without specifying `tolerationSeconds` in their toleration specification remain bound forever
+  - Pods that tolerate the taint with a specified `tolerationSeconds` remain bound for the specified amount of time.
+    After that time elapses, the node lifecycle controller evicts the Pods from the node.
+
+- `NoSchedule`
+  No new Pods will be scheduled on the tainted node unless they have a matching toleration.
+  Pods currently running on the node are not evicted.
+- `PreferNoSchedule`
+  `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`.
+  The control plane will try to avoid placing a Pod that does not tolerate the taint on the node,
+  but it is not guaranteed.
+
+For setting affinity, there are constraints like:
+
+```
+requiredDuringSchedulingIgnoredDuringExecution
+```
+
+Which means, it should be forced during the scheduling, not when the pod is running.
 
 ## Static Pods
 
@@ -96,7 +140,8 @@ This means that the Pods running on a node are _visible on the API server_, but 
 The Pod names will be suffixed with the node hostname with a leading hyphen.
 
 :::note
-If you are running clustered Kubernetes and are using static Pods to run a Pod on every node, you should probably be using a DaemonSet instead.
+If you are running clustered Kubernetes and are using static Pods to run a Pod on every node,
+you should probably be using a DaemonSet instead.
 :::
 
 :::note
