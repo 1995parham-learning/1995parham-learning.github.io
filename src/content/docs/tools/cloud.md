@@ -61,8 +61,8 @@ Node _affinity is a property of Pods_ that attracts them to a set of nodes (eith
 Taints are the opposite -- they allow a node to repel a set of pods.
 :::
 
-- Affinity rules attract pods to certain nodes but don't guarantee it (soft requirement).
-- Toleration allow pods to be scheduled on nodes with matching taints (hard requirement).
+- Affinity is used to proactively place pods on specific nodes based on desired criteria.
+- Tolerations are used to allow pods to be scheduled on nodes that might have restrictions (taints).
 
 You add a taint to a node using `kubectl taint`. For example,
 
