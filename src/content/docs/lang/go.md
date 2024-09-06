@@ -13,6 +13,25 @@ Golang is an awesome language, but it has sanctioned our country. It is similar 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API
 and GraphQL servers.
 
+## Multiple Errors
+
+Go 1.20 expands support for error wrapping to permit an error to wrap multiple other errors:
+
+- An error `e` can wrap more than one error by providing an Unwrap method that returns a `[]error`.
+- The `errors.Is` and `errors.As` functions have been updated to inspect multiply wrapped errors.
+- The `fmt.Errorf` function now supports multiple occurrences of the `%w` format verb,
+  which will cause it to return an error that wraps all of those error operands.
+- The new function `errors.Join` returns an error wrapping a list of errors.
+
+### `func As(err error, target any) bool`
+
+`As` finds the first error in `err`'s tree that matches target, and if one is found,
+sets target to that error value and returns true. Otherwise, it returns false.
+
+The tree consists of `err` itself, followed by the errors obtained by repeatedly calling its `Unwrap() error` or
+`Unwrap() []error` method.
+When `err` wraps multiple errors, As examines `err` followed by a **depth-first traversal** of its children.
+
 ## Enum
 
 ```go
