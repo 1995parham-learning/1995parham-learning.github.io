@@ -54,6 +54,11 @@ Runbooks can be in either electronic or in physical book form.
 - NATS: [@nats-io/nack](https://github.com/nats-io/nack)
 - Kafka: [@strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)
 
+## Ephemeral Container
+
+> A special type of container that runs temporarily in an existing Pod to accomplish user-initiated actions
+> such as troubleshooting.
+
 ## Readiness Gate
 
 Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**.
