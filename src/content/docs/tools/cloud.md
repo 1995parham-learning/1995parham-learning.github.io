@@ -59,6 +59,14 @@ Runbooks can be in either electronic or in physical book form.
 > A special type of container that runs temporarily in an existing Pod to accomplish user-initiated actions
 > such as troubleshooting.
 
+```bash
+kubectl debug -it --attach=false -c debugger --image=busybox ${POD_NAME}
+```
+
+The above command adds to the target Pod a new ephemeral container called `debugger` that uses the
+`busybox:latest` image. I intentionally created it interactive (`-i`) and PTY-controlled (`-t`) so that attaching to
+it later would provide a typical interactive shell experience.
+
 ## Readiness Gate
 
 Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**.
