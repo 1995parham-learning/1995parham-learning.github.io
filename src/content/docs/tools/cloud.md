@@ -27,7 +27,7 @@ From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 > Network namespace is logically another copy of the network stack,
 > with its own routes, firewall rules, and network devices.
 
-## How to set up?
+## Set up your Kubernetes cluster
 
 > Do you want to run Red Hat OpenShift Container Platform on bare metal?
 
