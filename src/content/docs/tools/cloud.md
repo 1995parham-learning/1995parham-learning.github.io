@@ -67,6 +67,23 @@ The above command adds to the target Pod a new ephemeral container called `debug
 `busybox:latest` image. I intentionally created it interactive (`-i`) and PTY-controlled (`-t`) so that attaching to
 it later would provide a typical interactive shell experience.
 
+```bash
+$ ps auxf
+
+PID   USER     TIME  COMMAND
+    1 root      0:00 sh
+   14 root      0:00 ps auxf
+```
+
+The `ps` output from inside the `debugger` container shows only the processes of that container...
+So, `kubectl debug` just gave me a shared net (and probably IPC) namespace, likely the same parent cgroup as
+for the other Pod's containers, and that's pretty much it! Sounds way too limited
+for a seamless debugging experience 🤔
+
+:::note
+Enabling a shared PID namespace for all the containers in a Pod.
+:::
+
 ## Readiness Gate
 
 Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**.
