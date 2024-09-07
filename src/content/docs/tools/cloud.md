@@ -95,6 +95,16 @@ The Pod conditions you add must have names that meet the Kubernetes _label key f
 To set these `status.conditions` for the Pod, **applications** and **operators** should use the _PATCH_ action.
 You can use a _Kubernetes client library_ to write code that sets custom Pod conditions for Pod readiness.
 
+## Service Accounts
+
+A _service account_ provides an identity for processes that run in a Pod,
+and maps to a `ServiceAccount` object. When you authenticate to the API server, you identify
+yourself as a particular _user_.
+
+:::note
+Kubernetes recognizes the concept of a user, however, Kubernetes itself does not have a User API.
+:::
+
 ## Affinity and Taints
 
 Affinity and tolerations are two key concepts in Kubernetes that help manage the placement of pods on worker nodes.
