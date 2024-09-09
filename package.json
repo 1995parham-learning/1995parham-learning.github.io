@@ -20,7 +20,7 @@
     "@iconify-json/simple-icons": "^1.1.115",
     "@iconify-json/skill-icons": "^1.1.10",
     "@iconify-json/solar": "^1.1.10",
-    "@iconify-json/tabler": "^1.1.121",
+    "@iconify-json/tabler": "^1.2.1",
     "@iconify/icons-tabler": "^1.2.95",
     "astro": "^4.15.1",
     "astro-icon": "^1.1.1",
