@@ -432,8 +432,14 @@ Kubernetes sets up a cluster IP address, the same as if you had requested a Serv
 Exposes the Service externally using an external load balancer. Kubernetes does not directly offer
 a load balancing component; you must provide one, or you can integrate your Kubernetes cluster with a cloud provider.
 
-Metal-LB does two things to provide service load balancer. First it assigns IP address to the services and then
-advertises them to BGP neighbors.
+Metal-LB is a load balancer solution that works by:
+
+- Assigning IP addresses: It assigns specific IP addresses to individual services or a group of services.
+- Advertising to BGP neighbors: It then advertises these IP addresses to Border Gateway Protocol (BGP) neighbors.
+  This means it informs other network devices (like routers) about the availability of these services and
+  their corresponding IP addresses.
+
+This process allows traffic to be directed to the correct services based on the IP addresses advertised by Metal-LB.
 
 #### `ExternalName`
 
