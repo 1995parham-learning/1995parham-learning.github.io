@@ -14,15 +14,15 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/starlight": "^0.27.1",
     "@iconify-json/carbon": "^1.2.1",
-    "@iconify-json/devicon": "^1.2.0",
+    "@iconify-json/devicon": "^1.2.1",
     "@iconify-json/logos": "^1.2.0",
     "@iconify-json/noto": "^1.2.0",
-    "@iconify-json/simple-icons": "^1.2.2",
+    "@iconify-json/simple-icons": "^1.2.3",
     "@iconify-json/skill-icons": "^1.2.0",
     "@iconify-json/solar": "^1.2.0",
-    "@iconify-json/tabler": "^1.2.2",
+    "@iconify-json/tabler": "^1.2.3",
     "@iconify/icons-tabler": "^1.2.95",
-    "astro": "^4.15.4",
+    "astro": "^4.15.6",
     "astro-icon": "^1.1.1",
     "sharp": "^0.33.5",
     "typescript": "^5.6.2"
@@ -30,6 +30,6 @@
   "devDependencies": {
     "@typescript-eslint/parser": "^8.5.0",
     "eslint": "^9.10.0",
-    "eslint-plugin-astro": "^1.2.3"
+    "eslint-plugin-astro": "^1.2.4"
   }
 }
