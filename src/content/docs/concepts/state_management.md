@@ -29,3 +29,5 @@ Information _stored_ in entities connected through a network
 
 - State **installed** by receiver on receipt of _setup message_ from sender.
 - State **removed** by receiver on receipt of _teardown message_ from sender.
+
+### Soft State
