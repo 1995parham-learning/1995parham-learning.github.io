@@ -46,3 +46,14 @@ Information _stored_ in entities connected through a network
   - **Trigger**: first time state-installation
   - **Refresh**: refresh state known to exist (“I am still here”)
   - **<Lack of refresh>**: Remove state (“I am gone”)
+
+### Discussion
+
+- Hard State
+  - Better if message overhead really high
+  - Potentially greater consistency
+  - System wide coupling → difficult to analyze
+- Soft State
+  - Implicit reliability
+  - Easier error recovery
+  - Easily decomposed → simpler analysis
