@@ -29,5 +29,11 @@ Information _stored_ in entities connected through a network
 
 - State **installed** by receiver on receipt of _setup message_ from sender.
 - State **removed** by receiver on receipt of _teardown message_ from sender.
+- Default assumption: state valid unless told otherwise
 
 ### Soft State
+
+- State **installed** by receiver on receipt of _setup (trigger) message_ from sender.
+- Sender sends periodic _refresh messages_ indicating receiver should continue to maintain state.
+- State **removed** by receiver via timeout, in absence of refresh message from sender.
+- Default assumption: State becomes invalid unless refreshed
