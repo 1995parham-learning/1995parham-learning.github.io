@@ -37,3 +37,6 @@ Information _stored_ in entities connected through a network
 - Sender sends periodic _refresh messages_ indicating receiver should continue to maintain state.
 - State **removed** by receiver via timeout, in absence of refresh message from sender.
 - Default assumption: State becomes invalid unless refreshed
+- **Easy** handling of changes
+  - _Recovery_ performed transparently to end-system by normal refresh procedures
+  - No need for network to signal failure/change to end system, or end system to respond to specific error
