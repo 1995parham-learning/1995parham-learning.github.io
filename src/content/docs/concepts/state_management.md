@@ -40,3 +40,9 @@ Information _stored_ in entities connected through a network
 - **Easy** handling of changes
   - _Recovery_ performed transparently to end-system by normal refresh procedures
   - No need for network to signal failure/change to end system, or end system to respond to specific error
+  - Less signaling (volume, types of messages) than hard-state from network to end-system
+  - More signaling (volume) than hard-state from end-system to network for refreshes
+- Refresh messages serve many purposes:
+  - **Trigger**: first time state-installation
+  - **Refresh**: refresh state known to exist (“I am still here”)
+  - **<Lack of refresh>**: Remove state (“I am gone”)
