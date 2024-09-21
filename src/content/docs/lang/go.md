@@ -854,7 +854,7 @@ func Provide(lc fx.Lifecycle, store *urlsvc.URLSvc, logger *zap.Logger, tele tel
 
 #### Application lifecycle
 
-The lifecycle of an Fx application has two high-level phases: _initialization_ and _execution_.
+The lifecycle of a Fx application has two high-level phases: _initialization_ and _execution_.
 Both of these, in turn are comprised of multiple steps.
 
 During **initialization**, Fx will,
@@ -865,9 +865,9 @@ During **initialization**, Fx will,
 
 During **execution**, Fx will,
 
-- run all startup hooks appended to the application by providers, decorators, and invoked functions
-- wait for a signal to stop running
-- run all shutdown hooks appended to the application
+- Run all startup hooks appended to the application by providers, decorators, and invoked functions
+- Wait for a signal to stop running
+- Run all shutdown hooks appended to the application
 
 ![fx-flow](./go/fx-flow.png)
 
@@ -885,16 +885,18 @@ Fx runs both kinds of hooks with a hard timeout enforcement (by default, 15 seco
 Therefore, hooks are expected to block only as long as they need to _schedule_ work. In other words,
 
 - hooks **must not** block to run long-running tasks synchronously
-- hooks **should** schedule long-running tasks in background goroutines
+- hooks **should** schedule long-running tasks in background go routines
 - shutdown hooks **should** stop the background work started by startup hooks
 
 #### Modules
 
-A Fx module is a shareable Go library or package that provides self-contained functionality to an Fx application.\*\*\*\*
+A Fx module is a shareable Go library or package that provides self-contained functionality to a Fx application.
 
 #### Result Structs
 
-Result structs are the inverse of parameter structs. These structs represent multiple outputs from a single function as fields. Fx treats all structs embedding fx.Out as result structs, so other constructors can rely on the result struct's fields directly.
+Result structs are the inverse of parameter structs. These structs represent multiple outputs from a
+single function as fields. Fx treats all structs embedding `fx.Out` as result structs, so other constructors can
+rely on the result struct's fields directly.
 
 Without result structs, we sometimes have function definitions like this:
 
@@ -922,6 +924,12 @@ func SetupGateways(conn *sql.DB) (Gateways, error) {
 
 ## GraphQL
 
-GraphQL is an awesome way to communicate data with the frontend team. Using GraphQL you can ask the frontend team to write queries for accessing the backend data and because of that there is no need to design different APIs for different requests. You have one API to rule them all.
+GraphQL is an awesome way to communicate data with the frontend team. Using GraphQL you can ask the frontend team
+to write queries for accessing the backend data and because of that there is no need to design different APIs
+for different requests. You have one API to rule them all.
 
-[https://github.com/99designs/gqlgen](https://github.com/99designs/gqlgen)
+- [https://github.com/99designs/gqlgen](https://github.com/99designs/gqlgen)
+
+`gqlgen` can automatically generate models for you, or you can configure it through `gqlgen.yml` to use your current
+models. In the second way, when you have different fields in the model you defined in schema, `gqlgen` generates field
+resolvers to fill out these fields from the model.
