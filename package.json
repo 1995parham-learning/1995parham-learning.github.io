@@ -22,7 +22,7 @@
     "@iconify-json/solar": "^1.2.0",
     "@iconify-json/tabler": "^1.2.4",
     "@iconify/icons-tabler": "^1.2.95",
-    "astro": "^4.15.9",
+    "astro": "^4.15.11",
     "astro-icon": "^1.1.1",
     "sharp": "^0.33.5",
     "typescript": "^5.6.2"
