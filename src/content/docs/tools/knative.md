@@ -27,3 +27,23 @@ The primary Knative Serving resources are Services, Routes, Configurations, and 
 - **Revisions**: The `revision.serving.knative.dev` resource is a point-in-time snapshot of the code and configuration
   for each modification made to the workload. Revisions are immutable objects and can be retained for as long as useful.
   Knative Serving Revisions can be automatically _scaled up and down according to incoming traffic_.
+
+## Knative Eventing
+
+> The Event-driven application platform for Kubernetes
+
+Knative Eventing is a collection of APIs that enable you to use an **event-driven architecture** with your applications.
+You can use these APIs to create components that route events from event producers (known as sources)
+to event consumers (known as sinks) that receive events.
+Sinks can also be configured to respond to HTTP requests by sending a response event.
+
+Knative Eventing is a standalone platform that provides support for various types of workloads,
+including standard Kubernetes Services and Knative Serving Services.
+
+Knative Eventing uses _standard HTTP POST requests_ to send and receive events between event producers and sinks.
+These events conform to the **CloudEvents specifications**, which enables creating, parsing, sending, and receiving
+events in any programming language.
+
+Knative Eventing components are **loosely coupled**, and can be _developed and deployed independently of each other_.
+Any producer can generate events before there are active event consumers that are listening for those events.
+Any event consumer can express interest in a class of events before there are producers that are creating those events.
