@@ -3,6 +3,8 @@ title: EMQX
 icon: simple-icons:mqtt
 ---
 
+- [Configuration (v5.8.1)](https://docs.emqx.com/en/emqx/v5.8.1/hocon/)
+
 ## Introduction
 
 EMQX is an open-source, highly scalable, and feature-rich MQTT broker designed for IoT and real-time messaging applications.
