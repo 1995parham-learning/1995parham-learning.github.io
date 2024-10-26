@@ -892,6 +892,41 @@ Therefore, hooks are expected to block only as long as they need to _schedule_ w
 
 A Fx module is a shareable Go library or package that provides self-contained functionality to a Fx application.
 
+#### Parameter Structs
+
+Fx constructors declare their dependencies as function parameters.
+This can quickly become unreadable if the constructor has a lot of dependencies.
+
+```go
+func NewHandler(users *UserGateway, comments *CommentGateway, posts *PostGateway,
+    votes *VoteGateway, authz *AuthZGateway) *Handler {
+	// ...
+}
+```
+
+To improve the readability of constructors like this, create a struct that lists all the dependencies as
+fields and change the function to accept that struct instead. The new struct is called a parameter struct.
+
+Fx has first class support for parameter structs: any struct embedding `fx.In` gets treated as a parameter struct,
+so the individual fields in the struct are supplied via dependency injection.
+Using a parameter struct, we can make the constructor above much more readable:
+
+```go
+type HandlerParams struct {
+	fx.In
+
+	Users    *UserGateway
+	Comments *CommentGateway
+	Posts    *PostGateway
+	Votes    *VoteGateway
+	AuthZ    *AuthZGateway
+}
+
+func NewHandler(p HandlerParams) *Handler {
+	// ...
+}
+```
+
 #### Result Structs
 
 Result structs are the inverse of parameter structs. These structs represent multiple outputs from a
