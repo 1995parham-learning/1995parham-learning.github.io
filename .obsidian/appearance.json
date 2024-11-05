@@ -1,4 +1,9 @@
 {
-  "accentColor": "#f4873e",
-  "baseFontSize": 12
+  "accentColor": "#f99201",
+  "baseFontSize": 12,
+  "baseFontSizeAction": false,
+  "enabledCssSnippets": [
+    "snippet"
+  ],
+  "textFontFamily": ""
 }
