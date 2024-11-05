@@ -10,7 +10,7 @@ The `stdin` function returns an instance of `[std::io::Stdin](https://doc.rust-l
 
 ## Functions
 
-An *associated function* is a function that's implemented on a type.
+An _associated function_ is a function that's implemented on a type.
 
 You'll find a `new` function on many types because it's a common name for a function that makes a new value of some kind.
 
@@ -29,9 +29,9 @@ fn main() {
 used binding `x` isn't initialized
 ```
 
-Like immutable variables, *constants* are values that are bound to a name and are not allowed to change, but there are a few differences between constants and variables.
+Like immutable variables, _constants_ are values that are bound to a name and are not allowed to change, but there are a few differences between constants and variables.
 
-First, you aren't allowed to use `mut` with constants. Constants aren't just immutable by default—they're always immutable. You declare constants using the `const` keyword instead of the `let` keyword, and the type of the value *must* be annotated.
+First, you aren't allowed to use `mut` with constants. Constants aren't just immutable by default—they're always immutable. You declare constants using the `const` keyword instead of the `let` keyword, and the type of the value _must_ be annotated.
 
 Constants can be declared in any scope, including the global scope, which makes them useful for values that many parts of code need to know about.
 
@@ -46,42 +46,42 @@ Rust's naming convention for constants is to use all uppercase, with underscores
 
 Naming hard-coded values used throughout your program as constants is useful in conveying the meaning of that value to future maintainers of the code. It also helps to have only one place in your code you would need to change if the hard-coded value needed to be updated in the future.
 
-You can declare a new variable with the same name as a previous variable. Rustaceans say that the first variable is *shadowed* by the second, which means that the second variable is what the compiler will see when you use the name of the variable.
+You can declare a new variable with the same name as a previous variable. Rustaceans say that the first variable is _shadowed_ by the second, which means that the second variable is what the compiler will see when you use the name of the variable.
 
 Shadowing is different from marking a variable as `mut` because we'll get a compile-time error if we accidentally try to reassign to this variable without using the `let` keyword. By using `let`, we can perform a few transformations on a value but have the variable be immutable after those transformations have been completed.
 
 The other difference between `mut` and shadowing is that because we're effectively creating a new variable when we use the `let` keyword again, we can change the type of the value but reuse the same name.
 
-A *scalar* type represents a single value. Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
+A _scalar_ type represents a single value. Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
 
-An *integer* is a number without a fractional component. Signed numbers are stored using [two's complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
+An _integer_ is a number without a fractional component. Signed numbers are stored using [two's complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
 
-| Length | Signed | Unsigned |
-| --- | --- | --- |
-| 8-bit | i8 | u8 |
-| 16-bit | i16 | u16 |
-| 32-bit | i32 | u32 |
-| 64-bit | i64 | u64 |
-| 128-bit | i128 | u128 |
-| arch | isize | usize |
+| Length  | Signed | Unsigned |
+| ------- | ------ | -------- |
+| 8-bit   | i8     | u8       |
+| 16-bit  | i16    | u16      |
+| 32-bit  | i32    | u32      |
+| 64-bit  | i64    | u64      |
+| 128-bit | i128   | u128     |
+| arch    | isize  | usize    |
 
 Additionally, the `isize` and `usize` types depend on the architecture of the computer your program is running on, which is denoted in the table as "arch": 64 bits if you're on a 64-bit architecture and 32 bits if you're on a 32-bit architecture.
 
 You can write integer literals in any of the forms shown in the following table. Note that number literals that can be multiple numeric types allow a type suffix, such as `57u8`, to designate the type. Number literals can also use `_` as a visual separator to make the number easier to read, such as `1_000`, which will have the same value as if you had specified `1000`.
 
-| Number literals | Example |
-| --- | --- |
-| Decimal | 98_222 |
-| Hex | 0xff |
-| Octal | 0o77 |
-| Binary | 0b1111_0000 |
-| Byte (u8 only) | b'A' |
+| Number literals | Example     |
+| --------------- | ----------- |
+| Decimal         | 98_222      |
+| Hex             | 0xff        |
+| Octal           | 0o77        |
+| Binary          | 0b1111_0000 |
+| Byte (u8 only)  | b'A'        |
 
 :::note
-💡 Let's say you have a variable of type `u8` that can hold values between 0 and 255. If you try to change the variable to a value outside that range, such as 256, *integer overflow* will occur, which can result in one of two behaviors. When you're compiling in debug mode, Rust includes checks for integer overflow that cause your program to *panic* at runtime if this behavior occurs. Rust uses the term *panicking* when a program exits with an error; we'll discuss panics in more depth in the [“Unrecoverable Errors with `panic!`”](https://rust-book.cs.brown.edu/ch09-01-unrecoverable-errors-with-panic.html) section.
+💡 Let's say you have a variable of type `u8` that can hold values between 0 and 255. If you try to change the variable to a value outside that range, such as 256, _integer overflow_ will occur, which can result in one of two behaviors. When you're compiling in debug mode, Rust includes checks for integer overflow that cause your program to _panic_ at runtime if this behavior occurs. Rust uses the term _panicking_ when a program exits with an error; we'll discuss panics in more depth in the [“Unrecoverable Errors with `panic!`”](https://rust-book.cs.brown.edu/ch09-01-unrecoverable-errors-with-panic.html) section.
 :::
 
-Rust also has two primitive types for *floating-point numbers*, which are numbers with decimal points. Rust's floating-point types are `f32` and `f64`, which are 32 bits and 64 bits in size, respectively. The default type is `f64` because on modern CPUs, it's roughly the same speed as `f32` but is capable of more precision. All floating-point types are signed.
+Rust also has two primitive types for _floating-point numbers_, which are numbers with decimal points. Rust's floating-point types are `f32` and `f64`, which are 32 bits and 64 bits in size, respectively. The default type is `f64` because on modern CPUs, it's roughly the same speed as `f32` but is capable of more precision. All floating-point types are signed.
 
 Floating-point numbers are represented according to the IEEE-754 standard. The `f32` type is a single-precision float, and `f64` has double precision.
 
@@ -108,9 +108,9 @@ Note that we specify `char` literals with single quotes, as opposed to string li
 
 ## Compound types
 
-*Compound types* can group multiple values into one type. Rust has two primitive compound types: tuples and arrays.
+_Compound types_ can group multiple values into one type. Rust has two primitive compound types: tuples and arrays.
 
-A *tuple* is a general way of grouping together a number of values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size.
+A _tuple_ is a general way of grouping together a number of values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size.
 
 We create a tuple by writing a comma-separated list of values inside parentheses. Each position in the tuple has a type, and the types of the different values in the tuple don't have to be the same.
 
@@ -148,9 +148,9 @@ fn main() {
 
 This program creates the tuple `x` and then accesses each element of the tuple using their respective indices. As with most programming languages, the first index in a tuple is 0.
 
-The tuple without any values has a special name, *unit*. This value and its corresponding type are both written `()` and represent an empty value or an empty return type. Expressions implicitly return the unit value if they don't return any other value.
+The tuple without any values has a special name, _unit_. This value and its corresponding type are both written `()` and represent an empty value or an empty return type. Expressions implicitly return the unit value if they don't return any other value.
 
-Another way to have a collection of multiple values is with an *array*. Unlike a tuple, every element of an array must have the same type. Unlike arrays in some other languages, arrays in Rust have a fixed length.
+Another way to have a collection of multiple values is with an _array_. Unlike a tuple, every element of an array must have the same type. Unlike arrays in some other languages, arrays in Rust have a fixed length.
 
 We write the values in an array as a comma-separated list inside square brackets:
 
@@ -164,7 +164,7 @@ Arrays are useful when you want your data allocated on the stack rather than the
 
 ## References
 
-The `&` indicates that this argument is a *reference*, which gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times.
+The `&` indicates that this argument is a _reference_, which gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times.
 
 ## Strings
 
@@ -190,11 +190,11 @@ If a type you want to use isn't in the prelude, you have to bring that type into
 
 ## [Prelude](https://doc.rust-lang.org/std/prelude/index.html) 🗞️
 
-By default, Rust has a set of items defined in the standard library that it brings into the scope of every program. This set is called the *prelude.*
+By default, Rust has a set of items defined in the standard library that it brings into the scope of every program. This set is called the _prelude._
 
 ## Random
 
-Rust doesn't yet include random number functionality in its standard library. However, the Rust team does provide a `[rand` crate](<https://crates.io/crates/rand>) with said functionality. The `rand` crate is a *library crate*, which contains code that is intended to be used in other programs and can't be executed on its own.
+Rust doesn't yet include random number functionality in its standard library. However, the Rust team does provide a `[rand` crate](<https://crates.io/crates/rand>) with said functionality. The `rand` crate is a _library crate_, which contains code that is intended to be used in other programs and can't be executed on its own.
 
 ## Compare
 
@@ -212,15 +212,15 @@ The `cmp` method compares two values and can be called on anything that can be c
 
 ## Cargo 📦
 
-Cargo understands [Semantic Versioning](http://semver.org/) (sometimes called *SemVer*), which is a standard for writing version numbers. The specifier `0.8.5` is actually shorthand for `^0.8.5`, which means any version that is at least 0.8.5 but below 0.9.0.
+Cargo understands [Semantic Versioning](http://semver.org/) (sometimes called _SemVer_), which is a standard for writing version numbers. The specifier `0.8.5` is actually shorthand for `^0.8.5`, which means any version that is at least 0.8.5 but below 0.9.0.
 
 ### Upgrade
 
-When you *do* want to update a crate, Cargo provides the command `update`, which will ignore the *Cargo.lock* file and figure out all the latest versions that fit your specifications in *Cargo.toml*. Cargo will then write those versions to the *Cargo.lock* file
+When you _do_ want to update a crate, Cargo provides the command `update`, which will ignore the _Cargo.lock_ file and figure out all the latest versions that fit your specifications in _Cargo.toml_. Cargo will then write those versions to the _Cargo.lock_ file
 
 ### **[Building for Release](https://rust-book.cs.brown.edu/ch01-03-hello-cargo.html#building-for-release)** 🚀
 
-When your project is finally ready for release, you can use `cargo build --release` to compile it with optimizations. This command will create an executable in *`target/release`* instead of *`target/debug`*. The optimizations make your Rust code run faster, but turning them on lengthens the time it takes for your program to compile.
+When your project is finally ready for release, you can use `cargo build --release` to compile it with optimizations. This command will create an executable in _`target/release`_ instead of _`target/debug`_. The optimizations make your Rust code run faster, but turning them on lengthens the time it takes for your program to compile.
 
 ### Documentation
 
@@ -270,32 +270,32 @@ Rocket's main task is to listen for incoming web requests, dispatch the request 
 
 1. **Routing**
 
-    Rocket parses an incoming HTTP request into native structures that your code operates on indirectly. Rocket determines which request handler to invoke by matching against route attributes declared in your application.
+   Rocket parses an incoming HTTP request into native structures that your code operates on indirectly. Rocket determines which request handler to invoke by matching against route attributes declared in your application.
 
 2. **Validation**
 
-    Rocket validates the incoming request against types and guards present in the matched route. If validation fails, Rocket *forwards* the request to the next matching route or calls an *error handler*.
+   Rocket validates the incoming request against types and guards present in the matched route. If validation fails, Rocket _forwards_ the request to the next matching route or calls an _error handler_.
 
 3. **Processing**
 
-    The request handler associated with the route is invoked with validated arguments. This is the main business logic of an application. Processing completes by returning a `Response`.
+   The request handler associated with the route is invoked with validated arguments. This is the main business logic of an application. Processing completes by returning a `Response`.
 
 4. **Response**
 
-    The returned `Response` is processed. Rocket generates the appropriate HTTP response and sends it to the client. This completes the lifecycle. Rocket continues listening for requests, restarting the lifecycle for each incoming request.
+   The returned `Response` is processed. Rocket generates the appropriate HTTP response and sends it to the client. This completes the lifecycle. Rocket continues listening for requests, restarting the lifecycle for each incoming request.
 
-Rocket applications are centered around routes and handlers. A *route* is a combination of:
+Rocket applications are centered around routes and handlers. A _route_ is a combination of:
 
 - A set of parameters to match an incoming request against.
 - A handler to process the request and return a response.
 
-A *handler* is simply a function that takes an arbitrary number of arguments and returns any arbitrary type.
+A _handler_ is simply a function that takes an arbitrary number of arguments and returns any arbitrary type.
 
 ### **State**
 
 Many web applications have a need to maintain state. This can be as simple as maintaining a counter for the number of visits, or as complex as needing to access job queues and multiple databases. Rocket provides the tools to enable these kinds of interactions in a safe and simple manner.
 
-The enabling feature for maintaining state is *managed state*. Managed state, as the name implies, is state that Rocket manages for your application. The state is managed on a per-type basis: Rocket will manage at most one value of a given type.
+The enabling feature for maintaining state is _managed state_. Managed state, as the name implies, is state that Rocket manages for your application. The state is managed on a per-type basis: Rocket will manage at most one value of a given type.
 
 The process for using managed state is simple:
 
@@ -333,21 +333,21 @@ rocket::build()
 
 A `Rocket` instance represents a web server and its state. It progresses through three statically-enforced phases: build, ignite, orbit.
 
-- **Build**: *application and server configuration*
+- **Build**: _application and server configuration_
 
-    This phase enables:
+  This phase enables:
 
   - setting configuration options
   - mounting/registering routes/catchers
   - managing state
   - attaching fairings
 
-    This is the *only* phase in which an instance can be modified. To finalize changes, an instance is ignited via `[Rocket::ignite()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.ignite)`, progressing it into the *ignite* phase, or directly launched into orbit with `[Rocket::launch()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.launch)` which progress the instance through ignite into orbit.
+    This is the _only_ phase in which an instance can be modified. To finalize changes, an instance is ignited via `[Rocket::ignite()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.ignite)`, progressing it into the _ignite_ phase, or directly launched into orbit with `[Rocket::launch()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.launch)` which progress the instance through ignite into orbit.
 
-- **Ignite**: *verification and finalization of configuration*
+- **Ignite**: _verification and finalization of configuration_
 
-    An instance in the `[Ignite](https://api.rocket.rs/v0.5/rocket/enum.Ignite.html)` phase is in its final configuration, available via `[Rocket::config()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.config)`. Barring user-supplied interior mutation, application state is guaranteed to remain unchanged beyond this point. An instance in the ignite phase can be launched into orbit to serve requests via `[Rocket::launch()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.launch)`.
+  An instance in the `[Ignite](https://api.rocket.rs/v0.5/rocket/enum.Ignite.html)` phase is in its final configuration, available via `[Rocket::config()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.config)`. Barring user-supplied interior mutation, application state is guaranteed to remain unchanged beyond this point. An instance in the ignite phase can be launched into orbit to serve requests via `[Rocket::launch()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.launch)`.
 
-- **Orbit**: *a running web server*
+- **Orbit**: _a running web server_
 
-    An instance in the `[Orbit](https://api.rocket.rs/v0.5/rocket/enum.Orbit.html)` phase represents a *running* application, actively serving requests.
+  An instance in the `[Orbit](https://api.rocket.rs/v0.5/rocket/enum.Orbit.html)` phase represents a _running_ application, actively serving requests.

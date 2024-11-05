@@ -1,6 +1,7 @@
 ---
 title: Hypothesis Testing
 ---
+
 Hypothesis testing is a statistical method used to assess whether a claim (hypothesis) about a population is
 likely true based on evidence from a sample.
 
