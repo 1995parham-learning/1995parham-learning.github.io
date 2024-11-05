@@ -1,7 +1,3 @@
----
-title: EMQX
-icon: simple-icons:mqtt
----
 
 - [Configuration (v5.8.1)](https://docs.emqx.com/en/emqx/v5.8.1/hocon/)
 
@@ -65,10 +61,7 @@ cluster {
 
 ## EMQX Clustering
 
-MQTT is a stateful protocol, which means the broker needs to maintain state information about each MQTT session including
-subscribed messages and unfinished message transmissions.
+MQTT is a stateful protocol, which means the broker needs to maintain state information about each MQTT session including subscribed messages and unfinished message transmissions.
 
-:::note
-One of the biggest challenges of MQTT broker clustering is
-ensuring that the clustered nodes are able to synchronize and replicate such states efficiently and reliably.
-:::
+> [!note]
+> One of the biggest challenges of MQTT broker clustering is ensuring that the clustered nodes are able to synchronize and replicate such states efficiently and reliably.
