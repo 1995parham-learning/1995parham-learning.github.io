@@ -85,12 +85,14 @@ An extremely fast Python package and project manager, written in Rust.
 - 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache/) for dependency deduplication.
 - ⏬ Installable without Rust or Python via `curl` or `pip`.
 - 🖥️ Supports macOS, Linux, and Windows.
+
 #### [Installing uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)
 
 ```bash
 pipx install uv
 ```
-####  [Using uv in Docker](https://docs.astral.sh/uv/guides/integration/docker/#using-uv-in-docker)
+
+#### [Using uv in Docker](https://docs.astral.sh/uv/guides/integration/docker/#using-uv-in-docker)
 
 ```dockerfile
 FROM python:3.13-slim
@@ -117,6 +119,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 COPY . .
 
 ```
+
 ## Class and static methods
 
 > [!note]
@@ -130,6 +133,7 @@ COPY . .
 > [!note]
 > 🔥 _Changed in version 3.11:_ Class methods can no longer wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
 > such as [`property()`](https://docs.python.org/3/library/functions.html#property).
+
 ## Generators
 
 > [!note]
