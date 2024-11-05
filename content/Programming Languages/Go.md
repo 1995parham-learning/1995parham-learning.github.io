@@ -112,8 +112,7 @@ The comparable interface may only be used as a _type parameter constraint_, not 
 
 ### `cmp.Or`
 
-`Or` returns the first of its arguments that is not equal to the zero value.
-If no argument is non-zero, it returns the zero value.
+`Or` returns the first of its arguments that is not equal to the zero value. If no argument is non-zero, it returns the zero value.
 
 ```go
 func Or[T comparable](vals ...T) T
@@ -132,7 +131,7 @@ fmt.Println(cmp.Or(userInput1, userInput2, "default"))
 
 ### `cmp.Ordered`
 
-Ordered is a constraint that permits any ordered type: any type that supports the operators `< <= >= >`.
+Ordered is a **constraint** that permits any ordered type: any type that supports the operators `< <= >= >`.
 If future releases of Go add new ordered types, this constraint will be modified to include them.
 
 ## `slices` package
