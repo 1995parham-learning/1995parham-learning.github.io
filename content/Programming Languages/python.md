@@ -68,29 +68,56 @@ except FileNotFoundError:
 
 ## Package Management
 
-### [Rye: a Hassle-Free Python Experience](https://rye.astral.sh/)
+### [uv](https://docs.astral.sh/uv/)
 
-Rye is a comprehensive project and package management solution for Python.
-Born from its creator's desire to establish a one-stop-shop for all Python users,
-Rye provides a **unified experience** to install and manage Python installations, `pyproject.toml` based projects,
-dependencies and `virtualenvs` seamlessly. It's designed to accommodate complex projects,
-mono-repos and to facilitate global tool installations. Curious? Watch an introduction.
+An extremely fast Python package and project manager, written in Rust.
 
-### [PDM](https://github.com/pdm-project/pdm)
+![Shows a bar chart with benchmark results.](https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark)
 
-PDM is meant to be a next generation Python package management tool.
-It was originally built for personal use. If you feel you are going well with `Pipenv` or `Poetry` and don't want
-to introduce another package manager, just stick to it.
-But if you are missing something that is not present in those tools, you can probably find some goodness in `pdm`.
+- 🚀 A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more.
+- ⚡️ [10-100x faster](https://github.com/astral-sh/uv/blob/main/BENCHMARKS.md) than `pip`.
+- 🐍 [Installs and manages](https://docs.astral.sh/uv/#python-management) Python versions.
+- 🛠️ [Runs and installs](https://docs.astral.sh/uv/#tool-management) Python applications.
+- ❇️ [Runs scripts](https://docs.astral.sh/uv/#script-support), with support for [inline dependency metadata](https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies).
+- 🗂️ Provides [comprehensive project management](https://docs.astral.sh/uv/#project-management), with a [universal lockfile](https://docs.astral.sh/uv/concepts/projects/#project-lockfile).
+- 🔩 Includes a [pip-compatible interface](https://docs.astral.sh/uv/#the-pip-interface) for a performance boost with a familiar CLI.
+- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/workspaces/) for scalable projects.
+- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache/) for dependency deduplication.
+- ⏬ Installable without Rust or Python via `curl` or `pip`.
+- 🖥️ Supports macOS, Linux, and Windows.
 
-- Simple and fast dependency resolver, mainly for large binary distributions.
-- A [PEP 517](https://www.python.org/dev/peps/pep-0517) build backend.
-- [PEP 621](https://www.python.org/dev/peps/pep-0621) project metadata.
-- Flexible and powerful plug-in system.
-- Versatile user scripts.
-- Install Pythons using `indygreg`'s python-build-standalone.
-- Opt-in centralized installation cache like `pnpm`.
+#### [Installing uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)
 
+```bash
+pipx install uv
+```
+####  [Using uv in Docker](https://docs.astral.sh/uv/guides/integration/docker/#using-uv-in-docker)
+
+```dockerfile
+FROM python:3.13-slim
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+# ENV TZ="Asia/Tehran"
+ENV TZ="UTC"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  build-essential \
+  curl \
+  software-properties-common \
+  git \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+  --mount=type=bind,source=uv.lock,target=uv.lock \
+  --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+  uv sync --no-dev --frozen --compile-bytecode
+ENV PATH="/app/.venv/bin:$PATH"
+
+COPY . .
+
+```
 ## Class and static methods
 
 > [!note]
