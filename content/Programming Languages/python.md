@@ -85,7 +85,6 @@ An extremely fast Python package and project manager, written in Rust.
 - 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache/) for dependency deduplication.
 - ⏬ Installable without Rust or Python via `curl` or `pip`.
 - 🖥️ Supports macOS, Linux, and Windows.
-
 #### [Installing uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)
 
 ```bash
@@ -124,28 +123,20 @@ COPY . .
 > 🧠 _Changed in version 3.9:_ Class methods can now wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
 > such as [`property()`](https://docs.python.org/3/library/functions.html#property).
 
-:::note
-🦖 _Changed in version 3.10:_ Class methods now inherit the method attributes
-(`__module__`, `__name__`, `__qualname__`,`__doc__` and `__annotations__`) and have a new `__wrapped__` attribute.
-:::
+> [!note]
+> 🦖 _Changed in version 3.10:_ Class methods now inherit the method attributes
+> (`__module__`, `__name__`, `__qualname__`,`__doc__` and `__annotations__`) and have a new `__wrapped__` attribute.
 
-:::note
-🔥 _Changed in version 3.11:_ Class methods can no longer wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
-such as [`property()`](https://docs.python.org/3/library/functions.html#property).
-:::
-
+> [!note]
+> 🔥 _Changed in version 3.11:_ Class methods can no longer wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
+> such as [`property()`](https://docs.python.org/3/library/functions.html#property).
 ## Generators
 
-:::note
-Have you ever had to work with a dataset so large that it overwhelmed your machine’s memory?
-Or maybe you have a complex function that needs to maintain an internal state every time it’s called,
-but the function is too small to justify creating its own class.
-In these cases and more, generators and the Python yield statement are here to help.
-:::
+> [!note]
+> Have you ever had to work with a dataset so large that it overwhelmed your machine’s memory?
+> Or maybe you have a complex function that needs to maintain an internal state every time it’s called, but the function is too small to justify creating its own class. In these cases and more, generators and the Python yield statement are here to help.
 
-Introduced with PEP 255, generator functions are a special kind of function that return a **lazy iterator**.
-These are objects that you can loop over like a list.
-However, unlike lists, lazy iterators _do not store their contents in memory_.
+Introduced with PEP 255, generator functions are a special kind of function that return a **lazy iterator**. These are objects that you can loop over like a list. However, unlike lists, lazy iterators _do not store their contents in memory_.
 
 A **generator expression** yields a new generator object. Its syntax is the same as for comprehensions, except
 that it is enclosed in parentheses instead of brackets or curly braces.
