@@ -93,10 +93,9 @@ But if you are missing something that is not present in those tools, you can pro
 
 ## Class and static methods
 
-:::note
-🧠 _Changed in version 3.9:_ Class methods can now wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
-such as [`property()`](https://docs.python.org/3/library/functions.html#property).
-:::
+> [!note]
+> 🧠 _Changed in version 3.9:_ Class methods can now wrap other [descriptors](https://docs.python.org/3/glossary.html#term-descriptor)
+> such as [`property()`](https://docs.python.org/3/library/functions.html#property).
 
 :::note
 🦖 _Changed in version 3.10:_ Class methods now inherit the method attributes
