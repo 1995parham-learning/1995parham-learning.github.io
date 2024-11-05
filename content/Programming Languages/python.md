@@ -32,11 +32,10 @@ with closing(urlopen('https://www.python.org')) as page:
         print(line)
 ```
 
-:::note
-Most types managing resources support the context manager protocol, which closes thing on leaving the with statement.
-As such, `closing()` is **most useful for third party types** that don’t support context managers.
-This example is purely for illustration purposes, as `urlopen()` would normally be used in a context manager.
-:::
+> [!note]
+> Most types managing resources support the context manager protocol, which closes thing on leaving the with statement.
+> As such, `closing()` is **most useful for third party types** that don’t support context managers.
+> This example is purely for illustration purposes, as `urlopen()` would normally be used in a context manager.
 
 ### `contextlib.suppress(*exceptions)`
 
