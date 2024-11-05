@@ -1,4 +1,3 @@
-
 - [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
 
 The Go programming language, also known as Golang, has gained popularity among software practitioners since its release in 2009.
@@ -41,10 +40,7 @@ type Weekday int {
 }
 ```
 
-In this example, we're defining a new type named Weekday which is based on the int type.
-We then define constants for each day of the week. The `iota` keyword is a special constant that is used in
-conjunction with the `const` keyword. It starts at zero and increments by one for each constant defined,
-so Sunday will be 0, Monday will be 1, and so on.
+In this example, we're defining a new type named Weekday which is based on the int type. We then define constants for each day of the week. The `iota` keyword is a special constant that is used in conjunction with the `const` keyword. **It starts at zero** and increments by one for each constant defined, so Sunday will be 0, Monday will be 1, and so on.
 
 You can then use these values like so:
 
@@ -53,10 +49,7 @@ var today Weekday = Monday
 fmt.Println(today)  // prints "1"
 ```
 
-This approach provides some of the benefits of enums, such as type safety and readable code,
-but it's not a perfect replacement. For example, Go doesn't prevent you from assigning
-any int value to a Weekday variable, whereas true enums in other languages often restrict
-you to a specific set of values.
+This approach provides some of the benefits of enums, such as type safety and readable code, but it's not a perfect replacement. For example, Go doesn't prevent you from assigning any int value to a Weekday variable, whereas true enums in other languages often restrict you to a specific set of values.
 
 - [`go-enum`](https://github.com/abice/go-enum)
 
@@ -67,7 +60,7 @@ you to a specific set of values.
 type ImageType int
 ```
 
-and generate a file with the iota definition along various optional niceties that you may need:
+and generate a file with the `iota` definition along various optional niceties that you may need:
 
 ```go
 const (
