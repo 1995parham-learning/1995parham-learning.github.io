@@ -160,11 +160,9 @@ func Equal[M1, M2 ~map[K]V, K, V comparable](m1 M1, m2 M2) bool
 
 ## `log/slog` package
 
-Package `slog` provides structured logging, in which log records include a message,
-a severity level, and various other attributes expressed as key-value pairs.
+Package `slog` provides structured logging, in which log records include a message, a severity level, and various other attributes expressed as key-value pairs.
 
-It defines a type, Logger, which provides several methods (such as `Logger.Info` and `Logger.Error`)
-for reporting events of interest.
+It defines a type, Logger, which provides several methods (such as `Logger.Info` and `Logger.Error`) for reporting events of interest.
 
 ## `intrange`
 
