@@ -1,29 +1,19 @@
----
-title: SQL
-icon: skill-icons:postgresql-light
----
-
 ## Foreign Key
 
-foreign key must be related to primary key of the destination table
+> [!info]
+> Foreign key must be related to primary key of the destination table.
 
 ## Composite Key
 
-In [database design](https://en.wikipedia.org/wiki/Data_modeling),
-a **composite key** is a [candidate key](https://en.wikipedia.org/wiki/Candidate_key)
-that consists of two or more attributes (table columns) that together uniquely identify an entity occurrence (table row).
+In [database design](https://en.wikipedia.org/wiki/Data_modeling), a **composite key** is a [candidate key](https://en.wikipedia.org/wiki/Candidate_key) that consists of two or more attributes (table columns) that together uniquely identify an entity occurrence (table row).
 A **compound key** is a composite key for which each attribute that makes up the key is a [foreign](https://en.wikipedia.org/wiki/Foreign_key) key in its own right.
 
 ## [Index](https://en.wikipedia.org/wiki/Database_index)
 
-A **database index** is a [data structure](https://en.wikipedia.org/wiki/Data_structure)
-that improves the speed of data retrieval operations on
-a [database table](<https://en.wikipedia.org/wiki/Table_(database)>)
-at the cost of additional writes and storage space to maintain the index data structure.
-Indexes are used to quickly locate data without having to search every row in a database table every time said table is accessed.
-Indexes can be created using one or more [columns of a database table](<https://en.wikipedia.org/wiki/Column_(database)>),
-providing the basis for both rapid random [lookups](https://en.wikipedia.org/wiki/Lookup)
-and efficient access of ordered records.
+A **database index** is a [data structure](https://en.wikipedia.org/wiki/Data_structure) that improves the speed of data retrieval operations on a [database table](<https://en.wikipedia.org/wiki/Table_(database)>)
+at the cost of _additional writes and storage space to maintain the index data structure_.
+
+Indexes are used to quickly locate data without having to search every row in a database table every time said table is accessed. Indexes can be created using one or more [columns of a database table](<https://en.wikipedia.org/wiki/Column_(database)>), providing the basis for both rapid random [lookups](https://en.wikipedia.org/wiki/Lookup) and efficient access of ordered records.
 
 The order that the index definition defines the columns in is important. It is possible to retrieve a set of row identifiers using only the first indexed column. However, it is not possible or efficient (on most databases) to retrieve the set of row identifiers using only the second or greater indexed column.
 

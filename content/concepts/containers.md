@@ -83,7 +83,7 @@ The `dive` output tells us that:
 
 ### At A Glance
 
-![distroless-at-a-glance](./containers/distroless-at-a-glance.png)
+![distroless-at-a-glance](distroless-at-a-glance.png)
 
 ## References
 

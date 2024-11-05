@@ -2,7 +2,7 @@
 title: Deployment Strategies
 ---
 
-![demo](./deployment_strategies/demo.gif)
+![demo](demo.gif)
 
 ## Big bang Deployment
 

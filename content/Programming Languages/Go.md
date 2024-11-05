@@ -1,8 +1,3 @@
----
-title: Golang
-description: Learn to use Golang and its related libraries.
-icon: skill-icons:golang
----
 
 - [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
 
@@ -869,7 +864,7 @@ During **execution**, Fx will,
 - Wait for a signal to stop running
 - Run all shutdown hooks appended to the application
 
-![fx-flow](./go/fx-flow.png)
+![fx-flow](fx-flow.png)
 
 #### Lifecycle hooks
 

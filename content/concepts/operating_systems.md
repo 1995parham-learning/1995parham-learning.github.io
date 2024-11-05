@@ -55,7 +55,7 @@ In a simplified view, a process can be in one of three states:
   event takes place. A common example: when a process initiates an I/O request to a disk, it becomes blocked and thus some other process
   can use the processor.
 
-![process-states](./operating_systems/process-states.png)
+![process-states](process-states.png)
 
 ### Data structures
 
