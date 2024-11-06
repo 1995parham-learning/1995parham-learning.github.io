@@ -1,8 +1,3 @@
----
-title: Git
-icon: skill-icons:git
----
-
 ## Cleanup
 
 When you push huge files into your repository and want to clean them:
@@ -11,7 +6,7 @@ When you push huge files into your repository and want to clean them:
 
 ## Bisect
 
-> git-bisect - Use binary search to find the commit that introduced a bug\*\*\*\*
+> git-bisect - Use binary search to find the commit that introduced a bug
 
 This command uses a **binary search** algorithm to find which commit in your project’s history _introduced a bug_.
 You use it by first telling it a **"bad" commit** that is known to contain the bug, and a _"good" commit_ that is known
