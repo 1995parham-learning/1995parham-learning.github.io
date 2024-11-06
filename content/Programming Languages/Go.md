@@ -216,10 +216,9 @@ We have different implementation of C standard library.
 To test with go, [@stretchr/testify](https://pkg.go.dev/github.com/stretchr/testify) is an awesome library.
 It has suite, require and assert.
 
-:::note
-Always use `_test` prefix on packages for writing tests but in case of internal tests
-in which you have access to private package members use `_internal_test.go` as filename.
-:::
+> [!note]
+> Always use `_test` prefix on packages for writing tests but in case of internal tests
+> in which you have access to private package members use `_internal_test.go` as filename.
 
 ```go
 // Define the suite, and absorb the built-in basic suite

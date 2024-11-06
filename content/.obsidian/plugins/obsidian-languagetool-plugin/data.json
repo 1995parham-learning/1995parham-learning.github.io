@@ -2,7 +2,7 @@
   "serverUrl": "https://api.languagetool.org",
   "urlMode": "standard",
   "glassBg": true,
-  "shouldAutoCheck": false,
+  "shouldAutoCheck": true,
   "autoCheckDelay": 3000,
   "pickyMode": false,
   "staticLanguage": "auto",
