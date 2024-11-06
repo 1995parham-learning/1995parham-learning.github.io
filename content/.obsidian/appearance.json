@@ -6,5 +6,7 @@
     "snippet"
   ],
   "textFontFamily": "",
-  "cssTheme": "Things"
+  "cssTheme": "Things",
+  "translucency": true,
+  "nativeMenus": false
 }

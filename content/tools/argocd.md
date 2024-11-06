@@ -64,8 +64,7 @@ spec:
 
 #### `helm`
 
-Helm is _only used to inflate charts_ with `helm template`.
-The lifecycle of the application is handled by Argo CD instead of Helm.
+Helm is _only used to inflate charts_ with `helm template`. The lifecycle of the application is handled by Argo CD instead of Helm.
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
