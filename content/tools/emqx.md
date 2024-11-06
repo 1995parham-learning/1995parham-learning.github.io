@@ -1,4 +1,3 @@
-
 - [Configuration (v5.8.1)](https://docs.emqx.com/en/emqx/v5.8.1/hocon/)
 
 ## Introduction
