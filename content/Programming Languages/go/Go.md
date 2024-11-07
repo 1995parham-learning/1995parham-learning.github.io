@@ -4,8 +4,7 @@ The Go programming language, also known as Golang, has gained popularity among s
 This language offers various features and advantages that make it a preferred choice for many developers.
 Golang is an awesome language, but it has sanctioned our country. It is similar to C programming language.
 
-We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API
-and GraphQL servers.
+We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API and GraphQL servers.
 
 ## Multiple Errors
 
