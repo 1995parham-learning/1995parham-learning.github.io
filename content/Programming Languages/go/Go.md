@@ -131,7 +131,7 @@ If future releases of Go add new ordered types, this constraint will be modified
 Package `slices` defines various functions useful with slices of any type.
 ### `slices.Contains`
 
-Contains reports whether `v` is present in `s`.
+`Contains` reports whether `v` is present in `s`.
 
 ```go
 func Contains[S ~[]E, E comparable](s S, v E) bool
@@ -139,10 +139,13 @@ func Contains[S ~[]E, E comparable](s S, v E) bool
 
 ### `slices.Equal`
 
-Equal reports whether two slices are equal: the same length and all elements equal.
+`Equal` reports whether two slices are equal: the same length and all elements equal.
+If the lengths are different, `Equal` returns false. Otherwise, the elements are compared in increasing index order, and the comparison stops at the first unequal pair.
+- Empty and nil slices are considered equal.
+- Floating point `NaN`s are not considered equal.
 
 ```go
-func Equal[S ~[]E, E [comparable](https://pkg.go.dev/builtin#comparable)](s1, s2 S) bool
+func Equal[S ~[]E, E comparable](s1, s2 S) bool
 ```
 
 ## `maps` package
