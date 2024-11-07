@@ -5,6 +5,7 @@ This language offers various features and advantages that make it a preferred ch
 Golang is an awesome language, but it has sanctioned our country. It is similar to C programming language.
 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API and GraphQL servers.
+
 ## Multiple Errors
 
 Go 1.20 expands support for error wrapping to permit an error to wrap multiple other errors:
@@ -129,6 +130,18 @@ If future releases of Go add new ordered types, this constraint will be modified
 ## `slices` package
 
 Package `slices` defines various functions useful with slices of any type.
+
+### `slices.BinarySearch`
+
+`BinarySearch` searches for target in a sorted slice and returns the earliest position where target is found, or the position where target would appear in the sort order; it also returns a `bool` saying whether the target is really found in the slice.
+
+> [!important]
+> The slice must be sorted in increasing order.
+
+```go
+func BinarySearch[S ~[]E, E cmp.Ordered](x S, target E) (int, bool)
+```
+
 ### `slices.Contains`
 
 `Contains` reports whether `v` is present in `s`.
@@ -141,6 +154,7 @@ func Contains[S ~[]E, E comparable](s S, v E) bool
 
 `Equal` reports whether two slices are equal: the same length and all elements equal.
 If the lengths are different, `Equal` returns false. Otherwise, the elements are compared in increasing index order, and the comparison stops at the first unequal pair.
+
 - Empty and nil slices are considered equal.
 - Floating point `NaN`s are not considered equal.
 
