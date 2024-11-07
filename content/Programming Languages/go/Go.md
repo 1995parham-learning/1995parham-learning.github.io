@@ -5,7 +5,6 @@ This language offers various features and advantages that make it a preferred ch
 Golang is an awesome language, but it has sanctioned our country. It is similar to C programming language.
 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API and GraphQL servers.
-
 ## Multiple Errors
 
 Go 1.20 expands support for error wrapping to permit an error to wrap multiple other errors:
@@ -18,11 +17,9 @@ Go 1.20 expands support for error wrapping to permit an error to wrap multiple o
 
 ### `func As(err error, target any) bool`
 
-`As` finds the first error in `err`'s tree that matches target, and if one is found,
-sets target to that error value and returns true. Otherwise, it returns false.
+`As` finds the first error in `err`'s tree that matches target, and if one is found, sets target to that error value and returns true. Otherwise, it returns false.
 
-The tree consists of `err` itself, followed by the errors obtained by repeatedly calling its `Unwrap() error` or
-`Unwrap() []error` method.
+The tree consists of `err` itself, followed by the errors obtained by repeatedly calling its `Unwrap() error` or `Unwrap() []error` method.
 When `err` wraps multiple errors, As examines `err` followed by a **depth-first traversal** of its children.
 
 ## Enum
@@ -88,16 +85,12 @@ func (x ImageType) MarshalText() ([]byte, error)
 func (x *ImageType) UnmarshalText(text []byte) error
 ```
 
-## Nil Away
+## [Nil Away](https://github.com/uber-go/nilaway)
 
-NilAway is a static analysis tool that seeks to help developers avoid nil panics in production by catching them
-at compile time rather than runtime. NilAway is similar to the standard nilness analyzer,
-however, it employs much more sophisticated and powerful static analysis techniques to track nil flows within
-a package as well across packages, and report errors providing users with the nilness flows for easier debugging.
+NilAway is a static analysis tool that seeks to help developers avoid `nil` panics in production by catching them at compile time rather than runtime.
+NilAway is similar to the standard nilness analyzer, however, it employs much more sophisticated and powerful static analysis techniques to track nil flows within a package as well across packages, and report errors providing users with the nilness flows for easier debugging.
 
-<https://github.com/uber-go/nilaway>
-
-## `comparable`
+## `comparable` interface
 
 ```go
 type comparable interface{}
@@ -136,13 +129,20 @@ If future releases of Go add new ordered types, this constraint will be modified
 ## `slices` package
 
 Package `slices` defines various functions useful with slices of any type.
-
 ### `slices.Contains`
 
 Contains reports whether `v` is present in `s`.
 
 ```go
 func Contains[S ~[]E, E comparable](s S, v E) bool
+```
+
+### `slices.Equal`
+
+Equal reports whether two slices are equal: the same length and all elements equal.
+
+```go
+func Equal[S ~[]E, E [comparable](https://pkg.go.dev/builtin#comparable)](s1, s2 S) bool
 ```
 
 ## `maps` package
