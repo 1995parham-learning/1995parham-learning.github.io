@@ -1,4 +1,3 @@
-
 > [!note]
 > Machine learning is an approach to learn complex pattern from existing
 > data and use these patterns to make predictions on unseen data.
