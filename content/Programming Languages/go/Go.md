@@ -213,14 +213,13 @@ go install golang.org/dl/gotip@latest
 gotip download
 ```
 
-- After installation, use the `gotip` command instead of your normal `go` command to have latest experimental features.
+- After installation, use the `gotip` command instead of your normal `go` command to have the latest experimental features.
 - To update, run `gotip download` again. This will always download the main branch.
 - To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
 
 ## `libc`
 
-You can control to use `cgo` with `CGO_ENABLED` flag in go build.
-We have different implementation of C standard library.
+You can control to use `cgo` with `CGO_ENABLED` flag in go build. There are different implementations of C standard library.
 
 - [GNU C Library (`glibc`)](https://www.gnu.org/software/libc/)
 - [`musl`](https://musl.libc.org/)
