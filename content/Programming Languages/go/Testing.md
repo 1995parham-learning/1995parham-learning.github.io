@@ -52,28 +52,31 @@ type SetupTestSuite interface {
 type TearDownAllSuite interface {
  TearDownSuite()
 }
-
-// TearDownTestSuite has a TearDownTest method, which will run after
-// each test in the suite.
+```
+`TearDownTestSuite` has a `TearDownTest` method, which will run _after each test in the suite.
+```go
 type TearDownTestSuite interface {
  TearDownTest()
 }
-
+```
 // BeforeTest has a function to be executed right before the test
 // starts and receives the suite and test names as input
+```go
 type BeforeTest interface {
  BeforeTest(suiteName, testName string)
 }
-
+```
 // AfterTest has a function to be executed right after the test
 // finishes and receives the suite and test names as input
+```go
 type AfterTest interface {
  AfterTest(suiteName, testName string)
 }
-
+```
 // WithStats implements HandleStats, a function that will be executed
 // when a test suite is finished. The stats contain information about
 // the execution of that suite and its tests.
+```go
 type WithStats interface {
  HandleStats(suiteName string, stats *SuiteInformation)
 }
