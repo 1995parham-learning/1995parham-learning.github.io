@@ -1,14 +1,10 @@
----
-title: Machine Learning
-icon: carbon:machine-learning
----
 
-:::note
-Machine learning is an approach to learn complex pattern from existing
-data and use these patterns to make predictions on unseen data.
-:::
+> [!note]
+> Machine learning is an approach to learn complex pattern from existing
+> data and use these patterns to make predictions on unseen data.
 
 Inputs + Patterns → Traditional software → Outputs
+
 Inputs + Outputs → Machine learning → Patterns
 
 ## Interview Questions
