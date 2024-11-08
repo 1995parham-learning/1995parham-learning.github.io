@@ -33,23 +33,22 @@ func TestExampleTestSuite(t *testing.T) {
 }
 ```
 
+***
+
 `SetupAllSuite` has a `SetupSuite` method, which will run _before the tests in the suite_ are run.
 ```go
 type SetupAllSuite interface {
  SetupSuite()
 }
 ```
-`SetupTestSuite` has a `SetupTest` method, which will run before each test in the suite.
+`SetupTestSuite` has a `SetupTest` method, which will run _before each test in the suite_.
 ```go
 type SetupTestSuite interface {
  SetupTest()
 }
 ```
-
+`TearDownAllSuite` has a `TearDownSuite` method, which will run _after all the tests in the suite_ have been run.
 ```go
-
-// TearDownAllSuite has a TearDownSuite method, which will run after
-// all the tests in the suite have been run.
 type TearDownAllSuite interface {
  TearDownSuite()
 }
