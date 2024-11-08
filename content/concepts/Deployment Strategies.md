@@ -1,6 +1,3 @@
----
-title: Deployment Strategies
----
 
 ![demo](demo.gif)
 
