@@ -1,7 +1,3 @@
----
-title: Operating Systems
-icon: skill-icons:linux-dark
----
 
 Operating system is in charge of making sure the system operates correctly and efficiently in an easy-to-use manner.
 The primary way the OS does this is through a general technique that we call virtualization.
@@ -82,17 +78,15 @@ These APIs, in some form, are available on any modern operating system.
 - The `kill()` system call is used to send **signals** to a process, including directives to _pause_, _die_, and other
   imperatives.
 
-:::note
+> [!note]
 In the most UNIX shells, certain keystroke combinations are configured to deliver specific signal to the currently
 running process; for example, `control-c` sends a `SIGINT` (interrupt) to the process (normally terminating it) and
 `control-z` sends a `SIGTSTP` (stop) signal thus pausing the process in mid-execution.
-:::
 
-:::note
+> [!note]
 The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
 _after_ the call to `fork()` but _before_ the call to `exec()`; this code can alter the environment of the about-to-run
 program, and thus enables a variety of interesting features to be readily built.
-:::
 
 ### Signals
 
