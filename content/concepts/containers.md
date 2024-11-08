@@ -1,16 +1,9 @@
----
-title: Containers
-icon: skill-icons:docker
----
-
 ## Distroless
 
 [GoogleContainerTools' distroless](https://github.com/GoogleContainerTools/distroless) base images are often mentioned as one of the ways to produce small(er), fast(er), secure(r) container.
 
-:::note
-The idea behind the GoogleContainerTools/distroless project is pretty simple - make a bunch of minimal viable base
-images (keeping them as close to _scratch_ as possible) and automate the creation procedure.
-:::
+> [!note]
+> The idea behind the GoogleContainerTools/distroless project is pretty simple - make a bunch of minimal viable base mages (keeping them as close to _scratch_ as possible) and automate the creation procedure.
 
 ### Pitfalls of scratch containers
 
@@ -19,8 +12,7 @@ images (keeping them as close to _scratch_ as possible) and automate the creatio
 - Scratch containers miss **CA certificates**
 - Scratch containers miss **timezone info**
 
-While technically scratch base images remain a valid option to produce slim containers, in reality, _using them for
-production workloads would likely impose significant operational overhead_.
+While technically scratch base images remain a valid option to produce slim containers, in reality, _using them for production workloads would likely impose significant operational overhead_.
 
 ### Distroless/static
 
