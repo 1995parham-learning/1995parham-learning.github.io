@@ -36,6 +36,7 @@ The `dive` output tells us:
 A nice by-product of experimenting with "from scratch" containers is that it allows you to learn what is actually needed for a program to run.
 For a **statically linked** executable, it seems to be just a bunch of config files and a proper rootfs directory structure.
 But what would it take for a **dynamically linked** one?
+
 ### Distroless/base
 
 The `distroless/static` image sounds like a perfect choice for a base image if your program is a statically linked Go binary.

@@ -1,4 +1,3 @@
-
 Operating system is in charge of making sure the system operates correctly and efficiently in an easy-to-use manner.
 The primary way the OS does this is through a general technique that we call virtualization.
 That is, the OS takes a physical resource (such as the processor, or memory, or a disk) and transform
@@ -9,9 +8,7 @@ many programs to seemingly run at once is what we call virtualizing the CPU.
 
 ## Process
 
-Process is the **running program**.
-The program itself is a lifeless thing: it just sits there on the disk, a bunch of instructions
-(and maybe some static data), waiting to spring into action.
+Process is the **running program**. The program itself is a lifeless thing: it just sits there on the disk, a bunch of instructions (and maybe some static data), waiting to spring into action.
 
 **Time-sharing** is a basic technique used by an OS to share a resource.
 By allowing the resource to be used for a little while by one entity, and
@@ -79,14 +76,14 @@ These APIs, in some form, are available on any modern operating system.
   imperatives.
 
 > [!note]
-In the most UNIX shells, certain keystroke combinations are configured to deliver specific signal to the currently
-running process; for example, `control-c` sends a `SIGINT` (interrupt) to the process (normally terminating it) and
-`control-z` sends a `SIGTSTP` (stop) signal thus pausing the process in mid-execution.
+> In the most UNIX shells, certain keystroke combinations are configured to deliver specific signal to the currently
+> running process; for example, `control-c` sends a `SIGINT` (interrupt) to the process (normally terminating it) and
+> `control-z` sends a `SIGTSTP` (stop) signal thus pausing the process in mid-execution.
 
 > [!note]
-The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
-_after_ the call to `fork()` but _before_ the call to `exec()`; this code can alter the environment of the about-to-run
-program, and thus enables a variety of interesting features to be readily built.
+> The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code
+> _after_ the call to `fork()` but _before_ the call to `exec()`; this code can alter the environment of the about-to-run
+> program, and thus enables a variety of interesting features to be readily built.
 
 ### Signals
 
