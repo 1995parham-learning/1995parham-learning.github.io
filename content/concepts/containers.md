@@ -40,7 +40,7 @@ But what would it take for a **dynamically linked** one?
 
 The `distroless/static` image sounds like a perfect choice for a base image if your program is a statically linked Go binary.
 But what if you absolutely have to use CGO and the libraries you depend on can't be statically linked (I'm looking at your, glibc)?
-Or you write things in Rust, or C, or any other compiled language with less perfect support of static builds than in Go?
+Or you write things in Rust, or C, or any other compiled language with _less perfect support_ of static builds than in Go?
 
 What the `dive` output tells us:
 
