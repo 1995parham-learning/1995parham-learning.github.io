@@ -182,7 +182,7 @@ It defines a type, Logger, which provides several methods (such as `Logger.Info`
 
 ## `intrange`
 
-From Go 1.22 (expected release February 2024), you will be able to write:
+From Go 1.22 (released February 2024), you are able to write:
 
 ```go
 for i := range 10 {
