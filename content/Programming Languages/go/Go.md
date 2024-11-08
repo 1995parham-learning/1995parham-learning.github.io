@@ -190,7 +190,7 @@ for i := range 10 {
 }
 ```
 
-(ranging over an integer in Go iterates from 0 to one less than that integer).
+> Ranging over an integer in Go iterates from 0 to one less than that integer.
 
 For versions of Go before 1.22, the idiomatic approach is to write a for loop like this.
 
@@ -202,8 +202,7 @@ for i := 1; i <= 10; i++ {
 
 ## Modules
 
-In Go 1.16, module-aware commands **report an error** after discovering a problem in `go.mod` or `go.sum` instead
-of attempting to fix the problem automatically. In most cases, the error message recommends a command to fix the problem.
+In Go 1.16, module-aware commands **report an error** after discovering a problem in `go.mod` or `go.sum` instead of attempting to fix the problem automatically. In most cases, the error message recommends a command to fix the problem.
 
 ## `gotip`
 
@@ -214,9 +213,9 @@ go install golang.org/dl/gotip@latest
 gotip download
 ```
 
-After installation, use the `gotip` command instead of your normal `go` command to have latest experimental features.
-To update, run `gotip download` again. This will always download the main branch.
-To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
+- After installation, use the `gotip` command instead of your normal `go` command to have latest experimental features.
+- To update, run `gotip download` again. This will always download the main branch.
+- To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
 
 ## `libc`
 
