@@ -6,17 +6,19 @@ To write tests in Go, [@stretchr/testify](https://pkg.go.dev/github.com/stretchr
 > Always use `_test` prefix on packages for writing tests but in case of internal tests
 > in which you have access to private package members use `_internal_test.go` as filename.
 
+Define the suite, and absorb the built-in basic suite
+functionality from testify - including a T() method which
+returns the current testing context
 ```go
-// Define the suite, and absorb the built-in basic suite
-// functionality from testify - including a T() method which
-// returns the current testing context
 type ExampleTestSuite struct {
     suite.Suite
     VariableThatShouldStartAtFive int
 }
+```
 
-// Make sure that VariableThatShouldStartAtFive is set to five
-// before each test
+Make sure that VariableThatShouldStartAtFive is set to five before each test
+```go
+
 func (suite *ExampleTestSuite) SetupTest() {
     suite.VariableThatShouldStartAtFive = 5
 }
