@@ -26,18 +26,14 @@ func (suite *ExampleTestSuite) TestExample() {
     suite.Equal(5, suite.VariableThatShouldStartAtFive)
 }
 ```
+In order for `go test` to run this suite, we need to create a normal test function and pass our suite to `suite.Run`.
 ```go
-
-// In order for 'go test' to run this suite, we need to create
-// a normal test function and pass our suite to suite.Run
 func TestExampleTestSuite(t *testing.T) {
     suite.Run(t, new(ExampleTestSuite))
 }
 ```
-
+`SetupAllSuite` has a `SetupSuite` method, which will run before the tests in the suite are run.
 ```go
-// SetupAllSuite has a SetupSuite method, which will run before the
-// tests in the suite are run.
 type SetupAllSuite interface {
  SetupSuite()
 }
