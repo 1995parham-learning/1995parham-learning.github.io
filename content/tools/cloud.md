@@ -80,9 +80,9 @@ So, `kubectl debug` just gave me a shared net (and probably IPC) namespace, like
 for the other Pod's containers, and that's pretty much it! Sounds way too limited
 for a seamless debugging experience 🤔
 
-:::note
-Enabling a shared PID namespace for all the containers in a Pod.
-:::
+> [!note]
+> Enabling a shared PID namespace for all the containers in a Pod.
+
 
 ## Readiness Gate
 
