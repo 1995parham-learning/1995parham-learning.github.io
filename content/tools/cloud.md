@@ -83,7 +83,9 @@ for a seamless debugging experience 🤔
 > [!note]
 > Enabling a shared PID namespace for all the containers in a Pod.
 
+## Pause Container
 
+The 'pause' container is a container which holds the network namespace for the pod. Kubernetes creates pause containers to acquire the respective pod’s IP address and set up the network namespace for all other containers that join that pod.
 ## Readiness Gate
 
 Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**.
