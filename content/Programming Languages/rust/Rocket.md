@@ -43,8 +43,8 @@ The process for using managed state is simple:
 2. Add a `&State<T>` type to any request handler, where `T` is the type of the value passed into `manage`.
 
 > [!note]
-💡 **Note:** All managed state must be thread-safe.
-Because Rocket automatically parallelizes your application, handlers can concurrently access managed state. As a result, managed state must be thread-safe. Thanks to Rust, this condition is checked at compile-time by ensuring that the type of values you store in managed state implement `Send` + `Sync`.
+> 💡 **Note:** All managed state must be thread-safe.
+> Because Rocket automatically parallelizes your application, handlers can concurrently access managed state. As a result, managed state must be thread-safe. Thanks to Rust, this condition is checked at compile-time by ensuring that the type of values you store in managed state implement `Send` + `Sync`.
 
 ### **Adding State**
 

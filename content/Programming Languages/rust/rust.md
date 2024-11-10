@@ -194,7 +194,7 @@ By default, Rust has a set of items defined in the standard library that it brin
 
 ## Random
 
-Rust doesn't yet include random number functionality in its standard library. However, the Rust team does provide a [`rand crate`](<https://crates.io/crates/rand>) with said functionality. The `rand` crate is a _library crate_, which contains code that is intended to be used in other programs and can't be executed on its own.
+Rust doesn't yet include random number functionality in its standard library. However, the Rust team does provide a [`rand crate`](https://crates.io/crates/rand) with said functionality. The `rand` crate is a _library crate_, which contains code that is intended to be used in other programs and can't be executed on its own.
 
 ## Compare
 
