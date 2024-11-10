@@ -33,8 +33,13 @@ Then you need to use pre-defined actions to install the required tools:
 ```yaml
 - uses: actions/setup-python@v5
   with:
-    python-version: "3.12"
+    python-version: "3.13"
     cache: "pipenv"
+	
+- uses: actions/setup-python@v5
+  with:
+    python-version: "3.13"
+    cache: "poetry"
 
 - uses: actions/setup-go@v5
   with:
