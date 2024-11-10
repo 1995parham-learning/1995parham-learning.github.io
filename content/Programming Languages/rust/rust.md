@@ -6,7 +6,7 @@ icon: skill-icons:rust
 
 ## `stdin`
 
-The `stdin` function returns an instance of `[std::io::Stdin](https://doc.rust-lang.org/std/io/struct.Stdin.html)`, which is a type that represents a handle to the standard input for your terminal.
+The `stdin` function returns an instance of [`std::io::Stdin`](https://doc.rust-lang.org/std/io/struct.Stdin.html), which is a type that represents a handle to the standard input for your terminal.
 
 ## Functions
 
@@ -254,7 +254,7 @@ Having multiple sub-command for things like migrations, provide ground data, etc
 
 There are multiple frameworks in Rust:
 
-[Rocket 🚀](https://www.notion.so/Rocket-9dc476dc01ae4c0aa3c1054757d86060?pvs=21)
+[[Rocket]]
 
 [https://github.com/tokio-rs/axum](https://github.com/tokio-rs/axum)
 
