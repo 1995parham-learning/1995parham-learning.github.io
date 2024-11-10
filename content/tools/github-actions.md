@@ -1,6 +1,5 @@
 ---
 title: GitHub Actions
-icon: skill-icons:githubactions-light
 ---
 
 ## Introduction
@@ -28,10 +27,8 @@ Then you need to use pre-defined actions to install the required tools:
 - [@azure/setup-helm](https://github.com/azure/setup-helm)
 - [@extractions/setup-just](https://github.com/extractions/setup-just)
 
-:::note
-To reduce the build time, use caching mechanisms. Usually official setup tools supports caching
-based on the dependency management tools (e.g. `go.sum`, `packages-lock.json`, etc.)
-:::
+> [!note]
+> To reduce the build time, use caching mechanisms. Usually official setup tools supports caching based on the dependency management tools (e.g. `go.sum`, `packages-lock.json`, etc.)
 
 ```yaml
 - uses: actions/setup-python@v5
