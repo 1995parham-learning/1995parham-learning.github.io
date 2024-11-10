@@ -194,7 +194,7 @@ By default, Rust has a set of items defined in the standard library that it brin
 
 ## Random
 
-Rust doesn't yet include random number functionality in its standard library. However, the Rust team does provide a `[rand` crate](<https://crates.io/crates/rand>) with said functionality. The `rand` crate is a _library crate_, which contains code that is intended to be used in other programs and can't be executed on its own.
+Rust doesn't yet include random number functionality in its standard library. However, the Rust team does provide a [`rand crate`](<https://crates.io/crates/rand>) with said functionality. The `rand` crate is a _library crate_, which contains code that is intended to be used in other programs and can't be executed on its own.
 
 ## Compare
 
@@ -245,6 +245,10 @@ Having multiple sub-command for things like migrations, provide ground data, etc
 [https://github.com/clap-rs/clap](https://github.com/clap-rs/clap)
 
 [clap - Rust](https://docs.rs/clap/latest/clap/)
+
+## TUI
+
+[https://github.com/gyscos/cursive
 
 ## HTTP Frameworks 🌐
 
@@ -302,10 +306,9 @@ The process for using managed state is simple:
 1. Call `manage` on the `Rocket` instance corresponding to your application with the initial value of the state.
 2. Add a `&State<T>` type to any request handler, where `T` is the type of the value passed into `manage`.
 
-:::note
+> [!note]
 💡 **Note:** All managed state must be thread-safe.
 Because Rocket automatically parallelizes your application, handlers can concurrently access managed state. As a result, managed state must be thread-safe. Thanks to Rust, this condition is checked at compile-time by ensuring that the type of values you store in managed state implement `Send` + `Sync`.
-:::
 
 ### **Adding State**
 
