@@ -2,11 +2,11 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 const Badge: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
 
-  if (fileData.frontmatter?.repo && typeof(fileData.frontmatter.repo) === string) {
-    org = fileData.frontmatter.repo.split("/")
+  if (fileData.frontmatter?.repo && typeof(fileData.frontmatter.repo) === "string") {
+    const org = fileData.frontmatter.repo.split("/")[0].replaceAll("-", "_")
 
     return <a href={"https://github.com/"+fileData.frontmatter.repo}>
-      <img alt="Static Badge" src="https://img.shields.io/badge/Github-1995parham_learning-orange?style=for-the-badge&logo=github" />
+      <img alt="Static Badge" src={`https://img.shields.io/badge/Github-${org}-orange?style=for-the-badge&logo=github`} />
     </a>
   }
 
