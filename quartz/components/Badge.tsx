@@ -4,7 +4,7 @@ const Badge: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
   if (fileData.frontmatter?.repo && typeof fileData.frontmatter.repo === "string") {
     const repo = new URL(fileData.frontmatter.repo)
 
-    const org = repo.pathname.split("/")[0].replaceAll("-", "_")
+    const org = repo.pathname.split("/")[1].replaceAll("-", "_")
 
     return (
       <a target="_blank" href={"https://github.com/" + fileData.frontmatter.repo}>
