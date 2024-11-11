@@ -1,4 +1,3 @@
-[![Static Badge](https://img.shields.io/badge/Github-1995parham_learning-orange?style=for-the-badge&logo=github)](https://github.com/1995parham-learning/qdrant101/)
 
 ## Introduction
 
