@@ -50,7 +50,7 @@ Shadowing is different from marking a variable as `mut` because we'll get a comp
 
 The other difference between `mut` and shadowing is that because we're effectively creating a new variable when we use the `let` keyword again, we can change the type of the value but reuse the same name.
 
-A _scalar_ type represents a single value. Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
+A _scalar_ type represents a single value. Rust has four primary scalar types: integers, floating-point numbers, booleans, and characters.
 
 An _integer_ is a number without a fractional component. Signed numbers are stored using [two's complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
 
