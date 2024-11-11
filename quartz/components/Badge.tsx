@@ -6,7 +6,7 @@ const Badge: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
     const org = fileData.frontmatter.repo.split("/")[0].replaceAll("-", "_")
 
     return <a href={"https://github.com/"+fileData.frontmatter.repo}>
-      <img alt="Static Badge" src={`https://img.shields.io/badge/Github-${org}-orange?style=for-the-badge&logo=github`} />
+      <img __blank=true alt="Static Badge" src={`https://img.shields.io/badge/Github-${org}-orange?style=for-the-badge&logo=github`} />
     </a>
   }
 
