@@ -1,7 +1,9 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
-const Header: QuartzComponent = ({ children }: QuartzComponentProps) => {
-  return children.length > 0 ? <header>{children}</header> : null
+const Header: QuartzComponent = ({ children, frontmatter }: QuartzComponentProps) => {
+  return <template>
+    {children.length > 0 ? <header>{children}</header> : null}
+  </template>
 }
 
 Header.css = `
