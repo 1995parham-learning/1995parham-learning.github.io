@@ -1,6 +1,8 @@
 
 https://github.com/1995parham-learning/qdrant101
 
+![Static Badge](https://img.shields.io/badge/Github-1995parham_learning-orange?style=for-the-badge&logo=github)
+![Static Badge](https://img.shields.io/badge/Github-1995parham_learning-orange?style=for-the-badge&logo=github)
 ## Introduction
 
 Vector databases are a relatively new way for interacting with abstract data representations derived from opaque machine learning models such as deep learning architectures. These representations are often called _vectors_ or _embeddings_, and they are a compressed version of the data used to train a machine learning model to accomplish a task like sentiment analysis, speech recognition, object detection, and many others.
