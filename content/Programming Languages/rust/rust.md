@@ -1,7 +1,5 @@
 ---
-title: Rust
-description: Let's Learn Rust
-icon: skill-icons:rust
+repo: https://github.com/1995parham-learning/rust101
 ---
 
 ## `stdin`
