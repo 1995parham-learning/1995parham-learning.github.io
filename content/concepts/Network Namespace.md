@@ -66,7 +66,7 @@ sudo ip netns exec net1 ping 192.168.1.100
 sudo ip netns exec net1 ping 192.168.73.1
 ```
 
-Let's do it with nftables (Netfilter-based IP Ta)
+Let's do it with `nftables`:
 
 ```bash
 sudo ip netns exec net1 mtr -rn 192.168.73.1
