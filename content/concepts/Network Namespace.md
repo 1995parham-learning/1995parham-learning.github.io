@@ -65,6 +65,9 @@ sudo ip netns exec net1 ping 192.168.1.100
 # range. SNAT is the answer!
 sudo ip netns exec net1 ping 192.168.73.1
 ```
+
+Let's do it with nftables (Netfilter-based IP Ta)
+
 ```bash
 sudo ip netns exec net1 mtr -rn 192.168.73.1
 ```
