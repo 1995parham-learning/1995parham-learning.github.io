@@ -24,15 +24,16 @@ Set IP address for `veth1` and bring it up:
 sudo ip -n net1 addr add 192.168.1.101/24 dev veth1
 sudo ip -n net1 link set dev veth1 up
 
-sudo ip -n net1 link set lo up 
+sudo ip -n net1 link set lo up
 ```
 
 > [!info]
 > The `-n` option is short for `ip netns exec`
 
 ```bash
-sudo ip -n net1 addr show 
+sudo ip -n net1 addr show
 ```
+
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -72,6 +73,7 @@ Let's do it with `iptables`:
 sudo iptables -A FORWARD -j ACCEPT
 sudo iptables -t nat -s 192.168.1.0/24 -A POSTROUTING -j MASQUERADE
 ```
+
 ```
 Chain POSTROUTING (policy ACCEPT)
 target     prot opt source               destination
@@ -82,6 +84,7 @@ MASQUERADE  all  --  192.168.1.0/24       anywhere
 ```bash
 sudo ip netns exec net1 mtr -rn 192.168.73.1
 ```
+
 ```
 Start: 2024-11-12T20:10:32+0000
 HOST: death-star                  Loss%   Snt   Last   Avg  Best  Wrst StDev
