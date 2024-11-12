@@ -17,3 +17,10 @@ sudo ip link add veth0 type veth peer name veth1
 
 sudo ip link set veth1 netns net1
 ```
+
+Set IP address for `veth1` and bring it up:
+
+```bash
+sudo ip netns exec net1 ip addr add 192.168.1.101/24 dev veth1
+sudo ip netns exec net1 ip link set dev veth1 up
+```
