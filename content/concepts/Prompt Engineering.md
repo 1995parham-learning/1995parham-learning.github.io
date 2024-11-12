@@ -30,9 +30,8 @@ A sampling technique with temperature, called nucleus sampling, where you can co
 If you are looking for exact and factual answers keep this low. If you are looking for more diverse responses,
 increase to a higher value.
 
-:::note
-The general recommendation is to alter temperature or Top P but not both.
-:::
+> [!note]
+> The general recommendation is to alter temperature or Top P but not both.
 
 ### Max Length
 
@@ -56,10 +55,8 @@ The presence penalty also applies a penalty on repeated tokens but, unlike the f
 the penalty is the same for all repeated tokens. A token that appears twice and a token that
 appears 10 times are penalized the same.
 
-:::note
+> [!info]
 Similar to temperature and Top P, the general recommendation is to alter the frequency or presence penalty but not both.
-:::
-
 ## Prompting an LLM
 
 You can achieve a lot with simple prompts, but the quality of results depends on **how much information
@@ -76,12 +73,12 @@ You can also define an **assistant message** to pass examples of the desired beh
 ### Zero shot prompting
 
 - Q. Explain the different types of banks
-  A. Banks along a river can take various forms depending on whether they are natural or artificial
+- A. Banks along a river can take various forms depending on whether they are natural or artificial
 
 ### Few shots prompting
 
 - Q. What is the primary function of a bank?
-  A. A bank's primary function is to accept deposits, provide loans and offer other financial services
+- A. A bank's primary function is to accept deposits, provide loans and offer other financial services
   to individuals and businesses.
 - Q. Explain the different types of banks
 
