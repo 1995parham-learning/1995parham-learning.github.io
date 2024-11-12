@@ -61,6 +61,8 @@ Then you can ping the other end and also ping IP addresses that are accessible o
 # ping the other side
 sudo ip netns exec net1 ping 192.168.1.100
 # ping an address that is accessible from the other side (?)
+# no, it is not going to work, because the destination have no idea about 192.168.1.x
+# range. SNAT is the answer!
 sudo ip netns exec net1 ping 192.168.73.1
 ```
 ```bash
