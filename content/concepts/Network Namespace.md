@@ -62,11 +62,32 @@ Then you can ping the other end and also ping IP addresses that are accessible o
 sudo ip netns exec net1 ping 192.168.1.100
 # ping an address that is accessible from the other side (?)
 # no, it is not going to work, because the destination have no idea about 192.168.1.x
-# range. SNAT is the answer!
+# range. SNAT (source NAT) is the answer!
 sudo ip netns exec net1 ping 192.168.73.1
 ```
 
 Let's do it with `nftables`:
+
+```bash
+sudo nft add table inet nat
+sudo nft add chain inet nat prerouting '{ type nat hook prerouting priority -100; }'
+sudo nft add chain inet nat postrouting '{ type nat hook postrouting priority 100; }'
+
+sudo nft add rule inet nat postrouting ip saddr 192.168.1.0/24 masquerade
+sudo nft list ruleset
+```
+```
+table inet nat {
+        chain prerouting {
+                type nat hook prerouting priority dstnat; policy accept;
+        }
+
+        chain postrouting {
+                type nat hook postrouting priority srcnat; policy accept;
+                ip saddr 192.168.1.0/24 masquerade
+        }
+}
+```
 
 ```bash
 sudo ip netns exec net1 mtr -rn 192.168.73.1
