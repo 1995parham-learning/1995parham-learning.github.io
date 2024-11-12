@@ -1,4 +1,3 @@
-
 Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use
 language models (LMs) for a wide variety of applications and research topics.
 Prompt engineering skills **help to better understand the capabilities and limitations of large language models (LLMs)**.
@@ -56,7 +55,8 @@ the penalty is the same for all repeated tokens. A token that appears twice and 
 appears 10 times are penalized the same.
 
 > [!info]
-Similar to temperature and Top P, the general recommendation is to alter the frequency or presence penalty but not both.
+> Similar to temperature and Top P, the general recommendation is to alter the frequency or presence penalty but not both.
+
 ## Prompting an LLM
 
 You can achieve a lot with simple prompts, but the quality of results depends on **how much information
