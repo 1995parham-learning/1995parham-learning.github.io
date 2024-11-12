@@ -73,6 +73,10 @@ sudo iptables -A FORWARD -j ACCEPT
 sudo iptables -t nat -s 192.168.1.0/24 -A POSTROUTING -j MASQUERADE
 ```
 ```
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source               destination
+MASQUERADE  all  --  10.254.1.0/24        anywhere
+MASQUERADE  all  --  192.168.1.0/24       anywhere
 ```
 
 ```bash
