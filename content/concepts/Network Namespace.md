@@ -49,6 +49,7 @@ sudo ip -n net1 addr show
 ```
 
 Then set IP address for `veth0` (which is attached to the root namespace) and bring it up:
+
 ```bash
 sudo ip addr add 192.168.1.100/24 dev veth1
 sudo ip link set dev veth0 up
