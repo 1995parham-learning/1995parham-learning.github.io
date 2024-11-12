@@ -56,3 +56,8 @@ sudo ip link set dev veth0 up
 ```
 
 Then you can ping the other end and also ping IP addresses that are accessible on the root namespace.
+
+```bash
+# b
+sudo ip netns exec net1 ping 192.168.73.3
+```
