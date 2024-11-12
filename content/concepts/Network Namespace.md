@@ -47,3 +47,5 @@ sudo ip -n net1 addr show
     inet6 fe80::88c4:62ff:fe3e:2d23/64 scope link proto kernel_ll
        valid_lft forever preferred_lft forever
 ```
+
+Then set IP address for `veth0` (which is attached )
