@@ -1,7 +1,7 @@
 I want to experiment with Network Namespaces on Linux. First enable routing:
 
 ```bash
-echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+sysctl -w net.ipv4.ip_forward=1
 ```
 
 Then create a network namespace named `net1`:
