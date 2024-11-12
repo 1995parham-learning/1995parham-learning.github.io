@@ -83,5 +83,8 @@ MASQUERADE  all  --  192.168.1.0/24       anywhere
 sudo ip netns exec net1 mtr -rn 192.168.73.1
 ```
 ```
-
+Start: 2024-11-12T20:10:32+0000
+HOST: death-star                  Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1.|-- 192.168.1.100              0.0%    10    0.0   0.1   0.0   0.1   0.0
+  2.|-- 192.168.73.1               0.0%    10    1.2   1.5   1.0   3.6   0.8
 ```
