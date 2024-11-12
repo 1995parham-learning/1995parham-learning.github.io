@@ -60,7 +60,7 @@ Then you can ping the other end and also ping IP addresses that are accessible o
 ```bash
 # ping the other side
 sudo ip netns exec net1 ping 192.168.1.100
-# ping an address that is accessible from the other side
+# ping an address that is accessible from the other side (?)
 sudo ip netns exec net1 ping 192.168.73.1
 ```
 ```bash
