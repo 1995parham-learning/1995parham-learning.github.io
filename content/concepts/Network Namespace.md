@@ -55,4 +55,4 @@ sudo ip addr add 192.168.1.100/24 dev veth1
 sudo ip link set dev veth0 up
 ```
 
-Then you can ping the other end and also ping IP addresses 
+Then you can ping the other end and also ping IP addresses that are accessible on the root namespace.
