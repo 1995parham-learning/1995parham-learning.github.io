@@ -66,27 +66,13 @@ sudo ip netns exec net1 ping 192.168.1.100
 sudo ip netns exec net1 ping 192.168.73.1
 ```
 
-Let's do it with `nftables`:
+Let's do it with `iptables`:
 
 ```bash
-sudo nft add table inet nat
-sudo nft add chain inet nat prerouting '{ type nat hook prerouting priority -100; }'
-sudo nft add chain inet nat postrouting '{ type nat hook postrouting priority 100; }'
-
-sudo nft add rule inet nat postrouting ip saddr 192.168.1.0/24 masquerade
-sudo nft list ruleset
+sudo iptables -A FORWARD -j ACCEPT
+sudo iptables -t nat -s 192.168.1.0/24 -A POSTROUTING -j MASQUERADE
 ```
 ```
-table inet nat {
-        chain prerouting {
-                type nat hook prerouting priority dstnat; policy accept;
-        }
-
-        chain postrouting {
-                type nat hook postrouting priority srcnat; policy accept;
-                ip saddr 192.168.1.0/24 masquerade
-        }
-}
 ```
 
 ```bash
