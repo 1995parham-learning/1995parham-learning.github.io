@@ -30,3 +30,5 @@ Here’s a quick overview of the three:
 - [**Euclidean Distance**](https://en.wikipedia.org/wiki/Euclidean_distance) - Euclidean distance is a way to measure the distance between two points in space, similar to how we measure the distance between two places on a map. It’s calculated by finding the square root of the sum of the squared differences between the two points’ coordinates. This distance metric is also commonly used in machine learning to measure how similar or dissimilar two vectors are.
 
 Now that we know what vector databases are and how they are structurally different than other databases, let’s go over why they are important.
+
+## Installation requirements
