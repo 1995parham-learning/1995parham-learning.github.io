@@ -5,3 +5,6 @@
 - Performance
 - Self-hosted vs Managed
 - Java and Python Clients
+- Backup and Redundancy
+- Open-source community
+- License 
