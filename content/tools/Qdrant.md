@@ -63,8 +63,8 @@ Since version _v0.8.0_ Qdrant supports a distributed deployment mode. In this mo
 The ideal number of Qdrant nodes depends on how much you value cost-saving, resilience, and performance/scalability in relation to each other.
 
 - **Prioritizing cost-saving**: If cost is most important to you, run a single Qdrant node. This is not recommended for production environments. Drawbacks: 
-    - Resilience: Users will experience downtime during node restarts, and recovery is not possible unless you have backups or snapshots.
-    - Performance: Limited to the resources of a single server.
+    - _Resilience_: Users will experience downtime during node restarts, and recovery is not possible unless you have backups or snapshots.
+    - _Performance_: Limited to the resources of a single server.
 - **Prioritizing resilience**: If resilience is most important to you, run a Qdrant cluster with three or more nodes and two or more shard replicas. Clusters with three or more nodes and replication can perform all operations even while one node is down. Additionally, they gain performance benefits from load-balancing and they can recover from the permanent loss of one node without the need for backups or snapshots (but backups are still strongly recommended). This is most recommended for production environments. Drawbacks:
     
     - Cost: Larger clusters are more costly than smaller clusters, which is the only drawback of this configuration.
