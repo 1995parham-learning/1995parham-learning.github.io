@@ -44,7 +44,7 @@ The preferred size of your CPU and RAM depends on:
 
 - Number of vectors
 - Vector dimensions
-- [Payloads](https://qdrant.tech/documentation/concepts/payload/) and their indexes
+- [[Qdrant#Payload]] and their indexes
 - Storage
 - Replication
 - How you configure quantization
@@ -76,9 +76,9 @@ The ideal number of Qdrant nodes depends on how much you value cost-saving, resi
 
 In summary, single-node clusters are best for non-production workloads, replicated 3+ node clusters are the gold standard, and replicated 2-node clusters strike a good balance.
 
-## [](https://qdrant.tech/documentation/guides/distributed_deployment/#enabling-distributed-mode-in-self-hosted-qdrant)Enabling distributed mode in self-hosted Qdrant
+### Enabling distributed mode in self-hosted Qdrant
 
-To enable distributed deployment - enable the cluster mode in the [configuration](https://qdrant.tech/documentation/guides/configuration/) or using the ENV variable: `QDRANT__CLUSTER__ENABLED=true`.
+To enable distributed deployment - enable the cluster mode in the configuration or using the ENV variable: `QDRANT__CLUSTER__ENABLED=true`.
 
 ```yaml
 cluster:
