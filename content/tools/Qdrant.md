@@ -32,3 +32,19 @@ Here’s a quick overview of the three:
 Now that we know what vector databases are and how they are structurally different than other databases, let’s go over why they are important.
 
 ## Installation requirements
+
+### CPU and memory
+
+The preferred size of your CPU and RAM depends on:
+
+- Number of vectors
+- Vector dimensions
+- [Payloads](https://qdrant.tech/documentation/concepts/payload/) and their indexes
+- Storage
+- Replication
+- How you configure quantization
+
+Our [Cloud Pricing Calculator](https://cloud.qdrant.io/calculator?_gl=1*1sxmy7s*_gcl_au*MzQ2NTQzNzYzLjE3MzA5MTUyMTY.*_ga*MTIwOTgxNzc1OC4xNzMwOTE1MjEz*_ga_NZYW2651NE*MTczMTYwNTU3NS42LjEuMTczMTYwNTU4MC4wLjAuMA..) can help you estimate required resources without payload or index data.
+### Storage
+
+For persistent storage, Qdrant requires block-level access to storage devices with a [POSIX-compatible file system](https://www.quobyte.com/storage-explained/posix-filesystem/).
