@@ -8,3 +8,4 @@
 - Backup and Redundancy
 - Open-source community
 - License 
+- Cost
