@@ -135,7 +135,7 @@ OPTIONS:
             of this peer on bootstrap peer (receiving side)
 ```
 
-After a successful synchronization you can observe the state of the cluster through the [REST API](https://api.qdrant.tech/master/api-reference/distributed/cluster-status):
+After a successful synchronization you can observe the state of the cluster through the REST API:
 
 ```http
 GET /cluster
@@ -169,9 +169,8 @@ Example result:
 }
 ```
 
-Note that enabling distributed mode does not automatically replicate your data. See the section on [making use of a new distributed Qdrant cluster](https://qdrant.tech/documentation/guides/distributed_deployment/#making-use-of-a-new-distributed-qdrant-cluster) for the next steps.
-
-## [](https://qdrant.tech/documentation/guides/distributed_deployment/#enabling-distributed-mode-in-qdrant-cloud)Enabling distributed mode in Qdrant Cloud
+Note that enabling distributed mode _does not_ automatically replicate your data.
+### Enabling distributed mode in Qdrant Cloud
 
 For best results, first ensure your cluster is running Qdrant v1.7.4 or higher. Older versions of Qdrant do support distributed mode, but improvements in v1.7.4 make distributed clusters more resilient during outages.
 
