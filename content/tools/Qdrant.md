@@ -170,15 +170,7 @@ Example result:
 ```
 
 Note that enabling distributed mode _does not_ automatically replicate your data.
-### Enabling distributed mode in Qdrant Cloud
-
-For best results, first ensure your cluster is running Qdrant v1.7.4 or higher. Older versions of Qdrant do support distributed mode, but improvements in v1.7.4 make distributed clusters more resilient during outages.
-
-In the [Qdrant Cloud console](https://cloud.qdrant.io/), click “Scale Up” to increase your cluster size to >1. Qdrant Cloud configures the distributed mode settings automatically.
-
-After the scale-up process completes, you will have a new empty node running alongside your existing node(s). To replicate data into this new empty node, see the next section.
-
-## [](https://qdrant.tech/documentation/guides/distributed_deployment/#making-use-of-a-new-distributed-qdrant-cluster)Making use of a new distributed Qdrant cluster
+### Making use of a new distributed Qdrant cluster
 
 When you enable distributed mode and scale up to two or more nodes, your data does not move to the new node automatically; it starts out empty. To make use of your new empty node, do one of the following:
 
@@ -187,7 +179,7 @@ When you enable distributed mode and scale up to two or more nodes, your data do
 - If you already have enough shards for each node and you merely need to replicate your data, follow the directions for [creating new shard replicas](https://qdrant.tech/documentation/guides/distributed_deployment/#creating-new-shard-replicas).
 - If you already have enough shards for each node and your data is already replicated, you can move data (without replicating it) onto the new node(s) by [moving shards](https://qdrant.tech/documentation/guides/distributed_deployment/#moving-shards).
 
-## [](https://qdrant.tech/documentation/guides/distributed_deployment/#raft)Raft
+### Raft
 
 Qdrant uses the [Raft](https://raft.github.io/) consensus protocol to maintain consistency regarding the cluster topology and the collections structure.
 
