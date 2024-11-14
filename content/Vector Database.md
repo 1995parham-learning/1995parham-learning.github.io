@@ -4,3 +4,4 @@
 - Scalability
 - Performance
 - Self-hosted vs Managed
+- Java and Python Clients
