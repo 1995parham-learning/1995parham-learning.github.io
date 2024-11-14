@@ -31,6 +31,11 @@ Here’s a quick overview of the three:
 
 Now that we know what vector databases are and how they are structurally different than other databases, let’s go over why they are important.
 
+## Payload
+
+One of the significant features of Qdrant is the ability to store additional information along with vectors. This information is called `payload` in Qdrant terminology.
+
+Qdrant allows you to store any information that can be represented using JSON.
 ## Installation requirements
 
 ### CPU and memory
