@@ -139,6 +139,12 @@ Introduced with PEP 255, generator functions are a special kind of function that
 A **generator expression** yields a new generator object. Its syntax is the same as for comprehensions, except
 that it is enclosed in _parentheses instead of brackets or curly braces_.
 
+> [!note]
+> 
+> ```python
+> temperatures = list(temperatures)
+> ```
+
 ## Operator
 
 The [`operator`](https://docs.python.org/3/library/operator.html#module-operator)
