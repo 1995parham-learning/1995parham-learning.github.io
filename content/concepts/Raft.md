@@ -28,3 +28,4 @@ To begin with, Raft states that each node in a replicated state machine(server c
 - A _follower_ only responds to candidate(s) or the leader.
 
 To maintain these server status(es), the Raft algorithm divides time into small terms of arbitrary length. Each term is identified by a monotonically increasing number, called **term number**.
+This term number is maintained by every node and is passed while communications between nodes.
