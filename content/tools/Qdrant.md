@@ -184,7 +184,7 @@ When you enable distributed mode and scale up to two or more nodes, your data do
 
 ### Raft
 
-Qdrant uses the [Raft](https://raft.github.io/) consensus protocol to maintain consistency regarding the cluster topology and the collections structure.
+Qdrant uses the [[Raft]] consensus protocol to maintain consistency regarding the cluster topology and the collections structure.
 
 Operations on points, on the other hand, do not go through the consensus infrastructure. Qdrant is not intended to have strong transaction guarantees, which allows it to perform point operations with low overhead. In practice, it means that Qdrant does not guarantee atomic distributed updates but allows you to wait until the [operation is complete](https://qdrant.tech/documentation/concepts/points/#awaiting-result) to see the results of your writes.
 
