@@ -140,7 +140,7 @@ A **generator expression** yields a new generator object. Its syntax is the same
 that it is enclosed in _parentheses instead of brackets or curly braces_.
 
 > [!note]
-> 
+> In this case you lose the advantage of generators, but there are situations where that might be useful.
 > ```python
 > temperatures = list(temperatures)
 > ```
