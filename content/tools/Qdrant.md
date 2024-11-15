@@ -36,6 +36,7 @@ Now that we know what vector databases are and how they are structurally differe
 One of the significant features of Qdrant is the ability to store additional information along with vectors. This information is called `payload` in Qdrant terminology.
 
 Qdrant allows you to store any information that can be represented using JSON.
+
 ## Installation requirements
 
 ### CPU and memory
@@ -50,6 +51,7 @@ The preferred size of your CPU and RAM depends on:
 - How you configure quantization
 
 Our [Cloud Pricing Calculator](https://cloud.qdrant.io/calculator?_gl=1*1sxmy7s*_gcl_au*MzQ2NTQzNzYzLjE3MzA5MTUyMTY.*_ga*MTIwOTgxNzc1OC4xNzMwOTE1MjEz*_ga_NZYW2651NE*MTczMTYwNTU3NS42LjEuMTczMTYwNTU4MC4wLjAuMA..) can help you estimate required resources without payload or index data.
+
 ### Storage
 
 For persistent storage, Qdrant requires block-level access to storage devices with a [POSIX-compatible file system](https://www.quobyte.com/storage-explained/posix-filesystem/).
@@ -62,16 +64,16 @@ Since version _v0.8.0_ Qdrant supports a distributed deployment mode. In this mo
 
 The ideal number of Qdrant nodes depends on how much you value cost-saving, resilience, and performance/scalability in relation to each other.
 
-- **Prioritizing cost-saving**: If cost is most important to you, run a single Qdrant node. This is not recommended for production environments. Drawbacks: 
-    - _Resilience_: Users will experience downtime during node restarts, and recovery is not possible unless you have backups or snapshots.
-    - _Performance_: Limited to the resources of a single server.
+- **Prioritizing cost-saving**: If cost is most important to you, run a single Qdrant node. This is not recommended for production environments. Drawbacks:
+  - _Resilience_: Users will experience downtime during node restarts, and recovery is not possible unless you have backups or snapshots.
+  - _Performance_: Limited to the resources of a single server.
 - **Prioritizing resilience**: If resilience is most important to you, run a Qdrant cluster with _three or more nodes_ and _two or more shard replicas_. Clusters with three or more nodes and replication can perform all operations even while one node is down. Additionally, they gain performance benefits from load-balancing, and they can recover from the permanent loss of one node without the need for backups or snapshots (but backups are still strongly recommended). _This is most recommended for production environments_. Drawbacks:
-    - _Cost_: Larger clusters are more costly than smaller clusters, which is the only drawback of this configuration.
-- **Balancing cost, resilience, and performance**: Running a _two-node Qdrant cluster with replicated shards_ allows the cluster to respond to most read/write requests even when one node is down, such as during maintenance events. Having two nodes also means greater performance than a single-node cluster, while still being cheaper than a three-node cluster. Drawbacks: 
-    - _Resilience (uptime)_: The cluster cannot perform operations on collections when one node is down. Those operations require >50% of nodes to be running, so this is only possible in a 3+ node cluster. Since creating, editing, and deleting collections are usually rare operations, many users find this drawback to be negligible.
-    - _Resilience (data integrity)_: If the data on one of the two nodes is permanently lost or corrupted, it cannot be recovered aside from snapshots or backups. Only 3+ node clusters can recover from the permanent loss of a single node since recovery operations require >50% of the cluster to be healthy.
-    - _Cost_: Replicating your shards requires storing two copies of your data.
-    - _Performance_: The maximum performance of a Qdrant cluster increases as you add more nodes.
+  - _Cost_: Larger clusters are more costly than smaller clusters, which is the only drawback of this configuration.
+- **Balancing cost, resilience, and performance**: Running a _two-node Qdrant cluster with replicated shards_ allows the cluster to respond to most read/write requests even when one node is down, such as during maintenance events. Having two nodes also means greater performance than a single-node cluster, while still being cheaper than a three-node cluster. Drawbacks:
+  - _Resilience (uptime)_: The cluster cannot perform operations on collections when one node is down. Those operations require >50% of nodes to be running, so this is only possible in a 3+ node cluster. Since creating, editing, and deleting collections are usually rare operations, many users find this drawback to be negligible.
+  - _Resilience (data integrity)_: If the data on one of the two nodes is permanently lost or corrupted, it cannot be recovered aside from snapshots or backups. Only 3+ node clusters can recover from the permanent loss of a single node since recovery operations require >50% of the cluster to be healthy.
+  - _Cost_: Replicating your shards requires storing two copies of your data.
+  - _Performance_: The maximum performance of a Qdrant cluster increases as you add more nodes.
 
 In summary, single-node clusters are best for non-production workloads, replicated 3+ node clusters are the gold standard, and replicated 2-node clusters strike a good balance.
 
@@ -165,11 +167,12 @@ Example result:
     }
   },
   "status": "ok",
-  "time": 5.731e-06
+  "time": 5.731e-6
 }
 ```
 
 Note that enabling distributed mode _does not_ automatically replicate your data.
+
 ### Making use of a new distributed Qdrant cluster
 
 When you enable distributed mode and scale up to two or more nodes, your data does not move to the new node automatically; it starts out empty. To make use of your new empty node, do one of the following:
@@ -196,9 +199,7 @@ You may use the cluster [REST API](https://api.qdrant.tech/master/api-reference
 A Collection in Qdrant is made of one or more shards. A shard is an independent store of points which is able to perform all operations provided by collections. There are two methods of distributing points across shards:
 
 - **Automatic sharding**: Points are distributed among shards by using a [consistent hashing](https://en.wikipedia.org/wiki/Consistent_hashing) algorithm, so that shards are managing non-intersecting subsets of points. This is the default behavior.
-    
-- **User-defined sharding**: _Available as of v1.7.0_ - Each point is uploaded to a specific shard, so that operations can hit only the shard or shards they need. Even with this distribution, shards still ensure having non-intersecting subsets of points. [See more…](https://qdrant.tech/documentation/guides/distributed_deployment/#user-defined-sharding)
-    
+- **User-defined sharding**: *Available as of v1.7.0* - Each point is uploaded to a specific shard, so that operations can hit only the shard or shards they need. Even with this distribution, shards still ensure having non-intersecting subsets of points. [See more…](https://qdrant.tech/documentation/guides/distributed_deployment/#user-defined-sharding)
 
 Each node knows where all parts of the collection are stored through the [consensus protocol](https://qdrant.tech/documentation/guides/distributed_deployment/#raft), so when you send a search request to one Qdrant node, it automatically queries all other nodes to obtain the full search result.
 
@@ -287,9 +288,9 @@ In this mode, the `shard_number` means the number of shards per shard key, whe
 
 ```json
 {
-    "shard_number": 1,
-    "sharding_method": "custom",
-    "replication_factor": 2
+  "shard_number": 1,
+  "sharding_method": "custom",
+  "replication_factor": 2
 }
 ```
 
@@ -316,9 +317,9 @@ PUT /collections/{collection_name}/points
 }
 ```
 
-Using the same point ID across multiple shard keys is **not supported*** and should be avoided.
+Using the same point ID across multiple shard keys is **not supported\*** and should be avoided.
 
-***** When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
+**\*** When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
 
 Now you can target the operations to specific shard(s) by specifying the `shard_key` on any operation you do. Operations that do not specify the shard key will be executed on **all** shards.
 
@@ -334,21 +335,21 @@ There are different methods for transferring a shard, such as moving or replicat
 
 Available shard transfer methods are:
 
-- `stream_records`: _(default)_ transfer by streaming just its records to the target node in batches.
+- `stream_records`: *(default)* transfer by streaming just its records to the target node in batches.
 - `snapshot`: transfer including its index and quantized data by utilizing a [snapshot](https://qdrant.tech/documentation/concepts/snapshots/) automatically.
-- `wal_delta`: _(auto recovery default)_ transfer by resolving [WAL](https://qdrant.tech/documentation/concepts/storage/#versioning) difference; the operations that were missed.
+- `wal_delta`: *(auto recovery default)* transfer by resolving [WAL](https://qdrant.tech/documentation/concepts/storage/#versioning) difference; the operations that were missed.
 
 Each has pros, cons and specific requirements, some of which are:
 
-|Method:|Stream records|Snapshot|WAL delta|
-|---|---|---|---|
-|**Version**|v0.8.0+|v1.7.0+|v1.8.0+|
-|**Target**|New/existing shard|New/existing shard|Existing shard|
-|**Connectivity**|Internal gRPC API (6335)|REST API (6333)  <br>Internal gRPC API (6335)|Internal gRPC API (6335)|
-|**HNSW index**|Doesn’t transfer, will reindex on target.|Does transfer, immediately ready on target.|Doesn’t transfer, may index on target.|
-|**Quantization**|Doesn’t transfer, will requantize on target.|Does transfer, immediately ready on target.|Doesn’t transfer, may quantize on target.|
-|**Ordering**|Unordered updates on target[1](https://qdrant.tech/documentation/guides/distributed_deployment/#fn:1)|Ordered updates on target[2](https://qdrant.tech/documentation/guides/distributed_deployment/#fn:2)|Ordered updates on target[2](https://qdrant.tech/documentation/guides/distributed_deployment/#fn:2)|
-|**Disk space**|No extra required|Extra required for snapshot on both nodes|No extra required|
+| Method:          | Stream records                                                                                        | Snapshot                                                                                            | WAL delta                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Version**      | v0.8.0+                                                                                               | v1.7.0+                                                                                             | v1.8.0+                                                                                             |
+| **Target**       | New/existing shard                                                                                    | New/existing shard                                                                                  | Existing shard                                                                                      |
+| **Connectivity** | Internal gRPC API (6335)                                                                              | REST API (6333) <br>Internal gRPC API (6335)                                                        | Internal gRPC API (6335)                                                                            |
+| **HNSW index**   | Doesn’t transfer, will reindex on target.                                                             | Does transfer, immediately ready on target.                                                         | Doesn’t transfer, may index on target.                                                              |
+| **Quantization** | Doesn’t transfer, will requantize on target.                                                          | Does transfer, immediately ready on target.                                                         | Doesn’t transfer, may quantize on target.                                                           |
+| **Ordering**     | Unordered updates on target[1](https://qdrant.tech/documentation/guides/distributed_deployment/#fn:1) | Ordered updates on target[2](https://qdrant.tech/documentation/guides/distributed_deployment/#fn:2) | Ordered updates on target[2](https://qdrant.tech/documentation/guides/distributed_deployment/#fn:2) |
+| **Disk space**   | No extra required                                                                                     | Extra required for snapshot on both nodes                                                           | No extra required                                                                                   |
 
 To select a shard transfer method, specify the `method` like:
 
@@ -583,7 +584,7 @@ POST /collections/{collection_name}/points/query?consistency=majority
 
 Write `ordering` can be specified for any write request to serialize it through a single “leader” node, which ensures that all write operations (issued with the same `ordering`) are performed and observed sequentially.
 
-- `weak` _(default)_ ordering does not provide any additional guarantees, so write operations can be freely reordered.
+- `weak` *(default)* ordering does not provide any additional guarantees, so write operations can be freely reordered.
 - `medium` ordering serializes all write operations through a dynamically elected leader, which might cause minor inconsistencies in case of leader change.
 - `strong` ordering serializes all write operations through the permanent leader, which provides strong consistency, but write operations may be unavailable if the leader is down.
 
@@ -653,5 +654,4 @@ In some cases, this API can be used to recover from an inconsistent cluster stat
 ---
 
 1. Weak ordering for updates: All records are streamed to the target node in order. New updates are received on the target node in parallel, while the transfer of records is still happening. We therefore have `weak` ordering, regardless of what [ordering](https://qdrant.tech/documentation/guides/distributed_deployment/#write-ordering) is used for updates. [↩︎](https://qdrant.tech/documentation/guides/distributed_deployment/#fnref:1) [↩︎](https://qdrant.tech/documentation/guides/distributed_deployment/#fnref1:1)
-    
 2. Strong ordering for updates: A snapshot of the shard is created, it is transferred and recovered on the target node. That ensures the state of the shard is kept consistent. New updates are queued on the source node, and transferred in order to the target node. Updates therefore have the same [ordering](https://qdrant.tech/documentation/guides/distributed_deployment/#write-ordering) as the user selects, making `strong` ordering possible. [↩︎](https://qdrant.tech/documentation/guides/distributed_deployment/#fnref:2) [↩︎](https://qdrant.tech/documentation/guides/distributed_deployment/#fnref1:2) [↩︎](https://qdrant.tech/documentation/guides/distributed_deployment/#fnref2:2) [↩︎](https://qdrant.tech/documentation/guides/distributed_deployment/#fnref3:2)
