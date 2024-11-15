@@ -29,3 +29,4 @@ To begin with, Raft states that each node in a replicated state machine(server c
 
 To maintain these server status(es), the Raft algorithm divides time into small terms of arbitrary length. Each term is identified by a monotonically increasing number, called **term number**.
 This term number is maintained by every node and is passed while communications between nodes.
+Every term starts with an election to determine the new leader. The candidates ask for votes from other server nodes(followers) to gather majority. If the majority is gathered, the candidate becomes the leader for the current term.
