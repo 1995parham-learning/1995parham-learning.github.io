@@ -197,7 +197,7 @@ You may use the cluster REST API to check the state of the consensus.
 
 A Collection in Qdrant is made of one or more shards. _A shard is an independent store of points which is able to perform all operations provided by collections_. There are two methods of distributing points across shards:
 
-- **Automatic sharding**: Points are distributed among shards by using a consistent hashing algorithm, so that shards are managing non-intersecting subsets of points. This is the default behavior.
+- **Automatic sharding**: Points are distributed among shards by using a [[consistent hashing]] algorithm, so that shards are managing non-intersecting subsets of points. This is the default behavior.
 - **User-defined sharding**: *Available as of v1.7.0* - Each point is uploaded to a specific shard, so that operations can hit only the shard or shards they need. Even with this distribution, shards still ensure having non-intersecting subsets of points. [See more…](https://qdrant.tech/documentation/guides/distributed_deployment/#user-defined-sharding)
 
 Each node knows where all parts of the collection are stored through the [consensus protocol](https://qdrant.tech/documentation/guides/distributed_deployment/#raft), so when you send a search request to one Qdrant node, it automatically queries all other nodes to obtain the full search result.

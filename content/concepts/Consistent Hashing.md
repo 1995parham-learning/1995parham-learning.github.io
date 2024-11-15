@@ -1,2 +1,3 @@
 > [!note]
-> Consistent hashing evenly distributes cache keys across [shards](https://en.wikipedia.org/wiki/Shard_(database_architecture) "Shard (database architecture)"), even if some of the shards crash or become unavailable.[[3]](https://en.wikipedia.org/wiki/Consistent_hashing#cite_note-3)
+> Consistent hashing evenly distributes cache keys across shards, even if some of the shards crash or become unavailable.
+
