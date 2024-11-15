@@ -24,3 +24,7 @@ Consensus typically arises in the context of replicated state machines, a genera
 
 To begin with, Raft states that each node in a replicated state machine(server cluster) can stay in any of the three states, namely, leader, candidate, follower.
 - Only a *leader* can interact with the client; any request to the follower node is redirected to the leader node.
+- A _candidate_ can ask for votes to become the leader.
+- A _follower_ only responds to candidate(s) or the leader.
+
+To maintain these server status(es), the Raft algorithm divides time into small terms of arbitrary length. Each term is identified by a monotonically increasing number, called **term number**.
