@@ -14,8 +14,8 @@ Consensus typically arises in the context of replicated state machines, a genera
 
 - **Single Server system** : The client interacts with a system having only one server with no backup. There is no problem in achieving consensus in such a system.
 
-![single server raft visual](https://media.geeksforgeeks.org/wp-content/uploads/single-server-1-raft-visual.png)
+![[Pasted image 20241115112204.png]]
 
 - **Multiple Server system** : The client interacts with a system having multiple servers. Such systems can be of two types :
-  - Symmetric :- Any of the multiple servers can respond to the client and all the other servers are supposed to sync up with the server that responded to the client’s request, and
-  - Asymmetric :- Only the elected leader server can respond to the client. All other servers then sync up with the leader server.
+  - Symmetric : _Any of the multiple servers_ can respond to the client and all the other servers are supposed to sync up with the server that responded to the client’s request, and
+  - Asymmetric : Only the _elected leader server_ can respond to the client. All other servers then sync up with the leader server.
