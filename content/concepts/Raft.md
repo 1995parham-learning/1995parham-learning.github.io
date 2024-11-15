@@ -23,3 +23,4 @@ Consensus typically arises in the context of replicated state machines, a genera
 ## Raft consensus algorithm explained
 
 To begin with, Raft states that each node in a replicated state machine(server cluster) can stay in any of the three states, namely, leader, candidate, follower.
+- Only a *leader* can interact with the client; any request to the follower node is redirected to the leader node.
