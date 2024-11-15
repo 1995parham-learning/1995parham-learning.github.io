@@ -19,3 +19,7 @@ Consensus typically arises in the context of replicated state machines, a genera
 - **Multiple Server system** : The client interacts with a system having multiple servers. Such systems can be of two types :
   - Symmetric : _Any of the multiple servers_ can respond to the client and all the other servers are supposed to sync up with the server that responded to the client’s request, and
   - Asymmetric : Only the _elected leader server_ can respond to the client. All other servers then sync up with the leader server.
+
+## Raft consensus algorithm explained
+
+To begin with, Raft states that each node in a replicated state machine(server cluster) can stay in any of the three states, namely, leader, candidate, follower.
