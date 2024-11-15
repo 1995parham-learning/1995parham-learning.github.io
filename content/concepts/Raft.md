@@ -40,4 +40,4 @@ Raft algorithm uses two types of Remote Procedure Calls (RPCs) to carry out the 
 ## Leader election
 
 In order to maintain authority as a Leader of the cluster, the Leader node sends heartbeat to express dominion to other Follower nodes. A leader election takes place when a _Follower node times out_ while waiting for a heartbeat from the Leader node.
-At this point of time, the timed out node changes it state to Candidate state, votes for itself and issues RequestVotes RPC to establish majority and attempt to become the Leader.
+At this point of time, the timed out node changes it state to Candidate state, votes for itself and issues **RequestVotes** RPC to establish majority and attempt to become the Leader.
