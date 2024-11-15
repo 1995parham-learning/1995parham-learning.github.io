@@ -193,6 +193,7 @@ Operations on collections, on the contrary, are part of the consensus which guar
 Practically, it means that if the cluster is in a transition state - either electing a new leader after a failure or starting up, the collection update operations will be denied.
 
 You may use the cluster REST API to check the state of the consensus.
+
 ## Sharding
 
 A Collection in Qdrant is made of one or more shards. _A shard is an independent store of points which is able to perform all operations provided by collections_. There are two methods of distributing points across shards:
