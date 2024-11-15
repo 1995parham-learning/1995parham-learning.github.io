@@ -1,4 +1,3 @@
-
 ## `contextlib`
 
 This module provides utilities for common tasks involving the `with` statement.
