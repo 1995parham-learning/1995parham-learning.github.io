@@ -34,5 +34,6 @@ Every term starts with an election to determine the new leader. The candidates a
 If no majority is established, the situation is called a **split vote** and the term ends with no leader. Hence, a term can have **at most** one leader.
 
 Raft algorithm uses two types of Remote Procedure Calls (RPCs) to carry out the functions:
+
 - **RequestVotes** RPC is sent by the Candidate nodes to gather votes during an election
 - **AppendEntries** is used by the Leader node for replicating the log entries and also as a heartbeat mechanism to check if a server is still up. If heartbeat is responded back to, the server is up else, the server is down. Be noted that the heartbeats do not contain any log entries.
