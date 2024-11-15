@@ -28,9 +28,9 @@ To begin with, Raft states that each node in a replicated state machine(server c
 - A _candidate_ can ask for votes to become the leader.
 - A _follower_ only responds to candidate(s) or the leader.
 
-To maintain these servers status(es), the Raft algorithm divides time into small terms of arbitrary length. Each term is identified by a monotonically increasing number, called **term number**.
+To maintain these servers' status(es), the Raft algorithm divides time into small terms of arbitrary length. Each term is identified by a monotonically increasing number, called **term number**.
 This term number is maintained by every node and is passed while communications between nodes.
-Every term starts with an election to determine the new leader. The candidates ask for votes from other server nodes(followers) to gather majority. If the majority is gathered, the candidate becomes the leader for the current term.
+Every term starts with an election to determine the new leader. The candidates ask for votes from other server nodes(followers) to gather a majority. If the majority is gathered, the candidate becomes the leader for the current term.
 If no majority is established, the situation is called a **split vote** and the term ends with no leader. Hence, a term can have **at most** one leader.
 
 Raft algorithm uses two types of Remote Procedure Calls (RPCs) to carry out the functions:
