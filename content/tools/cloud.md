@@ -1,7 +1,3 @@
----
-title: Cloud
-icon: skill-icons:kubernetes
----
 
 [@1995parham-learning/cloud-roadmap](https://github.com/1995parham-learning/cloud-roadmap)
 
