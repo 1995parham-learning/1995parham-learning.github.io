@@ -23,7 +23,7 @@ From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 > Network namespace is logically another copy of the network stack,
 > with its own routes, firewall rules, and network devices.
 
-[[Network Namespace]]
+[[Network Namespace | read more...]]
 
 ## Set up your Kubernetes cluster
 
