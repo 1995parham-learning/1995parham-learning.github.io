@@ -205,9 +205,7 @@ Each node knows where all parts of the collection are stored through the [conse
 
 ### Choosing the right number of shards
 
-When you create a collection, Qdrant splits the collection into `shard_number` shards. If left unset, `shard_number` is set to the number of nodes in your cluster when the collection was created. The `shard_number` _cannot be changed without recreating the collection_.
-
-http://pythontypescriptrustjavacsharpgo
+When you create a collection, Qdrant splits the collection into `shard_number` shards. If left unset, `shard_number` is set to the number of nodes in your cluster when the collection was created. The `shard_number` *cannot be changed without recreating the collection*.
 
 ```http
 PUT /collections/{collection_name}
@@ -222,7 +220,8 @@ PUT /collections/{collection_name}
 
 To ensure all nodes in your cluster are evenly utilized, the number of shards must be a multiple of the number of nodes you are currently running in your cluster.
 
-> Aside: Advanced use cases such as multitenancy may require an uneven distribution of shards. See [Multitenancy](https://qdrant.tech/articles/multitenancy/).
+> [!note]
+> Advanced use cases such as multitenancy may require an uneven distribution of shards. See [Multitenancy](https://qdrant.tech/articles/multitenancy/).
 
 We recommend creating at least 2 shards per node to allow future expansion without having to re-shard. Re-sharding should be avoided since it requires creating a new collection. In-place re-sharding is planned for a future version of Qdrant.
 
