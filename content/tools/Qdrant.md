@@ -223,7 +223,7 @@ To ensure all nodes in your cluster are evenly utilized, the number of shards mu
 > [!note]
 > Advanced use cases such as multitenancy may require an uneven distribution of shards. See [Multitenancy](https://qdrant.tech/articles/multitenancy/).
 
-We recommend creating at least 2 shards per node to allow future expansion without having to re-shard. Re-sharding should be avoided since it requires creating a new collection. In-place re-sharding is planned for a future version of Qdrant.
+**We recommend creating at least 2 shards per node to allow future expansion without having to re-shard**. Re-sharding should be avoided since it requires creating a new collection. _In-place re-sharding is planned for a future version of Qdrant_.
 
 If you anticipate a lot of growth, we recommend 12 shards since you can expand from 1 node up to 2, 3, 6, and 12 nodes without having to re-shard. Having more than 12 shards in a small cluster may not be worth the performance overhead.
 
