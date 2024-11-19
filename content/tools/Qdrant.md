@@ -203,11 +203,11 @@ A Collection in Qdrant is made of one or more shards. _A shard is an independent
 
 Each node knows where all parts of the collection are stored through the [consensus protocol](https://qdrant.tech/documentation/guides/distributed_deployment/#raft), so when you send a search request to one Qdrant node, it automatically queries all other nodes to obtain the full search result.
 
-### [](https://qdrant.tech/documentation/guides/distributed_deployment/#choosing-the-right-number-of-shards)Choosing the right number of shards
+### Choosing the right number of shards
 
-When you create a collection, Qdrant splits the collection into `shard_number` shards. If left unset, `shard_number` is set to the number of nodes in your cluster when the collection was created. The `shard_number` cannot be changed without recreating the collection.
+When you create a collection, Qdrant splits the collection into `shard_number` shards. If left unset, `shard_number` is set to the number of nodes in your cluster when the collection was created. The `shard_number` _cannot be changed without recreating the collection_.
 
-httppythontypescriptrustjavacsharpgo
+http://pythontypescriptrustjavacsharpgo
 
 ```http
 PUT /collections/{collection_name}
