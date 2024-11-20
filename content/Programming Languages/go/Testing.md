@@ -118,3 +118,6 @@ container, err := testcontainers.GenericContainer(ctx, testcontainers.GenericCon
     Started:          true,
 })
 ```
+
+## What is Testcontainers?
+
