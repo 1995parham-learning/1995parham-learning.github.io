@@ -98,5 +98,8 @@ type WithStats interface {
 }
 ```
 
-Writing tests with `testify` is awesome, so use them. Also, I write tests with mock for the higher modules and tests the low level one with the real dependencies.
-For application that has really great mocks like `redis`, I have used them instead of real one.
+Writing tests with `testify` is awesome, so use them. Also, I write tests with mock for the higher modules and tests the low level one with the real dependencies. For application that has really great mocks like `redis`, I have used them instead of real one.
+
+## Test Containers
+> Unit tests with real dependencies
+
