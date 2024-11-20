@@ -121,3 +121,7 @@ container, err := testcontainers.GenericContainer(ctx, testcontainers.GenericCon
 
 ## What is Testcontainers?
 
+Testcontainers is a library that provides easy and lightweight APIs for bootstrapping local development and test dependencies with real services wrapped in Docker containers. Using Testcontainers, you can write tests that depend on the same services you use in production without mocks or in-memory services.
+### What problems does Testcontainers solve?
+
+Cloud-native infrastructure and microservices have taken control away from developers and made it painful to work locally. Let’s say you’re a developer working on “My Service”, within the following architecture:
