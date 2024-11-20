@@ -106,7 +106,8 @@ Writing tests with `testify` is awesome, so use them. Also, I write tests with m
 
 Testcontainers is an open source library for providing throwaway, lightweight instances of databases, message brokers, web browsers, or just about anything that can run in a Docker container.
 
-```go
+No more need for mocks or complicated environment configurations. Define your test dependencies as code, then simply run your tests and containers will be created and then deleted.
+
 ```go
 container, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
     ContainerRequest: testcontainers.ContainerRequest{
@@ -116,5 +117,4 @@ container, err := testcontainers.GenericContainer(ctx, testcontainers.GenericCon
     },
     Started:          true,
 })
-```
 ```
