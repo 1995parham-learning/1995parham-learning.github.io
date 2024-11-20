@@ -101,5 +101,20 @@ type WithStats interface {
 Writing tests with `testify` is awesome, so use them. Also, I write tests with mock for the higher modules and tests the low level one with the real dependencies. For application that has really great mocks like `redis`, I have used them instead of real one.
 
 ## Test Containers
+
 > Unit tests with real dependencies
 
+Testcontainers is an open source library for providing throwaway, lightweight instances of databases, message brokers, web browsers, or just about anything that can run in a Docker container.
+
+```go
+```go
+container, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
+    ContainerRequest: testcontainers.ContainerRequest{
+        Image:        "redis:5.0.3-alpine",
+        ExposedPorts: []string{"6379/tcp"},
+        WaitingFor:   wait.ForLog("Ready to accept connections"),
+    },
+    Started:          true,
+})
+```
+```
