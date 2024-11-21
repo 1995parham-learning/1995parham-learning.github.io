@@ -262,7 +262,7 @@ DELETE /cluster/peer/{peer_id}
 
 After that, Qdrant will exclude the node from the consensus, and the instance will be ready for shutdown.
 
-### [](https://qdrant.tech/documentation/guides/distributed_deployment/#user-defined-sharding)User-defined sharding
+### User-defined sharding
 
 _Available as of v1.7.0_
 
@@ -297,11 +297,9 @@ Then you will have `1 * 10 * 2 = 20` total physical shards in the collection.
 
 Physical shards require a large amount of resources, so make sure your custom sharding key has a low cardinality.
 
-For large cardinality keys, it is recommended to use [partition by payload](https://qdrant.tech/documentation/guides/multiple-partitions/#partition-by-payload) instead.
+For large cardinality keys, it is recommended to use partition by payload instead.
 
 To specify the shard for each point, you need to provide the `shard_key` field in the upsert request:
-
-httppythontypescriptrustjavacsharpgo
 
 ```http
 PUT /collections/{collection_name}/points
@@ -318,7 +316,7 @@ PUT /collections/{collection_name}/points
 
 Using the same point ID across multiple shard keys is **not supported\*** and should be avoided.
 
-**\*** When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
+ * When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
 
 Now you can target the operations to specific shard(s) by specifying the `shard_key` on any operation you do. Operations that do not specify the shard key will be executed on **all** shards.
 
