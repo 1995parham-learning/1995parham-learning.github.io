@@ -140,3 +140,7 @@ You can use Testcontainers with any testing library you are already familiar wit
 - **Before Test execution:** Start your required services (databases, messaging systems etc.) as Docker containers using the Testcontainers API. Once the required containers start, configure or update your application configuration to use these containerized services and optionally initialize data needed for the test.
 - **During Test execution:** Your tests run using these containerized services.
 - **After Test execution:** Testcontainers takes care of destroying containers irrespective of whether tests are executed successfully or there were any failures.
+
+### GenericContainer abstraction
+
+Testcontainers provides a programmatic abstraction called `GenericContainer` representing a Docker container. You can use GenericContainer to start a Docker container, get any container information such as hostname (the host under which the mapped ports are reachable), mapped ports, and stop the container.
