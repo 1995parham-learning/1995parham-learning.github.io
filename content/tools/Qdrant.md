@@ -229,7 +229,7 @@ If you anticipate a lot of growth, we recommend 12 shards since you can expand f
 
 Shards are evenly distributed across all existing nodes when a collection is first created, but Qdrant does not automatically rebalance shards if your cluster size or replication factor changes (since this is an expensive operation on large clusters). See the next section for how to move shards after scaling operations.
 
-### [](https://qdrant.tech/documentation/guides/distributed_deployment/#moving-shards)Moving shards
+### Moving shards
 
 _Available as of v0.9.0_
 
