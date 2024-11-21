@@ -1,5 +1,8 @@
 {
   "vimMode": true,
   "alwaysUpdateLinks": true,
-  "strictLineBreaks": true
+  "strictLineBreaks": true,
+  "spellcheckDictionary": [
+    "Testcontainers"
+  ]
 }
