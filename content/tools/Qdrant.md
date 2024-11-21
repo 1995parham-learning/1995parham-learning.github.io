@@ -272,8 +272,6 @@ A clear use-case for this feature is managing a multi-tenant collection, where e
 
 To enable user-defined sharding, set `sharding_method` to `custom` during collection creation:
 
-httppythontypescriptrustjavacsharpgo
-
 ```http
 PUT /collections/{collection_name}
 {
@@ -314,9 +312,9 @@ PUT /collections/{collection_name}/points
 }
 ```
 
-Using the same point ID across multiple shard keys is **not supported\*** and should be avoided.
+Using the same point ID across multiple shard keys is **not supported** and should be avoided.
 
-\* When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
+* When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
 
 Now you can target the operations to specific shard(s) by specifying the `shard_key` on any operation you do. Operations that do not specify the shard key will be executed on **all** shards.
 
