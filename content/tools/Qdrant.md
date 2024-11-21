@@ -235,9 +235,9 @@ _Available as of v0.9.0_
 
 Qdrant allows moving shards between nodes in the cluster and removing nodes from the cluster. This functionality unlocks the ability to dynamically scale the cluster size without downtime. It also allows you to upgrade or migrate nodes without downtime.
 
-Qdrant provides the information regarding the current shard distribution in the cluster with the Collection Cluster info API.
+Qdrant provides the information regarding the current shard distribution in the cluster with the _Collection Cluster info API_.
 
-Use the _Update collection cluster setup API_ to initiate the shard transfer:
+Use the *Update collection cluster setup API* to initiate the shard transfer:
 
 ```http
 POST /collections/{collection_name}/cluster
@@ -250,9 +250,9 @@ POST /collections/{collection_name}/cluster
 }
 ```
 
-You likely want to select a specific [shard transfer method](https://qdrant.tech/documentation/guides/distributed_deployment/#shard-transfer-method) to get desired performance and guarantees.
+You likely want to select a specific _shard transfer method_ to get desired performance and guarantees.
 
-After the transfer is initiated, the service will process it based on the used [transfer method](https://qdrant.tech/documentation/guides/distributed_deployment/#shard-transfer-method) keeping both shards in sync. Once the transfer is completed, the old shard is deleted from the source node.
+After the transfer is initiated, the service will process it based on the used _transfer method_ keeping both shards in sync. Once the transfer is completed, the old shard is deleted from the source node.
 
 In case you want to downscale the cluster, you can move all shards away from a peer and then remove the peer using the [remove peer API](https://api.qdrant.tech/master/api-reference/distributed/remove-peer).
 
