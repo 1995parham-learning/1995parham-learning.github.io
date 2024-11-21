@@ -79,7 +79,7 @@ print("Embeddings:\n", embeddings_list)
 
 The embeddings don’t look too interesting, but here is a visual.
 
-```bash
+```text
 Embeddings:
  [[-0.11154681  0.00976555  0.00524559  0.01951888 -0.01934952  0.02943449
   -0.10519084 -0.00890122  0.01831438  0.01486796 -0.05642502  0.02561352
