@@ -143,4 +143,4 @@ You can use Testcontainers with any testing library you are already familiar wit
 
 ### GenericContainer abstraction
 
-Testcontainers provides a programmatic abstraction called `GenericContainer` representing a Docker container. You can use GenericContainer to start a Docker container, get any container information such as hostname (the host under which the mapped ports are reachable), mapped ports, and stop the container.
+Testcontainers provides a programmatic abstraction called `GenericContainer` representing a Docker container. You can use `GenericContainer` to start a Docker container, get any container information such as hostname (the host under which the mapped ports are reachable), mapped ports, and stop the container.
