@@ -330,9 +330,9 @@ There are different methods for transferring a shard, such as moving or replicat
 
 Available shard transfer methods are:
 
-- `stream_records`: *(default)* transfer by streaming just its records to the target node in batches.
+- `stream_records`: _(default)_ transfer by streaming just its records to the target node in batches.
 - `snapshot`: transfer including its index and quantized data by utilizing a snapshot automatically.
-- `wal_delta`: *(auto recovery default)* transfer by resolving WAL() difference; the operations that were missed.
+- `wal_delta`: _(auto recovery default)_ transfer by resolving WAL difference; the operations that were missed.
 
 Each has pros, cons and specific requirements, some of which are:
 
