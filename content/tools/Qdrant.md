@@ -322,7 +322,7 @@ Another use-case would be to have shards that track the data chronologically, so
 
 ![Sharding per day](https://qdrant.tech/docs/sharding-per-day.png)
 
-### [](https://qdrant.tech/documentation/guides/distributed_deployment/#shard-transfer-method)Shard transfer method
+### Shard transfer method
 
 _Available as of v1.7.0_
 
@@ -331,8 +331,8 @@ There are different methods for transferring a shard, such as moving or replicat
 Available shard transfer methods are:
 
 - `stream_records`: *(default)* transfer by streaming just its records to the target node in batches.
-- `snapshot`: transfer including its index and quantized data by utilizing a [snapshot](https://qdrant.tech/documentation/concepts/snapshots/) automatically.
-- `wal_delta`: *(auto recovery default)* transfer by resolving [WAL](https://qdrant.tech/documentation/concepts/storage/#versioning) difference; the operations that were missed.
+- `snapshot`: transfer including its index and quantized data by utilizing a snapshot automatically.
+- `wal_delta`: *(auto recovery default)* transfer by resolving WAL() difference; the operations that were missed.
 
 Each has pros, cons and specific requirements, some of which are:
 
