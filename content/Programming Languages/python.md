@@ -64,7 +64,7 @@ except FileNotFoundError:
 
 ### [uv](https://docs.astral.sh/uv/)
 
-An extremely fast Python package and project manager, written in Rust.
+An extremely fast Python package and project manager, written in _Rust_.
 
 ![Shows a bar chart with benchmark results.](https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark)
 
@@ -81,6 +81,8 @@ An extremely fast Python package and project manager, written in Rust.
 - 🖥️ Supports macOS, Linux, and Windows.
 
 #### [Installing uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)
+
+In my opinion using `pipx` is the best way for installing `ux` on local system.
 
 ```bash
 pipx install uv
