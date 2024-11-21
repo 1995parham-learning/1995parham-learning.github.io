@@ -15,7 +15,7 @@ FastEmbed easily integrates with [[Qdrant]] for a variety of multimodal search p
 
 ### Install FastEmbed
 
-```python
+```bash
 pip install fastembed
 ```
 
@@ -34,7 +34,7 @@ In this example, you will use the default text embedding model, `BAAI/bge-small-
 from fastembed import TextEmbedding
 ```
 
-## [](https://qdrant.tech/documentation/fastembed/fastembed-quickstart/#add-sample-data)Add sample data
+### Add sample data
 
 Now, add two sample documents. Your documents must be in a list, and each document must be a string
 
@@ -52,7 +52,7 @@ embedding_model = TextEmbedding()
 print("The model BAAI/bge-small-en-v1.5 is ready to use.")
 ```
 
-## [](https://qdrant.tech/documentation/fastembed/fastembed-quickstart/#embed-data)Embed data
+### Embed data
 
 Generate embeddings for both documents.
 
@@ -64,14 +64,14 @@ len(embeddings_list[0])
 
 Here is the sample document list. The default model creates vectors with 384 dimensions.
 
-```bash
+```text
 Document: This is built to be faster and lighter than other embedding libraries e.g. Transformers, Sentence-Transformers, etc.
 Vector of type: <class 'numpy.ndarray'> with shape: (384,)
 Document: fastembed is supported by and maintained by Qdrant.
 Vector of type: <class 'numpy.ndarray'> with shape: (384,)
 ```
 
-## [](https://qdrant.tech/documentation/fastembed/fastembed-quickstart/#visualize-embeddings)Visualize embeddings
+### Visualize embeddings
 
 ```python
 print("Embeddings:\n", embeddings_list)
