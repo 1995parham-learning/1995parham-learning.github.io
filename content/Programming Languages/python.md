@@ -88,6 +88,8 @@ pipx install uv
 
 #### [Using uv in Docker](https://docs.astral.sh/uv/guides/integration/docker/#using-uv-in-docker)
 
+In the following Dockerfile we are using the default virtual env path which is `.venv` in the current directory.
+
 ```dockerfile
 FROM python:3.13-slim
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
