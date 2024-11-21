@@ -114,7 +114,7 @@ COPY . .
 
 ```
 
-In the following Dockerfile we changed the virtual env path. T
+In the following Dockerfile we changed the virtual env path. It would be useful when you want to mount a folder that already has `.venv`.
 
 ```dockerfile
 FROM python:3.13-slim
