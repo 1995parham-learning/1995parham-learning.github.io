@@ -10,6 +10,7 @@ FastEmbed easily integrates with [[Qdrant]] for a variety of multimodal search p
 - _Fast_: By using ONNX, FastEmbed ensures high-performance inference across various hardware platforms.
 - _Accurate_: FastEmbed aims for better accuracy and recall than models like OpenAI’s `Ada-002`. It always uses model which demonstrate strong results on the MTEB leaderboard.
 - _Support_: FastEmbed supports a wide range of models, including multilingual ones, to meet diverse use case needs.
+
 ## How to Generate Text Embedings with FastEmbed
 
 ### Install FastEmbed
@@ -58,7 +59,7 @@ Generate embeddings for both documents.
 ```python
 embeddings_generator = embedding_model.embed(documents)
 embeddings_list = list(embeddings_generator)
-len(embeddings_list[0])  
+len(embeddings_list[0])
 ```
 
 Here is the sample document list. The default model creates vectors with 384 dimensions.
