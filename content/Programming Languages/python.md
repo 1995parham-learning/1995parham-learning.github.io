@@ -85,6 +85,7 @@ An extremely fast Python package and project manager, written in Rust.
 ```bash
 pipx install uv
 ```
+
 #### [Using uv in Docker](https://docs.astral.sh/uv/guides/integration/docker/#using-uv-in-docker)
 
 ```dockerfile
@@ -113,6 +114,8 @@ COPY . .
 
 ```
 
+In the following Dockerfile we changed the virtual env path. T
+
 ```dockerfile
 FROM python:3.13-slim
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
@@ -120,9 +123,12 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 # ENV TZ="Asia/Tehran"
 ENV TZ="UTC"
 
-RUN apt-get update \
-  && apt-get install -y sudo git curl htop openssh-client
-
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  build-essential \
+  curl \
+  software-properties-common \
+  git \
+  && rm -rf /var/lib/apt/lists/*
 WORKDIR /var/www/app
 
 ENV UV_PROJECT_ENVIRONMENT=/opt/venv
@@ -131,8 +137,8 @@ RUN --mount=type=cache,target=/root/.cache/uv \
   --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
   uv sync --frozen
 ENV PATH="/opt/venv/bin:$PATH"
-COPY . /var/www/app
-RUN python manage.py collectstatic --noinput --clear
+
+COPY . .
 ```
 
 ## Class and static methods
