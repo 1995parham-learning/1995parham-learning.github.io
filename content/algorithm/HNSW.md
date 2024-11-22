@@ -6,3 +6,4 @@ The Hierarchical navigable small world (HNSW) algorithm is a graph-based approxi
 > [!info]
 > For high-dimensional data, tree-based exact vector search techniques such as the k-d tree and R-tree do not perform well enough because of the curse of dimensionality.
 
+The HNSW graph offers an **approximate** k-nearest neighbor search which scales _logarithmically_ even in high-dimensional data.
