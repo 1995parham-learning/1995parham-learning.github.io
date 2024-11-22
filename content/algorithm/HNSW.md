@@ -1,0 +1,1 @@
+> Nearest neighbor search without an index involves computing the distance from the query to each point in the database, which for large datasets is computationally prohibitive.
