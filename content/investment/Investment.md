@@ -1,6 +1,3 @@
----
-title: Introduction
----
 
 The stock market is where **buyers** and **sellers** meet to decide on the price to buy or sell securities, usually with the assistance of a **broker**.
 
