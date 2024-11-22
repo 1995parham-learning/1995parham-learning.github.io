@@ -16,6 +16,6 @@ Skip lists work by building several layers of linked lists. On the first layer, 
 
 To search a skip list, we start at the highest layer with the longest _‘skips’_ and move along the edges towards the right (below). If we find that the current node ‘key’ is _greater than_ the key we are searching for — we know we have overshot our target, so we move down to previous node in the _next_ level.
 
-![[Pasted image 20241122202818.png]]
+![[Pasted image 20241122202818.png|A probability skip list structure, we start on the top layer. If our current key is greater than the key we are searching for (or we reach end), we drop to the next layer.]]
 
 HNSW inherits the same layered format with longer edges in the highest layers (for fast search) and shorter edges in the lower layers (for accurate search).
