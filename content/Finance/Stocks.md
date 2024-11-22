@@ -1,6 +1,3 @@
----
-title: Stocks
----
 
 Stocks are a _type of security_ that gives stockholders a share of ownership in a company. Stocks also are called **equities**.
 
