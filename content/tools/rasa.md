@@ -21,30 +21,30 @@ to accomplish with that intent, keep them in lowercase, and avoid spaces and spe
 version: "3.1"
 
 nlu:
-  - intent: greet
-    examples: |
-      - Hey
-      - Hi
-      - hey there [Sara](name)
+    - intent: greet
+      examples: |
+          - Hey
+          - Hi
+          - hey there [Sara](name)
 
-  - intent: faq/language
-    examples: |
-      - What language do you speak?
-      - Do you only handle english?
+    - intent: faq/language
+      examples: |
+          - What language do you speak?
+          - Do you only handle english?
 
 stories:
-  - story: greet and faq
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: faq
-      - action: utter_faq
+    - story: greet and faq
+      steps:
+          - intent: greet
+          - action: utter_greet
+          - intent: faq
+          - action: utter_faq
 
 rules:
-  - rule: Greet user
-    steps:
-      - intent: greet
-      - action: utter_greet
+    - rule: Greet user
+      steps:
+          - intent: greet
+          - action: utter_greet
 ```
 
 ### Gather Real Data
@@ -70,28 +70,28 @@ For example: a telephone number, a person's name, a location, the name of a prod
 
 ```yaml
 stories:
-  - story: migrate from IBM Watson
-    steps:
-      - intent: migration
-        entities:
-          - product
-      - slot_was_set:
-          - product: Watson
-      - action: utter_watson_migration
+    - story: migrate from IBM Watson
+      steps:
+          - intent: migration
+            entities:
+                - product
+          - slot_was_set:
+                - product: Watson
+          - action: utter_watson_migration
 
-  - story: migrate from Dialogflow
-    steps:
-      - intent: migration
-        entities:
-          - product
-      - slot_was_set:
-          - product: Dialogflow
-      - action: utter_dialogflow_migration
+    - story: migrate from Dialogflow
+      steps:
+          - intent: migration
+            entities:
+                - product
+          - slot_was_set:
+                - product: Dialogflow
+          - action: utter_dialogflow_migration
 
-  - story: migrate from unspecified
-    steps:
-      - intent: migration
-      - action: utter_ask_migration_product
+    - story: migrate from unspecified
+      steps:
+          - intent: migration
+          - action: utter_ask_migration_product
 ```
 
 To avoid intent confusion, group these training examples into single migration intent and make the

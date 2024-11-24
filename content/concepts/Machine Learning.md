@@ -16,8 +16,8 @@ Inputs + Outputs → Machine learning → Patterns
 6. What are false positives and false negatives? Why are they significant?
 7. What are some examples of supervised machine learning used in the world of business today?
 8. Explain the difference between deductive and inductive reasoning in machine learning.
-   - Inductive reasoning by stating that it involves deriving general principles or rules from specific observations or examples.
-   - Deductive reasoning typically requires pre-existing knowledge or explicit rules to apply to new data.
+    - Inductive reasoning by stating that it involves deriving general principles or rules from specific observations or examples.
+    - Deductive reasoning typically requires pre-existing knowledge or explicit rules to apply to new data.
 9. How do you know when to use classification or regression?
 10. Explain how a random forest works.
 
@@ -26,37 +26,37 @@ Inputs + Outputs → Machine learning → Patterns
 There are generally four main components of the process: - project setup - data pipeline - modeling (selecting, training, and debugging your model) - serving (testing, deploying, maintaining)
 
 1. Project setup:
-   - Goals
-   - User experience
-   - Performance constraints
-   - Evaluation
-   - Personalization
-   - Project constraints
+    - Goals
+    - User experience
+    - Performance constraints
+    - Evaluation
+    - Personalization
+    - Project constraints
 2. Data pipeline:
-   - For every formulation of the problem, you should tell what kind of data and how much data you need.
-   - Data availability and collection
-   - User data
-   - Storage
-   - Data preprocessing and representation
-   - Challenges
-   - Privacy
-   - Biases
+    - For every formulation of the problem, you should tell what kind of data and how much data you need.
+    - Data availability and collection
+    - User data
+    - Storage
+    - Data preprocessing and representation
+    - Challenges
+    - Privacy
+    - Biases
 3. Modeling
-   - selection
-   - training
-   - debugging
-   - hyperparameter tuning
-   - scaling
+    - selection
+    - training
+    - debugging
+    - hyperparameter tuning
+    - scaling
 4. Serving
-   - Performance/Interpret-ability tradeoff
-   - With data parallelism, each worker has its own copy of the model and does all the computation necessary for the model.
+    - Performance/Interpret-ability tradeoff
+    - With data parallelism, each worker has its own copy of the model and does all the computation necessary for the model.
 
 ## Requirements for ML systems
 
-- Reliability
-- Scalability
-- Maintainability
-- Adaptability
+-   Reliability
+-   Scalability
+-   Maintainability
+-   Adaptability
 
 ## The relationship between MLOps and ML Systems Design
 
@@ -71,5 +71,5 @@ can work together to satisfy the specified objectives and requirements.
 
 ## Recommender systems
 
-- Content based system: recommends based on the items similarity
-- Collaborative filtering: recommends based on the users usage similarity (based on matrix factorization)
+-   Content based system: recommends based on the items similarity
+-   Collaborative filtering: recommends based on the users usage similarity (based on matrix factorization)

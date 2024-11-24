@@ -6,27 +6,27 @@ Argo CD is implemented as a Kubernetes controller which continuously monitors ru
 and compares the current, live state against the desired target state (as specified in the Git repo).
 A deployed application whose live state deviates from the target state is considered `OutOfSync`.
 
-- **Application** A group of Kubernetes resources as defined by a manifest. This is a Custom Resource Definition (CRD).
-- **Application source type** Which Tool is used to build the application.
-- **Target state** The desired state of an application, as represented by files in a Git repository.
-- **Live state** The live state of that application. What pods etc. are deployed.
-- **Sync status** Whether the live state matches the target state. Is the deployed application the same as Git says it should be?
-- **Sync** The process of making an application move to its target state. E.g. by applying changes to a Kubernetes cluster.
-- **Sync operation status** Whether a sync succeeded.
-- **Refresh** Compare the latest code in Git with the live state. Figure out what is different.
-- **Health** The health of the application, is it running correctly? Can it serve requests?
-- **Tool** A tool to create manifests from a directory of files. E.g. `Kustomize`. See **Application Source Type**.
-- **Configuration management tool** See Tool.
-- **Configuration management plugin** A custom tool.
+-   **Application** A group of Kubernetes resources as defined by a manifest. This is a Custom Resource Definition (CRD).
+-   **Application source type** Which Tool is used to build the application.
+-   **Target state** The desired state of an application, as represented by files in a Git repository.
+-   **Live state** The live state of that application. What pods etc. are deployed.
+-   **Sync status** Whether the live state matches the target state. Is the deployed application the same as Git says it should be?
+-   **Sync** The process of making an application move to its target state. E.g. by applying changes to a Kubernetes cluster.
+-   **Sync operation status** Whether a sync succeeded.
+-   **Refresh** Compare the latest code in Git with the live state. Figure out what is different.
+-   **Health** The health of the application, is it running correctly? Can it serve requests?
+-   **Tool** A tool to create manifests from a directory of files. E.g. `Kustomize`. See **Application Source Type**.
+-   **Configuration management tool** See Tool.
+-   **Configuration management plugin** A custom tool.
 
 ### Tools
 
 Argo CD supports several different ways in which Kubernetes manifests can be defined:
 
-- `Kustomize` applications
-- Helm charts
-- A directory of YAML/JSON/Jsonnet manifests, including Jsonnet.
-- Any custom config management tool configured as a config management plugin
+-   `Kustomize` applications
+-   Helm charts
+-   A directory of YAML/JSON/Jsonnet manifests, including Jsonnet.
+-   Any custom config management tool configured as a config management plugin
 
 #### `kustomize`
 
@@ -38,28 +38,28 @@ Any patches that target existing `Kustomization` file will be merged.
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-inline-guestbook
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    name: kustomize-inline-guestbook
+    namespace: argocd
+    finalizers:
+        - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: test1
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: kustomize-guestbook
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
-    targetRevision: master
-    kustomize:
-      patches:
-        - target:
-            kind: Deployment
-            name: guestbook-ui
-          patch: |-
-            - op: replace
-              path: /spec/template/spec/containers/0/ports/0/containerPort
-              value: 443
+    destination:
+        namespace: test1
+        server: https://kubernetes.default.svc
+    project: default
+    source:
+        path: kustomize-guestbook
+        repoURL: https://github.com/argoproj/argocd-example-apps.git
+        targetRevision: master
+        kustomize:
+            patches:
+                - target:
+                      kind: Deployment
+                      name: guestbook-ui
+                  patch: |-
+                      - op: replace
+                        path: /spec/template/spec/containers/0/ports/0/containerPort
+                        value: 443
 ```
 
 #### `helm`
@@ -70,41 +70,41 @@ Helm is _only used to inflate charts_ with `helm template`. The lifecycle of the
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secrets
-  namespace: argocd
+    name: sealed-secrets
+    namespace: argocd
 spec:
-  project: default
-  source:
-    chart: sealed-secrets
-    repoURL: https://bitnami-labs.github.io/sealed-secrets
-    targetRevision: 1.16.1
-    # targetRevision: HEAD
-    helm:
-      releaseName: sealed-secrets
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: kubeseal
+    project: default
+    source:
+        chart: sealed-secrets
+        repoURL: https://bitnami-labs.github.io/sealed-secrets
+        targetRevision: 1.16.1
+        # targetRevision: HEAD
+        helm:
+            releaseName: sealed-secrets
+    destination:
+        server: "https://kubernetes.default.svc"
+        namespace: kubeseal
 ```
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secrets
-  namespace: argocd
+    name: sealed-secrets
+    namespace: argocd
 spec:
-  destination:
-    namespace: dispatching-production
-    server: https://kubernetes.default.svc
-    project: dispatching
-    source:
-      helm:
-        valueFiles:
-          - values.yaml
-          - ./production-teh2-okd4.yaml
-      path: daghigh
-      repoURL: git@github.com:snapp-incubator/daghigh-sulfur.git
-      targetRevision: HEAD
+    destination:
+        namespace: dispatching-production
+        server: https://kubernetes.default.svc
+        project: dispatching
+        source:
+            helm:
+                valueFiles:
+                    - values.yaml
+                    - ./production-teh2-okd4.yaml
+            path: daghigh
+            repoURL: git@github.com:snapp-incubator/daghigh-sulfur.git
+            targetRevision: HEAD
 ```
 
 ### Project
@@ -112,10 +112,10 @@ spec:
 Projects provide a logical grouping of applications, which is useful when Argo CD is used by multiple teams.
 Projects provides the following features:
 
-- restrict what may be deployed (trusted Git source repositories)
-- restrict where apps may be deployed to (destination clusters and namespaces)
-- restrict what kinds of objects may or may not be deployed (e.g. RBAC, CRDs, DaemonSets, NetworkPolicy etc.)
-- defining project roles to provide application RBAC
+-   restrict what may be deployed (trusted Git source repositories)
+-   restrict where apps may be deployed to (destination clusters and namespaces)
+-   restrict what kinds of objects may or may not be deployed (e.g. RBAC, CRDs, DaemonSets, NetworkPolicy etc.)
+-   defining project roles to provide application RBAC
 
 Every application belongs to a **single project**. If unspecified, an application belongs to the `default` project,
 which is created automatically and by default, permits deployments from any source repo, to any cluster, and all
@@ -126,11 +126,11 @@ resource kinds.
 Argo Workflows is an open source **container-native** workflow engine for orchestrating parallel jobs on Kubernetes.
 It is implemented as a Kubernetes CRD.
 
-- Define workflows where each step in the workflow is a container.
-- Model multistep workflows as a sequence of tasks or capture the dependencies between tasks using a graph (DAG).
-- Easily run compute intensive jobs for machine learning or data processing in a fraction of the time
-  using Argo Workflows on Kubernetes.
-- Run CI/CD pipelines natively on Kubernetes without configuring complex software development products.
+-   Define workflows where each step in the workflow is a container.
+-   Model multistep workflows as a sequence of tasks or capture the dependencies between tasks using a graph (DAG).
+-   Easily run compute intensive jobs for machine learning or data processing in a fraction of the time
+    using Argo Workflows on Kubernetes.
+-   Run CI/CD pipelines natively on Kubernetes without configuring complex software development products.
 
 ### Hello World
 
@@ -140,19 +140,19 @@ Below, we run a container on a Kubernetes cluster using an Argo workflow templat
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow # new type of k8s spec
 metadata:
-  generateName: hello-world- # name of the workflow spec
+    generateName: hello-world- # name of the workflow spec
 spec:
-  entrypoint: whalesay # invoke the whalesay template
-  templates:
-    - name: whalesay # name of the template
-      container:
-        image: docker/whalesay
-        command: [cowsay]
-        args: ["hello world"]
-        resources: # limit the resources
-          limits:
-            memory: 32Mi
-            cpu: 100m
+    entrypoint: whalesay # invoke the whalesay template
+    templates:
+        - name: whalesay # name of the template
+          container:
+              image: docker/whalesay
+              command: [cowsay]
+              args: ["hello world"]
+              resources: # limit the resources
+                  limits:
+                      memory: 32Mi
+                      cpu: 100m
 ```
 
 Argo adds a new kind of Kubernetes spec called a `Workflow`.
@@ -165,8 +165,8 @@ Being able to specify the `entrypoint` is more useful when there is more than on
 
 The Workflow is the most important resource in Argo and serves two important functions:
 
-- It defines the workflow to be executed.
-- It stores the state of the workflow.
+-   It defines the workflow to be executed.
+-   It stores the state of the workflow.
 
 Because of these dual responsibilities, a Workflow should be treated as a _live object_.
 It is not only a static definition, but is also an "instance" of said definition.
@@ -193,9 +193,9 @@ a container here the same way you do anywhere else in Kubernetes.
 ```yaml
 - name: whalesay
   container:
-    image: docker/whalesay
-    command: [cowsay]
-    args: ["hello world"]
+      image: docker/whalesay
+      command: [cowsay]
+      args: ["hello world"]
 ```
 
 #### SCRIPT
@@ -208,12 +208,12 @@ or `{{steps.<NAME>.outputs.result}}`, depending on how it was called.
 ```yaml
 - name: gen-random-int
   script:
-    image: python:alpine3.6
-    command: [python]
-    source: |
-      import random
-      i = random.randint(1, 100)
-      print(i)
+      image: python:alpine3.6
+      command: [python]
+      source: |
+          import random
+          i = random.randint(1, 100)
+          print(i)
 ```
 
 #### RESOURCE
@@ -224,14 +224,14 @@ or patch resources on your cluster.
 ```yaml
 - name: k8s-owner-reference
   resource:
-    action: create
-    manifest: |
-      apiVersion: v1
-      kind: ConfigMap
-      metadata:
-        generateName: owned-eg-
-      data:
-        some: value
+      action: create
+      manifest: |
+          apiVersion: v1
+          kind: ConfigMap
+          metadata:
+            generateName: owned-eg-
+          data:
+            some: value
 ```
 
 ## Argo Events

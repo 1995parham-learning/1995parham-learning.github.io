@@ -1,8 +1,8 @@
 @use "../../styles/variables.scss" as *;
 
 .backlinks {
-  flex-direction: column;
-  /*&:after {
+    flex-direction: column;
+    /*&:after {
       pointer-events: none;
       content: "";
       width: 100%;
@@ -15,30 +15,30 @@
       background: linear-gradient(transparent 0px, var(--light));
     }*/
 
-  & > h3 {
-    font-size: 1rem;
-    margin: 0;
-  }
-
-  & > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
-
-    & > li {
-      & > a {
-        background-color: transparent;
-      }
+    & > h3 {
+        font-size: 1rem;
+        margin: 0;
     }
-  }
 
-  & > .overflow {
-    &:after {
-      display: none;
+    & > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0;
+
+        & > li {
+            & > a {
+                background-color: transparent;
+            }
+        }
     }
-    height: auto;
-    @media all and not ($desktop) {
-      height: 250px;
+
+    & > .overflow {
+        &:after {
+            display: none;
+        }
+        height: auto;
+        @media all and not ($desktop) {
+            height: 250px;
+        }
     }
-  }
 }

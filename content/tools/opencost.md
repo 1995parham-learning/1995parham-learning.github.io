@@ -8,13 +8,13 @@ real-time cost monitoring, showback, and chargeback.
 
 ## Integrating Cloud Costs and Configuration
 
-- Amazon Web Services
-- Microsoft Azure
-- Google Cloud Platform
-- Oracle Cloud Infrastructure
-- On-Premises
-- Alibaba
-- Scaleway
+-   Amazon Web Services
+-   Microsoft Azure
+-   Google Cloud Platform
+-   Oracle Cloud Infrastructure
+-   On-Premises
+-   Alibaba
+-   Scaleway
 
 ## Installing On-Premises
 

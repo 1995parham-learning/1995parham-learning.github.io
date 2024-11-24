@@ -6,13 +6,13 @@
 
 Concepts from cloud computing that seems interesting to me and worth time.
 
-- SR-IOV
-- Data Plane Development Kit ([`dpdk`](https://github.com/DPDK/dpdk))
-- Dark Fiber
-- Open Virtual Network ([`ovn`](https://github.com/ovn-org/ovn))
-- CPU Pinning / Processor affinity
-- Steal time
-- Distribute Network cards between multiple CPU bus
+-   SR-IOV
+-   Data Plane Development Kit ([`dpdk`](https://github.com/DPDK/dpdk))
+-   Dark Fiber
+-   Open Virtual Network ([`ovn`](https://github.com/ovn-org/ovn))
+-   CPU Pinning / Processor affinity
+-   Steal time
+-   Distribute Network cards between multiple CPU bus
 
 ## Container Networking
 
@@ -45,11 +45,11 @@ Runbooks can be in either electronic or in physical book form.
 
 ## Operators
 
-- EMQX: [@emqx/emqx-operator](https://github.com/emqx/emqx-operator)
-- RabbitMQ: [@rabbitmq/cluster-operator](https://github.com/rabbitmq/cluster-operator)
-- NATS: [@nats-io/nats-operator](https://github.com/nats-io/nats-operator)
-- NATS: [@nats-io/nack](https://github.com/nats-io/nack)
-- Kafka: [@strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)
+-   EMQX: [@emqx/emqx-operator](https://github.com/emqx/emqx-operator)
+-   RabbitMQ: [@rabbitmq/cluster-operator](https://github.com/rabbitmq/cluster-operator)
+-   NATS: [@nats-io/nats-operator](https://github.com/nats-io/nats-operator)
+-   NATS: [@nats-io/nack](https://github.com/nats-io/nack)
+-   Kafka: [@strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator)
 
 ## Ephemeral Container
 
@@ -103,21 +103,21 @@ of the condition is defaulted to _False_.
 kind: Pod
 ---
 spec:
-  readinessGates:
-    - conditionType: "www.example.com/feature-1"
+    readinessGates:
+        - conditionType: "www.example.com/feature-1"
 status:
-  conditions:
-    - type: Ready # a built in PodCondition
-      status: "False"
-      lastProbeTime: null
-      lastTransitionTime: 2018-01-01T00:00:00Z
-    - type: "www.example.com/feature-1" # an extra PodCondition
-      status: "False"
-      lastProbeTime: null
-      lastTransitionTime: 2018-01-01T00:00:00Z
-  containerStatuses:
-    - containerID: docker://abcd...
-      ready: true
+    conditions:
+        - type: Ready # a built in PodCondition
+          status: "False"
+          lastProbeTime: null
+          lastTransitionTime: 2018-01-01T00:00:00Z
+        - type: "www.example.com/feature-1" # an extra PodCondition
+          status: "False"
+          lastProbeTime: null
+          lastTransitionTime: 2018-01-01T00:00:00Z
+    containerStatuses:
+        - containerID: docker://abcd...
+          ready: true
 ```
 
 The Pod conditions you add must have names that meet the Kubernetes _label key format_.
@@ -146,8 +146,8 @@ Node _affinity is a property of Pods_ that attracts them to a set of nodes (eith
 Taints are the opposite -- they allow a node to repel a set of pods.
 :::
 
-- Affinity is used to proactively place pods on specific nodes based on desired criteria.
-- Tolerations are used to allow pods to be scheduled on nodes that might have restrictions (taints).
+-   Affinity is used to proactively place pods on specific nodes based on desired criteria.
+-   Tolerations are used to allow pods to be scheduled on nodes that might have restrictions (taints).
 
 You add a taint to a node using `kubectl taint`. For example,
 
@@ -169,38 +169,38 @@ the `kubectl` taint line above, and thus a pod with either toleration would be a
 
 ```yaml
 tolerations:
-  - key: "key1"
-    operator: "Equal"
-    value: "value1"
-    effect: "NoSchedule"
+    - key: "key1"
+      operator: "Equal"
+      value: "value1"
+      effect: "NoSchedule"
 ```
 
 ```yaml
 tolerations:
-  - key: "key1"
-    operator: "Exists"
-    effect: "NoSchedule"
+    - key: "key1"
+      operator: "Exists"
+      effect: "NoSchedule"
 ```
 
 The default Kubernetes scheduler takes taint and toleration into account when selecting a node to run a particular Pod.
 
 The allowed values for the `effect` field are:
 
-- `NoExecute`
-  This affects pods that are already running on the node as follows:
+-   `NoExecute`
+    This affects pods that are already running on the node as follows:
 
-  - Pods that do not tolerate the taint are evicted immediately
-  - Pods that tolerate the taint without specifying `tolerationSeconds` in their toleration specification remain bound forever
-  - Pods that tolerate the taint with a specified `tolerationSeconds` remain bound for the specified amount of time.
-    After that time elapses, the node lifecycle controller evicts the Pods from the node.
+    -   Pods that do not tolerate the taint are evicted immediately
+    -   Pods that tolerate the taint without specifying `tolerationSeconds` in their toleration specification remain bound forever
+    -   Pods that tolerate the taint with a specified `tolerationSeconds` remain bound for the specified amount of time.
+        After that time elapses, the node lifecycle controller evicts the Pods from the node.
 
-- `NoSchedule`
-  No new Pods will be scheduled on the tainted node unless they have a matching toleration.
-  Pods currently running on the node are not evicted.
-- `PreferNoSchedule`
-  `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`.
-  The control plane will try to avoid placing a Pod that does not tolerate the taint on the node,
-  but it is not guaranteed.
+-   `NoSchedule`
+    No new Pods will be scheduled on the tainted node unless they have a matching toleration.
+    Pods currently running on the node are not evicted.
+-   `PreferNoSchedule`
+    `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`.
+    The control plane will try to avoid placing a Pod that does not tolerate the taint on the node,
+    but it is not guaranteed.
 
 For setting affinity, there are constraints like:
 
@@ -241,18 +241,18 @@ Static pods do not support ephemeral containers.
 
 Kyverno (Greek for “govern”) is a policy engine designed specifically for Kubernetes. Some of its many features include:
 
-- policies as Kubernetes resources (no new language to learn!)
-- **validate**, **mutate**, **generate**, or **cleanup** (remove) any resource
-- verify container images for software supply chain security
-- inspect image metadata
-- match resources using label selectors and wildcards
-- validate and mutate using overlays (like Kustomize!)
-- synchronize configurations across Namespaces
-- block nonconforming resources using admission controls, or report policy violations
-- self-service reports (no proprietary audit log!)
-- self-service policy exceptions
-- test policies and validate resources using the Kyverno CLI, in your CI/CD pipeline, before applying to your cluster
-- manage policies as code using familiar tools like `git` and `kustomize`
+-   policies as Kubernetes resources (no new language to learn!)
+-   **validate**, **mutate**, **generate**, or **cleanup** (remove) any resource
+-   verify container images for software supply chain security
+-   inspect image metadata
+-   match resources using label selectors and wildcards
+-   validate and mutate using overlays (like Kustomize!)
+-   synchronize configurations across Namespaces
+-   block nonconforming resources using admission controls, or report policy violations
+-   self-service reports (no proprietary audit log!)
+-   self-service policy exceptions
+-   test policies and validate resources using the Kyverno CLI, in your CI/CD pipeline, before applying to your cluster
+-   manage policies as code using familiar tools like `git` and `kustomize`
 
 Kyverno runs as a [dynamic admission controller](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) in a Kubernetes cluster.
 Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server
@@ -434,10 +434,10 @@ a load balancing component; you must provide one, or you can integrate your Kube
 
 Metal-LB is a load balancer solution that works by:
 
-- Assigning IP addresses: It assigns specific IP addresses to individual services or a group of services.
-- Advertising to BGP neighbors: It then advertises these IP addresses to Border Gateway Protocol (BGP) neighbors.
-  This means it informs other network devices (like routers) about the availability of these services and
-  their corresponding IP addresses.
+-   Assigning IP addresses: It assigns specific IP addresses to individual services or a group of services.
+-   Advertising to BGP neighbors: It then advertises these IP addresses to Border Gateway Protocol (BGP) neighbors.
+    This means it informs other network devices (like routers) about the availability of these services and
+    their corresponding IP addresses.
 
 This process allows traffic to be directed to the correct services based on the IP addresses advertised by Metal-LB.
 
@@ -507,8 +507,8 @@ with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/)
 
 Factors taken into account for scheduling decisions include:
 
-- Individual and collective resource requirements
-- Hardware/Software/Policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
+-   Individual and collective resource requirements
+-   Hardware/Software/Policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
 
 #### 4. `kube-controller-manager`
 
@@ -519,10 +519,10 @@ but to _reduce complexity, they are all compiled into a single binary and run in
 
 There are many different types of controllers. Some examples of them are:
 
-- Node controller: Responsible for noticing and responding when nodes go down.
-- Job controller: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
-- EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).
-- ServiceAccount controller: Create default ServiceAccounts for new namespaces.
+-   Node controller: Responsible for noticing and responding when nodes go down.
+-   Job controller: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
+-   EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).
+-   ServiceAccount controller: Create default ServiceAccounts for new namespaces.
 
 The above is not an exhaustive list.
 
@@ -543,9 +543,9 @@ to improve performance or to help tolerate failures.
 
 The following controllers can have cloud provider dependencies:
 
-- Node controller: For checking the cloud provider to determine if a node has been deleted in the cloud after it stops responding
-- Route controller: For setting up routes in the underlying cloud infrastructure
-- Service controller: For creating, updating and deleting cloud provider load balancers
+-   Node controller: For checking the cloud provider to determine if a node has been deleted in the cloud after it stops responding
+-   Route controller: For setting up routes in the underlying cloud infrastructure
+-   Service controller: For creating, updating and deleting cloud provider load balancers
 
 ### Node Components
 

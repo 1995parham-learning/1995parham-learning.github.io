@@ -6,8 +6,8 @@ title: Dwelling Types
 
 Where someone lives. **Houses, apartments, and condos** are all dwellings.
 
-- [List of house types](https://en.wikipedia.org/wiki/List_of_house_types)
-- [Type of Dwelling Reference Guide, Census of Population, 2021](https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/001/98-500-x2021001-eng.cfm)
+-   [List of house types](https://en.wikipedia.org/wiki/List_of_house_types)
+-   [Type of Dwelling Reference Guide, Census of Population, 2021](https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/001/98-500-x2021001-eng.cfm)
 
 The biggest difference between a condo and an apartment is ownership.
 An [apartment](https://www.bankrate.com/real-estate/what-is-an-apartment/)

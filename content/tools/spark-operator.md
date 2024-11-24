@@ -39,57 +39,57 @@ oc apply -f spark-pi.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: spark-role
+    name: spark-role
 rules:
-  - apiGroups:
-      - ""
-    resources:
-      - pods
-      - pods/log
-      - services
-      - configmaps
-      - persistentvolumeclaims
-    verbs:
-      - create
-      - delete
-      - deletecollection
-      - get
-      - list
-      - patch
-      - update
-      - watch
-  - apiGroups:
-      - sparkoperator.k8s.io
-    resources:
-      - sparkapplications
-    verbs:
-      - create
-      - delete
-      - deletecollection
-      - get
-      - list
-      - patch
-      - update
-      - watch
-  - apiGroups:
-      - sparkoperator.k8s.io
-    resources:
-      - sparkapplications/status
-    verbs:
-      - get
-      - list
-      - watch
-  - apiGroups:
-      - sparkoperator.k8s.io
-    resources:
-      - scheduledsparkapplications
-    verbs:
-      - create
-      - delete
-      - deletecollection
-      - get
-      - list
-      - patch
-      - update
-      - watch
+    - apiGroups:
+          - ""
+      resources:
+          - pods
+          - pods/log
+          - services
+          - configmaps
+          - persistentvolumeclaims
+      verbs:
+          - create
+          - delete
+          - deletecollection
+          - get
+          - list
+          - patch
+          - update
+          - watch
+    - apiGroups:
+          - sparkoperator.k8s.io
+      resources:
+          - sparkapplications
+      verbs:
+          - create
+          - delete
+          - deletecollection
+          - get
+          - list
+          - patch
+          - update
+          - watch
+    - apiGroups:
+          - sparkoperator.k8s.io
+      resources:
+          - sparkapplications/status
+      verbs:
+          - get
+          - list
+          - watch
+    - apiGroups:
+          - sparkoperator.k8s.io
+      resources:
+          - scheduledsparkapplications
+      verbs:
+          - create
+          - delete
+          - deletecollection
+          - get
+          - list
+          - patch
+          - update
+          - watch
 ```

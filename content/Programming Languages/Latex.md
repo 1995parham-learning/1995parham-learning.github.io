@@ -36,20 +36,20 @@ $pdflatex = 'pdflatex -interaction=nonstopmode -shell-escape';
 
 > A modernized, complete, self-contained TeX/LaTeX engine, powered by XeTeX and TeXLive.
 
-- Tectonic **automatically downloads support files**, so you don’t have to install a full LaTeX system in
-  order to start using it. If you start using a new LaTeX package, Tectonic just pulls down the files it needs and
-  continues processing. The underlying "bundle" technology allows for **completely reproducible document compiles**.
-- Tectonic has sophisticated logic and **automatically loops TeX and BibTeX** as needed, and only as much as needed.
-- The tectonic command-line program is **quiet and never stops to ask for input**.
-- Thanks to the power of XeTeX, Tectonic can use modern OpenType fonts and is fully Unicode-enabled.
+-   Tectonic **automatically downloads support files**, so you don’t have to install a full LaTeX system in
+    order to start using it. If you start using a new LaTeX package, Tectonic just pulls down the files it needs and
+    continues processing. The underlying "bundle" technology allows for **completely reproducible document compiles**.
+-   Tectonic has sophisticated logic and **automatically loops TeX and BibTeX** as needed, and only as much as needed.
+-   The tectonic command-line program is **quiet and never stops to ask for input**.
+-   Thanks to the power of XeTeX, Tectonic can use modern OpenType fonts and is fully Unicode-enabled.
 
 ## Packages and Where to find them
 
-- [@josephwright/beamer](https://github.com/josephwright/beamer)
-- [@moderncv/moderncv](https://github.com/moderncv/moderncv)
-- [CTAN: Package bidi](https://ctan.org/pkg/bidi)
-- [CTAN: Package tocloft](https://ctan.org/pkg/tocloft)
-- [CTAN: Package fancyhdr](https://ctan.org/pkg/fancyhdr)
-- [CTAN: Package XePersian](https://ctan.org/pkg/xepersian)
-- [CTAN: Package datetime2](https://ctan.org/pkg/datetime2)
-- [CTAN: Package xcolor](https://ctan.org/pkg/xcolor)
+-   [@josephwright/beamer](https://github.com/josephwright/beamer)
+-   [@moderncv/moderncv](https://github.com/moderncv/moderncv)
+-   [CTAN: Package bidi](https://ctan.org/pkg/bidi)
+-   [CTAN: Package tocloft](https://ctan.org/pkg/tocloft)
+-   [CTAN: Package fancyhdr](https://ctan.org/pkg/fancyhdr)
+-   [CTAN: Package XePersian](https://ctan.org/pkg/xepersian)
+-   [CTAN: Package datetime2](https://ctan.org/pkg/datetime2)
+-   [CTAN: Package xcolor](https://ctan.org/pkg/xcolor)

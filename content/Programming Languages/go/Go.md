@@ -1,4 +1,4 @@
-- [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
+-   [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)
 
 The Go programming language, also known as Golang, has gained popularity among software practitioners since its release in 2009.
 This language offers various features and advantages that make it a preferred choice for many developers.
@@ -10,11 +10,11 @@ We can use it for writing code as terminal applications or servers. I had experi
 
 Go 1.20 expands support for error wrapping to permit an error to wrap multiple other errors:
 
-- An error `e` can wrap more than one error by providing an Unwrap method that returns a `[]error`.
-- The `errors.Is` and `errors.As` functions have been updated to inspect multiply wrapped errors.
-- The `fmt.Errorf` function now supports multiple occurrences of the `%w` format verb,
-  which will cause it to return an error that wraps all of those error operands.
-- The new function `errors.Join` returns an error wrapping a list of errors.
+-   An error `e` can wrap more than one error by providing an Unwrap method that returns a `[]error`.
+-   The `errors.Is` and `errors.As` functions have been updated to inspect multiply wrapped errors.
+-   The `fmt.Errorf` function now supports multiple occurrences of the `%w` format verb,
+    which will cause it to return an error that wraps all of those error operands.
+-   The new function `errors.Join` returns an error wrapping a list of errors.
 
 ### `func As(err error, target any) bool`
 
@@ -48,7 +48,7 @@ fmt.Println(today)  // prints "1"
 
 This approach provides some of the benefits of enums, such as type safety and readable code, but it's not a perfect replacement. For example, Go doesn't prevent you from assigning any int value to a Weekday variable, whereas true enums in other languages often restrict you to a specific set of values.
 
-- [`go-enum`](https://github.com/abice/go-enum)
+-   [`go-enum`](https://github.com/abice/go-enum)
 
 `go-enum` will take a commented type declaration like this:
 
@@ -155,8 +155,8 @@ func Contains[S ~[]E, E comparable](s S, v E) bool
 `Equal` reports whether two slices are equal: the same length and all elements equal.
 If the lengths are different, `Equal` returns false. Otherwise, the elements are compared in increasing index order, and the comparison stops at the first unequal pair.
 
-- Empty and nil slices are considered equal.
-- Floating point `NaN`s are not considered equal.
+-   Empty and nil slices are considered equal.
+-   Floating point `NaN`s are not considered equal.
 
 ```go
 func Equal[S ~[]E, E comparable](s1, s2 S) bool
@@ -213,17 +213,17 @@ go install golang.org/dl/gotip@latest
 gotip download
 ```
 
-- After installation, use the `gotip` command instead of your normal `go` command to have the latest experimental features.
-- To update, run `gotip download` again. This will always download the main branch.
-- To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
+-   After installation, use the `gotip` command instead of your normal `go` command to have the latest experimental features.
+-   To update, run `gotip download` again. This will always download the main branch.
+-   To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
 
 ## `libc`
 
 You can control to use `cgo` with `CGO_ENABLED` flag in go build. There are different implementations of C standard library.
 
-- [GNU C Library (`glibc`)](https://www.gnu.org/software/libc/)
-- [`musl`](https://musl.libc.org/)
-- [Microsoft C Runtime Library](https://learn.microsoft.com/en-us/cpp/c-runtime-library/c-run-time-library-reference?view=msvc-170)
+-   [GNU C Library (`glibc`)](https://www.gnu.org/software/libc/)
+-   [`musl`](https://musl.libc.org/)
+-   [Microsoft C Runtime Library](https://learn.microsoft.com/en-us/cpp/c-runtime-library/c-run-time-library-reference?view=msvc-170)
 
 ## Logging
 
@@ -354,12 +354,12 @@ create a `Meter`.
 Meters let you create instruments that you can use to create different kinds of metrics.
 OpenTelemetry Go currently supports the following instruments:
 
-- **Counter**, a synchronous instrument that supports non-negative increments.
-- **Asynchronous Counter**, an asynchronous instrument which supports non-negative increments
-- **Histogram**, a synchronous instrument that supports arbitrary values that are statistically meaningful, such as histograms summaries, or percentile
-- **Asynchronous Gauge**, an asynchronous instrument that supports increments and decrements, such as the number of active requests
-- **UpDownCounter**, a synchronous instrument that supports increments and decrements, such as the number of active requests
-- **Asynchronous UpDown Counter**, an asynchronous instrument that supports increments and decrements
+-   **Counter**, a synchronous instrument that supports non-negative increments.
+-   **Asynchronous Counter**, an asynchronous instrument which supports non-negative increments
+-   **Histogram**, a synchronous instrument that supports arbitrary values that are statistically meaningful, such as histograms summaries, or percentile
+-   **Asynchronous Gauge**, an asynchronous instrument that supports increments and decrements, such as the number of active requests
+-   **UpDownCounter**, a synchronous instrument that supports increments and decrements, such as the number of active requests
+-   **Asynchronous UpDown Counter**, an asynchronous instrument that supports increments and decrements
 
 #### Sampler
 
@@ -455,13 +455,13 @@ as it's the first argument passed to functions that accept contexts. I see the p
    which you should access and pass. Of course, mid-chain functions can create child contexts
    to pass along if they need to share data or have flow control over the functions they call.
 
-   ```go {4,5}
-   // Create a new context.
-   parent, cancelParent := context.WithCancel(context.Background())
-   // Derive child contexts from parent.
-   childA, _ := context.WithTimeout(parent, 5 * time.Secound)
-   childB, _ := context.WithDeadline(parent, time.Now().Add(1 * time.Minute)
-   ```
+    ```go {4,5}
+    // Create a new context.
+    parent, cancelParent := context.WithCancel(context.Background())
+    // Derive child contexts from parent.
+    childA, _ := context.WithTimeout(parent, 5 * time.Secound)
+    childB, _ := context.WithDeadline(parent, time.Now().Add(1 * time.Minute)
+    ```
 
 2. Contexts are (only) passed down the call chain.
    If you're not in an entry-point function, and you need to call a function that takes a context,
@@ -474,13 +474,13 @@ as it's the first argument passed to functions that accept contexts. I see the p
 
 ## `Rangefunc`
 
-- [Go Wiki: `Rangefunc` Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
+-   [Go Wiki: `Rangefunc` Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
 
 ## Generics
 
-- [Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
-- [An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
-- [Type Parameters Proposal](https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md)
+-   [Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
+-   [An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
+-   [Type Parameters Proposal](https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md)
 
 The Go 1.18 release adds support for generics.
 Generics are a way of writing code that is independent of the specific types being used.
@@ -641,17 +641,17 @@ I will choose fiber (seems there is no need for fiber since 1.22).
 Huma is something new which wraps currently implemented routers and provides general
 add-ons like OpenAPI specification, CLI, etc.
 
-- [`fiber`](https://github.com/gofiber/fiber)
-- [`echo`](https://github.com/labstack/echo)
-- [`huma`](https://huma.rocks/)
+-   [`fiber`](https://github.com/gofiber/fiber)
+-   [`echo`](https://github.com/labstack/echo)
+-   [`huma`](https://huma.rocks/)
 
 ## Advanced Console UIs 💅
 
 [`pterm`](https://github.com/pterm/pterm) is useful when you need colorful texts.
 But when you need advance TUI features:
 
-- [bubbletea](https://github.com/charmbracelet/bubbletea)
-- [termui](https://github.com/gizak/termui)
+-   [bubbletea](https://github.com/charmbracelet/bubbletea)
+-   [termui](https://github.com/gizak/termui)
 
 ## Testing 🧨
 
@@ -677,7 +677,7 @@ It is a new library which is fun and only works on new versions of Redis:
 There is no good ORM for MongoDB in Go, so its official database driver is the best choice.
 Besides that, it has [`otelmongo`](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo) telemetry package.
 
-- [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
+-   [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
 
 ## Task Queue 😴
 
@@ -685,15 +685,15 @@ Sometimes you want to queue tasks and process them later. `Asynq` library can do
 but I think using Redis on scale is a drawback of this library.
 I prefer to use Jetstream for these kinds of things.
 
-- [asynq](https://github.com/hibiken/asynq)
+-   [asynq](https://github.com/hibiken/asynq)
 
 ## Dependency Injection 💉
 
 Generating code on Golang is not my interest, but this framework is really nice and easily can generate useful binding.
 These frameworks can do the dependency injection without code generation, and I kinda like them:
 
-- [do](https://github.com/samber/do)
-- [wire](https://github.com/google/wire)
+-   [do](https://github.com/samber/do)
+-   [wire](https://github.com/google/wire)
 
 ### [Fx](https://github.com/uber-go/fx)
 
@@ -762,15 +762,15 @@ Both of these, in turn are comprised of multiple steps.
 
 During **initialization**, Fx will,
 
-- register all constructors passed to `fx.Provide`
-- register all decorators passed to `fx.Decorate`
-- run all functions passed to `fx.Invoke`, calling constructors and decorators as needed
+-   register all constructors passed to `fx.Provide`
+-   register all decorators passed to `fx.Decorate`
+-   run all functions passed to `fx.Invoke`, calling constructors and decorators as needed
 
 During **execution**, Fx will,
 
-- Run all startup hooks appended to the application by providers, decorators, and invoked functions
-- Wait for a signal to stop running
-- Run all shutdown hooks appended to the application
+-   Run all startup hooks appended to the application by providers, decorators, and invoked functions
+-   Wait for a signal to stop running
+-   Run all shutdown hooks appended to the application
 
 ![fx-flow](fx-flow.png)
 
@@ -779,17 +779,17 @@ During **execution**, Fx will,
 Lifecycle hooks provide the ability to schedule work to be executed by Fx,
 when the application starts up or shuts down. Fx provides two kinds of hooks:
 
-- _Startup hooks_, also referred to as `OnStart` hooks. These run in the order they were appended.
-- _Shutdown hooks_, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
+-   _Startup hooks_, also referred to as `OnStart` hooks. These run in the order they were appended.
+-   _Shutdown hooks_, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
 
 Typically, components that provide a startup hook also provide a corresponding shutdown hook to release the resources they acquired at startup.
 
 Fx runs both kinds of hooks with a hard timeout enforcement (by default, 15 seconds).
 Therefore, hooks are expected to block only as long as they need to _schedule_ work. In other words,
 
-- hooks **must not** block to run long-running tasks synchronously
-- hooks **should** schedule long-running tasks in background go routines
-- shutdown hooks **should** stop the background work started by startup hooks
+-   hooks **must not** block to run long-running tasks synchronously
+-   hooks **should** schedule long-running tasks in background go routines
+-   shutdown hooks **should** stop the background work started by startup hooks
 
 #### Modules
 
@@ -866,8 +866,8 @@ GraphQL is an awesome way to communicate data with the frontend team. Using Grap
 to write queries for accessing the backend data and because of that there is no need to design different APIs
 for different requests. You have one API to rule them all.
 
-- [@99designs/gqlgen](https://github.com/99designs/gqlgen)
-- [@1995parham-teaching/students-fall-2022](https://github.com/1995parham-teaching/students-fall-2022)
+-   [@99designs/gqlgen](https://github.com/99designs/gqlgen)
+-   [@1995parham-teaching/students-fall-2022](https://github.com/1995parham-teaching/students-fall-2022)
 
 `gqlgen` can either automatically generate models based on your GraphQL schema or leverage your existing models.
 When using your own models, `gqlgen` will automatically generate field resolvers to populate fields defined in the
@@ -877,12 +877,12 @@ schema, but not defined in your model.
 
 ```yaml
 models:
-  Student:
-    model:
-      - github.com/1995parham-teaching/students/internal/model.Student
-  Course:
-    model:
-      - github.com/1995parham-teaching/students/internal/model.Course
+    Student:
+        model:
+            - github.com/1995parham-teaching/students/internal/model.Student
+    Course:
+        model:
+            - github.com/1995parham-teaching/students/internal/model.Course
 ```
 
 `model.go`:
@@ -906,11 +906,11 @@ type Course struct {
 
 ```graphql
 type Student {
-  id: String!
-  name: String!
-  courses: [Course!]
+    id: String!
+    name: String!
+    courses: [Course!]
 
-  enterance: Int
+    enterance: Int
 }
 ```
 

@@ -7,10 +7,10 @@
 
 ### Pitfalls of scratch containers
 
-- Scratch containers miss **proper user management**
-- Scratch containers miss **important folders** (`/tmp`, `/home`, `/var`)
-- Scratch containers miss **CA certificates**
-- Scratch containers miss **timezone info**
+-   Scratch containers miss **proper user management**
+-   Scratch containers miss **important folders** (`/tmp`, `/home`, `/var`)
+-   Scratch containers miss **CA certificates**
+-   Scratch containers miss **timezone info**
 
 While technically scratch base images remain a valid option to produce slim containers, in reality, _using them for production workloads would likely impose significant operational overhead_.
 
@@ -25,11 +25,11 @@ dive gcr.io/distroless/static
 
 The `dive` output tells us:
 
-- The image is **Debian-based**
-- It's just around _2 MB_ big and has a single layer (which is just great).
-- There is a Linux distro-like directory structure inside.
-- The `/etc/passwd`, `/etc/group`, and even `/etc/nsswitch.conf` files are present.
-- Certificates and the timezone db seem to be in place as well.
+-   The image is **Debian-based**
+-   It's just around _2 MB_ big and has a single layer (which is just great).
+-   There is a Linux distro-like directory structure inside.
+-   The `/etc/passwd`, `/etc/group`, and even `/etc/nsswitch.conf` files are present.
+-   Certificates and the timezone db seem to be in place as well.
 
 ### Not every program is statically linked
 
@@ -51,9 +51,9 @@ docker pull gcr.io/distroless/base
 dive gcr.io/distroless/base
 ```
 
-- It's 10 times bigger than distroless/static (but still just around _20 MB_).
-- It has two layers (and the first layer IS distroless/static).
-- The second layer brings tons of shared libraries - most notably `libc` and `openssl`.
+-   It's 10 times bigger than distroless/static (but still just around _20 MB_).
+-   It has two layers (and the first layer IS distroless/static).
+-   The second layer brings tons of shared libraries - most notably `libc` and `openssl`.
 
 ### Distroless/cc
 
@@ -67,9 +67,9 @@ dive gcr.io/distroless/cc
 
 The `dive` output tells us that:
 
-- It's a three-layered image (based on distroless/base),
-- The new layer is just about _2 MB_ big.
-- The new layer contains `libstdc++`, a bunch of static assets, and even some Python scripts (but no Python itself)!
+-   It's a three-layered image (based on distroless/base),
+-   The new layer is just about _2 MB_ big.
+-   The new layer contains `libstdc++`, a bunch of static assets, and even some Python scripts (but no Python itself)!
 
 ### At A Glance
 
@@ -77,4 +77,4 @@ The `dive` output tells us that:
 
 ## References
 
-- <https://iximiuz.com/en/posts/containers-distroless-images/>
+-   <https://iximiuz.com/en/posts/containers-distroless-images/>
