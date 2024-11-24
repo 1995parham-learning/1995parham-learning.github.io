@@ -1,5 +1,3 @@
-# Cloud Roadmap
-
 ## Difficulty
 
 - A: Basic, concept (a 1st year CS student can learn)
