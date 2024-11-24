@@ -28,14 +28,12 @@ parameters, local variables, and return addresses.
 ### Process Creation
 
 In early (or simple) operating systems, the loading process is done **eagerly**, i.e., all at once before running the program; modern OSes perform the process **lazily**, i.e., by loading pieces of code or data only as there are needed during program execution.
+
 Once the code and static data are loaded into memory, there are a few other things the OS needs to do before running the process.
 
-Some memory must be allocated for the program's **run-time stack** (or just **stack**). C programs use the stack for local variables,
-function parameters, and return addresses; the OS allocates this memory and gives it to the process.
+Some memory must be allocated for the program's **run-time stack** (or just **stack**). C programs use the stack for local variables, function parameters, and return addresses; the OS allocates this memory and gives it to the process.
 
-The OS may also allocate some memory for the program's **heap**. In C
-programs, the heap is used for explicitly requested dynamically-allocated data;
-programs request such space by calling `malloc()` and free it explicitly by calling `free()`.
+The OS may also allocate some memory for the program's **heap**. In C programs, the heap is used for explicitly requested dynamically-allocated data; programs request such space by calling `malloc()` and free it explicitly by calling `free()`.
 
 ### Process States
 
