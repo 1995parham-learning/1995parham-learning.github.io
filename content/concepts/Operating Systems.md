@@ -114,23 +114,23 @@ resides in memory.
 Separate high-level policies from low-level mechanisms.
 Policies answer _Which_ questions and mechanisms answer _How_ questions.
 
+## Hard Link vs Soft Link
+### What is a Hard Link?
 
-## *What is a Hard Link?****
+A Hard link acts as a copy (mirrored) of the selected file. It accesses the data available in the original file. If the earlier selected file is deleted, the hard link to the file will still contain the data of that file.
 
-A Hard link acts as a copy (mirrored) of the selected file. It accesses the data available in the original file. If the earlier selected file is deleted, the [hard link](https://www.geeksforgeeks.org/soft-hard-links-unixlinux/) to the file will still contain the data of that file.
-
-### Advantages of Hard Link
+**Advantages of Hard Link**:
 
 - It makes efficient use of disc space by avoiding the unnecessary creation of record blocks.
 - There is no risk of link breaking as a result of the removal of the actual file(as long as one hard hyperlink survives, the data will persist).
 - The speed of Hard Links is fast.
 
-### Limitation of Hard Link
+**Limitation of Hard Link
 
 - Cannot span several file systems.
 - Directories cannot be hyperlinked.
 
-## ****What is Soft Link?****
+## \***\*What is Soft Link?\*\***
 
 A [soft link](https://www.geeksforgeeks.org/soft-hard-links-unixlinux/) (also known as a Symbolic link) acts as a pointer or a reference to the file name. It does not access the data available in the original file. If the earlier file is deleted, the soft link will be pointing to a file that does not exist anymore.
 
