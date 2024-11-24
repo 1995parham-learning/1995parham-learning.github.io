@@ -1,5 +1,7 @@
 ## Foreign Key
 
+A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It is a column (or columns) that references a column (most often the primary key) of another table.
+
 > [!info]
 > Foreign key must be related to primary key of the destination table.
 
