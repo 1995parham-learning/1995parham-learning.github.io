@@ -27,8 +27,7 @@ parameters, local variables, and return addresses.
 
 ### Process Creation
 
-In early (or simple) operating systems, the loading process is done **eagerly**, i.e., all at once before running the program; modern OSes perform
-the process **lazily**, i.e., by loading pieces of code or data only as there are needed during program execution.
+In early (or simple) operating systems, the loading process is done **eagerly**, i.e., all at once before running the program; modern OSes perform the process **lazily**, i.e., by loading pieces of code or data only as there are needed during program execution.
 Once the code and static data are loaded into memory, there are a few other things the OS needs to do before running the process.
 
 Some memory must be allocated for the program's **run-time stack** (or just **stack**). C programs use the stack for local variables,
