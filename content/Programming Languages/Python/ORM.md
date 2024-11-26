@@ -204,8 +204,7 @@ TORTOISE_ORM = {
 }
 ```
 
-
-```bash
+```shell
 > aerich init -h
 
 Usage: aerich init [OPTIONS]
@@ -229,24 +228,20 @@ Success create migrate location ./migrations
 Success write config to pyproject.toml
 ```
 
-### Init db
-
-[](https://github.com/tortoise/aerich#init-db)
-
+```shell
 > aerich init-db
 
 Success create app migrate location ./migrations/models
 Success generate schema for app "models"
+```
 
 If your Tortoise-ORM app is not the default `models`, you must specify the correct app via `--app`, e.g. `aerich --app other_models init-db`.
 
-### Update models and make migrate
-
-[](https://github.com/tortoise/aerich#update-models-and-make-migrate)
-
+```shell
 > aerich migrate --name drop_column
 
 Success migrate 1_202029051520102929_drop_column.py
+```
 
 Format of migrate filename is `{version_num}_{datetime}_{name|update}.py`.
 
@@ -278,15 +273,15 @@ Now your db is migrated to latest.
 
 Usage: aerich downgrade [OPTIONS]
 
-  Downgrade to specified version.
+Downgrade to specified version.
 
 Options:
-  -v, --version INTEGER  Specified version, default to last.  [default: -1]
-  -d, --delete           Delete version files at the same time.  [default:
-                         False]
+-v, --version INTEGER Specified version, default to last. [default: -1]
+-d, --delete Delete version files at the same time. [default:
+False]
 
-  --yes                  Confirm the action without prompting.
-  -h, --help             Show this message and exit.
+--yes Confirm the action without prompting.
+-h, --help Show this message and exit.
 
 > aerich downgrade
 
