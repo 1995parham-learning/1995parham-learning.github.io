@@ -255,20 +255,15 @@ If you need to manually write migration, you could generate empty file:
 Success migrate 1_202326122220101229_add_index.py
 ```
 
-### Upgrade to latest version
-
-[](https://github.com/tortoise/aerich#upgrade-to-latest-version)
-
+```shell
 > aerich upgrade
 
 Success upgrade 1_202029051520102929_drop_column.py
+```
 
 Now your db is migrated to latest.
 
-### Downgrade to specified version
-
-[](https://github.com/tortoise/aerich#downgrade-to-specified-version)
-
+```shell
 > aerich downgrade -h
 
 Usage: aerich downgrade [OPTIONS]
@@ -282,10 +277,13 @@ False]
 
 --yes Confirm the action without prompting.
 -h, --help Show this message and exit.
+```
 
+```shell
 > aerich downgrade
 
 Success downgrade 1_202029051520102929_drop_column.py
+```
 
 Now your db is rolled back to the specified version.
 
