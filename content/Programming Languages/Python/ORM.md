@@ -219,7 +219,7 @@ Options:
   -h, --help               Show this message and exit.
 ```
 
-Initialize the config file and migrations location:
+Initialise the config file and migrations location:
 
 ```shell
 > aerich init -t tests.backends.mysql.TORTOISE_ORM
@@ -287,18 +287,14 @@ Success downgrade 1_202029051520102929_drop_column.py
 
 Now your db is rolled back to the specified version.
 
-### Show history
-
-[](https://github.com/tortoise/aerich#show-history)
-
+```shell
 > aerich history
 
 1_202029051520102929_drop_column.py
+```
 
-### Show heads to be migrated
-
-[](https://github.com/tortoise/aerich#show-heads-to-be-migrated)
-
+```shell
 > aerich heads
 
 1_202029051520102929_drop_column.py
+```
