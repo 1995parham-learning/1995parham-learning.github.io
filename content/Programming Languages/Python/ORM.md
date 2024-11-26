@@ -7,6 +7,7 @@ Tortoise ORM was built with relations in mind and admiration for the excellent a
 -   https://github.com/tortoise/tortoise-orm
 -   https://tortoise.github.io/
 
+It uses [Aerich
 ### Why was Tortoise ORM built?
 
 Python has many existing and mature ORMs, unfortunately they are designed with an **opposing paradigm** of how I/O gets processed. `asyncio` is relatively new technology that has a different concurrency model, and the largest change is regarding how I/O is handled.
@@ -131,15 +132,15 @@ Here we create a connection to a SQLite DB database with the default `aiosqlite`
 
 If you are running this in a simple script, you can do:
 
-```
+```python
 run_async(init())
 ```
 
-`run_async` is a helper function to run simple async Tortoise scripts. If you are running Tortoise ORM as part of a service, please have a look at [The Importance of cleaning up](https://tortoise.github.io/setup.html#cleaningup)
+`run_async` is a helper function to run simple async Tortoise scripts. If you are running Tortoise ORM as part of a service, please take a look at [The Importance of cleaning up](https://tortoise.github.io/setup.html#cleaningup)
 
 After that you can start using your models:
 
-```
+```python
 # Create instance by save
 tournament = Tournament(name='New Tournament')
 await tournament.save()
