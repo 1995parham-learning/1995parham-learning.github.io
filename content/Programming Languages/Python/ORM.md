@@ -103,15 +103,14 @@ class Team(Model):
         return self.name
 ```
 
-Note
-
-You can read more on defining models in [Models](https://tortoise.github.io/models.html#models)
+> [!Note]
+> You can read more on defining models in [Models](https://tortoise.github.io/models.html#models)
 
 After you defined all your models, tortoise needs you to init them, in order to create backward relations between models and match your db client with appropriate models.
 
 You can do it like this:
 
-```
+```python
 from tortoise import Tortoise
 
 async def init():
