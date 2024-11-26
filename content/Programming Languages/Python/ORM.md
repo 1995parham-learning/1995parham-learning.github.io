@@ -7,7 +7,8 @@ Tortoise ORM was built with relations in mind and admiration for the excellent a
 -   https://github.com/tortoise/tortoise-orm
 -   https://tortoise.github.io/
 
-It uses [Aerich
+It uses [Aerich](https://github.com/tortoise/aerich) for migrations.
+
 ### Why was Tortoise ORM built?
 
 Python has many existing and mature ORMs, unfortunately they are designed with an **opposing paradigm** of how I/O gets processed. `asyncio` is relatively new technology that has a different concurrency model, and the largest change is regarding how I/O is handled.
