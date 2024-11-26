@@ -187,3 +187,125 @@ await Tournament.filter(
     events__name__in=['Test', 'Prod']
 ).order_by('-events__participants__name').distinct()
 ```
+
+### Aerich
+
+You need to add `aerich.models` to your `Tortoise-ORM` config first. Example:
+
+```python
+TORTOISE_ORM = {
+    "connections": {"default": "mysql://root:123456@127.0.0.1:3306/test"},
+    "apps": {
+        "models": {
+            "models": ["tests.models", "aerich.models"],
+            "default_connection": "default",
+        },
+    },
+}
+```
+
+
+```bash
+> aerich init -h
+
+Usage: aerich init [OPTIONS]
+
+  Init config file and generate root migrate location.
+
+Options:
+  -t, --tortoise-orm TEXT  Tortoise-ORM config module dict variable, like
+                           settings.TORTOISE_ORM.  [required]
+  --location TEXT          Migrate store location.  [default: ./migrations]
+  -s, --src_folder TEXT    Folder of the source, relative to the project root.
+  -h, --help               Show this message and exit.
+```
+
+Initialize the config file and migrations location:
+
+```shell
+> aerich init -t tests.backends.mysql.TORTOISE_ORM
+
+Success create migrate location ./migrations
+Success write config to pyproject.toml
+```
+
+### Init db
+
+[](https://github.com/tortoise/aerich#init-db)
+
+> aerich init-db
+
+Success create app migrate location ./migrations/models
+Success generate schema for app "models"
+
+If your Tortoise-ORM app is not the default `models`, you must specify the correct app via `--app`, e.g. `aerich --app other_models init-db`.
+
+### Update models and make migrate
+
+[](https://github.com/tortoise/aerich#update-models-and-make-migrate)
+
+> aerich migrate --name drop_column
+
+Success migrate 1_202029051520102929_drop_column.py
+
+Format of migrate filename is `{version_num}_{datetime}_{name|update}.py`.
+
+If `aerich` guesses you are renaming a column, it will ask `Rename {old_column} to {new_column} [True]`. You can choose `True` to rename column without column drop, or choose `False` to drop the column then create. Note that the latter may lose data.
+
+If you need to manually write migration, you could generate empty file:
+
+```shell
+> aerich migrate --name add_index --empty
+
+Success migrate 1_202326122220101229_add_index.py
+```
+
+### Upgrade to latest version
+
+[](https://github.com/tortoise/aerich#upgrade-to-latest-version)
+
+> aerich upgrade
+
+Success upgrade 1_202029051520102929_drop_column.py
+
+Now your db is migrated to latest.
+
+### Downgrade to specified version
+
+[](https://github.com/tortoise/aerich#downgrade-to-specified-version)
+
+> aerich downgrade -h
+
+Usage: aerich downgrade [OPTIONS]
+
+  Downgrade to specified version.
+
+Options:
+  -v, --version INTEGER  Specified version, default to last.  [default: -1]
+  -d, --delete           Delete version files at the same time.  [default:
+                         False]
+
+  --yes                  Confirm the action without prompting.
+  -h, --help             Show this message and exit.
+
+> aerich downgrade
+
+Success downgrade 1_202029051520102929_drop_column.py
+
+Now your db is rolled back to the specified version.
+
+### Show history
+
+[](https://github.com/tortoise/aerich#show-history)
+
+> aerich history
+
+1_202029051520102929_drop_column.py
+
+### Show heads to be migrated
+
+[](https://github.com/tortoise/aerich#show-heads-to-be-migrated)
+
+> aerich heads
+
+1_202029051520102929_drop_column.py
