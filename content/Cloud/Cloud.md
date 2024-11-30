@@ -414,29 +414,24 @@ In Kubernetes, a `EndpointSlice` contains references to a set of network endpoin
 A Kubernetes cluster consists of a set of worker machines, called [nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), that run containerized applications. Every cluster has at least one worker node.
 
 The worker node(s) host the [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) that are the components of the application workload. The [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) manages the worker nodes and the Pods in the cluster. In production environments, the control plane usually runs across multiple computers and a cluster usually runs multiple nodes, providing fault-tolerance and high availability.
+
 ### Control Plane Components
 
 The control plane's components make global decisions about the cluster (for example, scheduling), as well as detecting and responding to cluster events (for example, starting up a new [pod](https://kubernetes.io/docs/concepts/workloads/pods/) when a Deployment's [`replicas`](https://kubernetes.io/docs/reference/glossary/?all=true#term-replica) field is unsatisfied).
 
-Control plane components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all control plane components on the same machine, and do not run user containers on this machine.
-See [Creating Highly Available clusters with `kubeadm`](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/)
-for an example control plane setup that runs across multiple machines.
+Control plane components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all control plane components on the same machine, and do not run user containers on this machine. See [Creating Highly Available clusters with `kubeadm`](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/) for an example control plane setup that runs across multiple machines.
 
 #### 1. `kube-apiserver`
 
-The API server is a component of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane)
-that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
+The API server is a component of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
 
-The main implementation of a Kubernetes API server is [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/).
-`kube-apiserver` is designed to scale horizontally—that is, it scales by deploying more instances. You can run
-several instances of `kube-apiserver` and balance traffic between those instances.
+The main implementation of a Kubernetes API server is [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/). `kube-apiserver` is designed to scale horizontally—that is, it scales by deploying more instances. You can run several instances of `kube-apiserver` and balance traffic between those instances.
 
 #### 2. `etcd`
 
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
-If your Kubernetes cluster uses `etcd` as its backing store, make sure you have a
-[back-up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
+If your Kubernetes cluster uses `etcd` as its backing store, make sure you have a [back-up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
 plan for the data.
 
 You can find in-depth information about `etcd` in the official [documentation](https://etcd.io/docs/).
