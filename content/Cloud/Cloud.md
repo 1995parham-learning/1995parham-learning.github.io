@@ -28,9 +28,7 @@ From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 
 > Do you want to run Red Hat OpenShift Container Platform on bare metal?
 
-Red Hat [CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview?intcmp=701f20000012ngPAAQ) (CRC)
-provides a minimal, preconfigured OpenShift 4 cluster on a laptop or desktop machine for development and testing purposes.
-CRC is delivered as a platform inside the VM. Now, let's look at how to configure it!
+Red Hat [CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview?intcmp=701f20000012ngPAAQ) (CRC) provides a minimal, preconfigured OpenShift 4 cluster on a laptop or desktop machine for development and testing purposes.
 
 [Getting started with CodeReady Containers](https://www.redhat.com/sysadmin/codeready-containers)
 
