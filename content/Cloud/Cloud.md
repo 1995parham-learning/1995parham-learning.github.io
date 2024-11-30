@@ -371,8 +371,7 @@ You can use them with `Deployments`, `ReplicationControllers`, `ReplicaSets`, an
 
 [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/)
 
-In Kubernetes, a Service is a method for exposing a network application that is running
-as one or more Pods in your cluster.
+In Kubernetes, a Service is a method for exposing a network application that is running as one or more Pods in your cluster.
 
 ### Service type
 
@@ -380,14 +379,11 @@ Kubernetes Service types allow you to specify what kind of Service you want.
 
 #### `ClusterIP`
 
-Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within
-the cluster. This is the default that is used if you don't explicitly specify a type for a Service.
-You can expose the Service to the public internet using an Ingress or a Gateway.
+Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default that is used if you don't explicitly specify a type for a Service. You can expose the Service to the public internet using an Ingress or a Gateway.
 
 #### `NodePort`
 
-Exposes the Service on each Node's IP at a static port (the `NodePort`). To make the node port available,
-Kubernetes sets up a cluster IP address, the same as if you had requested a Service of type: `ClusterIP`.
+Exposes the Service on each Node's IP at a static port (the `NodePort`). To make the node port available, Kubernetes sets up a cluster IP address, the same as if you had requested a Service of type: `ClusterIP`.
 
 #### `LoadBalancer`
 
