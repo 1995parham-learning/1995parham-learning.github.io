@@ -475,8 +475,8 @@ As with the `kube-controller-manager`, the `cloud-controller-manager` combines s
 The following controllers can have cloud provider dependencies:
 
 -   **Node controller**: For checking the cloud provider to determine if a node has been deleted in the cloud after it stops responding
--   **Route controller: For setting up routes in the underlying cloud infrastructure
--   Service controller: For creating, updating and deleting cloud provider load balancers
+-   **Route controller**: For setting up routes in the underlying cloud infrastructure
+-   **Service controller**: For creating, updating and deleting cloud provider load balancers
 
 ### Node Components
 
@@ -501,17 +501,12 @@ implementing part of the Kubernetes [Service](https://kubernetes.io/docs/concept
 [`kube-proxy`](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/) maintains network rules on nodes.
 These network rules allow network communication to your Pods from network sessions inside or outside your cluster.
 
-:::note
-`kube-proxy` uses the operating system packet filtering layer if there is one, and it's available.
-Otherwise, `kube-proxy` forwards the traffic itself.
-:::
+> [!note]
+> `kube-proxy` uses the operating system packet filtering layer if there is one, and it's available.
+> Otherwise, `kube-proxy` forwards the traffic itself.
 
 #### 3. Container runtime
 
 A fundamental component that empowers Kubernetes to run containers effectively. It is responsible for managing the execution and lifecycle of containers within the Kubernetes environment.
 
-Kubernetes supports container runtimes such as
-[containerd](https://containerd.io/docs/),
-[CRI-O](https://cri-o.io/#what-is-cri-o),
-and any other implementation of the
-[Kubernetes CRI (Container Runtime Interface)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
+Kubernetes supports container runtimes such as [containerd](https://containerd.io/docs/), [CRI-O](https://cri-o.io/#what-is-cri-o), and any other implementation of the [Kubernetes CRI (Container Runtime Interface)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
