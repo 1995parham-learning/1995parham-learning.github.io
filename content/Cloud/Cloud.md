@@ -57,8 +57,7 @@ kubectl debug -it --attach=false -c debugger --image=busybox ${POD_NAME}
 ```
 
 The above command adds to the target Pod a new ephemeral container called `debugger` that uses the
-`busybox:latest` image. I intentionally created it interactive (`-i`) and PTY-controlled (`-t`) so that attaching to
-it later would provide a typical interactive shell experience.
+`busybox:latest` image. I intentionally created it interactive (`-i`) and PTY-controlled (`-t`) so that attaching to it later would provide a typical interactive shell experience.
 
 ```bash
 $ ps auxf
@@ -69,9 +68,7 @@ PID   USER     TIME  COMMAND
 ```
 
 The `ps` output from inside the `debugger` container shows only the processes of that container...
-So, `kubectl debug` just gave me a shared net (and probably IPC) namespace, likely the same parent cgroup as
-for the other Pod's containers, and that's pretty much it! Sounds way too limited
-for a seamless debugging experience 🤔
+So, `kubectl debug` just gave me a shared net (and probably IPC) namespace, likely the same parent `cgroup` as for the other Pod's containers, and that's pretty much it! Sounds way too limited for a seamless debugging experience 🤔
 
 > [!note]
 > Enabling a shared PID namespace for all the containers in a Pod.
