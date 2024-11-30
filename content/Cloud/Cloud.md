@@ -272,19 +272,20 @@ In our example, this is four slices.
 
 > [!tip] Example of a pod with a limit of `200m` running on a single core machine
 > Let us pretend we expect the pod to process 1 request every second and each request should take _70ms_ to complete.
+>
 > Given that, over a 1-second period, the pod will be using only about 35 percent of the limit set.
 > However, for each _100ms_ period the pod is only allowed to use _20ms_ before being throttled, as we saw above.
 > So for the first slice the pod uses _20ms_ and is throttled.
 > In the second slice and third slice, we see the same.
 > Finally, in the fourth slice, the pod uses _10ms_ of CPU and completes the request.
 > For the remaining six slices, the pod does not request any CPU time.
-> So for three of the four periods where the pod requested CPU, it was throttled.
+> So for three of the four periods where the pod requested CPU, **it was throttled**.
+>
 > The latency of _70ms_ has grown to more than _300ms_. So despite the pod _only using 35 percent of our limit on a large timescale_, this pod is getting **heavily throttled**, and the **response time is degraded**.
 
 ### Resource units in Kubernetes
 
-Limits and requests for CPU resources are measured in _CPU_ units. In Kubernetes, 1 CPU unit is equivalent to 1
-physical CPU core, or 1 virtual core, depending on whether the node is a physical host or a
+Limits and requests for CPU resources are measured in _CPU_ units. In Kubernetes, 1 CPU unit is equivalent to 1 physical CPU core, or 1 virtual core, depending on whether the node is a physical host or a
 virtual machine running inside a physical machine.
 
 Fractional requests are allowed. When you define a container with `spec.containers[].resources.requests.cpu`
