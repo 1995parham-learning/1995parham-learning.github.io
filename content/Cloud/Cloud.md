@@ -235,8 +235,7 @@ Kyverno (Greek for “govern”) is a policy engine designed specifically for Ku
 -   manage policies as code using familiar tools like `git` and `kustomize`
 
 Kyverno runs as a [dynamic admission controller](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) in a Kubernetes cluster.
-Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server
-and applies matching policies to return results that enforce admission policies or reject requests.
+Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server and applies matching policies to return results that enforce admission policies or reject requests.
 
 ## Requests and Limits
 
