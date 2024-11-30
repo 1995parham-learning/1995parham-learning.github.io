@@ -23,5 +23,6 @@ Kubernetes aims to be extensible. CRI is one small, yet important step to enable
 The OCI Runtime Spec defines the behavior and the configuration interface of low-level container runtimes such as [runc](https://github.com/opencontainers/runc). The spec is also implemented by [crun](https://github.com/containers/crun), [youki](https://github.com/containers/youki), [gVisor](https://gvisor.dev/), [Kata Containers](https://katacontainers.io/), and others. These low-level container runtimes are usually called from high-level container runtimes such as [containerd](https://containerd.io/) and [CRI-O](https://cri-o.io/).
 
 A Standard Container bundle contains all the information needed to load and run a container. This includes the following artifacts:
+
 1. `config.json`: contains configuration data. This **REQUIRED** file **MUST** reside in the root of the bundle directory and **MUST** be named `config.json`.
 2. container’s root filesystem: the directory referenced by `root.path`, if that property is set in `config.json`.
