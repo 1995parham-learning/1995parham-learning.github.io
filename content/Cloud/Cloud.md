@@ -141,10 +141,10 @@ Affinity and tolerations are two key concepts in Kubernetes that help manage the
 They allow for fine-grained control over where pods are scheduled,
 ensuring optimal resource utilization and application performance.
 
-:::note
-Node _affinity is a property of Pods_ that attracts them to a set of nodes (either as a preference or a hard requirement).
-Taints are the opposite -- they allow a node to repel a set of pods.
-:::
+> [!note]
+> Node _affinity is a property of Pods_ that attracts them to a set of nodes (either as a preference or a hard requirement).
+>
+> Taints are the opposite -- they allow a node to repel a set of pods.
 
 -   Affinity is used to proactively place pods on specific nodes based on desired criteria.
 -   Tolerations are used to allow pods to be scheduled on nodes that might have restrictions (taints).
