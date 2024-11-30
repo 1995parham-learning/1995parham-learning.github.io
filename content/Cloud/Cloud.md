@@ -30,9 +30,8 @@ From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 
 Red Hat [CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview?intcmp=701f20000012ngPAAQ) (CRC) provides a minimal, preconfigured OpenShift 4 cluster on a laptop or desktop machine for development and testing purposes.
 
-[Getting started with CodeReady Containers](https://www.redhat.com/sysadmin/codeready-containers)
-
-[odo - Developer CLI for OpenShift and Kubernetes | Red Hat Developer](https://developers.redhat.com/products/odo/overview)
+- [Getting started with CodeReady Containers](https://www.redhat.com/sysadmin/codeready-containers)
+- [odo - Developer CLI for OpenShift and Kubernetes | Red Hat Developer](https://developers.redhat.com/products/odo/overview)
 
 ## Runbook
 
