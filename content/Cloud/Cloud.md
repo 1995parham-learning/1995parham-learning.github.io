@@ -153,8 +153,7 @@ To remove the taint added by the command above, you can run:
 kubectl taint nodes node1 key1=value1:NoSchedule-
 ```
 
-You specify a toleration for a pod in the `PodSpec`. Both of the following toleration "match" the taint created by
-the `kubectl` taint line above, and thus a pod with either toleration would be able to schedule onto `node1`:
+You specify a toleration for a pod in the `PodSpec`. Both of the following toleration "match" the taint created by the `kubectl` taint line above, and thus a pod with either toleration would be able to schedule onto `node1`:
 
 ```yaml
 tolerations:
@@ -184,12 +183,9 @@ The allowed values for the `effect` field are:
         After that time elapses, the node lifecycle controller evicts the Pods from the node.
 
 -   `NoSchedule`
-    No new Pods will be scheduled on the tainted node unless they have a matching toleration.
-    Pods currently running on the node are not evicted.
+    No new Pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node are not evicted.
 -   `PreferNoSchedule`
-    `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`.
-    The control plane will try to avoid placing a Pod that does not tolerate the taint on the node,
-    but it is not guaranteed.
+    `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`. The control plane will try to avoid placing a Pod that does not tolerate the taint on the node, but it is not guaranteed.
 
 For setting affinity, there are constraints like:
 
