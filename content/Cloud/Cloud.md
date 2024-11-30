@@ -239,14 +239,11 @@ Kyverno receives validating and mutating admission webhook HTTP callbacks from t
 
 ## Requests and Limits
 
-A request is what the container is **guaranteed to receive**. One of the most common discussions of requests is around
-_pod scheduling_. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources.
+A request is what the container is **guaranteed to receive**. One of the most common discussions of requests is around _pod scheduling_. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources.
 For example, if a pod requests a total of 2 CPUs, but each node only has 1.9 available, Kubernetes will not schedule the pod.
 
-A limit is a cap on the resources that a pod can use. Although small exceptions may exist,
-this is a very hard cap that Kubernetes enforces.
-An important note is that the CPU is considered a **compressible** resource.
-As such, if your container attempts to exceed the limit, Kubernetes throttles it.
+A limit is a cap on the resources that a pod can use. Although small exceptions may exist, this is a very hard cap that Kubernetes enforces.
+An important note is that the CPU is considered a **compressible** resource. As such, if your container attempts to exceed the limit, Kubernetes throttles it.
 This may result in degraded performance, but does not terminate or evict the pod. However,
 if a pod attempts to use more memory than the limit, Kubernetes _immediately terminates it_.
 
