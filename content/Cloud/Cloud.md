@@ -285,18 +285,13 @@ In our example, this is four slices.
 
 ### Resource units in Kubernetes
 
-Limits and requests for CPU resources are measured in _CPU_ units. In Kubernetes, 1 CPU unit is equivalent to 1 physical CPU core, or 1 virtual core, depending on whether the node is a physical host or a
-virtual machine running inside a physical machine.
+Limits and requests for CPU resources are measured in _CPU_ units. In Kubernetes, 1 CPU unit is equivalent to 1 physical CPU core, or 1 virtual core, depending on whether the node is a physical host or a virtual machine running inside a physical machine.
 
-Fractional requests are allowed. When you define a container with `spec.containers[].resources.requests.cpu`
-set to 0.5, you are requesting half as much CPU time compared to if you asked for 1.0 CPU.
-For CPU resource units, the quantity expression 0.1 is equivalent to the
-expression `100m`, which can be read as "one hundred millicpu". Some people say "one hundred millicores",
-and this is understood to mean the same thing.
+Fractional requests are allowed. When you define a container with `spec.containers[].resources.requests.cpu` set to 0.5, you are requesting half as much CPU time compared to if you asked for 1.0 CPU.
 
-Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point
-number using one of these quantity suffixes: `E`, `P`, `T`, `G`, `M,` `k`.
-You can also use the power-of-two equivalents: `Ei`, `Pi`, `Ti`, `Gi`, `Mi`, `Ki`.
+For CPU resource units, the quantity expression 0.1 is equivalent to the expression `100m`, which can be read as "one hundred millicpu". Some people say "one hundred millicores", and this is understood to mean the same thing.
+
+Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point number using one of these quantity suffixes: `E`, `P`, `T`, `G`, `M,` `k`. You can also use the power-of-two equivalents: `Ei`, `Pi`, `Ti`, `Gi`, `Mi`, `Ki`.
 
 For example, the following represent roughly the same value:
 
@@ -309,10 +304,9 @@ For example, the following represent roughly the same value:
 129M
 ```
 
-:::note
-Pay attention to the case of the suffixes. If you request `400m` of memory, this is a request for 0.4 bytes.
-Someone who types that probably meant to ask for 400 mebibytes (`400Mi`) or 400 megabytes (`400M`).
-:::
+> [!warning]
+> Pay attention to the case of the suffixes. If you request `400m` of memory, this is a request for 0.4 bytes.
+> Someone who types that probably meant to ask for 400 mebibytes (`400Mi`) or 400 megabytes (`400M`).
 
 ## Cordon and Drain
 
