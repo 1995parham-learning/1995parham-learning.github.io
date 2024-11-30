@@ -403,11 +403,9 @@ The mapping configures your cluster's DNS server to return a CNAME record with t
 
 ## Kubernetes Endpoint Slices
 
-Kubernetes' `EndpointSlice` API provides a way to track network endpoints within a Kubernetes cluster.
-`EndpointSlice`s offer a more scalable and extensible alternative to `Endpoint`s.
+Kubernetes' `EndpointSlice` API provides a way to track network endpoints within a Kubernetes cluster. `EndpointSlice`s offer a more scalable and extensible alternative to `Endpoint`s.
 
-In Kubernetes, a `EndpointSlice` contains references to a set of network endpoints.
-The control plane automatically creates `EndpointSlice`s for any Kubernetes `Service` that has a selector specified.
+In Kubernetes, a `EndpointSlice` contains references to a set of network endpoints. The control plane automatically creates `EndpointSlice`s for any Kubernetes `Service` that has a selector specified.
 
 ## Kubernetes Components
 
