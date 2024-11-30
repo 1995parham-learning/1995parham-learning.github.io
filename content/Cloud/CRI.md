@@ -18,6 +18,6 @@ Kubernetes aims to be extensible. CRI is one small, yet important step to enable
 -   [cri-containerd](https://github.com/containerd/cri)
 -   [singularity-cri](https://github.com/sylabs/singularity-cri)
 
-# What is the OCI Runtime Spec?[](https://opencontainers.org/posts/blog/2024-02-18-oci-runtime-spec-v1-2/#what-is-the-oci-runtime-spec)
+## What is the OCI Runtime Spec?
 
 The OCI Runtime Spec defines the behavior and the configuration interface of low-level container runtimes such as [runc](https://github.com/opencontainers/runc). The spec is also implemented by [crun](https://github.com/containers/crun), [youki](https://github.com/containers/youki), [gVisor](https://gvisor.dev/), [Kata Containers](https://katacontainers.io/), and others. These low-level container runtimes are usually called from high-level container runtimes such as [containerd](https://containerd.io/) and [CRI-O](https://cri-o.io/).
