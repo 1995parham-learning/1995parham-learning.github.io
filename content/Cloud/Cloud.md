@@ -181,6 +181,7 @@ The allowed values for the `effect` field are:
     -   Pods that tolerate the taint without specifying `tolerationSeconds` in their toleration specification remain bound forever
     -   Pods that tolerate the taint with a specified `tolerationSeconds` remain bound for the specified amount of time.
         After that time elapses, the node lifecycle controller evicts the Pods from the node.
+
 -   `NoSchedule`
     No new Pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node are not evicted.
 -   `PreferNoSchedule`
