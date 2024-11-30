@@ -265,17 +265,15 @@ Once the quota has been used up for the _100ms_ period, the CFS stops scheduling
 This is referred to as **throttling**. Once the new _100ms_ period begins, the quota is reset to the limit.
 In our example, this is four slices.
 
-:::note
-I want to take a brief diversion to discuss the throttling metric.
-Many people, set up alerts to see when a server is throttling as a warning of a potential problem
-(or a misconfiguration). However, if you do this you may find **high throttling** with _very low CPU utilization_.
-:::
+> [!info]
+> I want to take a brief diversion to discuss the throttling metric.
+> Many people, set up alerts to see when a server is throttling as a warning of a potential problem
+> (or a misconfiguration). However, if you do this you may find **high throttling** with _very low CPU utilization_.
 
-:::tip[Example of a pod with a limit of `200m` running on a single core machine]
-
-Let us pretend we expect the pod to process 1 request every second and each request should take _70ms_ to complete.
-Given that, over a 1-second period the pod will be using only about 35 percent of the limit set.
-However, for each _100ms_ period the pod is only allowed to use _20ms_ before being throttled, as we saw above.
+> !info[Example of a pod with a limit of `200m` running on a single core machine]
+> Let us pretend we expect the pod to process 1 request every second and each request should take _70ms_ to complete.
+> Given that, over a 1-second period the pod will be using only about 35 percent of the limit set.
+> However, for each _100ms_ period the pod is only allowed to use _20ms_ before being throttled, as we saw above.
 
 So for the first slice the pod uses _20ms_ and is throttled.
 In the second slice and third slice, we see the same.
