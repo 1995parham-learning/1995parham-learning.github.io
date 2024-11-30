@@ -270,12 +270,11 @@ In our example, this is four slices.
 > Many people, set up alerts to see when a server is throttling as a warning of a potential problem
 > (or a misconfiguration). However, if you do this you may find **high throttling** with _very low CPU utilization_.
 
-> !info[Example of a pod with a limit of `200m` running on a single core machine]
+> [!tip] Example of a pod with a limit of `200m` running on a single core machine
 > Let us pretend we expect the pod to process 1 request every second and each request should take _70ms_ to complete.
 > Given that, over a 1-second period the pod will be using only about 35 percent of the limit set.
 > However, for each _100ms_ period the pod is only allowed to use _20ms_ before being throttled, as we saw above.
-
-So for the first slice the pod uses _20ms_ and is throttled.
+> So for the first slice the pod uses _20ms_ and is throttled.
 In the second slice and third slice, we see the same.
 Finally, in the fourth slice, the pod uses _10ms_ of CPU and completes the request.
 For the remaining six slices, the pod does not request any CPU time.
