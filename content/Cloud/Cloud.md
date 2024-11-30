@@ -31,12 +31,15 @@ From [`man ip-netns`](https://man7.org/linux/man-pages/man8/ip-netns.8.html):
 Red Hat [CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview?intcmp=701f20000012ngPAAQ) (CRC) provides a minimal, preconfigured OpenShift 4 cluster on a laptop or desktop machine for development and testing purposes.
 
 -   [Getting started with CodeReady Containers](https://www.redhat.com/sysadmin/codeready-containers)
+
 ## Runbook
 
 In a computer system or network, a runbook is a _compilation of routine procedures and operations_ that the system administrator or operator carries out.
 System administrators in IT departments and NOCs use runbooks as a reference. Runbooks can be in either electronic or in physical book form.
 
 ## Operators
+
+Operators helps you to deploy and manage services on Kubernetes easier. These are the operators that I've used.
 
 -   EMQX: [@emqx/emqx-operator](https://github.com/emqx/emqx-operator)
 -   RabbitMQ: [@rabbitmq/cluster-operator](https://github.com/rabbitmq/cluster-operator)
