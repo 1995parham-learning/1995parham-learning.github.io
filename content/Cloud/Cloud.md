@@ -438,8 +438,7 @@ You can find in-depth information about `etcd` in the official [documentation](h
 
 #### 3. `kube-scheduler`
 
-Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
-with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
+Control plane component that watches for newly created [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) with no assigned [node](https://kubernetes.io/docs/concepts/architecture/nodes/), and selects a node for them to run on.
 
 Factors taken into account for scheduling decisions include:
 
@@ -450,8 +449,7 @@ Factors taken into account for scheduling decisions include:
 
 Control plane component that runs [controller](https://kubernetes.io/docs/concepts/architecture/controller/) processes.
 
-Logically, each [controller](https://kubernetes.io/docs/concepts/architecture/controller/) is a separate process,
-but to _reduce complexity, they are all compiled into a single binary and run in a single process_.
+Logically, each [controller](https://kubernetes.io/docs/concepts/architecture/controller/) is a separate process, but to _reduce complexity, they are all compiled into a single binary and run in a single process_.
 
 There are many different types of controllers. Some examples of them are:
 
