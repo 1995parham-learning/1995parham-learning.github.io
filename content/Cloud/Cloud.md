@@ -185,7 +185,7 @@ The allowed values for the `effect` field are:
 -   `NoSchedule`
     No new Pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node are not evicted.
 -   `PreferNoSchedule`
-    `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`. The control plane will try to avoid placing a Pod that does not tolerate the taint on the node, but it is not guaranteed.
+    `PreferNoSchedule` is a **preference** or **soft** version of `NoSchedule`. The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
 
 For setting affinity, there are constraints like:
 
@@ -204,12 +204,12 @@ Unlike Pods that are managed by the control plane (for example, a Deployment); i
 > Static Pods are always bound to one `kubelet` on a specific node.
 
 The `kubelet` automatically tries to create a mirror Pod on the Kubernetes API server for each static Pod.
-This means that the Pods running on a node are _visible on the API server_, but _cannot be controlled from there_.
+This means that the pods running on a node are _visible on the API server_, but _cannot be controlled from there_.
 The Pod names will be suffixed with the node hostname with a leading hyphen.
 
 > [!note]
 > If you are running clustered Kubernetes and are using static Pods to run a Pod on every node,
-you should probably be using a DaemonSet instead.
+> you should probably be using a DaemonSet instead.
 
 > [!note]
 > The spec of a static Pod cannot refer to other API objects (e.g., ServiceAccount, ConfigMap, Secret, etc).
