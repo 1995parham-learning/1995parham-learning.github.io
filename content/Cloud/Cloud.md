@@ -484,13 +484,9 @@ Node components run on every node, maintaining running pods and providing the Ku
 
 #### 1. `kubelet`
 
-An agent that runs on each [node](https://kubernetes.io/docs/concepts/architecture/nodes/) in the cluster.
-It makes sure that [containers](https://kubernetes.io/docs/concepts/containers/) are running
-in a [Pod](https://kubernetes.io/docs/concepts/workloads/pods/).
+An agent that runs on each [node](https://kubernetes.io/docs/concepts/architecture/nodes/) in the cluster. It makes sure that [containers](https://kubernetes.io/docs/concepts/containers/) are running in a [Pod](https://kubernetes.io/docs/concepts/workloads/pods/).
 
-The [`kubelet`](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) takes a set of PodSpecs
-that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running
-and healthy. The `kubelet` doesn't manage containers which were not created by Kubernetes.
+The [`kubelet`](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy. The `kubelet` doesn't manage containers which were not created by Kubernetes.
 
 #### 2. `kube-proxy`
 
