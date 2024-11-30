@@ -387,23 +387,19 @@ Exposes the Service on each Node's IP at a static port (the `NodePort`). To make
 
 #### `LoadBalancer`
 
-Exposes the Service externally using an external load balancer. Kubernetes does not directly offer
-a load balancing component; you must provide one, or you can integrate your Kubernetes cluster with a cloud provider.
+Exposes the Service externally using an external load balancer. Kubernetes **does not directly offer a load balancing component**; you must provide one, or you can integrate your Kubernetes cluster with a cloud provider.
 
 Metal-LB is a load balancer solution that works by:
 
 -   Assigning IP addresses: It assigns specific IP addresses to individual services or a group of services.
--   Advertising to BGP neighbors: It then advertises these IP addresses to Border Gateway Protocol (BGP) neighbors.
-    This means it informs other network devices (like routers) about the availability of these services and
-    their corresponding IP addresses.
+-   Advertising to BGP neighbors: It then advertises these IP addresses to Border Gateway Protocol (BGP) neighbors. This means it informs other network devices (like routers) about the availability of these services and their corresponding IP addresses.
 
 This process allows traffic to be directed to the correct services based on the IP addresses advertised by Metal-LB.
 
 #### `ExternalName`
 
 Maps the Service to the contents of the `externalName` field (for example, to the hostname `api.foo.bar.example`).
-The mapping configures your cluster's DNS server to return a CNAME record with that external hostname value.
-No proxying of any kind is set up.
+The mapping configures your cluster's DNS server to return a CNAME record with that external hostname value. No proxying of any kind is set up.
 
 ## Kubernetes Endpoint Slices
 
