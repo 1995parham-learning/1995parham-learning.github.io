@@ -453,19 +453,17 @@ Logically, each [controller](https://kubernetes.io/docs/concepts/architecture/co
 
 There are many different types of controllers. Some examples of them are:
 
--   Node controller: Responsible for noticing and responding when nodes go down.
--   Job controller: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
--   EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).
--   ServiceAccount controller: Create default ServiceAccounts for new namespaces.
+-   **Node controller**: Responsible for noticing and responding when nodes go down.
+-   **Job controller**: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
+-   **EndpointSlice controller**: Populates EndpointSlice objects (to provide a link between Services and Pods).
+-   **ServiceAccount controller**: Create default ServiceAccounts for new namespaces.
 
-The above is not an exhaustive list.
+> [!danger]
+> The above is not an exhaustive list.
 
 #### 5. `cloud-controller-manager`
 
-A Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) component that
-embeds cloud-specific control logic. The [cloud controller manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
-lets you link your cluster into your cloud provider's API, and separates out the components that interact with
-that cloud platform from components that only interact with your cluster.
+A Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) component that embeds cloud-specific control logic. The [cloud controller manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/) lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster.
 
 The cloud-controller-manager only runs controllers that are specific to your cloud provider.
 If you are running Kubernetes on your own premises, or in a learning environment inside your own PC,
