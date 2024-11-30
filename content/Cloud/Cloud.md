@@ -120,19 +120,15 @@ You can use a _Kubernetes client library_ to write code that sets custom Pod con
 
 ## Service Accounts
 
-A _service account_ provides an identity for processes that run in a Pod,
-and maps to a `ServiceAccount` object. When you authenticate to the API server, you identify
-yourself as a particular _user_.
+A _service account_ provides an identity for processes that run in a Pod, and maps to a `ServiceAccount` object. When you authenticate to the API server, you identify yourself as a particular _user_.
 
-:::note
-Kubernetes recognizes the concept of a user, however, Kubernetes itself does not have a User API.
-:::
+> [!note]
+> Kubernetes recognizes the concept of a user, however, Kubernetes itself does not have a User API.
 
 ## Affinity and Taints
 
 Affinity and tolerations are two key concepts in Kubernetes that help manage the placement of pods on worker nodes.
-They allow for fine-grained control over where pods are scheduled,
-ensuring optimal resource utilization and application performance.
+They allow for fine-grained control over where pods are scheduled, ensuring optimal resource utilization and application performance.
 
 > [!note]
 > Node _affinity is a property of Pods_ that attracts them to a set of nodes (either as a preference or a hard requirement).
