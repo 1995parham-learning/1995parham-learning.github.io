@@ -1,5 +1,3 @@
-## Argo CD
-
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
 Argo CD is implemented as a Kubernetes controller which continuously monitors running applications
@@ -19,7 +17,7 @@ A deployed application whose live state deviates from the target state is consid
 -   **Configuration management tool** See Tool.
 -   **Configuration management plugin** A custom tool.
 
-### Tools
+## Tools
 
 Argo CD supports several different ways in which Kubernetes manifests can be defined:
 
@@ -107,7 +105,7 @@ spec:
             targetRevision: HEAD
 ```
 
-### Project
+## Project
 
 Projects provide a logical grouping of applications, which is useful when Argo CD is used by multiple teams.
 Projects provides the following features:
