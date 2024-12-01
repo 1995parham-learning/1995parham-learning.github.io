@@ -7,3 +7,6 @@ Docker client-server architecture. The container is a direct descendant of `cont
 ![[Screenshot 2024-12-01 at 5.39.24 AM.png]]
 
 Podman fork/exec architecture. The user launches Podman, which executes the OCI runtime, which then launches the container. The container is a direct descendant of Podman.
+
+> [!info]
+> Your container will continue to run without the overhead of running the multiple daemons.
