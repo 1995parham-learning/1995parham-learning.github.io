@@ -1,3 +1,5 @@
+## Introduction
+
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
 Argo CD is implemented as a Kubernetes controller which continuously monitors running applications
@@ -26,11 +28,9 @@ Argo CD supports several different ways in which Kubernetes manifests can be def
 -   A directory of YAML/JSON/Jsonnet manifests, including Jsonnet.
 -   Any custom config management tool configured as a config management plugin
 
-#### `kustomize`
+### `kustomize`
 
-Patches are a way to `kustomize` resources using inline configurations in Argo CD applications.
-Patches follow the same logic as the corresponding `Kustomization`.
-Any patches that target existing `Kustomization` file will be merged.
+Patches are a way to `kustomize` resources using inline configurations in Argo CD applications. Patches follow the same logic as the corresponding `Kustomization`. Any patches that target existing `Kustomization` file will be merged.
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
@@ -60,7 +60,7 @@ spec:
                         value: 443
 ```
 
-#### `helm`
+### `helm`
 
 Helm is _only used to inflate charts_ with `helm template`. The lifecycle of the application is handled by Argo CD instead of Helm. Means syncing with ArgoCD can be end up something different from installing using `helm install`.
 
