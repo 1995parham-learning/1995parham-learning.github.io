@@ -244,9 +244,7 @@ messaging queues, GCP PubSub, SNS, SQS, etc.
 
 ### Event Source
 
-An Event Source defines the configurations required to consume events from external sources like AWS SNS, SQS,
-GCP PubSub, Webhooks, etc. It further transforms the events into
-the [cloudevents](https://github.com/cloudevents/spec) and dispatches them over to the event bus.
+An Event Source defines the configurations required to consume events from external sources like AWS SNS, SQS, GCP PubSub, Webhooks, etc. It further transforms the events into the [cloudevents](https://github.com/cloudevents/spec) and dispatches them over to the event bus.
 
 ### Event Bus
 
