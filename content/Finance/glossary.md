@@ -1,6 +1,3 @@
----
-title: Glossary
----
 
 ## Bid Price/Ask Price
 
