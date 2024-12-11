@@ -1,4 +1,3 @@
-
 Agribusiness encompasses the economic sectors for farming and farming-related commerce.
 It involves all the steps for getting agricultural goods to the market,
 including _production_, _processing_, and _distribution_.

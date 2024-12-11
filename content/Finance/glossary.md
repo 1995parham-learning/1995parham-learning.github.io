@@ -1,4 +1,3 @@
-
 ## Bid Price/Ask Price
 
 The term **bid** refers to the highest price a buyer will pay to buy a specified number of shares of a stock at any given time.
