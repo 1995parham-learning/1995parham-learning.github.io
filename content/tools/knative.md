@@ -1,7 +1,3 @@
----
-title: Knative
----
-
 ## What is Knative?
 
 Knative is a platform-agnostic solution for running serverless deployments.

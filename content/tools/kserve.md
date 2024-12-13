@@ -1,6 +1,3 @@
----
-title: KServe
----
 
 KServe provides a Kubernetes Custom Resource Definition for serving predictive and
 generative machine learning (ML) models.
