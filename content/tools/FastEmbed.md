@@ -1,4 +1,4 @@
-FastEmbed is a lightweight Python library built for embedding generation. It supports popular embedding models and offers a user-friendly experience for embedding data into vector space.
+FastEmbed is a **lightweight Python library built for embedding generation**. It supports popular _embedding models_ and offers a user-friendly experience for embedding data into vector space.
 
 By using FastEmbed, you can ensure that your embedding generation process is not only fast and efficient but also highly accurate, meeting the needs of various machine learning and natural language processing applications.
 
