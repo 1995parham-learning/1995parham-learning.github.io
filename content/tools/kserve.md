@@ -1,4 +1,4 @@
-KServe provides a Kubernetes Custom Resource Definition for serving predictive and generative machine learning (ML) models.
+KServe provides a Kubernetes Custom Resource Definition for serving predictive and generative machine learning (ML) models. It aims to solve production model serving use cases by providing high abstraction interfaces for Tensorflow, XGBoost, ScikitLearn, PyTorch, Huggingface Transformer/LLM models using standardized data plane protocols.
 
 ![[Pasted image 20241213081011.png]]
 
