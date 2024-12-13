@@ -1,5 +1,7 @@
 KServe provides a Kubernetes Custom Resource Definition for serving predictive and generative machine learning (ML) models.
 
+![[Pasted image 20241213081011.png]]
+
 ## Control Plane
 
 Responsible for reconciling the `InferenceService` custom resources. It creates the Knative serverless deployment for predictor, transformer, explainer to enable autoscaling based on incoming request workload including scaling down to zero when no traffic is received.
