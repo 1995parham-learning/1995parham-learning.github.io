@@ -123,3 +123,13 @@ func main() {
 
 }
 ```
+
+```go
+func (g *Group) SetLimit(n int)
+```
+
+`SetLimit` limits the number of active goroutines in this group to at most n. A negative value indicates no limit.
+
+Any subsequent call to the Go method will block until it can add an active goroutine without exceeding the configured limit.
+
+The limit must not be modified while any goroutines in the group are active.
