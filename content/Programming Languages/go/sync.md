@@ -60,7 +60,9 @@ func main() {
 }
 ```
 
+`WithContext` returns a new Group and an associated Context derived from `ctx`.
 
+The derived Context is canceled the first time a function passed to `Go` returns a non-nil error or the first time `Wait` returns, whichever occurs first.
 
 ```go
 package main
