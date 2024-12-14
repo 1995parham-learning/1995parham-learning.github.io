@@ -12,7 +12,7 @@ func OnceFunc(f func()) func()
 func OnceValue[T any](f func() T) func() T
 ```
 
-`OnceValue` returns a function that invokes `f` only once and returns the value returned by f. The returned function may be called concurrently.
+`OnceValue` returns a function that invokes `f` only once and returns the value returned by `f`. The returned function may be called concurrently.
 
 ```go
 func OnceValues[T1, T2 any](f func() (T1, T2)) func() (T1, T2)
