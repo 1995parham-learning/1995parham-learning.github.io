@@ -4,7 +4,11 @@ Package sync provides basic synchronization primitives such as mutual exclusion 
 
 ```go
 func OnceFunc(f func()) func()
+```
 
+`OnceFunc` returns a function that invokes `f only once. The returned function may be called concurrently.
+
+```go
 func OnceValue[T any](f func() T) func() T
 func OnceValues[T1, T2 any](f func() (T1, T2)) func() (T1, T2)
 ```
