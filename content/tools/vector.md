@@ -1,7 +1,3 @@
----
-title: Vector
-icon: logos:vector
----
 
 ![architecture](./vector/architecture.svg)
 
