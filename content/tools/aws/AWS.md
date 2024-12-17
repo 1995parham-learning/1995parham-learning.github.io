@@ -1,8 +1,3 @@
----
-title: AWS
-icon: skill-icons:aws-light
----
-
 ## Cloud Watch
 
 [@prometheus/cloudwatch_exporter](https://github.com/prometheus/cloudwatch_exporter)
@@ -143,7 +138,7 @@ With Amazon Virtual Private Cloud (Amazon VPC), you can launch AWS resources in 
 
 The following diagram shows an example VPC. The VPC has one subnet in each of the Availability Zones in the Region, EC2 instances in each subnet, and an internet gateway to allow communication between the resources in your VPC and the internet.
 
-![Untitled](./aws/Untitled.png)
+![Untitled](Untitled.png)
 
 The following features help you configure a VPC to provide the connectivity that your applications need:
 
