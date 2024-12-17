@@ -1,4 +1,3 @@
-
 ![architecture](./vector/architecture.svg)
 
 ## Concepts
