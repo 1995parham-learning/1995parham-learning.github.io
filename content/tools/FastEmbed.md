@@ -6,10 +6,10 @@ FastEmbed easily integrates with [[Qdrant]] for a variety of multimodal search p
 
 ## Why is FastEmbed useful?
 
--   _Light_: Unlike other inference frameworks, such as PyTorch, FastEmbed requires very little external dependencies. Because **it uses the ONNX runtime**, it is perfect for serverless environments like AWS Lambda.
--   _Fast_: By using ONNX, FastEmbed ensures high-performance inference across various hardware platforms.
--   _Accurate_: FastEmbed aims for better accuracy and recall than models like OpenAI’s `Ada-002`. It always uses model which demonstrate strong results on the MTEB leaderboard.
--   _Support_: FastEmbed supports a wide range of models, including multilingual ones, to meet diverse use case needs.
+- _Light_: Unlike other inference frameworks, such as PyTorch, FastEmbed requires very little external dependencies. Because **it uses the ONNX runtime**, it is perfect for serverless environments like AWS Lambda.
+- _Fast_: By using ONNX, FastEmbed ensures high-performance inference across various hardware platforms.
+- _Accurate_: FastEmbed aims for better accuracy and recall than models like OpenAI’s `Ada-002`. It always uses model which demonstrate strong results on the MTEB leaderboard.
+- _Support_: FastEmbed supports a wide range of models, including multilingual ones, to meet diverse use case needs.
 
 ## How to Generate Text Embedings with FastEmbed
 

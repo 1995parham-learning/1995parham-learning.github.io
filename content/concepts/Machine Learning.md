@@ -53,10 +53,10 @@ There are generally four main components of the process: - project setup - data 
 
 ## Requirements for ML systems
 
--   Reliability
--   Scalability
--   Maintainability
--   Adaptability
+- Reliability
+- Scalability
+- Maintainability
+- Adaptability
 
 ## The relationship between MLOps and ML Systems Design
 
@@ -71,5 +71,5 @@ can work together to satisfy the specified objectives and requirements.
 
 ## Recommender systems
 
--   Content based system: recommends based on the items similarity
--   Collaborative filtering: recommends based on the users usage similarity (based on matrix factorization)
+- Content based system: recommends based on the items similarity
+- Collaborative filtering: recommends based on the users usage similarity (based on matrix factorization)

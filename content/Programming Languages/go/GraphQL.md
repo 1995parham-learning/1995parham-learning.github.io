@@ -4,7 +4,7 @@ repo: https://github.com/1995parham-teaching/students-fall-2022
 
 GraphQL is an awesome way to communicate data with the frontend team. Using GraphQL you can ask the frontend team to write queries for accessing the backend data and because of that there is no need to design different APIs for different requests. **You have one API to rule them all**.
 
--   [@99designs/gqlgen](https://github.com/99designs/gqlgen)
+- [@99designs/gqlgen](https://github.com/99designs/gqlgen)
 
 `gqlgen` can either automatically generate models based on your GraphQL schema or leverage your existing models.
 When using your own models, `gqlgen` will automatically generate field resolvers to populate fields defined in the schema, but not defined in your model.

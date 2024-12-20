@@ -8,13 +8,13 @@ title: Deepchecks
 
 Deepchecks includes:
 
--   **Deepchecks Testing**:
-    Running built-in & your own custom Checks and Suites for Tabular, NLP & CV validation (_open source_).
--   **CI & Testing Management**:
-    Collaborating over test results and iterating efficiently until model is production-ready
-    and can be deployed (_open source & managed offering_).
--   **Deepchecks Monitoring**:
-    Tracking and validating your deployed models behavior when in production (_open source & managed offering_).
+- **Deepchecks Testing**:
+  Running built-in & your own custom Checks and Suites for Tabular, NLP & CV validation (_open source_).
+- **CI & Testing Management**:
+  Collaborating over test results and iterating efficiently until model is production-ready
+  and can be deployed (_open source & managed offering_).
+- **Deepchecks Monitoring**:
+  Tracking and validating your deployed models behavior when in production (_open source & managed offering_).
 
 ## Drift
 

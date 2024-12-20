@@ -1,333 +1,333 @@
 ## Difficulty
 
--   A: Basic, concept (a 1st year CS student can learn)
--   B: Intermediate (a fresh CS graduate can learn)
--   C: Advanced topic
--   D: Expert
+- A: Basic, concept (a 1st year CS student can learn)
+- B: Intermediate (a fresh CS graduate can learn)
+- C: Advanced topic
+- D: Expert
 
 ## Courses
 
--   <https://www.karanpratapsingh.com/courses/system-design>
+- <https://www.karanpratapsingh.com/courses/system-design>
 
 ## Concepts
 
 ### Golang
 
--   Syntax
-    -   <https://go.dev/tour/welcome/1>
-    -   <https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ>
--   🧵 Concurrency (B)
-    -   Goroutines (B)
-    -   Mutex (B)
-    -   Channels (B)
-    -   Context (B)
--   HTTP
-    -   Client (`net/http`) (B)
-        -   Request
-            -   Setting/Getting Header
-            -   Setting/Getting Query Parameters
-            -   Custom Client
-                -   Custom Timeout
-                -   HTTP-trace
-                -   Custom transport
-                    -   Skip TLS verify
-            -   Dump response
-    -   Server
-        -   `net/http`
-        -   `gorilla/mux`
-        -   [`labstack/echo`](https://echo.labstack.com/)
-            -   Advanced request multiplexing
-            -   Group register
-            -   Middlewares
-                -   JWT
-                -   Prometheus
--   JSON marshal/unmarshal
--   Config Management ([`spf13/viper`](https://github.com/spf13/viper)/[`koanf`](https://github.com/knadh/koanf)/[`spf13/pflag`](https://github.com/spf13/pflag))
-    -   Environment Variables
-    -   YAML/JSON/TOML
--   CLI (cobra)
-    -   sub-commands
-    -   flags
--   gRPC (d)
-    -   Protobuf
-    -   Code generation (which should be communicated well)
-    -   interceptors
-        -   Prometheus
-        -   log
--   Databases
-    -   [`gorm`](https://gorm.io/)
-    -   [`atlas`](https://atlasgo.io/)
-    -   [`redis/go-redis`](https://github.com/redis/go-redis)
-    -   [`redis/rueidis`](https://github.com/redis/rueidis)
-    -   client mysql
-    -   client mongo
-    -   client etcd
--   Testing
-    -   Unit testing
-    -   [testify](https://github.com/stretchr/testify)
-    -   BDD
-        -   [`gingko`](https://github.com/onsi/ginkgo)
-        -   [`gomega`](https://github.com/onsi/gomega)
--   Jaeger tracing (d)
--   Prometheus Exporter SDK
+- Syntax
+    - <https://go.dev/tour/welcome/1>
+    - <https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ>
+- 🧵 Concurrency (B)
+    - Goroutines (B)
+    - Mutex (B)
+    - Channels (B)
+    - Context (B)
+- HTTP
+    - Client (`net/http`) (B)
+        - Request
+            - Setting/Getting Header
+            - Setting/Getting Query Parameters
+            - Custom Client
+                - Custom Timeout
+                - HTTP-trace
+                - Custom transport
+                    - Skip TLS verify
+            - Dump response
+    - Server
+        - `net/http`
+        - `gorilla/mux`
+        - [`labstack/echo`](https://echo.labstack.com/)
+            - Advanced request multiplexing
+            - Group register
+            - Middlewares
+                - JWT
+                - Prometheus
+- JSON marshal/unmarshal
+- Config Management ([`spf13/viper`](https://github.com/spf13/viper)/[`koanf`](https://github.com/knadh/koanf)/[`spf13/pflag`](https://github.com/spf13/pflag))
+    - Environment Variables
+    - YAML/JSON/TOML
+- CLI (cobra)
+    - sub-commands
+    - flags
+- gRPC (d)
+    - Protobuf
+    - Code generation (which should be communicated well)
+    - interceptors
+        - Prometheus
+        - log
+- Databases
+    - [`gorm`](https://gorm.io/)
+    - [`atlas`](https://atlasgo.io/)
+    - [`redis/go-redis`](https://github.com/redis/go-redis)
+    - [`redis/rueidis`](https://github.com/redis/rueidis)
+    - client mysql
+    - client mongo
+    - client etcd
+- Testing
+    - Unit testing
+    - [testify](https://github.com/stretchr/testify)
+    - BDD
+        - [`gingko`](https://github.com/onsi/ginkgo)
+        - [`gomega`](https://github.com/onsi/gomega)
+- Jaeger tracing (d)
+- Prometheus Exporter SDK
 
 ### Network
 
--   📖 Network Warrior (first 12 chapters)
--   📖 Networking for Systems Administrators (IT Mastery)
--   🔗 [The complete flow of entering a URL in your browser](https://github.com/alex/what-happens-when)
--   OSI layers (a)
-    -   L1:
-        -   hub
-    -   L2:
-        -   MAC (a)
-        -   vLAN (b)
-            -   [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) -> such a brain friendly way of learning the fundamentals of network.
-        -   vrrp (b)
-        -   ARP (a)
-    -   L3
-        -   sub-netting, gw (a)
-        -   ip classes (A,B,C) private/public (a)
-        -   localhost (a)
-        -   link local (b)
-        -   Routing protocol (a)
-            -   routing table (a)
-            -   OSPF (b)
-            -   BGP (c)
-                -   iBGP, eBGP (c)
-                -   BGP params (d)
-                -   BGP loop prevention mechanism (d)
-                -   BGP communities (d)
-    -   L4
-        -   TCP handshake (a)
-        -   NAT (a)
-        -   TCP flow (b)
-        -   VxLAN
-            -   [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/#VXLAN) \-> such a brain friendly way of learning the fundamentals of network.
-        -   L5
-        -   TLS handshake
-            -   asymmetric crypto (a) somehow
-            -   digital signature (a)
-            -   CA and verification (a)
-            -   SNI (c)
-            -   ALPN (c)
-        -   L6
-        -   L7
-        -   HTTP (a)
-            -   Methods (GET/POST/...)
-            -   Headers
-            -   URI, Path and Query parameter
-            -   CORS (c)
-        -   HTTP2 (b)
-        -   gRPC (c)
-        -   DNS (a)
-            -   recursive resolution
-            -   records: A,AAAA, CNAME
--   Network bonding
-    -   0, 1 (b)
-    -   4 lacp 802.3ad (c)
--   Packet NIC flow (d)
-    -   dram
-    -   ring buffer
-    -   driver
-    -   XDP
--   MPLS (d)
--   FRR (d)
--   VRF (d)
+- 📖 Network Warrior (first 12 chapters)
+- 📖 Networking for Systems Administrators (IT Mastery)
+- 🔗 [The complete flow of entering a URL in your browser](https://github.com/alex/what-happens-when)
+- OSI layers (a)
+    - L1:
+        - hub
+    - L2:
+        - MAC (a)
+        - vLAN (b)
+            - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) -> such a brain friendly way of learning the fundamentals of network.
+        - vrrp (b)
+        - ARP (a)
+    - L3
+        - sub-netting, gw (a)
+        - ip classes (A,B,C) private/public (a)
+        - localhost (a)
+        - link local (b)
+        - Routing protocol (a)
+            - routing table (a)
+            - OSPF (b)
+            - BGP (c)
+                - iBGP, eBGP (c)
+                - BGP params (d)
+                - BGP loop prevention mechanism (d)
+                - BGP communities (d)
+    - L4
+        - TCP handshake (a)
+        - NAT (a)
+        - TCP flow (b)
+        - VxLAN
+            - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/#VXLAN) \-> such a brain friendly way of learning the fundamentals of network.
+        - L5
+        - TLS handshake
+            - asymmetric crypto (a) somehow
+            - digital signature (a)
+            - CA and verification (a)
+            - SNI (c)
+            - ALPN (c)
+        - L6
+        - L7
+        - HTTP (a)
+            - Methods (GET/POST/...)
+            - Headers
+            - URI, Path and Query parameter
+            - CORS (c)
+        - HTTP2 (b)
+        - gRPC (c)
+        - DNS (a)
+            - recursive resolution
+            - records: A,AAAA, CNAME
+- Network bonding
+    - 0, 1 (b)
+    - 4 lacp 802.3ad (c)
+- Packet NIC flow (d)
+    - dram
+    - ring buffer
+    - driver
+    - XDP
+- MPLS (d)
+- FRR (d)
+- VRF (d)
 
 ### Linux
 
--   TODO: add LPIC topic + LinuxFun
--   systemd (a)
--   iptables [https://iximiuz.com/en/posts/laymans-iptables-101/](https://iximiuz.com/en/posts/laymans-iptables-101/)
--   eBPF (d)
--   Netfilter
-    -   vrf (d)
-    -   route tables, pbr (c)
-    -   route (b)
-    -   `netns` (b)
-    -   `veth` pair (b)
-    -   bridge (b)
-    -   vlan aware bridge (c)
-    -   802.1q (c)
--   namespaces
-    -   nsenter
-    -   lsns
-    -   types:
-        -   mnt
-        -   pid
-        -   net
-        -   ipc
-        -   uts
-        -   user
-        -   cgroup
-        -   time
--   cgroups (c)
-    -   cgroupv1 vs cgroupv2 (d)
--   kexec (d)
--   io_urun (d)
--   storage
-    -   lvm
-        -   pv
-        -   vg
--   file
-    -   ACL
-    -   UID, GID
-    -   SELinux ls -Z
--   Docker
-    -   Great resource for introduction to the container underlying concepts-> [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
-    -   [How containers work by Julia Evans](http://library.lol/main/7DD600362F75F773B82D0736D18D383B)
-    -   dockerfile (a)
-        -   multi-stage (b)
-        -   dockerignore (b)
-        -   distroless, scratch, alpine, slim (b)
-        -   CoW (a)
-        -   Caching (b) --
-    -   components: not
-        -   Docker Daemon
-        -   HTTP API
-        -   `buildx`
-        -   `runc`
-        -   `containerd`
-    -   Network types
-        -   bridge
-        -   none
-        -   host
-        -   ipip
-        -   mcvlan
-    -   volume
-        -   readonly \`:ro\`
-        -   \`:z\`
-    -   compose:
-        -   how compose works
-        -   dns servicek
+- TODO: add LPIC topic + LinuxFun
+- systemd (a)
+- iptables [https://iximiuz.com/en/posts/laymans-iptables-101/](https://iximiuz.com/en/posts/laymans-iptables-101/)
+- eBPF (d)
+- Netfilter
+    - vrf (d)
+    - route tables, pbr (c)
+    - route (b)
+    - `netns` (b)
+    - `veth` pair (b)
+    - bridge (b)
+    - vlan aware bridge (c)
+    - 802.1q (c)
+- namespaces
+    - nsenter
+    - lsns
+    - types:
+        - mnt
+        - pid
+        - net
+        - ipc
+        - uts
+        - user
+        - cgroup
+        - time
+- cgroups (c)
+    - cgroupv1 vs cgroupv2 (d)
+- kexec (d)
+- io_urun (d)
+- storage
+    - lvm
+        - pv
+        - vg
+- file
+    - ACL
+    - UID, GID
+    - SELinux ls -Z
+- Docker
+    - Great resource for introduction to the container underlying concepts-> [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
+    - [How containers work by Julia Evans](http://library.lol/main/7DD600362F75F773B82D0736D18D383B)
+    - dockerfile (a)
+        - multi-stage (b)
+        - dockerignore (b)
+        - distroless, scratch, alpine, slim (b)
+        - CoW (a)
+        - Caching (b) --
+    - components: not
+        - Docker Daemon
+        - HTTP API
+        - `buildx`
+        - `runc`
+        - `containerd`
+    - Network types
+        - bridge
+        - none
+        - host
+        - ipip
+        - mcvlan
+    - volume
+        - readonly \`:ro\`
+        - \`:z\`
+    - compose:
+        - how compose works
+        - dns servicek
 
 ### Kubernetes
 
--   Kubernetes SDK
-    -   [https://github.com/kubernetes/apimachinery](https://github.com/kubernetes/apimachinery)
-    -   [https://github.com/kubernetes/client-go](https://github.com/kubernetes/client-go)
-    -   informers
--   Controller / Operator
-    -   controller-runtime
-    -   kubebuilder
-    -   operator-sdk
-    -   reconcile loop
-    -   k8s error checking
-    -   Finalizer
-    -   status
-    -   printable columns
-    -   default values / validations (tags)
--   Admission / Mutation Webhook
--   tests
-    -   k8s envtest
--   OKD:
-    -   [CoreOS](https://cloud.redhat.com/blog/red-hat-enterprise-linux-coreos-customization)
--   [The complete flow of creating a deployment](https://github.com/jamiehannaford/what-happens-when-k8s)
--   Book: Kubernetes in action by Marka Luksa ( Part3 - especially chapter 11 understanding kubernetes internals )
--   components (a)
-    -   kubelet, scheduler, kube-proxy
--   api
-    -   api server
-        -   authN
-        -   authZ
-        -   mutation
-            -   what is it (b)
-            -   objects in k8s (c)
-            -   writing a custom webhook (c)
-        -   admission
-            -   what is it (b)
-            -   object in k8s (c)
-            -   writing a custom webhook (c)
-        -   etcd watch
-        -   api server watch
-        -   controller pattern
-        -   scheduling pipeline
-        -   extension:
-            -   AA
-            -   CRD
--   etcd:
-    -   raft / consensus
-    -   watch
-    -   persistence
-    -   why not redis?
--   cri
-    -   kubelet watch
-    -   cri grpc call
-    -   crio
-    -   oci
-    -   runc
-    -   workload
-        -   deployment, sts, daemonset (a)
-        -   sts features (b)
-            -   naming
-            -   pvc per pod
-        -   daemonset:
-            -   no count
-            -   not drain
-            -   even if node restart ??
-    -   probe
-        -   liveness, readiness (a)
-        -   startup probe (b)
--   network:
-    -   kube-proxy, service
-        -   service (headless/none, clusterip, loadbalancer, node port, external name) (a)
-        -   endpoint (b)
-        -   endpointslice (c)
-        -   kube proxy iptables chains
-    -   cni (b)
-        -   cilium
-    -   ingress controller (b)
-    -   dns
-        -   `kubelet` dns, dnsPolicy
-        -   CoreDNS: learning CoreDNS book
-    -   life of a packet North south
-    -   life of a packet East West
--   CSI:
-    -   [Container Storage interface standard](https://github.com/container-storage-interface/spec/blob/master/spec.md) - this is the reference and standard not a very good resource for a newbie
-    -   [How to write a Container Storage Interface (CSI) plugin](https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/) - A thorough resource with easy to understand explanation
-    -   Concepts:
-        -   pv
-        -   pvc
-        -   provisioner
-        -   driver
-        -   a/d controller
-        -   csi attacher/resizer/snapshotter
-        -   Life of a PVC
-        -   `kubelet` fsGroup policy
-        -   `kubelet` selinux re-labeling
-        -   inline csi (c)
--   Console
-    -   Console customization
-    -   Dynamic plugins
+- Kubernetes SDK
+    - [https://github.com/kubernetes/apimachinery](https://github.com/kubernetes/apimachinery)
+    - [https://github.com/kubernetes/client-go](https://github.com/kubernetes/client-go)
+    - informers
+- Controller / Operator
+    - controller-runtime
+    - kubebuilder
+    - operator-sdk
+    - reconcile loop
+    - k8s error checking
+    - Finalizer
+    - status
+    - printable columns
+    - default values / validations (tags)
+- Admission / Mutation Webhook
+- tests
+    - k8s envtest
+- OKD:
+    - [CoreOS](https://cloud.redhat.com/blog/red-hat-enterprise-linux-coreos-customization)
+- [The complete flow of creating a deployment](https://github.com/jamiehannaford/what-happens-when-k8s)
+- Book: Kubernetes in action by Marka Luksa ( Part3 - especially chapter 11 understanding kubernetes internals )
+- components (a)
+    - kubelet, scheduler, kube-proxy
+- api
+    - api server
+        - authN
+        - authZ
+        - mutation
+            - what is it (b)
+            - objects in k8s (c)
+            - writing a custom webhook (c)
+        - admission
+            - what is it (b)
+            - object in k8s (c)
+            - writing a custom webhook (c)
+        - etcd watch
+        - api server watch
+        - controller pattern
+        - scheduling pipeline
+        - extension:
+            - AA
+            - CRD
+- etcd:
+    - raft / consensus
+    - watch
+    - persistence
+    - why not redis?
+- cri
+    - kubelet watch
+    - cri grpc call
+    - crio
+    - oci
+    - runc
+    - workload
+        - deployment, sts, daemonset (a)
+        - sts features (b)
+            - naming
+            - pvc per pod
+        - daemonset:
+            - no count
+            - not drain
+            - even if node restart ??
+    - probe
+        - liveness, readiness (a)
+        - startup probe (b)
+- network:
+    - kube-proxy, service
+        - service (headless/none, clusterip, loadbalancer, node port, external name) (a)
+        - endpoint (b)
+        - endpointslice (c)
+        - kube proxy iptables chains
+    - cni (b)
+        - cilium
+    - ingress controller (b)
+    - dns
+        - `kubelet` dns, dnsPolicy
+        - CoreDNS: learning CoreDNS book
+    - life of a packet North south
+    - life of a packet East West
+- CSI:
+    - [Container Storage interface standard](https://github.com/container-storage-interface/spec/blob/master/spec.md) - this is the reference and standard not a very good resource for a newbie
+    - [How to write a Container Storage Interface (CSI) plugin](https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/) - A thorough resource with easy to understand explanation
+    - Concepts:
+        - pv
+        - pvc
+        - provisioner
+        - driver
+        - a/d controller
+        - csi attacher/resizer/snapshotter
+        - Life of a PVC
+        - `kubelet` fsGroup policy
+        - `kubelet` selinux re-labeling
+        - inline csi (c)
+- Console
+    - Console customization
+    - Dynamic plugins
 
 ### Automation
 
--   concepts:
-    -   Reusable modules (roles, scripts, ...)
-    -   Idempotency (know the concept in rest but not in ansible)
-    -   Remote parallel execution
-    -   Inventory and discovery
-    -   DSL
--   Tools:
-    -   Ansible
-        -   roles (b)
-        -   playbook (a)
-        -   tasks (a)
-        -   inventory (a)
-        -   group vars(b)
-        -   env (a)
-        -   ansible.cfg (b)
-        -   callbacks (d)
-        -   plugins (c)
-        -   dynamic inventory (c)
-        -   writing a module (d)
-        -   ansible-galaxy (c)
-        -   raw (c)
-        -   handlers (c)
-        -   jinja (b)
-    -   Terraform (Terraform up and running)
-        -   state (a)
-        -   storage backend state (b)
-        -   modules (b)
-        -   locals, vs variab
+- concepts:
+    - Reusable modules (roles, scripts, ...)
+    - Idempotency (know the concept in rest but not in ansible)
+    - Remote parallel execution
+    - Inventory and discovery
+    - DSL
+- Tools:
+    - Ansible
+        - roles (b)
+        - playbook (a)
+        - tasks (a)
+        - inventory (a)
+        - group vars(b)
+        - env (a)
+        - ansible.cfg (b)
+        - callbacks (d)
+        - plugins (c)
+        - dynamic inventory (c)
+        - writing a module (d)
+        - ansible-galaxy (c)
+        - raw (c)
+        - handlers (c)
+        - jinja (b)
+    - Terraform (Terraform up and running)
+        - state (a)
+        - storage backend state (b)
+        - modules (b)
+        - locals, vs variab

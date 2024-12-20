@@ -11,8 +11,8 @@ Redpanda and more sources, and send aggregated data to the downstream systems.
 Users can create a stream by using `CREATE STREAM ...` DDL SQL.
 Every stream has 2 parts at storage layer by default:
 
--   The real-time streaming data part, backed by Timeplus NativeLog
--   The historical data part, backed by ClickHouse historical data store.
+- The real-time streaming data part, backed by Timeplus NativeLog
+- The historical data part, backed by ClickHouse historical data store.
 
 Fundamentally, a stream in Proton is a regular database table with a replicated Write-Ahead-Log (WAL)
 in front but is streaming queryable.

@@ -39,11 +39,11 @@ The OS may also allocate some memory for the program's **heap**. In C programs, 
 
 In a simplified view, a process can be in one of three states:
 
--   **Running**: In the running state, a process is running on a processor. This means it is executing instructions.
--   **Ready**: In the ready state, a process is ready to run but for some reason the OS has chosen not to run it at this given time.
--   **Blocked**: In the blocked state, a process has performed some kind of operation that makes it not ready to run until some other
-    event takes place. A common example: when a process initiates an I/O request to a disk, it becomes blocked and thus some other process
-    can use the processor.
+- **Running**: In the running state, a process is running on a processor. This means it is executing instructions.
+- **Ready**: In the ready state, a process is ready to run but for some reason the OS has chosen not to run it at this given time.
+- **Blocked**: In the blocked state, a process has performed some kind of operation that makes it not ready to run until some other
+  event takes place. A common example: when a process initiates an I/O request to a disk, it becomes blocked and thus some other process
+  can use the processor.
 
 ![process-states](process-states.png)
 
@@ -58,19 +58,19 @@ a fancy way of talking about a C structure that contains information about each 
 
 These APIs, in some form, are available on any modern operating system.
 
--   Create
--   Destroy
--   Wait
--   Miscellaneous Control
--   Status
+- Create
+- Destroy
+- Wait
+- Miscellaneous Control
+- Status
 
--   The `fork()` system call is used to create a new process.
--   The `wait()` system call is used by a parent to wait for a child process to finish what it has been doing.
--   The `exec()` system call is useful when you want to run a program that is different from the calling program.
--   The `pipe()` system call is used to implement UNIX pipes. In this case, the output of one process is connected to an
-    in-kernel pipe, and the input of another process is connected to that same pipe.
--   The `kill()` system call is used to send **signals** to a process, including directives to _pause_, _die_, and other
-    imperatives.
+- The `fork()` system call is used to create a new process.
+- The `wait()` system call is used by a parent to wait for a child process to finish what it has been doing.
+- The `exec()` system call is useful when you want to run a program that is different from the calling program.
+- The `pipe()` system call is used to implement UNIX pipes. In this case, the output of one process is connected to an
+  in-kernel pipe, and the input of another process is connected to that same pipe.
+- The `kill()` system call is used to send **signals** to a process, including directives to _pause_, _die_, and other
+  imperatives.
 
 > [!note]
 > In the most UNIX shells, certain keystroke combinations are configured to deliver specific signal to the currently
@@ -96,8 +96,8 @@ The basic idea is simple: run one process for a little while, then
 run another one, and so forth. By **time-sharing** the CPU in this manner,
 virtualization is achieved.
 
--   Performance
--   Control
+- Performance
+- Control
 
 The hardware assists the OS by providing different modes of execution.
 In **user mode**, applications do not have full access to the full resources of the machine.
@@ -119,14 +119,14 @@ A Hard link acts as a copy (mirrored) of the selected file. It accesses the data
 
 **Advantages of Hard Link**:
 
--   It makes efficient use of disc space by avoiding the unnecessary creation of record blocks.
--   There is no risk of link breaking as a result of the removal of the actual file(as long as one hard hyperlink survives, the data will persist).
--   The speed of Hard Links is fast.
+- It makes efficient use of disc space by avoiding the unnecessary creation of record blocks.
+- There is no risk of link breaking as a result of the removal of the actual file(as long as one hard hyperlink survives, the data will persist).
+- The speed of Hard Links is fast.
 
 **Limitation of Hard Link**:
 
--   Cannot span several file systems.
--   Directories cannot be hyperlinked.
+- Cannot span several file systems.
+- Directories cannot be hyperlinked.
 
 ### What is Soft Link?
 
@@ -134,10 +134,10 @@ A soft link (also known as a Symbolic link) acts as a pointer or a reference to 
 
 **Advantages of Soft Link**:
 
--   Versatility in linking files across different localities and document systems.
--   Can link directories.
+- Versatility in linking files across different localities and document systems.
+- Can link directories.
 
 **Disadvantages of Soft Link**:
 
--   Slightly slower access than hard links.
--   Deleting or moving the original file will cause soft links to fail.
+- Slightly slower access than hard links.
+- Deleting or moving the original file will cause soft links to fail.

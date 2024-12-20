@@ -1,7 +1,7 @@
-
 ## Introduction
 
 Package iter provides basic definitions and operations related to iterators over sequences.
+
 ## Iterators
 
 An iterator is a function that passes successive elements of a sequence to a callback function, conventionally named `yield`. The function stops either when the sequence is finished or when `yield` returns `false`, indicating to stop the iteration early. This package defines `Seq` and `Seq2` (pronounced like seek—the first syllable of sequence) as shorthands for iterators that pass 1 or 2 values per sequence element to yield:
@@ -26,3 +26,5 @@ func PrintAll[V any](seq iter.Seq[V]) {
 	}
 }
 ```
+
+## Naming Conventions

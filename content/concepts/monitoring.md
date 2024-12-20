@@ -42,9 +42,9 @@ Each of these factors might stand alone as a root cause, and each should be repa
 Used interchangeably to indicate a single instance of a running kernel in either a physical server, virtual machine, or container.
 There might be multiple **_services_** worth monitoring on a single machine. The services may either be:
 
--   Related to each other: for example, a caching server and a web server
--   Unrelated services sharing hardware: for example, a code repository and a master for a configuration
-    system like [Puppet](https://puppetlabs.com/puppet/puppet-open-source) or [Chef](https://www.chef.io/chef/)
+- Related to each other: for example, a caching server and a web server
+- Unrelated services sharing hardware: for example, a code repository and a master for a configuration
+  system like [Puppet](https://puppetlabs.com/puppet/puppet-open-source) or [Chef](https://www.chef.io/chef/)
 
 ### Push
 
@@ -90,8 +90,8 @@ Otherwise, all sorts of metric misinterpretations and false conclusions will fol
 
 ### `irate` vs `rate`
 
--   `rate`: Use **first** and **last** data points in the group, divide by **query interval**.
--   `irate`: Use **last 2** data points in the range, divide by **scrape interval**.
+- `rate`: Use **first** and **last** data points in the group, divide by **query interval**.
+- `irate`: Use **last 2** data points in the range, divide by **scrape interval**.
 
 :::note
 `rate()` is generally used when graphing the slow moving counters.
