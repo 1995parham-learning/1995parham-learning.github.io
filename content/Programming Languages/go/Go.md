@@ -20,7 +20,7 @@ Go 1.20 expands support for error wrapping to permit an error to wrap multiple o
 ### `errors.As`
 
 ```go
-func
+func As(err error, target any) bool
 ```
 
 `As` finds the first error in `err`'s tree that matches target, and if one is found, sets target to that error value and returns true. Otherwise, it returns false.
