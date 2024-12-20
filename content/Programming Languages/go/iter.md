@@ -30,3 +30,10 @@ func PrintAll[V any](seq iter.Seq[V]) {
 ## Naming Conventions
 
 Iterator functions and methods are named for the sequence being walked:
+
+```go
+// All returns an iterator over all elements in s.
+func (s *Set[V]) All() iter.Seq[V]
+```
+
+The iterator method on a collection type is conventionally named `All`, because it iterates a sequence of all the values in the collection.
