@@ -37,3 +37,5 @@ func (s *Set[V]) All() iter.Seq[V]
 ```
 
 The iterator method on a collection type is conventionally named `All`, because it iterates a sequence of all the values in the collection.
+
+For a type containing multiple possible sequences, the iterator's name can indicate which sequence is being provided:
