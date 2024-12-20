@@ -48,4 +48,13 @@ func (c *Country) Cities() iter.Seq[*City]
 func (c *Country) Languages() iter.Seq[string]
 ```
 
+If an iterator requires additional configuration, the constructor function can take additional configuration arguments:
 
+```go
+// Scan returns an iterator over key-value pairs with min ≤ key ≤ max.
+func (m *Map[K, V]) Scan(min, max K) iter.Seq2[K, V]
+
+// Split returns an iterator over the (possibly-empty) substrings of s
+// separated by sep.
+func Split(s, sep string) iter.Seq[string]
+```
