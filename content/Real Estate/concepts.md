@@ -13,152 +13,152 @@ studies or retreats.
 
 ## Rooms and spaces of a house
 
-- Shared rooms:
-    - Bonus room
-    - Common room
-    - Den
-    - Dining room
-    - Family room: a large room designed as a recreation center and informal gathering place for members of a family
-    - Garret: a room or unfinished part of a house just under the roof
-    - Great room: a large room in a residence usually serving several functions (as of a dining room, living room, and family room)
-    - Home cinema
-    - Kitchen (dirty kitchen - kitchenette)
-    - Living room
-    - Gynaeceum (harem)
-    - Andron (man cave)
-    - Recreation room (billiard room)
-    - Shrine
-    - Study
-    - Sunroom
-- Private rooms:
-    - Bathroom (toilet)
-    - Bedroom / Guest room (closet)
-    - Bedsit / Miniflat: a one-room apartment serving as both bedroom and living room
-    - Boudoir
-    - Cabinet: a small room providing an isolated place
-    - Nursery
-- Spaces:
-    - Atrium
-    - Balcony
-    - Breezeway
-    - Conversation pit
-    - Cubby-hole
-    - Deck
-    - Elevator (dumbwaiter)
-    - Entryway / Genkan
-    - Fireplace (hearth)
-    - Foyer
-    - Hall
-    - Hallway
-    - Inglenook
-    - Lanai
-    - Loft
-    - Loggia
-    - Overhang: a projection of the roof or upper story of a building beyond the wall of the lower part.
-    - Patio
-    - Porch (screened / sleeping)
-    - Ramp
-    - Secret passage
-    - Stairs
-    - Terrace
-    - Veranda
-    - Vestibule
-- Utility and storage:
-    - Attic
-    - Basement
-    - Carport
-    - Cloakroom
-    - Closet
-    - Crawl space
-    - Electrical room
-    - Equipment room
-    - Furnace room / Boiler room
-    - Garage
-    - Janitorial closet
-    - Larder
-    - Laundry room / Utility room
-    - Mechanical room / floor
-    - Pantry
-    - Root cellar
-    - Semi-basement
-    - Storm cellar / Safe room
-    - Studio
-    - Wardrobe
-    - Wine cellar
-    - Wiring closet
-    - Workshop
-- Great house areas:
-    - Antechamber
-    - Ballroom
-    - Kitchen-related (butler's pantry/buttery/saucery/scullery/spicery/still room)
-    - Conservatory / Orangery
-    - Courtyard
-    - Drawing room
-    - Great chamber
-    - Great hall
-    - Library
-    - Long gallery
-    - Lumber room
-    - Parlour
-    - Sauna
-    - Servants' hall
-    - Servants' quarters
-    - Smoking room
-    - Solar
-    - State room
-    - Swimming pool
-    - Turret
-    - Undercroft
-- Other:
-    - Furniture
-    - Hidden room
-    - House (house plan/style/stypes)
-    - Multi-family residential
-    - Secondary suite
-    - Duplex
-    - Terraced
-    - Detached
-    - Semi-detached
-    - Townhouse
-    - Studio apartment
-- Architectural elements:
-    - Arch
-    - Baluster
-    - Belt course
-    - Bressummer
-    - Ceiling
-    - Chimney
-    - Colonnade / Portico
-    - Column
-    - Cornice / Eaves
-    - Dome
-    - Door
-    - Ell
-    - Floor
-    - Foundation
-    - Gable
-    - Gate
-    - Lighting
-    - Ornament
-    - Plumbing
-    - Quoins
-    - Roof
-    - Roof lantern
-    - Sill plate
-    - Style
-    - Skylight
-    - Threshold
-    - Transom
-    - Vault
-    - Wall
-    - Window
-- Related:
-    - Backyard
-    - Driveway
-    - Front yard
-    - Garden
-    - Home
-    - Home improvement
-    - Home repair
-    - Shed
-    - Tree house
+-   Shared rooms:
+    -   Bonus room
+    -   Common room
+    -   Den
+    -   Dining room
+    -   Family room: a large room designed as a recreation center and informal gathering place for members of a family
+    -   Garret: a room or unfinished part of a house just under the roof
+    -   Great room: a large room in a residence usually serving several functions (as of a dining room, living room, and family room)
+    -   Home cinema
+    -   Kitchen (dirty kitchen - kitchenette)
+    -   Living room
+    -   Gynaeceum (harem)
+    -   Andron (man cave)
+    -   Recreation room (billiard room)
+    -   Shrine
+    -   Study
+    -   Sunroom
+-   Private rooms:
+    -   Bathroom (toilet)
+    -   Bedroom / Guest room (closet)
+    -   Bedsit / Miniflat: a one-room apartment serving as both bedroom and living room
+    -   Boudoir
+    -   Cabinet: a small room providing an isolated place
+    -   Nursery
+-   Spaces:
+    -   Atrium
+    -   Balcony
+    -   Breezeway
+    -   Conversation pit
+    -   Cubby-hole
+    -   Deck
+    -   Elevator (dumbwaiter)
+    -   Entryway / Genkan
+    -   Fireplace (hearth)
+    -   Foyer
+    -   Hall
+    -   Hallway
+    -   Inglenook
+    -   Lanai
+    -   Loft
+    -   Loggia
+    -   Overhang: a projection of the roof or upper story of a building beyond the wall of the lower part.
+    -   Patio
+    -   Porch (screened / sleeping)
+    -   Ramp
+    -   Secret passage
+    -   Stairs
+    -   Terrace
+    -   Veranda
+    -   Vestibule
+-   Utility and storage:
+    -   Attic
+    -   Basement
+    -   Carport
+    -   Cloakroom
+    -   Closet
+    -   Crawl space
+    -   Electrical room
+    -   Equipment room
+    -   Furnace room / Boiler room
+    -   Garage
+    -   Janitorial closet
+    -   Larder
+    -   Laundry room / Utility room
+    -   Mechanical room / floor
+    -   Pantry
+    -   Root cellar
+    -   Semi-basement
+    -   Storm cellar / Safe room
+    -   Studio
+    -   Wardrobe
+    -   Wine cellar
+    -   Wiring closet
+    -   Workshop
+-   Great house areas:
+    -   Antechamber
+    -   Ballroom
+    -   Kitchen-related (butler's pantry/buttery/saucery/scullery/spicery/still room)
+    -   Conservatory / Orangery
+    -   Courtyard
+    -   Drawing room
+    -   Great chamber
+    -   Great hall
+    -   Library
+    -   Long gallery
+    -   Lumber room
+    -   Parlour
+    -   Sauna
+    -   Servants' hall
+    -   Servants' quarters
+    -   Smoking room
+    -   Solar
+    -   State room
+    -   Swimming pool
+    -   Turret
+    -   Undercroft
+-   Other:
+    -   Furniture
+    -   Hidden room
+    -   House (house plan/style/stypes)
+    -   Multi-family residential
+    -   Secondary suite
+    -   Duplex
+    -   Terraced
+    -   Detached
+    -   Semi-detached
+    -   Townhouse
+    -   Studio apartment
+-   Architectural elements:
+    -   Arch
+    -   Baluster
+    -   Belt course
+    -   Bressummer
+    -   Ceiling
+    -   Chimney
+    -   Colonnade / Portico
+    -   Column
+    -   Cornice / Eaves
+    -   Dome
+    -   Door
+    -   Ell
+    -   Floor
+    -   Foundation
+    -   Gable
+    -   Gate
+    -   Lighting
+    -   Ornament
+    -   Plumbing
+    -   Quoins
+    -   Roof
+    -   Roof lantern
+    -   Sill plate
+    -   Style
+    -   Skylight
+    -   Threshold
+    -   Transom
+    -   Vault
+    -   Wall
+    -   Window
+-   Related:
+    -   Backyard
+    -   Driveway
+    -   Front yard
+    -   Garden
+    -   Home
+    -   Home improvement
+    -   Home repair
+    -   Shed
+    -   Tree house

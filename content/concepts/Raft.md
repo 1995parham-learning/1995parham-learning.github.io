@@ -12,21 +12,21 @@ Consensus typically arises in the context of replicated state machines, a genera
 > [!info]
 > Consensus means multiple servers agreeing on same information, something imperative to design fault-tolerant distributed systems.
 
-- **Single Server system** : The client interacts with a system having only one server with no backup. There is no problem in achieving consensus in such a system.
+-   **Single Server system** : The client interacts with a system having only one server with no backup. There is no problem in achieving consensus in such a system.
 
 ![[Pasted image 20241115112204.png]]
 
-- **Multiple Server system** : The client interacts with a system having multiple servers. Such systems can be of two types :
-    - Symmetric : _Any of the multiple servers_ can respond to the client and all the other servers are supposed to sync up with the server that responded to the client’s request, and
-    - Asymmetric : Only the _elected leader server_ can respond to the client. All other servers then sync up with the leader server.
+-   **Multiple Server system** : The client interacts with a system having multiple servers. Such systems can be of two types :
+    -   Symmetric : _Any of the multiple servers_ can respond to the client and all the other servers are supposed to sync up with the server that responded to the client’s request, and
+    -   Asymmetric : Only the _elected leader server_ can respond to the client. All other servers then sync up with the leader server.
 
 ## Raft consensus algorithm explained
 
 To begin with, Raft states that each node in a replicated state machine(server cluster) can stay in any of the three states, namely, leader, candidate, follower.
 
-- Only a _leader_ can interact with the client; any request to the follower node is redirected to the leader node.
-- A _candidate_ can ask for votes to become the leader.
-- A _follower_ only responds to candidate(s) or the leader.
+-   Only a _leader_ can interact with the client; any request to the follower node is redirected to the leader node.
+-   A _candidate_ can ask for votes to become the leader.
+-   A _follower_ only responds to candidate(s) or the leader.
 
 To maintain these servers' status(es), the Raft algorithm divides time into small terms of arbitrary length. Each term is identified by a monotonically increasing number, called **term number**.
 This term number is maintained by every node and is passed while communications between nodes.
@@ -35,8 +35,8 @@ If no majority is established, the situation is called a **split vote** and the 
 
 Raft algorithm uses two types of Remote Procedure Calls (RPCs) to carry out the functions:
 
-- **RequestVotes** RPC is sent by the Candidate nodes to gather votes during an election
-- **AppendEntries** is used by the Leader node for replicating the log entries and also as a heartbeat mechanism to check if a server is still up. If heartbeat is responded back to, the server is up else, the server is down. Be noted that the heartbeats do not contain any log entries.
+-   **RequestVotes** RPC is sent by the Candidate nodes to gather votes during an election
+-   **AppendEntries** is used by the Leader node for replicating the log entries and also as a heartbeat mechanism to check if a server is still up. If heartbeat is responded back to, the server is up else, the server is down. Be noted that the heartbeats do not contain any log entries.
 
 ## Leader election
 

@@ -26,8 +26,8 @@ Rocket's main task is to listen for incoming web requests, dispatch the request 
 
 Rocket applications are centered around routes and handlers. A _route_ is a combination of:
 
-- A set of parameters to match an incoming request against.
-- A handler to process the request and return a response.
+-   A set of parameters to match an incoming request against.
+-   A handler to process the request and return a response.
 
 A _handler_ is simply a function that takes an arbitrary number of arguments and returns any arbitrary type.
 
@@ -72,21 +72,21 @@ rocket::build()
 
 A `Rocket` instance represents a web server and its state. It progresses through three statically-enforced phases: build, ignite, orbit.
 
-- **Build**: _application and server configuration_
+-   **Build**: _application and server configuration_
 
     This phase enables:
 
-    - setting configuration options
-    - mounting/registering routes/catchers
-    - managing state
-    - attaching fairings
+    -   setting configuration options
+    -   mounting/registering routes/catchers
+    -   managing state
+    -   attaching fairings
 
         This is the _only_ phase in which an instance can be modified. To finalize changes, an instance is ignited via `[Rocket::ignite()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.ignite)`, progressing it into the _ignite_ phase, or directly launched into orbit with `[Rocket::launch()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.launch)` which progress the instance through ignite into orbit.
 
-- **Ignite**: _verification and finalization of configuration_
+-   **Ignite**: _verification and finalization of configuration_
 
     An instance in the `[Ignite](https://api.rocket.rs/v0.5/rocket/enum.Ignite.html)` phase is in its final configuration, available via `[Rocket::config()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.config)`. Barring user-supplied interior mutation, application state is guaranteed to remain unchanged beyond this point. An instance in the ignite phase can be launched into orbit to serve requests via `[Rocket::launch()](https://api.rocket.rs/v0.5/rocket/struct.Rocket.html#method.launch)`.
 
-- **Orbit**: _a running web server_
+-   **Orbit**: _a running web server_
 
     An instance in the `[Orbit](https://api.rocket.rs/v0.5/rocket/enum.Orbit.html)` phase represents a _running_ application, actively serving requests.

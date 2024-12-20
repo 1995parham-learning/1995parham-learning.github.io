@@ -28,3 +28,5 @@ func PrintAll[V any](seq iter.Seq[V]) {
 ```
 
 ## Naming Conventions
+
+Iterator functions and methods are named for the sequence being walked:

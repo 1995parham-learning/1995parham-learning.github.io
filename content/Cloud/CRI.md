@@ -12,11 +12,11 @@ Kubernetes aims to be extensible. CRI is one small, yet important step to enable
 
 ## CRI runtimes
 
-- [cri-o](https://github.com/cri-o/cri-o)
-- [rktlet](https://github.com/kubernetes-retired/rktlet)
-- [frakti](https://github.com/kubernetes/frakti)
-- [cri-containerd](https://github.com/containerd/cri)
-- [singularity-cri](https://github.com/sylabs/singularity-cri)
+-   [cri-o](https://github.com/cri-o/cri-o)
+-   [rktlet](https://github.com/kubernetes-retired/rktlet)
+-   [frakti](https://github.com/kubernetes/frakti)
+-   [cri-containerd](https://github.com/containerd/cri)
+-   [singularity-cri](https://github.com/sylabs/singularity-cri)
 
 ## What is the OCI Runtime Spec?
 

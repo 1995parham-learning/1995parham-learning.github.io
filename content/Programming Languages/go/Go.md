@@ -1,5 +1,5 @@
-- [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)-
-- [Unskilled](https://unskilled.blog/)
+-   [Go Wiki: Home - The Go Programming Language](https://go.dev/wiki/)-
+-   [Unskilled](https://unskilled.blog/)
 
 The Go programming language, also known as Golang, has gained popularity among software practitioners since its release in 2009.
 This language offers various features and advantages that make it a preferred choice for many developers.
@@ -11,11 +11,11 @@ We can use it for writing code as terminal applications or servers. I had experi
 
 Go 1.20 expands support for error wrapping to permit an error to wrap multiple other errors:
 
-- An error `e` can wrap more than one error by providing an Unwrap method that returns a `[]error`.
-- The `errors.Is` and `errors.As` functions have been updated to inspect multiply wrapped errors.
-- The `fmt.Errorf` function now supports multiple occurrences of the `%w` format verb,
-  which will cause it to return an error that wraps all of those error operands.
-- The new function `errors.Join` returns an error wrapping a list of errors.
+-   An error `e` can wrap more than one error by providing an Unwrap method that returns a `[]error`.
+-   The `errors.Is` and `errors.As` functions have been updated to inspect multiply wrapped errors.
+-   The `fmt.Errorf` function now supports multiple occurrences of the `%w` format verb,
+    which will cause it to return an error that wraps all of those error operands.
+-   The new function `errors.Join` returns an error wrapping a list of errors.
 
 ### `errors.As`
 
@@ -53,7 +53,7 @@ fmt.Println(today)  // prints "1"
 
 This approach provides some of the benefits of enums, such as type safety and readable code, but it's not a perfect replacement. For example, Go doesn't prevent you from assigning any int value to a Weekday variable, whereas true enums in other languages often restrict you to a specific set of values.
 
-- [`go-enum`](https://github.com/abice/go-enum)
+-   [`go-enum`](https://github.com/abice/go-enum)
 
 `go-enum` will take a commented type declaration like this:
 
@@ -160,8 +160,8 @@ func Contains[S ~[]E, E comparable](s S, v E) bool
 `Equal` reports whether two slices are equal: the same length and all elements equal.
 If the lengths are different, `Equal` returns false. Otherwise, the elements are compared in increasing index order, and the comparison stops at the first unequal pair.
 
-- Empty and nil slices are considered equal.
-- Floating point `NaN`s are not considered equal.
+-   Empty and nil slices are considered equal.
+-   Floating point `NaN`s are not considered equal.
 
 ```go
 func Equal[S ~[]E, E comparable](s1, s2 S) bool
@@ -218,17 +218,17 @@ go install golang.org/dl/gotip@latest
 gotip download
 ```
 
-- After installation, use the `gotip` command instead of your normal `go` command to have the latest experimental features.
-- To update, run `gotip download` again. This will always download the main branch.
-- To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
+-   After installation, use the `gotip` command instead of your normal `go` command to have the latest experimental features.
+-   To update, run `gotip download` again. This will always download the main branch.
+-   To download an alternative branch, run `gotip download BRANCH` and to download a specific CL, run `gotip download NUMBER`.
 
 ## `libc`
 
 You can control to use `cgo` with `CGO_ENABLED` flag in go build. There are different implementations of C standard library.
 
-- [GNU C Library (`glibc`)](https://www.gnu.org/software/libc/)
-- [`musl`](https://musl.libc.org/)
-- [Microsoft C Runtime Library](https://learn.microsoft.com/en-us/cpp/c-runtime-library/c-run-time-library-reference?view=msvc-170)
+-   [GNU C Library (`glibc`)](https://www.gnu.org/software/libc/)
+-   [`musl`](https://musl.libc.org/)
+-   [Microsoft C Runtime Library](https://learn.microsoft.com/en-us/cpp/c-runtime-library/c-run-time-library-reference?view=msvc-170)
 
 ## Logging
 
@@ -359,12 +359,12 @@ create a `Meter`.
 Meters let you create instruments that you can use to create different kinds of metrics.
 OpenTelemetry Go currently supports the following instruments:
 
-- **Counter**, a synchronous instrument that supports non-negative increments.
-- **Asynchronous Counter**, an asynchronous instrument which supports non-negative increments
-- **Histogram**, a synchronous instrument that supports arbitrary values that are statistically meaningful, such as histograms summaries, or percentile
-- **Asynchronous Gauge**, an asynchronous instrument that supports increments and decrements, such as the number of active requests
-- **UpDownCounter**, a synchronous instrument that supports increments and decrements, such as the number of active requests
-- **Asynchronous UpDown Counter**, an asynchronous instrument that supports increments and decrements
+-   **Counter**, a synchronous instrument that supports non-negative increments.
+-   **Asynchronous Counter**, an asynchronous instrument which supports non-negative increments
+-   **Histogram**, a synchronous instrument that supports arbitrary values that are statistically meaningful, such as histograms summaries, or percentile
+-   **Asynchronous Gauge**, an asynchronous instrument that supports increments and decrements, such as the number of active requests
+-   **UpDownCounter**, a synchronous instrument that supports increments and decrements, such as the number of active requests
+-   **Asynchronous UpDown Counter**, an asynchronous instrument that supports increments and decrements
 
 #### Sampler
 
@@ -479,13 +479,13 @@ as it's the first argument passed to functions that accept contexts. I see the p
 
 ## `Rangefunc`
 
-- [Go Wiki: `Rangefunc` Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
+-   [Go Wiki: `Rangefunc` Experiment - The Go Programming Language](https://go.dev/wiki/RangefuncExperiment)
 
 ## Generics
 
-- [Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
-- [An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
-- [Type Parameters Proposal](https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md)
+-   [Tutorial: Getting started with generics - The Go Programming Language](https://go.dev/doc/tutorial/generics)
+-   [An Introduction To Generics - The Go Programming Language](https://go.dev/blog/intro-generics)
+-   [Type Parameters Proposal](https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md)
 
 The Go 1.18 release adds support for generics.
 Generics are a way of writing code that is independent of the specific types being used.
@@ -646,17 +646,17 @@ I will choose fiber (seems there is no need for fiber since 1.22).
 Huma is something new which wraps currently implemented routers and provides general
 add-ons like OpenAPI specification, CLI, etc.
 
-- [`fiber`](https://github.com/gofiber/fiber)
-- [`echo`](https://github.com/labstack/echo)
-- [`huma`](https://huma.rocks/)
+-   [`fiber`](https://github.com/gofiber/fiber)
+-   [`echo`](https://github.com/labstack/echo)
+-   [`huma`](https://huma.rocks/)
 
 ## Advanced Console UIs 💅
 
 [`pterm`](https://github.com/pterm/pterm) is useful when you need colorful texts.
 But when you need advance TUI features:
 
-- [bubbletea](https://github.com/charmbracelet/bubbletea)
-- [termui](https://github.com/gizak/termui)
+-   [bubbletea](https://github.com/charmbracelet/bubbletea)
+-   [termui](https://github.com/gizak/termui)
 
 ## Testing 🧨
 
@@ -682,7 +682,7 @@ It is a new library which is fun and only works on new versions of Redis:
 There is no good ORM for MongoDB in Go, so its official database driver is the best choice.
 Besides that, it has [`otelmongo`](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo) telemetry package.
 
-- [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
+-   [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
 
 ## Task Queue 😴
 
@@ -690,4 +690,4 @@ Sometimes you want to queue tasks and process them later. `Asynq` library can do
 but I think using Redis on scale is a drawback of this library.
 I prefer to use Jetstream for these kinds of things.
 
-- [asynq](https://github.com/hibiken/asynq)
+-   [asynq](https://github.com/hibiken/asynq)

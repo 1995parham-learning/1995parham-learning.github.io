@@ -10,7 +10,7 @@ a developer when trying to build reliable applications.
 
 Temporal provides **reliability primitives**, such as:
 
-- Seamless and fault-tolerant application state tracking
-- Automatic retries
-- Timeouts
-- Rollbacks due to process failures
+-   Seamless and fault-tolerant application state tracking
+-   Automatic retries
+-   Timeouts
+-   Rollbacks due to process failures

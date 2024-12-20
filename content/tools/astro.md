@@ -18,12 +18,12 @@ to customize a project to your exact use case and needs.
 
 Some highlights include:
 
-- **Islands**: A component-based web architecture optimized for content-driven websites.
-- **UI-agnostic**: Supports React, Preact, Svelte, Vue, Solid, Lit, HTMX, web components, and more.
-- **Server-first**: Moves expensive rendering off of your visitors’ devices.
-- **Zero JS, by default**: Less client-side JavaScript to slow your site down.
-- **Content collections**: Organize, validate, and provide TypeScript type-safety for your Markdown content.
-- **Customizable**: Tailwind, MDX, and hundreds of integrations to choose from.
+-   **Islands**: A component-based web architecture optimized for content-driven websites.
+-   **UI-agnostic**: Supports React, Preact, Svelte, Vue, Solid, Lit, HTMX, web components, and more.
+-   **Server-first**: Moves expensive rendering off of your visitors’ devices.
+-   **Zero JS, by default**: Less client-side JavaScript to slow your site down.
+-   **Content collections**: Organize, validate, and provide TypeScript type-safety for your Markdown content.
+-   **Customizable**: Tailwind, MDX, and hundreds of integrations to choose from.
 
 ## Installation
 
@@ -39,8 +39,8 @@ npm create astro@latest
 
 ## References
 
-- <https://docs.astro.build/en/getting-started/>
+-   <https://docs.astro.build/en/getting-started/>
 
 ## Showcases
 
-- <https://astro-moon-landing.netlify.app/>
+-   <https://astro-moon-landing.netlify.app/>

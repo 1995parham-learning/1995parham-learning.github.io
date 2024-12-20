@@ -72,15 +72,15 @@ You can also define an **assistant message** to pass examples of the desired beh
 
 ### Zero shot prompting
 
-- Q. Explain the different types of banks
-- A. Banks along a river can take various forms depending on whether they are natural or artificial
+-   Q. Explain the different types of banks
+-   A. Banks along a river can take various forms depending on whether they are natural or artificial
 
 ### Few shots prompting
 
-- Q. What is the primary function of a bank?
-- A. A bank's primary function is to accept deposits, provide loans and offer other financial services
-  to individuals and businesses.
-- Q. Explain the different types of banks
+-   Q. What is the primary function of a bank?
+-   A. A bank's primary function is to accept deposits, provide loans and offer other financial services
+    to individuals and businesses.
+-   Q. Explain the different types of banks
 
 ### Chain of thought (CoT)
 
@@ -96,4 +96,4 @@ enabling access to the latest information for generating reliable outputs via re
 
 ## References
 
-- <https://www.promptingguide.ai/>
+-   <https://www.promptingguide.ai/>
