@@ -39,3 +39,13 @@ func (s *Set[V]) All() iter.Seq[V]
 The iterator method on a collection type is conventionally named `All`, because it iterates a sequence of all the values in the collection.
 
 For a type containing multiple possible sequences, the iterator's name can indicate which sequence is being provided:
+
+```go
+// Cities returns an iterator over the major cities in the country.
+func (c *Country) Cities() iter.Seq[*City]
+
+// Languages returns an iterator over the official spoken languages of the country.
+func (c *Country) Languages() iter.Seq[string]
+```
+
+
