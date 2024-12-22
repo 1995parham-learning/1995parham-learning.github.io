@@ -11,4 +11,4 @@ Market Orders are the most straightforward order type, allowing traders to buy o
 
 ## Limit Orders
 
-Limit Orders allow traders to **set specific price levels** at which they want to buy or sell a cryptocurrency.
+Limit Orders allow traders to **set specific price levels** at which they want to buy or sell a cryptocurrency. Unlike Market Orders, which trigger instantly when placed and prioritize speed of execution over price, limit orders will only trigger if the market price reaches or exceeds your specified price.
