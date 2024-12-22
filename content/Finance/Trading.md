@@ -5,3 +5,7 @@ Most cryptocurrency exchanges allow traders to choose between Market, Limit, and
 ## Market Orders
 
 Market Orders are the most straightforward order type, allowing traders to buy or sell a cryptocurrency at the **current market price**. By executing instantly when placed, Market Orders are great tools for traders looking to seize the moment.
+
+> [!warning]
+> However, by prioritizing speed over price, the actual price of execution for a Market Order may differ from the displayed market price, especially in highly volatile markets.
+
