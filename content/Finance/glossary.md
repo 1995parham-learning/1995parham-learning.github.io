@@ -2,8 +2,7 @@
 
 The term **bid** refers to the highest price a buyer will pay to buy a specified number of shares of a stock at any given time. The term **ask** refers to the lowest price at which a seller will sell the stock.
 
-The bid price will almost _always be lower_ than the ask or offer, price.
-The difference between the bid price and the ask price is called the **spread**.
+The bid price will almost _always be lower_ than the ask or offer, price. The difference between the bid price and the ask price is called the **spread**.
 
 ## Market Making
 
@@ -13,12 +12,10 @@ The difference between the bid price and the ask price is called the **spread**.
 
 ## Ask Price
 
-:::note
-In traditional financial markets, the buy and sell orders that are placed on a specific market are called bids and asks.
-:::
+> [!note]
+> In traditional financial markets, the buy and sell orders that are placed on a specific market are called bids and asks.
 
-While bids are offers in a base currency for a unit of the trading asset,
-asks are the selling prices set by those holding the asset and looking to sell.
+While bids are offers in a base currency for a unit of the trading asset, asks are the selling prices set by those holding the asset and looking to sell.
 Therefore, the asking price is the minimum price that an individual would be willing to sell their asset,
 or the minimum amount that they want to receive in return for the unit they are parting with.
 
