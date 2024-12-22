@@ -9,3 +9,6 @@ Market Orders are the most straightforward order type, allowing traders to buy o
 > [!warning]
 > However, by prioritizing speed over price, the actual price of execution for a Market Order may differ from the displayed market price, especially in highly volatile markets.
 
+## Limit Orders
+
+Limit Orders allow traders to **set specific price levels** at which they want to buy or sell a cryptocurrency.
