@@ -25,3 +25,10 @@ A Trailing Stop Order allows traders to lock in potential earnings while keeping
 
 > [!example]
 > For example, if a trader places a trailing stop order and the asset’s price goes up, the trailing price will move up as well. If the price falls, the trigger price will stay at its previous level, effectively protecting the trader's potential gains.
+
+## Conditional Order Types
+
+In addition to the common order types, some cryptocurrency exchanges offer more advanced conditional order types, providing traders with an additional level of control and flexibility over their trades. They are designed to trigger specific actions based on certain market conditions or price movements.
+
+### OCO (One Cancels the Other)
+
