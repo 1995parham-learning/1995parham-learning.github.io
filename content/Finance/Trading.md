@@ -21,3 +21,4 @@ If the market price _drops_ to the stop price, your limit order becomes _active_
 
 ## Trailing Stop Orders
 
+A Trailing Stop Order allows traders to lock in potential earnings while keeping their positions open to greater upside opportunity, so long as the market moves in their favor. Like the name suggests, Trailing Stop Orders automatically adjust, or "trail", the current price of a cryptocurrency, at a set percentage that’s determined by the trader.
