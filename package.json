@@ -93,6 +93,6 @@
         "husky": "^9.1.7",
         "prettier": "^4.0.0-alpha.10",
         "tsx": "^4.19.2",
-        "typescript": "^5.8.0-dev.20241220"
+        "typescript": "^5.8.0-dev.20241223"
     }
 }
