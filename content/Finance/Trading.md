@@ -12,9 +12,9 @@ Market Orders are the most straightforward order type, allowing traders to buy o
 ## Limit Orders
 
 Limit Orders allow traders to **set specific price levels** at which they want to buy or sell a cryptocurrency. Unlike Market Orders, which trigger instantly when placed and prioritize speed of execution over price, limit orders will only trigger if the market price reaches or exceeds your specified price.
+
 ## Stop Limit Orders
 
 Stop Limit Orders allow traders to manage risk and have greater control over the execution price of a trade. Like the name suggests, Stop Limit orders combine the features of Limit Orders and Stop Orders. When placing a Stop Limit Order, traders must set two specific prices: the stop price and the limit price.
 
 If the market price _drops_ to the stop price, your limit order becomes _active_. Then, your trade will only be executed if the asset’s price reaches your limit price. Put simply, by placing a Stop Limit Order, you are effectively saying, =="If the asset’s price goes down to a certain level, then sell it at this specific price,"== thereby protecting yourself from potential downside risk.
-
