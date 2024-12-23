@@ -32,4 +32,4 @@ In addition to the common order types, some cryptocurrency exchanges offer more 
 
 ### OCO (One Cancels the Other)
 
-A **One Cancels the Other** (OCO) order consists of a _pair of orders that are created concurrently, but it is only possible for one of them to be executed. This means that as soon as one of the orders is fully or partially filled, the other is canceled automatically.
+A **One Cancels the Other** (OCO) order consists of a _pair of orders_ that are created concurrently, but it is only possible for one of them to be executed. This means that as soon as one of the orders is fully or partially filled, the other is canceled automatically.
