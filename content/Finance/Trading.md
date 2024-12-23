@@ -31,3 +31,5 @@ A Trailing Stop Order allows traders to lock in potential earnings while keeping
 In addition to the common order types, some cryptocurrency exchanges offer more advanced conditional order types, providing traders with an additional level of control and flexibility over their trades. They are designed to trigger specific actions based on certain market conditions or price movements.
 
 ### OCO (One Cancels the Other)
+
+A **One Cancels the Other*)) (OCO) order consists of a pair of orders that are created concurrently, but it is only possible for one of them to be executed. This means that as soon as one of the orders is fully or partially filled, the other is canceled automatically.
