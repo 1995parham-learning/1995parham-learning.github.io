@@ -1,0 +1,1 @@
+CQRS stands for **Command Query Responsibility Segregation**, which is a design pattern used in software engineering to separate the responsibilities of handling commands (changing state) from the responsibility of querying data.
