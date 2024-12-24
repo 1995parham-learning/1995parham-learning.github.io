@@ -2,4 +2,3 @@
 
 > [!warning]
 > The Business Logic Processor runs entirely in-memory using event sourcing.
-
