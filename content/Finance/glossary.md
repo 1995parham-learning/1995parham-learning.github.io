@@ -39,8 +39,8 @@ In the context of financial markets, it is the value buyers offer for an asset,
 such as a commodity, security, or cryptocurrency.
 
 > [!note]
-A trading order book consists of multiple bid prices (on the side of buyers) and asking prices (on the side of sellers).
-The highest bid price is always lower than the lowest asking price and the difference between them is referred to as a bid-ask spread.
+> A trading order book consists of multiple bid prices (on the side of buyers) and asking prices (on the side of sellers).
+> The highest bid price is always lower than the lowest asking price and the difference between them is referred to as a bid-ask spread.
 
 Traders or investors that are willing to sell their assets or stock positions need to either accept one of the bid
 prices available on the order book (ideally, the highest one) or to set an asking price and wait until
