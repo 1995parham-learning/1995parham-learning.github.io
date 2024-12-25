@@ -19,7 +19,7 @@ Stop Limit Orders (e.g. Stop orders) allow traders to _manage risk_ and have gre
 
 If the market price _drops_ to the stop price, your limit order becomes _active_. Then, your trade will only be executed if the asset’s price reaches your limit price. Put simply, by placing a Stop Limit Order, you are effectively saying, =="If the asset’s price goes down to a certain level, then sell it at this specific price,"== thereby protecting yourself from potential downside risk.
 
-Margnig
+A stop order is always executed in the **direction that the price is moving**. For instance, if the market is moving lower, the stop order is set to sell at a pre-set price below the current market price. Alternatively, if the price is moving higher, the stop order will be to buy once the security reaches a pre-set price above the current market price. 
 
 ## Trailing Stop Orders
 
