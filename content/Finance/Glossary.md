@@ -4,6 +4,10 @@ The term **bid** refers to the highest price a buyer will pay to buy a specified
 
 The bid price will almost _always be lower_ than the ask or offer, price. The difference between the bid price and the ask price is called the **spread**.
 
+## Investing vs. Trading: An Overview
+
+Investing and trading are two different methods of attempting to profit in the financial markets. Both investors and traders seek profits through market participation. Investors generally seek larger returns over an extended period through buying and holding. Traders, by contrast, take advantage of both rising and falling markets to enter and exit positions over a shorter time frame, taking smaller, more frequent profits. 
+
 ## Market Making
 
 ## Order Book
