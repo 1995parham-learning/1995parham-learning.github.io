@@ -1,8 +1,5 @@
----
-title: State Management
----
 
-:::note
+> [!note
 State?
 
 Information _stored_ in entities connected through a network
