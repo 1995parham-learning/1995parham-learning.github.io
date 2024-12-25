@@ -1,9 +1,7 @@
-
-> [!note
-State?
-
-Information _stored_ in entities connected through a network
-:::
+> [!note]
+> State?
+>
+> Information _stored_ in entities connected through a network
 
 -   Updated when node or network **conditions** change
 -   Stored in _end-points_ or _multiple nodes_
