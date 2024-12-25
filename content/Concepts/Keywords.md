@@ -1,6 +1,3 @@
----
-title: Keywords
----
 
 There are some concepts in the software engineering that are useful to know. I can use them to describe my experiences better and even use them to do things in a better way.
 
