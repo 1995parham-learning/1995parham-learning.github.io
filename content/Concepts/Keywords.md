@@ -1,4 +1,3 @@
-
 There are some concepts in the software engineering that are useful to know. I can use them to describe my experiences better and even use them to do things in a better way.
 
 -   The ‘E’, ‘S’, ‘G’ in **ESG** data stands for, “Environmental, Social, and Governance” – otherwise known as the three key components that companies will use to determine the environmental efficacy and sustainability of their cooperation.
