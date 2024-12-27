@@ -14,6 +14,11 @@ A day trader is a type of trader who executes a relatively large volume of short
 
 Day traders employ a wide variety of techniques in order to capitalize on market inefficiencies, often making many trades a day and _closing positions before the trading day ends_.
 
+
+## Swing Trader
+
+Swing trading is a style of trading that attempts to capture short- to medium-term gains in a stock (or any financial instrument) over a period of a few days to several weeks. Swing traders primarily use technical analysis to look for trading opportunities. 
+
 ## Margin and Marging Trading
 
 Margin refers to the amount of equity an investor has in their brokerage account. "To buy on margin" means to use the money borrowed from a broker to purchase securities. You must have a margin account to do so, rather than a standard brokerage account. A margin account is a brokerage account in which **the broker lends the investor money to buy more securities than what they could otherwise buy with the balance in their account**.
