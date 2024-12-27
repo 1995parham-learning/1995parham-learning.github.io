@@ -75,4 +75,4 @@ Property or goods that you promise to give to someone if you cannot pay what you
 
 ## Market Order
 
-A market order is an order to **instantly buy or sell** at the best available price. It is executed based on the limit orders that are already located in the order book, meaning that market orders depend on market liquidity to be completed.
+A market order is an instruction by an investor to a broker to buy or sell stock shares, bonds, or other assets at the _best available price_ in the current financial market. 
