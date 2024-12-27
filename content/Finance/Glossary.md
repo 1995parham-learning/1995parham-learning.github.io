@@ -60,9 +60,7 @@ Traders or investors that are willing to sell their assets or stock positions ne
 prices available on the order book (ideally, the highest one) or to set an asking price and wait until
 a buyer eventually bids against that value, filling the order.
 
-In financial markets, traders have the power to decide what price they are willing to buy or sell an asset
-and they do so at the moment they create their order.
-Clearly, if the price they set is too far apart from the current market price, their order won’t be filled.
+In financial markets, traders have the power to decide what price they are willing to buy or sell an asset and they do so at the moment they create their order. Clearly, if the price they set is too far apart from the current market price, their order won’t be filled.
 
 In a situation where multiple buyers are competing for an asset and start putting their bids,
 one after the other, we would have what is sometimes referred to as a bidding war.
