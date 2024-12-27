@@ -75,4 +75,6 @@ Property or goods that you promise to give to someone if you cannot pay what you
 
 ## Market Order
 
-A market order is an instruction by an investor to a broker to buy or sell stock shares, bonds, or other assets at the _best available price_ in the current financial market. 
+A market order is an instruction by an investor to a broker to buy or sell stock shares, bonds, or other assets at the _best available price_ in the current financial market.
+
+A market order is an instruction to buy or sell a security immediately at the current price.
