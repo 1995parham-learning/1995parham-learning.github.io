@@ -62,10 +62,7 @@ a buyer eventually bids against that value, filling the order.
 
 In financial markets, traders have the power to decide what price they are willing to buy or sell an asset and they do so at the moment they create their order. Clearly, if the price they set is too far apart from the current market price, their order won’t be filled.
 
-In a situation where multiple buyers are competing for an asset and start putting their bids,
-one after the other, we would have what is sometimes referred to as a bidding war.
-When a bidding war occurs, buyers replace their bids higher and higher in order to cover the bids of other
-competing buyers and this would probably cause the market prices for that asset to increase rapidly.
+In a situation where multiple buyers are competing for an asset and start putting their bids, one after the other, we would have what is sometimes referred to as a bidding war. When a bidding war occurs, buyers replace their bids higher and higher in order to cover the bids of other competing buyers and this would probably cause the market prices for that asset to increase rapidly.
 
 ## Security
 
