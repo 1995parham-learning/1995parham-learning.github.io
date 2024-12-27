@@ -8,6 +8,9 @@ The bid price will almost _always be lower_ than the ask or offer, price. The di
 
 Investing and trading are two different methods of attempting to profit in the financial markets. Both investors and traders seek profits through market participation. Investors generally seek _larger returns over an extended period_ through buying and holding. Traders, by contrast, take advantage of both rising and falling markets to enter and exit positions over a _shorter time frame, taking smaller, more frequent profits_.
 
+## Day Trader
+
+A day trader is a type of trader who executes a relatively large volume of short and long trades to capitalize on intraday market price action. The goal is to profit from very short-term price movements. Day traders can also use leverage to amplify returns, which can also amplify losses.
 ## Margin and Marging Trading
 
 Margin refers to the amount of equity an investor has in their brokerage account. "To buy on margin" means to use the money borrowed from a broker to purchase securities. You must have a margin account to do so, rather than a standard brokerage account. A margin account is a brokerage account in which **the broker lends the investor money to buy more securities than what they could otherwise buy with the balance in their account**.
