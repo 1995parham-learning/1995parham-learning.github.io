@@ -12,7 +12,8 @@ Investing and trading are two different methods of attempting to profit in the f
 
 A day trader is a type of trader who executes a relatively large volume of short and long trades to capitalize on intraday market price action. The goal is to profit from very short-term price movements. Day traders can also use leverage to amplify returns, which can also amplify losses.
 
-Day traders employ a wide variety of techniques in order to capitalize on market inefficiencies, often making many trades a day and closing positions before the trading day ends.
+Day traders employ a wide variety of techniques in order to capitalize on market inefficiencies, often making many trades a day and _closing positions before the trading day ends_.
+
 ## Margin and Marging Trading
 
 Margin refers to the amount of equity an investor has in their brokerage account. "To buy on margin" means to use the money borrowed from a broker to purchase securities. You must have a margin account to do so, rather than a standard brokerage account. A margin account is a brokerage account in which **the broker lends the investor money to buy more securities than what they could otherwise buy with the balance in their account**.
@@ -74,6 +75,4 @@ Property or goods that you promise to give to someone if you cannot pay what you
 
 ## Market Order
 
-A market order is an order to instantly buy or sell at the best available price.
-It is executed based on the limit orders that are already located in the order book,
-meaning that market orders depend on market liquidity to be completed.
+A market order is an order to **instantly buy or sell** at the best available price. It is executed based on the limit orders that are already located in the order book, meaning that market orders depend on market liquidity to be completed.
