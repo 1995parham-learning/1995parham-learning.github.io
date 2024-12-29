@@ -26,6 +26,10 @@ Semi-automatic swagger documentation for the REST APIs:
 
 -   [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
 
+For doing upgrade, you can use:
+
+- 
+
 ## Database Optimization
 
 Django’s database layer provides various ways to help developers get the most out of their databases.
