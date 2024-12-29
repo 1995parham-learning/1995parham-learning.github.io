@@ -260,11 +260,11 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 itertools.batched(iterable, n)
 ```
 
-- Batch data from the _iterable_ into tuples of length _n_.
-- The last batch may be shorter than _n_.
-- Loops over the input iterable and accumulates data into tuples up to size _n_.
-- The input is consumed **lazily**, _just enough to fill a batch_.
-- The result is yielded as soon as the batch is full or when the input iterable is exhausted:
+-   Batch data from the _iterable_ into tuples of length _n_.
+-   The last batch may be shorter than _n_.
+-   Loops over the input iterable and accumulates data into tuples up to size _n_.
+-   The input is consumed **lazily**, _just enough to fill a batch_.
+-   The result is yielded as soon as the batch is full or when the input iterable is exhausted:
 
 ```python
 >>> flattened_data = ['roses', 'red', 'violets', 'blue', 'sugar', 'sweet']
