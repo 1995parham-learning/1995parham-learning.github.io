@@ -35,6 +35,7 @@ body {
   --em-color: #58d68d;
   --italic-color: #58d68d;
   --inline-title-color: #dfff00;
+  --external-link-color: #9999ff;
 }
 
 .cm-inline-code {
