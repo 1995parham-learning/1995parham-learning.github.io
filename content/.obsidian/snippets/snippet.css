@@ -1,3 +1,32 @@
+body {
+  --code-background: #1b1b1b;
+  --code-white-space: nowrap;
+  --code-size: 13px;
+  --code-normal: #d4d4d4;
+  --code-comment: #608b4e;
+  --code-function: #dcdcaa;
+  --code-important: #569cd6;
+  --code-keyword: #c586c0;
+  --code-operator: #d4d4d4;
+  --code-property: #9cdcfe;
+  --code-punctuation: #d4d4d4;
+  --code-string: #ce9178;
+  --code-tag: #ce9178;
+  --code-value: #b5cea8;
+}
+
+.markdown-preview-view .token.console {
+  color: #9cdcfe;
+}
+
+.markdown-preview-view .token.boolean {
+  color: #569cd6;
+}
+
+.markdown-preview-view .token.unit {
+  color: #b5cea8;
+}
+
 .theme-dark {
   --h1-color: #dfff00;
   --h2-color: #ff7f50;
