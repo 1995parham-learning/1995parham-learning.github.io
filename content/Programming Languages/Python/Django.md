@@ -28,7 +28,7 @@ Semi-automatic swagger documentation for the REST APIs:
 
 For doing upgrade, you can use:
 
-- 
+-   [@adamchainz/django-upgrade](https://github.com/adamchainz/django-upgrade)
 
 ## Database Optimization
 
