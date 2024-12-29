@@ -179,9 +179,7 @@ that it is enclosed in _parentheses instead of brackets or curly braces_.
 
 ## Operator
 
-The [`operator`](https://docs.python.org/3/library/operator.html#module-operator)
-module exports a set of efficient functions corresponding to the intrinsic operators of Python.
-For example, `operator.add(x, y)` is equivalent to the expression `x+y`.
+The [`operator`](https://docs.python.org/3/library/operator.html#module-operator) module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, `operator.add(x, y)` is equivalent to the expression `x+y`.
 
 ## Bisect
 
@@ -191,8 +189,8 @@ This module provides support for maintaining a list in sorted order without havi
 bisect.bisect_left(a, x, lo=0, hi=len(a), *, key=None)
 ```
 
-Locate the insertion point for `x` in `a` to maintain sorted order.
-The parameters `lo` and `hi` may be used to specify a subset of the list which should be considered;
+- Locate the insertion point for `x` in `a` to maintain sorted order.
+- The parameters `lo` and `hi` may be used to specify a subset of the list which should be considered;
 by default the entire list is used.
 If `x` is already present in `a`, the insertion point will be before (to the left of) any existing entries.
 The return value is suitable for use as the first parameter to `list.insert()` assuming that `a` is already sorted.
