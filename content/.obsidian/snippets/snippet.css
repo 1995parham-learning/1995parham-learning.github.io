@@ -37,6 +37,10 @@ body {
   --inline-title-color: #dfff00;
 }
 
+.cm-inline-code {
+  --code-normal: #cc99ff;
+}
+
 .rtl {
   direction: rtl;
 }
