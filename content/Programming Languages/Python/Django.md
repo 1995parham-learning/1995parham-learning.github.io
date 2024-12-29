@@ -42,9 +42,7 @@ To avoid performance problems, it is important to understand:
 -   When they are evaluated.
 -   How the data is held in memory.
 
-Use `iterator()`,
-When you have a lot of objects, the caching behavior of the `QuerySet` can cause a large amount
-of memory to be used. In this case, `iterator()` may help.
+Use `iterator()`, When you have a lot of objects, the caching behavior of the `QuerySet` can cause a large amount of memory to be used. In this case, `iterator()` may help.
 
 ## Dataclasses
 
@@ -112,3 +110,7 @@ The basics:
 -   With all of this, Django gives you an automatically-generated database-access API; see Making queries.
 
 Use `OuterRef` when a queryset in a `Subquery` needs to refer to a field from the outer query or its transform. It acts like an `F` expression except that the check to see if it refers to a valid field isn’t made until the outer queryset is resolved.
+
+### `select_related()`
+
+Returns a QuerySet that will “follow” foreign-key relationships, selecting additional related-object data when it executes its query. This is a performance booster which results in a single more complex query but means later use of foreign-key relationships won’t require database queries.
