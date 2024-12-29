@@ -113,4 +113,4 @@ Use `OuterRef` when a queryset in a `Subquery` needs to refer to a field from th
 
 ### `select_related()`
 
-Returns a `QuerySet` that will **follow** foreign-key relationships, selecting __additional related-object data when it executes its query_. This is a performance booster which results in a single more complex query but means later use of foreign-key relationships won’t require database queries.
+Returns a `QuerySet` that will **follow** foreign-key relationships, selecting _additional related-object data when it executes its query_. This is a performance booster which results in a single more complex query but means later use of foreign-key relationships won’t require database queries.
