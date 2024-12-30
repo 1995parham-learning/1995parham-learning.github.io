@@ -28,6 +28,18 @@ Margin refers to the amount of equity an investor has in their brokerage account
 
 ## Liquidity pool
 
+## Primary Market
+
+A primary market is a source of new securities. Often on an exchange, it's where companies, governments, and other groups go to obtain financing through debt-based or equity-based securities.
+
+In the primary market, new stocks and bonds are sold to the public **for the first time**.
+
+In a primary market, investors are able to purchase securities _directly from the issuer_.
+
+## Secondary Market
+
+## Initial Public Offer
+
 ## Ask Price
 
 > [!note]

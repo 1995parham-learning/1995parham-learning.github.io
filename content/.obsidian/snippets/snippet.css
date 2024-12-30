@@ -42,6 +42,10 @@ body {
   --code-normal: #cc99ff;
 }
 
+:not(pre) > code {
+  --code-normal: #cc99ff;
+}
+
 .rtl {
   direction: rtl;
 }
