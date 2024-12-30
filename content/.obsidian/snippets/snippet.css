@@ -27,6 +27,10 @@ body {
   color: #b5cea8;
 }
 
+.markdown-preview-view {
+  text-align: justify;
+}
+
 .theme-dark {
   --h1-color: #dfff00;
   --h2-color: #ff7f50;
