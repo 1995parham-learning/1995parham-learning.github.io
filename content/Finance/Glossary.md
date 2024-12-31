@@ -35,6 +35,7 @@ A primary market is a source of new securities. Often on an exchange, it's where
 In the primary market, new stocks and bonds are sold to the public **for the first time**.
 
 In a primary market, investors are able to purchase securities _directly from the issuer_.
+
 ## Secondary Market
 
 The secondary market is where investors buy and sell securities. Trades take place on the secondary market _between other investors and traders rather than from the companies that issue the securities_.
