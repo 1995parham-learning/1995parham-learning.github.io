@@ -240,7 +240,7 @@ messaging queues, GCP PubSub, SNS, SQS, etc.
 
 ### Architecture
 
-![argo-events-architecture](./argocd/argo-events-architecture.png)
+![argo-events-architecture](argo-events-architecture.png)
 
 ### Event Source
 

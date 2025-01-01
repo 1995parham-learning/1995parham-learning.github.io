@@ -7,7 +7,7 @@ Knative is a platform-agnostic solution for running serverless deployments.
 Knative Serving defines a set of objects as Kubernetes Custom Resource Definitions (CRDs).
 These resources are used to define and control how your serverless workload behaves on the cluster.
 
-![Object Model](./knative/object_model.png)
+![Object Model](object_model.png)
 
 The primary Knative Serving resources are Services, Routes, Configurations, and Revisions:
 

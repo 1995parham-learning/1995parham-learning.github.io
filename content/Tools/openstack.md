@@ -10,7 +10,7 @@ OpenStack is broken up into services to allow you to plug and play components de
 The OpenStack map gives you an “at a glance” view of the OpenStack landscape
 to see where those services fit and how they can work together.
 
-![Architecture](./openstack/architecture.png)
+![Architecture](Tools/openstack/architecture.png)
 
 It’s important to note that OpenStack technologies are independent of the hypervisor.
 Support is implemented through the appropriate drivers in **Nova** project.

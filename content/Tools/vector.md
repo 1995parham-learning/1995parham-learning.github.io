@@ -1,4 +1,4 @@
-![architecture](./vector/architecture.svg)
+![architecture](architecture.svg)
 
 ## Concepts
 

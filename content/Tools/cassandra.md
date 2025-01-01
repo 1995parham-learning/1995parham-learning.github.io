@@ -12,7 +12,7 @@ Cassandra databases easily scale when an application is under high stress, and t
 any given datacenter's hardware failure. A distributed architecture also brings technical power;
 for example, a developer can tweak the throughput of read queries or write queries in isolation.
 
-![distribution](cassandra/image.png)
+![distribution](image.png)
 
 "Distributed" means that Cassandra can run on multiple machines while appearing to users as a unified whole.
 There is little point in running Cassandsra as a single node, although it is very helpful to do so to help
