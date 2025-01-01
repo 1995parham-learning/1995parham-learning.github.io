@@ -41,7 +41,8 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | covert (adj)(n)              | secret or hidden, making it difficult to notice                                                                                                                              |
 | crate (n)                    | a large wooden container for transporting goods                                                                                                                              |
 | crate (v)                    | to put something into a crate, especially in order to move it                                                                                                                |
-| creek (n)                    | a small narrow stream or river                                                                                                                                               |
+| creek (n)                    | small narrow stream or river                                                                                                                                                 |
+| ferris wheel (n)             | a very                                                                                                                                                                       |
 | curfew (n)                   | a law which says that people must not go outside after a particular time at night until the morning; the time after which nobody must go outside                             |
 | dangerous (adj)              | hazardous; perilous; risky                                                                                                                                                   |
 | deaden (v)                   | to make sth such as a sound, a feeling, etc. less strong                                                                                                                     |
