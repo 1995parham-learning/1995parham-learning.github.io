@@ -1,7 +1,3 @@
----
-title: Types
----
-
 ## Fixed-term employment contract
 
 A fixed-term contract is a contractual relationship between an employee and an employer that lasts
