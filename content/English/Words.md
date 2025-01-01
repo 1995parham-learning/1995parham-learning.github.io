@@ -33,6 +33,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | bust (v)                     | to break something                                                                                                                                                           |
 | cape (n)                     | a very large piece of land sticking out into the sea                                                                                                                         |
 | cavalry (n)                  | the part of the army that fought on horses; the part of the modern army that uses armed vehicles                                                                             |
+| cabana (n)                   | a tent or small wooden structure used for changing clothes at a beach or pool                                                                                                |
 | clutter (n)(v)               | to fill a place with too many things, so that it is untidy                                                                                                                   |
 | commute (v)(n)               | to travel regularly by bus, train, car, etc. between your place of work and your home                                                                                        |
 | compromise (n)(v)            | an agreement made between two people or groups in which each side gives up some of the things they want so that both sides are happy at the end                              |
