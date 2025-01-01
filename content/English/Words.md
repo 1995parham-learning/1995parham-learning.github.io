@@ -42,7 +42,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | crate (n)                    | a large wooden container for transporting goods                                                                                                                              |
 | crate (v)                    | to put something into a crate, especially in order to move it                                                                                                                |
 | creek (n)                    | small narrow stream or river                                                                                                                                                 |
-| ferris wheel (n)             | a very                                                                                                                                                                       |
+| ferris wheel (n)             | a very large upright wheel with seats on it for people to ride on in an amusement park                                                                                       |
 | curfew (n)                   | a law which says that people must not go outside after a particular time at night until the morning; the time after which nobody must go outside                             |
 | dangerous (adj)              | hazardous; perilous; risky                                                                                                                                                   |
 | deaden (v)                   | to make sth such as a sound, a feeling, etc. less strong                                                                                                                     |
