@@ -4,11 +4,9 @@ One of the best sources for gathering the description for words is [Cambridge Di
 
 ## Definitions
 
-
 | Word | Definition |
 | ---- | ---------- |
 |      |            |
-
 
 -   absent-minded (adj) :: forgetful
 -   acquainted (adj) :: with sth (formal) familiar with sth, having read, seen or experienced it
