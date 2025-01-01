@@ -6,6 +6,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 
 | Word                         | Definition                                                                                                                                                                   |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| STEM (n)                     | science, technology, engineering, and math                                                                                                                                   |
 | absent-minded (adj)          | forgetful                                                                                                                                                                    |
 | acquainted (adj)             | with sth (formal) familiar with sth, having read, seen or experienced it                                                                                                     |
 | adept (adj)                  | very good at doing something that is not easy                                                                                                                                |
@@ -42,7 +43,6 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | crate (n)                    | a large wooden container for transporting goods                                                                                                                              |
 | crate (v)                    | to put something into a crate, especially in order to move it                                                                                                                |
 | creek (n)                    | small narrow stream or river                                                                                                                                                 |
-| ferris wheel (n)             | a very large upright wheel with seats on it for people to ride on in an amusement park                                                                                       |
 | curfew (n)                   | a law which says that people must not go outside after a particular time at night until the morning; the time after which nobody must go outside                             |
 | dangerous (adj)              | hazardous; perilous; risky                                                                                                                                                   |
 | deaden (v)                   | to make sth such as a sound, a feeling, etc. less strong                                                                                                                     |
@@ -59,6 +59,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | facade (n)                   | the front of a building                                                                                                                                                      |
 | falter (v)                   | to become weaker or less effective                                                                                                                                           |
 | fatigue (n)                  | a feeling of being extremely tired, usually because of hard work or exercise                                                                                                 |
+| ferris wheel (n)             | a very large upright wheel with seats on it for people to ride on in an amusement park                                                                                       |
 | fold (v)(n)                  | to bend sth so that it becomes smaller or flatter and can be stored or carried more easily                                                                                   |
 | fond (adj)                   | to like someone or something very much                                                                                                                                       |
 | foosball (n)                 | Table football, also known as foosball[a] or table soccer, is a tabletop game loosely based on association football.                                                         |
@@ -120,7 +121,6 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | shaft (n)(v)                 | a long, narrow, usually vertical passage in a building or underground, used especially for a lift/elevator or as a way of allowing air in or out                             |
 | sorrow (n)(v)                | (rather formal) a feeling of great sadness because sth very bad has happened                                                                                                 |
 | spore (n)                    | one of the very small cells that are produced by some plants and that develop into new plants                                                                                |
-| STEM (n)                     | science, technology, engineering, and math                                                                                                                                   |
 | stereotype (n)(v)            | a fixed idea or image that many people have of a particular type of person or thing, but which is often not true in reality                                                  |
 | stink (v)(n)                 | (of sth) to have a strong, unpleasant smell                                                                                                                                  |
 | stopgap (n)                  | something that you use or do for a short time while you are looking for sth better                                                                                           |
