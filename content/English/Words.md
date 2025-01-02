@@ -48,6 +48,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | dangerous (adj)              | hazardous; perilous; risky                                                                                                                                                   |
 | deaden (v)                   | to make sth such as a sound, a feeling, etc. less strong                                                                                                                     |
 | decent (adj)                 | of a good enough standard or quality                                                                                                                                         |
+| decile (n)                   | any one of the ten groups.                                                                                                                                                   |
 | decoy (n)                    | an animal or a bird, or a model of one, that attracts other animals or birds, especially so that they can be shot by people who are hunting them                             |
 | dignity (n)                  | the fact of being given honor and respect by people                                                                                                                          |
 | disguise (n)                 | to change your appearance so that people cannot recognize you                                                                                                                |
