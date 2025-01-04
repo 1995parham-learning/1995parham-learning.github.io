@@ -118,3 +118,5 @@ Returns a `QuerySet` that will **follow** foreign-key relationships, selecting _
 ### `in_bulk()`
 
 Takes a list of field values (`id_list`) and the `field_name` for those values, and returns a dictionary mapping each value to an instance of the object with the given field value.
+
+Takes a list of primary-key values (`id_list`) and returns a dictionary mapping each primary-key value to an instance of the object with the given ID. If a list isn’t provided, all objects in the queryset are returned.
