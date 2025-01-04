@@ -134,4 +134,4 @@ Takes a list of field values (`id_list`) and the `field_name` for those values, 
 {'Beatles Blog': <Blog: Beatles Blog>, 'Cheddar Talk': <Blog: Cheddar Talk>, 'Django Weblog': <Blog: Django Weblog>}
 ```
 
-If a list isn’t provided, all objects in the queryset are returned.
+If a list isn’t provided, all objects in the `queryset` are returned.
