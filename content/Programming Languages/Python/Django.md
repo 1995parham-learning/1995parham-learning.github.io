@@ -115,4 +115,6 @@ Use `OuterRef` when a queryset in a `Subquery` needs to refer to a field from th
 
 Returns a `QuerySet` that will **follow** foreign-key relationships, selecting _additional related-object data when it executes its query_. This is a performance booster which results in a single more complex query but means later use of foreign-key relationships won’t require database queries.
 
-### ``
+### `in_bulk()`
+
+Takes a list of field values (`id_list`) and the `field_name` for those values, and returns a dictionary mapping each value to an instance of the object with the given field value.
