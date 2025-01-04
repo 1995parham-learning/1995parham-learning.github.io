@@ -119,4 +119,17 @@ Returns a `QuerySet` that will **follow** foreign-key relationships, selecting _
 
 Takes a list of field values (`id_list`) and the `field_name` for those values, and returns a dictionary mapping each value to an instance of the object with the given field value.
 
-Takes a list of primary-key values (`id_list`) and returns a dictionary mapping each primary-key value to an instance of the object with the given ID. If a list isn’t provided, all objects in the queryset are returned.
+```python
+>>> Blog.objects.in_bulk([1])
+{1: <Blog: Beatles Blog>}
+>>> Blog.objects.in_bulk([1, 2])
+{1: <Blog: Beatles Blog>, 2: <Blog: Cheddar Talk>}
+>>> Blog.objects.in_bulk([])
+{}
+>>> Blog.objects.in_bulk()
+{1: <Blog: Beatles Blog>, 2: <Blog: Cheddar Talk>, 3: <Blog: Django Weblog>}
+>>> Blog.objects.in_bulk(["beatles_blog"], field_name="slug")
+{'beatles_blog': <Blog: Beatles Blog>}
+>>> Blog.objects.distinct("name").in_bulk(field_name="name")
+{'Beatles Blog': <Blog: Beatles Blog>, 'Cheddar Talk': <Blog: Cheddar Talk>, 'Django Weblog': <Blog: Django Weblog>}
+```
