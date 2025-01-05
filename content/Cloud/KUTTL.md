@@ -1,7 +1,3 @@
----
-title: KUTTL
----
-
 [The Kubernetes Test Tool (KUTTL)](https://kuttl.dev/) is a toolkit that makes it easy to test Kubernetes Operators,
 just using YAML.
 
