@@ -33,3 +33,5 @@ As someone using Karpenter, once your Kubernetes cluster and the **Karpenter con
 ---
 
 Karpenter is designed to run on a node in your Kubernetes cluster. As part of the installation process, you need _credentials from the underlying cloud provider_ to allow nodes to be started up and added to the cluster as they are needed.
+
+==Karpenter’s job is to add nodes to handle unschedulable pods, schedule pods on those nodes, and remove the nodes when they are not needed. ==
