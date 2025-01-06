@@ -36,12 +36,8 @@ Karpenter is designed to run on a node in your Kubernetes cluster. As part of th
 
 ==Karpenter’s job is to add nodes to handle unschedulable pods, schedule pods on those nodes, and remove the nodes when they are not needed. ==
 
-- **Unschedulable pods**: Karpenter only attempts to schedule pods that have a status condition `Unschedulable=True`, which the _kube scheduler_ sets when it fails to schedule the pod to existing capacity.
-    
-- **Defining Constraints**: Karpenter defines a Custom Resource called a `NodePool` to specify configuration. Each NodePool manages a distinct set of nodes, but pods can be scheduled to any NodePool that supports its scheduling constraints. A NodePool contains constraints that impact the nodes that can be provisioned and attributes of those nodes.
-    
-- [**Defining Disruption**](https://karpenter.sh/docs/concepts/disruption/): A NodePool can also include values to indicate when nodes should be disrupted. This includes configuration around concepts like [Consolidation](https://karpenter.sh/docs/concepts/disruption/#consolidation), [Drift](https://karpenter.sh/docs/concepts/disruption/#drift), and [Expiration](https://karpenter.sh/docs/concepts/disruption/#automated-methods).
-    
-- **Well-known labels**: The NodePool can use well-known Kubernetes labels to allow pods to request only certain instance types, architectures, operating systems, or other attributes when creating nodes. See [Well-Known Labels, Annotations and Taints](https://kubernetes.io/docs/reference/labels-annotations-taints/) for details. Keep in mind that only a subset of these labels are supported in Karpenter, as described later.
-    
-- **Multiple NodePools**: Multiple NodePools can be configured on the same cluster. For example, you might want to configure different teams on the same cluster to run on completely separate capacity. One team could run on nodes using BottleRocket, while another uses EKSOptimizedAMI.
+-   **Unschedulable pods**: Karpenter only attempts to schedule pods that have a status condition `Unschedulable=True`, which the _kube scheduler_ sets when it fails to schedule the pod to existing capacity.
+-   **Defining Constraints**: Karpenter defines a Custom Resource called a _NodePool_ to specify configuration. Each NodePool manages a distinct set of nodes, but pods can be scheduled to any NodePool that supports its scheduling constraints. A NodePool contains constraints that impact the nodes that can be provisioned and attributes of those nodes.
+-   **Defining Disruption**: A NodePool can also include values to indicate when nodes should be disrupted.
+-   **Well-known labels**: The NodePool can use well-known Kubernetes labels to allow pods to request only certain instance types, architectures, operating systems, or other attributes when creating nodes. 
+-   **Multiple NodePools**: Multiple NodePools can be configured on the same cluster. For example, you might want to configure different teams on the same cluster to run on completely separate capacity. One team could run on nodes using BottleRocket, while another uses EKSOptimizedAMI.
