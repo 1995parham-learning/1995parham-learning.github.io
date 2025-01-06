@@ -29,3 +29,4 @@ As someone using Karpenter, once your Kubernetes cluster and the **Karpenter con
 
 ---
 
+Karpenter is designed to run on a node in your Kubernetes cluster. As part of the installation process, you need _credentials from the underlying cloud provider_ to allow nodes to be started up and added to the cluster as they are needed.
