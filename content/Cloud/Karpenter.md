@@ -2,6 +2,8 @@
 
 Karpenter automatically launches just the right compute resources to handle your cluster's applications. It is designed to let you take full advantage of the cloud with fast and simple compute provisioning for Kubernetes clusters.
 
+---
+
 Karpenter is an open-source node lifecycle management project built for Kubernetes. Adding Karpenter to a Kubernetes cluster can dramatically improve the efficiency and cost of running workloads on that cluster. Karpenter works by:
 
 -   **Watching** for pods that the Kubernetes scheduler has marked as unschedulable
@@ -24,3 +26,6 @@ As someone using Karpenter, once your Kubernetes cluster and the **Karpenter con
     -   Tolerations (`tolerations`): Identify that a pod must match (tolerate) a taint on a node before the pod will run on it. Without the toleration, the effect set by the taint occurs (`NoSchedule`, `PreferNoSchedule`, or `NoExecute`).
     -   Topology spread (`topologySpreadConstraints`): Request that pods be spread across zones (`topology.kubernetes.io/zone`) or hosts (`kubernetes.io/hostname`), or cloud provider capacity types (`karpenter.sh/capacity-type`). See [Pod Topology Spread Constraints](https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/) for details.
     -   Persistent volume topology: Indicate that the Pod has a storage requirement that requires a node running in a particular zone that can make that storage available to the node.
+
+---
+
