@@ -81,6 +81,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | javelin (b)                  | a light spear thrown as a weapon of war or in hunting                                                                                                                        |
 | lenient (adj)                | not harsh, severe, or strict                                                                                                                                                 |
 | locket (n)                   | a small piece of jewellery that opens to show a small picture or piece of hair, usually worn on a chain around a person's neck                                               |
+| marina (n)                   | a waterside facility that has docks, moorings, supplies, and other facilities for small boats                                                                                |
 | mediocre (adj)               | not very good; of only average standard                                                                                                                                      |
 | mediocrity (n)               | moderate ability or value                                                                                                                                                    |
 | molest (v)                   | to make unwanted or improper sexual advances towards (someone)                                                                                                               |
