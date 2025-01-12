@@ -15,8 +15,7 @@ You may choose to **fine-tune** a LLM with your data, but:
 -   Due to the cost to train, it's **hard to update** a LLM with latest information.
 -   **Observability** is lacking. When you ask a LLM a question, it's not obvious how the LLM arrived at its answer.
 
-LlamaIndex takes a different approach called [Retrieval-Augmented Generation (RAG)](https://docs.llamaindex.ai/en/stable/getting_started/concepts.html).
-Instead of asking LLM to generate an answer immediately, LlamaIndex:
+LlamaIndex takes a different approach called [Retrieval-Augmented Generation (RAG)](https://docs.llamaindex.ai/en/stable/getting_started/concepts.html). Instead of asking LLM to generate an answer immediately, LlamaIndex:
 
 1. Retrieves information from your data sources first,
 2. Adds it to your question as context, and
@@ -28,8 +27,7 @@ RAG overcomes all three weaknesses of the fine-tuning approach:
 -   Data is fetched only when you ask for them, so it's **always up-to-date**.
 -   LlamaIndex can show you the retrieved documents, so it's **more trustworthy**.
 
-LlamaIndex imposes no restriction on how you use LLMs. You can still use LLMs as auto-complete, chatbots, semi-autonomous agents, and more (see Use Cases on the left).
-It only makes LLMs more relevant to you.
+LlamaIndex imposes no restriction on how you use LLMs. You can still use LLMs as auto-complete, chatbots, semi-autonomous agents, and more (see Use Cases on the left). _It only makes LLMs more relevant to you_.
 
 ## 🦙 How can LlamaIndex help?
 
