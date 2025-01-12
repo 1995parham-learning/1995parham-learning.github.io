@@ -66,6 +66,7 @@ mark,
   --h1-color: #dfff00;
   --h2-color: #ff7f50;
   --h3-color: #1affff;
+  --h4-color: #ccff00;
   --strong-color: #f0b27a;
   --bold-color: #f0b27a;
   --em-color: #58d68d;
@@ -328,4 +329,15 @@ input[data-task="-"]:checked,
 li[data-task="-"] > input:checked,
 li[data-task="-"] > p > input:checked {
   content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjkyMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iYW4iPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBhdGggZD0ibTQuOSA0LjkgMTQuMiAxNC4yIi8+PC9zdmc+");
+}
+
+.is-rtl div,
+.is-rtl li,
+.is-rtl p {
+	direction: rtl;
+	unicode-bidi: unset;
+}
+
+.is-rtl .table-cell-wrapper {
+  width: max-content
 }
