@@ -1,10 +1,4 @@
----
-title: LlamaIndex
-icon: noto:llama
----
-
-LlamaIndex is a data framework for [LLM](https://en.wikipedia.org/wiki/Large_language_model)-based applications to ingest,
-structure, and access **private** or **domain-specific** data.
+LlamaIndex is a data framework for [LLM](https://en.wikipedia.org/wiki/Large_language_model)-based applications to ingest, structure, and access **private** or **domain-specific** data.
 
 :::note
 🐼 The OpenAI API incorporates a hyperparameter known as temperature that affects the computation of token probabilities
