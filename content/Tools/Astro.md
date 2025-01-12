@@ -1,8 +1,3 @@
----
-title: Astro
-icon: skill-icons:astro
----
-
 > The web framework for content-driven websites
 
 Astro is the web framework for building content-driven websites like blogs, marketing, and e-commerce.
@@ -27,11 +22,7 @@ Some highlights include:
 
 ## Installation
 
-`create astro` is the fastest way to start a new Astro project from scratch.
-It will walk you through every step of setting up your new Astro project.
-It allows you to choose from a few different official starter templates, or
-you can
-[use any existing project on GitHub with the `--template` argument](https://docs.astro.build/en/install/auto/#starter-templates).
+`create astro` is the fastest way to start a new Astro project from scratch. It will walk you through every step of setting up your new Astro project. It allows you to choose from a few different official starter templates, or you can [use any existing project on GitHub with the `--template` argument](https://docs.astro.build/en/install/auto/#starter-templates).
 
 ```bash
 npm create astro@latest
