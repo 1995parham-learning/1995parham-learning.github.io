@@ -2,5 +2,7 @@
 
 Crypto wallets can be categorized into two main types:
 
--   hot
--   cold
+-   Hot
+-   Cold
+
+Think of hot wallets as your conventional wallet, always connected to the internet, providing quick and easy access to your assets. Contrastingly, cold wallets serve as a kind of secure vault, preserving your assets offline on a hardware device or even a piece of paper for utmost security.
