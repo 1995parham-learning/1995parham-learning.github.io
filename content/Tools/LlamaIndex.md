@@ -1,18 +1,13 @@
 LlamaIndex is a data framework for [LLM](https://en.wikipedia.org/wiki/Large_language_model)-based applications to ingest, structure, and access **private** or **domain-specific** data.
 
-:::note
-🐼 The OpenAI API incorporates a hyperparameter known as temperature that affects the computation of token probabilities
-when generating output through the large language model.
-**The temperature value ranges from 0 to 2**, with lower values indicating greater determinism and higher values
-indicating more randomness.
-:::
+> [!note]
+> The OpenAI API incorporates a hyperparameter known as temperature that affects the computation of token probabilities when generating output through the large language model. **The temperature value ranges from 0 to 2**, with lower values indicating greater determinism and higher values indicating more randomness.
 
 ## 🚀 Why LlamaIndex?
 
 LLMs offer a natural language interface between humans and data. Widely available models come pre-trained on huge amounts of publicly available data like Wikipedia, mailing lists, textbooks, source code and more.
 
-However, while LLMs are trained on a great deal of data, they are not trained on **your** data, which may be private or specific to the problem you're trying to solve.
-It's behind APIs, in SQL databases, or trapped in PDFs and slide decks.
+However, while LLMs are trained on a great deal of data, they are not trained on **your** data, which may be private or specific to the problem you're trying to solve. It's behind APIs, in SQL databases, or trapped in PDFs and slide decks.
 
 You may choose to **fine-tune** a LLM with your data, but:
 
