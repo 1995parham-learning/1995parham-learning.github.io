@@ -58,3 +58,17 @@ message = "Hello, ${name}!"
 # Application-provided functions
 shouty_message = upper(message)
 ```
+
+## Structural Elements
+
+[](https://github.com/hashicorp/hcl/blob/main/spec.md#structural-elements)
+
+The primary structural element is the _body_, which is a container representing a set of zero or more _attributes_ and a set of zero or more _blocks_.
+
+A _configuration file_ is the top-level object, and will usually be produced by reading a file from disk and parsing it as a particular syntax. A configuration file has its own _body_, representing the top-level attributes and blocks.
+
+An _attribute_ is a name and value pair associated with a body. Attribute names are unique within a given body. Attribute values are provided as _expressions_, which are discussed in detail in a later section.
+
+A _block_ is a nested structure that has a _type name_, zero or more string _labels_ (e.g. identifiers), and a nested body.
+
+Together the structural elements create a hierarchical data structure, with attributes intended to represent the direct properties of a particular object in the calling application, and blocks intended to represent child objects of a particular object.
