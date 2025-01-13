@@ -70,3 +70,7 @@ An _attribute_ is a name and value pair associated with a body. **Attribute name
 A _block_ is a nested structure that has a _type name_, zero or more string _labels_ (e.g. identifiers), and a nested body.
 
 Together the structural elements create a hierarchical data structure, with attributes intended to represent the direct properties of a particular object in the calling application, and blocks intended to represent child objects of a particular object.
+
+## Body Content
+
+To support the expression of the HCL concepts in languages whose information model is a subset of HCL's, such as JSON, a _body_ is an opaque container whose content can only be accessed by providing information on the expected structure of the content.
