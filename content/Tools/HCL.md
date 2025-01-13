@@ -43,3 +43,5 @@ func main() {
 	log.Printf("Configuration is %#v", config)
 }
 ```
+
+HCL is built around two primary concepts: _attributes_ and _blocks_.
