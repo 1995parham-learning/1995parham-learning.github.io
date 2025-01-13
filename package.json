@@ -45,7 +45,7 @@
         "micromorph": "^0.4.5",
         "pixi.js": "^8.6.6-dev.ee65355",
         "preact": "^10.25.4",
-        "preact-render-to-string": "^6.5.12",
+        "preact-render-to-string": "^6.5.13",
         "pretty-bytes": "^6.1.1",
         "pretty-time": "^1.1.0",
         "quartz-laf-js": "^4.3.2",
@@ -68,7 +68,7 @@
         "rfdc": "^1.4.1",
         "rimraf": "^6.0.1",
         "serve-handler": "^6.1.6",
-        "shiki": "^1.26.1",
+        "shiki": "^1.26.2",
         "source-map-support": "^0.5.21",
         "to-vfile": "^8.0.0",
         "toml": "^3.0.0",
@@ -93,6 +93,6 @@
         "husky": "^9.1.7",
         "prettier": "^4.0.0-alpha.10",
         "tsx": "^4.19.2",
-        "typescript": "^5.8.0-dev.20250111"
+        "typescript": "^5.8.0-dev.20250113"
     }
 }
