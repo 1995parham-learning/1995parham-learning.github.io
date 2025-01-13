@@ -76,3 +76,12 @@ Together the structural elements create a hierarchical data structure, with attr
 To support the expression of the HCL concepts in languages whose information model is a subset of HCL's, such as JSON, a _body_ is an opaque container whose content can only be accessed by providing information on the expected structure of the content.
 
 The specification for each syntax must describe how its physical constructs are mapped on to body content given a schema. For syntaxes that have first-class syntax distinguishing attributes and bodies this can be relatively straightforward, while more detailed mapping rules may be required in syntaxes where the representation of attributes vs. blocks is ambiguous.
+
+### Schema-driven Processing
+
+Schema-driven processing is the primary way to access body content. A _body schema_ is a description of what is expected within a particular body, which can then be used to extract the _body content_, which then provides access to the specific attributes and blocks requested.
+
+A _body schema_ consists of a list of _attribute schemata_ and _block header schemata_:
+
+- An _attribute schema_ provides the name of an attribute and whether its presence is required.
+- A _block header schema_ provides a block type name and the semantic names assigned to each of the labels of that block type, if any.
