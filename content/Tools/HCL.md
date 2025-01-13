@@ -65,7 +65,7 @@ The primary structural element is the _body_, which is a container representing 
 
 A _configuration file_ is the top-level object, and will usually be produced by reading a file from disk and parsing it as a particular syntax. A configuration file has its own _body_, representing the top-level attributes and blocks.
 
-An _attribute_ is a name and value pair associated with a body. Attribute names are unique within a given body. Attribute values are provided as _expressions_, which are discussed in detail in a later section.
+An _attribute_ is a name and value pair associated with a body. **Attribute names are unique within a given body**. Attribute values are provided as _expressions_, which are discussed in detail in a later section.
 
 A _block_ is a nested structure that has a _type name_, zero or more string _labels_ (e.g. identifiers), and a nested body.
 
