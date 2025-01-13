@@ -74,3 +74,5 @@ Together the structural elements create a hierarchical data structure, with attr
 ## Body Content
 
 To support the expression of the HCL concepts in languages whose information model is a subset of HCL's, such as JSON, a _body_ is an opaque container whose content can only be accessed by providing information on the expected structure of the content.
+
+The specification for each syntax must describe how its physical constructs are mapped on to body content given a schema. For syntaxes that have first-class syntax distinguishing attributes and bodies this can be relatively straightforward, while more detailed mapping rules may be required in syntaxes where the representation of attributes vs. blocks is ambiguous.
