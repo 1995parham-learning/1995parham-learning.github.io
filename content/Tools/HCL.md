@@ -61,8 +61,6 @@ shouty_message = upper(message)
 
 ## Structural Elements
 
-[](https://github.com/hashicorp/hcl/blob/main/spec.md#structural-elements)
-
 The primary structural element is the _body_, which is a container representing a set of zero or more _attributes_ and a set of zero or more _blocks_.
 
 A _configuration file_ is the top-level object, and will usually be produced by reading a file from disk and parsing it as a particular syntax. A configuration file has its own _body_, representing the top-level attributes and blocks.
