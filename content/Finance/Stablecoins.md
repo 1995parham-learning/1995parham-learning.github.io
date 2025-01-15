@@ -5,3 +5,5 @@ Stablecoins are cryptocurrencies whose value is pegged, or tied, to that of anot
 ## Fiat-Collateralized Stablecoins
 
 Fiat-collateralized stablecoins maintain a reserve of a fiat currency (or currencies), such as the U.S. dollar, as collateral, assuring the stablecoin's value.
+
+Such reserves are maintained by independent custodians and are regularly audited, something that should be considered cautiously. **Tether (USDT) and TrueUSD (TUSD) are popular stablecoins backed by U.S. dollar reserves and denominated at parity to the dollar. As of late June 2024, Tether (USDT) was the third-largest cryptocurrency by market capitalization, worth more than $112 billion.
