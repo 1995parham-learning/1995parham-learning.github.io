@@ -1,0 +1,1 @@
+The term spot market refers to the place where financial instruments are traded for cash for immediate delivery.
