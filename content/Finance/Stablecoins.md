@@ -4,4 +4,4 @@ Stablecoins are cryptocurrencies whose value is pegged, or tied, to that of anot
 
 ## Fiat-Collateralized Stablecoins
 
-Fiat-collateralized stablecoins maintain a reserve of a fiat currency (or currencies), such as the U.S. dollar, as collateral, assuring the stablecoin's value. 
+Fiat-collateralized stablecoins maintain a reserve of a fiat currency (or currencies), such as the U.S. dollar, as collateral, assuring the stablecoin's value.
