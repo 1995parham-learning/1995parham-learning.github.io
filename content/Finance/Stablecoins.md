@@ -9,3 +9,7 @@ Fiat-collateralized stablecoins maintain a reserve of a fiat currency (or curren
 Such reserves are maintained by independent custodians and are regularly audited, something that should be considered cautiously. **Tether (USDT)** and **TrueUSD (TUSD)** are popular stablecoins backed by U.S. dollar reserves and denominated at parity to the dollar. As of late June 2024, Tether (USDT) was the third-largest cryptocurrency by market capitalization, worth more than $112 billion.
 
 ## Commodity-Backed Stablecoins
+
+Somewhat of a sub-category of fiat-collateralized coins, commodity-backed stablecoins are cryptocurrencies that are pegged to the _market value of commodities such as gold, silver, or oil_.
+
+One of the most popular commodity-backed tokens is **Tether Gold (XAUt)**, a cryptocurrency backed by gold reserves.
