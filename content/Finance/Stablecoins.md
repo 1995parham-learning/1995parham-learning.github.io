@@ -8,7 +8,7 @@ Fiat-collateralized stablecoins maintain a reserve of a fiat currency (or curren
 
 Such reserves are maintained by independent custodians and are regularly audited, something that should be considered cautiously. **Tether (USDT)** and **TrueUSD (TUSD)** are popular stablecoins backed by U.S. dollar reserves and denominated at parity to the dollar. As of late June 2024, Tether (USDT) was the third-largest cryptocurrency by market capitalization, worth more than $112 billion.
 
-**USD Coin (USDC)** is a digital currency that is fully backed by U.S. dollar assets. USDC is a tokenized U.S. dollar, with the value of one USDC coin pegged as close to the value of one U.S. dollar as it can get. The value of USDC is designed to remain stable, ==making USDC a stablecoin==. 
+**USD Coin (USDC)** is a digital currency that is fully backed by U.S. dollar assets. USDC is a tokenized U.S. dollar, with the value of one USDC coin pegged as close to the value of one U.S. dollar as it can get. The value of USDC is designed to remain stable, ==making USDC a stablecoin==.
 
 ## Commodity-Backed Stablecoins
 
