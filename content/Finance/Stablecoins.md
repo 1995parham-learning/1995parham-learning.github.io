@@ -13,3 +13,6 @@ Such reserves are maintained by independent custodians and are regularly audited
 Somewhat of a sub-category of fiat-collateralized coins, commodity-backed stablecoins are cryptocurrencies that are pegged to the _market value of commodities such as gold, silver, or oil_.
 
 One of the most popular commodity-backed tokens is **Tether Gold (XAUt)**, a cryptocurrency backed by gold reserves.
+
+> [!info]
+> The most popular and largest stablecoin by market capitalization is Tether (USDT).
