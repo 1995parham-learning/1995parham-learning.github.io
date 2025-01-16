@@ -22,7 +22,9 @@ The diagram below shows how KEDA works in conjunction with the Kubernetes Horizo
 
 KEDA has a wide range of **scalers** that can both detect if a deployment should be activated or deactivated, and feed custom metrics for a specific event source. The following scalers are available:
 
-- RabbitMQ Queue
+-   RabbitMQ Queue
+- Prometheus
+- NATS JetStream
 
 ## Custom Resources (CRD)
 
