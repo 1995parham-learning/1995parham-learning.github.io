@@ -16,11 +16,11 @@ KEDA performs three key roles within Kubernetes:
 The diagram below shows how KEDA works in conjunction with the Kubernetes Horizontal Pod Autoscaler, external event sources, and Kubernetes’ [etcd](https://etcd.io) data store:
 
 
-### Event sources and scalers
+## Event sources and scalers
 
-KEDA has a wide range of [**scalers**](https://keda.sh/scalers) that can both detect if a deployment should be activated or deactivated, and feed custom metrics for a specific event source. The following scalers are available:
+KEDA has a wide range of **scalers** that can both detect if a deployment should be activated or deactivated, and feed custom metrics for a specific event source. The following scalers are available:
 
-### Custom Resources (CRD)
+## Custom Resources (CRD)
 
 When you install KEDA, it creates four custom resources:
 
@@ -35,6 +35,3 @@ These custom resources enable you to map an event source (and the authentication
 - `ScaledJobs` represent the mapping between event source and Kubernetes Job.
 - `ScaledObject`/`ScaledJob` may also reference a `TriggerAuthentication` or `ClusterTriggerAuthentication` which contains the authentication configuration or secrets to monitor the event source.
 
-## Deploy KEDA[](https://keda.sh/docs/2.16/concepts/#deploy-keda)
-
-See the [Deployment](https://keda.sh/docs/2.16/deploy/) documentation for instructions on how to deploy KEDA into any cluster using tools like [Helm](https://keda.sh/docs/2.16/deploy/#helm).
