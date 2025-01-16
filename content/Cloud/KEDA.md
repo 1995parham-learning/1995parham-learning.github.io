@@ -45,17 +45,17 @@ These custom resources enable you to map an event source (and the authentication
 
 ### Scaling Deployments and StatefulSets
 
-Deployments and StatefulSets are the most common way to scale workloads with KEDA.
+==Deployments and StatefulSets are the most common way to scale workloads with KEDA.==
 
 It allows you to define the Kubernetes Deployment or StatefulSet that you want KEDA to scale based on a scale trigger. KEDA will monitor that service and based on the events that occur it will automatically scale your resource out/in accordingly.
 
-Behind the scenes, KEDA acts to monitor the event source and feed that data to Kubernetes and the HPA (Horizontal Pod Autoscaler) to drive rapid scale of a resource. Each replica of a resource is actively pulling items from the event source. With KEDA and scaling Deployments/StatefulSet you can scale based on events while also preserving rich connection and processing semantics with the event source (e.g. in-order processing, retries, deadletter, checkpointing).
+_Behind the scenes, KEDA acts to monitor the event source and feed that data to Kubernetes and the HPA (Horizontal Pod Autoscaler) to drive rapid scale of a resource_. Each replica of a resource is actively pulling items from the event source. With KEDA and scaling Deployments/StatefulSet you can scale based on events while also preserving rich connection and processing semantics with the event source (e.g. in-order processing, retries, deadletter, checkpointing).
 
 > [!example]
 > For example, if you wanted to use KEDA with an Apache Kafka topic as event source, the flow of information would be:
 >
 > -   When no messages are pending processing, KEDA can scale the deployment to zero.
 > -   When a message arrives, KEDA detects this event and activates the deployment.
-> -   When the deployment starts running, one of the containers connects to Kafka and starts pulling messages. 
+> -   When the deployment starts running, one of the containers connects to Kafka and starts pulling messages.
 > -   As more messages arrive at the Kafka Topic, KEDA can feed this data to the HPA to drive scale out.
 > -   Each replica of the deployment is actively processing messages. Very likely, each replica is processing a batch of messages in a distributed manner.
