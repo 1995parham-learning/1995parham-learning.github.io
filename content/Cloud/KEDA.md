@@ -11,3 +11,30 @@ KEDA performs three key roles within Kubernetes:
 1. **Agent** — KEDA activates and deactivates Kubernetes [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) to scale to and from zero on no events. This is one of the primary roles of the `keda-operator` container that runs when you install KEDA.
 2. **Metrics** — KEDA acts as a [Kubernetes metrics server](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-custom-metrics) that exposes rich event data like queue length or stream lag to the Horizontal Pod Autoscaler to drive scale out. It is up to the Deployment to consume the events directly from the source. This preserves rich event integration and enables gestures like completing or abandoning queue messages to work out of the box. The metric serving is the primary role of the `keda-operator-metrics-apiserver` container that runs when you install KEDA.
 3. **Admission Webhooks** - Automatically validate resource changes to prevent misconfiguration and enforce best practices by using an [admission controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/). As an example, it will prevent multiple ScaledObjects to target the same scale target.
+## Architecture
+
+The diagram below shows how KEDA works in conjunction with the Kubernetes Horizontal Pod Autoscaler, external event sources, and Kubernetes’ [etcd](https://etcd.io) data store:
+
+
+### Event sources and scalers
+
+KEDA has a wide range of [**scalers**](https://keda.sh/scalers) that can both detect if a deployment should be activated or deactivated, and feed custom metrics for a specific event source. The following scalers are available:
+
+### Custom Resources (CRD)
+
+When you install KEDA, it creates four custom resources:
+
+1. `scaledobjects.keda.sh`
+2. `scaledjobs.keda.sh`
+3. `triggerauthentications.keda.sh`
+4. `clustertriggerauthentications.keda.sh`
+
+These custom resources enable you to map an event source (and the authentication to that event source) to a Deployment, StatefulSet, Custom Resource or Job for scaling.
+
+- `ScaledObjects` represent the desired mapping between an event source (e.g. Rabbit MQ) and the Kubernetes Deployment, StatefulSet or any Custom Resource that defines `/scale` subresource.
+- `ScaledJobs` represent the mapping between event source and Kubernetes Job.
+- `ScaledObject`/`ScaledJob` may also reference a `TriggerAuthentication` or `ClusterTriggerAuthentication` which contains the authentication configuration or secrets to monitor the event source.
+
+## Deploy KEDA[](https://keda.sh/docs/2.16/concepts/#deploy-keda)
+
+See the [Deployment](https://keda.sh/docs/2.16/deploy/) documentation for instructions on how to deploy KEDA into any cluster using tools like [Helm](https://keda.sh/docs/2.16/deploy/#helm).
