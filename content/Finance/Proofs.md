@@ -1,1 +1,2 @@
-Proof of w
+Proof of Work (PoW)
+Proof of Stacking (PoS)
