@@ -1,1 +1,3 @@
-ICO = 
+- ICO: Initial coin offering
+- IEO: Initial exchange offering
+- IDO: Initial dex offering
