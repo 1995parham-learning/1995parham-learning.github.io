@@ -6,6 +6,7 @@ A futures market is an auction market in which participants buy and sell commodi
 
 Futures markets or futures exchanges are where these financial products are bought and sold for delivery at some agreed-upon date in the future with a price fixed at the time of the deal.
 
-GTC ⇾ Good Till Cancel
+GTC ⇾ Good Till Cancel: Good ’til canceled (GTC) describes a type of order that an investor may place to buy or sell a security that remains active until either the order is filled or the investor cancels it.
+
 IOC ⇾ Immediate Or Cancel
 FOK ⇾ Fill Or Kill
