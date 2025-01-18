@@ -1,0 +1,1 @@
+Coins are the native currencies of specific blockchains. For example, BTC is the native coin of the Bitcoin network. On the other hand, tokens are currencies (or digital assets) supported by a specific blockchain, rather than powering their own
