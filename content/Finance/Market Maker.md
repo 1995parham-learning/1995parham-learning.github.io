@@ -18,4 +18,4 @@ A market maker must commit to continuously quoting prices at which it will buy (
 
 Market makers must also quote the volume in which they're willing to trade along with the frequency of time they will quote at the best bid and best offer prices.
 
-Market makers must stick to these parameters at all times, no matter what their market outlook. When markets become erratic or [volatile], market makers must remain disciplined in order to continue facilitating smooth transactions.
+Market makers must stick to these parameters at all times, no matter what their market outlook. When markets become erratic or volatile, market makers must remain disciplined in order to continue facilitating smooth transactions.
