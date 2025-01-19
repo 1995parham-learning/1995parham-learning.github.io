@@ -10,7 +10,10 @@ Many market makers are brokerage houses that provide trading services for invest
 
 A market maker can also be an individual trader, who is commonly known as a local. The vast majority of such market makers work on behalf of large institutions due to the lot sizes needed to facilitate the volume of purchases and sales.
 
-## How They Work
+> [!important]
+> Market makers facilitate a smooth flow of market activity by making it easier for investors and traders to buy and sell. Without market makers, there could be insufficient transactions and fewer opportunities to invest efficiently.
+
+### How They Work
 
 Each market maker displays buy and sell quotations (two-sided markets) for a guaranteed number of shares. Once the market maker receives an order from a buyer, they immediately sell their position of shares from their own inventory. This allows them to complete the order.
 
