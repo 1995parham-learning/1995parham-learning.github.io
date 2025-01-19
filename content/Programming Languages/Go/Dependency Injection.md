@@ -184,7 +184,7 @@ type Config struct {
 }
 ```
 
-The configuration is loaded using a single function ():
+The configuration is loaded using a single function (the following example uses `koanf` to load configuration from defaults, configuration file and environment variables):
 
 ```go
 func Provide() Config {
