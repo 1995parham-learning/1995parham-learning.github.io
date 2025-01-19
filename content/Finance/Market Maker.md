@@ -8,7 +8,7 @@ Market makers provide liquidity and depth to markets and profit from the differe
 
 Many market makers are brokerage houses that provide trading services for investors. They make markets in an effort to keep financial markets liquid.
 
-A market maker can also be an individual trader, who is commonly known as a local. The vast majority of such market makers work on behalf of large institutions due to the lot sizes needed to [facilitate the volume of purchases and sales](https://www.investopedia.com/ask/answers/12/what-is-done-when-shares-are-bought-and-sold.asp).
+A market maker can also be an individual trader, who is commonly known as a local. The vast majority of such market makers work on behalf of large institutions due to the lot sizes needed to facilitate the volume of purchases and sales.
 
 ## How They Work
 
