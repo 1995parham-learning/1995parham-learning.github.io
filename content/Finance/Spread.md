@@ -1,0 +1,1 @@
+**Crypto spread** is defined as the gap between the highest price someone is willing to pay and the lowest price someone is willing to sell a cryptocurrency asset.
