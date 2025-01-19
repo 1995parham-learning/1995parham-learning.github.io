@@ -19,3 +19,7 @@ A market maker must commit to continuously quoting prices at which it will buy (
 Market makers must also quote the volume in which they're willing to trade along with the frequency of time they will quote at the best bid and best offer prices.
 
 Market makers must stick to these parameters at all times, no matter what their market outlook. When markets become erratic or volatile, market makers must remain disciplined in order to continue facilitating smooth transactions.
+
+## Example of a Market Maker
+
+Let's say there's a market maker in XYZ stock. They may provide a quote of $10.00 - $10.05 or 100 x 500. This means that they bid (they will buy) 100 shares at $10.00. They'll also offer (they will sell) 500 shares at $10.05. Other market participants may then buy (lift the offer) from the market maker at $10.05 or sell to them (hit the bid) at $10.00.
