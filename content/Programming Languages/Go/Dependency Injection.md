@@ -169,3 +169,5 @@ func SetupGateways(conn *sql.DB) (Gateways, error) {
   // ...
 }
 ```
+
+Result struct can be used for configuration to load it at once and t
