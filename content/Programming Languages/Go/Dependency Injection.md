@@ -239,5 +239,12 @@ func Provide() Config {
 and then distributed configuration between modules:
 
 ```go
+// Config contains the database configuration.
+type Config struct {
+	Name string `json:"name" koanf:"name"`
+	URL  string `json:"url"  koanf:"url"`
+}
 
+func Provide(lc fx.Lifecycle, cfg Config) (*mongo.Database, error) {
+}
 ```
