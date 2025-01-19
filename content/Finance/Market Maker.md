@@ -14,10 +14,8 @@ A market maker can also be an individual trader, who is commonly known as a loca
 
 Each market maker displays buy and sell quotations (two-sided markets) for a guaranteed number of shares. Once the market maker receives an order from a buyer, they immediately sell their position of shares from their own inventory. This allows them to complete the order.
 
-A market maker must commit to continuously quoting prices at which it will buy (or [bid](https://www.investopedia.com/terms/b/bid.asp) for) and sell (or [ask](https://www.investopedia.com/terms/a/ask.asp) for) securities.2
+A market maker must commit to continuously quoting prices at which it will buy (or bid for) and sell (or ask for) securities.
 
-U.S. Securities and Exchange Commission. "[Market Makers](https://www.sec.gov/fast-answers/answersmktmakerhtm.html)."
+Market makers must also quote the volume in which they're willing to trade along with the frequency of time they will quote at the best bid and best offer prices.
 
-Market makers must also quote the volume in which they're willing to trade along with the frequency of time they will quote at the [best bid](https://www.investopedia.com/terms/b/bestbid.asp) and best offer prices.
-
-Market makers must stick to these parameters at all times, no matter what their market outlook. When markets become erratic or [volatile](https://www.investopedia.com/terms/v/volatility.asp), market makers must remain disciplined in order to continue facilitating smooth transactions.
+Market makers must stick to these parameters at all times, no matter what their market outlook. When markets become erratic or [volatile], market makers must remain disciplined in order to continue facilitating smooth transactions.
