@@ -170,4 +170,23 @@ func SetupGateways(conn *sql.DB) (Gateways, error) {
 }
 ```
 
-Result struct can be used for configuration to load it at once and t
+Result struct can be used for configuration to load it at once and distribute it between modules. The following structure contains all the application configuration:
+
+```go
+// Config holds all configurations.
+type Config struct {
+	fx.Out
+
+	Database  db.Config        `json:"database"  koanf:"database"`
+	Logger    logger.Config    `json:"logger"    koanf:"logger"`
+	Telemetry telemetry.Config `json:"telemetry" koanf:"telemetry"`
+	Generator generator.Config `json:"generator" koanf:"generator"`
+}
+```
+
+The configuration is loaded using a single function:
+
+```go
+```
+
+and then distributed between mod
