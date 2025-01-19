@@ -66,7 +66,7 @@ func Provide(lc fx.Lifecycle, store *urlsvc.URLSvc, logger *zap.Logger, tele tel
 }
 ```
 
-#### Application lifecycle
+### Application lifecycle
 
 The lifecycle of a Fx application has two high-level phases: _initialization_ and _execution_.
 Both of these, in turn are comprised of multiple steps.
@@ -85,7 +85,7 @@ During **execution**, Fx will,
 
 ![fx-flow](fx-flow.png)
 
-#### Lifecycle hooks
+### Lifecycle hooks
 
 Lifecycle hooks provide the ability to schedule work to be executed by Fx,
 when the application starts up or shuts down. Fx provides two kinds of hooks:
@@ -102,11 +102,11 @@ Therefore, hooks are expected to block only as long as they need to _schedule_ w
 -   hooks **should** schedule long-running tasks in background go routines
 -   shutdown hooks **should** stop the background work started by startup hooks
 
-#### Modules
+### Modules
 
 A Fx module is a shareable Go library or package that provides self-contained functionality to a Fx application.
 
-#### Parameter Structs
+### Parameter Structs
 
 Fx constructors declare their dependencies as function parameters.
 This can quickly become unreadable if the constructor has a lot of dependencies.
