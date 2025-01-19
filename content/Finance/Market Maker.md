@@ -12,7 +12,7 @@ A market maker can also be an individual trader, who is commonly known as a loca
 
 ## How They Work
 
-Each market maker displays buy and sell quotations ([two-sided markets](https://www.investopedia.com/terms/t/two-sidedmarket.asp)) for a guaranteed number of shares. Once the market maker receives an order from a buyer, they immediately sell their position of shares from their own [inventory](https://www.investopedia.com/terms/i/inventory.asp). This allows them to complete the order.
+Each market maker displays buy and sell quotations (two-sided markets) for a guaranteed number of shares. Once the market maker receives an order from a buyer, they immediately sell their position of shares from their own inventory. This allows them to complete the order.
 
 A market maker must commit to continuously quoting prices at which it will buy (or [bid](https://www.investopedia.com/terms/b/bid.asp) for) and sell (or [ask](https://www.investopedia.com/terms/a/ask.asp) for) securities.2
 
