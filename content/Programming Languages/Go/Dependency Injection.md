@@ -236,7 +236,7 @@ func Provide() Config {
 }
 ```
 
-and then distributed between modules:
+and then distributed configuration between modules:
 
 ```go
 
