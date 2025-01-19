@@ -3,8 +3,8 @@
 Generating code on Golang is not my interest, but this framework is really nice and easily can generate useful binding.
 These frameworks can do the dependency injection without code generation, and I kinda like them:
 
--   [do](https://github.com/samber/do)
--   [wire](https://github.com/google/wire)
+-   [samber/do](https://github.com/samber/do)
+-   [google/wire](https://github.com/google/wire)
 
 ## [Fx](https://github.com/uber-go/fx)
 
