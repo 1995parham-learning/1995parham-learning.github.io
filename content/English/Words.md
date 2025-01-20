@@ -124,6 +124,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | shaft (n)(v)                 | a long, narrow, usually vertical passage in a building or underground, used especially for a lift/elevator or as a way of allowing air in or out                             |
 | sorrow (n)(v)                | (rather formal) a feeling of great sadness because sth very bad has happened                                                                                                 |
 | spore (n)                    | one of the very small cells that are produced by some plants and that develop into new plants                                                                                |
+|                              |                                                                                                                                                                              |
 | stereotype (n)(v)            | a fixed idea or image that many people have of a particular type of person or thing, but which is often not true in reality                                                  |
 | stink (v)(n)                 | (of sth) to have a strong, unpleasant smell                                                                                                                                  |
 | stopgap (n)                  | something that you use or do for a short time while you are looking for sth better                                                                                           |
