@@ -138,5 +138,4 @@ If a list isn’t provided, all objects in the `queryset` are returned.
 
 ## Cache Framework
 
-
-
+Django comes with a robust cache system that lets you save dynamic pages so they don’t have to be calculated for each request. For convenience, Django offers different levels of cache granularity: You can cache the output of specific views, you can cache only the pieces that are difficult to produce, or you can cache your entire site.
