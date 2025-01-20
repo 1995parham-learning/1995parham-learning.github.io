@@ -144,3 +144,10 @@ The cache system requires a small amount of setup. Namely, you have to tell it w
 
 ### The low-level cache API
 
+As a shortcut, the default cache is available as `django.core.cache.cache`:
+
+```python
+>>> from django.core.cache import cache
+```
+
+This object is equivalent to `caches['default']`.
