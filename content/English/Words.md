@@ -6,7 +6,6 @@ One of the best sources for gathering the description for words is [Cambridge Di
 
 | Word                         | Definition                                                                                                                                                                   |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| STEM (n)                     | science, technology, engineering, and math                                                                                                                                   |
 | absent-minded (adj)          | forgetful                                                                                                                                                                    |
 | acquainted (adj)             | with sth (formal) familiar with sth, having read, seen or experienced it                                                                                                     |
 | adept (adj)                  | very good at doing something that is not easy                                                                                                                                |
@@ -123,8 +122,9 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | sewer (n)                    | an underground pipe that is used to carry sewage away from houses, factories, etc                                                                                            |
 | shaft (n)(v)                 | a long, narrow, usually vertical passage in a building or underground, used especially for a lift/elevator or as a way of allowing air in or out                             |
 | sorrow (n)(v)                | (rather formal) a feeling of great sadness because sth very bad has happened                                                                                                 |
-| spore (n)                    | one of the very small cells that are produced by some plants and that develop into new plants                                                                                |
 | spare part (n)               | a new part for a vehicle or machine, that is used to replace a part that is damaged or broken.                                                                               |
+| spore (n)                    | one of the very small cells that are produced by some plants and that develop into new plants                                                                                |
+| STEM (n)                     | science, technology, engineering, and math                                                                                                                                   |
 | stereotype (n)(v)            | a fixed idea or image that many people have of a particular type of person or thing, but which is often not true in reality                                                  |
 | stink (v)(n)                 | (of sth) to have a strong, unpleasant smell                                                                                                                                  |
 | stopgap (n)                  | something that you use or do for a short time while you are looking for sth better                                                                                           |
