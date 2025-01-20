@@ -135,3 +135,8 @@ Takes a list of field values (`id_list`) and the `field_name` for those values, 
 ```
 
 If a list isn’t provided, all objects in the `queryset` are returned.
+
+## Cache Framework
+
+
+
