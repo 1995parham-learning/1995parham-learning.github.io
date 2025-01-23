@@ -157,9 +157,17 @@ This object is equivalent to `caches['default']`.
 You can apply migrations with:
 
 ```bash
-python manage.py makemigration
+python manage.py migrate
 ```
 
 And create a new migrations using:
 
+```bash
+python manage.py makemigration
+```
+
 Also, if you want to go for specific migration (please note that if will actually revert/apply the migrations to that migration)
+
+```bash
+python manage.py migrate --fake
+```
