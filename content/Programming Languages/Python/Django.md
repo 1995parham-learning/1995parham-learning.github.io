@@ -151,3 +151,13 @@ As a shortcut, the default cache is available as `django.core.cache.cache`:
 ```
 
 This object is equivalent to `caches['default']`.
+
+## Migrations
+
+You can apply migrations with:
+
+
+And create a new migrations using:
+
+
+Also, if you want to go for specific migration 
