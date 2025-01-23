@@ -169,5 +169,12 @@ python manage.py makemigration
 Also, if you want to go for specific migration (please note that if will actually revert/apply the migrations to that migration)
 
 ```bash
+
+python manage.py migrate --fake
+```
+
+Or you can use `--fake` to just change the migration number and do not apply or revet anything.
+
+```bash
 python manage.py migrate --fake
 ```
