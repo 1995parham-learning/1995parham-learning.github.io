@@ -1,0 +1,1 @@
+A **multichannel video programming distributor** (MPVD) provides multiple broadcast TV channels on cable or satellite TV, and typically works on a subscription-based business model but can also offer video-on-demand options.
