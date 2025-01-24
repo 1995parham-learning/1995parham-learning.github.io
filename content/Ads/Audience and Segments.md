@@ -1,1 +1,1 @@
-Segment is a group of hall source based on certain critaria you want group them together. Audience is group of segements grouped together using logical operators like and, or etc.
+A segment is a defined group of households sharing specific characteristics. An audience is a collection of segments combined using mathematical logic (AND, OR, NOT) to target specific consumer groups.
