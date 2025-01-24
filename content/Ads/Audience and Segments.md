@@ -1,1 +1,1 @@
-You can add audience segments to ad groups and reach people based on who they are, their interests and habits, what they’re actively researching, or how they've interacted with your business. Audience segments can boost your campaign's performance by reaching people browsing websites, using apps, or watching videos.
+Segments
