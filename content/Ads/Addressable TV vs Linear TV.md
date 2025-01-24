@@ -6,3 +6,4 @@ Addressable TV advertising allows brands to target specific households of viewer
 
 ### How Addressable TV Advertising Works
 
+Addressable TV advertising works by leveraging data analytics and ad delivery software to deliver targeted ads to specific households or individuals. Unlike traditional TV ads, which broadcast the same content to all viewers watching a particular program, addressable TV allows you to _segment audiences_ based on various factors, such as their behavior, geographical location, and demographics.0
