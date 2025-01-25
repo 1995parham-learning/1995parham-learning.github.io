@@ -149,6 +149,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | vent (n)                     | an opening that allows air, gas or liquid to pass out of or into a room, building, container, etc                                                                            |
 | vivid (adj)                  | (of memories, a description, etc.) producing very clear pictures in your mind                                                                                                |
 | wasting (adj)                | a wasting disease or illness is one that causes sb to gradually become weaker and thinner                                                                                    |
+| cohort                       |                                                                                                                                                                              |
 
 ## Learn By Example
 
