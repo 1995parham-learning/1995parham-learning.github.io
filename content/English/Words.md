@@ -34,6 +34,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | cape (n)                     | a very large piece of land sticking out into the sea                                                                                                                         |
 | cavalry (n)                  | the part of the army that fought on horses; the part of the modern army that uses armed vehicles                                                                             |
 | clutter (n)(v)               | to fill a place with too many things, so that it is untidy                                                                                                                   |
+| cohort (n)                   | a group of people of the same age, social class etc, especially when they are being studied                                                                                  |
 | commute (v)(n)               | to travel regularly by bus, train, car, etc. between your place of work and your home                                                                                        |
 | compromise (n)(v)            | an agreement made between two people or groups in which each side gives up some of the things they want so that both sides are happy at the end                              |
 | confluence (n)               | a situation in which two things come together or happen at the same time                                                                                                     |
@@ -149,7 +150,6 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | vent (n)                     | an opening that allows air, gas or liquid to pass out of or into a room, building, container, etc                                                                            |
 | vivid (adj)                  | (of memories, a description, etc.) producing very clear pictures in your mind                                                                                                |
 | wasting (adj)                | a wasting disease or illness is one that causes sb to gradually become weaker and thinner                                                                                    |
-| cohort ()                    | a group of people of the same age, social class etc, especially when they are being studied                                                                                  |
 
 ## Learn By Example
 
