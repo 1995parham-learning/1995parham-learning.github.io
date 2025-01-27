@@ -22,9 +22,9 @@ The diagram below shows how KEDA works in conjunction with the Kubernetes Horizo
 
 KEDA has a wide range of **scalers** that can both detect if a deployment should be activated or deactivated, and feed custom metrics for a specific event source. The following scalers are available:
 
--   RabbitMQ Queue
--   Prometheus
--   NATS JetStream
+- RabbitMQ Queue
+- Prometheus
+- NATS JetStream
 
 ## Custom Resources (CRD)
 
@@ -37,9 +37,9 @@ When you install KEDA, it creates four custom resources:
 
 These custom resources enable you to map an event source (and the authentication to that event source) to a Deployment, StatefulSet, Custom Resource or Job for scaling.
 
--   `ScaledObjects` represent the desired mapping between an event source (e.g. Rabbit MQ) and the Kubernetes Deployment, StatefulSet or any Custom Resource that defines `/scale` subresource.
--   `ScaledJobs` represent the mapping between event source and Kubernetes Job.
--   `ScaledObject`/`ScaledJob` may also reference a `TriggerAuthentication` or `ClusterTriggerAuthentication` which contains the authentication configuration or secrets to monitor the event source.
+- `ScaledObjects` represent the desired mapping between an event source (e.g. Rabbit MQ) and the Kubernetes Deployment, StatefulSet or any Custom Resource that defines `/scale` subresource.
+- `ScaledJobs` represent the mapping between event source and Kubernetes Job.
+- `ScaledObject`/`ScaledJob` may also reference a `TriggerAuthentication` or `ClusterTriggerAuthentication` which contains the authentication configuration or secrets to monitor the event source.
 
 ## Scaling objects
 
@@ -54,8 +54,8 @@ _Behind the scenes, KEDA acts to monitor the event source and feed that data to 
 > [!example]
 > For example, if you wanted to use KEDA with an Apache Kafka topic as event source, the flow of information would be:
 >
-> -   When no messages are pending processing, KEDA can scale the deployment to zero.
-> -   When a message arrives, KEDA detects this event and activates the deployment.
-> -   When the deployment starts running, one of the containers connects to Kafka and starts pulling messages.
-> -   As more messages arrive at the Kafka Topic, KEDA can feed this data to the HPA to drive scale out.
-> -   Each replica of the deployment is actively processing messages. Very likely, each replica is processing a batch of messages in a distributed manner.
+> - When no messages are pending processing, KEDA can scale the deployment to zero.
+> - When a message arrives, KEDA detects this event and activates the deployment.
+> - When the deployment starts running, one of the containers connects to Kafka and starts pulling messages.
+> - As more messages arrive at the Kafka Topic, KEDA can feed this data to the HPA to drive scale out.
+> - Each replica of the deployment is actively processing messages. Very likely, each replica is processing a batch of messages in a distributed manner.

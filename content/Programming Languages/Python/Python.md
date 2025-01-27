@@ -68,17 +68,17 @@ An extremely fast Python package and project manager, written in _Rust_.
 
 ![Shows a bar chart with benchmark results.](https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark)
 
--   🚀 A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more.
--   ⚡️ [10-100x faster](https://github.com/astral-sh/uv/blob/main/BENCHMARKS.md) than `pip`.
--   🐍 [Installs and manages](https://docs.astral.sh/uv/#python-management) Python versions.
--   🛠️ [Runs and installs](https://docs.astral.sh/uv/#tool-management) Python applications.
--   ❇️ [Runs scripts](https://docs.astral.sh/uv/#script-support), with support for [inline dependency metadata](https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies).
--   🗂️ Provides [comprehensive project management](https://docs.astral.sh/uv/#project-management), with a [universal lockfile](https://docs.astral.sh/uv/concepts/projects/#project-lockfile).
--   🔩 Includes a [pip-compatible interface](https://docs.astral.sh/uv/#the-pip-interface) for a performance boost with a familiar CLI.
--   🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/workspaces/) for scalable projects.
--   💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache/) for dependency deduplication.
--   ⏬ Installable without Rust or Python via `curl` or `pip`.
--   🖥️ Supports macOS, Linux, and Windows.
+- 🚀 A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more.
+- ⚡️ [10-100x faster](https://github.com/astral-sh/uv/blob/main/BENCHMARKS.md) than `pip`.
+- 🐍 [Installs and manages](https://docs.astral.sh/uv/#python-management) Python versions.
+- 🛠️ [Runs and installs](https://docs.astral.sh/uv/#tool-management) Python applications.
+- ❇️ [Runs scripts](https://docs.astral.sh/uv/#script-support), with support for [inline dependency metadata](https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies).
+- 🗂️ Provides [comprehensive project management](https://docs.astral.sh/uv/#project-management), with a [universal lockfile](https://docs.astral.sh/uv/concepts/projects/#project-lockfile).
+- 🔩 Includes a [pip-compatible interface](https://docs.astral.sh/uv/#the-pip-interface) for a performance boost with a familiar CLI.
+- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/workspaces/) for scalable projects.
+- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache/) for dependency deduplication.
+- ⏬ Installable without Rust or Python via `curl` or `pip`.
+- 🖥️ Supports macOS, Linux, and Windows.
 
 #### [Installing uv](https://docs.astral.sh/uv/getting-started/installation/#installing-uv)
 
@@ -189,23 +189,23 @@ This module provides support for maintaining a list in sorted order without havi
 bisect.bisect_left(a, x, lo=0, hi=len(a), *, key=None)
 ```
 
--   Locate the insertion point for `x` in `a` to maintain sorted order.
--   The parameters `lo` and `hi` may be used to specify a subset of the list which should be considered; by default, the entire list is used.
--   If `x` is already present in `a`, the insertion point will be before (to the left of) any existing entries.
--   The return value is suitable for use as the first parameter to `list.insert()` assuming that `a` is already sorted.
--   The returned insertion point `ip` partitions the array `a` into two slices such that `all(elem < x for elem in a[lo : ip])` is true for the left slice and `all(elem >= x for elem in a[ip : hi])` is true for the right slice.
--   `key` specifies a [key function](https://docs.python.org/3/glossary.html#term-key-function) of one argument that is used to extract a comparison key from each element in the array. To support searching complex records, the key function is not applied to the `x` value.
--   If `key` is `None`, the elements are compared directly and no key function is called.
+- Locate the insertion point for `x` in `a` to maintain sorted order.
+- The parameters `lo` and `hi` may be used to specify a subset of the list which should be considered; by default, the entire list is used.
+- If `x` is already present in `a`, the insertion point will be before (to the left of) any existing entries.
+- The return value is suitable for use as the first parameter to `list.insert()` assuming that `a` is already sorted.
+- The returned insertion point `ip` partitions the array `a` into two slices such that `all(elem < x for elem in a[lo : ip])` is true for the left slice and `all(elem >= x for elem in a[ip : hi])` is true for the right slice.
+- `key` specifies a [key function](https://docs.python.org/3/glossary.html#term-key-function) of one argument that is used to extract a comparison key from each element in the array. To support searching complex records, the key function is not applied to the `x` value.
+- If `key` is `None`, the elements are compared directly and no key function is called.
 
 ```python
 bisect.bisect_right(a, x, lo=0, hi=len(a), *, key=None)
 bisect.bisect(a, x, lo=0, hi=len(a), *, key=None)
 ```
 
--   Similar to [`bisect_left()`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left), but returns an insertion point which comes after (to the right of) any existing entries of `x` in `a`.
--   The returned insertion point `ip` partitions the array `a` into two slices such that
-    `all(elem <= x for elem in a[lo : ip])` is true for the left slice and
-    `all(elem > x for elem in a[ip : hi])` is true for the right slice.
+- Similar to [`bisect_left()`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left), but returns an insertion point which comes after (to the right of) any existing entries of `x` in `a`.
+- The returned insertion point `ip` partitions the array `a` into two slices such that
+  `all(elem <= x for elem in a[lo : ip])` is true for the left slice and
+  `all(elem > x for elem in a[ip : hi])` is true for the right slice.
 
 ## Itertools
 
@@ -260,11 +260,11 @@ The module standardizes a core set of fast, memory efficient tools that are usef
 itertools.batched(iterable, n)
 ```
 
--   Batch data from the _iterable_ into tuples of length _n_.
--   The last batch may be shorter than _n_.
--   Loops over the input iterable and accumulates data into tuples up to size _n_.
--   The input is consumed **lazily**, _just enough to fill a batch_.
--   The result is yielded as soon as the batch is full or when the input iterable is exhausted:
+- Batch data from the _iterable_ into tuples of length _n_.
+- The last batch may be shorter than _n_.
+- Loops over the input iterable and accumulates data into tuples up to size _n_.
+- The input is consumed **lazily**, _just enough to fill a batch_.
+- The result is yielded as soon as the batch is full or when the input iterable is exhausted:
 
 ```python
 >>> flattened_data = ['roses', 'red', 'violets', 'blue', 'sugar', 'sweet']
@@ -338,9 +338,9 @@ print(f"List a contains:\n{"\n".join(a)}")
 
 I love the way we can configure Golang applications **WITH TYPES**, but this library is in Python, and seems nice to me for doing the same in Python.
 
--   [@dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
--   [@pydantic/pydantic-settings](https://github.com/pydantic/pydantic-settings)
--   [@omry/omegaconf](https://github.com/omry/omegaconf)
+- [@dynaconf/dynaconf](https://github.com/dynaconf/dynaconf)
+- [@pydantic/pydantic-settings](https://github.com/pydantic/pydantic-settings)
+- [@omry/omegaconf](https://github.com/omry/omegaconf)
 
 ## HTTP Frameworks 🌐
 
@@ -356,22 +356,22 @@ Sanic and FastAPI both are asynchronous and says they have good performance.
 **Trusted by millions**: Sanic is one of the overall most popular frameworks on PyPI, and the top async enabled framework
 **Community driven**: The project is maintained and run by the community for the community.
 
--   After installing, Sanic has all the tools you need for a scalable, production-grade server—out of the box!
--   Running Sanic with TLS enabled is as simple as passing it the file paths…
--   Up and running with web sockets in no time using the [websockets](https://websockets.readthedocs.io/) package.
--   Serving static files is of course intuitive and easy. Just name an endpoint and either a file or directory that should be served.
--   Beginning or ending a route with functionality is as simple as adding a decorator.
--   Raising errors will intuitively result in proper HTTP errors:
--   Check in on your live, running applications (whether local or remote).
--   In addition to the tools that Sanic comes with, the officially supported [Sanic Extensions](https://sanic.dev/en/plugins/sanic-ext/getting-started.html) provides lots of extra goodies to make development easier.
-    -   **CORS** protection
-    -   Template rendering with **Jinja**
-    -   **Dependency injection** into route handlers
-    -   OpenAPI documentation with **Redoc** and/or **Swagger**
-    -   Predefined, endpoint-specific response **serializers**
-    -   Request query arguments and body input **validation**
-    -   **Auto create** HEAD, OPTIONS, and TRACE endpoints
-    -   Live **health monitor**
+- After installing, Sanic has all the tools you need for a scalable, production-grade server—out of the box!
+- Running Sanic with TLS enabled is as simple as passing it the file paths…
+- Up and running with web sockets in no time using the [websockets](https://websockets.readthedocs.io/) package.
+- Serving static files is of course intuitive and easy. Just name an endpoint and either a file or directory that should be served.
+- Beginning or ending a route with functionality is as simple as adding a decorator.
+- Raising errors will intuitively result in proper HTTP errors:
+- Check in on your live, running applications (whether local or remote).
+- In addition to the tools that Sanic comes with, the officially supported [Sanic Extensions](https://sanic.dev/en/plugins/sanic-ext/getting-started.html) provides lots of extra goodies to make development easier.
+    - **CORS** protection
+    - Template rendering with **Jinja**
+    - **Dependency injection** into route handlers
+    - OpenAPI documentation with **Redoc** and/or **Swagger**
+    - Predefined, endpoint-specific response **serializers**
+    - Request query arguments and body input **validation**
+    - **Auto create** HEAD, OPTIONS, and TRACE endpoints
+    - Live **health monitor**
 
 [Sanic User Guide - The lightning-fast asynchronous Python web framework](https://sanic.dev/en/)
 
@@ -393,12 +393,12 @@ it looks at the **type annotations** of the arguments in the handler. This can b
 Within the Python programming language, a diverse set of HTTP client libraries exists to facilitate communication
 with web servers. These libraries enable the programmatic construction and transmission of HTTP requests.
 
--   The `urllib` module, a built-in library, offers a foundational approach to HTTP communication.
--   The [`requests`](https://github.com/psf/requests) library, known for its ease of use and rich feature set,
-    is a widely adopted choice.
--   The `aiohttp` library caters to projects requiring asynchronous operations,
-    ideal for non-blocking communication patterns.
--   <https://github.com/encode/httpx>
+- The `urllib` module, a built-in library, offers a foundational approach to HTTP communication.
+- The [`requests`](https://github.com/psf/requests) library, known for its ease of use and rich feature set,
+  is a widely adopted choice.
+- The `aiohttp` library caters to projects requiring asynchronous operations,
+  ideal for non-blocking communication patterns.
+- <https://github.com/encode/httpx>
 
 ## Tests
 
@@ -499,8 +499,8 @@ Using it for reading/writing CSV is a better way than any other console applicat
 
 ## GIS
 
--   [https://shapely.readthedocs.io/en/stable/](https://shapely.readthedocs.io/en/stable/)
--   [https://geopandas.org/en/stable/](https://geopandas.org/en/stable/)
+- [https://shapely.readthedocs.io/en/stable/](https://shapely.readthedocs.io/en/stable/)
+- [https://geopandas.org/en/stable/](https://geopandas.org/en/stable/)
 
 ## Typing
 
@@ -723,7 +723,7 @@ We love types even in python 💘
 
 In python, you can even manipulate images.
 
--   [https://pillow.readthedocs.io/en/stable/index.html](https://pillow.readthedocs.io/en/stable/index.html)
+- [https://pillow.readthedocs.io/en/stable/index.html](https://pillow.readthedocs.io/en/stable/index.html)
 
 ## [Pydantic](https://docs.pydantic.dev/latest/)
 
@@ -897,8 +897,8 @@ Return the event loop associated with the runner instance.
 declared with the async/await syntax is the preferred way of writing asyncio applications.
 To actually run a coroutine, asyncio provides the following mechanisms:
 
--   The [`asyncio.run()`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run) function to run the top-level entry point "main()" function.
--   Awaiting on a coroutine. The following snippet of code will print "hello" after waiting for 1 second, and then print "world" after waiting for _another_ 2 seconds:
+- The [`asyncio.run()`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run) function to run the top-level entry point "main()" function.
+- Awaiting on a coroutine. The following snippet of code will print "hello" after waiting for 1 second, and then print "world" after waiting for _another_ 2 seconds:
 
     ```python
     import asyncio
@@ -919,8 +919,8 @@ To actually run a coroutine, asyncio provides the following mechanisms:
     asyncio.run(main())
     ```
 
--   The [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task)
-    function to run coroutines concurrently as asyncio [`Tasks`](https://docs.python.org/3/library/asyncio-task.html#asyncio.Task).
+- The [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task)
+  function to run coroutines concurrently as asyncio [`Tasks`](https://docs.python.org/3/library/asyncio-task.html#asyncio.Task).
 
     ```python
     async def main():
@@ -969,9 +969,9 @@ Many asyncio APIs are designed to accept awaitables.
 
 There are three main types of _awaitable_ objects:
 
--   **coroutines**
--   **Tasks**
--   **Futures**
+- **coroutines**
+- **Tasks**
+- **Futures**
 
 :::note
 ⚠️ A _coroutine function_: an [`async def`](https://docs.python.org/3/reference/compound_stmts.html#async-def) function.
@@ -1041,9 +1041,9 @@ HTTPX is a fully featured HTTP client for Python 3, which provides sync and asyn
 
 #### Key features
 
--   Supports both [Client](https://docs.aiohttp.org/en/stable/client.html#aiohttp-client) and [HTTP Server](https://docs.aiohttp.org/en/stable/web.html#aiohttp-web).
--   Supports both [Server WebSockets](https://docs.aiohttp.org/en/stable/web_quickstart.html#aiohttp-web-websockets) and [Client WebSockets](https://docs.aiohttp.org/en/stable/client_quickstart.html#aiohttp-client-websockets) out-of-the-box without the Callback Hell.
--   Web-server has [Middlewares](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-middlewares), [Signals](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-signals) and plug-able routing.
+- Supports both [Client](https://docs.aiohttp.org/en/stable/client.html#aiohttp-client) and [HTTP Server](https://docs.aiohttp.org/en/stable/web.html#aiohttp-web).
+- Supports both [Server WebSockets](https://docs.aiohttp.org/en/stable/web_quickstart.html#aiohttp-web-websockets) and [Client WebSockets](https://docs.aiohttp.org/en/stable/client_quickstart.html#aiohttp-client-websockets) out-of-the-box without the Callback Hell.
+- Web-server has [Middlewares](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-middlewares), [Signals](https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-signals) and plug-able routing.
 
 ```python
 import aiohttp

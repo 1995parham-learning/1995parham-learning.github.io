@@ -60,9 +60,9 @@ one single block. It aims at optimizing the model size as much as possible.
 ONNX specifications are optimized for numerical computation with tensors.
 A tensor is a multidimensional array. It is defined by:
 
--   a type: the element type, the same for all elements in the tensor
--   a shape: an array with all dimensions, this array can be empty, a dimension can be null
--   a contiguous array: it represents all the values
+- a type: the element type, the same for all elements in the tensor
+- a shape: an array with all dimensions, this array can be empty, a dimension can be null
+- a contiguous array: it represents all the values
 
 ONNX is **strongly typed**, and its definition does not support implicit cast.
 It is _impossible_ to add two tensors or matrices with different types even if other languages does.
@@ -85,8 +85,8 @@ print(onnx.__version__, " opset=", onnx.defs.onnx_opset_version())
 
 ## Tools
 
--   [`netron`](https://netron.app/) is very useful to help visualize ONNX graphs.
-    That's the only one without programming.
+- [`netron`](https://netron.app/) is very useful to help visualize ONNX graphs.
+  That's the only one without programming.
 
 ## A simple example: a linear regression
 
@@ -102,10 +102,10 @@ The first thing is to implement a function with ONNX operators.
 ONNX is strongly typed. Shape and type must be defined for both input and output of the function.
 That said, we need four functions to build the graph among the make function:
 
--   `make_tensor_value_info`: declares a variable (input or output) given its shape and type
--   `make_node`: creates a node defined by an operation (an operator type), its inputs and outputs
--   `make_graph`: a function to create an ONNX graph with the objects created by the two previous functions
--   `make_model`: a last function which merges the graph and additional metadata
+- `make_tensor_value_info`: declares a variable (input or output) given its shape and type
+- `make_node`: creates a node defined by an operation (an operator type), its inputs and outputs
+- `make_graph`: a function to create an ONNX graph with the objects created by the two previous functions
+- `make_model`: a last function which merges the graph and additional metadata
 
 All along the creation, we need to give a name to every input, output of every node of the graph.
 Input and output of the graph are defined by ONNX objects, strings are used to refer to intermediate results.

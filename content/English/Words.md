@@ -153,28 +153,28 @@ One of the best sources for gathering the description for words is [Cambridge Di
 
 ## Learn By Example
 
--   He expressed his sorrow at the news of her death.
--   The joys and sorrows of childhood
--   His death was a great sorrow to everyone who knew him.
--   He noted, with some irritation, that the letter had not been sent.
--   I apologized to my teacher for being late to the class.
--   a bee always stings me.
--   a bee stung me.
--   I've gotten fired. / I got fired.
--   What would you do if you were me? (suggestion) If I were you, I would call the police
--   I lost my touch with my friend.
--   I'm fond of traveling.
--   I'm interested in reading fictional novel.
--   I'm in my late 20s.
--   I'm in my early 30s.
--   I'm in my mid 40s.
--   1930s :: a decade; a period of 10 years
-    \*\*\* know
--   I've known him for a long time [How long have you known him?]
-    \*\*\* recognize
--   Don't you recognize me
-    \*\*\* swole
--   If you're swole you'll look good in anything
-    \*\* Synonyms
--   keen on / fund of / into / eager about / interested in
--   indecisive / hesitant / doubtful / uncertain
+- He expressed his sorrow at the news of her death.
+- The joys and sorrows of childhood
+- His death was a great sorrow to everyone who knew him.
+- He noted, with some irritation, that the letter had not been sent.
+- I apologized to my teacher for being late to the class.
+- a bee always stings me.
+- a bee stung me.
+- I've gotten fired. / I got fired.
+- What would you do if you were me? (suggestion) If I were you, I would call the police
+- I lost my touch with my friend.
+- I'm fond of traveling.
+- I'm interested in reading fictional novel.
+- I'm in my late 20s.
+- I'm in my early 30s.
+- I'm in my mid 40s.
+- 1930s :: a decade; a period of 10 years
+  \*\*\* know
+- I've known him for a long time [How long have you known him?]
+  \*\*\* recognize
+- Don't you recognize me
+  \*\*\* swole
+- If you're swole you'll look good in anything
+  \*\* Synonyms
+- keen on / fund of / into / eager about / interested in
+- indecisive / hesitant / doubtful / uncertain

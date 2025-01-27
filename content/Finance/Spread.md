@@ -2,5 +2,5 @@
 
 These two defining points are often referred to as the bid and ask price.
 
--   **Ask**. The lowest price someone is willing to sell
--   **Bid**. The highest price someone is willing to pay
+- **Ask**. The lowest price someone is willing to sell
+- **Bid**. The highest price someone is willing to pay

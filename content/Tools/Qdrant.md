@@ -25,9 +25,9 @@ Vector databases are optimized for **storing** and **querying** these high-dimen
 
 Here’s a quick overview of the three:
 
--   [**Cosine Similarity**](https://en.wikipedia.org/wiki/Cosine_similarity) - Cosine similarity is a way to measure how similar two vectors are. To simplify, it reflects whether the vectors have the same direction (similar) or are poles apart. Cosine similarity is often used with **text representations** to compare how similar two documents or sentences are to each other. The output of cosine similarity _ranges from -1 to 1_, where _-1 means the two vectors are completely dissimilar_, and _1 indicates maximum similarity_.
--   [**Dot Product**](https://en.wikipedia.org/wiki/Dot_product) - The dot product similarity metric is another way of measuring how similar two vectors are. Unlike cosine similarity, it also considers the length of the vectors. This might be important when, for example, vector representations of your documents are built based on the term (word) frequencies. The dot product similarity is calculated by multiplying the respective values in the two vectors and then summing those products. The higher the sum, the more similar the two vectors are. If you normalize the vectors (so the numbers in them sum up to 1), the dot product similarity will become the cosine similarity.
--   [**Euclidean Distance**](https://en.wikipedia.org/wiki/Euclidean_distance) - Euclidean distance is a way to measure the distance between two points in space, similar to how we measure the distance between two places on a map. It’s calculated by finding the square root of the sum of the squared differences between the two points’ coordinates. This distance metric is also commonly used in machine learning to measure how similar or dissimilar two vectors are.
+- [**Cosine Similarity**](https://en.wikipedia.org/wiki/Cosine_similarity) - Cosine similarity is a way to measure how similar two vectors are. To simplify, it reflects whether the vectors have the same direction (similar) or are poles apart. Cosine similarity is often used with **text representations** to compare how similar two documents or sentences are to each other. The output of cosine similarity _ranges from -1 to 1_, where _-1 means the two vectors are completely dissimilar_, and _1 indicates maximum similarity_.
+- [**Dot Product**](https://en.wikipedia.org/wiki/Dot_product) - The dot product similarity metric is another way of measuring how similar two vectors are. Unlike cosine similarity, it also considers the length of the vectors. This might be important when, for example, vector representations of your documents are built based on the term (word) frequencies. The dot product similarity is calculated by multiplying the respective values in the two vectors and then summing those products. The higher the sum, the more similar the two vectors are. If you normalize the vectors (so the numbers in them sum up to 1), the dot product similarity will become the cosine similarity.
+- [**Euclidean Distance**](https://en.wikipedia.org/wiki/Euclidean_distance) - Euclidean distance is a way to measure the distance between two points in space, similar to how we measure the distance between two places on a map. It’s calculated by finding the square root of the sum of the squared differences between the two points’ coordinates. This distance metric is also commonly used in machine learning to measure how similar or dissimilar two vectors are.
 
 Now that we know what vector databases are and how they are structurally different than other databases, let’s go over why they are important.
 
@@ -43,12 +43,12 @@ Qdrant allows you to store any information that can be represented using JSON.
 
 The preferred size of your CPU and RAM depends on:
 
--   Number of vectors
--   Vector dimensions
--   [[Qdrant#Payload]] and their indexes
--   Storage
--   Replication
--   How you configure quantization
+- Number of vectors
+- Vector dimensions
+- [[Qdrant#Payload]] and their indexes
+- Storage
+- Replication
+- How you configure quantization
 
 Our [Cloud Pricing Calculator](https://cloud.qdrant.io/calculator?_gl=1*1sxmy7s*_gcl_au*MzQ2NTQzNzYzLjE3MzA5MTUyMTY.*_ga*MTIwOTgxNzc1OC4xNzMwOTE1MjEz*_ga_NZYW2651NE*MTczMTYwNTU3NS42LjEuMTczMTYwNTU4MC4wLjAuMA..) can help you estimate required resources without payload or index data.
 
@@ -64,16 +64,16 @@ Since version _v0.8.0_ Qdrant supports a distributed deployment mode. In this mo
 
 The ideal number of Qdrant nodes depends on how much you value cost-saving, resilience, and performance/scalability in relation to each other.
 
--   **Prioritizing cost-saving**: If cost is most important to you, run a single Qdrant node. This is not recommended for production environments. Drawbacks:
-    -   _Resilience_: Users will experience downtime during node restarts, and recovery is not possible unless you have backups or snapshots.
-    -   _Performance_: Limited to the resources of a single server.
--   **Prioritizing resilience**: If resilience is most important to you, run a Qdrant cluster with _three or more nodes_ and _two or more shard replicas_. Clusters with three or more nodes and replication can perform all operations even while one node is down. Additionally, they gain performance benefits from load-balancing, and they can recover from the permanent loss of one node without the need for backups or snapshots (but backups are still strongly recommended). _This is most recommended for production environments_. Drawbacks:
-    -   _Cost_: Larger clusters are more costly than smaller clusters, which is the only drawback of this configuration.
--   **Balancing cost, resilience, and performance**: Running a _two-node Qdrant cluster with replicated shards_ allows the cluster to respond to most read/write requests even when one node is down, such as during maintenance events. Having two nodes also means greater performance than a single-node cluster, while still being cheaper than a three-node cluster. Drawbacks:
-    -   _Resilience (uptime)_: The cluster cannot perform operations on collections when one node is down. Those operations require >50% of nodes to be running, so this is only possible in a 3+ node cluster. Since creating, editing, and deleting collections are usually rare operations, many users find this drawback to be negligible.
-    -   _Resilience (data integrity)_: If the data on one of the two nodes is permanently lost or corrupted, it cannot be recovered aside from snapshots or backups. Only 3+ node clusters can recover from the permanent loss of a single node since recovery operations require >50% of the cluster to be healthy.
-    -   _Cost_: Replicating your shards requires storing two copies of your data.
-    -   _Performance_: The maximum performance of a Qdrant cluster increases as you add more nodes.
+- **Prioritizing cost-saving**: If cost is most important to you, run a single Qdrant node. This is not recommended for production environments. Drawbacks:
+    - _Resilience_: Users will experience downtime during node restarts, and recovery is not possible unless you have backups or snapshots.
+    - _Performance_: Limited to the resources of a single server.
+- **Prioritizing resilience**: If resilience is most important to you, run a Qdrant cluster with _three or more nodes_ and _two or more shard replicas_. Clusters with three or more nodes and replication can perform all operations even while one node is down. Additionally, they gain performance benefits from load-balancing, and they can recover from the permanent loss of one node without the need for backups or snapshots (but backups are still strongly recommended). _This is most recommended for production environments_. Drawbacks:
+    - _Cost_: Larger clusters are more costly than smaller clusters, which is the only drawback of this configuration.
+- **Balancing cost, resilience, and performance**: Running a _two-node Qdrant cluster with replicated shards_ allows the cluster to respond to most read/write requests even when one node is down, such as during maintenance events. Having two nodes also means greater performance than a single-node cluster, while still being cheaper than a three-node cluster. Drawbacks:
+    - _Resilience (uptime)_: The cluster cannot perform operations on collections when one node is down. Those operations require >50% of nodes to be running, so this is only possible in a 3+ node cluster. Since creating, editing, and deleting collections are usually rare operations, many users find this drawback to be negligible.
+    - _Resilience (data integrity)_: If the data on one of the two nodes is permanently lost or corrupted, it cannot be recovered aside from snapshots or backups. Only 3+ node clusters can recover from the permanent loss of a single node since recovery operations require >50% of the cluster to be healthy.
+    - _Cost_: Replicating your shards requires storing two copies of your data.
+    - _Performance_: The maximum performance of a Qdrant cluster increases as you add more nodes.
 
 In summary, single-node clusters are best for non-production workloads, replicated 3+ node clusters are the gold standard, and replicated 2-node clusters strike a good balance.
 
@@ -177,10 +177,10 @@ Note that enabling distributed mode _does not_ automatically replicate your data
 
 When you enable distributed mode and scale up to two or more nodes, your data does not move to the new node automatically; it starts out empty. To make use of your new empty node, do one of the following:
 
--   Create a new replicated collection by setting the [replication_factor](https://qdrant.tech/documentation/guides/distributed_deployment/#replication-factor) to 2 or more and setting the [number of shards](https://qdrant.tech/documentation/guides/distributed_deployment/#choosing-the-right-number-of-shards) to a multiple of your number of nodes.
--   If you have an existing collection which does not contain enough shards for each node, you must create a new collection as described in the previous bullet point.
--   If you already have enough shards for each node and you merely need to replicate your data, follow the directions for [creating new shard replicas](https://qdrant.tech/documentation/guides/distributed_deployment/#creating-new-shard-replicas).
--   If you already have enough shards for each node and your data is already replicated, you can move data (without replicating it) onto the new node(s) by [moving shards](https://qdrant.tech/documentation/guides/distributed_deployment/#moving-shards).
+- Create a new replicated collection by setting the [replication_factor](https://qdrant.tech/documentation/guides/distributed_deployment/#replication-factor) to 2 or more and setting the [number of shards](https://qdrant.tech/documentation/guides/distributed_deployment/#choosing-the-right-number-of-shards) to a multiple of your number of nodes.
+- If you have an existing collection which does not contain enough shards for each node, you must create a new collection as described in the previous bullet point.
+- If you already have enough shards for each node and you merely need to replicate your data, follow the directions for [creating new shard replicas](https://qdrant.tech/documentation/guides/distributed_deployment/#creating-new-shard-replicas).
+- If you already have enough shards for each node and your data is already replicated, you can move data (without replicating it) onto the new node(s) by [moving shards](https://qdrant.tech/documentation/guides/distributed_deployment/#moving-shards).
 
 ### Raft
 
@@ -198,8 +198,8 @@ You may use the cluster REST API to check the state of the consensus.
 
 A Collection in Qdrant is made of one or more shards. _A shard is an independent store of points which is able to perform all operations provided by collections_. There are two methods of distributing points across shards:
 
--   **Automatic sharding**: Points are distributed among shards by using a [[Consistent Hashing]] algorithm, so that shards are managing non-intersecting subsets of points. This is the default behavior.
--   **User-defined sharding**: *Available as of v1.7.0* - Each point is uploaded to a specific shard, so that operations can hit only the shard or shards they need. Even with this distribution, shards still ensure having non-intersecting subsets of points.
+- **Automatic sharding**: Points are distributed among shards by using a [[Consistent Hashing]] algorithm, so that shards are managing non-intersecting subsets of points. This is the default behavior.
+- **User-defined sharding**: *Available as of v1.7.0* - Each point is uploaded to a specific shard, so that operations can hit only the shard or shards they need. Even with this distribution, shards still ensure having non-intersecting subsets of points.
 
 Each node knows where all parts of the collection are stored through the [consensus protocol](https://qdrant.tech/documentation/guides/distributed_deployment/#raft), so when you send a search request to one Qdrant node, it automatically queries all other nodes to obtain the full search result.
 
@@ -314,7 +314,7 @@ PUT /collections/{collection_name}/points
 
 Using the same point ID across multiple shard keys is **not supported** and should be avoided.
 
--   When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
+- When using custom sharding, IDs are only enforced to be unique within a shard key. This means that you can have multiple points with the same ID, if they have different shard keys. This is a limitation of the current implementation, and is an anti-pattern that should be avoided because it can create scenarios of points with the same ID to have different contents. In the future, we plan to add a global ID uniqueness check.
 
 Now you can target the operations to specific shard(s) by specifying the `shard_key` on any operation you do. Operations that do not specify the shard key will be executed on **all** shards.
 
@@ -330,9 +330,9 @@ There are different methods for transferring a shard, such as moving or replicat
 
 Available shard transfer methods are:
 
--   `stream_records`: *(default)* transfer by streaming just its records to the target node in batches.
--   `snapshot`: transfer including its index and quantized data by utilizing a snapshot automatically.
--   `wal_delta`: *(auto recovery default)* transfer by resolving WAL difference; the operations that were missed.
+- `stream_records`: *(default)* transfer by streaming just its records to the target node in batches.
+- `snapshot`: transfer including its index and quantized data by utilizing a snapshot automatically.
+- `wal_delta`: *(auto recovery default)* transfer by resolving WAL difference; the operations that were missed.
 
 Each has pros, cons and specific requirements, some of which are:
 
@@ -437,9 +437,9 @@ Keep in mind that a collection must contain at least one active replica of a sha
 
 Replicas can be in different states:
 
--   Active: healthy and ready to serve traffic
--   Dead: unhealthy and not ready to serve traffic
--   Partial: currently under resynchronization before activation
+- Active: healthy and ready to serve traffic
+- Dead: unhealthy and not ready to serve traffic
+- Partial: currently under resynchronization before activation
 
 A replica is marked as dead if it does not respond to internal healthchecks or if it fails to serve traffic.
 
@@ -479,8 +479,8 @@ If there are no copies of data in the cluster, it is still possible to recover f
 
 Follow the same steps to detach failed node and create a new one in the cluster:
 
--   To exclude failed nodes from the consensus, use [remove peer](https://api.qdrant.tech/master/api-reference/distributed/remove-peer) API. Apply the `force` flag if necessary.
--   Create a new node, making sure to attach it to the existing cluster by specifying the `--bootstrap` CLI parameter with the URL of any of the running cluster nodes.
+- To exclude failed nodes from the consensus, use [remove peer](https://api.qdrant.tech/master/api-reference/distributed/remove-peer) API. Apply the `force` flag if necessary.
+- Create a new node, making sure to attach it to the existing cluster by specifying the `--bootstrap` CLI parameter with the URL of any of the running cluster nodes.
 
 Snapshot recovery, used in single-node deployment, is different from cluster one. Consensus manages all metadata about all collections and does not require snapshots to recover it. But you can use snapshots to recover missing shards of the collections.
 
@@ -494,10 +494,10 @@ If properly configured, running Qdrant in distributed mode can make your cluster
 
 Here is how differently-configured Qdrant clusters respond:
 
--   1-node clusters: All operations time out or fail for up to a few minutes. It depends on how long it takes to restart and load data from disk.
--   2-node clusters where shards ARE NOT replicated: All operations will time out or fail for up to a few minutes. It depends on how long it takes to restart and load data from disk.
--   2-node clusters where all shards ARE replicated to both nodes: All requests except for operations on collections continue to work during the outage.
--   3+-node clusters where all shards are replicated to at least 2 nodes: All requests continue to work during the outage.
+- 1-node clusters: All operations time out or fail for up to a few minutes. It depends on how long it takes to restart and load data from disk.
+- 2-node clusters where shards ARE NOT replicated: All operations will time out or fail for up to a few minutes. It depends on how long it takes to restart and load data from disk.
+- 2-node clusters where all shards ARE replicated to both nodes: All requests except for operations on collections continue to work during the outage.
+- 3+-node clusters where all shards are replicated to at least 2 nodes: All requests continue to work during the outage.
 
 ## [](https://qdrant.tech/documentation/guides/distributed_deployment/#consistency-guarantees)Consistency guarantees
 
@@ -507,8 +507,8 @@ During the normal state of operation, it is possible to search and modify data f
 
 Before responding to the client, the peer handling the request dispatches all operations according to the current topology in order to keep the data synchronized across the cluster.
 
--   reads are using a partial fan-out strategy to optimize latency and availability
--   writes are executed in parallel on all active sharded replicas
+- reads are using a partial fan-out strategy to optimize latency and availability
+- writes are executed in parallel on all active sharded replicas
 
 ![Embeddings](https://qdrant.tech/docs/concurrent-operations-replicas.png)
 
@@ -516,9 +516,9 @@ However, in some cases, it is necessary to ensure additional guarantees during p
 
 Qdrant provides a few options to control consistency guarantees:
 
--   `write_consistency_factor` - defines the number of replicas that must acknowledge a write operation before responding to the client. Increasing this value will make write operations tolerant to network partitions in the cluster, but will require a higher number of replicas to be active to perform write operations.
--   Read `consistency` param, can be used with search and retrieve operations to ensure that the results obtained from all replicas are the same. If this option is used, Qdrant will perform the read operation on multiple replicas and resolve the result according to the selected strategy. This option is useful to avoid data inconsistency in case of concurrent updates of the same documents. This options is preferred if the update operations are frequent and the number of replicas is low.
--   Write `ordering` param, can be used with update and delete operations to ensure that the operations are executed in the same order on all replicas. If this option is used, Qdrant will route the operation to the leader replica of the shard and wait for the response before responding to the client. This option is useful to avoid data inconsistency in case of concurrent updates of the same documents. This options is preferred if read operations are more frequent than update and if search performance is critical.
+- `write_consistency_factor` - defines the number of replicas that must acknowledge a write operation before responding to the client. Increasing this value will make write operations tolerant to network partitions in the cluster, but will require a higher number of replicas to be active to perform write operations.
+- Read `consistency` param, can be used with search and retrieve operations to ensure that the results obtained from all replicas are the same. If this option is used, Qdrant will perform the read operation on multiple replicas and resolve the result according to the selected strategy. This option is useful to avoid data inconsistency in case of concurrent updates of the same documents. This options is preferred if the update operations are frequent and the number of replicas is low.
+- Write `ordering` param, can be used with update and delete operations to ensure that the operations are executed in the same order on all replicas. If this option is used, Qdrant will route the operation to the leader replica of the shard and wait for the response before responding to the client. This option is useful to avoid data inconsistency in case of concurrent updates of the same documents. This options is preferred if read operations are more frequent than update and if search performance is critical.
 
 ### [](https://qdrant.tech/documentation/guides/distributed_deployment/#write-consistency-factor)Write consistency factor
 
@@ -545,11 +545,11 @@ Write operations will fail if the number of active replicas is less than the `w
 
 Read `consistency` can be specified for most read requests and will ensure that the returned result is consistent across cluster nodes.
 
--   `all` will query all nodes and return points, which present on all of them
--   `majority` will query all nodes and return points, which present on the majority of them
--   `quorum` will query randomly selected majority of nodes and return points, which present on all of them
--   `1`/`2`/`3`/etc - will query specified number of randomly selected nodes and return points which present on all of them
--   default `consistency` is `1`
+- `all` will query all nodes and return points, which present on all of them
+- `majority` will query all nodes and return points, which present on the majority of them
+- `quorum` will query randomly selected majority of nodes and return points, which present on all of them
+- `1`/`2`/`3`/etc - will query specified number of randomly selected nodes and return points which present on all of them
+- default `consistency` is `1`
 
 httppythontypescriptrustjavacsharpgo
 
@@ -579,9 +579,9 @@ POST /collections/{collection_name}/points/query?consistency=majority
 
 Write `ordering` can be specified for any write request to serialize it through a single “leader” node, which ensures that all write operations (issued with the same `ordering`) are performed and observed sequentially.
 
--   `weak` *(default)* ordering does not provide any additional guarantees, so write operations can be freely reordered.
--   `medium` ordering serializes all write operations through a dynamically elected leader, which might cause minor inconsistencies in case of leader change.
--   `strong` ordering serializes all write operations through the permanent leader, which provides strong consistency, but write operations may be unavailable if the leader is down.
+- `weak` *(default)* ordering does not provide any additional guarantees, so write operations can be freely reordered.
+- `medium` ordering serializes all write operations through a dynamically elected leader, which might cause minor inconsistencies in case of leader change.
+- `strong` ordering serializes all write operations through the permanent leader, which provides strong consistency, but write operations may be unavailable if the leader is down.
 
 Some [shard transfer methods](https://qdrant.tech/documentation/guides/distributed_deployment/#shard-transfer-method) may affect ordering guarantees.
 
@@ -612,8 +612,8 @@ This is an experimental feature, its behavior may change in the future.
 
 In some cases it might be useful to have a Qdrant node that only accumulates data and does not participate in search operations. There are several scenarios where this can be useful:
 
--   Listener option can be used to store data in a separate node, which can be used for backup purposes or to store data for a long time.
--   Listener node can be used to syncronize data into another region, while still performing search operations in the local region.
+- Listener option can be used to store data in a separate node, which can be used for backup purposes or to store data for a long time.
+- Listener node can be used to syncronize data into another region, while still performing search operations in the local region.
 
 To enable listener mode, set `node_type` to `Listener` in the config file:
 

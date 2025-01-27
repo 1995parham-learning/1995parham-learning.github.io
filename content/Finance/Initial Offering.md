@@ -6,5 +6,5 @@ An IPO, or initial public offering, is the term for the first time that a privat
 
 An initial coin offering (ICO) is the cryptocurrency industry’s equivalent of an initial public offering (IPO). A company seeking to raise money to create a new blockchain app or service with a cryptocurrency can launch an ICO as a way to raise funds.
 
--   IEO: Initial exchange offering
--   IDO: Initial dex offering
+- IEO: Initial exchange offering
+- IDO: Initial dex offering

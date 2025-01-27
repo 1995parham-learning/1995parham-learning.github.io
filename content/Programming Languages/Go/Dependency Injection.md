@@ -3,8 +3,8 @@
 Generating code on Golang is not my interest, but this framework is really nice and easily can generate useful binding.
 These frameworks can do the dependency injection without code generation, and I kinda like them:
 
--   [samber/do](https://github.com/samber/do)
--   [google/wire](https://github.com/google/wire)
+- [samber/do](https://github.com/samber/do)
+- [google/wire](https://github.com/google/wire)
 
 ## [Fx](https://github.com/uber-go/fx)
 
@@ -73,15 +73,15 @@ Both of these, in turn are comprised of multiple steps.
 
 During **initialization**, Fx will,
 
--   register all constructors passed to `fx.Provide`
--   register all decorators passed to `fx.Decorate`
--   run all functions passed to `fx.Invoke`, calling constructors and decorators as needed
+- register all constructors passed to `fx.Provide`
+- register all decorators passed to `fx.Decorate`
+- run all functions passed to `fx.Invoke`, calling constructors and decorators as needed
 
 During **execution**, Fx will,
 
--   Run all startup hooks appended to the application by providers, decorators, and invoked functions
--   Wait for a signal to stop running
--   Run all shutdown hooks appended to the application
+- Run all startup hooks appended to the application by providers, decorators, and invoked functions
+- Wait for a signal to stop running
+- Run all shutdown hooks appended to the application
 
 ![fx-flow](fx-flow.png)
 
@@ -90,17 +90,17 @@ During **execution**, Fx will,
 Lifecycle hooks provide the ability to schedule work to be executed by Fx,
 when the application starts up or shuts down. Fx provides two kinds of hooks:
 
--   _Startup hooks_, also referred to as `OnStart` hooks. These run in the order they were appended.
--   _Shutdown hooks_, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
+- _Startup hooks_, also referred to as `OnStart` hooks. These run in the order they were appended.
+- _Shutdown hooks_, also referred to as `OnStop` hooks. These run in the **reverse** of the order they were appended.
 
 Typically, components that provide a startup hook also provide a corresponding shutdown hook to release the resources they acquired at startup.
 
 Fx runs both kinds of hooks with a hard timeout enforcement (by default, 15 seconds).
 Therefore, hooks are expected to block only as long as they need to _schedule_ work. In other words,
 
--   hooks **must not** block to run long-running tasks synchronously
--   hooks **should** schedule long-running tasks in background go routines
--   shutdown hooks **should** stop the background work started by startup hooks
+- hooks **must not** block to run long-running tasks synchronously
+- hooks **should** schedule long-running tasks in background go routines
+- shutdown hooks **should** stop the background work started by startup hooks
 
 ### Modules
 

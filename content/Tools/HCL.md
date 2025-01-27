@@ -83,7 +83,7 @@ Schema-driven processing is the primary way to access body content. A _body sche
 
 A _body schema_ consists of a list of _attribute schemata_ and _block header schemata_:
 
--   An _attribute schema_ provides the name of an attribute and whether its presence is required.
--   A _block header schema_ provides a block type name and the semantic names assigned to each of the labels of that block type, if any.
+- An _attribute schema_ provides the name of an attribute and whether its presence is required.
+- A _block header schema_ provides a block type name and the semantic names assigned to each of the labels of that block type, if any.
 
 After obtaining _body content_, the calling application may continue processing by evaluating attribute expressions and/or recursively applying further schema-driven processing to the child block bodies.

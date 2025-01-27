@@ -10,25 +10,25 @@ Writing REST API in a Django application using Django REST Framework is awesome,
 
 [Home - Django REST framework](https://www.django-rest-framework.org/)
 
--   [Serializes](https://www.django-rest-framework.org/api-guide/serializers/)
--   [Fields](https://www.django-rest-framework.org/api-guide/fields)
--   [Parsers](https://www.django-rest-framework.org/api-guide/parsers/)
--   [Views](https://www.django-rest-framework.org/api-guide/views/)
--   [Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
--   [Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)
--   [Filtering](https://www.django-rest-framework.org/api-guide/filtering/)
+- [Serializes](https://www.django-rest-framework.org/api-guide/serializers/)
+- [Fields](https://www.django-rest-framework.org/api-guide/fields)
+- [Parsers](https://www.django-rest-framework.org/api-guide/parsers/)
+- [Views](https://www.django-rest-framework.org/api-guide/views/)
+- [Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
+- [Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)
+- [Filtering](https://www.django-rest-framework.org/api-guide/filtering/)
 
 Sometimes it is better in DRF to read its code because its documentation is not complete:
 
--   [@encode/django-rest-framework](https://github.com/encode/django-rest-framework)
+- [@encode/django-rest-framework](https://github.com/encode/django-rest-framework)
 
 Semi-automatic swagger documentation for the REST APIs:
 
--   [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
+- [@tfranzel/drf-spectacula](https://github.com/tfranzel/drf-spectacular)
 
 For doing upgrade, you can use:
 
--   [@adamchainz/django-upgrade](https://github.com/adamchainz/django-upgrade)
+- [@adamchainz/django-upgrade](https://github.com/adamchainz/django-upgrade)
 
 ## Database Optimization
 
@@ -38,9 +38,9 @@ costing you. Use `QuerySet.explain()` to understand how specific `QuerySet`s are
 
 To avoid performance problems, it is important to understand:
 
--   That `QuerySet`s are lazy.
--   When they are evaluated.
--   How the data is held in memory.
+- That `QuerySet`s are lazy.
+- When they are evaluated.
+- How the data is held in memory.
 
 Use `iterator()`, When you have a lot of objects, the caching behavior of the `QuerySet` can cause a large amount of memory to be used. In this case, `iterator()` may help.
 
@@ -49,7 +49,7 @@ Use `iterator()`, When you have a lot of objects, the caching behavior of the `Q
 Using data-classes to define request and response in Django REST Framework. There are cases in which your request or
 response is not a model, in those cases you can define them as a dataclass using the following library.
 
--   [@oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
+- [@oxan/djangorestframework-dataclasses](https://github.com/oxan/djangorestframework-dataclasses)
 
 Using the library instead of 😔:
 
@@ -89,7 +89,7 @@ class PersonSerializer(DataclassSerializer):
 Having reusable filters for models in Django REST Framework with Django-filter. These filters help you to write
 viewsets easier and give client developers vast choices in getting the data.
 
--   [Django filter documentation](https://django-filter.readthedocs.io/en/main/)
+- [Django filter documentation](https://django-filter.readthedocs.io/en/main/)
 
 ## `inspectdb`
 
@@ -105,9 +105,9 @@ A model is the single, definitive source of information about your data. It cont
 
 The basics:
 
--   Each model is a Python class that subclasses `django.db.models.Model`.
--   Each attribute of the model represents a database field.
--   With all of this, Django gives you an automatically-generated database-access API; see Making queries.
+- Each model is a Python class that subclasses `django.db.models.Model`.
+- Each attribute of the model represents a database field.
+- With all of this, Django gives you an automatically-generated database-access API; see Making queries.
 
 Use `OuterRef` when a queryset in a `Subquery` needs to refer to a field from the outer query or its transform. It acts like an `F` expression except that the check to see if it refers to a valid field isn’t made until the outer queryset is resolved.
 

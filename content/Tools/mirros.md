@@ -5,9 +5,9 @@ icon: noto:mirror
 
 One of the main issues in our country is finding the best mirror for removing sanctions.
 
--   Debian: [https://www.debian.org/mirror/](https://www.debian.org/mirror/)
--   Alpine: [https://mirrors.alpinelinux.org/](https://mirrors.alpinelinux.org/)
--   ArchLinux: [https://archlinux.org/mirrors/](https://archlinux.org/mirrors/)
+- Debian: [https://www.debian.org/mirror/](https://www.debian.org/mirror/)
+- Alpine: [https://mirrors.alpinelinux.org/](https://mirrors.alpinelinux.org/)
+- ArchLinux: [https://archlinux.org/mirrors/](https://archlinux.org/mirrors/)
 
 For _ArchLinux_ you can use `reflector` in your terminal as follows:
 
