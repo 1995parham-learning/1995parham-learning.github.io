@@ -1,3 +1,3 @@
 The [`decimal`](https://docs.python.org/3/library/decimal.html#module-decimal) module provides support for fast correctly rounded decimal floating-point arithmetic. It offers several advantages over the [`float`](https://docs.python.org/3/library/functions.html#float) datatype:
 
-- Decimal _is based on a floating-point model which was designed with people in mind, and necessarily has a paramount guiding principle – computers must provide an arithmetic that works in the same way as the arithmetic that people learn at school.” – excerpt from the decimal arithmetic specification.
+- Decimal _is based on a floating-point model which was designed with people in mind, and necessarily has a paramount guiding principle – computers must provide an arithmetic that works in the same way as the arithmetic that people learn at school._ – excerpt from the decimal arithmetic specification.
