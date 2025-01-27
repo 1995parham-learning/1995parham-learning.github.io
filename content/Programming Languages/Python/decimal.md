@@ -1,0 +1,1 @@
+The [`decimal`](https://docs.python.org/3/library/decimal.html#module-decimal) module provides support for fast correctly rounded decimal floating-point arithmetic. It offers several advantages over the [`float`](https://docs.python.org/3/library/functions.html#float "float") datatype:
