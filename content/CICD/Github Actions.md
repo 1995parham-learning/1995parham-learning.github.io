@@ -1,6 +1,3 @@
----
-title: GitHub Actions
----
 
 ## Introduction
 
