@@ -90,6 +90,7 @@ on:
 - `workflow_dispatch`: Allows you to manually trigger a workflow from the GitHub UI. This is useful for debugging, running one-off tasks, or executing workflows on demand
 - `schedule`: Enables you to schedule workflows to run periodically.
 - `repository_dispatch`: Triggers workflows across all repositories in an organization when an event is dispatched from another repository.
+- Other events: Includes events like `issues`, `release`, `deployment`, and more.
 
 ## Pre-defined Actions
 
