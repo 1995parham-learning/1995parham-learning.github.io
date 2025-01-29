@@ -1,3 +1,16 @@
+## Introduction to CI/CD
+
+- **CI (Continuous Integration):** This practice involves developers frequently merging their code changes into a central repository (like GitHub) throughout the development cycle.
+    
+    - **Benefits:**
+        - Early detection of integration issues.
+        - Faster feedback loops.
+        - Improved code quality.
+        - Reduced risk of errors.
+- **CD (Continuous Delivery/Deployment):**
+    
+    - **Continuous Delivery:** Automates the release process, ensuring that software is always in a deployable state.
+    - **Continuous Deployment:** Automates the release process further by automatically deploying every change to production after passing the necessary tests.
 ## Introduction
 
 GitHub's actions is an awesome way to have CI on GitHub. It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
