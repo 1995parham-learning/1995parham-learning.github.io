@@ -83,8 +83,8 @@ on:
 
 ```yaml
 on:
-  pull_request:
-    branches: [ "main" ]
+    pull_request:
+        branches: ["main"]
 ```
 
 ## Pre-defined Actions
