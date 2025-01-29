@@ -34,26 +34,24 @@ Let's create a basic workflow that runs tests on your code whenever you push cha
 name: CI
 
 on:
-  push:
-    branches: [ "main" ] # Run on pushes to the 'main' branch
-
+    push:
+        branches: ["main"] # Run on pushes to the 'main' branch
 jobs:
-  build:
-    runs-on: ubuntu-latest # Use the latest Ubuntu image
+    build:
+        runs-on: ubuntu-latest # Use the latest Ubuntu image
+        steps:
+            - uses: actions/checkout@v3 # Check out your repository's code
 
-    steps:
-    - uses: actions/checkout@v3 # Check out your repository's code
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16 # Specify the desired Node.js version
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16 # Specify the desired Node.js version
+            - name: Install dependencies
+              run: npm install
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm test
+            - name: Run tests
+              run: npm test
 ```
 
 It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
