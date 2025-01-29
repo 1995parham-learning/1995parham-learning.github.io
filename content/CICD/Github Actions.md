@@ -39,6 +39,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest # Use the latest Ubuntu image
+
         steps:
             - uses: actions/checkout@v3 # Check out your repository's code
 
@@ -53,6 +54,14 @@ jobs:
             - name: Run tests
               run: npm test
 ```
+
+**Explanation:**
+
+- **`name`:** Gives a name to your workflow for easy identification.
+- **`on`:** Defines the events that trigger the workflow (in this case, pushes to the "main" branch).
+- **`jobs`:** A collection of jobs that run in parallel.
+- **`runs-on`:** Specifies the virtual environment where the job will run.
+- **`steps`:** A sequence of tasks that execute within the job.
 
 It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
 
