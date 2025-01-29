@@ -67,6 +67,10 @@ jobs:
 
 Triggers are the events that initiate the execution of your GitHub Actions workflows. They act as the starting point, determining when and why your workflows should run.
 
+Common Triggers:
+
+	**`push`:** This is the most common trigger. It initiates a workflow whenever code is pushed to the specified branches or tags in your repository.
+
 ```yaml
 name: install dotfiles
 on:
