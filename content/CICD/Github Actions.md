@@ -152,3 +152,4 @@ steps:
 ```
 
 ![[Pasted image 20250129132409.png]]
+To make it easier for Actions authors to generate Job Summaries, we’ve also added a new helper utility to the [@actions/core](https://www.npmjs.com/package/@actions/core) npm package.
