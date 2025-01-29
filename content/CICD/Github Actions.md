@@ -1,9 +1,6 @@
-
 ## Introduction
 
-GitHub's actions are an awesome way to have CI on GitHub.
-It runs on **VM**, can run Container and even release things for you.
-First, you need to specify the events that trigger the action.
+GitHub's actions is an awesome way to have CI on GitHub. It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
 
 ```yaml
 name: install dotfiles
