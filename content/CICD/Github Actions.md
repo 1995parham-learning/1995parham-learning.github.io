@@ -63,7 +63,7 @@ jobs:
 - **`runs-on`:** Specifies the virtual environment where the job will run.
 - **`steps`:** A sequence of tasks that execute within the job.
 
-## Trigger
+## Triggers: The Heartbeat of Your Workflows
 
 ```yaml
 name: install dotfiles
