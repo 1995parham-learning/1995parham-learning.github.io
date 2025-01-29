@@ -79,6 +79,14 @@ on:
             - "v[0-9]+.[0-9]+.[0-9]+"
 ```
 
+- `pull_request`: Triggers a workflow when a pull request is opened, edited, or closed.
+
+```yaml
+on:
+  pull_request:
+    branches: [ "main" ]
+```
+
 ## Pre-defined Actions
 
 Then you need to use pre-defined actions to install the required tools:
