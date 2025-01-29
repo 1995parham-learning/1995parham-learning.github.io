@@ -91,19 +91,19 @@ on:
 
 ```yaml
 on:
-  workflow_dispatch:
-    inputs:
-      my_input:
-        description: 'A required input'
-        required: true
+    workflow_dispatch:
+        inputs:
+            my_input:
+                description: "A required input"
+                required: true
 ```
 
 - `schedule`: Enables you to schedule workflows to run periodically.
 
 ```yaml
 on:
-  schedule:
-    - cron: '0 0 * * *' # Run daily at midnight
+    schedule:
+        - cron: "0 0 * * *" # Run daily at midnight
 ```
 
 - `repository_dispatch`: Triggers workflows across all repositories in an organization when an event is dispatched from another repository.
