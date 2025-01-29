@@ -65,6 +65,8 @@ jobs:
 
 ## Triggers: The Heartbeat of Your Workflows
 
+Triggers are the events that initiate the execution of your GitHub Actions workflows. They act as the starting point, determining when and why your workflows should run.
+
 ```yaml
 name: install dotfiles
 on:
