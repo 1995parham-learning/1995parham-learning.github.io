@@ -140,12 +140,15 @@ The same familiar functionality that powers pull requests, issues, and README fi
 - Aggregating and displaying test results
 - Generating reports
 - Custom output independent of logs
+
 ### Create summaries
 
 Simply output Markdown content to a new environment variable we’ve introduced called [$GITHUB_STEP_SUMMARY](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables). Any Markdown content added to this file will then be displayed on the Actions run summary page. That’s it!
 
 ```yaml
-
+steps:
+  - name: Adding markdown
+    run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
 ```
 
 ![[Pasted image 20250129132409.png]]
