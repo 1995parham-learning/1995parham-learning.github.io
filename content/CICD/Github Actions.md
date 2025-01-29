@@ -20,6 +20,18 @@ GitHub's actions is a powerful CI/CD platform built into GitHub. It allows you t
 - **Actions:** Reusable units of work, often provided by the community or created by you.
 - **Integrations:** Seamlessly integrates with other GitHub features like issues, pull requests, and releases.
 
+## Tutorial: Creating a Simple GitHub Action
+
+Let's create a basic workflow that runs tests on your code whenever you push changes to your repository.
+
+**1. Create a Workflow File**
+
+- Create a new file named `.github/workflows/ci.yml` in your repository. This file defines your workflow.
+
+**2. Define the Workflow**
+
+YAML
+
 It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
 
 ```yaml
