@@ -12,7 +12,15 @@
 
 ## Introduction
 
-GitHub's actions is an awesome way to have CI on GitHub. It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
+GitHub's actions is a powerful CI/CD platform built into GitHub. It allows you to automate your software workflows, from building and testing to deploying to various environments.
+
+- **Workflows:** Define a series of jobs that run in sequence or in parallel.
+- **Jobs:** A set of steps that execute on a virtual machine.
+- **Steps:** Individual tasks within a job, such as running a script, checking out code, or deploying to a server.
+- **Actions:** Reusable units of work, often provided by the community or created by you.
+- **Integrations:** Seamlessly integrates with other GitHub features like issues, pull requests, and releases.
+
+It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
 
 ```yaml
 name: install dotfiles
