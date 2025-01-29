@@ -87,6 +87,8 @@ on:
         branches: ["main"]
 ```
 
+- `workflow_dispatch`: Allows you to manually trigger a workflow from the GitHub UI. This is useful for debugging, running one-off tasks, or executing workflows on demand
+
 ## Pre-defined Actions
 
 Then you need to use pre-defined actions to install the required tools:
