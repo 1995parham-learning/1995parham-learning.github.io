@@ -69,16 +69,15 @@ Triggers are the events that initiate the execution of your GitHub Actions workf
 
 Common Triggers:
 
--   `push`: This is the most common trigger. It initiates a workflow whenever code is pushed to the specified branches or tags in your repository.
+- `push`: This is the most common trigger. It initiates a workflow whenever code is pushed to the specified branches or tags in your repository.
 
 ```yaml
 on:
-  push:
-    branches: [ "main", "develop" ] 
-    tags: 
-      - "v[0-9]+.[0-9]+.[0-9]+"
+    push:
+        branches: ["main", "develop"]
+        tags:
+            - "v[0-9]+.[0-9]+.[0-9]+"
 ```
-
 
 ## Pre-defined Actions
 
