@@ -63,7 +63,7 @@ jobs:
 - **`runs-on`:** Specifies the virtual environment where the job will run.
 - **`steps`:** A sequence of tasks that execute within the job.
 
-It runs on **VM**, can run Container and even release things for you. First, you need to specify the events that trigger the action.
+## Trigger
 
 ```yaml
 name: install dotfiles
@@ -75,6 +75,8 @@ on:
             - scripts/env.sh
             - start.sh
 ```
+
+## Pre-defined Actions
 
 Then you need to use pre-defined actions to install the required tools:
 
@@ -130,3 +132,5 @@ For doing release:
 ## References
 
 - [Reference](https://docs.github.com/en/actions/reference)
+
+## Supercharging GitHub Actions with Job Summaries
