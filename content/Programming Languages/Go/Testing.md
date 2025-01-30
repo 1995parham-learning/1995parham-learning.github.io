@@ -21,10 +21,10 @@ View a [comprehensive table of all features](https://github.com/smartystreets/go
 ```shell
 # make sure your GOPATH is set
 
-$ cd <project path>
-$ go get github.com/smartystreets/goconvey
-$ go install github.com/smartystreets/goconvey
-$ $GOPATH/bin/goconvey
+cd <project path>
+go get github.com/smartystreets/goconvey
+go install github.com/smartystreets/goconvey
+$GOPATH/bin/goconvey
 ```
 
 2. In your browser:
