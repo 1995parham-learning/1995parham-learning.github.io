@@ -12,11 +12,9 @@ Welcome to GoConvey, a yummy testing tool for gophers.
 - Huge suite of regression tests
 - Test code generator
 
-View a [comprehensive table of all features](https://github.com/smartystreets/goconvey/wiki/Features-Table)** compared to other Go testing tools.
+View a [comprehensive table of all features](https://github.com/smartystreets/goconvey/wiki/Features-Table) compared to other Go testing tools.
 
 ### Get going in 25 seconds
-
-[](https://github.com/smartystreets/goconvey/wiki#get-going-in-25-seconds)
 
 1. In your terminal:
 
@@ -27,8 +25,6 @@ $ cd <project path>
 $ go get github.com/smartystreets/goconvey
 $ go install github.com/smartystreets/goconvey
 $ $GOPATH/bin/goconvey
-
-
 ```
 
 2. In your browser:
@@ -40,8 +36,6 @@ http://localhost:8080
 If you have existing Go tests, they will run automatically and the results will appear in your browser.
 
 ### Your first GoConvey test
-
-[](https://github.com/smartystreets/goconvey/wiki#your-first-goconvey-test)
 
 Open any `_test.go` file and put this in it, customizing your package declaration:
 
@@ -75,8 +69,6 @@ Change the assertion (the line with `So()`) to make the test fail, then see the 
 You can also run tests from the terminal as usual, with `go test`. If you want the tests to run automatically in the terminal, check out [the auto-test script](https://github.com/smartystreets/goconvey/wiki/Auto-test).
 
 ### Required Reading
-
-[](https://github.com/smartystreets/goconvey/wiki#required-reading)
 
 If I could ensure that every GoConvey user read only one bit of code from this repository it would be the [isolated execution tests](https://github.com/smartystreets/goconvey/blob/master/convey/isolated_execution_test.go). Those tests are the very best documentation for the GoConvey execution model.
 
