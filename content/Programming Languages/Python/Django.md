@@ -154,6 +154,8 @@ This object is equivalent to `caches['default']`.
 
 ## `ogrinspect`
 
+The `ogrinspect` command introspects a GDAL-supported vector data source (e.g., a shapefile) and generates a model definition and `LayerMapping` dictionary automatically.
+
 ## Migrations
 
 You can apply migrations with:
