@@ -183,13 +183,14 @@ func someFunctionThatMightError() error {
     - The `testify/suite` package provides a way to organize tests into suites.
     - Test suites are useful for grouping related tests and sharing common setup and teardown logic.
     - You can define setup (`SetupTest`) and teardown (`TearDownTest`) methods that run before and after each test in the suite.
+
 ```go
 package mypackage
 
 import (
-        "testing"
+    "testing"
 
-        "github.com/stretchr/testify/assert"
+    "github.com/stretchr/testify/assert"
         "github.com/stretchr/testify/suite"
 )
 
