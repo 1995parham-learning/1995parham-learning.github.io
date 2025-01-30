@@ -224,17 +224,17 @@ func (s *MyTestSuite) TearDownTest() {
 
 
 func (s *MyTestSuite) TestAdd() {
-        result := Add(2, 3)
-        assert.Equal(s.T(), 5, result, "The sum should be 5") // Use s.T() to get the *testing.T
+    result := Add(2, 3)
+    assert.Equal(s.T(), 5, result, "The sum should be 5") // Use s.T() to get the *testing.T
 }
 
 func (s *MyTestSuite) TestMultiply() {
-        result := 2 * 3
-        assert.Equal(s.T(), 6, result, "The product should be 6")
+    result := 2 * 3
+    assert.Equal(s.T(), 6, result, "The product should be 6")
 }
 
 func TestMySuite(t *testing.T) {
-        suite.Run(t, new(MyTestSuite))
+    suite.Run(t, new(MyTestSuite))
 }
 ```
 
