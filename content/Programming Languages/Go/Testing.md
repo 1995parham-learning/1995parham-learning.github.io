@@ -13,6 +13,8 @@
 
 ## testify
 
+> Testify is being maintained at v1, no breaking changes will be accepted in this repo.
+
 To write tests in Go, [@stretchr/testify](https://pkg.go.dev/github.com/stretchr/testify) is an awesome library. It has _suite_, _require_ and _assert_.
 
 > [!note]
