@@ -156,6 +156,12 @@ This object is equivalent to `caches['default']`.
 
 The `ogrinspect` command introspects a GDAL-supported vector data source (e.g., a shapefile) and generates a model definition and `LayerMapping` dictionary automatically.
 
+The general usage of the command goes as follows:
+
+```bash
+python manage.py ogrinspect [options] <data_source> <model_name> [options]
+```
+
 ## Migrations
 
 You can apply migrations with:
