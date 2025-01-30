@@ -15,9 +15,7 @@
 
 > Testify is being maintained at v1, no breaking changes will be accepted in this repo.
 
-
-
-
+The [`@stretchr/testify`](https://github.com/stretchr/testify) library is a popular testing toolkit for the Go programming language. It provides a rich set of utilities to make writing tests more efficient and expressive. The library is widely used in the Go community due to its simplicity and powerful features. It extends the standard `testing` package in Go and offers additional functionalities such as assertions, mocking, and test suites.
 
 > [!note]
 > Always use `_test` prefix on packages for writing tests but in case of internal tests
