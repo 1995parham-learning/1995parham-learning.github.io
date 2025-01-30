@@ -1,15 +1,90 @@
 ## GoConvey
 
-**Features:**
+Welcome to GoConvey, a yummy testing tool for gophers.
 
-- Directly integrates with `go test`
-- Fully-automatic web UI (works with native Go tests, too)
+- [Documentation & tutorial](https://github.com/smartystreets/goconvey/wiki/Documentation)
+
+### Main Features
+
+- Integrates with `go test`
+- Readable, colorized console output
+- Fully-automatic web UI
 - Huge suite of regression tests
-- Shows test coverage
-- Readable, colorized console output (understandable by any manager, IT or not)
 - Test code generator
-- Desktop notifications (optional)
-- Immediately open problem lines in [Sublime Text](http://www.sublimetext.com/) ([some assembly required](https://github.com/asuth/subl-handler))
+
+View a [comprehensive table of all features](https://github.com/smartystreets/goconvey/wiki/Features-Table)** compared to other Go testing tools.
+
+### Get going in 25 seconds
+
+[](https://github.com/smartystreets/goconvey/wiki#get-going-in-25-seconds)
+
+1. In your terminal:
+
+```shell
+# make sure your GOPATH is set
+
+$ cd <project path>
+$ go get github.com/smartystreets/goconvey
+$ go install github.com/smartystreets/goconvey
+$ $GOPATH/bin/goconvey
+
+
+```
+
+2. In your browser:
+
+```shell
+http://localhost:8080
+```
+
+If you have existing Go tests, they will run automatically and the results will appear in your browser.
+
+### Your first GoConvey test
+
+[](https://github.com/smartystreets/goconvey/wiki#your-first-goconvey-test)
+
+Open any `_test.go` file and put this in it, customizing your package declaration:
+
+```go
+package package_name
+
+import (
+	"testing"
+	. "github.com/smartystreets/goconvey/convey"
+)
+
+func TestIntegerStuff(t *testing.T) {
+	Convey("Given some integer with a starting value", t, func() {
+		x := 1
+
+		Convey("When the integer is incremented", func() {
+			x++
+
+			Convey("The value should be greater by one", func() {
+				So(x, ShouldEqual, 2)
+			})
+		})
+	})
+}
+```
+
+Save the file, then glance over at your browser window, and you'll see that the new tests have already been run.
+
+Change the assertion (the line with `So()`) to make the test fail, then see the output change in your browser.
+
+You can also run tests from the terminal as usual, with `go test`. If you want the tests to run automatically in the terminal, check out [the auto-test script](https://github.com/smartystreets/goconvey/wiki/Auto-test).
+
+### Required Reading
+
+[](https://github.com/smartystreets/goconvey/wiki#required-reading)
+
+If I could ensure that every GoConvey user read only one bit of code from this repository it would be the [isolated execution tests](https://github.com/smartystreets/goconvey/blob/master/convey/isolated_execution_test.go). Those tests are the very best documentation for the GoConvey execution model.
+
+### Full Documentation
+
+[](https://github.com/smartystreets/goconvey/wiki#full-documentation)
+
+See the [documentation index](https://github.com/smartystreets/goconvey/wiki/Documentation) for details about assertions, writing tests, execution, etc.
 
 ## testify
 
