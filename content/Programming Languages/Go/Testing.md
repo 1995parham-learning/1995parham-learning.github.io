@@ -1,4 +1,16 @@
-## # GoConvey
+## GoConvey
+
+**Features:**
+
+- Directly integrates with `go test`
+- Fully-automatic web UI (works with native Go tests, too)
+- Huge suite of regression tests
+- Shows test coverage
+- Readable, colorized console output (understandable by any manager, IT or not)
+- Test code generator
+- Desktop notifications (optional)
+- Immediately open problem lines in [Sublime Text](http://www.sublimetext.com/) ([some assembly required](https://github.com/asuth/subl-handler))
+
 ## testify
 
 To write tests in Go, [@stretchr/testify](https://pkg.go.dev/github.com/stretchr/testify) is an awesome library. It has _suite_, _require_ and _assert_.
