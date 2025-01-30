@@ -1,4 +1,5 @@
-## Testing with `testify`
+## # GoConvey
+## testify
 
 To write tests in Go, [@stretchr/testify](https://pkg.go.dev/github.com/stretchr/testify) is an awesome library. It has _suite_, _require_ and _assert_.
 
