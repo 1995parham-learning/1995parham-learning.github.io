@@ -152,6 +152,8 @@ As a shortcut, the default cache is available as `django.core.cache.cache`:
 
 This object is equivalent to `caches['default']`.
 
+## `ogrinspect`
+
 ## Migrations
 
 You can apply migrations with:
