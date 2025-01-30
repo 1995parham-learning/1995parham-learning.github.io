@@ -118,6 +118,60 @@ func TestSomething(t *testing.T) {
 }
 ```
 
+```go
+package mypackage
+
+import (
+    "testing"
+
+    "github.com/stretchr/testify/assert"
+)
+
+func Add(a, b int) int {
+    return a + b
+}
+
+func TestAdd(t *testing.T) {
+    result := Add(2, 3)
+
+    // Basic equality assertion
+    assert.Equal(t, 5, result, "The sum should be 5")
+
+    // Inequality assertion
+    assert.NotEqual(t, 6, result, "The sum should not be 6")
+
+    // More specific type assertion
+    assert.IsType(t, 5, result, "Result should be an int")
+
+    // Boolean assertions
+    assert.True(t, result > 0, "Result should be positive")
+    assert.False(t, result < 0, "Result should not be negative")
+
+    // String assertions
+    myString := "hello world"
+    assert.Contains(t, myString, "world", "String should contain 'world'")
+    assert.StartsWith(t, myString, "hello", "String should start with 'hello'")
+
+    // Nil assertions
+    var myNilPointer *int
+    assert.Nil(t, myNilPointer, "Pointer should be nil")
+
+    // Error assertions
+    err := someFunctionThatMightError()
+    assert.NoError(t, err, "Should be no error")
+    // OR, if you expect an error:
+    // assert.Error(t, err, "An error should have occurred")
+    // assert.ErrorContains(t, err, "specific error message", "Error should contain message")
+
+}
+
+func someFunctionThatMightError() error {
+    // Simulate an error (or no error)
+    // return errors.New("something went wrong") // Uncomment to simulate error
+    return nil
+}
+```
+
 2. **Mocking**:
 
     - The `testify/mock` package allows you to create mock objects for testing.
@@ -129,6 +183,60 @@ func TestSomething(t *testing.T) {
     - The `testify/suite` package provides a way to organize tests into suites.
     - Test suites are useful for grouping related tests and sharing common setup and teardown logic.
     - You can define setup (`SetupTest`) and teardown (`TearDownTest`) methods that run before and after each test in the suite.
+```go
+package mypackage
+
+import (
+        "testing"
+
+        "github.com/stretchr/testify/assert"
+        "github.com/stretchr/testify/suite"
+)
+
+type MyTestSuite struct {
+        suite.Suite
+        // Add fields here for setup/teardown if needed
+        // Example: db *sql.DB
+}
+
+func (s *MyTestSuite) SetupSuite() {
+    // This runs once before all tests in the suite
+    // Example: s.db = connectToDatabase()
+    println("SetupSuite")
+
+}
+
+func (s *MyTestSuite) TearDownSuite() {
+    // This runs once after all tests in the suite
+    // Example: s.db.Close()
+    println("TearDownSuite")
+}
+
+func (s *MyTestSuite) SetupTest() {
+    // This runs before each test in the suite
+    println("SetupTest")
+}
+
+func (s *MyTestSuite) TearDownTest() {
+    // This runs after each test in the suite
+    println("TearDownTest")
+}
+
+
+func (s *MyTestSuite) TestAdd() {
+        result := Add(2, 3)
+        assert.Equal(s.T(), 5, result, "The sum should be 5") // Use s.T() to get the *testing.T
+}
+
+func (s *MyTestSuite) TestMultiply() {
+        result := 2 * 3
+        assert.Equal(s.T(), 6, result, "The product should be 6")
+}
+
+func TestMySuite(t *testing.T) {
+        suite.Run(t, new(MyTestSuite))
+}
+```
 
 > [!note]
 > Always use `_test` prefix on packages for writing tests but in case of internal tests
