@@ -162,6 +162,8 @@ The general usage of the command goes as follows:
 python manage.py ogrinspect [options] <data_source> <model_name> [options]
 ```
 
+`data_source` is the path to the GDAL-supported data source and `model_name` is the name to use for the model. Command-line options may be used to further define how the model is generated.
+
 ## Migrations
 
 You can apply migrations with:
