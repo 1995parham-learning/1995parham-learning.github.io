@@ -23,6 +23,36 @@ The [`@stretchr/testify`](https://github.com/stretchr/testify) library is a popu
     - These assertions are more expressive and provide better error messages compared to the standard `if` checks in Go.
     - Common assertions include `Equal`, `NotEqual`, `Nil`, `NotNil`, `True`, `False`, `Error`, `NoError`, and many more.
 
+```go
+package yours
+
+import (
+  "testing"
+  "github.com/stretchr/testify/assert"
+)
+
+func TestSomething(t *testing.T) {
+
+  // assert equality
+  assert.Equal(t, 123, 123, "they should be equal")
+
+  // assert inequality
+  assert.NotEqual(t, 123, 456, "they should not be equal")
+
+  // assert for nil (good for errors)
+  assert.Nil(t, object)
+
+  // assert for not nil (good when you expect something)
+  if assert.NotNil(t, object) {
+
+    // now we know that object isn't nil, we are safe to make
+    // further assertions without causing any errors
+    assert.Equal(t, "Something", object.Value)
+
+  }
+}
+```
+
 2. **Mocking**:
 
     - The `testify/mock` package allows you to create mock objects for testing.
