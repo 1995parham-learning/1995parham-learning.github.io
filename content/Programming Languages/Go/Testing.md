@@ -74,8 +74,6 @@ If I could ensure that every GoConvey user read only one bit of code from this r
 
 ### Full Documentation
 
-[](https://github.com/smartystreets/goconvey/wiki#full-documentation)
-
 See the [documentation index](https://github.com/smartystreets/goconvey/wiki/Documentation) for details about assertions, writing tests, execution, etc.
 
 ## testify
