@@ -17,6 +17,33 @@
 
 The [`@stretchr/testify`](https://github.com/stretchr/testify) library is a popular testing toolkit for the Go programming language. It provides a rich set of utilities to make writing tests more efficient and expressive. The library is widely used in the Go community due to its simplicity and powerful features. It extends the standard `testing` package in Go and offers additional functionalities such as assertions, mocking, and test suites.
 
+1. **Assertions**:
+    
+    - `testify` provides a comprehensive set of assertion functions that make it easy to validate conditions in your tests.
+    - These assertions are more expressive and provide better error messages compared to the standard `if` checks in Go.
+    - Common assertions include `Equal`, `NotEqual`, `Nil`, `NotNil`, `True`, `False`, `Error`, `NoError`, and many more.
+        
+2. **Mocking**:
+    
+    - The `testify/mock` package allows you to create mock objects for testing.
+    - Mocking is useful when you want to isolate the unit under test by replacing dependencies with controlled implementations.
+    - You can define expectations on mock objects, such as which methods should be called, with what arguments, and what they should return.
+        
+3. **Test Suites**:
+    
+    - The `testify/suite` package provides a way to organize tests into suites.
+        
+    - Test suites are useful for grouping related tests and sharing common setup and teardown logic.
+        
+    - You can define setup (`SetupTest`) and teardown (`TearDownTest`) methods that run before and after each test in the suite.
+        
+4. **HTTP Testing**:
+    
+    - `testify` also includes utilities for testing HTTP handlers and servers.
+        
+    - The `testify/http` package provides tools to simulate HTTP requests and validate responses.
+
+
 > [!note]
 > Always use `_test` prefix on packages for writing tests but in case of internal tests
 > in which you have access to private package members use `_internal_test.go` as filename.
