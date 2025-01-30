@@ -191,20 +191,19 @@ import (
     "testing"
 
     "github.com/stretchr/testify/assert"
-        "github.com/stretchr/testify/suite"
+    "github.com/stretchr/testify/suite"
 )
 
 type MyTestSuite struct {
-        suite.Suite
-        // Add fields here for setup/teardown if needed
-        // Example: db *sql.DB
+	suite.Suite
+	// Add fields here for setup/teardown if needed
+	// Example: db *sql.DB
 }
 
 func (s *MyTestSuite) SetupSuite() {
     // This runs once before all tests in the suite
     // Example: s.db = connectToDatabase()
     println("SetupSuite")
-
 }
 
 func (s *MyTestSuite) TearDownSuite() {
