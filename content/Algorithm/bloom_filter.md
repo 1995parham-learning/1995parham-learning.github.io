@@ -1,7 +1,3 @@
----
-title: Bloom Filter
----
-
 Bloom filters are a **probabilistic data structure** that _checks for presence of an element in a set_.
 
 Instead of storing all the elements in the set, Bloom Filters store only the **elements' hashed representation**,
