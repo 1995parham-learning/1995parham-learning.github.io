@@ -4,7 +4,8 @@
 > In traditional financial markets, the buy and sell orders that are placed on a specific market are called bids and asks.
 
 While bids are offers in a base currency for a unit of the trading asset, asks are the selling prices set by those holding the asset and looking to sell.
-Therefore, the asking price is the minimum price that an individual would be willing to sell their asset,
+
+Therefore, the _asking price is the minimum price that an individual would be willing to sell their asset_,
 or the minimum amount that they want to receive in return for the unit they are parting with.
 
 In an exchange's order book, the highest bid price and the lowest asking price are the first to fill when a
