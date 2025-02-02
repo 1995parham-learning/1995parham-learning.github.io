@@ -13,9 +13,9 @@ trader utilizes a market order, meaning that **a selling market order will match
 and _a buying market order the lowest asking price_.
 The gap between the lowest asking price and the highest bid price is what is known as the **spread of the market**.
 
-A liquid market tends to have a smaller spread because the buying and selling sides are made up of more orders (more people in the market that are willing to place an order into the order book). When setting a limit sell order, an individual can define a specific asking price, but if their price is not the lowest, it will not be the first one to be filled. It will simply add depth to the existing order book for this asset. In contrast, when using a market order,
-traders are not able to set the asking price manually, and their order will be executed instantly according to
-the best price available matching the highest bid of the order book
+**A liquid market tends to have a smaller spread because the buying and selling sides are made up of more orders** (more people in the market that are willing to place an order into the order book).
+
+When setting a limit sell order, an individual can define a specific asking price, but if their price is not the lowest, it will not be the first one to be filled. It will simply add depth to the existing order book for this asset. In contrast, when using a market order, traders are not able to set the asking price manually, and their order will be executed instantly according to the best price available matching the highest bid of the order book
 
 ## Bid Price
 
