@@ -40,8 +40,6 @@ In a primary market, investors are able to purchase securities _directly from th
 
 The secondary market is where investors buy and sell securities. Trades take place on the secondary market _between other investors and traders rather than from the companies that issue the securities_.
 
-## Initial Public Offer
-
 ## Ask Price
 
 > [!note]
