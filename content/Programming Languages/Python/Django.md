@@ -1,8 +1,6 @@
 - [Django documentation](https://docs.djangoproject.com/en): Everything you need to know about Django.
 - [GeoDjango](https://docs.djangoproject.com/en/5.0/ref/contrib/gis/): GeoDjango intends to be a world-class geographic web framework. Its goal is to make it as easy as possible to build GIS web applications and harness the power of spatially enabled data.
 
-Writing REST API in a Django application using Django REST Framework is awesome, following links are the important concepts of the DRF (Django REST Framework):
-
 ## Django REST Framework
 
 [Home - Django REST framework](https://www.django-rest-framework.org/)
