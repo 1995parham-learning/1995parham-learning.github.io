@@ -1,5 +1,5 @@
 - [Django documentation](https://docs.djangoproject.com/en): Everything you need to know about Django.
-- [Django](https://docs.djangoproject.com/en/5.0/ref/contrib/gis/): Django has built-in support for GIS data. You can find more about it here (for Django 4.1).
+- [GeoDjango](https://docs.djangoproject.com/en/5.0/ref/contrib/gis/): GeoDjango intends to be a world-class geographic web framework. Its goal is to make it as easy as possible to build GIS web applications and harness the power of spatially enabled data.
 
 Writing REST API in a Django application using Django REST Framework is awesome, following links are the important concepts of the DRF (Django REST Framework):
 
