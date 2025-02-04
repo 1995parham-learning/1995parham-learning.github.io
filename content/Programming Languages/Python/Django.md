@@ -1,6 +1,4 @@
-The Django documentation which is the best source for learning and reading about it.
-
-[Django](https://docs.djangoproject.com/en)
+- [Django](https://docs.djangoproject.com/en): The Django documentation which is the best source for learning and reading about it.
 
 Django has built-in support for GIS data. You can find more about it here (for Django 4.1):
 
