@@ -3,6 +3,8 @@
 
 ## Django REST Framework
 
+Django REST framework is a powerful and flexible toolkit for building Web APIs in Django.
+
 [Home - Django REST framework](https://www.django-rest-framework.org/)
 
 - [Serializes](https://www.django-rest-framework.org/api-guide/serializers/)
