@@ -3,6 +3,8 @@
 
 Writing REST API in a Django application using Django REST Framework is awesome, following links are the important concepts of the DRF (Django REST Framework):
 
+## Django REST Framework
+
 [Home - Django REST framework](https://www.django-rest-framework.org/)
 
 - [Serializes](https://www.django-rest-framework.org/api-guide/serializers/)
