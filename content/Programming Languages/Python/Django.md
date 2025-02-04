@@ -1,8 +1,5 @@
 - [Django](https://docs.djangoproject.com/en): The Django documentation which is the best source for learning and reading about it.
-
-Django has built-in support for GIS data. You can find more about it here (for Django 4.1):
-
-[Django](https://docs.djangoproject.com/en/5.0/ref/contrib/gis/)
+- [Django](https://docs.djangoproject.com/en/5.0/ref/contrib/gis/): Django has built-in support for GIS data. You can find more about it here (for Django 4.1).
 
 Writing REST API in a Django application using Django REST Framework is awesome, following links are the important concepts of the DRF (Django REST Framework):
 
