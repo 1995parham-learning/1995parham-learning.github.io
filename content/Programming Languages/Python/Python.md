@@ -4,7 +4,28 @@ This module provides utilities for common tasks involving the `with` statement.
 
 ### `contextlib.nullcontex()`
 
+Duplicated code like this:
 
+```python
+if condition():
+  with context():
+    f()
+else:
+  f()
+```
+
+is prone to errors and can negatively impact maintainability. If `f()` needs to be modified, the change must be applied in two places, increasing the risk of inconsistencies if one instance is missed. This duplication also makes the code harder to read and understand, as the logic is spread out.
+
+Refactoring this to use `contextlib.nullcontext`, as shown below, can improve code maintainability by centralizing the call to `f()`:
+
+```python
+import contextlib
+
+with context() if condition() else contextlib.nullcontext():
+  f()
+```
+
+This approach ensures that `f()` is called only once, regardless of the condition. If `condition()` is true, the `context()` manager is used; otherwise, `contextlib.nullcontext()` provides a no-op context, effectively skipping the context management. This simplifies future modifications and reduces the risk of introducing bugs. It also makes the code's intent clearer: "call `f()`, and use `context()` only if `condition()` is true."
 
 ### `contextlib.closing(thing)`
 
