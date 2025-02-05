@@ -2,6 +2,8 @@
 
 This module provides utilities for common tasks involving the `with` statement.
 
+### `contextlib.nullcontex()`
+
 ### `contextlib.closing(thing)`
 
 Return a context manager that closes thing upon completion of the block. This is basically equivalent to:
