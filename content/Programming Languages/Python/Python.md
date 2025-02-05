@@ -4,26 +4,7 @@ This module provides utilities for common tasks involving the `with` statement.
 
 ### `contextlib.nullcontex()`
 
-I am thinking having duplicate code like the following:
 
-```python
-if condition():
-  with context():
-    f()
-else:
-  f()
-```
-
-is error-prone, and changing it into:
-
-```python
-import contextlib
-
-with context() if condition() else contextlib.nullcontext():
-  f()
-```
-
-Will help us to maintain code better.
 
 ### `contextlib.closing(thing)`
 
