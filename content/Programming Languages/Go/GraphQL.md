@@ -1,6 +1,7 @@
 ---
 repo: https://github.com/1995parham-teaching/students-fall-2022
 ---
+
 > [!quote]
 > GraphQL ~~in Golang~~. Does it make sense?
 >
