@@ -1,8 +1,12 @@
 ---
 repo: https://github.com/1995parham-teaching/students-fall-2022
 ---
+> [!quote]
+> GraphQL ~~in Golang~~. Does it make sense?
+>
+> For a new project I'd go with old boring REST unless there's good reason not to. So I'd first try to answer that question.
 
-GraphQL is an awesome way to communicate data with the frontend team. Using GraphQL you can ask the frontend team to write queries for accessing the backend data and because of that there is no need to design different APIs for different requests. **You have one API to rule them all**.
+GraphQL simplifies data communication between frontend and backend teams. Frontend developers can use GraphQL queries to request precisely the data they need, eliminating the need for creating and maintaining numerous REST endpoints. This unified API approach streamlines development and reduces the amount of data transferred, as clients only request what they need. Furthermore, GraphQL's schema provides a clear contract between the frontend and backend, improving communication and reducing the risk of integration issues. However, it's important to consider the learning curve associated with GraphQL and the potential for increased complexity in certain scenarios, such as handling file uploads or complex data relationships.
 
 - [@99designs/gqlgen](https://github.com/99designs/gqlgen)
 

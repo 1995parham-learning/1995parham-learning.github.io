@@ -85,6 +85,22 @@ mark,
   --code-normal: #cc99ff;
 }
 
+h2 > code {
+  --code-normal: var(--h2-color);
+}
+
+.cm-header-2.cm-inline-code {
+  --code-normal: var(--h2-color);
+}
+
+h3 > code {
+  --code-normal: var(--h3-color);
+}
+
+.cm-header-3.cm-inline-code {
+  --code-normal: var(--h3-color);
+}
+
 .callout[data-callout="read"] {
   --callout-color: 255, 102, 0;
   --callout-icon: lucide-book;
