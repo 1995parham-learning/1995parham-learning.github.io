@@ -503,3 +503,12 @@ The [`kubelet`](https://kubernetes.io/docs/reference/command-line-tools-referenc
 A fundamental component that empowers Kubernetes to run containers effectively. It is responsible for managing the execution and lifecycle of containers within the Kubernetes environment.
 
 Kubernetes supports container runtimes such as [containerd](https://containerd.io/docs/), [CRI-O](https://cri-o.io/#what-is-cri-o), and any other implementation of the [[CRI|Kubernetes CRI (Container Runtime Interface)]]
+
+### Addons
+
+Addons extend the functionality of Kubernetes. A few important examples include:
+
+- **DNS**: For cluster-wide DNS resolution
+- **Web UI (Dashboard): For cluster management via a web interface
+- Container Resource Monitoring: For collecting and storing container metrics
+- Cluster-level Logging: For saving container logs to a central log store
