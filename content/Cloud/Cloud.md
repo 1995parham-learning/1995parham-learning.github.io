@@ -509,6 +509,6 @@ Kubernetes supports container runtimes such as [containerd](https://containerd.i
 Addons extend the functionality of Kubernetes. A few important examples include:
 
 - **DNS**: For cluster-wide DNS resolution
-- **Web UI (Dashboard): For cluster management via a web interface
-- Container Resource Monitoring: For collecting and storing container metrics
-- Cluster-level Logging: For saving container logs to a central log store
+- **Web UI (Dashboard)**: For cluster management via a web interface
+- **Container Resource Monitoring**: For collecting and storing container metrics
+- **Cluster-level Logging**: For saving container logs to a central log store
