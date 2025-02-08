@@ -79,26 +79,42 @@ mark,
 
 .cm-inline-code {
   --code-normal: #cc99ff;
+  --code-styler-inline-colour: var(--code-normal);
 }
 
 :not(pre) > code {
   --code-normal: #cc99ff;
+  --code-styler-inline-colour: var(--code-normal);
 }
 
 h2 > code {
   --code-normal: var(--h2-color);
+  --code-styler-inline-colour: var(--code-normal);
 }
 
 .cm-header-2.cm-inline-code {
   --code-normal: var(--h2-color);
+  --code-styler-inline-colour: var(--code-normal);
 }
 
 h3 > code {
   --code-normal: var(--h3-color);
+  --code-styler-inline-colour: var(--code-normal);
 }
 
 .cm-header-3.cm-inline-code {
   --code-normal: var(--h3-color);
+  --code-styler-inline-colour: var(--code-normal);
+}
+
+h4 > code {
+  --code-normal: var(--h4-color);
+  --code-styler-inline-colour: var(--code-normal);
+}
+
+.cm-header-4.cm-inline-code {
+  --code-normal: var(--h4-color);
+  --code-styler-inline-colour: var(--code-normal);
 }
 
 .callout[data-callout="read"] {
