@@ -9,10 +9,7 @@ export interface Options {
     linkHeadings: boolean
 }
 
-const defaultOptions: Options = {
-    enableSmartyPants: true,
-    linkHeadings: true,
-}
+const defaultOptions: Options = { enableSmartyPants: true, linkHeadings: true }
 
 export const GitHubFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
     const opts = { ...defaultOptions, ...userOpts }

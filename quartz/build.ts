@@ -43,12 +43,7 @@ function newBuildId() {
 }
 
 async function buildQuartz(argv: Argv, mut: Mutex, clientRefresh: () => void) {
-    const ctx: BuildCtx = {
-        buildId: newBuildId(),
-        argv,
-        cfg,
-        allSlugs: [],
-    }
+    const ctx: BuildCtx = { buildId: newBuildId(), argv, cfg, allSlugs: [] }
 
     const perf = new PerfTimer()
     const output = argv.output

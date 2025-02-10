@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Sense títol",
-        description: "Sense descripció",
-    },
+    propertyDefaults: { title: "Sense títol", description: "Sense descripció" },
     components: {
         callout: {
             note: "Nota",
@@ -21,23 +18,11 @@ export default {
             example: "Exemple",
             quote: "Cita",
         },
-        backlinks: {
-            title: "Retroenllaç",
-            noBacklinksFound: "No s'han trobat retroenllaços",
-        },
-        themeToggle: {
-            lightMode: "Mode clar",
-            darkMode: "Mode fosc",
-        },
-        explorer: {
-            title: "Explorador",
-        },
-        footer: {
-            createdWith: "Creat amb",
-        },
-        graph: {
-            title: "Vista Gràfica",
-        },
+        backlinks: { title: "Retroenllaç", noBacklinksFound: "No s'han trobat retroenllaços" },
+        themeToggle: { lightMode: "Mode clar", darkMode: "Mode fosc" },
+        explorer: { title: "Explorador" },
+        footer: { createdWith: "Creat amb" },
+        graph: { title: "Vista Gràfica" },
         recentNotes: {
             title: "Notes Recents",
             seeRemainingMore: ({ remaining }) => `Vegi ${remaining} més →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Transcluit de ${targetSlug}`,
             linkToOriginal: "Enllaç a l'original",
         },
-        search: {
-            title: "Cercar",
-            searchBarPlaceholder: "Cerca alguna cosa",
-        },
-        tableOfContents: {
-            title: "Taula de Continguts",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `Es llegeix en ${minutes} min`,
-        },
+        search: { title: "Cercar", searchBarPlaceholder: "Cerca alguna cosa" },
+        tableOfContents: { title: "Taula de Continguts" },
+        contentMeta: { readingTime: ({ minutes }) => `Es llegeix en ${minutes} min` },
     },
     pages: {
         rss: {

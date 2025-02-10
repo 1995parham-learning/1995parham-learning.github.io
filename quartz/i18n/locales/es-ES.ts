@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Sin título",
-        description: "Sin descripción",
-    },
+    propertyDefaults: { title: "Sin título", description: "Sin descripción" },
     components: {
         callout: {
             note: "Nota",
@@ -21,23 +18,11 @@ export default {
             example: "Ejemplo",
             quote: "Cita",
         },
-        backlinks: {
-            title: "Retroenlaces",
-            noBacklinksFound: "No se han encontrado retroenlaces",
-        },
-        themeToggle: {
-            lightMode: "Modo claro",
-            darkMode: "Modo oscuro",
-        },
-        explorer: {
-            title: "Explorador",
-        },
-        footer: {
-            createdWith: "Creado con",
-        },
-        graph: {
-            title: "Vista Gráfica",
-        },
+        backlinks: { title: "Retroenlaces", noBacklinksFound: "No se han encontrado retroenlaces" },
+        themeToggle: { lightMode: "Modo claro", darkMode: "Modo oscuro" },
+        explorer: { title: "Explorador" },
+        footer: { createdWith: "Creado con" },
+        graph: { title: "Vista Gráfica" },
         recentNotes: {
             title: "Notas Recientes",
             seeRemainingMore: ({ remaining }) => `Vea ${remaining} más →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Transcluido de ${targetSlug}`,
             linkToOriginal: "Enlace al original",
         },
-        search: {
-            title: "Buscar",
-            searchBarPlaceholder: "Busca algo",
-        },
-        tableOfContents: {
-            title: "Tabla de Contenidos",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `Se lee en ${minutes} min`,
-        },
+        search: { title: "Buscar", searchBarPlaceholder: "Busca algo" },
+        tableOfContents: { title: "Tabla de Contenidos" },
+        contentMeta: { readingTime: ({ minutes }) => `Se lee en ${minutes} min` },
     },
     pages: {
         rss: {

@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Sem título",
-        description: "Sem descrição",
-    },
+    propertyDefaults: { title: "Sem título", description: "Sem descrição" },
     components: {
         callout: {
             note: "Nota",
@@ -21,23 +18,11 @@ export default {
             example: "Exemplo",
             quote: "Citação",
         },
-        backlinks: {
-            title: "Backlinks",
-            noBacklinksFound: "Sem backlinks encontrados",
-        },
-        themeToggle: {
-            lightMode: "Tema claro",
-            darkMode: "Tema escuro",
-        },
-        explorer: {
-            title: "Explorador",
-        },
-        footer: {
-            createdWith: "Criado com",
-        },
-        graph: {
-            title: "Visão de gráfico",
-        },
+        backlinks: { title: "Backlinks", noBacklinksFound: "Sem backlinks encontrados" },
+        themeToggle: { lightMode: "Tema claro", darkMode: "Tema escuro" },
+        explorer: { title: "Explorador" },
+        footer: { createdWith: "Criado com" },
+        graph: { title: "Visão de gráfico" },
         recentNotes: {
             title: "Notas recentes",
             seeRemainingMore: ({ remaining }) => `Veja mais ${remaining} →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Transcrever de ${targetSlug}`,
             linkToOriginal: "Link ao original",
         },
-        search: {
-            title: "Pesquisar",
-            searchBarPlaceholder: "Pesquisar por algo",
-        },
-        tableOfContents: {
-            title: "Sumário",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `Leitura de ${minutes} min`,
-        },
+        search: { title: "Pesquisar", searchBarPlaceholder: "Pesquisar por algo" },
+        tableOfContents: { title: "Sumário" },
+        contentMeta: { readingTime: ({ minutes }) => `Leitura de ${minutes} min` },
     },
     pages: {
         rss: {

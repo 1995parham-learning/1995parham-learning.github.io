@@ -10,13 +10,7 @@ const changeTheme = (e: CustomEventMap["themechange"]) => {
     }
 
     iframe.contentWindow.postMessage(
-        {
-            giscus: {
-                setConfig: {
-                    theme: getThemeUrl(getThemeName(theme)),
-                },
-            },
-        },
+        { giscus: { setConfig: { theme: getThemeUrl(getThemeName(theme)) } } },
         "https://giscus.app",
     )
 }

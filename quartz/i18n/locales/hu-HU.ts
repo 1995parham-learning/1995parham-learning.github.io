@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Névtelen",
-        description: "Nincs leírás",
-    },
+    propertyDefaults: { title: "Névtelen", description: "Nincs leírás" },
     components: {
         callout: {
             note: "Jegyzet",
@@ -21,23 +18,11 @@ export default {
             example: "Példa",
             quote: "Idézet",
         },
-        backlinks: {
-            title: "Visszautalások",
-            noBacklinksFound: "Nincs visszautalás",
-        },
-        themeToggle: {
-            lightMode: "Világos mód",
-            darkMode: "Sötét mód",
-        },
-        explorer: {
-            title: "Fájlböngésző",
-        },
-        footer: {
-            createdWith: "Készítve ezzel:",
-        },
-        graph: {
-            title: "Grafikonnézet",
-        },
+        backlinks: { title: "Visszautalások", noBacklinksFound: "Nincs visszautalás" },
+        themeToggle: { lightMode: "Világos mód", darkMode: "Sötét mód" },
+        explorer: { title: "Fájlböngésző" },
+        footer: { createdWith: "Készítve ezzel:" },
+        graph: { title: "Grafikonnézet" },
         recentNotes: {
             title: "Legutóbbi jegyzetek",
             seeRemainingMore: ({ remaining }) => `${remaining} további megtekintése →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `${targetSlug} áthivatkozása`,
             linkToOriginal: "Hivatkozás az eredetire",
         },
-        search: {
-            title: "Keresés",
-            searchBarPlaceholder: "Keress valamire",
-        },
-        tableOfContents: {
-            title: "Tartalomjegyzék",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} perces olvasás`,
-        },
+        search: { title: "Keresés", searchBarPlaceholder: "Keress valamire" },
+        tableOfContents: { title: "Tartalomjegyzék" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} perces olvasás` },
     },
     pages: {
         rss: {

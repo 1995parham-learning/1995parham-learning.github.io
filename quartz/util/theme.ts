@@ -16,11 +16,7 @@ interface Colors {
 }
 
 export interface Theme {
-    typography: {
-        header: string
-        body: string
-        code: string
-    }
+    typography: { header: string; body: string; code: string }
     cdnCaching: boolean
     colors: Colors
     fontOrigin: "googleFonts" | "local"

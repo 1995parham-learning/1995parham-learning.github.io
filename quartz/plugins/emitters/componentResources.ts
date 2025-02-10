@@ -15,11 +15,7 @@ import { transform as transpile } from "esbuild"
 import { write } from "./helpers"
 import DepGraph from "../../depgraph"
 
-type ComponentResources = {
-    css: string[]
-    beforeDOMLoaded: string[]
-    afterDOMLoaded: string[]
-}
+type ComponentResources = { css: string[]; beforeDOMLoaded: string[]; afterDOMLoaded: string[] }
 
 function getComponentResources(ctx: BuildCtx): ComponentResources {
     const allComponents: Set<QuartzComponent> = new Set()
@@ -61,9 +57,7 @@ async function joinScripts(scripts: string[]): Promise<string> {
     const script = scripts.map((script) => `(function () {${script}})();`).join("\n")
 
     // minify with esbuild
-    const res = await transpile(script, {
-        minify: true,
-    })
+    const res = await transpile(script, { minify: true })
 
     return res.code
 }
@@ -271,18 +265,8 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
                         include: Features.MediaQueries,
                     }).code.toString(),
                 }),
-                write({
-                    ctx,
-                    slug: "prescript" as FullSlug,
-                    ext: ".js",
-                    content: prescript,
-                }),
-                write({
-                    ctx,
-                    slug: "postscript" as FullSlug,
-                    ext: ".js",
-                    content: postscript,
-                }),
+                write({ ctx, slug: "prescript" as FullSlug, ext: ".js", content: prescript }),
+                write({ ctx, slug: "postscript" as FullSlug, ext: ".js", content: postscript }),
             )
 
             return await Promise.all(promises)

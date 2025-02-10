@@ -3,10 +3,7 @@ import { FilePath, FullSlug } from "../util/path"
 import { BuildCtx } from "../util/ctx"
 
 export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
-    const staticResources: StaticResources = {
-        css: [],
-        js: [],
-    }
+    const staticResources: StaticResources = { css: [], js: [] }
 
     for (const transformer of ctx.cfg.plugins.transformers) {
         const res = transformer.externalResources ? transformer.externalResources(ctx) : {}

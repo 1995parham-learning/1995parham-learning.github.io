@@ -9,9 +9,7 @@ export interface SearchOptions {
     enablePreview: boolean
 }
 
-const defaultOptions: SearchOptions = {
-    enablePreview: true,
-}
+const defaultOptions: SearchOptions = { enablePreview: true }
 
 export default ((userOpts?: Partial<SearchOptions>) => {
     const Search: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {

@@ -8,9 +8,7 @@ export interface Options {
     priority: ("frontmatter" | "git" | "filesystem")[]
 }
 
-const defaultOptions: Options = {
-    priority: ["frontmatter", "git", "filesystem"],
-}
+const defaultOptions: Options = { priority: ["frontmatter", "git", "filesystem"] }
 
 function coerceDate(fp: string, d: any): Date {
     const dt = new Date(d)
@@ -90,10 +88,6 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
 
 declare module "vfile" {
     interface DataMap {
-        dates: {
-            created: Date
-            modified: Date
-            published: Date
-        }
+        dates: { created: Date; modified: Date; published: Date }
     }
 }

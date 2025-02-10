@@ -135,12 +135,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
                 }
 
                 const content = renderPage(cfg, slug, componentData, opts, externalResources)
-                const fp = await write({
-                    ctx,
-                    content,
-                    slug: file.data.slug!,
-                    ext: ".html",
-                })
+                const fp = await write({ ctx, content, slug: file.data.slug!, ext: ".html" })
 
                 fps.push(fp)
             }

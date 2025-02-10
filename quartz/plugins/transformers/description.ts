@@ -8,10 +8,7 @@ export interface Options {
     replaceExternalLinks: boolean
 }
 
-const defaultOptions: Options = {
-    descriptionLength: 150,
-    replaceExternalLinks: true,
-}
+const defaultOptions: Options = { descriptionLength: 150, replaceExternalLinks: true }
 
 const urlRegex = new RegExp(
     /(https?:\/\/)?(?<domain>([\da-z\.-]+)\.([a-z\.]{2,6})(:\d+)?)(?<path>[\/\w\.-]*)(\?[\/\w\.=&;-]*)?/,

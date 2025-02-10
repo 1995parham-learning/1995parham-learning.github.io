@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Sans titre",
-        description: "Aucune description fournie",
-    },
+    propertyDefaults: { title: "Sans titre", description: "Aucune description fournie" },
     components: {
         callout: {
             note: "Note",
@@ -21,23 +18,11 @@ export default {
             example: "Exemple",
             quote: "Citation",
         },
-        backlinks: {
-            title: "Liens retour",
-            noBacklinksFound: "Aucun lien retour trouvé",
-        },
-        themeToggle: {
-            lightMode: "Mode clair",
-            darkMode: "Mode sombre",
-        },
-        explorer: {
-            title: "Explorateur",
-        },
-        footer: {
-            createdWith: "Créé avec",
-        },
-        graph: {
-            title: "Vue Graphique",
-        },
+        backlinks: { title: "Liens retour", noBacklinksFound: "Aucun lien retour trouvé" },
+        themeToggle: { lightMode: "Mode clair", darkMode: "Mode sombre" },
+        explorer: { title: "Explorateur" },
+        footer: { createdWith: "Créé avec" },
+        graph: { title: "Vue Graphique" },
         recentNotes: {
             title: "Notes Récentes",
             seeRemainingMore: ({ remaining }) => `Voir ${remaining} de plus →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Transclusion de ${targetSlug}`,
             linkToOriginal: "Lien vers l'original",
         },
-        search: {
-            title: "Recherche",
-            searchBarPlaceholder: "Rechercher quelque chose",
-        },
-        tableOfContents: {
-            title: "Table des Matières",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} min de lecture`,
-        },
+        search: { title: "Recherche", searchBarPlaceholder: "Rechercher quelque chose" },
+        tableOfContents: { title: "Table des Matières" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} min de lecture` },
     },
     pages: {
         rss: {

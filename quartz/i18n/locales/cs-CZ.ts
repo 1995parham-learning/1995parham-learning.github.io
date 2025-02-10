@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Bez názvu",
-        description: "Nebyl uveden žádný popis",
-    },
+    propertyDefaults: { title: "Bez názvu", description: "Nebyl uveden žádný popis" },
     components: {
         callout: {
             note: "Poznámka",
@@ -25,19 +22,10 @@ export default {
             title: "Příchozí odkazy",
             noBacklinksFound: "Nenalezeny žádné příchozí odkazy",
         },
-        themeToggle: {
-            lightMode: "Světlý režim",
-            darkMode: "Tmavý režim",
-        },
-        explorer: {
-            title: "Procházet",
-        },
-        footer: {
-            createdWith: "Vytvořeno pomocí",
-        },
-        graph: {
-            title: "Graf",
-        },
+        themeToggle: { lightMode: "Světlý režim", darkMode: "Tmavý režim" },
+        explorer: { title: "Procházet" },
+        footer: { createdWith: "Vytvořeno pomocí" },
+        graph: { title: "Graf" },
         recentNotes: {
             title: "Nejnovější poznámky",
             seeRemainingMore: ({ remaining }) => `Zobraz ${remaining} dalších →`,
@@ -46,16 +34,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Zobrazení ${targetSlug}`,
             linkToOriginal: "Odkaz na původní dokument",
         },
-        search: {
-            title: "Hledat",
-            searchBarPlaceholder: "Hledejte něco",
-        },
-        tableOfContents: {
-            title: "Obsah",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} min čtení`,
-        },
+        search: { title: "Hledat", searchBarPlaceholder: "Hledejte něco" },
+        tableOfContents: { title: "Obsah" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} min čtení` },
     },
     pages: {
         rss: {

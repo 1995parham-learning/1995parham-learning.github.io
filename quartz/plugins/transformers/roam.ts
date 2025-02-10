@@ -191,10 +191,7 @@ export const RoamFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> | un
                     if (opts.TODOComponent) {
                         replacements.push([
                             TODORegex,
-                            () => ({
-                                type: "html",
-                                value: `<input type="checkbox" disabled>`,
-                            }),
+                            () => ({ type: "html", value: `<input type="checkbox" disabled>` }),
                         ])
                     }
 

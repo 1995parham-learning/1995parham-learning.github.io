@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Không có tiêu đề",
-        description: "Không có mô tả được cung cấp",
-    },
+    propertyDefaults: { title: "Không có tiêu đề", description: "Không có mô tả được cung cấp" },
     components: {
         callout: {
             note: "Ghi Chú",
@@ -25,19 +22,10 @@ export default {
             title: "Liên Kết Ngược",
             noBacklinksFound: "Không có liên kết ngược được tìm thấy",
         },
-        themeToggle: {
-            lightMode: "Sáng",
-            darkMode: "Tối",
-        },
-        explorer: {
-            title: "Trong bài này",
-        },
-        footer: {
-            createdWith: "Được tạo bởi",
-        },
-        graph: {
-            title: "Biểu Đồ",
-        },
+        themeToggle: { lightMode: "Sáng", darkMode: "Tối" },
+        explorer: { title: "Trong bài này" },
+        footer: { createdWith: "Được tạo bởi" },
+        graph: { title: "Biểu Đồ" },
         recentNotes: {
             title: "Bài viết gần đây",
             seeRemainingMore: ({ remaining }) => `Xem ${remaining} thêm →`,
@@ -46,16 +34,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Bao gồm ${targetSlug}`,
             linkToOriginal: "Liên Kết Gốc",
         },
-        search: {
-            title: "Tìm Kiếm",
-            searchBarPlaceholder: "Tìm kiếm thông tin",
-        },
-        tableOfContents: {
-            title: "Bảng Nội Dung",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `đọc ${minutes} phút`,
-        },
+        search: { title: "Tìm Kiếm", searchBarPlaceholder: "Tìm kiếm thông tin" },
+        tableOfContents: { title: "Bảng Nội Dung" },
+        contentMeta: { readingTime: ({ minutes }) => `đọc ${minutes} phút` },
     },
     pages: {
         rss: {

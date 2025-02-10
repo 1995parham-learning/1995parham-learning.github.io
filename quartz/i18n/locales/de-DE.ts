@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Unbenannt",
-        description: "Keine Beschreibung angegeben",
-    },
+    propertyDefaults: { title: "Unbenannt", description: "Keine Beschreibung angegeben" },
     components: {
         callout: {
             note: "Hinweis",
@@ -21,23 +18,11 @@ export default {
             example: "Beispiel",
             quote: "Zitat",
         },
-        backlinks: {
-            title: "Backlinks",
-            noBacklinksFound: "Keine Backlinks gefunden",
-        },
-        themeToggle: {
-            lightMode: "Light Mode",
-            darkMode: "Dark Mode",
-        },
-        explorer: {
-            title: "Explorer",
-        },
-        footer: {
-            createdWith: "Erstellt mit",
-        },
-        graph: {
-            title: "Graphansicht",
-        },
+        backlinks: { title: "Backlinks", noBacklinksFound: "Keine Backlinks gefunden" },
+        themeToggle: { lightMode: "Light Mode", darkMode: "Dark Mode" },
+        explorer: { title: "Explorer" },
+        footer: { createdWith: "Erstellt mit" },
+        graph: { title: "Graphansicht" },
         recentNotes: {
             title: "Zuletzt bearbeitete Seiten",
             seeRemainingMore: ({ remaining }) => `${remaining} weitere ansehen →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Transklusion von ${targetSlug}`,
             linkToOriginal: "Link zum Original",
         },
-        search: {
-            title: "Suche",
-            searchBarPlaceholder: "Suche nach etwas",
-        },
-        tableOfContents: {
-            title: "Inhaltsverzeichnis",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} min read`,
-        },
+        search: { title: "Suche", searchBarPlaceholder: "Suche nach etwas" },
+        tableOfContents: { title: "Inhaltsverzeichnis" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} min read` },
     },
     pages: {
         rss: {

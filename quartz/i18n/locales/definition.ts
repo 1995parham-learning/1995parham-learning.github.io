@@ -17,29 +17,14 @@ export interface CalloutTranslation {
 }
 
 export interface Translation {
-    propertyDefaults: {
-        title: string
-        description: string
-    }
+    propertyDefaults: { title: string; description: string }
     components: {
         callout: CalloutTranslation
-        backlinks: {
-            title: string
-            noBacklinksFound: string
-        }
-        themeToggle: {
-            lightMode: string
-            darkMode: string
-        }
-        explorer: {
-            title: string
-        }
-        footer: {
-            createdWith: string
-        }
-        graph: {
-            title: string
-        }
+        backlinks: { title: string; noBacklinksFound: string }
+        themeToggle: { lightMode: string; darkMode: string }
+        explorer: { title: string }
+        footer: { createdWith: string }
+        graph: { title: string }
         recentNotes: {
             title: string
             seeRemainingMore: (variables: { remaining: number }) => string
@@ -48,27 +33,13 @@ export interface Translation {
             transcludeOf: (variables: { targetSlug: FullSlug }) => string
             linkToOriginal: string
         }
-        search: {
-            title: string
-            searchBarPlaceholder: string
-        }
-        tableOfContents: {
-            title: string
-        }
-        contentMeta: {
-            readingTime: (variables: { minutes: number }) => string
-        }
+        search: { title: string; searchBarPlaceholder: string }
+        tableOfContents: { title: string }
+        contentMeta: { readingTime: (variables: { minutes: number }) => string }
     }
     pages: {
-        rss: {
-            recentNotes: string
-            lastFewNotes: (variables: { count: number }) => string
-        }
-        error: {
-            title: string
-            notFound: string
-            home: string
-        }
+        rss: { recentNotes: string; lastFewNotes: (variables: { count: number }) => string }
+        error: { title: string; notFound: string; home: string }
         folderContent: {
             folder: string
             itemsUnderFolder: (variables: { count: number }) => string

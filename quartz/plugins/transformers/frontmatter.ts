@@ -12,10 +12,7 @@ export interface Options {
     language: "yaml" | "toml"
 }
 
-const defaultOptions: Options = {
-    delimiters: "---",
-    language: "yaml",
-}
+const defaultOptions: Options = { delimiters: "---", language: "yaml" }
 
 function coalesceAliases(data: { [key: string]: any }, aliases: string[]) {
     for (const alias of aliases) {
@@ -85,9 +82,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
 
 declare module "vfile" {
     interface DataMap {
-        frontmatter: { [key: string]: unknown } & {
-            title: string
-        } & Partial<{
+        frontmatter: { [key: string]: unknown } & { title: string } & Partial<{
                 tags: string[]
                 aliases: string[]
                 description: string

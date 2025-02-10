@@ -23,18 +23,9 @@ let index = new FlexSearch.Document<Item>({
         id: "id",
         tag: "tags",
         index: [
-            {
-                field: "title",
-                tokenize: "forward",
-            },
-            {
-                field: "content",
-                tokenize: "forward",
-            },
-            {
-                field: "tags",
-                tokenize: "forward",
-            },
+            { field: "title", tokenize: "forward" },
+            { field: "content", tokenize: "forward" },
+            { field: "tags", tokenize: "forward" },
         ],
     },
 })

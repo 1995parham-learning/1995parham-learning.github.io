@@ -4,10 +4,7 @@ import { FullSlug, SimpleSlug, joinSegments, resolveRelative } from "../util/pat
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
 
-type CrumbData = {
-    displayName: string
-    path: string
-}
+type CrumbData = { displayName: string; path: string }
 
 interface BreadcrumbOptions {
     /**
@@ -115,10 +112,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
 
             // Add current file to crumb (can directly use frontmatter title)
             if (options.showCurrentPage && slugParts.at(-1) !== "index") {
-                crumbs.push({
-                    displayName: fileData.frontmatter!.title,
-                    path: "",
-                })
+                crumbs.push({ displayName: fileData.frontmatter!.title, path: "" })
             }
         }
 

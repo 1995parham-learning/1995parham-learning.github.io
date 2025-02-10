@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Без назви",
-        description: "Опис не надано",
-    },
+    propertyDefaults: { title: "Без назви", description: "Опис не надано" },
     components: {
         callout: {
             note: "Примітка",
@@ -25,19 +22,10 @@ export default {
             title: "Зворотні посилання",
             noBacklinksFound: "Зворотних посилань не знайдено",
         },
-        themeToggle: {
-            lightMode: "Світлий режим",
-            darkMode: "Темний режим",
-        },
-        explorer: {
-            title: "Провідник",
-        },
-        footer: {
-            createdWith: "Створено за допомогою",
-        },
-        graph: {
-            title: "Вигляд графа",
-        },
+        themeToggle: { lightMode: "Світлий режим", darkMode: "Темний режим" },
+        explorer: { title: "Провідник" },
+        footer: { createdWith: "Створено за допомогою" },
+        graph: { title: "Вигляд графа" },
         recentNotes: {
             title: "Останні нотатки",
             seeRemainingMore: ({ remaining }) => `Переглянути ще ${remaining} →`,
@@ -46,16 +34,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Видобуто з ${targetSlug}`,
             linkToOriginal: "Посилання на оригінал",
         },
-        search: {
-            title: "Пошук",
-            searchBarPlaceholder: "Шукати щось",
-        },
-        tableOfContents: {
-            title: "Зміст",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} хв читання`,
-        },
+        search: { title: "Пошук", searchBarPlaceholder: "Шукати щось" },
+        tableOfContents: { title: "Зміст" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} хв читання` },
     },
     pages: {
         rss: {

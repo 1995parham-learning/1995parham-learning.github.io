@@ -250,13 +250,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                         return {
                                             type: "image",
                                             url,
-                                            data: {
-                                                hProperties: {
-                                                    width,
-                                                    height,
-                                                    alt,
-                                                },
-                                            },
+                                            data: { hProperties: { width, height, alt } },
                                         }
                                     } else if (
                                         [".mp4", ".webm", ".ogv", ".mov", ".mkv"].includes(ext)
@@ -304,12 +298,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                 return {
                                     type: "link",
                                     url,
-                                    children: [
-                                        {
-                                            type: "text",
-                                            value: alias ?? fp,
-                                        },
-                                    ],
+                                    children: [{ type: "text", value: alias ?? fp }],
                                 }
                             },
                         ])
@@ -334,10 +323,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                             (value: string, ..._capture: string[]) => {
                                 const maybeArrow = arrowMapping[value]
                                 if (maybeArrow === undefined) return SKIP
-                                return {
-                                    type: "html",
-                                    value: `<span>${maybeArrow}</span>`,
-                                }
+                                return { type: "html", value: `<span>${maybeArrow}</span>` }
                             },
                         ])
                     }
@@ -360,17 +346,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                 return {
                                     type: "link",
                                     url: base + `/tags/${tag}`,
-                                    data: {
-                                        hProperties: {
-                                            className: ["tag-link"],
-                                        },
-                                    },
-                                    children: [
-                                        {
-                                            type: "text",
-                                            value: tag,
-                                        },
-                                    ],
+                                    data: { hProperties: { className: ["tag-link"] } },
+                                    children: [{ type: "text", value: tag }],
                                 }
                             },
                         ])
@@ -501,12 +478,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                 if (remainingText.length > 0) {
                                     blockquoteContent.push({
                                         type: "paragraph",
-                                        children: [
-                                            {
-                                                type: "text",
-                                                value: remainingText,
-                                            },
-                                        ],
+                                        children: [{ type: "text", value: remainingText }],
                                     })
                                 }
 
@@ -536,9 +508,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                 if (calloutContent.length > 0) {
                                     const contentData: BlockContent | DefinitionContent = {
                                         data: {
-                                            hProperties: {
-                                                className: "callout-content",
-                                            },
+                                            hProperties: { className: "callout-content" },
                                             hName: "div",
                                         },
                                         type: "blockquote",
@@ -557,11 +527,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                     return (tree: Root, _file) => {
                         visit(tree, "code", (node: Code) => {
                             if (node.lang === "mermaid") {
-                                node.data = {
-                                    hProperties: {
-                                        className: ["mermaid"],
-                                    },
-                                }
+                                node.data = { hProperties: { className: ["mermaid"] } }
                             }
                         })
                     }
@@ -592,10 +558,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                             const block = matches[0].slice(1)
 
                                             if (!Object.keys(file.data.blocks!).includes(block)) {
-                                                node.properties = {
-                                                    ...node.properties,
-                                                    id: block,
-                                                }
+                                                node.properties = { ...node.properties, id: block }
                                                 file.data.blocks![block] = node
                                             }
                                         }
@@ -636,10 +599,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                                         } else {
                                             // normal paragraph transclude
                                             if (!Object.keys(file.data.blocks!).includes(block)) {
-                                                node.properties = {
-                                                    ...node.properties,
-                                                    id: block,
-                                                }
+                                                node.properties = { ...node.properties, id: block }
                                                 file.data.blocks![block] = node
                                             }
                                         }
@@ -723,11 +683,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
             }
 
             if (opts.callouts) {
-                js.push({
-                    script: calloutScript,
-                    loadTime: "afterDOMReady",
-                    contentType: "inline",
-                })
+                js.push({ script: calloutScript, loadTime: "afterDOMReady", contentType: "inline" })
             }
 
             if (opts.mermaid) {

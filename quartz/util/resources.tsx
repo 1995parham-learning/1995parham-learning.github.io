@@ -5,22 +5,9 @@ export type JSResource = {
     loadTime: "beforeDOMReady" | "afterDOMReady"
     moduleType?: "module"
     spaPreserve?: boolean
-} & (
-    | {
-          src: string
-          contentType: "external"
-      }
-    | {
-          script: string
-          contentType: "inline"
-      }
-)
+} & ({ src: string; contentType: "external" } | { script: string; contentType: "inline" })
 
-export type CSSResource = {
-    content: string
-    inline?: boolean
-    spaPreserve?: boolean
-}
+export type CSSResource = { content: string; inline?: boolean; spaPreserve?: boolean }
 
 export function JSResourceToScriptElement(resource: JSResource, preserve?: boolean): JSX.Element {
     const scriptType = resource.moduleType ?? "application/javascript"

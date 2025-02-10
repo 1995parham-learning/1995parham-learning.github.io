@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "無題",
-        description: "説明なし",
-    },
+    propertyDefaults: { title: "無題", description: "説明なし" },
     components: {
         callout: {
             note: "ノート",
@@ -21,23 +18,11 @@ export default {
             example: "例",
             quote: "引用",
         },
-        backlinks: {
-            title: "バックリンク",
-            noBacklinksFound: "バックリンクはありません",
-        },
-        themeToggle: {
-            lightMode: "ライトモード",
-            darkMode: "ダークモード",
-        },
-        explorer: {
-            title: "エクスプローラー",
-        },
-        footer: {
-            createdWith: "作成",
-        },
-        graph: {
-            title: "グラフビュー",
-        },
+        backlinks: { title: "バックリンク", noBacklinksFound: "バックリンクはありません" },
+        themeToggle: { lightMode: "ライトモード", darkMode: "ダークモード" },
+        explorer: { title: "エクスプローラー" },
+        footer: { createdWith: "作成" },
+        graph: { title: "グラフビュー" },
         recentNotes: {
             title: "最近の記事",
             seeRemainingMore: ({ remaining }) => `さらに${remaining}件 →`,
@@ -46,22 +31,12 @@ export default {
             transcludeOf: ({ targetSlug }) => `${targetSlug}のまとめ`,
             linkToOriginal: "元記事へのリンク",
         },
-        search: {
-            title: "検索",
-            searchBarPlaceholder: "検索ワードを入力",
-        },
-        tableOfContents: {
-            title: "目次",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} min read`,
-        },
+        search: { title: "検索", searchBarPlaceholder: "検索ワードを入力" },
+        tableOfContents: { title: "目次" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} min read` },
     },
     pages: {
-        rss: {
-            recentNotes: "最近の記事",
-            lastFewNotes: ({ count }) => `最新の${count}件`,
-        },
+        rss: { recentNotes: "最近の記事", lastFewNotes: ({ count }) => `最新の${count}件` },
         error: {
             title: "Not Found",
             notFound: "ページが存在しないか、非公開設定になっています。",

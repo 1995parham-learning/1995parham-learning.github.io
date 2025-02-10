@@ -25,10 +25,7 @@ export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
     }
 }
 
-type Props = {
-    limit?: number
-    sort?: SortFn
-} & QuartzComponentProps
+type Props = { limit?: number; sort?: SortFn } & QuartzComponentProps
 
 export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort }: Props) => {
     const sorter = sort ?? byDateAndAlphabetical(cfg)

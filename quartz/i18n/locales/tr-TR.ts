@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "İsimsiz",
-        description: "Herhangi bir açıklama eklenmedi",
-    },
+    propertyDefaults: { title: "İsimsiz", description: "Herhangi bir açıklama eklenmedi" },
     components: {
         callout: {
             note: "Not",
@@ -21,23 +18,11 @@ export default {
             example: "Örnek",
             quote: "Alıntı",
         },
-        backlinks: {
-            title: "Backlinkler",
-            noBacklinksFound: "Backlink bulunamadı",
-        },
-        themeToggle: {
-            lightMode: "Açık mod",
-            darkMode: "Koyu mod",
-        },
-        explorer: {
-            title: "Gezgin",
-        },
-        footer: {
-            createdWith: "Şununla oluşturuldu",
-        },
-        graph: {
-            title: "Grafik Görünümü",
-        },
+        backlinks: { title: "Backlinkler", noBacklinksFound: "Backlink bulunamadı" },
+        themeToggle: { lightMode: "Açık mod", darkMode: "Koyu mod" },
+        explorer: { title: "Gezgin" },
+        footer: { createdWith: "Şununla oluşturuldu" },
+        graph: { title: "Grafik Görünümü" },
         recentNotes: {
             title: "Son Notlar",
             seeRemainingMore: ({ remaining }) => `${remaining} tane daha gör →`,
@@ -46,22 +31,12 @@ export default {
             transcludeOf: ({ targetSlug }) => `${targetSlug} sayfasından alıntı`,
             linkToOriginal: "Orijinal bağlantı",
         },
-        search: {
-            title: "Arama",
-            searchBarPlaceholder: "Bir şey arayın",
-        },
-        tableOfContents: {
-            title: "İçindekiler",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `${minutes} dakika okuma süresi`,
-        },
+        search: { title: "Arama", searchBarPlaceholder: "Bir şey arayın" },
+        tableOfContents: { title: "İçindekiler" },
+        contentMeta: { readingTime: ({ minutes }) => `${minutes} dakika okuma süresi` },
     },
     pages: {
-        rss: {
-            recentNotes: "Son notlar",
-            lastFewNotes: ({ count }) => `Son ${count} not`,
-        },
+        rss: { recentNotes: "Son notlar", lastFewNotes: ({ count }) => `Son ${count} not` },
         error: {
             title: "Bulunamadı",
             notFound: "Bu sayfa ya özel ya da mevcut değil.",

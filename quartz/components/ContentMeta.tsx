@@ -14,10 +14,7 @@ interface ContentMetaOptions {
     showComma: boolean
 }
 
-const defaultOptions: ContentMetaOptions = {
-    showReadingTime: true,
-    showComma: true,
-}
+const defaultOptions: ContentMetaOptions = { showReadingTime: true, showComma: true }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
     // Merge options with defaults

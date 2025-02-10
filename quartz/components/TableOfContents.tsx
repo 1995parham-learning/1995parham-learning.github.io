@@ -11,9 +11,7 @@ interface Options {
     layout: "modern" | "legacy"
 }
 
-const defaultOptions: Options = {
-    layout: "modern",
-}
+const defaultOptions: Options = { layout: "modern" }
 
 const TableOfContents: QuartzComponent = ({
     fileData,

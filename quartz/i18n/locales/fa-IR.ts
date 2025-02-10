@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "بدون عنوان",
-        description: "توضیح خاصی اضافه نشده است",
-    },
+    propertyDefaults: { title: "بدون عنوان", description: "توضیح خاصی اضافه نشده است" },
     components: {
         callout: {
             note: "یادداشت",
@@ -21,23 +18,11 @@ export default {
             example: "مثال",
             quote: "نقل قول",
         },
-        backlinks: {
-            title: "بک‌لینک‌ها",
-            noBacklinksFound: "بدون بک‌لینک",
-        },
-        themeToggle: {
-            lightMode: "حالت روشن",
-            darkMode: "حالت تاریک",
-        },
-        explorer: {
-            title: "مطالب",
-        },
-        footer: {
-            createdWith: "ساخته شده با",
-        },
-        graph: {
-            title: "نمای گراف",
-        },
+        backlinks: { title: "بک‌لینک‌ها", noBacklinksFound: "بدون بک‌لینک" },
+        themeToggle: { lightMode: "حالت روشن", darkMode: "حالت تاریک" },
+        explorer: { title: "مطالب" },
+        footer: { createdWith: "ساخته شده با" },
+        graph: { title: "نمای گراف" },
         recentNotes: {
             title: "یادداشت‌های اخیر",
             seeRemainingMore: ({ remaining }) => `${remaining} یادداشت دیگر →`,
@@ -46,16 +31,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `از ${targetSlug}`,
             linkToOriginal: "پیوند به اصلی",
         },
-        search: {
-            title: "جستجو",
-            searchBarPlaceholder: "مطلبی را جستجو کنید",
-        },
-        tableOfContents: {
-            title: "فهرست",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `زمان تقریبی مطالعه: ${minutes} دقیقه`,
-        },
+        search: { title: "جستجو", searchBarPlaceholder: "مطلبی را جستجو کنید" },
+        tableOfContents: { title: "فهرست" },
+        contentMeta: { readingTime: ({ minutes }) => `زمان تقریبی مطالعه: ${minutes} دقیقه` },
     },
     pages: {
         rss: {

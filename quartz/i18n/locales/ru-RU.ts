@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "Без названия",
-        description: "Описание отсутствует",
-    },
+    propertyDefaults: { title: "Без названия", description: "Описание отсутствует" },
     components: {
         callout: {
             note: "Заметка",
@@ -21,23 +18,11 @@ export default {
             example: "Пример",
             quote: "Цитата",
         },
-        backlinks: {
-            title: "Обратные ссылки",
-            noBacklinksFound: "Обратные ссылки отсутствуют",
-        },
-        themeToggle: {
-            lightMode: "Светлый режим",
-            darkMode: "Тёмный режим",
-        },
-        explorer: {
-            title: "Проводник",
-        },
-        footer: {
-            createdWith: "Создано с помощью",
-        },
-        graph: {
-            title: "Вид графа",
-        },
+        backlinks: { title: "Обратные ссылки", noBacklinksFound: "Обратные ссылки отсутствуют" },
+        themeToggle: { lightMode: "Светлый режим", darkMode: "Тёмный режим" },
+        explorer: { title: "Проводник" },
+        footer: { createdWith: "Создано с помощью" },
+        graph: { title: "Вид графа" },
         recentNotes: {
             title: "Недавние заметки",
             seeRemainingMore: ({ remaining }) =>
@@ -47,16 +32,9 @@ export default {
             transcludeOf: ({ targetSlug }) => `Переход из ${targetSlug}`,
             linkToOriginal: "Ссылка на оригинал",
         },
-        search: {
-            title: "Поиск",
-            searchBarPlaceholder: "Найти что-нибудь",
-        },
-        tableOfContents: {
-            title: "Оглавление",
-        },
-        contentMeta: {
-            readingTime: ({ minutes }) => `время чтения ~${minutes} мин.`,
-        },
+        search: { title: "Поиск", searchBarPlaceholder: "Найти что-нибудь" },
+        tableOfContents: { title: "Оглавление" },
+        contentMeta: { readingTime: ({ minutes }) => `время чтения ~${minutes} мин.` },
     },
     pages: {
         rss: {

@@ -151,12 +151,8 @@ Example result:
         "status": "enabled",
         "peer_id": 11532566549086892000,
         "peers": {
-            "9834046559507417430": {
-                "uri": "http://172.18.0.3:6335/"
-            },
-            "11532566549086892528": {
-                "uri": "http://qdrant_node_1:6335/"
-            }
+            "9834046559507417430": { "uri": "http://172.18.0.3:6335/" },
+            "11532566549086892528": { "uri": "http://qdrant_node_1:6335/" }
         },
         "raft_info": {
             "term": 1,
@@ -284,11 +280,7 @@ PUT /collections/{collection_name}
 In this mode, the `shard_number` means the number of shards per shard key, where points will be distributed evenly. For example, if you have 10 shard keys and a collection config with these settings:
 
 ```json
-{
-    "shard_number": 1,
-    "sharding_method": "custom",
-    "replication_factor": 2
-}
+{ "shard_number": 1, "sharding_method": "custom", "replication_factor": 2 }
 ```
 
 Then you will have `1 * 10 * 2 = 20` total physical shards in the collection.

@@ -15,10 +15,7 @@ async function mouseEnterHandler(
         const { x, y } = await computePosition(link, popoverElement, {
             middleware: [inline({ x: clientX, y: clientY }), shift(), flip()],
         })
-        Object.assign(popoverElement.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-        })
+        Object.assign(popoverElement.style, { left: `${x}px`, top: `${y}px` })
     }
 
     const hasAlreadyBeenFetched = () =>

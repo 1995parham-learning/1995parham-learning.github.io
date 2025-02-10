@@ -12,10 +12,7 @@ interface Options {
 }
 
 const defaultOptions: Options = {
-    theme: {
-        light: "github-light",
-        dark: "github-dark",
-    },
+    theme: { light: "github-light", dark: "github-dark" },
     keepBackground: false,
 }
 

@@ -174,19 +174,9 @@ See the [documentation](https://quartz.jzhao.xyz) for how to get started.
             await select({
                 message: `Choose how Quartz should resolve links in your content. This should match Obsidian's link format. You can change this later in \`quartz.config.ts\`.`,
                 options: [
-                    {
-                        value: "shortest",
-                        label: "Treat links as shortest path",
-                        hint: "(default)",
-                    },
-                    {
-                        value: "absolute",
-                        label: "Treat links as absolute path",
-                    },
-                    {
-                        value: "relative",
-                        label: "Treat links as relative paths",
-                    },
+                    { value: "shortest", label: "Treat links as shortest path", hint: "(default)" },
+                    { value: "absolute", label: "Treat links as absolute path" },
+                    { value: "relative", label: "Treat links as relative paths" },
                 ],
             }),
         )
@@ -236,15 +226,8 @@ export async function handleBuild(argv) {
         sourcemap: true,
         sourcesContent: false,
         plugins: [
-            sassPlugin({
-                type: "css-text",
-                cssImports: true,
-            }),
-            sassPlugin({
-                filter: /\.inline\.scss$/,
-                type: "css",
-                cssImports: true,
-            }),
+            sassPlugin({ type: "css-text", cssImports: true }),
+            sassPlugin({ filter: /\.inline\.scss$/, type: "css", cssImports: true }),
             {
                 name: "inline-script-loader",
                 setup(build) {
@@ -258,12 +241,7 @@ export async function handleBuild(argv) {
                         const sourcefile = path.relative(path.resolve("."), args.path)
                         const resolveDir = path.dirname(sourcefile)
                         const transpiled = await esbuild.build({
-                            stdin: {
-                                contents: text,
-                                loader: "ts",
-                                resolveDir,
-                                sourcefile,
-                            },
+                            stdin: { contents: text, loader: "ts", resolveDir, sourcefile },
                             write: false,
                             bundle: true,
                             minify: true,
@@ -271,10 +249,7 @@ export async function handleBuild(argv) {
                             format: "esm",
                         })
                         const rawMod = transpiled.outputFiles[0].text
-                        return {
-                            contents: rawMod,
-                            loader: "text",
-                        }
+                        return { contents: rawMod, loader: "text" }
                     })
                 },
             },
@@ -372,9 +347,7 @@ export async function handleBuild(argv) {
 
             const redirect = (newFp) => {
                 newFp = argv.baseDir + newFp
-                res.writeHead(302, {
-                    Location: newFp,
-                })
+                res.writeHead(302, { Location: newFp })
                 console.log(
                     chalk.yellow("[302]") + chalk.grey(` ${argv.baseDir}${req.url} -> ${newFp}`),
                 )
@@ -432,9 +405,7 @@ export async function handleBuild(argv) {
         )
         console.log("hint: exit with ctrl+c")
         chokidar
-            .watch(["**/*.ts", "**/*.tsx", "**/*.scss", "package.json"], {
-                ignoreInitial: true,
-            })
+            .watch(["**/*.ts", "**/*.tsx", "**/*.scss", "package.json"], { ignoreInitial: true })
             .on("all", async () => {
                 build(clientRefresh)
             })

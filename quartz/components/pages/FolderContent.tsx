@@ -18,10 +18,7 @@ interface FolderContentOptions {
     sort?: SortFn
 }
 
-const defaultOptions: FolderContentOptions = {
-    showFolderCount: true,
-    showSubfolders: true,
-}
+const defaultOptions: FolderContentOptions = { showFolderCount: true, showSubfolders: true }
 
 export default ((opts?: Partial<FolderContentOptions>) => {
     const options: FolderContentOptions = { ...defaultOptions, ...opts }
@@ -72,11 +69,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
 
         const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
         const classes = ["popover-hint", ...cssClasses].join(" ")
-        const listProps = {
-            ...props,
-            sort: options.sort,
-            allFiles: allPagesInFolder,
-        }
+        const listProps = { ...props, sort: options.sort, allFiles: allPagesInFolder }
 
         const content =
             (tree as Root).children.length === 0

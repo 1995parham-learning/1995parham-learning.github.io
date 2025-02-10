@@ -1,10 +1,7 @@
 import { Translation } from "./definition"
 
 export default {
-    propertyDefaults: {
-        title: "غير معنون",
-        description: "لم يتم تقديم أي وصف",
-    },
+    propertyDefaults: { title: "غير معنون", description: "لم يتم تقديم أي وصف" },
     components: {
         callout: {
             note: "ملاحظة",
@@ -21,23 +18,11 @@ export default {
             example: "مثال",
             quote: "اقتباس",
         },
-        backlinks: {
-            title: "وصلات العودة",
-            noBacklinksFound: "لا يوجد وصلات عودة",
-        },
-        themeToggle: {
-            lightMode: "الوضع النهاري",
-            darkMode: "الوضع الليلي",
-        },
-        explorer: {
-            title: "المستعرض",
-        },
-        footer: {
-            createdWith: "أُنشئ باستخدام",
-        },
-        graph: {
-            title: "التمثيل التفاعلي",
-        },
+        backlinks: { title: "وصلات العودة", noBacklinksFound: "لا يوجد وصلات عودة" },
+        themeToggle: { lightMode: "الوضع النهاري", darkMode: "الوضع الليلي" },
+        explorer: { title: "المستعرض" },
+        footer: { createdWith: "أُنشئ باستخدام" },
+        graph: { title: "التمثيل التفاعلي" },
         recentNotes: {
             title: "آخر الملاحظات",
             seeRemainingMore: ({ remaining }) => `تصفح ${remaining} أكثر →`,
@@ -46,13 +31,8 @@ export default {
             transcludeOf: ({ targetSlug }) => `مقتبس من ${targetSlug}`,
             linkToOriginal: "وصلة للملاحظة الرئيسة",
         },
-        search: {
-            title: "بحث",
-            searchBarPlaceholder: "ابحث عن شيء ما",
-        },
-        tableOfContents: {
-            title: "فهرس المحتويات",
-        },
+        search: { title: "بحث", searchBarPlaceholder: "ابحث عن شيء ما" },
+        tableOfContents: { title: "فهرس المحتويات" },
         contentMeta: {
             readingTime: ({ minutes }) =>
                 minutes == 1
@@ -63,10 +43,7 @@ export default {
         },
     },
     pages: {
-        rss: {
-            recentNotes: "آخر الملاحظات",
-            lastFewNotes: ({ count }) => `آخر ${count} ملاحظة`,
-        },
+        rss: { recentNotes: "آخر الملاحظات", lastFewNotes: ({ count }) => `آخر ${count} ملاحظة` },
         error: {
             title: "غير موجود",
             notFound: "إما أن هذه الصفحة خاصة أو غير موجودة.",

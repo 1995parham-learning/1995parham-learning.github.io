@@ -12,9 +12,7 @@ const config: QuartzConfig = {
         pageTitleSuffix: "",
         enableSPA: true,
         enablePopovers: true,
-        analytics: {
-            provider: "plausible",
-        },
+        analytics: { provider: "plausible" },
         locale: "en-US",
         baseUrl: "1995parham-learning.github.io",
         ignorePatterns: ["private", "templates", ".obsidian"],
@@ -56,14 +54,9 @@ const config: QuartzConfig = {
     plugins: {
         transformers: [
             Plugin.FrontMatter(),
-            Plugin.CreatedModifiedDate({
-                priority: ["frontmatter", "filesystem"],
-            }),
+            Plugin.CreatedModifiedDate({ priority: ["frontmatter", "filesystem"] }),
             Plugin.SyntaxHighlighting({
-                theme: {
-                    light: "github-light",
-                    dark: "github-dark",
-                },
+                theme: { light: "github-light", dark: "github-dark" },
                 keepBackground: false,
             }),
             Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
@@ -80,10 +73,7 @@ const config: QuartzConfig = {
             Plugin.ContentPage(),
             Plugin.FolderPage(),
             Plugin.TagPage(),
-            Plugin.ContentIndex({
-                enableSiteMap: true,
-                enableRSS: true,
-            }),
+            Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
             Plugin.Assets(),
             Plugin.Static(),
             Plugin.NotFoundPage(),

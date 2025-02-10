@@ -19,37 +19,17 @@ import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, SimpleSlug, getFullSlug, resolveRelative, simplifySlug } from "../../util/path"
 import { D3Config } from "../Graph"
 
-type GraphicsInfo = {
-    color: string
-    gfx: Graphics
-    alpha: number
-    active: boolean
-}
+type GraphicsInfo = { color: string; gfx: Graphics; alpha: number; active: boolean }
 
-type NodeData = {
-    id: SimpleSlug
-    text: string
-    tags: string[]
-} & SimulationNodeDatum
+type NodeData = { id: SimpleSlug; text: string; tags: string[] } & SimulationNodeDatum
 
-type SimpleLinkData = {
-    source: SimpleSlug
-    target: SimpleSlug
-}
+type SimpleLinkData = { source: SimpleSlug; target: SimpleSlug }
 
-type LinkData = {
-    source: NodeData
-    target: NodeData
-} & SimulationLinkDatum<NodeData>
+type LinkData = { source: NodeData; target: NodeData } & SimulationLinkDatum<NodeData>
 
-type LinkRenderData = GraphicsInfo & {
-    simulationData: LinkData
-}
+type LinkRenderData = GraphicsInfo & { simulationData: LinkData }
 
-type NodeRenderData = GraphicsInfo & {
-    simulationData: NodeData
-    label: Text
-}
+type NodeRenderData = GraphicsInfo & { simulationData: NodeData; label: Text }
 
 const localStorageKey = "graph-visited"
 function getVisited(): Set<SimpleSlug> {
@@ -62,10 +42,7 @@ function addToVisited(slug: SimpleSlug) {
     localStorage.setItem(localStorageKey, JSON.stringify([...visited]))
 }
 
-type TweenNode = {
-    update: (time: number) => void
-    stop: () => void
-}
+type TweenNode = { update: (time: number) => void; stop: () => void }
 
 async function renderGraph(container: string, fullSlug: FullSlug) {
     const slug = simplifySlug(fullSlug)
@@ -147,11 +124,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
         const text = url.startsWith("tags/")
             ? "#" + url.substring(5)
             : (data.get(url)?.title ?? url)
-        return {
-            id: url,
-            text,
-            tags: data.get(url)?.tags ?? [],
-        }
+        return { id: url, text, tags: data.get(url)?.tags ?? [] }
     })
     const graphData: { nodes: NodeData[]; links: LinkData[] } = {
         nodes,
@@ -287,20 +260,14 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
             if (hoveredNodeId === nodeId) {
                 tweenGroup.add(
                     new Tweened<Text>(n.label).to(
-                        {
-                            alpha: 1,
-                            scale: { x: activeScale, y: activeScale },
-                        },
+                        { alpha: 1, scale: { x: activeScale, y: activeScale } },
                         100,
                     ),
                 )
             } else {
                 tweenGroup.add(
                     new Tweened<Text>(n.label).to(
-                        {
-                            alpha: n.label.alpha,
-                            scale: { x: defaultScale, y: defaultScale },
-                        },
+                        { alpha: n.label.alpha, scale: { x: defaultScale, y: defaultScale } },
                         100,
                     ),
                 )

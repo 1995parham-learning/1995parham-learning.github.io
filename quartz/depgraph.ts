@@ -7,10 +7,7 @@ export default class DepGraph<T> {
     }
 
     export(): Object {
-        return {
-            nodes: this.nodes,
-            edges: this.edges,
-        }
+        return { nodes: this.nodes, edges: this.edges }
     }
 
     toString(): string {

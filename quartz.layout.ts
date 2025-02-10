@@ -7,9 +7,7 @@ export const sharedPageComponents: SharedLayout = {
     header: [],
     afterBody: [],
     footer: Component.Footer({
-        links: {
-            GitHub: "https://github.com/1995parham-learning/1995parham-learning.github.io/",
-        },
+        links: { GitHub: "https://github.com/1995parham-learning/1995parham-learning.github.io/" },
     }),
 }
 
