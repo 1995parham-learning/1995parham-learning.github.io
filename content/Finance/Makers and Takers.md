@@ -1,0 +1,1 @@
+Makers are typically high-frequency trading firms whose business models largely depend on specialized trading strategies designed to capture payments. Takers are usually either large investment firms looking to buy or sell big blocks of stocks or hedge funds making bets on short-term price movement.
