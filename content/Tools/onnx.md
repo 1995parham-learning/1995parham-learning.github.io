@@ -37,7 +37,7 @@ xac = onnx.Add(xa, c)
 
 ## Serialization with `protobuf`
 
-Thle deployment of a machine-learned model into production usually _requires replicating_ the entire ecosystem used to train the model, most of the time with a docker. Once a model is converted into ONNX, the production environment only needs a **runtime** to execute the graph defined with ONNX operators. This runtime can be developed in any language suitable for the production application, C, java, python, JavaScript, C#, WebAssembly, ARM, etc.
+The deployment of a machine-learned model into production usually _requires replicating_ the entire ecosystem used to train the model, most of the time with a docker. Once a model is converted into ONNX, the production environment only needs a **runtime** to execute the graph defined with ONNX operators. This runtime can be developed in any language suitable for the production application, C, java, python, JavaScript, C#, WebAssembly, ARM, etc.
 
 But to make that happen, the ONNX graph needs to be saved. ONNX uses `protobuf` to serialize the graph into one single block. It aims at optimizing the model size as much as possible.
 
