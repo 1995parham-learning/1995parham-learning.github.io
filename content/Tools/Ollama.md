@@ -1,3 +1,5 @@
+>Get up and running with Llama 3.3, DeepSeek-R1, Phi-4, Gemma 2, and other large language models.
+
 ## Configuration
 
 Ollama is configurable using environment variables, all of these variables are available [here](https://github.com/ollama/ollama/blob/main/envconfig/config.go).
