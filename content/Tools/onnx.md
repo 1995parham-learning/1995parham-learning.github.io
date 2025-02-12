@@ -152,8 +152,7 @@ with two dimensions without any further precision.
 
 ## Serialization
 
-The model needs to be saved to be deployed. ONNX is based on `protobuf`. It minimizes the space needed to save the graph on disk.
-_Every object_ in ONNX can be serialized with method `SerializeToString`.
+The model needs to be saved to be deployed. ONNX is based on `protobuf`. It minimizes the space needed to save the graph on disk. _Every object_ in ONNX can be serialized with method `SerializeToString`.
 
 ```python
 # The serialization
