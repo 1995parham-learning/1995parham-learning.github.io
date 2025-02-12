@@ -171,7 +171,4 @@ with open("linear_regression.onnx", "rb") as f:
 
 ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP) framework to optimally execute the ONNX models on the hardware platform.
 
-ONNX Runtime works with the execution provider(s) using the `GetCapability()` interface to allocate specific nodes or sub-graphs for execution by the EP library in supported hardware. The EP libraries that are pre-installed in the
-execution environment process and execute the ONNX sub-graph on the hardware.
-This architecture abstracts out the details of the hardware specific libraries that are essential to optimize the
-execution of deep neural networks across hardware platforms like CPU, GPU, FPGA or specialized NPUs.
+ONNX Runtime works with the execution provider(s) using the `GetCapability()` interface to allocate specific nodes or sub-graphs for execution by the EP library in supported hardware. The EP libraries that are pre-installed in the execution environment process and execute the ONNX sub-graph on the hardware. This architecture abstracts out the details of the hardware specific libraries that are essential to optimize the execution of deep neural networks across hardware platforms like CPU, GPU, FPGA or specialized NPUs.
