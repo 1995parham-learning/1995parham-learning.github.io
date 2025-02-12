@@ -25,3 +25,6 @@ You can use litellm through either:
 
 - LiteLLM SDK gives you a unified interface to access multiple LLMs (100+ LLMs)
 - Retry/fallback logic across multiple deployments (e.g. Azure/OpenAI)
+
+## `config.yaml`
+Set model list, `api_base`, `api_key`, `temperature` & proxy server settings (`master-key`) on the config.yaml.
