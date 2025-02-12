@@ -1,3 +1,5 @@
+## When to use LiteLLM Proxy Server (LLM Gateway)
+
 > [!tip]
 > Use LiteLLM Proxy Server if you want a **central service (LLM Gateway) to access multiple LLMs**
 >
