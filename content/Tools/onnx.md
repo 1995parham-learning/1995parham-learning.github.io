@@ -51,8 +51,7 @@ A tensor is a multidimensional array. It is defined by:
 - a shape: an array with all dimensions, this array can be empty, a dimension can be null
 - a contiguous array: it represents all the values
 
-ONNX is **strongly typed**, and its definition does not support implicit cast.
-It is _impossible_ to add two tensors or matrices with different types even if other languages does.
+ONNX is **strongly typed**, and its definition does not support implicit cast. It is _impossible_ to add two tensors or matrices with different types even if other languages does.
 That's why an explicit cast must be inserted in a graph.
 
 ## What is a `opset` version?
