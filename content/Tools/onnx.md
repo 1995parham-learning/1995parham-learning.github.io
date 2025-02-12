@@ -39,20 +39,17 @@ xac = onnx.Add(xa, c)
 
 The deployment of a machine-learned model into production usually _requires replicating_ the entire ecosystem used to train the model, most of the time with a docker. Once a model is converted into ONNX, the production environment only needs a **runtime** to execute the graph defined with ONNX operators. This runtime can be developed in any language suitable for the production application, C, java, python, JavaScript, C#, WebAssembly, ARM, etc.
 
-But to make that happen, the ONNX graph needs to be saved. ONNX uses `protobuf` to serialize the graph into
-one single block. It aims at optimizing the model size as much as possible.
+But to make that happen, the ONNX graph needs to be saved. ONNX uses `protobuf` to serialize the graph into one single block. It aims at optimizing the model size as much as possible.
 
 ## Supported Types
 
-ONNX specifications are optimized for numerical computation with tensors.
-A tensor is a multidimensional array. It is defined by:
+ONNX specifications are optimized for numerical computation with tensors. A tensor is a multidimensional array. It is defined by:
 
 - a type: the element type, the same for all elements in the tensor
 - a shape: an array with all dimensions, this array can be empty, a dimension can be null
 - a contiguous array: it represents all the values
 
-ONNX is **strongly typed**, and its definition does not support implicit cast. It is _impossible_ to add two tensors or matrices with different types even if other languages does.
-That's why an explicit cast must be inserted in a graph.
+ONNX is **strongly typed**, and its definition does not support implicit cast. It is _impossible_ to add two tensors or matrices with different types even if other languages does. That's why an explicit cast must be inserted in a graph.
 
 ## What is a `opset` version?
 
