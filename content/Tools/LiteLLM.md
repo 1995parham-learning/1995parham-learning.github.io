@@ -15,3 +15,13 @@ You can use litellm through either:
 - LiteLLM Proxy gives you a unified interface to access multiple LLMs (100+ LLMs)
 - Track LLM Usage and setup guardrails
 - Customize Logging, Guardrails, Caching per project
+
+## When to use LiteLLM Python SDK
+
+> []
+>Use LiteLLM Python SDK if you want to use LiteLLM in your **python code**
+>
+> Typically used by developers building llm projects
+
+- LiteLLM SDK gives you a unified interface to access multiple LLMs (100+ LLMs)
+- Retry/fallback logic across multiple deployments (e.g. Azure/OpenAI)
