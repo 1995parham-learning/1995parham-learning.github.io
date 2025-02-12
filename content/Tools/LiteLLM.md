@@ -18,8 +18,8 @@ You can use litellm through either:
 
 ## When to use LiteLLM Python SDK
 
-> []
->Use LiteLLM Python SDK if you want to use LiteLLM in your **python code**
+> [!tip]
+> Use LiteLLM Python SDK if you want to use LiteLLM in your **python code**
 >
 > Typically used by developers building llm projects
 
