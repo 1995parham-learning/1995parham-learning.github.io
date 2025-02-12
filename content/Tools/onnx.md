@@ -72,8 +72,7 @@ print(onnx.__version__, " opset=", onnx.defs.onnx_opset_version())
 
 ## Tools
 
-- [`netron`](https://netron.app/) is very useful to help visualize ONNX graphs.
-  That's the only one without programming.
+- [`netron`](https://netron.app/) is very useful to help visualize ONNX graphs. That's the only one without programming.
 
 ## A simple example: a linear regression
 
