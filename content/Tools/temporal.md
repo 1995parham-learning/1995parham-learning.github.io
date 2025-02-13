@@ -1,6 +1,3 @@
----
-title: Temporal
----
 
 Whether you're writing a complex transaction-based workflow or working with remote APIs, creating reliable applications
 is a complex process.
