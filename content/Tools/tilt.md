@@ -1,6 +1,3 @@
----
-title: Tilt
----
 
 > Kubernetes for Prod, Tilt for Dev
 
