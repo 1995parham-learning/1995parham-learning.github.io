@@ -46,7 +46,7 @@
         "micromorph": "^0.4.5",
         "patch-package": "^8.0.0",
         "pixi.js": "^8.7.3",
-        "preact": "^10.25.4",
+        "preact": "^10.26.0",
         "preact-render-to-string": "^6.5.13",
         "pretty-bytes": "^6.1.1",
         "pretty-time": "^1.1.0",
