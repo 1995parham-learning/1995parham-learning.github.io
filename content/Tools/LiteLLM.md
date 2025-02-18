@@ -50,6 +50,7 @@ model_list:
 	      api_base: os.environ/AZURE_API_BASE
 	      api_key: "os.environ/AZURE_API_KEY"
 	      api_version: "2024-07-01-preview" # [OPTIONAL] litellm uses the latest azure api_version by default
+	  # An optional dictionary to provide additional information about the model.
       model_info:
           id: string
           mode: embedding
