@@ -45,7 +45,11 @@ environment_variables: {}
 
 model_list:
     - model_name: string
-      litellm_params: {}
+      litellm_params:
+	      model: azure/my_azure_deployment
+	      api_base: os.environ/AZURE_API_BASE
+	      api_key: "os.environ/AZURE_API_KEY"
+	      api_version: "2024-07-01-preview" # [OPTIONAL] litellm uses the latest azure api_version by default
       model_info:
           id: string
           mode: embedding
