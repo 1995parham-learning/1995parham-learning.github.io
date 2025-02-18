@@ -159,6 +159,7 @@ general_settings:
     alerting_threshold: 0
     use_client_credentials_pass_through_routes: boolean # use client credentials for all pass through routes like "/vertex-ai", /bedrock/. When this is True Virtual Key auth will not be applied on these endpoints
 ```
+
 ### litellm_settings - Reference
 
 | Name                                           | Type             | Description                                                                                                                                                                                                                                                                                                                    |
