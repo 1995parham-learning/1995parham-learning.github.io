@@ -7,3 +7,24 @@ Let's begin our exploration of the `log/slog` package by walking through its des
 - `Handler`: an interface that, once implemented, determines the formatting and destination of each `Record`. Two built-in handlers are included in the `log/slog` package: `TextHandler` and `JSONHandler` for `key=value` and JSON output respectively.
 
 Like most Go logging libraries, the `slog` package exposes a default `Logger` that is accessible through top-level functions. This logger produces an almost identical output as the older `log.Printf()` method, except for the inclusion of log levels:
+
+```go
+package main
+
+import (
+    "log"
+    "log/slog"
+)
+
+func main() {
+    log.Print("Info message")
+    slog.Info("Info message")
+}
+```
+
+```text
+2024/01/03 10:24:22 Info message
+2024/01/03 10:24:22 INFO Info message
+```
+
+
