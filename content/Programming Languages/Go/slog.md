@@ -48,3 +48,15 @@ func main() {
 {"time":"2023-03-15T12:59:22.227468972+01:00","level":"WARN","msg":"Warning message"}
 {"time":"2023-03-15T12:59:22.227472149+01:00","level":"ERROR","msg":"Error message"}
 ```
+
+When the `TextHandler` type is used instead, each log record will be formatted according to the [Logfmt standard](https://betterstack.com/community/guides/logging/logfmt/):
+
+```go
+logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
+```
+
+```text
+time=2023-03-15T13:00:11.333+01:00 level=INFO msg="Info message"
+time=2023-03-15T13:00:11.333+01:00 level=WARN msg="Warning message"
+time=2023-03-15T13:00:11.333+01:00 level=ERROR msg="Error message"
+```
