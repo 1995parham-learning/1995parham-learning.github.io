@@ -60,3 +60,22 @@ time=2023-03-15T13:00:11.333+01:00 level=INFO msg="Info message"
 time=2023-03-15T13:00:11.333+01:00 level=WARN msg="Warning message"
 time=2023-03-15T13:00:11.333+01:00 level=ERROR msg="Error message"
 ```
+
+## Adding contextual attributes to log records
+
+A significant advantage of structured logging over unstructured formats is the ability to add arbitrary attributes as key/value pairs in log records.
+
+These attributes provide additional context about the logged event, which can be valuable for tasks such as troubleshooting, generating metrics, auditing, and various other purposes.
+
+Here's an example illustrating how it works in Slog:
+
+```go
+logger.Info(
+  "incoming request",
+  "method", "GET",
+  "time_taken_ms", 158,
+  "path", "/hello/world?q=search",
+  "status", 200,
+  "user_agent", "Googlebot/2.1 (+http://www.google.com/bot.html)",
+)
+```
