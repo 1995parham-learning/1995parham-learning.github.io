@@ -79,3 +79,19 @@ logger.Info(
   "user_agent", "Googlebot/2.1 (+http://www.google.com/bot.html)",
 )
 ```
+
+Another way to prevent such mistakes is by using strongly-typed contextual attributes as shown below:
+
+```go
+logger.Info(
+  "incoming request",
+  slog.String("method", "GET"),
+  slog.Int("time_taken_ms", 158),
+  slog.String("path", "/hello/world?q=search"),
+  slog.Int("status", 200),
+  slog.String(
+    "user_agent",
+    "Googlebot/2.1 (+http://www.google.com/bot.html)",
+  ),
+)
+```
