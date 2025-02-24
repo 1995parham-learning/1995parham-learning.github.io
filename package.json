@@ -99,7 +99,7 @@
     },
     "overrides": {
         "rehype-pretty-code": {
-            "shiki": "^2.0.0"
+            "shiki": "^3.0.0"
         }
     }
 }
