@@ -107,6 +107,7 @@ on:
 ```
 
 - `repository_dispatch`: Triggers workflows across all repositories in an organization when an event is dispatched from another repository.
+- `workflow_call` is used to indicate that a workflow can be called by another workflow. When a workflow is triggered with the `workflow_call` event, the event payload in the called workflow is the same event payload from the calling workflow.
 - Other events: Includes events like `issues`, `release`, `deployment`, and more.
 
 ## Pre-defined Actions
