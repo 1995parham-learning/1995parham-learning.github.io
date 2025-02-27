@@ -186,3 +186,88 @@ steps:
 
 ![[Pasted image 20250129132409.png]]
 To make it easier for Actions authors to generate Job Summaries, we’ve also added a new helper utility to the [@actions/core](https://www.npmjs.com/package/@actions/core) npm package.
+
+## Workflow Syntax
+
+Workflow files use YAML syntax, and must have either a .yml or .yaml file extension. You must store workflow files in the `.github/workflows/` directory of your repository. Each different YAML file corresponds to a different workflow.
+
+```yaml
+name: My Workflow
+on:
+  push:
+    branches:
+      - 'releases/*'
+      - '!releases/**-alpha'
+env:
+  message: 'conversation'
+  my_token: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  my_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out our code
+        uses: actions/checkout@master
+      - name: Say something
+        run: |
+          echo "A little less ${message}"
+          echo "A little more action"
+  my_job:
+    needs: my_build
+    container:
+      image: node:10.16-jessie
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379/tcp
+```
+
+#### Workflow `name`
+
+The name of your workflow will be displayed on your repository’s actions page.
+
+#### Workflow, Job or Step `env`
+
+A map of environment variables which can be set at different scopes. Several environment variables are available by default (`GITHUB_SHA`, `GITHUB_REF`, `GITHUB_EVENT_NAME`, `HOME`, `GITHUB_EVENT_PATH`…​) as well as a secret, `GITHUB_TOKEN`, which you can leverage for API calls or git commands through the `secrets` context.
+
+#### `on` Event
+
+The type event that triggers the workflow. You can provide a single event string, an array of events, or an event configuration map that restricts the execution of a workflow:
+
+- When using the `push` and `pull_request` events, `branches` and `tags` allow to select or exclude (with the `!` prefix) git references the workflow will run on, while `paths` specifies which files must have been modified in order to run the workflow.
+    
+- If your rules are only made of exclusions, you can use `branches-ignore`, `tags-ignore` and `paths-ignore`. The `-ignore` form and its inclusive version cannot be mixed.
+    
+- The `types` keyword enables you to narrow down activities (`opened`, `created`, `edited`…​) causing the workflow to run. The list of available activities depends on the event.
+    
+- A workflow trigger can also be scheduled:
+    
+
+```yaml
+on:
+  schedule:
+  - cron: '*/15 * * * *'
+```
+
+#### `jobs` Collection
+
+A workflow run is made up of one or more jobs identified by a unique `job_id` (`my_build` or `my_job`). Jobs run in parallel by default unless queued with the `needs` attribute. Each job runs in a fresh instance of the virtual environment specified by `runs-on`.
+
+##### Job `name`
+
+The name of the job displayed on GitHub.
+
+##### `needs`
+
+Identifies any job that must complete successfully before this job will run. It can be a string or array of strings. If a job fails, all jobs that need it are skipped unless the jobs use a conditional statement that causes the job to continue.
+
+##### `runs-on`
+
+The type of virtual host machine to run the job on. Can be either a GitHub or self-hosted runner. Jobs can also run in user-specified containers (see: `container`). Available GitHub-hosted virtual machine types are `ubuntu-latest`, `windows-latest`, `macOS-latest` plus some other specific versions for each operating system, in the form of `ubuntu-xx.xx`, `macOS-xx.xx` or `windows-xxxx`. To specify a self-hosted runner for your job, configure `runs-on` in your workflow file with self-hosted runner labels. Example: `[self-hosted, linux]`.
