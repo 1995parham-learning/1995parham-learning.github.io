@@ -188,6 +188,7 @@ steps:
 To make it easier for Actions authors to generate Job Summaries, we’ve also added a new helper utility to the [@actions/core](https://www.npmjs.com/package/@actions/core) npm package.
 
 ## Actions Cheat Sheet
+
 ### Workflow Syntax
 
 Workflow files use YAML syntax, and must have either a .yml or .yaml file extension. You must store workflow files in the `.github/workflows/` directory of your repository. Each different YAML file corresponds to a different workflow.
@@ -289,7 +290,7 @@ A job contains a sequence of tasks called `steps`. Steps can run commands, run s
 
 Specify the label to be displayed for this step in GitHub. It’s not required but does improve readability in the logs.
 
-##### `uses`
+#### `uses`
 
 Specify an action to run as part of a step in your job. You can use an action defined in the same repository as the workflow, a public repository elsewhere on GitHub, or in a published Docker container image. Including the version of the action you are using by specifying a Git ref, branch, SHA, or Docker tag is strongly recommended:
 
@@ -299,22 +300,22 @@ Specify an action to run as part of a step in your job. You can use an action de
 - `uses: docker://{image}:{tag}` for actions on Docker Hub
 - `uses: docker://{host}/{image}:{tag}` for actions in a public registry
 
-##### `with`
+#### `with`
 
 A map of the input parameters defined by the action in its `action.yml` file. When the acion is container based, special parameter names are:
 
 - `args`, a string that defines the inputs passed to a Docker container’s `ENTRYPOINT`. It is used in place of the `CMD` instruction in a `Dockerfile`.
 - `entrypoint`, a string that defines or overrides the executable to run as the Docker container’s `ENTRYPOINT`.
 
-##### `if`
+#### `if`
 
 Prevents a step from running unless a condition is met. The value is an expression without the `${{ …​ }}` block.
 
-##### `run`
+#### `run`
 
 Instead of running an existing action, a command line program can be run using the operating system’s shell. Each run keyword represents a new process and shell in the virtual environment. A specific shell can be selected with the `shell` attribute. Multiple commands can be run in a single shell instance using the `|` (pipe) operator.
 
-#### Job `strategy`
+### Job `strategy`
 
 A build matrix strategy is a set of different configurations of the virtual environment. The job’ set of steps will be executed on each of these configurations. The following exemple specifies 3 nodejs versions on 2 operating systems:
 
@@ -330,15 +331,15 @@ steps:
           node-version: ${{ matrix.node }}
 ```
 
-##### `fail-fast`
+#### `fail-fast`
 
 When set to `true` (default value), GitHub cancels all in-progress jobs if any of the matrix job fails.
 
-#### Context and expressions
+### Context and expressions
 
 Expressions can be used to programmatically set variables in workflow files and access contexts. An expression can be any combination of literal values, references to a context, or functions. You can combine literals, context references, and functions using operators. With the exception of the `if` key, expressions are written in a `${{ …​ }}` block. Contexts are objects providing access to runtime information. The following objects are available: `github`, `job`, `steps`, `runner`, `secrets`, `strategy` and `matrix`.
 
-#### Artifact storage & Caching
+### Artifact storage & Caching
 
 An artifact is a file or collection of files produced during a workflow run that can be stored and shared between jobs in a workflow run. Use actions `actions/upload-artifact` and `actions/download-artifact` with parameters `name` and `path` to manipulate artifacts. Artifacts can be downloaded through the Web interface for 90 days.
 
