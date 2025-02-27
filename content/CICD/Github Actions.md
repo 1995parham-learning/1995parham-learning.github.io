@@ -187,7 +187,8 @@ steps:
 ![[Pasted image 20250129132409.png]]
 To make it easier for Actions authors to generate Job Summaries, we’ve also added a new helper utility to the [@actions/core](https://www.npmjs.com/package/@actions/core) npm package.
 
-## Workflow Syntax
+## Actions Cheat Sheet
+### Workflow Syntax
 
 Workflow files use YAML syntax, and must have either a .yml or .yaml file extension. You must store workflow files in the `.github/workflows/` directory of your repository. Each different YAML file corresponds to a different workflow.
 
@@ -252,39 +253,39 @@ on:
         - cron: "*/15 * * * *"
 ```
 
-#### `jobs` Collection
+### `jobs` Collection
 
 A workflow run is made up of one or more jobs identified by a unique `job_id` (`my_build` or `my_job`). Jobs run in parallel by default unless queued with the `needs` attribute. Each job runs in a fresh instance of the virtual environment specified by `runs-on`.
 
-##### Job `name`
+#### Job `name`
 
 The name of the job displayed on GitHub.
 
-##### `needs`
+#### `needs`
 
 Identifies any job that must complete successfully before this job will run. It can be a string or array of strings. If a job fails, all jobs that need it are skipped unless the jobs use a conditional statement that causes the job to continue.
 
-##### `runs-on`
+#### `runs-on`
 
 The type of virtual host machine to run the job on. Can be either a GitHub or self-hosted runner. Jobs can also run in user-specified containers (see: `container`). Available GitHub-hosted virtual machine types are `ubuntu-latest`, `windows-latest`, `macOS-latest` plus some other specific versions for each operating system, in the form of `ubuntu-xx.xx`, `macOS-xx.xx` or `windows-xxxx`. To specify a self-hosted runner for your job, configure `runs-on` in your workflow file with self-hosted runner labels. Example: `[self-hosted, linux]`.
 
-##### `container`
+#### `container`
 
 Instead of running directly on a host selected with `runs-on`, a container can run any steps in a job that don’t already specify a container. If you have steps that use both script and container actions, the container actions will run as sibling containers on the same network with the same volume mounts. This object has the following attributes: `image`, `env`, `ports`, `volume` and `options`.
 
-##### `timeout-minutes`
+#### `timeout-minutes`
 
 The maximum number of minutes to let a workflow run before GitHub automatically cancels it. Default: 360
 
-##### `services`
+#### `services`
 
 Additional containers to host services for a job in a workflow. These are useful for creating databases or cache services. The runner on the virtual machine will automatically create a network and manage the lifecycle of the service containers. Each service is a named object in the `services` collection (`redis` or `nginx` for example) and can receive the same parameters than the `container` object.
 
-#### Job `steps`
+### Job `steps`
 
 A job contains a sequence of tasks called `steps`. Steps can run commands, run setup tasks, or run an action from your repository, a public repository, or an action published in a Docker registry. Each step runs in its own process in the virtual environment and has access to the workspace and filesystem.
 
-##### Step `name`
+#### Step `name`
 
 Specify the label to be displayed for this step in GitHub. It’s not required but does improve readability in the logs.
 
@@ -293,24 +294,17 @@ Specify the label to be displayed for this step in GitHub. It’s not required b
 Specify an action to run as part of a step in your job. You can use an action defined in the same repository as the workflow, a public repository elsewhere on GitHub, or in a published Docker container image. Including the version of the action you are using by specifying a Git ref, branch, SHA, or Docker tag is strongly recommended:
 
 - `uses: {owner}/{repo}@{ref}` for actions in a public repository
-    
 - `uses: {owner}/{repo}/{path}@{ref}` for actions in a subdirectory of a public repository
-    
 - `uses: ./path/to/dir` for actions in a a subdirectory of the same repository
-    
 - `uses: docker://{image}:{tag}` for actions on Docker Hub
-    
 - `uses: docker://{host}/{image}:{tag}` for actions in a public registry
-    
 
 ##### `with`
 
 A map of the input parameters defined by the action in its `action.yml` file. When the acion is container based, special parameter names are:
 
 - `args`, a string that defines the inputs passed to a Docker container’s `ENTRYPOINT`. It is used in place of the `CMD` instruction in a `Dockerfile`.
-    
 - `entrypoint`, a string that defines or overrides the executable to run as the Docker container’s `ENTRYPOINT`.
-    
 
 ##### `if`
 
@@ -327,13 +321,13 @@ A build matrix strategy is a set of different configurations of the virtual envi
 ```yaml
 runs-on: ${{ matrix.os }}
 strategy:
-  matrix:
-    os: [ubuntu-16.04, ubuntu-18.04]
-    node: [6, 8, 10]
+    matrix:
+        os: [ubuntu-16.04, ubuntu-18.04]
+        node: [6, 8, 10]
 steps:
-  - uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node }}
+    - uses: actions/setup-node@v1
+      with:
+          node-version: ${{ matrix.node }}
 ```
 
 ##### `fail-fast`
@@ -351,20 +345,17 @@ An artifact is a file or collection of files produced during a workflow run that
 For dependencies and other commonly reused files across runs of a given workflow, use the `actions/cache` action with parameters:
 
 - `key`: The key used to save and search for a cache.
-    
 - `path`: The file path (absolute or relative to the working directory) on the runner to cache or restore.
-    
 - `restore-keys`: Optional - An ordered list of alternative keys to use for finding the cache if no cache hit occurred for key.
-    
 
 ```yaml
 - uses: actions/checkout@v1
 - name: Cache node modules
   uses: actions/cache@v1
   with:
-    path: node_modules
-    key: x-y-${{hashFiles('**/package-lock.json')}}
-    restore-keys: |
-      x-y-
-      x-
+      path: node_modules
+      key: x-y-${{hashFiles('**/package-lock.json')}}
+      restore-keys: |
+          x-y-
+          x-
 ```
