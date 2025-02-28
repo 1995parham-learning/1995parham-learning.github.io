@@ -32,7 +32,7 @@ The resolution process uses advanced algorithms and matching logic to accurately
 
 ### Deterministic match
 
-Deterministic matching links different identifiers to known individuals’ PII. For example, when someone starts a new job, deterministic matching can link their new work email with accounts and activity associated with their old one. For the most accurate match and widest reach, this step should use a third-party offline reference graph. 
+Deterministic matching links different identifiers to known individuals’ PII. For example, when someone starts a new job, deterministic matching can link their new work email with accounts and activity associated with their old one. For the most accurate match and widest reach, this step should use a third-party offline reference graph.
 
 ### Probabilistic match
 
