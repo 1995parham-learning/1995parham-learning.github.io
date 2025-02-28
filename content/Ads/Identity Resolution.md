@@ -21,3 +21,11 @@ Key elements of identity resolution include:
 ### Pseudonymous data
 
 Pseudonymous data includes data points that don’t directly identify an individual, but that can be used to gain a sense of a person’s online activities and preferences. For example, a Mobile Ad ID (MAID) is a unique identifier created by a mobile device’s operating system and shared with apps downloaded to the device. A MAID can be used to "remember" an individual’s behavior and choices without using their personally identifiable data (PII). Identity resolution collects and connects these pseudonymous datasets, then resolves them down to individuals, each of whom is assigned a unique identifier that can’t be traced to a specific person.
+
+### Offline data
+
+Offline data comprises PII, such as an individual’s name, postal address, email address, and telephone number. This data is compiled over time through continuous customer interactions and stored in an offline reference graph.
+
+### Resolution
+
+The resolution process uses advanced algorithms and matching logic to accurately link these disparate data sources to create consistent identities. Resolution can be done at either the individual or household level depending on what makes sense for your purposes. In both cases, resolving identities enables you to personalize customer experiences across channels and interaction points.
