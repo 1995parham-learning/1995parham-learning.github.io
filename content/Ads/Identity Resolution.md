@@ -4,4 +4,4 @@ Without the signals third-party cookies send, it’s harder for companies to und
 
 Enter identity resolution.
 
-
+Identity resolution is the ability to accurately resolve consumer data from a variety of sources to a household or an individual in a privacy-centric manner. Identity should be the foundation of everything you do across your enterprise. As third-party signals fade, a robust identity strategy enables precise and personalized customer interactions, ensuring your marketing efforts build brand loyalty and drive conversions.
