@@ -29,3 +29,11 @@ Offline data comprises PII, such as an individual’s name, postal address, emai
 ### Resolution
 
 The resolution process uses advanced algorithms and matching logic to accurately link these disparate data sources to create consistent identities. Resolution can be done at either the individual or household level depending on what makes sense for your purposes. In both cases, resolving identities enables you to personalize customer experiences across channels and interaction points.
+
+### Deterministic match
+
+Deterministic matching links different identifiers to known individuals’ PII. For example, when someone starts a new job, deterministic matching can link their new work email with accounts and activity associated with their old one. For the most accurate match and widest reach, this step should use a third-party offline reference graph. 
+
+### Probabilistic match
+
+Probabilistic identity methodologies complement deterministic matching to create a fuller picture of online identity. Devices can be implicitly grouped by data points such as IP address, operating system, Wi-Fi network, and location. Probabilistic matching uses statistical modeling to understand these groupings and assign them to identities at varying confidence levels.
