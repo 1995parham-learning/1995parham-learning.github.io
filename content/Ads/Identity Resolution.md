@@ -7,3 +7,7 @@ Enter identity resolution.
 Identity resolution is the ability to accurately resolve consumer data from a variety of sources to a household or an individual in a privacy-centric manner. Identity should be the foundation of everything you do across your enterprise. As third-party signals fade, a robust identity strategy enables precise and personalized customer interactions, ensuring your marketing efforts build brand loyalty and drive conversions.
 
 ## What is identity resolution?
+
+Identity resolution connects the dots between consumers’ digital footprints to give the full picture of their online behavior across devices, channels, and touchpoints. It’s a key component of effective data collaboration, promoting consistency and accuracy across multiple platforms and partners.
+
+Identity resolution uses advanced algorithms and machine learning techniques to accurately link disparate pieces of data to the correct individual and create a comprehensive picture of a user’s interactions and behaviors across various platforms. By resolving identities across channels and devices, it becomes possible to recognize customers any time they interact with your brand. This helps to prevent signal loss so you can continue to tailor campaigns to customers’ behaviors, preferences, and interests without using third-party cookies.
