@@ -11,3 +11,14 @@ Identity resolution is the ability to accurately resolve consumer data from a v
 Identity resolution connects the dots between consumers’ digital footprints to give the full picture of their online behavior across devices, channels, and touchpoints. It’s a key component of effective data collaboration, promoting consistency and accuracy across multiple platforms and partners.
 
 Identity resolution uses advanced algorithms and machine learning techniques to accurately link disparate pieces of data to the correct individual and create a comprehensive picture of a user’s interactions and behaviors across various platforms. By resolving identities across channels and devices, it becomes possible to recognize customers any time they interact with your brand. This helps to prevent signal loss so you can continue to tailor campaigns to customers’ behaviors, preferences, and interests without using third-party cookies.
+ 
+## How does identity resolution work?
+
+Identity resolution combines data management strategies and advanced analytics to prevent signal loss and establish consistent identifiers across customer journeys.  
+  
+Key elements of identity resolution include:
+
+### Pseudonymous data
+
+Pseudonymous data includes data points that don’t directly identify an individual, but that can be used to gain a sense of a person’s online activities and preferences. For example, a Mobile Ad ID (MAID) is a unique identifier created by a mobile device’s operating system and shared with apps downloaded to the device. A MAID can be used to "remember" an individual’s behavior and choices without using their personally identifiable data (PII). Identity resolution collects and connects these pseudonymous datasets, then resolves them down to individuals, each of whom is assigned a unique identifier that can’t be traced to a specific person.
+
