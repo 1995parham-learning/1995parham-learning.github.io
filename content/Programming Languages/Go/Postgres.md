@@ -154,3 +154,7 @@ for _, user := range users {
 // {5 Mary mary@example.com}
 // {6 Martha martha@example.com}
 ```
+
+#### Nested Transactions
+
+Postgres doesn't have nested transactions, but `pgx` implements them through `SAVEPOINT`.
