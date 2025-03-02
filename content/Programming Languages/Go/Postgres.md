@@ -24,6 +24,8 @@ The above query, check that all the tags in the given argument are exists in `ta
 
 ### pgx
 
+- `github.com/jackc/pgx/stdlib`: Package stdlib is the compatibility layer from pgx to database/sql.
+
 Query arguments are passed directly to the underlying pgx conn so there is no need to implement driver. Valuer if pgx already understands the type.
 
 ```go
