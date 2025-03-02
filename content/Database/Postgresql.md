@@ -21,27 +21,35 @@ CREATE SCHEMA myschema;
 To create or access objects in a schema, write a _qualified name_ consisting of the schema name and table name separated by a dot:
 
 ```sql
-
+schema.table
 ```
 
 This works anywhere a table name is expected, including the table modification commands and the data access commands discussed in the following chapters. (For brevity we will speak of tables only, but the same ideas apply to other kinds of named objects, such as types and functions.)
 
 Actually, the even more general syntax
 
-_`database`_`.`_`schema`_`.`_`table`_
+```sql
+database.schema.table
+```
 
 can be used too, but at present this is just for pro forma compliance with the SQL standard. If you write a database name, it must be the same as the database you are connected to.
 
 So to create a table in the new schema, use:
 
+```sql
 CREATE TABLE myschema.mytable (
- ...
+...
 );
+```
 
-To drop a schema if it's empty (all objects in it have been dropped), use:
+To drop a schema _if it's empty (all objects in it have been dropped)_, use:
 
+```sql
 DROP SCHEMA myschema;
+```
 
 To drop a schema including all contained objects, use:
 
+```sql
 DROP SCHEMA myschema CASCADE;
+```
