@@ -39,3 +39,15 @@ if err != nil {
 	log. Fatal(err)
 }
 ```
+
+```go
+config, err := pgxpool.ParseConfig(os.Getenv("DATABASE_URL"))
+if err != nil {
+    // ...
+}
+config.AfterConnect = func(ctx context.Context, conn *pgx.Conn) error {
+    // do something with every new connection
+}
+
+pool, err := pgxpool.ConnectConfig(context.Background(), config)
+```
