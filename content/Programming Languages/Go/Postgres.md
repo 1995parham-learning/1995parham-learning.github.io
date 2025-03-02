@@ -74,20 +74,21 @@ func (c *Conn) Hijack() *pgx.Conn
 
 #### Basics
 
-- pgx is connection oriented.
+- `pgx` is connection oriented.
+- Basic interface mimics `database/sql` _but with context by default_ (Query, Quer yRow, Exec).
 
 ```go
 func main () {
+	ctx := context.Background()
 
-ctx := context .Background)
+	conn, err := pgx.Connect(ctx, os.Getenv("DATABASE_URL"))
+	if err != nil {
+		log. Fatal(err)
+	}
 
-conn, err := pgx. Cohnect(ctx, os. Getenv("DATABASE_URL" ))
+	defer conn. Close(ctx)
 
-if err != nil i log. Fatal(err)
-
-defer conn. Close(ctx)
-
-var n int32
+	var n int32
 
 err = conn.QueryRow(ctx, "select $1::int", 42). Scan (&n)
 
