@@ -125,3 +125,30 @@ if err != nil {
 
 fmt.Println(numbers) // => [1 2 3 4 5 6 7 8 9 10]
 ```
+
+```go
+type User struct {
+		ID    int32
+		Name  string
+		Email string
+	}
+
+	rows, _ := conn.Query(ctx, "select id, name, email from users")
+	users, err := pgx.CollectRows(rows, pgx.RowToStructByPos[User])
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, user := range users {
+		fmt.Println(user)
+	}
+
+	// Output:
+	//
+	// {1 Matthew matthew@example.com}
+	// {2 Mark mark@example.com}
+	// {3 Luke luke@example.com}
+	// {4 John john@example.com}
+	// {5 Mary mary@example.com}
+	// {6 Martha martha@example.com}
+```
