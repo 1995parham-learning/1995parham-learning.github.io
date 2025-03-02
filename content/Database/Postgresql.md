@@ -53,3 +53,7 @@ To drop a schema including all contained objects, use:
 ```sql
 DROP SCHEMA myschema CASCADE;
 ```
+
+## `SET TRANSACTION`
+
+set the characteristics of the current transaction
