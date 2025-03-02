@@ -167,23 +167,24 @@ To use declarative partitioning in this case, use the following steps:
 2. Create partitions. Each partition's definition _must specify bounds that correspond to the partitioning method and partition key of the parent_. Note that specifying bounds such that the new partition's values would overlap with those in one or more existing partitions will cause an error.
    Partitions thus created are in every way normal PostgreSQL tables (or, possibly, foreign tables). It is possible to specify a tablespace and storage parameters for each partition separately.
    For our example, each partition should hold one month's worth of data, to match the requirement of deleting one month's data at a time. So the commands might look like:
-```sql
+
+	```sql
 	CREATE TABLE measurement_y2006m02 PARTITION OF measurement
 	    FOR VALUES FROM ('2006-02-01') TO ('2006-03-01');
-	
+
 	CREATE TABLE measurement_y2006m03 PARTITION OF measurement
 	    FOR VALUES FROM ('2006-03-01') TO ('2006-04-01');
-	
+
 	...
 	CREATE TABLE measurement_y2007m11 PARTITION OF measurement
 	    FOR VALUES FROM ('2007-11-01') TO ('2007-12-01');
-	
+
 	CREATE TABLE measurement_y2007m12 PARTITION OF measurement
 	    FOR VALUES FROM ('2007-12-01') TO ('2008-01-01')
 	    TABLESPACE fasttablespace;
-	
+
 	CREATE TABLE measurement_y2008m01 PARTITION OF measurement
 	    FOR VALUES FROM ('2008-01-01') TO ('2008-02-01')
 	    WITH (parallel_workers = 4)
 	    TABLESPACE fasttablespace;
-```
+	```
