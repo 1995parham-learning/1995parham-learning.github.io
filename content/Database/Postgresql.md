@@ -124,7 +124,18 @@ The _Serializable_ isolation level provides the strictest transaction isolation.
 ## Table Partitioning
 
 Partitioning refers to splitting what is logically one large table into smaller physical pieces. Partitioning can provide several benefits:
+
 - _Query performance can be improved dramatically_ in certain situations, particularly when most of the heavily accessed rows of the table are in a single partition or a small number of partitions. Partitioning effectively substitutes for the upper tree levels of indexes, making it more likely that the heavily-used parts of the indexes fit in memory.
 - When queries or updates access a large percentage of a single partition, performance can be improved by using a sequential scan of that partition instead of using an index, which would require random-access reads scattered across the whole table.
 - Bulk loads and deletes can be accomplished by adding or removing partitions, if the usage pattern is accounted for in the partitioning design. Dropping an individual partition using `DROP TABLE`, or doing `ALTER TABLE DETACH PARTITION`, is far faster than a bulk operation. These commands also entirely avoid the `VACUUM` overhead caused by a bulk `DELETE`.
 - Seldom-used data can be migrated to cheaper and slower storage media.
+
+PostgreSQL offers built-in support for the following forms of partitioning:
+
+- **Range Partitioning**: The table is partitioned into _ranges_ defined by a key column or set of columns, with no overlap between the ranges of values assigned to different partitions. For example, one might partition by date ranges, or by ranges of identifiers for particular business objects. Each range's bounds are understood as being inclusive at the lower end and exclusive at the upper end. For example, if one partition's range is from `1` to `10`, and the next one's range is from `10` to `20`, then value `10` belongs to the second partition not the first.
+
+- **List Partitioning**: The table is partitioned by explicitly listing which key value(s) appear in each partition.
+
+Hash Partitioning[](https://www.postgresql.org/docs/current/ddl-partitioning.html#DDL-PARTITIONING-OVERVIEW-HASH)
+
+The table is partitioned by specifying a modulus and a remainder for each partition. Each partition will hold the rows for which the hash value of the partition key divided by the specified modulus will produce the specified remainder.
