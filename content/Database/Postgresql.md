@@ -81,3 +81,5 @@ All statements of the current transaction can only see rows committed before the
 The transaction access mode determines whether the transaction is _read/write_ or _read-only_. Read/write is the default.
 
 ## Concurrency Control
+
+PostgreSQL provides a rich set of tools for developers to manage concurrent access to data.
