@@ -190,3 +190,5 @@ To use declarative partitioning in this case, use the following steps:
         WITH (parallel_workers = 4)
         TABLESPACE fasttablespace;
     ```
+
+## Generated Columns
