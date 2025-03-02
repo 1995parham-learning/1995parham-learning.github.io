@@ -120,3 +120,6 @@ The _Repeatable Read_ isolation level only sees data committed before the transa
 ### Serializable
 
 The _Serializable_ isolation level provides the strictest transaction isolation. This level emulates serial transaction execution for all committed transactions; as if transactions had been executed one after another, serially, rather than concurrently.
+
+## Table Partitioning
+
