@@ -439,17 +439,15 @@ Also, there is another official library for Streams in Golang:
 
 ## Context
 
-:::note
-⭐ There are three main rules to observe when handling context plumbing in Go: only entrypoint functions
+> [!note]
+>⭐ There are three main rules to observe when handling context plumbing in Go: only entrypoint functions
 should create new contexts, contexts are only passed down the call chain,
 and don't store contexts or otherwise use them after the function returns.
-:::
 
-Context is one of the foundational building blocks in Go.
-Anyone with even a cursory experience with the language is likely to have encountered it,
-as it's the first argument passed to functions that accept contexts. I see the purpose of context as twofold:
 
-1. Provide a **[control-flow](https://en.wikipedia.org/wiki/Control_flow)** mechanism across API boundaries with signals.
+Context is one of the foundational building blocks in Go. Anyone with even a cursory experience with the language is likely to have encountered it, as it's the first argument passed to functions that accept contexts. I see the purpose of context as twofold:
+
+1. Provide a control-flow mechanism across API boundaries with signals.
 2. Carrying request-scoped data across API boundaries.
 
 ### A couple of rules of thumb to start
