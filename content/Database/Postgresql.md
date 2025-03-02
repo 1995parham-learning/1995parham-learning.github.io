@@ -59,3 +59,17 @@ DROP SCHEMA myschema CASCADE;
 The `SET TRANSACTION` command sets the characteristics of the current transaction. It has no effect on any subsequent transactions. `SET SESSION CHARACTERISTICS` sets the default transaction characteristics for subsequent transactions of a session. These defaults can be overridden by `SET TRANSACTION` for an individual transaction.
 
 The available transaction characteristics are the _transaction isolation level_, the _transaction access mode (read/write or read-only)_, and the _deferrable mode_.
+
+The isolation level of a transaction determines what data the transaction can see when other transactions are running concurrently:
+
+`READ COMMITTED`
+
+A statement can only see rows committed before it began. This is the default.
+
+`REPEATABLE READ`
+
+All statements of the current transaction can only see rows committed before the first query or data-modification statement was executed in this transaction.
+
+`SERIALIZABLE`
+
+All statements of the current transaction can only see rows committed before the first query or data-modification statement was executed in this transaction. If a pattern of reads and writes among concurrent serializable transactions would create a situation which could not have occurred for any serial (one-at-a-time) execution of those transactions, one of them will be rolled back with a `serialization_failure` error.
