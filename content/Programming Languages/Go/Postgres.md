@@ -113,6 +113,8 @@ if err != nil {
 fmt.Println(numbers) // => [1 2 3 4 5 6 7 8 9 10]
 ```
 
+`RowTo` is a simple generic function as well.
+
 ```go
 rows, - := conn.Query(ctx, "select generate_series(1, 10)")
 numbers, err := pgx.CollectRows(rows, pgx.RowTo[int32])
