@@ -63,5 +63,11 @@ pool, err := pgxpool.ConnectConfig(context.Background(), config)
 Acquire returns a connection (`*Conn`) from the Pool:
 
 ```go
-func (p *Pool) Acquire(ctx context.Context) (*Conn, error)
+func (p *pgxpool.Pool) Acquire(ctx context.Context) (*pgxpool.Conn, error)
+```
+
+Hijack assumes ownership of the connection from the pool. Caller is responsible for closing the connection. Hijack will panic if called on an already released or hijacked connection.
+
+```go
+func (c *Conn) Hijack() *pgx.Conn
 ```
