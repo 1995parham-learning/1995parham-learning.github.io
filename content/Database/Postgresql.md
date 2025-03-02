@@ -56,4 +56,6 @@ DROP SCHEMA myschema CASCADE;
 
 ## `SET TRANSACTION`
 
-set the characteristics of the current transaction
+The `SET TRANSACTION` command sets the characteristics of the current transaction. It has no effect on any subsequent transactions. `SET SESSION CHARACTERISTICS` sets the default transaction characteristics for subsequent transactions of a session. These defaults can be overridden by `SET TRANSACTION` for an individual transaction.
+
+The available transaction characteristics are the _transaction isolation level_, the _transaction access mode (read/write or read-only)_, and the _deferrable mode_.
