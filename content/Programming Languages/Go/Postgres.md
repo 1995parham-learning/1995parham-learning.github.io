@@ -95,3 +95,29 @@ func main () {
 
 	fmt.Println(n) // => 42
 ```
+
+```go
+rows, __ := conn. Query(ctx,
+
+"select generate
+
+_series(1, 10)")
+
+numbers, err := pgx. CollectRows(rows, func(row pgx. CollectableRow) (int32, error)
+
+var n int32
+
+err := row. Scan&n)
+
+return n, err
+
+})
+
+if err != nil {
+
+log. Fatal(err)
+
+}
+
+fmt. Println(numbers) // => [1 2 3 4 5 6 7 8 9 10]
+```
