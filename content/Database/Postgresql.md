@@ -76,4 +76,6 @@ All statements of the current transaction can only see rows committed before the
 
 All statements of the current transaction can only see rows committed before the first query or data-modification statement was executed in this transaction. If a pattern of reads and writes among concurrent serializable transactions would create a situation which could not have occurred for any serial (one-at-a-time) execution of those transactions, one of them will be rolled back with a `serialization_failure` error.
 
+### Transaction Access Mode
+
 The transaction access mode determines whether the transaction is read/write or read-only. Read/write is the default.
