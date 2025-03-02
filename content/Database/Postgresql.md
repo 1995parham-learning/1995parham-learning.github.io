@@ -123,3 +123,8 @@ The _Serializable_ isolation level provides the strictest transaction isolation.
 
 ## Table Partitioning
 
+Partitioning refers to splitting what is logically one large table into smaller physical pieces. Partitioning can provide several benefits:
+- _Query performance can be improved dramatically_ in certain situations, particularly when most of the heavily accessed rows of the table are in a single partition or a small number of partitions. Partitioning effectively substitutes for the upper tree levels of indexes, making it more likely that the heavily-used parts of the indexes fit in memory.
+- When queries or updates access a large percentage of a single partition, performance can be improved by using a sequential scan of that partition instead of using an index, which would require random-access reads scattered across the whole table.
+- Bulk loads and deletes can be accomplished by adding or removing partitions, if the usage pattern is accounted for in the partitioning design. Dropping an individual partition using `DROP TABLE`, or doing `ALTER TABLE DETACH PARTITION`, is far faster than a bulk operation. These commands also entirely avoid the `VACUUM` overhead caused by a bulk `DELETE`.
+- Seldom-used data can be migrated to cheaper and slower storage media.
