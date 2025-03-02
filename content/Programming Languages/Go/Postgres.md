@@ -40,6 +40,14 @@ if err != nil {
 }
 ```
 
+The primary way of establishing a connection is with `pgxpool.Connect`.
+
+```go
+pool, err := pgxpool.Connect(context.Background(), os.Getenv("DATABASE_URL"))
+```
+
+The database connection string can be in URL or DSN format. PostgreSQL settings, pgx settings, and pool settings can be specified here. In addition, a config struct can be created by `ParseConfig` and modified before establishing the connection with `ConnectConfig`.
+
 ```go
 config, err := pgxpool.ParseConfig(os.Getenv("DATABASE_URL"))
 if err != nil {
