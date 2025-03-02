@@ -24,7 +24,8 @@ The above query, check that all the tags in the given argument are exists in `ta
 
 ### pgx
 
-- `github.com/jackc/pgx/stdlib`: Package stdlib is the compatibility layer from pgx to database/sql.
+- `github.com/jackc/pgx/v4/stdlib`: Package stdlib is the compatibility layer from pgx to database/sql.
+- `github.com/jackc/pgx/v4/pgxpool`: Package pgxpool is a concurrency-safe connection pool for pgx. pgxpool implements a nearly identical interface to pgx connections.
 
 Query arguments are passed directly to the underlying pgx conn so there is no need to implement driver. Valuer if pgx already understands the type.
 
