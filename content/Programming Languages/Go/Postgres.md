@@ -71,3 +71,35 @@ Hijack assumes ownership of the connection from the pool. Caller is responsible 
 ```go
 func (c *Conn) Hijack() *pgx.Conn
 ```
+
+#### Basics
+
+- pgx is connection oriented.
+
+```go
+func main () {
+
+ctx := context .Background)
+
+conn, err := pgx. Cohnect(ctx, os. Getenv("DATABASE_URL" ))
+
+if err != nil i log. Fatal(err)
+
+defer conn. Close(ctx)
+
+var n int32
+
+err = conn.QueryRow(ctx, "select $1::int", 42). Scan (&n)
+
+if err != nil {
+
+log. Fatal(err)
+
+}
+
+fmt. Println(n) // => 42
+
+Jack Christensen
+
+}
+```
