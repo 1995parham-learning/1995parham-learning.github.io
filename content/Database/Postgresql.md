@@ -137,3 +137,7 @@ PostgreSQL offers built-in support for the following forms of partitioning:
 - **Hash Partitioning**: The table is partitioned by specifying a modulus and a remainder for each partition. Each partition will hold the rows for which the hash value of the partition key divided by the specified modulus will produce the specified remainder.
 
 PostgreSQL allows you to declare that a table is divided into partitions. The table that is divided is referred to as a _partitioned table_. The declaration includes the _partitioning method_ as described above, plus a list of columns or expressions to be used as the _partition key_.
+
+The partitioned table itself is a **virtual** table having no storage of its own. Instead, the storage belongs to _partitions_, which are otherwise-ordinary tables associated with the partitioned table. Each partition stores a subset of the data as defined by its _partition bounds_. All rows inserted into a partitioned table will be routed to the appropriate one of the partitions based on the values of the partition key column(s). Updating the partition key of a row will cause it to be moved into a different partition if it no longer satisfies the partition bounds of its original partition.
+
+### Examp
