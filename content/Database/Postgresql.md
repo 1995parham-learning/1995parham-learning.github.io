@@ -78,4 +78,4 @@ All statements of the current transaction can only see rows committed before the
 
 ### Transaction Access Mode
 
-The transaction access mode determines whether the transaction is read/write or read-only. Read/write is the default.
+The transaction access mode determines whether the transaction is _read/write_ or _read-only_. Read/write is the default.
