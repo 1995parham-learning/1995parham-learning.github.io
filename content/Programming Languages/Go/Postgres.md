@@ -21,3 +21,17 @@ The above query, check that all the tags in the given argument are exists in `ta
         3. Maintainers usually do not resolve reported issues.
         4. Community members are encouraged to help each other with reported issues.
     - For users that require new features or reliable resolution of reported bugs, we recommend using [pgx](https://github.com/jackc/pgx) which is under active development.
+
+### pgx
+
+Query arguments are passed directly to the underlying pgx conn so there is no need to implement driver. Valuer if pgx already understands the type.
+
+```go
+-, err = db. ExecContext(ctx, `insert into t (data) values ($1)`, []int32{1, 2, 3},)
+
+if err != nil {
+
+log. Fatal(err)
+
+}
+```
