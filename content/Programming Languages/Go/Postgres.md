@@ -83,24 +83,15 @@ func main () {
 
 	conn, err := pgx.Connect(ctx, os.Getenv("DATABASE_URL"))
 	if err != nil {
-		log. Fatal(err)
+		log.Fatal(err)
 	}
-
 	defer conn. Close(ctx)
 
 	var n int32
 
-err = conn.QueryRow(ctx, "select $1::int", 42). Scan (&n)
+	if err := conn.QueryRow(ctx, "select $1::int", 42).Scan(&n); err != nil {
+		log.Fatal(err)
+	}
 
-if err != nil {
-
-log. Fatal(err)
-
-}
-
-fmt. Println(n) // => 42
-
-Jack Christensen
-
-}
+	fmt.Println(n) // => 42
 ```
