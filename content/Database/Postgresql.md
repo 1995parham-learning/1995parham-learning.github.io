@@ -202,3 +202,17 @@ CREATE TABLE people (
     height_in numeric GENERATED ALWAYS AS (height_cm / 2.54) STORED
 );
 ```
+
+## `CREATE TABLE`
+
+### `GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( _`sequence_options`_ ) ]`
+
+This clause creates the column as an _identity column_. It will have an implicit sequence attached to it and in newly-inserted rows the column will automatically have values from the sequence assigned to it. Such a column is implicitly `NOT NULL`.
+
+The clauses `ALWAYS` and `BY DEFAULT` determine how explicitly user-specified values are handled in `INSERT` and `UPDATE` commands.
+
+In an `INSERT` command, if `ALWAYS` is selected, a user-specified value is only accepted if the `INSERT` statement specifies `OVERRIDING SYSTEM VALUE`. If `BY DEFAULT` is selected, then the user-specified value takes precedence. See [INSERT](https://www.postgresql.org/docs/17/sql-insert.html "INSERT") for details. (In the `COPY` command, user-specified values are always used regardless of this setting.)
+
+In an `UPDATE` command, if `ALWAYS` is selected, any update of the column to any value other than `DEFAULT` will be rejected. If `BY DEFAULT` is selected, the column can be updated normally. (There is no `OVERRIDING` clause for the `UPDATE` command.)
+
+The optional _`sequence_options`_ clause can be used to override the parameters of the sequence. The available options include those shown for [CREATE SEQUENCE](https://www.postgresql.org/docs/17/sql-createsequence.html "CREATE SEQUENCE"), plus ``SEQUENCE NAME _`name`_``, `LOGGED`, and `UNLOGGED`, which allow selection of the name and persistence level of the sequence. Without `SEQUENCE NAME`, the system chooses an unused name for the sequence. Without `LOGGED` or `UNLOGGED`, the sequence will have the same persistence level as the table.
