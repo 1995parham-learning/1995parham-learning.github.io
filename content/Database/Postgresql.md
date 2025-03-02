@@ -92,6 +92,6 @@ Table- and row-level locking facilities are also available in PostgreSQL for app
 The SQL standard defines four levels of transaction isolation. **The most strict is Serializable**, which is defined by the standard in a paragraph which says that any concurrent execution of a set of Serializable transactions is guaranteed to produce the same effect as running them one at a time in some order.
 
 - **dirty read**: A transaction reads data written by a concurrent uncommitted transaction.
-- **nonrepeatable read:A transaction re-reads data it has previously read and finds that data has been modified by another transaction (that committed since the initial read).
+- **nonrepeatable read**:A transaction re-reads data it has previously read and finds that data has been modified by another transaction (that committed since the initial read).
 - phantom read: A transaction re-executes a query returning a set of rows that satisfy a search condition and finds that the set of rows satisfying the condition has changed due to another recently-committed transaction.
 - serialization anomaly: The result of successfully committing a group of transactions is inconsistent with all possible orderings of running those transactions one at a time.
