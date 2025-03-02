@@ -440,10 +440,9 @@ Also, there is another official library for Streams in Golang:
 ## Context
 
 > [!note]
->⭐ There are three main rules to observe when handling context plumbing in Go: only entrypoint functions
-should create new contexts, contexts are only passed down the call chain,
-and don't store contexts or otherwise use them after the function returns.
-
+> ⭐ There are three main rules to observe when handling context plumbing in Go: only entrypoint functions
+> should create new contexts, contexts are only passed down the call chain,
+> and don't store contexts or otherwise use them after the function returns.
 
 Context is one of the foundational building blocks in Go. Anyone with even a cursory experience with the language is likely to have encountered it, as it's the first argument passed to functions that accept contexts. I see the purpose of context as twofold:
 
@@ -452,13 +451,9 @@ Context is one of the foundational building blocks in Go. Anyone with even a cur
 
 ### A couple of rules of thumb to start
 
-1. Only entry-point functions (the one at the top of a call chain) should create an empty context
-   (i.e., `context.Background()`). For example, `main()`, `TestXxx()`.
-   The HTTP library creates a custom context for each request,
-   which you should access and pass. Of course, mid-chain functions can create child contexts
-   to pass along if they need to share data or have flow control over the functions they call.
+1. Only entry-point functions (the one at the top of a call chain) should create an empty context (i.e., `context.Background()`). For example, `main()`, `TestXxx()`. The HTTP library creates a custom context for each request, which you should access and pass. Of course, mid-chain functions can create child contexts to pass along if they need to share data or have flow control over the functions they call.
 
-    ```go {4,5}
+    ```go
     // Create a new context.
     parent, cancelParent := context.WithCancel(context.Background())
     // Derive child contexts from parent.
@@ -466,14 +461,7 @@ Context is one of the foundational building blocks in Go. Anyone with even a cur
     childB, _ := context.WithDeadline(parent, time.Now().Add(1 * time.Minute)
     ```
 
-2. Contexts are (only) passed down the call chain.
-   If you're not in an entry-point function, and you need to call a function that takes a context,
-   your function should accept a context and pass that along.
-   But what if, for some reason, you can't currently get access to the context at the top of the chain?
-   In that case, use `context.TODO()`. This signals that the context is not yet available,
-   and further work is required. Perhaps maintainers of another library you depend on will need to extend their
-   functions to accept a context so that you, in turn, can pass it on. Of course,
-   a function should never be returning a context.
+2. Contexts are (only) passed down the call chain. If you're not in an entry-point function, and you need to call a function that takes a context, your function should accept a context and pass that along. But what if, for some reason, you can't currently get access to the context at the top of the chain? In that case, use `context.TODO()`. This signals that the context is not yet available, and further work is required. Perhaps maintainers of another library you depend on will need to extend their functions to accept a context so that you, in turn, can pass it on. Of course, a function should never be returning a context.
 
 ## `Rangefunc`
 
