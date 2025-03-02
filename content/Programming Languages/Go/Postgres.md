@@ -158,3 +158,8 @@ for _, user := range users {
 #### Nested Transactions
 
 Postgres doesn't have nested transactions, but `pgx` implements them through `SAVEPOINT`. But nested transactions can be especially useful in tests. It allows the test to be transactional (e.g. rolled back) while still testing transactional behavior.
+
+#### Batched Queries
+
+- Batches are implicitly transactional. If any query in the batch fails the entire batch is rolled back.
+- There are limits on the number of queries that can be batched together.
