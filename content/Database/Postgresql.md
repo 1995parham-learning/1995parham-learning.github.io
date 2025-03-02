@@ -116,3 +116,7 @@ _Read Committed_ is the default isolation level in PostgreSQL. When a transactio
 ### Repeatable Read
 
 The _Repeatable Read_ isolation level only sees data committed before the transaction began; it never sees either uncommitted data or changes committed by concurrent transactions during the transaction's execution. (However, each query does see the effects of previous updates executed within its own transaction, even though they are not yet committed.)
+
+### Serializable
+
+The _Serializable_ isolation level provides the strictest transaction isolation. This level emulates serial transaction execution for all committed transactions; as if transactions had been executed one after another, serially, rather than concurrently.
