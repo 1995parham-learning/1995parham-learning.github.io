@@ -60,7 +60,8 @@ config.AfterConnect = func(ctx context.Context, conn *pgx.Conn) error {
 pool, err := pgxpool.ConnectConfig(context.Background(), config)
 ```
 
-
+Acquire returns a connection (`*Conn`) from the Pool:
 
 ```go
+func (p *Pool) Acquire(ctx context.Context) (*Conn, error)
 ```
