@@ -60,6 +60,8 @@ The `SET TRANSACTION` command sets the characteristics of the current transactio
 
 The available transaction characteristics are the _transaction isolation level_, the _transaction access mode (read/write or read-only)_, and the _deferrable mode_.
 
+### Transaction Isolation Level
+
 The isolation level of a transaction determines what data the transaction can see when other transactions are running concurrently:
 
 `READ COMMITTED`
@@ -73,3 +75,5 @@ All statements of the current transaction can only see rows committed before the
 `SERIALIZABLE`
 
 All statements of the current transaction can only see rows committed before the first query or data-modification statement was executed in this transaction. If a pattern of reads and writes among concurrent serializable transactions would create a situation which could not have occurred for any serial (one-at-a-time) execution of those transactions, one of them will be rolled back with a `serialization_failure` error.
+
+The transaction access mode determines whether the transaction is read/write or read-only. Read/write is the default.
