@@ -7,3 +7,5 @@ db.Where("tags @> ?", pq.Array([]string{"t1"}))
 ```
 
 The above query, check that all the tags in the given argument are exists in `tags` field.
+
+- [jackc/pgx](https://github.com/jackc/pgx): pgx is a pure Go driver and toolkit for PostgreSQL.
