@@ -166,5 +166,4 @@ To use declarative partitioning in this case, use the following steps:
 	```
 2. Create partitions. Each partition's definition must specify bounds that correspond to the partitioning method and partition key of the parent. Note that specifying bounds such that the new partition's values would overlap with those in one or more existing partitions will cause an error.
 	Partitions thus created are in every way normal PostgreSQL tables (or, possibly, foreign tables). It is possible to specify a tablespace and storage parameters for each partition separately.
-
-For our example, each partition should hold one month's worth of data, to match the requirement of deleting one month's data at a time. So the commands might look like:
+	For our example, each partition should hold one month's worth of data, to match the requirement of deleting one month's data at a time. So the commands might look like:
