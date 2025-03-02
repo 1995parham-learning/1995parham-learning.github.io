@@ -157,4 +157,4 @@ for _, user := range users {
 
 #### Nested Transactions
 
-Postgres doesn't have nested transactions, but `pgx` implements them through `SAVEPOINT`.
+Postgres doesn't have nested transactions, but `pgx` implements them through `SAVEPOINT`. But nested transactions can be especially useful in tests. It allows the test to be transactional (e.g. rolled back) while still testing transactional behavior.
