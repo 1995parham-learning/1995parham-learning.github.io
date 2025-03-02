@@ -59,3 +59,8 @@ config.AfterConnect = func(ctx context.Context, conn *pgx.Conn) error {
 
 pool, err := pgxpool.ConnectConfig(context.Background(), config)
 ```
+
+
+
+```go
+```
