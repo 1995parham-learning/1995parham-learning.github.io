@@ -82,4 +82,4 @@ The transaction access mode determines whether the transaction is _read/write_ o
 
 ## Concurrency Control
 
-PostgreSQL provides a rich set of tools for developers to manage concurrent access to data. Internally, data consistency is maintained by using a multiversion model (Multiversion Concurrency Control, MVCC).
+PostgreSQL provides a rich set of tools for developers to manage concurrent access to data. Internally, data consistency is maintained by using a multiversion model (Multiversion Concurrency Control, MVCC). This means that each SQL statement sees a snapshot of data (a _database version_) as it was some time ago, regardless of the current state of the underlying data.
