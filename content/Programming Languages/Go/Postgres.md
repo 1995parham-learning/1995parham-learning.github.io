@@ -13,7 +13,7 @@ The above query, check that all the tags in the given argument are exists in `ta
 ## Libraries
 
 - [jackc/pgx](https://github.com/jackc/pgx): pgx is a pure Go driver and toolkit for PostgreSQL.
-	- The pgx driver is a low-level, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface.
+    - The pgx driver is a low-level, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface.
 - [lib/pq](https://github.com/lib/pq): # A pure Go postgres driver for Go's database/sql package
     - This package is currently in maintenance mode, which means:
         1. It generally does not accept new features.
