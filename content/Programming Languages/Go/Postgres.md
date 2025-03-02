@@ -96,13 +96,13 @@ func main () {
 	fmt.Println(n) // => 42
 ```
 
-`CollectRows` is a generic function that takes a generic RowToFunc [T].
+`CollectRows` is a generic function that takes a generic `RowToFunc[T]`.
 
 ```go
-rows, __ := conn. Query(ctx, "select generate_series(1, 10)")
-numbers, err := pgx.CollectRows(rows, func(row pgx. CollectableRow) (int32, error) {
+rows, _ := conn.Query(ctx, "select generate_series(1, 10)")
+numbers, err := pgx.CollectRows(rows, func(row pgx.CollectableRow) (int32, error) {
 	var n int32
-	err := row. Scan&n)
+	err := row.Scan&n)
 	return n, err
 })
 
