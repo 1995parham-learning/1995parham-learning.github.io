@@ -27,11 +27,12 @@ The above query, check that all the tags in the given argument are exists in `ta
 Query arguments are passed directly to the underlying pgx conn so there is no need to implement driver. Valuer if pgx already understands the type.
 
 ```go
--, err = db. ExecContext(ctx, `insert into t (data) values ($1)`, []int32{1, 2, 3},)
+_, err = db. ExecContext(ctx,
+	`insert into t (data) values ($1)`,
+	[]int32{1, 2, 3},
+)
 
 if err != nil {
-
-log. Fatal(err)
-
+	log. Fatal(err)
 }
 ```
