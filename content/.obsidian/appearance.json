@@ -8,5 +8,6 @@
   "textFontFamily": "",
   "cssTheme": "Cupertino",
   "translucency": true,
-  "nativeMenus": false
+  "nativeMenus": false,
+  "theme": "obsidian"
 }
