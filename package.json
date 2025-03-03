@@ -95,7 +95,7 @@
         "husky": "^9.1.7",
         "prettier": "^4.0.0-alpha.11",
         "tsx": "^4.19.3",
-        "typescript": "^5.9.0-dev.20250302"
+        "typescript": "^5.9.0-dev.20250303"
     },
     "overrides": {
         "rehype-pretty-code": {
