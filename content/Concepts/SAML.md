@@ -33,3 +33,18 @@ There are two different sign-in flows for which SAML can handle authentication. 
 The second flow is known as an _IdP-initiated flow_. This occurs when the user logs into Okta (or launches Okta Mobile) and launches the SP application by clicking its chiclet from their Okta home page. If the user has an account on the SP side, they will be authenticated as a user of the application and will generally be delivered to its default landing page (their actual destination within the SP's site is customizable). If they do NOT currently have an account on the SP side, in some cases, SAML can create the user's account immediately in a process known as Just In Time Provisioning (JIT).
 
 ![[Pasted image 20250303062254.png]]
+
+SAML Flow diagram provided by Google
+
+1. The user (e.g. `john@MyBusiness.com`) navigates to the SP’s login page and begins to log in. Some SPs offer a link to "sign in using SSO" on the login page, whereas others can be configured to utilize SAML for all sign-on requests made from usernames with a particular domain (e.g. `http://MyBusiness.com`). SPs that utilize custom login pages (e.g. [https://MyCompany.Dropbox.com](https://MyCompany.Dropbox.com)) can often be configured to utilize SAML for ALL login attempts.
+2. The SP generates a SAML request and redirects the user to the **Okta Single Sign-On URL** endpoint with the request embedded. This endpoint is unique for each application within each Okta tenant.
+    
+3. Once the user is redirected to Okta they’ll need to enter their Okta credentials, unless they had already authenticated into Okta in a previous session within the same browser. In either case, a successful authentication request will redirect the user back to the SP’s **Assertion Consumer Service (ACS)** URL with an embedded SAML response from Okta. At a minimum, the response will:
+    
+    1. Indicate that it is indeed from Okta and hasn’t been altered, and contains a digital signature proving such. This signature will be verified by the SP using a public key from Okta that was previously uploaded to the SP as a certificate.
+        
+    2. Indicate that the user has authenticated successfully into Okta
+        
+    3. Indicate who the user is via the **NameID**, a standard attribute used in SAML assertions.
+        
+4. After the SP’s ACS successfully parses the assertion, the user will be sent to the SP’s **default relay state**, which is usually the same page they’d wind up if they’d simply logged into the SP with a username and password. As SPs such as G Suite and Office 365 host several different services, the default relay state will help dictate which specific service to send them to (for example, directly to Outlook Webmail instead of Office 365’s main landing page).
