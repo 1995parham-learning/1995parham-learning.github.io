@@ -1,8 +1,1 @@
-As I said there are mainly two types of applications developed by Golang.
-In the terminal applications, it is better to use [pterm](https://pterm.sh) to show the logs and other information
-instead of simply printing them.
-In case of the server applications, [zap](https://github.com/uber-go/zap) is a better choice because it has structure logging,
-and you can also write the logs on console and syslog at the same time.
-
-Structure logging increase the search efficiency for when you want to search among your
-logs on your log aggregation system.
+Golang developers commonly create two primary types of applications. For command-line tools, leveraging [pterm](https://pterm.sh) offers a richer user experience with formatted logs and information, surpassing simple print statements. When building server-side applications, [zap](https://github.com/uber-go/zap) is a superior choice, featuring structured logging. This allows for concurrent log output to both the console and syslog, which is crucial for operational monitoring. Notably, structured logging greatly enhances the speed and accuracy of log searches within log aggregation platforms.
