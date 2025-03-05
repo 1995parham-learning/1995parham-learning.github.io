@@ -230,17 +230,6 @@ You can control to use `cgo` with `CGO_ENABLED` flag in go build. There are diff
 - [`musl`](https://musl.libc.org/)
 - [Microsoft C Runtime Library](https://learn.microsoft.com/en-us/cpp/c-runtime-library/c-run-time-library-reference?view=msvc-170)
 
-## Logging
-
-As I said there are mainly two types of applications developed by Golang.
-In the terminal applications, it is better to use [pterm](https://pterm.sh) to show the logs and other information
-instead of simply printing them.
-In case of the server applications, [zap](https://github.com/uber-go/zap) is a better choice because it has structure logging,
-and you can also write the logs on console and syslog at the same time.
-
-Structure logging increase the search efficiency for when you want to search among your
-logs on your log aggregation system.
-
 ## Observability
 
 Observability lets us understand a system from the outside, by letting us ask questions
