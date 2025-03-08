@@ -9,6 +9,16 @@ Distributed systems often require data and system updates to happen as quickly a
 
 In an event-driven architecture, all actions are defined and packaged as events to precisely identify individual actions and how they’re processed throughout the system. Instead of processing updates in consecutive order, event-driven architecture lets components process events at their own pace. This helps developers build fast and scalable systems.
 
+### What is Redpanda?
+
+Redpanda is an event streaming platform: it provides the infrastructure for streaming real-time data.
+
+Producers are client applications that send data to Redpanda in the form of events. Redpanda safely stores these events in sequence and organizes them into topics, which represent a replayable log of changes in the system.
+
+Consumers are client applications that subscribe to Redpanda topics to asynchronously read events. Consumers can store, process, or react to the events.
+
+Redpanda decouples producers from consumers to allow for asynchronous event processing, event tracking, event manipulation, and event archiving. Producers and consumers interact with Redpanda using the Apache Kafka® API.
+
 ## Redpanda CLI
 
 > The rpk stands for **Redpanda Keeper** —like the person who takes care of actual red pandas at a zoo, except in this case, you’re taking care of Redpanda clusters. In a nutshell, `rpk` consolidates all Redpanda's cluster management tasks into a single command-line interface so you can easily set up, configure, and manage your Redpanda clusters.
