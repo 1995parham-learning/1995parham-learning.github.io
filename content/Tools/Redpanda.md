@@ -19,6 +19,10 @@ Consumers are client applications that subscribe to Redpanda topics to asynchron
 
 Redpanda decouples producers from consumers to allow for asynchronous event processing, event tracking, event manipulation, and event archiving. Producers and consumers interact with Redpanda using the Apache Kafka API.
 
+|Event-driven architecture (Redpanda)| Message-driven architecture                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|Producers send events to an event processing system (Redpanda) that acknowledges receipt of the write. This guarantees that the write is durable within the system and can be read by multiple consumers.| Producers send messages directly to each consumer. The producer must wait for acknowledgement that the consumer received the message before it can continue with its processes. |
+
 ## Redpanda CLI
 
 > The rpk stands for **Redpanda Keeper** —like the person who takes care of actual red pandas at a zoo, except in this case, you’re taking care of Redpanda clusters. In a nutshell, `rpk` consolidates all Redpanda's cluster management tasks into a single command-line interface so you can easily set up, configure, and manage your Redpanda clusters.
