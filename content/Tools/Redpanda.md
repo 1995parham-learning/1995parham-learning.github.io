@@ -37,3 +37,9 @@ Event streaming lets you extract value out of each event by analyzing, mining, o
 ### Introduction to rpk
 
 The `rpk` command line interface tool is designed to manage your entire Redpanda cluster, **without the need to run a separate script for each function, as with Apache Kafka**. The `rpk` commands handle everything from configuring brokers to high-level general Redpanda tasks. For example, you can use `rpk` to monitor your cluster’s health, perform tuning, and implement access control lists (ACLs) and other security features. You can also use `rpk` to perform basic streaming tasks, such as creating topics, producing to topics, and consuming from topics.
+
+After you install `rpk`, you can use it to:
+
+- Manage Redpanda
+- Set up access control lists (ACLs) and other security features
+- Create topics, produce to topics, and consume from topics
