@@ -13,3 +13,4 @@ In an event-driven architecture, all actions are defined and packaged as events 
 
 ### Introduction to rpk
 
+The `rpk` command line interface tool is designed to manage your entire Redpanda cluster, **without the need to run a separate script for each function, as with Apache Kafka**.
