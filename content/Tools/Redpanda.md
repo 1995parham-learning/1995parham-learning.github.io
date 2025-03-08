@@ -22,6 +22,7 @@ Redpanda decouples producers from consumers to allow for asynchronous event proc
 | Event-driven architecture (Redpanda)                                                                                                                                                                      | Message-driven architecture                                                                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Producers send events to an event processing system (Redpanda) that acknowledges receipt of the write. This guarantees that the write is durable within the system and can be read by multiple consumers. | Producers send messages directly to each consumer. The producer must wait for acknowledgement that the consumer received the message before it can continue with its processes. |
+
 Event streaming lets you extract value out of each event by analyzing, mining, or transforming it for insights. You can:
 
 - Take one event and consume it in multiple ways.
