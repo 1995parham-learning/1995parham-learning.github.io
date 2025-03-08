@@ -11,6 +11,8 @@ In an event-driven architecture, all actions are defined and packaged as events 
 
 ## Redpanda CLI
 
+>The rpk stands for **Redpanda Keeper** —like the person who takes care of actual red pandas at a zoo, except in this case, you’re taking care of Redpanda clusters. In a nutshell, `rpk` consolidates all Redpanda's cluster management tasks into a single command-line interface so you can easily set up, configure, and manage your Redpanda clusters.
+
 ### Introduction to rpk
 
 The `rpk` command line interface tool is designed to manage your entire Redpanda cluster, **without the need to run a separate script for each function, as with Apache Kafka**.
