@@ -91,11 +91,11 @@
         "@types/source-map-support": "^0.5.10",
         "@types/ws": "^8.18.0",
         "@types/yargs": "^17.0.33",
-        "esbuild": "^0.25.0",
+        "esbuild": "^0.25.1",
         "husky": "^9.1.7",
         "prettier": "^4.0.0-alpha.12",
         "tsx": "^4.19.3",
-        "typescript": "^5.9.0-dev.20250307"
+        "typescript": "^5.9.0-dev.20250309"
     },
     "overrides": {
         "rehype-pretty-code": {
