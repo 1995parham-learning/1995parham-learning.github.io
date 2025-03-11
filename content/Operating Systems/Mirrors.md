@@ -1,8 +1,3 @@
----
-title: Mirrors
-icon: noto:mirror
----
-
 One of the main issues in our country is finding the best mirror for removing sanctions.
 
 - Debian: [https://www.debian.org/mirror/](https://www.debian.org/mirror/)
