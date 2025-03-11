@@ -70,7 +70,7 @@
         "rfdc": "^1.4.1",
         "rimraf": "^6.0.1",
         "serve-handler": "^6.1.6",
-        "shiki": "^3.1.0",
+        "shiki": "^3.2.1",
         "source-map-support": "^0.5.21",
         "to-vfile": "^8.0.0",
         "toml": "^3.0.0",
@@ -95,11 +95,11 @@
         "husky": "^9.1.7",
         "prettier": "^4.0.0-alpha.12",
         "tsx": "^4.19.3",
-        "typescript": "^5.9.0-dev.20250310"
+        "typescript": "^5.9.0-dev.20250311"
     },
     "overrides": {
         "rehype-pretty-code": {
-            "shiki": "^3.1.0"
+            "shiki": "^3.2.1"
         }
     }
 }
