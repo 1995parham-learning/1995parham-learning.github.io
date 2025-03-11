@@ -1,17 +1,12 @@
-Operating system is in charge of making sure the system operates correctly and efficiently in an easy-to-use manner.
-The primary way the OS does this is through a general technique that we call virtualization.
-That is, the OS takes a physical resource (such as the processor, or memory, or a disk) and transform
-it into a more general, powerful, and easy-to-use virtual form of itself.
+Operating system is in charge of making sure the system operates correctly and efficiently in an easy-to-use manner. The primary way the OS does this is through a general technique that we call virtualization. That is, the OS takes a physical resource (such as the processor, or memory, or a disk) and transform it into a more general, powerful, and easy-to-use virtual form of itself.
 
-Turning a single CPU (or a small set of them) into a seemingly infinite number of CPUs and thus allowing
-many programs to seemingly run at once is what we call virtualizing the CPU.
+Turning a single CPU (or a small set of them) into a seemingly infinite number of CPUs and thus allowing many programs to seemingly run at once is what we call virtualizing the CPU.
 
 ## Process
 
 Process is the **running program**. The program itself is a lifeless thing: it just sits there on the disk, a bunch of instructions (and maybe some static data), waiting to spring into action.
 
-**Time-sharing** is a basic technique used by an OS to share a resource.
-By allowing the resource to be used for a little while by one entity, and
+**Time-sharing** is a basic technique used by an OS to share a resource. By allowing the resource to be used for a little while by one entity, and
 then a little while by another, and so forth, the resource in question (e.g., the
 CPU, or a network link) can be shared by many.
 The counterpart of time-sharing is **space sharing**, where a resource is divided (in space)
