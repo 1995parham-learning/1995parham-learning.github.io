@@ -9,8 +9,7 @@
         "format": "npx prettier . --write",
         "test": "tsx ./quartz/util/path.test.ts && tsx ./quartz/depgraph.test.ts",
         "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-        "prepare": "husky",
-        "postinstall": "patch-package"
+        "prepare": "husky"
     },
     "engines": {
         "npm": ">=9.3.1",
@@ -44,7 +43,6 @@
         "mdast-util-to-hast": "^13.2.0",
         "mdast-util-to-string": "^4.0.0",
         "micromorph": "^0.4.5",
-        "patch-package": "^8.0.0",
         "pixi.js": "^8.8.1",
         "preact": "^10.26.4",
         "preact-render-to-string": "^6.5.13",
