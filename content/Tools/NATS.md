@@ -1,9 +1,9 @@
 ![[GjHgquTWMA051kn.png]]
 
-To preserve order between messages in NATS you need to use pending ack equals to 1 which prevents server from sending multiple messages at the same time.
+To ensure message order in NATS, set the **pending acknowledgment limit** to **1**. This prevents the server from dispatching multiple messages concurrently, ensuring that messages are processed sequentially by the consumer
 
-You can actually use ephemeral consumer to run a sql query over your NATS cluster. Remember to change request batch number to get as much as message you can.
+You can utilize an **ephemeral consumer** to perform a SQL-like query over your NATS cluster. To maximize the number of messages retrieved in a single request, adjust the **request batch size** parameter accordingly. This allows efficient data retrieval without creating persistent consumers.
 
-DeliverLast or DeliverLastPerSubject can be useful actually for using nats as you database.
+The **DeliverLast** and **DeliverLastPerSubject** delivery policies can be useful when treating NATS as a lightweight database. These options ensure that consumers receive the most recent message for a subject or per subject group, making it suitable for event-driven state retrieval.
 
 Using direct get and its batch version you can actually do it without a consumer even.
