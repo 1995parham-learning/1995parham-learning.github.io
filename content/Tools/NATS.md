@@ -9,4 +9,4 @@ You can utilize an **ephemeral consumer** to perform a SQL-like query over your 
 
 The **DeliverLast** and **DeliverLastPerSubject** delivery policies can be useful when treating NATS as a lightweight database. These options ensure that consumers receive the most recent message for a subject or per subject group, making it suitable for event-driven state retrieval.
 
-Using direct get and its batch version you can actually do it without a consumer even.
+With the **Direct Get** API and its batch variant, you can retrieve messages directly from NATS JetStream **without needing a consumer**. This provides an efficient way to query stored messages on demand, reducing consumer overhead in scenarios requiring ad-hoc data access.
