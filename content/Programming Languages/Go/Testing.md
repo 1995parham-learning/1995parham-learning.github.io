@@ -1,80 +1,184 @@
 ## GoConvey
 
-Welcome to GoConvey, a yummy testing tool for gophers.
+### Using GoConvey for Testing in Go
 
-- [Documentation & tutorial](https://github.com/smartystreets/goconvey/wiki/Documentation)
+[GoConvey](https://github.com/smartystreets/goconvey) is a testing framework for Go that provides a readable DSL for writing test cases with nested structures and web UI support for test execution. It builds on Go’s standard `testing` package while making test outputs more structured and human-readable.
 
-### Main Features
+---
 
-- Integrates with `go test`
-- Readable, colorized console output
-- Fully-automatic web UI
-- Huge suite of regression tests
-- Test code generator
+### Installation
 
-View a [comprehensive table of all features](https://github.com/smartystreets/goconvey/wiki/Features-Table) compared to other Go testing tools.
+You can install GoConvey using:
 
-### Get going in 25 seconds
-
-1. In your terminal:
-
-```shell
-# make sure your GOPATH is set
-
-cd <project path>
+```sh
 go get github.com/smartystreets/goconvey
-go install github.com/smartystreets/goconvey
-$GOPATH/bin/goconvey
 ```
 
-2. In your browser:
+---
 
-```shell
-http://localhost:8080
-```
+### Hands-on Example: Testing a Function with GoConvey
 
-If you have existing Go tests, they will run automatically and the results will appear in your browser.
+#### 1. Create a Function to Test
 
-### Your first GoConvey test
-
-Open any `_test.go` file and put this in it, customizing your package declaration:
+We'll write a simple function that adds two integers:
 
 ```go
-package package_name
+package mathutils
 
-import (
-	"testing"
-	. "github.com/smartystreets/goconvey/convey"
-)
-
-func TestIntegerStuff(t *testing.T) {
-	Convey("Given some integer with a starting value", t, func() {
-		x := 1
-
-		Convey("When the integer is incremented", func() {
-			x++
-
-			Convey("The value should be greater by one", func() {
-				So(x, ShouldEqual, 2)
-			})
-		})
-	})
+func Add(a, b int) int {
+    return a + b
 }
 ```
 
-Save the file, then glance over at your browser window, and you'll see that the new tests have already been run.
+#### 2. Write a GoConvey Test
 
-Change the assertion (the line with `So()`) to make the test fail, then see the output change in your browser.
+Create a test file (`mathutils_test.go`) in the same package:
 
-You can also run tests from the terminal as usual, with `go test`. If you want the tests to run automatically in the terminal, check out [the auto-test script](https://github.com/smartystreets/goconvey/wiki/Auto-test).
+```go
+package mathutils
 
-### Required Reading
+import (
+    "testing"
 
-If I could ensure that every GoConvey user read only one bit of code from this repository it would be the [isolated execution tests](https://github.com/smartystreets/goconvey/blob/master/convey/isolated_execution_test.go). Those tests are the very best documentation for the GoConvey execution model.
+    . "github.com/smartystreets/goconvey/convey"
+)
 
-### Full Documentation
+func TestAdd(t *testing.T) {
+    Convey("Given two numbers", t, func() {
+        a, b := 3, 5
 
-See the [documentation index](https://github.com/smartystreets/goconvey/wiki/Documentation) for details about assertions, writing tests, execution, etc.
+        Convey("When they are added", func() {
+            result := Add(a, b)
+
+            Convey("Then the result should be their sum", func() {
+                So(result, ShouldEqual, 8)
+            })
+        })
+    })
+}
+```
+
+#### 3. Run the Tests
+
+To execute tests, use:
+
+```sh
+go test ./...
+```
+
+Or to use the GoConvey web UI, navigate to your project directory and run:
+
+```sh
+$GOPATH/bin/goconvey
+```
+
+Then open `http://localhost:8080` in a browser.
+
+### Key Features of GoConvey in the Example
+
+1. `Convey(description, t, func())` – Defines a test case with a clear description.
+2. **Nested `Convey` blocks** – Allows structuring tests hierarchically.
+3. `So(value, assertion, expected)` – Asserts conditions (`ShouldEqual`, `ShouldBeNil`, etc.).
+4. **Readable output** – GoConvey enhances readability by showing structured test outputs.
+
+---
+### Key Features of GoConvey
+
+#### Nested Test Cases
+
+GoConvey supports **hierarchical test structures**, making tests easier to read and maintain:
+
+```go
+func TestMathOperations(t *testing.T) {
+    Convey("Given a set of numbers", t, func() {
+        a, b := 10, 20
+
+        Convey("When adding them", func() {
+            result := Add(a, b)
+
+            Convey("Then the result should be correct", func() {
+                So(result, ShouldEqual, 30)
+            })
+        })
+
+        Convey("When subtracting them", func() {
+            result := a - b
+
+            Convey("Then the result should be correct", func() {
+                So(result, ShouldEqual, -10)
+            })
+        })
+    })
+}
+```
+
+This structure ensures **grouping of related tests** under a common setup.
+
+#### Assertions (`So` Function)
+
+GoConvey provides **rich assertions** using the `So` function:
+
+| Assertion        | Description                                  | Example                              |
+| ---------------- | -------------------------------------------- | ------------------------------------ |
+| `ShouldEqual`    | Checks if values are equal                   | `So(x, ShouldEqual, 5)`              |
+| `ShouldNotEqual` | Checks if values are not equal               | `So(x, ShouldNotEqual, 10)`          |
+| `ShouldBeNil`    | Checks if value is `nil`                     | `So(err, ShouldBeNil)`               |
+| `ShouldNotBeNil` | Checks if value is **not** `nil`             | `So(obj, ShouldNotBeNil)`            |
+| `ShouldBeTrue`   | Checks if value is `true`                    | `So(flag, ShouldBeTrue)`             |
+| `ShouldBeFalse`  | Checks if value is `false`                   | `So(flag, ShouldBeFalse)`            |
+| `ShouldContain`  | Checks if a slice or string contains a value | `So([]int{1,2,3}, ShouldContain, 2)` |
+| `ShouldResemble` | Deep comparison of slices, structs, maps     | `So(slice1, ShouldResemble, slice2)` |
+
+Example:
+
+```go
+So(5, ShouldEqual, 5)         // Pass
+So(10, ShouldNotEqual, 5)     // Pass
+So(nil, ShouldBeNil)          // Pass
+So([]int{1, 2, 3}, ShouldContain, 2) // Pass
+```
+
+#### Table-Driven Testing with GoConvey
+
+For repetitive tests, GoConvey can be used in a **table-driven** manner.
+
+```go
+func TestAddMultipleCases(t *testing.T) {
+    testCases := []struct {
+        a, b     int
+        expected int
+    }{
+        {1, 2, 3},
+        {5, 5, 10},
+        {10, -10, 0},
+    }
+
+    Convey("Testing Add function with multiple cases", t, func() {
+        for _, tc := range testCases {
+            Convey("Adding two numbers", func() {
+                So(Add(tc.a, tc.b), ShouldEqual, tc.expected)
+            })
+        }
+    })
+}
+```
+
+#### Handling Edge Cases and Error Conditions
+
+Let's modify our function to return an error if inputs are negative:
+
+```go
+package mathutils
+
+import "errors"
+
+func SafeAdd(a, b int) (int, error) {
+    if a < 0 || b < 0 {
+        return 0, errors.New("negative numbers not allowed")
+    }
+    return a + b, nil
+}
+```
 
 ## testify
 
