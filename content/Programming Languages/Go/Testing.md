@@ -181,6 +181,33 @@ func SafeAdd(a, b int) (int, error) {
 }
 ```
 
+Now, let's test it:
+
+```go
+func TestSafeAdd(t *testing.T) {
+    Convey("Given two numbers", t, func() {
+        Convey("When both are positive", func() {
+            result, err := SafeAdd(3, 5)
+
+            Convey("Then it should return their sum without error", func() {
+                So(result, ShouldEqual, 8)
+                So(err, ShouldBeNil)
+            })
+        })
+
+        Convey("When one is negative", func() {
+            result, err := SafeAdd(-3, 5)
+
+            Convey("Then it should return an error", func() {
+                So(result, ShouldEqual, 0)
+                So(err, ShouldNotBeNil)
+                So(err.Error(), ShouldEqual, "negative numbers not allowed")
+            })
+        })
+    })
+}
+```
+
 ## testify
 
 > Testify is being maintained at v1, no breaking changes will be accepted in this repo.
