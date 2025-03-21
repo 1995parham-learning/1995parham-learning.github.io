@@ -34,18 +34,16 @@ Here's a breakdown of how Go testing works and why it's so useful:
     This command will find all files ending with `_test.go` in the current directory and its subdirectories, compile them, and run the test functions within them.
 
     - You can test specific packages or files:
-        Bash
-        ```
+        ```bash
         go test ./mypackage
         go test my_module_test.go
         ```
     - You can see more verbose output using the `-v` flag:
-        Bash
-        ```
+        ```bash
         go test -v
         ```
 
-**Why Go Testing is Useful:**
+## Why Go Testing is Useful
 
 1. **Ensures Code Correctness:** The primary benefit of testing is to verify that your code works as intended. By writing tests, you can catch bugs and errors early in the development process, before they make it into production.5
 2. **Facilitates Refactoring:** When you need to modify or refactor your code, having a comprehensive suite of tests gives you confidence that your changes haven't introduced new issues.6 If the tests still pass after refactoring, it's a strong indication that the functionality remains intact.
@@ -55,4 +53,4 @@ Here's a breakdown of how Go testing works and why it's so useful:
 6. **Supports Continuous Integration and Continuous Deployment (CI/CD):** Automated testing is a fundamental part of CI/CD pipelines.10 Tests are run automatically whenever code changes are made, ensuring that any regressions are caught immediately.
 7. **Increases Confidence:** Both developers and stakeholders gain more confidence in the quality and reliability of the software when it is thoroughly tested.11
 
-**In summary, Go testing provides a simple yet powerful framework for ensuring the quality and correctness of your Go code. Its built-in nature, clear conventions, and efficient execution make it an essential practice for any serious Go developer.**
+In summary, Go testing provides a simple yet powerful framework for ensuring the quality and correctness of your Go code. Its built-in nature, clear conventions, and efficient execution make it an essential practice for any serious Go developer.
