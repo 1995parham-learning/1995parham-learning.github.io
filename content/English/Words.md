@@ -98,6 +98,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | pad (n)                      | the place where sb lives, especially a flat/apartment                                                                                                                        |
 | parcel (n)                   | an area of land                                                                                                                                                              |
 | parcel (n)                   | an object or collection of objects wrapped in paper, especially so that it can be sent by post                                                                               |
+| pavilion (n)                 | a temporary building or tent which is used for public entertainment or exhibitions and is often large with a lot of space and light                                          |
 | pension (n)                  | an amount of money paid regularly by a government or company to sb who is considered to be too old or too ill/sick to work                                                   |
 | perpendicular (adj)(n)       | (technical) forming an angle of 90° with another line or surface                                                                                                             |
 | perseverance (n)             | the quality of continuing to try to achieve a particular aim despite difficulties                                                                                            |
