@@ -171,12 +171,12 @@ One of the best sources for gathering the description for words is [Cambridge Di
 - I'm in my early 30s.
 - I'm in my mid 40s.
 - 1930s :: a decade; a period of 10 years
-  #know
+  ### Know
 - I've known him for a long time [How long have you known him?]
-  \*\*\* recognize
+  ### recognize
 - Don't you recognize me
-  \*\*\* swole
+  ### swole
 - If you're swole you'll look good in anything
-  \*\* Synonyms
+  ### Synonyms
 - keen on / fund of / into / eager about / interested in
 - indecisive / hesitant / doubtful / uncertain
