@@ -170,7 +170,9 @@ One of the best sources for gathering the description for words is [Cambridge Di
 - I'm in my late 20s.
 - I'm in my early 30s.
 - I'm in my mid 40s.
-- 1930s :: a decade; a period of 10 years
+### 1930s
+
+- a decade; a period of 10 years
 
 ### Know
 
