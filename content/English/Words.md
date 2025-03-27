@@ -74,6 +74,7 @@ One of the best sources for gathering the description for words is [Cambridge Di
 | imitation (n)                | made to look like something else:                                                                                                                                            |
 | immigrant (n)                | a person who has come to live permanently in a country that is not their own                                                                                                 |
 | impulsive (adj)              | impatient                                                                                                                                                                    |
+| incense (n)                  | incense is an aromatic biotic material that releases fragrant smoke when burnt. the term is used for either the material or the aroma.                                       |
 | inclined (adj)               | tending to do sth; likely to do sth                                                                                                                                          |
 | inhibitor (n)                | a substance which delays or prevents a chemical reaction                                                                                                                     |
 | insatiable (adj)             | always wanting more of sth; not able to be satisfied                                                                                                                         |
