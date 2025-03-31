@@ -51,7 +51,7 @@
         "quartz-laf-js": "^4.3.2",
         "reading-time": "^2.0.0-1",
         "rehype-autolink-headings": "^7.1.0",
-        "rehype-citation": "^2.2.2",
+        "rehype-citation": "^2.3.0",
         "rehype-katex": "^7.0.1",
         "rehype-mathjax": "^7.1.0",
         "rehype-pretty-code": "^0.14.1",
