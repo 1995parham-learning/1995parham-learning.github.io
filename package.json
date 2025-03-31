@@ -89,7 +89,7 @@
         "@types/source-map-support": "^0.5.10",
         "@types/ws": "^8.18.0",
         "@types/yargs": "^17.0.33",
-        "esbuild": "^0.25.1",
+        "esbuild": "^0.25.2",
         "husky": "^9.1.7",
         "prettier": "^4.0.0-alpha.12",
         "tsx": "^4.19.3",
