@@ -43,7 +43,7 @@
         "mdast-util-to-hast": "^13.2.0",
         "mdast-util-to-string": "^4.0.0",
         "micromorph": "^0.4.5",
-        "pixi.js": "^8.9.0-main.58321a2",
+        "pixi.js": "^8.9.1",
         "preact": "^10.26.4",
         "preact-render-to-string": "^6.5.13",
         "pretty-bytes": "^6.1.1",
