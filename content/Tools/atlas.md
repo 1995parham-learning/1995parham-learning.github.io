@@ -442,7 +442,7 @@ default:
 # with the desired state defined by SCHEMA_SOURCE.
 # Usage: just diff <migration_name>
 # Example: just diff create_users_table
-diff name:
+diff name='':
     @echo "==> Generating migration diff: {{snakecase(name)}}..."
     atlas migrate diff {{snakecase(name)}} \
       --dir {{MIGRATIONS_DIR}} \
@@ -475,8 +475,7 @@ lint N='1':
       --latest {{N}}
 
 # Inspect the current schema of the live database (DB_URL).
-# Usage: just inspect [output_file.hcl] (optional output file)
-inspect output='':
+inspect:
     @echo "==> Inspecting schema of {{DB_URL}}..."
     atlas schema inspect --url {{DB_URL}}
 
