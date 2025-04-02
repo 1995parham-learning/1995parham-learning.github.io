@@ -407,8 +407,6 @@ Now, create a file named `Justfile` in the root of your Go project:
 ```just
 # Justfile for simplifying Atlas commands
 
-set unstable
-
 # --- Configuration ---
 # Set these variables according to your project setup
 
@@ -480,7 +478,7 @@ lint N='1':
 # Usage: just inspect [output_file.hcl] (optional output file)
 inspect output='':
     @echo "==> Inspecting schema of {{DB_URL}}..."
-    atlas schema inspect --url {{DB_URL}} {{ output && '-o ' + output }}
+    atlas schema inspect --url {{DB_URL}}
 
 # Apply a desired schema state directly to the database (use with caution, bypasses migration files).
 # Useful for bootstrapping dev environments if not using versioned migrations for that.
