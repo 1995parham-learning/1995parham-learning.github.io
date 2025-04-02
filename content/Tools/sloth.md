@@ -1,4 +1,3 @@
-
 Sloth uses Prometheus rules to generate SLOs (Service Level Objectives). Based on the generated **recording and alert rules** it creates a reliable and uniform SLO implementation:
 
 The Prometheus rules that Sloth generates, fall in 3 categories:
