@@ -442,7 +442,7 @@ default:
 # with the desired state defined by SCHEMA_SOURCE.
 # Usage: just diff <migration_name>
 # Example: just diff create_users_table
-diff +name:
+diff name:
     @echo "==> Generating migration diff: {{name}}..."
     atlas migrate diff {{name}} \
       --dir {{MIGRATIONS_DIR}} \
@@ -478,7 +478,7 @@ lint N='1':
 # Usage: just inspect [output_file.hcl] (optional output file)
 inspect *ARGS:
     @echo "==> Inspecting schema of {{DB_URL}}..."
-    atlas schema inspect --url {{DB_URL}} {{ARGS}} # Pass optional -o flag via ARGS
+    atlas schema inspect --url {{DB_URL}} {{ARGS}}
 
 # Apply a desired schema state directly to the database (use with caution, bypasses migration files).
 # Useful for bootstrapping dev environments if not using versioned migrations for that.
