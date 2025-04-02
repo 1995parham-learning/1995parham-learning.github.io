@@ -443,8 +443,8 @@ default:
 # Usage: just diff <migration_name>
 # Example: just diff create_users_table
 diff name:
-    @echo "==> Generating migration diff: {{name}}..."
-    atlas migrate diff {{name}} \
+    @echo "==> Generating migration diff: {{snakecase(name)}}..."
+    atlas migrate diff {{snakecase(name)}} \
       --dir {{MIGRATIONS_DIR}} \
       --to {{SCHEMA_SOURCE}} \
       --dev-url {{DEV_DB_URL}}
