@@ -1,4 +1,3 @@
-
 > Manage your database schema as code
 
 ## Introduction
