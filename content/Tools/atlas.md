@@ -59,7 +59,6 @@ echo "package main\n\nfunc main() {}" > main.go
 
 ### Spin up a Database (using Docker & PostgreSQL)
 
-
 ```bash
 # Run Postgres 15 in Docker, name it 'atlas-db', set password 'password'
 # It will be accessible on localhost:5432
@@ -70,8 +69,6 @@ docker run --rm --name atlas-db -p 5432:5432 -e POSTGRES_PASSWORD=password -e PO
 
 We'll use this database URL for Atlas: `postgres://postgres:password@localhost:5432/mydb?sslmode=disable`
 
----
-
 ### Scenario 1: Using Atlas with HCL or SQL Files
 
 This approach is suitable when you're not using an ORM like GORM, or you prefer to define your schema explicitly in Atlas's HCL format or standard SQL.
@@ -80,9 +77,7 @@ This approach is suitable when you're not using an ORM like GORM, or you prefer 
 
 Create a file named `schema.hcl`:
 
-Terraform
-
-```
+```hcl
 # schema.hcl
 
 # Define the 'users' table
@@ -125,9 +120,7 @@ schema "public" {
 
 You can ask Atlas to compare the HCL file directly with the database and apply the changes. This is often good for initial setup or simple projects.
 
-Bash
-
-```
+```bash
 # Define your database URL (replace if different)
 export DB_URL="postgres://postgres:password@localhost:5432/mydb?sslmode=disable"
 
@@ -148,19 +141,18 @@ atlas schema apply --url $DB_URL -f schema.hcl --auto-approve
 This is the more robust approach for ongoing development. You generate versioned SQL migration files.
 
 - **Establish a Baseline (Optional but Recommended):** If your database already has _some_ schema, you can inspect it and save it as the _current_ state. For a _new_ database, you can skip this or generate an initial migration from your desired state.
-    Bash
-    ```
+    ```bash
     # Inspect the *current* database state and save it to an HCL file
     # atlas schema inspect --url $DB_URL -o current_schema.hcl
     # For a fresh DB, this will be mostly empty.
     ```
 - **Create a Migrations Directory:**
-    Bash
+  Bash
     ```
     mkdir migrations
     ```
 - **Generate the First Migration:** Atlas compares the _current_ database state (or an empty state if the DB is new/empty) with your _desired_ state (`schema.hcl`) and generates the SQL difference.
-    Bash
+  Bash
     ```
     # Generate a migration file based on the difference between the DB and schema.hcl
     atlas migrate diff create_users_table \
@@ -172,16 +164,16 @@ This is the more robust approach for ongoing development. You generate versioned
     - `--dir "file://migrations"`: Specifies the directory to store migration files.
     - `--to "file://schema.hcl"`: Defines the _desired_ state using our HCL file.
     - `--dev-url "docker://postgres/15/mydb"`: **Crucial!** Atlas needs a _temporary, clean database_ to calculate the diff accurately. It spins up a temporary Docker container (if using `docker://`), applies the _current_ state (from the `migrations` dir history or by inspecting `--url` if provided), applies the _desired_ state (`--to`), and calculates the SQL needed. This avoids modifying your actual development DB during the diff process. _Make sure Docker is running if using `docker://`._
-    This will create a file like `migrations/20250401XXXXXX_create_users_table.sql`. Inspect its contents. It should contain the `CREATE TABLE` statement.
+      This will create a file like `migrations/20250401XXXXXX_create_users_table.sql`. Inspect its contents. It should contain the `CREATE TABLE` statement.
 - **Apply Migrations:**
-    Bash
+  Bash
     ```
     # Apply pending migrations in the 'migrations' directory to your actual database
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
     Atlas keeps track of applied migrations in a special `atlas_schema_revisions` table it creates in your database.
 - **Make a Schema Change:** Let's make the email column non-null and unique. Update `schema.hcl`:
-    Terraform
+  Terraform
     ```
     # schema.hcl (updated part)
     table "users" {
@@ -200,7 +192,7 @@ This is the more robust approach for ongoing development. You generate versioned
     # ... schema public ...
     ```
 - **Generate the Next Migration:**
-    Bash
+  Bash
     ```
     atlas migrate diff make_email_notnull_unique \
       --dir "file://migrations" \
@@ -209,7 +201,7 @@ This is the more robust approach for ongoing development. You generate versioned
     ```
     This creates a new SQL file (e.g., `migrations/20250401YYYYYY_make_email_notnull_unique.sql`) containing `ALTER TABLE` statements.
 - **Apply the New Migration:**
-    Bash
+  Bash
     ```
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
@@ -355,12 +347,13 @@ func main() {
 Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'll point it to the _output_ of this Go program.
 
 - **Create Migrations Directory (if not done already):**
-    Bash
+  Bash
     ```
     mkdir -p migrations
     ```
 - **Generate Migrations using the GORM Loader:**
-    Bash
+  Bash
+
     ```
     export DB_URL="postgres://postgres:password@localhost:5432/mydb?sslmode=disable"
     export LOADER_SCRIPT="go run ./scripts/atlas-loader/main.go" # Helper variable
@@ -371,16 +364,18 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
       --to "exec://$LOADER_SCRIPT" \
       --dev-url "docker://postgres/15/mydb" # Use the dev-db for diffing
     ```
+
     - `--to "exec://go run ./scripts/atlas-loader/main.go"`: This tells Atlas to execute the command `go run ./scripts/atlas-loader/main.go` and use its standard output (which is the generated HCL schema) as the _desired_ state.
     - `--dev-url`: Still needed for accurate diffing.
-    Inspect the generated SQL migration file in `migrations/`. It should contain `CREATE TABLE` statements matching your GORM `User` and `Product` structs, including constraints, indexes, and foreign keys.
+      Inspect the generated SQL migration file in `migrations/`. It should contain `CREATE TABLE` statements matching your GORM `User` and `Product` structs, including constraints, indexes, and foreign keys.
+
 - **Apply Migrations:**
-    Bash
+  Bash
     ```
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
 - **Make a Model Change:** Let's add an `IsActive` field to the `User` model in `models/models.go`:
-    Go
+  Go
     ```
     // models/models.go (User struct updated)
     type User struct {
@@ -394,7 +389,7 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
     }
     ```
 - **Generate the Next Migration:**
-    Bash
+  Bash
     ```
     # Re-run the diff command, Atlas will detect the change via the loader
     atlas migrate diff add_user_isactive \
@@ -404,7 +399,7 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
     ```
     A new migration file will be created with the `ALTER TABLE users ADD COLUMN is_active...` statement.
 - **Apply the New Migration:**
-    Bash
+  Bash
     ```
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
