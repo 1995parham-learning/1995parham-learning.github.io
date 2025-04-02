@@ -18,3 +18,9 @@ I’ve used Atlas in the following hobby projects:
 
 - [https://atlasgo.io/guides](https://atlasgo.io/guides)
 - [https://atlasgo.io/getting-started/](https://atlasgo.io/getting-started/)
+
+## Tutorial
+
+A tutorial for using Atlas, the database schema management tool, in a Go project. We'll cover two main scenarios:
+1. **Using Atlas with plain SQL or HCL:** Managing your schema directly using Atlas's HCL format or standard SQL files.
+2. **Using Atlas with GORM:** Leveraging the `atlas-provider-gorm` to generate the desired schema state directly from your GORM models.
