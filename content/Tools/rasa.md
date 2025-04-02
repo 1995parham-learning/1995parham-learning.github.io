@@ -1,7 +1,3 @@
----
-title: Rasa
-icon: simple-icons:rasa
----
 
 > With over 25 million downloads, Rasa Open Source is the most popular open source framework
 > for building chat and voice-based AI assistants.
