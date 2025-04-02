@@ -395,3 +395,152 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
 4. **CI/CD:** Integrate `atlas migrate lint` (to analyze migrations for safety) and `atlas migrate apply` (with appropriate safeguards) into your CI/CD pipeline.
 5. **`--dev-url`:** Always use the `--dev-url` flag with `atlas migrate diff`. It's the most reliable way to generate correct migrations by comparing against a clean, temporary database instance reflecting the _current_ migration state. Using `docker://<driver>` is often the easiest way if you have Docker installed.
 6. **Manual SQL:** Sometimes, Atlas might not generate the exact SQL you need (e.g., complex data migrations, specific performance tweaks). You can always manually edit the generated SQL migration files _before_ applying them, or create purely manual SQL migration files.
+
+## Justfile
+
+Here's a sample `Justfile` designed to make using Atlas easier in your Go project. `just` is a handy command runner, similar to `make`, but often considered simpler and more modern.
+
+First, ensure you have `just` installed: [https://github.com/casey/just#installation](https://www.google.com/search?q=https://github.com/casey/just%23installation)
+
+Now, create a file named `Justfile` in the root of your Go project:
+
+```just
+# Justfile for simplifying Atlas commands
+
+# --- Configuration ---
+# Set these variables according to your project setup
+
+# Database URL for applying migrations and inspecting schema
+# Recommend using an environment variable (e.g., $DATABASE_URL) or a secret manager in production/CI
+# Example: export DB_URL='postgres://user:pass@host:port/dbname?sslmode=disable'
+DB_URL := env_var('DATABASE_URL', 'postgres://postgres:password@localhost:5432/mydb?sslmode=disable') # Default fallback
+
+# Dev Database URL used by Atlas for diffing and linting.
+# Needs a clean database state. 'docker://' driver is convenient if Docker is installed.
+# It spins up a temporary container based on the specified image.
+# Example: 'docker://postgres/15/devdb' or 'mysql://root:pass@localhost:3307/test'
+DEV_DB_URL := 'docker://postgres/15/atlas_dev_db'
+
+# Directory where migration files are stored
+MIGRATIONS_DIR := 'file://migrations' # 'file://' prefix is important for Atlas
+
+# Source of the desired schema state. Choose ONE and comment out/remove others.
+# Option 1: Atlas HCL file
+# SCHEMA_SOURCE := 'file://schema.hcl'
+# Option 2: Plain SQL file
+# SCHEMA_SOURCE := 'file://schema.sql'
+# Option 3: GORM Loader (adjust path to your loader script)
+SCHEMA_SOURCE := 'exec://go run ./scripts/atlas-loader/main.go' # Make sure loader exists
+
+# --- Atlas Commands ---
+
+# Default task: Show available commands
+default:
+    @just --list
+
+# Generate a new migration file comparing the current state (from migrations dir/dev db)
+# with the desired state defined by SCHEMA_SOURCE.
+# Usage: just diff <migration_name>
+# Example: just diff create_users_table
+diff +name:
+    @echo "==> Generating migration diff: {{name}}..."
+    atlas migrate diff {{name}} \
+      --dir {{MIGRATIONS_DIR}} \
+      --to {{SCHEMA_SOURCE}} \
+      --dev-url {{DEV_DB_URL}}
+
+# Apply pending migrations to the database specified by DB_URL.
+apply:
+    @echo "==> Applying migrations to {{DB_URL}}..."
+    atlas migrate apply \
+      --dir {{MIGRATIONS_DIR}} \
+      --url {{DB_URL}}
+
+# Show SQL for pending migrations without applying them.
+apply-dry:
+    @echo "==> Dry-run applying migrations to {{DB_URL}}..."
+    atlas migrate apply \
+      --dir {{MIGRATIONS_DIR}} \
+      --url {{DB_URL}} \
+      --dry-run
+
+# Lint migrations for potential issues (uses dev db).
+# Lints the latest migration by default.
+# Usage: just lint [N] (where N is number of latest migrations to lint, default 1)
+lint N='1':
+    @echo "==> Linting latest {{N}} migration(s) using dev DB {{DEV_DB_URL}}..."
+    atlas migrate lint \
+      --dir {{MIGRATIONS_DIR}} \
+      --dev-url {{DEV_DB_URL}} \
+      --latest {{N}}
+
+# Inspect the current schema of the live database (DB_URL).
+# Usage: just inspect [output_file.hcl] (optional output file)
+inspect *ARGS:
+    @echo "==> Inspecting schema of {{DB_URL}}..."
+    atlas schema inspect --url {{DB_URL}} {{ARGS}} # Pass optional -o flag via ARGS
+
+# Apply a desired schema state directly to the database (use with caution, bypasses migration files).
+# Useful for bootstrapping dev environments if not using versioned migrations for that.
+# NOTE: Assumes SCHEMA_SOURCE is correctly set for the method you want.
+schema-apply:
+    @echo "==> WARNING: Directly applying schema state from {{SCHEMA_SOURCE}} to {{DB_URL}}..."
+    @read -p "Are you sure? This bypasses migration files. [y/N] " -n 1 -r; echo
+    @if [[ $$REPLY =~ ^[Yy]$ ]]
+    then
+        # Atlas uses -f for files and -u for URLs/Executables
+        _flag := ""
+        if starts_with(SCHEMA_SOURCE, "file://") { _flag = "-f"; _source = replace(SCHEMA_SOURCE, "file://", ""); }
+        else if starts_with(SCHEMA_SOURCE, "exec://") { _flag = "-u"; _source = SCHEMA_SOURCE; } # -u takes the full exec:// URL
+        else { echo "Unsupported SCHEMA_SOURCE format for schema-apply"; exit 1; }
+
+        atlas schema apply --url {{DB_URL}} {{_flag}} {{_source}} --auto-approve
+        @echo "==> Schema apply complete."
+    else
+        @echo "Schema apply cancelled."
+    fi
+
+# --- Helper Tasks ---
+
+# Check if Atlas CLI is installed
+check-atlas:
+    @atlas version || (echo "Error: Atlas CLI not found. Install from https://atlasgo.io/cli/getting-started/setting-up" && exit 1)
+
+# Placeholder for cleaning the development database (implement according to your setup)
+# Example for Docker: docker stop atlas-db && docker rm atlas-db && docker run ...
+# clean-dev-db:
+#    @echo "Implement database cleaning logic here"
+```
+
+**Explanation:**
+
+1. **Configuration Variables:**
+    
+    - `DB_URL`: Your main database connection string. It tries to read from the `DATABASE_URL` environment variable first, falling back to a default localhost Postgres connection. **Adjust the fallback or ensure `DATABASE_URL` is set.**
+    - `DEV_DB_URL`: The connection string for the temporary database Atlas uses for diffing/linting. Using `docker://...` is highly recommended if you have Docker installed, as it handles the temporary database creation/cleanup automatically.
+    - `MIGRATIONS_DIR`: Specifies where your `YYYYMMDDHHMMSS_name.sql` files live. The `file://` prefix is required by Atlas.
+    - `SCHEMA_SOURCE`: **This is crucial.** You define how Atlas determines the _desired_ schema state. Uncomment the line that matches your approach (HCL file, SQL file, or GORM loader script) and ensure the path/command is correct.
+2. **Recipes (Commands):**
+    
+    - `default`: Running `just` with no arguments shows the available commands.
+    - `diff +name`: Generates a migration. Requires a name (`+name` makes it mandatory). Uses the `DEV_DB_URL` and `SCHEMA_SOURCE`. Example: `just diff add_price_to_products`
+    - `apply`: Applies pending migrations to the `DB_URL`. Example: `just apply`
+    - `apply-dry`: Shows what SQL `apply` _would_ run. Example: `just apply-dry`
+    - `lint [N]`: Checks migrations for safety/style issues using the `DEV_DB_URL`. Defaults to checking only the latest (`N=1`). Example: `just lint` or `just lint 3`
+    - `inspect [*ARGS]`: Connects to `DB_URL` and prints its current schema. You can optionally pass arguments, like `-o current_schema.hcl`, which `*ARGS` will capture. Example: `just inspect -o current.hcl` or `just inspect`
+    - `schema-apply`: Directly applies the `SCHEMA_SOURCE` to `DB_URL`, bypassing migrations. **Use carefully.** It includes a confirmation prompt. It dynamically determines whether to use `-f` (for files) or `-u` (for `exec://`) based on the `SCHEMA_SOURCE` variable.
+    - `check-atlas`: A simple helper to verify the `atlas` command is available.
+
+**How to Use:**
+
+1. Save the code above as `Justfile` in your project root.
+2. Install `just`.
+3. **Crucially, configure the variables** (`DB_URL`, `DEV_DB_URL`, `MIGRATIONS_DIR`, `SCHEMA_SOURCE`) at the top of the file to match your project setup.
+4. Run commands from your terminal in the project root:
+    - `just diff add_indices`
+    - `just apply`
+    - `just lint`
+    - `just inspect`
+    - `just` (to see all commands)
+
+This `Justfile` provides a much cleaner and more consistent way to interact with Atlas during your development workflow.
