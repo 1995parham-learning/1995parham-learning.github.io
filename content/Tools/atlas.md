@@ -219,6 +219,7 @@ CREATE TABLE products (
    name text
 );
 ```
+
 ```bash
 # Generate diff using the SQL file as the desired state
 atlas migrate diff add_products_table \
@@ -285,9 +286,7 @@ func GetAllModels() []interface{} {
 
 Atlas needs a small Go program that uses the provider to load your GORM models and output the corresponding Atlas HCL schema. Create `scripts/atlas-loader/main.go`:
 
-Go
-
-```
+```go
 //go:build ignore
 
 // This program prints the Atlas HCL schema generated from GORM models.
@@ -334,14 +333,12 @@ func main() {
 Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'll point it to the _output_ of this Go program.
 
 - **Create Migrations Directory (if not done already):**
-  Bash
-    ```
+
+    ```bash
     mkdir -p migrations
     ```
 - **Generate Migrations using the GORM Loader:**
-  Bash
-
-    ```
+    ```bash
     export DB_URL="postgres://postgres:password@localhost:5432/mydb?sslmode=disable"
     export LOADER_SCRIPT="go run ./scripts/atlas-loader/main.go" # Helper variable
 
@@ -357,8 +354,7 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
       Inspect the generated SQL migration file in `migrations/`. It should contain `CREATE TABLE` statements matching your GORM `User` and `Product` structs, including constraints, indexes, and foreign keys.
 
 - **Apply Migrations:**
-  Bash
-    ```
+    ```bash
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
 - **Make a Model Change:** Let's add an `IsActive` field to the `User` model in `models/models.go`:
@@ -376,8 +372,7 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
     }
     ```
 - **Generate the Next Migration:**
-  Bash
-    ```
+    ```bash
     # Re-run the diff command, Atlas will detect the change via the loader
     atlas migrate diff add_user_isactive \
       --dir "file://migrations" \
@@ -386,8 +381,7 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
     ```
     A new migration file will be created with the `ALTER TABLE users ADD COLUMN is_active...` statement.
 - **Apply the New Migration:**
-  Bash
-    ```
+    ```bas
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
 
