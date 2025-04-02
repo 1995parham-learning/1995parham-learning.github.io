@@ -196,8 +196,7 @@ This is the more robust approach for ongoing development. You generate versioned
     ```
     This creates a new SQL file (e.g., `migrations/20250401YYYYYY_make_email_notnull_unique.sql`) containing `ALTER TABLE` statements.
 - **Apply the New Migration:**
-  Bash
-    ```
+    ```bash
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
 
@@ -205,9 +204,7 @@ This is the more robust approach for ongoing development. You generate versioned
 
 Instead of HCL (`schema.hcl`), you can provide a single SQL file defining the complete desired state.
 
-Bash
-
-```
+```sql
 # Example: desired_schema.sql
 CREATE TABLE users (
     id bigserial PRIMARY KEY,
@@ -221,7 +218,8 @@ CREATE TABLE products (
    sku text PRIMARY KEY,
    name text
 );
-
+```
+```bash
 # Generate diff using the SQL file as the desired state
 atlas migrate diff add_products_table \
   --dir "file://migrations" \
@@ -232,17 +230,13 @@ atlas migrate diff add_products_table \
 atlas migrate apply --url $DB_URL --dir "file://migrations"
 ```
 
----
-
 ### Scenario 2: Using Atlas with GORM
 
 This approach uses your GORM model structs as the source of truth for the desired schema.
 
 **1. Add Dependencies:**
 
-Bash
-
-```
+```bash
 go get gorm.io/gorm
 go get gorm.io/driver/postgres # Or your specific GORM driver
 go get ariga.io/atlas-provider-gorm # The Atlas GORM provider
@@ -252,9 +246,7 @@ go get ariga.io/atlas-provider-gorm # The Atlas GORM provider
 
 Create a file, e.g., `models/models.go`:
 
-Go
-
-```
+```go
 package models
 
 import (
