@@ -143,17 +143,15 @@ This is the more robust approach for ongoing development. You generate versioned
 - **Establish a Baseline (Optional but Recommended):** If your database already has _some_ schema, you can inspect it and save it as the _current_ state. For a _new_ database, you can skip this or generate an initial migration from your desired state.
     ```bash
     # Inspect the *current* database state and save it to an HCL file
-    # atlas schema inspect --url $DB_URL -o current_schema.hcl
+    atlas schema inspect --url $DB_URL -o current_schema.hcl
     # For a fresh DB, this will be mostly empty.
     ```
 - **Create a Migrations Directory:**
-  Bash
-    ```
+    ```bash
     mkdir migrations
     ```
 - **Generate the First Migration:** Atlas compares the _current_ database state (or an empty state if the DB is new/empty) with your _desired_ state (`schema.hcl`) and generates the SQL difference.
-  Bash
-    ```
+    ```bash
     # Generate a migration file based on the difference between the DB and schema.hcl
     atlas migrate diff create_users_table \
       --dir "file://migrations" \
