@@ -164,15 +164,13 @@ This is the more robust approach for ongoing development. You generate versioned
     - `--dev-url "docker://postgres/15/mydb"`: **Crucial!** Atlas needs a _temporary, clean database_ to calculate the diff accurately. It spins up a temporary Docker container (if using `docker://`), applies the _current_ state (from the `migrations` dir history or by inspecting `--url` if provided), applies the _desired_ state (`--to`), and calculates the SQL needed. This avoids modifying your actual development DB during the diff process. _Make sure Docker is running if using `docker://`._
       This will create a file like `migrations/20250401XXXXXX_create_users_table.sql`. Inspect its contents. It should contain the `CREATE TABLE` statement.
 - **Apply Migrations:**
-  Bash
-    ```
+    ```bash
     # Apply pending migrations in the 'migrations' directory to your actual database
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
     Atlas keeps track of applied migrations in a special `atlas_schema_revisions` table it creates in your database.
 - **Make a Schema Change:** Let's make the email column non-null and unique. Update `schema.hcl`:
-  Terraform
-    ```
+    ```hcl
     # schema.hcl (updated part)
     table "users" {
       # ... other columns ...
@@ -190,8 +188,7 @@ This is the more robust approach for ongoing development. You generate versioned
     # ... schema public ...
     ```
 - **Generate the Next Migration:**
-  Bash
-    ```
+    ```bash
     atlas migrate diff make_email_notnull_unique \
       --dir "file://migrations" \
       --to "file://schema.hcl" \
