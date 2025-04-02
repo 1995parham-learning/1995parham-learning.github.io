@@ -512,16 +512,17 @@ check-atlas:
 #    @echo "Implement database cleaning logic here"
 ```
 
-**Explanation:**
+### Explanation
 
 1. **Configuration Variables:**
-    
+
     - `DB_URL`: Your main database connection string. It tries to read from the `DATABASE_URL` environment variable first, falling back to a default localhost Postgres connection. **Adjust the fallback or ensure `DATABASE_URL` is set.**
     - `DEV_DB_URL`: The connection string for the temporary database Atlas uses for diffing/linting. Using `docker://...` is highly recommended if you have Docker installed, as it handles the temporary database creation/cleanup automatically.
     - `MIGRATIONS_DIR`: Specifies where your `YYYYMMDDHHMMSS_name.sql` files live. The `file://` prefix is required by Atlas.
     - `SCHEMA_SOURCE`: **This is crucial.** You define how Atlas determines the _desired_ schema state. Uncomment the line that matches your approach (HCL file, SQL file, or GORM loader script) and ensure the path/command is correct.
+
 2. **Recipes (Commands):**
-    
+
     - `default`: Running `just` with no arguments shows the available commands.
     - `diff +name`: Generates a migration. Requires a name (`+name` makes it mandatory). Uses the `DEV_DB_URL` and `SCHEMA_SOURCE`. Example: `just diff add_price_to_products`
     - `apply`: Applies pending migrations to the `DB_URL`. Example: `just apply`
@@ -531,7 +532,7 @@ check-atlas:
     - `schema-apply`: Directly applies the `SCHEMA_SOURCE` to `DB_URL`, bypassing migrations. **Use carefully.** It includes a confirmation prompt. It dynamically determines whether to use `-f` (for files) or `-u` (for `exec://`) based on the `SCHEMA_SOURCE` variable.
     - `check-atlas`: A simple helper to verify the `atlas` command is available.
 
-**How to Use:**
+### How to Use
 
 1. Save the code above as `Justfile` in your project root.
 2. Install `just`.
