@@ -407,6 +407,8 @@ Now, create a file named `Justfile` in the root of your Go project:
 ```just
 # Justfile for simplifying Atlas commands
 
+set unstable
+
 # --- Configuration ---
 # Set these variables according to your project setup
 
