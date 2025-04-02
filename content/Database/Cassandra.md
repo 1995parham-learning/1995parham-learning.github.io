@@ -1,4 +1,3 @@
-
 > Cassandra is a NoSQL distributed database.
 
 ## Distribution provides power and resilience
