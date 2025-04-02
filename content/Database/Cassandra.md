@@ -1,7 +1,3 @@
----
-title: Cassandra
-icon: skill-icons:cassandra-dark
----
 
 > Cassandra is a NoSQL distributed database.
 
