@@ -476,9 +476,9 @@ lint N='1':
 
 # Inspect the current schema of the live database (DB_URL).
 # Usage: just inspect [output_file.hcl] (optional output file)
-inspect *ARGS:
+inspect *output:
     @echo "==> Inspecting schema of {{DB_URL}}..."
-    atlas schema inspect --url {{DB_URL}} {{ARGS}}
+    atlas schema inspect --url {{DB_URL}} {{ output && '-o ' + output }}
 
 # Apply a desired schema state directly to the database (use with caution, bypasses migration files).
 # Useful for bootstrapping dev environments if not using versioned migrations for that.
