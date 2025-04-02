@@ -476,7 +476,7 @@ lint N='1':
 
 # Inspect the current schema of the live database (DB_URL).
 # Usage: just inspect [output_file.hcl] (optional output file)
-inspect *output:
+inspect output='':
     @echo "==> Inspecting schema of {{DB_URL}}..."
     atlas schema inspect --url {{DB_URL}} {{ output && '-o ' + output }}
 
