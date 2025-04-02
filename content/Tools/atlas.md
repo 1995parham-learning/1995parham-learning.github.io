@@ -337,7 +337,9 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
     ```bash
     mkdir -p migrations
     ```
+
 - **Generate Migrations using the GORM Loader:**
+
     ```bash
     export DB_URL="postgres://postgres:password@localhost:5432/mydb?sslmode=disable"
     export LOADER_SCRIPT="go run ./scripts/atlas-loader/main.go" # Helper variable
@@ -381,13 +383,11 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
     ```
     A new migration file will be created with the `ALTER TABLE users ADD COLUMN is_active...` statement.
 - **Apply the New Migration:**
-    ```bas
+    ```bash
     atlas migrate apply --url $DB_URL --dir "file://migrations"
     ```
 
----
-
-**General Tips & Best Practices**
+## General Tips & Best Practices
 
 1. **`atlas.sum` File:** Atlas creates an `atlas.sum` file in your migration directory. This contains checksums of your migration files and the desired schema at the time of `migrate diff`. **Commit this file to Git.** It ensures the integrity and reproducibility of your migration history.
 2. **Environment Variables:** Avoid hardcoding database URLs directly in commands. Use environment variables (`export DB_URL=...`) or a configuration file method.
@@ -395,7 +395,3 @@ Now, instead of pointing Atlas to an HCL or SQL file for the desired state, you'
 4. **CI/CD:** Integrate `atlas migrate lint` (to analyze migrations for safety) and `atlas migrate apply` (with appropriate safeguards) into your CI/CD pipeline.
 5. **`--dev-url`:** Always use the `--dev-url` flag with `atlas migrate diff`. It's the most reliable way to generate correct migrations by comparing against a clean, temporary database instance reflecting the _current_ migration state. Using `docker://<driver>` is often the easiest way if you have Docker installed.
 6. **Manual SQL:** Sometimes, Atlas might not generate the exact SQL you need (e.g., complex data migrations, specific performance tweaks). You can always manually edit the generated SQL migration files _before_ applying them, or create purely manual SQL migration files.
-
----
-
-This tutorial covers the fundamentals of using Atlas in Go projects, both with direct schema definitions (HCL/SQL) and integrated with GORM. Choose the approach that best fits your project's needs and preferences. Remember to consult the official Atlas documentation ([https://atlasgo.io/](https://atlasgo.io/)) for more advanced features and specific database dialect details.
