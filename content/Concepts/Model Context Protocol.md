@@ -73,6 +73,7 @@ MCP has these main types of messages:
       params?: { ... };
     }
     ```
+
 - **Results** are successful responses to requests:
     ```typescript
     interface Result {
@@ -88,9 +89,9 @@ MCP has these main types of messages:
     }
     ```
 - **Notifications** are one-way messages that don’t expect a response:
-	```typescript
-	interface Notification {
-	  method: string;
-	  params?: { ... };
-	}
-	```
+    ```typescript
+    interface Notification {
+      method: string;
+      params?: { ... };
+    }
+    ```
