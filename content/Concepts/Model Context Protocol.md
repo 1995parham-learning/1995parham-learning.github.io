@@ -97,6 +97,8 @@ MCP has these main types of messages:
 
 ### Connection lifecycle
 
+#### Initialization
+
 ![[Pasted image 20250404183910.png]]
 
 1. Client sends `initialize` request with protocol version and capabilities
