@@ -23,3 +23,5 @@ MCP follows a client-server architecture where:
 - **Servers** provide context, tools, and prompts to clients
 
 ![[Pasted image 20250404182827.png]]
+
+### 
