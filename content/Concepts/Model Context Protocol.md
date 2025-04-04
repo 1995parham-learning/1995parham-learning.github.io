@@ -24,4 +24,24 @@ MCP follows a client-server architecture where:
 
 ![[Pasted image 20250404182827.png]]
 
-### 
+### Protocol layer
+
+The protocol layer handles message framing, request/response linking, and high-level communication patterns.
+
+```typescript
+class Protocol<Request, Notification, Result> {
+    // Handle incoming requests
+    setRequestHandler<T>(schema: T, handler: (request: T, extra: RequestHandlerExtra) => Promise<Result>): void
+
+    // Handle incoming notifications
+    setNotificationHandler<T>(schema: T, handler: (notification: T) => Promise<void>): void
+
+    // Send requests and await responses
+    request<T>(request: Request, schema: T, options?: RequestOptions): Promise<T>
+
+    // Send one-way notifications
+    notification(notification: Notification): Promise<void>
+}
+```
+
+
