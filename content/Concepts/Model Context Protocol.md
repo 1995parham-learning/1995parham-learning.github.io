@@ -66,14 +66,13 @@ All transports use [JSON-RPC](https://www.jsonrpc.org/) 2.0 to exchange messages
 
 MCP has these main types of messages:
 
-1. **Requests** expect a response from the other side:
+- **Requests** expect a response from the other side:
     ```typescript
     interface Request {
       method: string;
       params?: { ... };
     }
     ```
-
 - **Results** are successful responses to requests:
     ```typescript
     interface Result {
