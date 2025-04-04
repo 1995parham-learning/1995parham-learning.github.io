@@ -31,7 +31,10 @@ The protocol layer handles message framing, request/response linking, and high-l
 ```typescript
 class Protocol<Request, Notification, Result> {
     // Handle incoming requests
-    setRequestHandler<T>(schema: T, handler: (request: T, extra: RequestHandlerExtra) => Promise<Result>): void
+    setRequestHandler<T>(
+        schema: T,
+        handler: (request: T, extra: RequestHandlerExtra) => Promise<Result>,
+    ): void
 
     // Handle incoming notifications
     setNotificationHandler<T>(schema: T, handler: (notification: T) => Promise<void>): void
@@ -43,5 +46,3 @@ class Protocol<Request, Notification, Result> {
     notification(notification: Notification): Promise<void>
 }
 ```
-
-
