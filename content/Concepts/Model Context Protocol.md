@@ -96,3 +96,10 @@ MCP has these main types of messages:
     ```
 
 ### Connection lifecycle
+
+![[Pasted image 20250404183910.png]]
+
+1. Client sends `initialize` request with protocol version and capabilities
+2. Server responds with its protocol version and capabilities
+3. Client sends `initialized` notification as acknowledgment
+4. Normal message exchange begins
