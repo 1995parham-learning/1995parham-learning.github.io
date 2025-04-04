@@ -46,3 +46,17 @@ class Protocol<Request, Notification, Result> {
     notification(notification: Notification): Promise<void>
 }
 ```
+
+### Transport layer
+
+The transport layer handles the actual communication between clients and servers. MCP supports multiple transport mechanisms:
+
+1. **Stdio transport**
+    - Uses standard input/output for communication
+    - Ideal for local processes
+
+2. **HTTP with SSE transport**
+    - Uses Server-Sent Events for server-to-client messages
+    - HTTP POST for client-to-server messages
+
+All transports use [JSON-RPC](https://www.jsonrpc.org/) 2.0 to exchange messages. See the [specification](https://spec.modelcontextprotocol.io) for detailed information about the Model Context Protocol message format.
