@@ -65,41 +65,29 @@ All transports use [JSON-RPC](https://www.jsonrpc.org/) 2.0 to exchange messages
 MCP has these main types of messages:
 
 1. **Requests** expect a response from the other side:
-    
 
 - Copy
-    
     ```typescript
     interface Request {
       method: string;
       params?: { ... };
     }
     ```
-    
 - **Results** are successful responses to requests:
-    
-- Copy
-    
     ```typescript
     interface Result {
-      [key: string]: unknown;
+        [key: string]: unknown
     }
     ```
-    
 - **Errors** indicate that a request failed:
-    
-- Copy
-    
     ```typescript
     interface Error {
-      code: number;
-      message: string;
-      data?: unknown;
+        code: number
+        message: string
+        data?: unknown
     }
     ```
-    
 - **Notifications** are one-way messages that don’t expect a response:
-    
 
 Copy
 
