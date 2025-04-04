@@ -14,4 +14,12 @@ At its core, MCP follows a client-server architecture where a host application c
 
 ## Core architecture
 
-The Model Context Protocol (MCP) is built on a flexible, extensible architecture that enables seamless communication between LLM applications and integrations. This document covers the core architectural components and concepts.
+The Model Context Protocol (MCP) is built on a flexible, extensible architecture that enables seamless communication between LLM applications and integrations.
+
+MCP follows a client-server architecture where:
+
+- **Hosts** are LLM applications (like Claude Desktop or IDEs) that initiate connections
+- **Clients** maintain 1:1 connections with servers, inside the host application
+- **Servers** provide context, tools, and prompts to clients
+
+![[Pasted image 20250404182827.png]]
