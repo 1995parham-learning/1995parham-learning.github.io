@@ -112,6 +112,7 @@ After initialization, the following patterns are supported:
 
 - **Request-Response**: Client or server sends requests, the other responds
 - **Notifications**: Either party sends one-way messages
+
 #### Termination
 
 Either party can terminate the connection:
