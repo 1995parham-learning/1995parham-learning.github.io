@@ -96,4 +96,3 @@ MCP has these main types of messages:
     ```
 
 ### Connection lifecycle
-
