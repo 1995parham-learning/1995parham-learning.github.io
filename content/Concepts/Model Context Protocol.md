@@ -94,3 +94,6 @@ MCP has these main types of messages:
       params?: { ... };
     }
     ```
+
+### Connection lifecycle
+
