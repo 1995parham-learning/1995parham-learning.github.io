@@ -105,3 +105,12 @@ MCP has these main types of messages:
 2. Server responds with its protocol version and capabilities
 3. Client sends `initialized` notification as acknowledgment
 4. Normal message exchange begins
+
+#### Message exchange
+
+After initialization, the following patterns are supported:
+
+- **Request-Response**: Client or server sends requests, the other responds
+- **Notifications**: Either party sends one-way messages
+
+#### Termination
