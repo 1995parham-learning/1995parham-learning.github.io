@@ -11,6 +11,3 @@ Examples:
 - A group of computers connected to a network switch (Ethernet)
 - A set of smartphones connected to a [Wi-Fi access point](https://en.wikipedia.org/wiki/Wireless_access_point) (non-Ethernet)
 - Etc.
-
-[  
-](https://labs.iximiuz.com/courses/computer-networking-fundamentals/from-lan-to-vxlan#network-segment)
