@@ -1,4 +1,4 @@
-In kubernetes, `requests.cpu` **is used** after the scheduling phase, too.
+In Kubernetes, `requests.cpu` **is used** after the scheduling phase, too.
 
 In cgroup.v2 `cpu.weight` is applied to the containers of a single pod. For example, each `thanos-querier-custom` pod has 5 containers. For them, the `cpu.weight` values are set as follows:
 
@@ -26,10 +26,7 @@ With a virtual machine (VM), you assign a certain whole number of vCPU cores. Th
 
 Kubernetes uses the **Completely Fair Scheduler (CFS)** groups, specifically the CFS `cgroup` Bandwidth control. The way this works for a CPU limit is that every CPU is scheduled in _100ms_ periods with _5ms_ time slices. Each pod is given a budget within that time slice. For example, a pod with a **limit** of _200m_, the pod would be given a quota of four _5ms_ slices for a total of _20ms_ of every _100ms_ period.
 
-The CFS continues to supply these _5ms_ slices to the pod until the quota has been exhausted.
-Once the quota has been used up for the _100ms_ period, the CFS stops scheduling the pod for CPU time.
-This is referred to as **throttling**. Once the new _100ms_ period begins, the quota is reset to the limit.
-In our example, this is four slices.
+The CFS continues to supply these _5ms_ slices to the pod until the quota has been exhausted. Once the quota has been used up for the _100ms_ period, the CFS stops scheduling the pod for CPU time. This is referred to as **throttling**. Once the new _100ms_ period begins, the quota is reset to the limit. In our example, this is four slices.
 
 > [!info]
 > I want to take a brief diversion to discuss the throttling metric.
