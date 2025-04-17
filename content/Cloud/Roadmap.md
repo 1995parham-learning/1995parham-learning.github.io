@@ -8,10 +8,10 @@
 
 ### Network
 
-- 📖 Network Warrior (first 12 chapters)
+- 📖 Network Warrior (First 12 chapters)
 - 📖 Networking for Systems Administrators (IT Mastery)
 - 🔗 [The complete flow of entering a URL in your browser](https://github.com/alex/what-happens-when)
-- OSI layers (a)
+- OSI layers
     - L1:
         - hub
     - L2:
