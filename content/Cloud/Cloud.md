@@ -77,18 +77,11 @@ The **pause** container is a container which holds the network namespace for the
 
 ## Readiness Gate
 
-Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**.
-By default, a pod is considered ready if all its containers are ready. However, in complex scenarios,
-you might need more sophisticated checks. Readiness Gates allow you to define these additional checks,
-which can be based on various criteria such as external dependencies, configuration availability, or custom logic.
+Pod Readiness Gates are **custom conditions that can be added to a pod's readiness check**. By default, a pod is considered ready if all its containers are ready. However, in complex scenarios, you might need more sophisticated checks. Readiness Gates allow you to define these additional checks, which can be based on various criteria such as external dependencies, configuration availability, or custom logic.
 
-Your application can inject extra feedback or signals into `PodStatus`: Pod readiness.
-To use this, set `readinessGates` in the Pod's spec to specify a list of additional conditions that
-the `kubelet` evaluates for Pod readiness.
+Your application can inject extra feedback or signals into `PodStatus`: Pod readiness. To use this, set `readinessGates` in the Pod's spec to specify a list of additional conditions that the `kubelet` evaluates for Pod readiness.
 
-Readiness gates are determined by the current state of `status.condition` fields for the Pod.
-If Kubernetes cannot find such a condition in the `status.conditions` field of a Pod, the status
-of the condition is defaulted to _False_.
+Readiness gates are determined by the current state of `status.condition` fields for the Pod. If Kubernetes cannot find such a condition in the `status.conditions` field of a Pod, the status of the condition is defaulted to _False_.
 
 ```yaml
 kind: Pod
