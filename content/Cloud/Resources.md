@@ -12,21 +12,17 @@ More info:
 
 ## Requests and Limits
 
-A request is what the container is **guaranteed to receive**. One of the most common discussions of requests is around _pod scheduling_. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources.
-For example, if a pod requests a total of 2 CPUs, but each node only has 1.9 available, Kubernetes will not schedule the pod.
+A request is what the container is **guaranteed to receive**. One of the most common discussions of requests is around _pod scheduling_. Kubernetes will only schedule a pod on a node that has enough resources to meet the requested resources. For example, if a pod requests a total of 2 CPUs, but each node only has 1.9 available, Kubernetes will not schedule the pod.
 
 A limit is a cap on the resources that a pod can use. Although small exceptions may exist, this is a very hard cap that Kubernetes enforces.
+
 An important note is that the CPU is considered a **compressible** resource. As such, if your container attempts to exceed the limit, Kubernetes _throttles it_. This may result in degraded performance, but does not terminate or evict the pod. However, if a pod attempts to use more memory than the limit, Kubernetes _immediately terminates it_.
 
 > [!info]
 > The Container has no upper bound on the CPU resources it can use.
 > The Container could use all the CPU resources available on the Node where it is running.
 
-With a virtual machine (VM), you assign a certain whole number of vCPU cores. These are then available to the VM all the time.
-However, Kubernetes allows you to specify fractional CPUs, down to 1/1000 of a CPU.
-Unlike in the case with virtual machines, you cannot assign only part of a CPU core.
-It is instead a timeshare of the CPUs available on a node.
-This is true even if the limit is set to a whole number. This can be important as we explore how this works.
+With a virtual machine (VM), you assign a certain whole number of vCPU cores. These are then available to the VM all the time. However, Kubernetes allows you to specify fractional CPUs, down to 1/1000 of a CPU. Unlike in the case with virtual machines, you cannot assign only part of a CPU core. It is instead a timeshare of the CPUs available on a node. This is true even if the limit is set to a whole number. This can be important as we explore how this works.
 
 Kubernetes uses the **Completely Fair Scheduler (CFS)** groups, specifically the CFS `cgroup` Bandwidth control.
 The way this works for a CPU limit is that every CPU is scheduled in _100ms_ periods with _5ms_ time slices.
