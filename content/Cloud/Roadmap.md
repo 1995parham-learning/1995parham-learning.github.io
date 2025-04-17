@@ -4,6 +4,8 @@
 
 ## Concepts
 
+### [[Go#Roadmap|Go]]
+
 ### Network
 
 - 📖 Network Warrior (first 12 chapters)
