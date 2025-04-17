@@ -7,6 +7,66 @@ Golang is an awesome language, but it has sanctioned our country. It is similar 
 
 We can use it for writing code as terminal applications or servers. I had experience in using it for writing ReST API and GraphQL servers.
 
+## Roadmap
+
+- Syntax
+    - <https://go.dev/tour/welcome/1>
+    - <https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ>
+- 🧵 Concurrency (B)
+    - Goroutines (B)
+    - Mutex (B)
+    - Channels (B)
+    - Context (B)
+- HTTP
+    - Client (`net/http`) (B)
+        - Request
+            - Setting/Getting Header
+            - Setting/Getting Query Parameters
+            - Custom Client
+                - Custom Timeout
+                - HTTP-trace
+                - Custom transport
+                    - Skip TLS verify
+            - Dump response
+    - Server
+        - `net/http`
+        - `gorilla/mux`
+        - [`labstack/echo`](https://echo.labstack.com/)
+            - Advanced request multiplexing
+            - Group register
+            - Middlewares
+                - JWT
+                - Prometheus
+- JSON marshal/unmarshal
+- Config Management ([`spf13/viper`](https://github.com/spf13/viper)/[`koanf`](https://github.com/knadh/koanf)/[`spf13/pflag`](https://github.com/spf13/pflag))
+    - Environment Variables
+    - YAML/JSON/TOML
+- CLI (cobra)
+    - sub-commands
+    - flags
+- gRPC (D)
+    - Protobuf
+    - Code generation (which should be communicated well)
+    - interceptors
+        - metrics using Prometheus
+        - logging
+- Databases
+    - [`gorm`](https://gorm.io/)
+    - [`atlas`](https://atlasgo.io/)
+    - [`redis/go-redis`](https://github.com/redis/go-redis)
+    - [`redis/rueidis`](https://github.com/redis/rueidis)
+    - client mysql
+    - client mongo
+    - client etcd
+- Testing
+    - Unit testing
+    - [testify](https://github.com/stretchr/testify)
+    - BDD
+        - [`gingko`](https://github.com/onsi/ginkgo)
+        - [`gomega`](https://github.com/onsi/gomega)
+- Jaeger tracing (d)
+- Prometheus Exporter SDK
+
 ## Multiple Errors
 
 Go 1.20 expands support for error wrapping to permit an error to wrap multiple other errors:
