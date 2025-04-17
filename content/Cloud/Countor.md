@@ -1,1 +1,0 @@
->High performance ingress controller for Kubernetes
