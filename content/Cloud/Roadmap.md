@@ -48,12 +48,12 @@
 - CLI (cobra)
     - sub-commands
     - flags
-- gRPC (d)
+- gRPC (D)
     - Protobuf
     - Code generation (which should be communicated well)
     - interceptors
-        - Prometheus
-        - log
+        - metrics using Prometheus
+        - logging
 - Databases
     - [`gorm`](https://gorm.io/)
     - [`atlas`](https://atlasgo.io/)
