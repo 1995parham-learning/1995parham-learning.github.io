@@ -12,13 +12,13 @@ We can use it for writing code as terminal applications or servers. I had experi
 - Syntax
     - <https://go.dev/tour/welcome/1>
     - <https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ>
-- 🧵 Concurrency (B)
-    - Goroutines (B)
-    - Mutex (B)
-    - Channels (B)
-    - Context (B)
+- 🧵 Concurrency
+    - Goroutines
+    - Mutex
+    - Channels
+    - Context
 - HTTP
-    - Client (`net/http`) (B)
+    - Client (`net/http`)
         - Request
             - Setting/Getting Header
             - Setting/Getting Query Parameters
@@ -41,10 +41,10 @@ We can use it for writing code as terminal applications or servers. I had experi
 - Config Management ([`spf13/viper`](https://github.com/spf13/viper)/[`koanf`](https://github.com/knadh/koanf)/[`spf13/pflag`](https://github.com/spf13/pflag))
     - Environment Variables
     - YAML/JSON/TOML
-- CLI (cobra)
+- CLI ([`spf13/cobra`](https://github.com/spf13/cobra))
     - sub-commands
     - flags
-- gRPC (D)
+- gRPC
     - Protobuf
     - Code generation (which should be communicated well)
     - interceptors
@@ -64,7 +64,7 @@ We can use it for writing code as terminal applications or servers. I had experi
     - BDD
         - [`gingko`](https://github.com/onsi/ginkgo)
         - [`gomega`](https://github.com/onsi/gomega)
-- Jaeger tracing (d)
+- Jaeger tracing
 - Prometheus Exporter SDK
 
 ## Multiple Errors
