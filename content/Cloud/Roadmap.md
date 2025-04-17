@@ -15,11 +15,11 @@
     - L1:
         - hub
     - L2:
-        - MAC (a)
-        - vLAN (b)
-            - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) -> such a brain friendly way of learning the fundamentals of network.
-        - vrrp (b)
-        - ARP (a)
+        - MAC
+        - vLAN
+            - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) such a brain friendly way of learning the fundamentals of network.
+        - vrrp
+        - ARP
     - L3
         - sub-netting, gw (a)
         - ip classes (A,B,C) private/public (a)
