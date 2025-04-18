@@ -1,6 +1,5 @@
 [Tutorials 📖 | iximiuz Labs](https://labs.iximiuz.com/tutorials)
 
-
 ## Container Networking
 
 One of the Linux namespaces used to create containers is called `netns` or _network namespace_.
