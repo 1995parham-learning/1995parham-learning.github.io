@@ -4,7 +4,7 @@
 
 ## Whats is a Network Link?
 
-**Network link** - a physical and logical network component used to interconnect [any kind of] nodes in the network. All nodes of a single network link use the same [link-layer protocol](https://en.wikipedia.org/wiki/Link_layer).
+**Network link** - a physical and logical network component used to interconnect any kind of nodes in the network. All nodes of a single network link use the same [link-layer protocol](https://en.wikipedia.org/wiki/Link_layer).
 
 Examples:
 
@@ -14,7 +14,7 @@ Examples:
 
 ## What is an L1 Segment?
 
-[**L1 segment**](https://en.wikipedia.org/wiki/Network_segment#Ethernet) (_aka_ **physical segment**, _aka_ **Ethernet segment**) - a _network segment_ formed by an electrical (or optical) connection between networked devices using a shared medium. Nodes on a single L1 segment have a common [physical layer](https://en.wikipedia.org/wiki/Physical_layer).
+[**L1 segment**](https://en.wikipedia.org/wiki/Network_segment#Ethernet) (*aka* **physical segment**, *aka* **Ethernet segment**) - a *network segment* formed by an electrical (or optical) connection between networked devices using a shared medium. Nodes on a single L1 segment have a common [physical layer](https://en.wikipedia.org/wiki/Physical_layer).
 
 The simplest example of the contemporary L1 segment is a point-to-point connection between two end-nodes via a [patch](https://en.wikipedia.org/wiki/Patch_cable) or [crossover](https://en.wikipedia.org/wiki/Ethernet_crossover_cable) cable.
 
@@ -25,5 +25,3 @@ The most typical occurrence of L1 segment today, though, are the links between s
 ![Ethernet via network switch, present day.](https://labs.iximiuz.com/content/files/courses/computer-networking-fundamentals/1.from-lan-to-vxlan/__static__/l1-network-switch-2000-opt.png)
 
 _Blue lines are the L1 segments._
-
-It's OK if the comic replicas on the picture above don't make much sense to you yet. The next unit will try to explain the evolution of the L1 segment technology that led to the modern switch devices.
