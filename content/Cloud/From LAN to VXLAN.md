@@ -11,3 +11,19 @@ Examples:
 - A group of computers connected to a network switch (Ethernet)
 - A set of smartphones connected to a [Wi-Fi access point](https://en.wikipedia.org/wiki/Wireless_access_point) (non-Ethernet)
 - Etc.
+
+## What is an L1 Segment?
+
+[**L1 segment**](https://en.wikipedia.org/wiki/Network_segment#Ethernet) (_aka_ **physical segment**, _aka_ **Ethernet segment**) - a _network segment_ formed by an electrical (or optical) connection between networked devices using a shared medium. Nodes on a single L1 segment have a common [physical layer](https://en.wikipedia.org/wiki/Physical_layer).
+
+The simplest example of the contemporary L1 segment is a point-to-point connection between two end-nodes via a [patch](https://en.wikipedia.org/wiki/Patch_cable) or [crossover](https://en.wikipedia.org/wiki/Ethernet_crossover_cable) cable.
+
+![Two computers connected with a patch cable.](https://labs.iximiuz.com/content/files/courses/computer-networking-fundamentals/1.from-lan-to-vxlan/__static__/l1-patch-cable-2000-opt.png)
+
+The most typical occurrence of L1 segment today, though, are the links between servers and the corresponding top-of-rack switch in a data center:
+
+![Ethernet via network switch, present day.](https://labs.iximiuz.com/content/files/courses/computer-networking-fundamentals/1.from-lan-to-vxlan/__static__/l1-network-switch-2000-opt.png)
+
+_Blue lines are the L1 segments._
+
+It's OK if the comic replicas on the picture above don't make much sense to you yet. The next unit will try to explain the evolution of the L1 segment technology that led to the modern switch devices.
