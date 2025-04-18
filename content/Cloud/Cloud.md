@@ -1,16 +1,5 @@
 [Tutorials 📖 | iximiuz Labs](https://labs.iximiuz.com/tutorials)
 
-## Terminology
-
-Concepts from cloud computing that seems interesting to me and worth time.
-
-- SR-IOV
-- Data Plane Development Kit ([`dpdk`](https://github.com/DPDK/dpdk))
-- Dark Fiber
-- Open Virtual Network ([`ovn`](https://github.com/ovn-org/ovn))
-- CPU Pinning / Processor affinity
-- Steal time
-- Distribute Network cards between multiple CPU bus
 
 ## Container Networking
 

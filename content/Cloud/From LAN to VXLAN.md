@@ -18,10 +18,10 @@ Examples:
 
 The simplest example of the contemporary L1 segment is a point-to-point connection between two end-nodes via a [patch](https://en.wikipedia.org/wiki/Patch_cable) or [crossover](https://en.wikipedia.org/wiki/Ethernet_crossover_cable) cable.
 
-![Two computers connected with a patch cable.](https://labs.iximiuz.com/content/files/courses/computer-networking-fundamentals/1.from-lan-to-vxlan/__static__/l1-patch-cable-2000-opt.png)
+![[l1-patch-cable-2000-opt.png|Two computers connected with a patch cable.]]
 
 The most typical occurrence of L1 segment today, though, are the links between servers and the corresponding top-of-rack switch in a data center:
 
-![Ethernet via network switch, present day.](https://labs.iximiuz.com/content/files/courses/computer-networking-fundamentals/1.from-lan-to-vxlan/__static__/l1-network-switch-2000-opt.png)
+![[l1-network-switch-2000-opt.png|Ethernet via network switch, present day.]]
 
 _Blue lines are the L1 segments._
